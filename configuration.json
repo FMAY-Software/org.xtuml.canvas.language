@@ -1,0 +1,26 @@
+{
+  "name": "org.xtuml.canvas.language",
+  "about": "A textual persistence language supporting the ooaofgraphics metamodel.",
+  "description": "This project defines a textual language for implementing storage for the xtuml ooaofgraphics metamodel.\n\n- Supports an interface for persisting Java elements into the canvas language\n- Supports direct editing of graphical information with a feature rich xtext IDE\n- Supports import mechanism for associated xtuml ooaofooa elements \n",
+  "email": "fmaysoftware.com",
+  "repository_name": "org.xtuml.canvas.language",
+  "home": "https://github.com/FMAY-Software/org.xtuml.canvas.language",
+  "deliverables": [
+    {
+      "target": "None",
+      "url": "None"
+    }
+  ],
+  "demonstration": {
+    "url": ""
+  },
+  "owner": {
+    "first_name": "FMAY-Incubator",
+    "last_name": "",
+    "email": "travis.london@fmay.net",
+    "phone": "5203730727"
+  },
+  "clients": [
+    "travis.london@fmay.net"
+  ]
+}
