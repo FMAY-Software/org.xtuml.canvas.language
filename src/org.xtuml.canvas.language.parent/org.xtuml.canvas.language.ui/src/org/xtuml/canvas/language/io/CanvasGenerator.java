@@ -18,6 +18,8 @@ import org.xtuml.bp.core.Association_c;
 import org.xtuml.bp.core.ClassAsSubtype_c;
 import org.xtuml.bp.core.ClassStateMachine_c;
 import org.xtuml.bp.core.CreationTransition_c;
+import org.xtuml.bp.core.EnumerationDataType_c;
+import org.xtuml.bp.core.ExternalEntity_c;
 import org.xtuml.bp.core.Gd_c;
 import org.xtuml.bp.core.ImportedClass_c;
 import org.xtuml.bp.core.InstanceStateMachine_c;
@@ -26,9 +28,11 @@ import org.xtuml.bp.core.Package_c;
 import org.xtuml.bp.core.PackageableElement_c;
 import org.xtuml.bp.core.StateMachineState_c;
 import org.xtuml.bp.core.StateMachine_c;
+import org.xtuml.bp.core.StructuredDataType_c;
 import org.xtuml.bp.core.SubtypeSupertypeAssociation_c;
 import org.xtuml.bp.core.SystemModel_c;
 import org.xtuml.bp.core.Transition_c;
+import org.xtuml.bp.core.UserDataType_c;
 import org.xtuml.bp.core.common.ModelRoot;
 import org.xtuml.bp.core.common.NonRootModelElement;
 import org.xtuml.bp.core.common.PersistenceManager;
@@ -346,6 +350,18 @@ public class CanvasGenerator {
 		}
 		if (represents instanceof StateMachineState_c) {
 			return Ooatype_c.State;
+		}
+		if (represents instanceof UserDataType_c) {
+			return Ooatype_c.UserDataType;
+		}
+		if (represents instanceof EnumerationDataType_c) {
+			return Ooatype_c.EnumerationDataType;
+		}
+		if (represents instanceof StructuredDataType_c) {
+			return Ooatype_c.StructuredDataType;
+		}
+		if (represents instanceof ExternalEntity_c) {
+			return Ooatype_c.EE;
 		}
 		return Ooatype_c.OOA_UNINITIALIZED_ENUM;
 	}
