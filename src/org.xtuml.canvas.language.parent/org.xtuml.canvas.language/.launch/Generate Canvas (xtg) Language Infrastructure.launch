@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.emf.mwe2.launch.Mwe2LaunchConfigurationType">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/org.xtuml.canvas.language"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+<listEntry value="org.eclipse.debug.ui.launchGroup.debug"/>
+<listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.debug.core.ATTR_REFRESH_SCOPE" value="${working_set:&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;resources&gt;&#10;&lt;item path=&quot;/org.xtuml.canvas.language.parent&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/org.xtuml.canvas.language&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/org.xtuml.canvas.language.ide&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/org.xtuml.canvas.language.ui&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/org.xtuml.canvas.language.web&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/org.xtuml.canvas.language.target&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/org.xtuml.canvas.language.feature&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/org.xtuml.canvas.language.repository&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/org.xtuml.canvas.language.tests&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/org.xtuml.canvas.language.ui.tests&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/org.xtuml.canvas.language.tests&quot; type=&quot;4&quot;/&gt;&#10;&lt;item path=&quot;/org.xtuml.canvas.language.ui.tests&quot; type=&quot;4&quot;/&gt;&#10;;&lt;/resources&gt;}"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.eclipse.emf.mwe2.launch.runtime.Mwe2Launcher"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="org.xtuml.canvas.language.GenerateCanvas"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="org.xtuml.canvas.language"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx512m"/>
+</launchConfiguration>

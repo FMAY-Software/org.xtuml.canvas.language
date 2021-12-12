@@ -1,0 +1,95 @@
+grammar org.xtuml.canvas.language.Canvas with org.eclipse.xtext.common.Terminals
+
+generate canvas "http://www.xtuml.org/canvas/language/Canvas"
+
+Model:
+	semantics+=SemanticModel*
+	('render' ':' | 'render:') represents=STRING
+	properties=ModelProperties?
+	elements+=GraphicalElement*;
+
+SemanticModel:
+	'import' importURI=STRING;
+
+ModelProperties:
+	('properties' ':' | 'properties:')
+	('viewport' ':' | 'viewport:') point=Point
+	'zoom' zoom=INT
+;
+
+GraphicalElement:
+	Shapes | FloatingTexts | Connectors;
+
+Shapes:
+	{Shapes} ('shapes' ':' | 'shapes:') (shapes+=Shape)*;
+
+Shape:
+	{Shape} ('shape' ':' | 'shape:') name=ID props=ShapeProps? rect=Rectangle
+	('render' ':' | 'render:') represents=STRING;
+
+FloatingTexts:
+	{FloatingTexts} ('texts' ':' | 'texts:') (texts+=FloatingText)*;
+
+FloatingText:
+	{FloatingText} ('text' ':' | 'text:')
+	rect=Rectangle
+	associated=(Shape | Connector);
+
+ShapeProps:
+	{ShapeProps} ('properties' ':' | 'properties:')
+	container=Container?
+	color=Color?;
+
+Container:
+	{ShapeContainer} 'container' ('true' | 'false');
+
+Color:
+	'color' r=INT g=INT b=INT;
+
+Connectors:
+	{Connectors} ('connectors' ':' | 'connectors:') (connectors+=Connector)*;
+
+Connector:
+	('connector' ':' | 'connector:') name=ID props=ConnectorProps? polyline=Polyline?
+	anchors=Anchors?
+	('render' ':' | 'render:') represents=STRING;
+
+Anchors:
+	('anchors' ':' | 'anchors:') startAnchor=StartAnchor endAnchor=EndAnchor;
+
+StartAnchor:
+	('start' ':' | 'start:') point=Point anchor=Anchor?;
+
+EndAnchor:
+	('end' ':' | 'end') point=Point anchor=Anchor?;
+
+Anchor:
+	ShapeAnchorElement | ConnectorAnchorElement
+;
+
+ShapeAnchorElement:
+	('shapeAnchor' ':' | 'shapeAnchor:') element=[Shape];
+
+ConnectorAnchorElement:
+	('segmentAnchor' ':' | 'segmentAnchor:') element=[Connector]
+;
+
+ConnectorProps:
+	{ConnectorProps} ('properties' ':' | 'properties:')
+	color=Color?;
+
+Polyline:
+	{Polyline} ('polyline' ':' | 'polyline:') segments+=Segment*;
+
+Segment:
+	('segment' ':' | 'segment:') startPoint=Point ',' endPoint=Point;
+
+Point:
+	'x' x=INT 'y' y=INT;
+
+Rectangle:
+	('rectangle' ':' | 'rectangle:')
+	'x' x=INT
+	'y' y=INT
+	'width' w=INT
+	'height' h=INT;
