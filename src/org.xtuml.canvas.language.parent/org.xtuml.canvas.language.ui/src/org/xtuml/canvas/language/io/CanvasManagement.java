@@ -18,7 +18,7 @@ public class CanvasManagement {
 	public CanvasManagement() {
 		generator = new CanvasGenerator();
 		transactionListener = new PersistableModelComponentListener();
-		TransactionManager.getSingleton().addTransactionListener(transactionListener);
+		TransactionManager.getSingleton().addTransactionListener(transactionListener, true);
 	}
 
 	public void shutdown() {

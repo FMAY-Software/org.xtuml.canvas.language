@@ -15,14 +15,17 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.xtext.ui.resource.IResourceSetProvider;
 import org.xtuml.bp.core.Action_c;
 import org.xtuml.bp.core.Association_c;
+import org.xtuml.bp.core.ClassAsLink_c;
 import org.xtuml.bp.core.ClassAsSubtype_c;
 import org.xtuml.bp.core.ClassStateMachine_c;
 import org.xtuml.bp.core.CreationTransition_c;
+import org.xtuml.bp.core.DataType_c;
 import org.xtuml.bp.core.EnumerationDataType_c;
 import org.xtuml.bp.core.ExternalEntity_c;
 import org.xtuml.bp.core.Gd_c;
 import org.xtuml.bp.core.ImportedClass_c;
 import org.xtuml.bp.core.InstanceStateMachine_c;
+import org.xtuml.bp.core.LinkedAssociation_c;
 import org.xtuml.bp.core.ModelClass_c;
 import org.xtuml.bp.core.Package_c;
 import org.xtuml.bp.core.PackageableElement_c;
@@ -174,6 +177,7 @@ public class CanvasGenerator {
 				ge -> ((Graphelement_c) ge).getElementid().equals(shapeId));
 		GraphicalElement_c graphicalElem = GraphicalElement_c.getOneGD_GEOnR23(graphElem);
 		graphicalElem.setRepresents(representedElement);
+		graphicalElem.setOoa_id(representedElement.Get_ooa_id());
 		graphElem.setPositionx(shape.getRect().getX());
 		graphElem.setPositiony(shape.getRect().getY());
 		Graphnode_c node = Graphnode_c.getOneDIM_NDOnR301(graphElem);
@@ -220,6 +224,7 @@ public class CanvasGenerator {
 			Graphelement_c graphElem = Graphelement_c.GraphelementInstance(graphicsRoot,
 					ge -> ((Graphelement_c) ge).getElementid().equals(connId));
 			GraphicalElement_c graphicalElem = GraphicalElement_c.getOneGD_GEOnR23(graphElem);
+			graphicalElem.setOoa_id(representedElement.Get_ooa_id());
 			createSegments(Connector_c.getOneGD_CONOnR2(graphicalElem), connector);
 			graphicalElem.setRepresents(representedElement);
 		}
@@ -231,7 +236,7 @@ public class CanvasGenerator {
 		xtCon.unrelateAcrossR6From(old);
 		old.Dispose();
 		LineSegment_c lastSeg = null;
-		for(Segment segment : connector.getPolyline().getSegments()) {
+		for (Segment segment : connector.getPolyline().getSegments()) {
 			LineSegment_c xtSeg = new LineSegment_c(xtCon.getModelRoot());
 			xtSeg.relateAcrossR6To(xtCon);
 			xtSeg.relateAcrossR7ToFollows(lastSeg);
@@ -276,27 +281,60 @@ public class CanvasGenerator {
 	private NonRootModelElement getElementByPath(String represents) {
 		// if ISM or ASM parent is StateMachine
 		NonRootModelElement container = parent;
-		if(parent instanceof InstanceStateMachine_c) {
+		if (parent instanceof InstanceStateMachine_c) {
 			container = StateMachine_c.getOneSM_SMOnR517((InstanceStateMachine_c) container);
 		}
-		if(parent instanceof ClassStateMachine_c) {
+		if (parent instanceof ClassStateMachine_c) {
 			container = StateMachine_c.getOneSM_SMOnR517((ClassStateMachine_c) container);
 		}
 		List<?> children = PersistenceManager.getHierarchyMetaData().getChildren(container, false);
 		Optional<?> findAny = children.stream().filter(c -> getPath((NonRootModelElement) c).equals(represents))
 				.findAny();
 		if (findAny.isPresent()) {
-			return (NonRootModelElement) findAny.get();
+			NonRootModelElement result = (NonRootModelElement) findAny.get();
+			if (result instanceof DataType_c) {
+				UserDataType_c udt = UserDataType_c.getOneS_UDTOnR17((DataType_c) result);
+				if (udt != null) {
+					return udt;
+				}
+				EnumerationDataType_c edt = EnumerationDataType_c.getOneS_EDTOnR17((DataType_c) result);
+				if (edt != null) {
+					return edt;
+				}
+				StructuredDataType_c sdt = StructuredDataType_c.getOneS_SDTOnR17((DataType_c) result);
+				if (sdt != null) {
+					return sdt;
+				}
+			}
+			return result;
 		} else {
-			// if not found, check for subtypes
+			// if not found, check for situations where a subtype is used to represent the
+			// graphic
 			// NOTE: this may not be the most efficient approach
 			if (parent instanceof Package_c) {
 				Optional<ClassAsSubtype_c> potentialSub = Stream
-						.of(ClassAsSubtype_c.getManyR_SUBsOnR213(SubtypeSupertypeAssociation_c.getManyR_SUBSUPsOnR206(Association_c
-								.getManyR_RELsOnR8001(PackageableElement_c.getManyPE_PEsOnR8000((Package_c) parent)))))
+						.of(ClassAsSubtype_c.getManyR_SUBsOnR213(
+								SubtypeSupertypeAssociation_c.getManyR_SUBSUPsOnR206(Association_c.getManyR_RELsOnR8001(
+										PackageableElement_c.getManyPE_PEsOnR8000((Package_c) parent)))))
 						.filter(subsup -> getPath(subsup).equals(represents)).findFirst();
 				if (potentialSub.isPresent()) {
 					return potentialSub.get();
+				}
+				Optional<ClassAsLink_c> potentialLink = Stream
+						.of(ClassAsLink_c.getManyR_ASSRsOnR211(LinkedAssociation_c.getManyR_ASSOCsOnR206(Association_c
+								.getManyR_RELsOnR8001(PackageableElement_c.getManyPE_PEsOnR8000((Package_c) parent)))))
+						.filter(link -> getPath(link).equals(represents)).findFirst();
+				if (potentialLink.isPresent()) {
+					return potentialLink.get();
+				}
+			}
+			if (container instanceof StateMachine_c) {
+				Optional<CreationTransition_c> potentialCreationTrans = Stream
+						.of(CreationTransition_c
+								.getManySM_CRTXNsOnR507(Transition_c.getManySM_TXNsOnR505((StateMachine_c) container)))
+						.filter(crt -> getPath(crt).equals(represents)).findFirst();
+				if (potentialCreationTrans.isPresent()) {
+					return potentialCreationTrans.get();
 				}
 			}
 		}
@@ -306,7 +344,7 @@ public class CanvasGenerator {
 	private String getPath(NonRootModelElement ele) {
 		return ele.getPath();
 	}
-	
+
 	private UUID getToolId(Model_c xtModel, NonRootModelElement represents) {
 		ModelTool_c[] tools = ModelTool_c.getManyCT_MTLsOnR100(xtModel);
 		for (int i = 0; i < tools.length; i++) {
@@ -362,6 +400,9 @@ public class CanvasGenerator {
 		}
 		if (represents instanceof ExternalEntity_c) {
 			return Ooatype_c.EE;
+		}
+		if (represents instanceof ClassAsLink_c) {
+			return Ooatype_c.AssociativeLink;
 		}
 		return Ooatype_c.OOA_UNINITIALIZED_ENUM;
 	}

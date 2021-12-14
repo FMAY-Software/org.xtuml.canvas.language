@@ -135,7 +135,7 @@ public class CanvasWriter {
 
 	private String getNameFromPath(String represents) {
 		String[] parts = represents.split("::");
-		return parts[parts.length - 1].replaceAll("\s", "").replaceAll(":", "__").replaceAll("\\.", "_");
+		return parts[parts.length - 1].replaceAll("\s", "").replaceAll(":", "__").replaceAll("\\.", "_").replaceAll("-", "");
 	}
 
 	private Polyline createPolyline(Connector_c con) {
