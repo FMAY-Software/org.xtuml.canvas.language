@@ -7,6 +7,7 @@ import java.util.stream.Stream;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -26,6 +27,7 @@ import org.xtuml.bp.ui.canvas.Model_c;
 import org.xtuml.bp.ui.canvas.Ooaofgraphics;
 import org.xtuml.bp.ui.canvas.Shape_c;
 import org.xtuml.bp.ui.canvas.Waypoint_c;
+import org.xtuml.bp.ui.graphics.persistence.IGraphicalWriter;
 import org.xtuml.canvas.language.canvas.Anchors;
 import org.xtuml.canvas.language.canvas.CanvasFactory;
 import org.xtuml.canvas.language.canvas.Connector;
@@ -48,7 +50,7 @@ import org.xtuml.canvas.language.ui.internal.LanguageActivator;
 
 import com.google.inject.Inject;
 
-public class CanvasWriter {
+public class CanvasWriter implements IGraphicalWriter {
     
        
 	@Inject
@@ -56,6 +58,23 @@ public class CanvasWriter {
 	
 	CanvasFactory factory = CanvasFactory.eINSTANCE;
 	Model model = null;
+	
+	@Override
+	public void initialize() {
+		// nothing to do
+	}
+
+	@Override
+	public void write(NonRootModelElement model) {
+		IFile parentFile = model.getFile();
+		IFile xtGraphFile = parentFile.getParent()
+				.getFile(new Path(parentFile.getName().replaceAll(".xtuml", ".xtg")));
+		try {
+			write(model, xtGraphFile);
+		} catch (IOException | CoreException e) {
+			// TODO: implement logging
+		}
+	}
 	
 	public void write(NonRootModelElement diagramRepresents, IFile file) throws IOException, CoreException {
 		// create an empty file
@@ -312,4 +331,5 @@ public class CanvasWriter {
 		}
 		return shape;
 	}
+	
 }

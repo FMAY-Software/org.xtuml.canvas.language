@@ -8,6 +8,7 @@ import java.util.stream.Stream;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -52,6 +53,7 @@ import org.xtuml.bp.ui.canvas.Modeltype_c;
 import org.xtuml.bp.ui.canvas.Ooaofgraphics;
 import org.xtuml.bp.ui.canvas.Ooatype_c;
 import org.xtuml.bp.ui.canvas.Waypoint_c;
+import org.xtuml.bp.ui.graphics.persistence.IGraphicalLoader;
 import org.xtuml.canvas.language.canvas.Anchor;
 import org.xtuml.canvas.language.canvas.Connector;
 import org.xtuml.canvas.language.canvas.ConnectorAnchorElement;
@@ -65,7 +67,7 @@ import org.xtuml.canvas.language.ui.internal.LanguageActivator;
 
 import com.google.inject.Inject;
 
-public class CanvasGenerator {
+public class CanvasGenerator implements IGraphicalLoader {
 
 	@Inject
 	IResourceSetProvider resourceSetProvider;
@@ -73,6 +75,27 @@ public class CanvasGenerator {
 	ModelRoot graphicsRoot;
 	NonRootModelElement parent;
 	CanvasWriter writer = new CanvasWriter();
+
+	@Override
+	public void initialize() {
+		// nothing to do yet
+	}
+
+	@Override
+	public void load(Object container) {
+		if (container instanceof NonRootModelElement) {
+			NonRootModelElement parentElement = (NonRootModelElement) container;
+			IFile parentFile = parentElement.getFile();
+			IFile xtGraphFile = parentFile.getParent()
+					.getFile(new Path(parentFile.getName().replaceAll(".xtuml", ".xtg")));
+			try {
+				generate(parentElement, Ooaofgraphics.getInstance(parentElement.getModelRoot().getId()),
+						xtGraphFile);
+			} catch (IOException | CoreException e) {
+				// TODO: implement logging
+			}
+		}
+	}
 
 	public void generate(NonRootModelElement parentElement, ModelRoot destinationRoot, IFile file)
 			throws IOException, CoreException {
