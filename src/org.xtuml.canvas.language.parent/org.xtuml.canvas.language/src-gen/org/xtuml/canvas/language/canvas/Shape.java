@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtuml.canvas.language.canvas.Shape#getName <em>Name</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.Shape#getProps <em>Props</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.Shape#getRect <em>Rect</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.Shape#getText <em>Text</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.Shape#getRepresents <em>Represents</em>}</li>
  * </ul>
  *
@@ -91,6 +92,28 @@ public interface Shape extends EObject
    * @generated
    */
   void setRect(Rectangle value);
+
+  /**
+   * Returns the value of the '<em><b>Text</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Text</em>' containment reference.
+   * @see #setText(FloatingText)
+   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getShape_Text()
+   * @model containment="true"
+   * @generated
+   */
+  FloatingText getText();
+
+  /**
+   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Shape#getText <em>Text</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Text</em>' containment reference.
+   * @see #getText()
+   * @generated
+   */
+  void setText(FloatingText value);
 
   /**
    * Returns the value of the '<em><b>Represents</b></em>' attribute.

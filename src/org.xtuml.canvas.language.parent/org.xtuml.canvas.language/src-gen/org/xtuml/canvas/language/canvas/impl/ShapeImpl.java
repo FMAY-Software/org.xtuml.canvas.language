@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtuml.canvas.language.canvas.CanvasPackage;
+import org.xtuml.canvas.language.canvas.FloatingText;
 import org.xtuml.canvas.language.canvas.Rectangle;
 import org.xtuml.canvas.language.canvas.Shape;
 import org.xtuml.canvas.language.canvas.ShapeProps;
@@ -28,6 +29,7 @@ import org.xtuml.canvas.language.canvas.ShapeProps;
  *   <li>{@link org.xtuml.canvas.language.canvas.impl.ShapeImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.impl.ShapeImpl#getProps <em>Props</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.impl.ShapeImpl#getRect <em>Rect</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.impl.ShapeImpl#getText <em>Text</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.impl.ShapeImpl#getRepresents <em>Represents</em>}</li>
  * </ul>
  *
@@ -74,6 +76,16 @@ public class ShapeImpl extends MinimalEObjectImpl.Container implements Shape
    * @ordered
    */
   protected Rectangle rect;
+
+  /**
+   * The cached value of the '{@link #getText() <em>Text</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getText()
+   * @generated
+   * @ordered
+   */
+  protected FloatingText text;
 
   /**
    * The default value of the '{@link #getRepresents() <em>Represents</em>}' attribute.
@@ -247,6 +259,56 @@ public class ShapeImpl extends MinimalEObjectImpl.Container implements Shape
    * @generated
    */
   @Override
+  public FloatingText getText()
+  {
+    return text;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetText(FloatingText newText, NotificationChain msgs)
+  {
+    FloatingText oldText = text;
+    text = newText;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CanvasPackage.SHAPE__TEXT, oldText, newText);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setText(FloatingText newText)
+  {
+    if (newText != text)
+    {
+      NotificationChain msgs = null;
+      if (text != null)
+        msgs = ((InternalEObject)text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CanvasPackage.SHAPE__TEXT, null, msgs);
+      if (newText != null)
+        msgs = ((InternalEObject)newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CanvasPackage.SHAPE__TEXT, null, msgs);
+      msgs = basicSetText(newText, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.SHAPE__TEXT, newText, newText));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getRepresents()
   {
     return represents;
@@ -280,6 +342,8 @@ public class ShapeImpl extends MinimalEObjectImpl.Container implements Shape
         return basicSetProps(null, msgs);
       case CanvasPackage.SHAPE__RECT:
         return basicSetRect(null, msgs);
+      case CanvasPackage.SHAPE__TEXT:
+        return basicSetText(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -300,6 +364,8 @@ public class ShapeImpl extends MinimalEObjectImpl.Container implements Shape
         return getProps();
       case CanvasPackage.SHAPE__RECT:
         return getRect();
+      case CanvasPackage.SHAPE__TEXT:
+        return getText();
       case CanvasPackage.SHAPE__REPRESENTS:
         return getRepresents();
     }
@@ -324,6 +390,9 @@ public class ShapeImpl extends MinimalEObjectImpl.Container implements Shape
         return;
       case CanvasPackage.SHAPE__RECT:
         setRect((Rectangle)newValue);
+        return;
+      case CanvasPackage.SHAPE__TEXT:
+        setText((FloatingText)newValue);
         return;
       case CanvasPackage.SHAPE__REPRESENTS:
         setRepresents((String)newValue);
@@ -351,6 +420,9 @@ public class ShapeImpl extends MinimalEObjectImpl.Container implements Shape
       case CanvasPackage.SHAPE__RECT:
         setRect((Rectangle)null);
         return;
+      case CanvasPackage.SHAPE__TEXT:
+        setText((FloatingText)null);
+        return;
       case CanvasPackage.SHAPE__REPRESENTS:
         setRepresents(REPRESENTS_EDEFAULT);
         return;
@@ -374,6 +446,8 @@ public class ShapeImpl extends MinimalEObjectImpl.Container implements Shape
         return props != null;
       case CanvasPackage.SHAPE__RECT:
         return rect != null;
+      case CanvasPackage.SHAPE__TEXT:
+        return text != null;
       case CanvasPackage.SHAPE__REPRESENTS:
         return REPRESENTS_EDEFAULT == null ? represents != null : !REPRESENTS_EDEFAULT.equals(represents);
     }

@@ -7,7 +7,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -26,7 +25,7 @@ import org.xtuml.canvas.language.canvas.Rectangle;
  * </p>
  * <ul>
  *   <li>{@link org.xtuml.canvas.language.canvas.impl.FloatingTextImpl#getRect <em>Rect</em>}</li>
- *   <li>{@link org.xtuml.canvas.language.canvas.impl.FloatingTextImpl#getAssociated <em>Associated</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.impl.FloatingTextImpl#getEnd <em>End</em>}</li>
  * </ul>
  *
  * @generated
@@ -44,14 +43,24 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
   protected Rectangle rect;
 
   /**
-   * The cached value of the '{@link #getAssociated() <em>Associated</em>}' containment reference.
+   * The default value of the '{@link #getEnd() <em>End</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAssociated()
+   * @see #getEnd()
    * @generated
    * @ordered
    */
-  protected EObject associated;
+  protected static final String END_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getEnd() <em>End</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEnd()
+   * @generated
+   * @ordered
+   */
+  protected String end = END_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -130,26 +139,9 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
    * @generated
    */
   @Override
-  public EObject getAssociated()
+  public String getEnd()
   {
-    return associated;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetAssociated(EObject newAssociated, NotificationChain msgs)
-  {
-    EObject oldAssociated = associated;
-    associated = newAssociated;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CanvasPackage.FLOATING_TEXT__ASSOCIATED, oldAssociated, newAssociated);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+    return end;
   }
 
   /**
@@ -158,20 +150,12 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
    * @generated
    */
   @Override
-  public void setAssociated(EObject newAssociated)
+  public void setEnd(String newEnd)
   {
-    if (newAssociated != associated)
-    {
-      NotificationChain msgs = null;
-      if (associated != null)
-        msgs = ((InternalEObject)associated).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CanvasPackage.FLOATING_TEXT__ASSOCIATED, null, msgs);
-      if (newAssociated != null)
-        msgs = ((InternalEObject)newAssociated).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CanvasPackage.FLOATING_TEXT__ASSOCIATED, null, msgs);
-      msgs = basicSetAssociated(newAssociated, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.FLOATING_TEXT__ASSOCIATED, newAssociated, newAssociated));
+    String oldEnd = end;
+    end = newEnd;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.FLOATING_TEXT__END, oldEnd, end));
   }
 
   /**
@@ -186,8 +170,6 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
     {
       case CanvasPackage.FLOATING_TEXT__RECT:
         return basicSetRect(null, msgs);
-      case CanvasPackage.FLOATING_TEXT__ASSOCIATED:
-        return basicSetAssociated(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -204,8 +186,8 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
     {
       case CanvasPackage.FLOATING_TEXT__RECT:
         return getRect();
-      case CanvasPackage.FLOATING_TEXT__ASSOCIATED:
-        return getAssociated();
+      case CanvasPackage.FLOATING_TEXT__END:
+        return getEnd();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -223,8 +205,8 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
       case CanvasPackage.FLOATING_TEXT__RECT:
         setRect((Rectangle)newValue);
         return;
-      case CanvasPackage.FLOATING_TEXT__ASSOCIATED:
-        setAssociated((EObject)newValue);
+      case CanvasPackage.FLOATING_TEXT__END:
+        setEnd((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -243,8 +225,8 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
       case CanvasPackage.FLOATING_TEXT__RECT:
         setRect((Rectangle)null);
         return;
-      case CanvasPackage.FLOATING_TEXT__ASSOCIATED:
-        setAssociated((EObject)null);
+      case CanvasPackage.FLOATING_TEXT__END:
+        setEnd(END_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -262,10 +244,27 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
     {
       case CanvasPackage.FLOATING_TEXT__RECT:
         return rect != null;
-      case CanvasPackage.FLOATING_TEXT__ASSOCIATED:
-        return associated != null;
+      case CanvasPackage.FLOATING_TEXT__END:
+        return END_EDEFAULT == null ? end != null : !END_EDEFAULT.equals(end);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (end: ");
+    result.append(end);
+    result.append(')');
+    return result.toString();
   }
 
 } //FloatingTextImpl

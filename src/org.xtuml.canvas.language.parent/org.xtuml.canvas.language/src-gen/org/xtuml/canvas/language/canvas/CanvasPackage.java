@@ -262,13 +262,22 @@ public interface CanvasPackage extends EPackage
   int SHAPE__RECT = 2;
 
   /**
+   * The feature id for the '<em><b>Text</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHAPE__TEXT = 3;
+
+  /**
    * The feature id for the '<em><b>Represents</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SHAPE__REPRESENTS = 3;
+  int SHAPE__REPRESENTS = 4;
 
   /**
    * The number of structural features of the '<em>Shape</em>' class.
@@ -277,7 +286,7 @@ public interface CanvasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHAPE_FEATURE_COUNT = 4;
+  int SHAPE_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link org.xtuml.canvas.language.canvas.impl.FloatingTextsImpl <em>Floating Texts</em>}' class.
@@ -296,7 +305,7 @@ public interface CanvasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOATING_TEXTS__TEXTS = GRAPHICAL_ELEMENT_FEATURE_COUNT + 0;
+  int FLOATING_TEXTS__TEXTS = 0;
 
   /**
    * The number of structural features of the '<em>Floating Texts</em>' class.
@@ -305,7 +314,7 @@ public interface CanvasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOATING_TEXTS_FEATURE_COUNT = GRAPHICAL_ELEMENT_FEATURE_COUNT + 1;
+  int FLOATING_TEXTS_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtuml.canvas.language.canvas.impl.FloatingTextImpl <em>Floating Text</em>}' class.
@@ -327,13 +336,13 @@ public interface CanvasPackage extends EPackage
   int FLOATING_TEXT__RECT = 0;
 
   /**
-   * The feature id for the '<em><b>Associated</b></em>' containment reference.
+   * The feature id for the '<em><b>End</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FLOATING_TEXT__ASSOCIATED = 1;
+  int FLOATING_TEXT__END = 1;
 
   /**
    * The number of structural features of the '<em>Floating Text</em>' class.
@@ -521,13 +530,22 @@ public interface CanvasPackage extends EPackage
   int CONNECTOR__ANCHORS = 3;
 
   /**
+   * The feature id for the '<em><b>Texts</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONNECTOR__TEXTS = 4;
+
+  /**
    * The feature id for the '<em><b>Represents</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONNECTOR__REPRESENTS = 4;
+  int CONNECTOR__REPRESENTS = 5;
 
   /**
    * The number of structural features of the '<em>Connector</em>' class.
@@ -536,7 +554,7 @@ public interface CanvasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTOR_FEATURE_COUNT = 5;
+  int CONNECTOR_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link org.xtuml.canvas.language.canvas.impl.AnchorsImpl <em>Anchors</em>}' class.
@@ -1111,6 +1129,17 @@ public interface CanvasPackage extends EPackage
   EReference getShape_Rect();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.xtuml.canvas.language.canvas.Shape#getText <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Text</em>'.
+   * @see org.xtuml.canvas.language.canvas.Shape#getText()
+   * @see #getShape()
+   * @generated
+   */
+  EReference getShape_Text();
+
+  /**
    * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Shape#getRepresents <em>Represents</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1164,15 +1193,15 @@ public interface CanvasPackage extends EPackage
   EReference getFloatingText_Rect();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtuml.canvas.language.canvas.FloatingText#getAssociated <em>Associated</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.FloatingText#getEnd <em>End</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Associated</em>'.
-   * @see org.xtuml.canvas.language.canvas.FloatingText#getAssociated()
+   * @return the meta object for the attribute '<em>End</em>'.
+   * @see org.xtuml.canvas.language.canvas.FloatingText#getEnd()
    * @see #getFloatingText()
    * @generated
    */
-  EReference getFloatingText_Associated();
+  EAttribute getFloatingText_End();
 
   /**
    * Returns the meta object for class '{@link org.xtuml.canvas.language.canvas.ShapeProps <em>Shape Props</em>}'.
@@ -1333,6 +1362,17 @@ public interface CanvasPackage extends EPackage
    * @generated
    */
   EReference getConnector_Anchors();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtuml.canvas.language.canvas.Connector#getTexts <em>Texts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Texts</em>'.
+   * @see org.xtuml.canvas.language.canvas.Connector#getTexts()
+   * @see #getConnector()
+   * @generated
+   */
+  EReference getConnector_Texts();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Connector#getRepresents <em>Represents</em>}'.
@@ -1835,6 +1875,14 @@ public interface CanvasPackage extends EPackage
     EReference SHAPE__RECT = eINSTANCE.getShape_Rect();
 
     /**
+     * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SHAPE__TEXT = eINSTANCE.getShape_Text();
+
+    /**
      * The meta object literal for the '<em><b>Represents</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1879,12 +1927,12 @@ public interface CanvasPackage extends EPackage
     EReference FLOATING_TEXT__RECT = eINSTANCE.getFloatingText_Rect();
 
     /**
-     * The meta object literal for the '<em><b>Associated</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>End</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FLOATING_TEXT__ASSOCIATED = eINSTANCE.getFloatingText_Associated();
+    EAttribute FLOATING_TEXT__END = eINSTANCE.getFloatingText_End();
 
     /**
      * The meta object literal for the '{@link org.xtuml.canvas.language.canvas.impl.ShapePropsImpl <em>Shape Props</em>}' class.
@@ -2015,6 +2063,14 @@ public interface CanvasPackage extends EPackage
      * @generated
      */
     EReference CONNECTOR__ANCHORS = eINSTANCE.getConnector_Anchors();
+
+    /**
+     * The meta object literal for the '<em><b>Texts</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONNECTOR__TEXTS = eINSTANCE.getConnector_Texts();
 
     /**
      * The meta object literal for the '<em><b>Represents</b></em>' attribute feature.

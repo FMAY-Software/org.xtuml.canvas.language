@@ -12,6 +12,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -32,7 +34,7 @@ import org.xtuml.canvas.language.canvas.FloatingTexts;
  *
  * @generated
  */
-public class FloatingTextsImpl extends GraphicalElementImpl implements FloatingTexts
+public class FloatingTextsImpl extends MinimalEObjectImpl.Container implements FloatingTexts
 {
   /**
    * The cached value of the '{@link #getTexts() <em>Texts</em>}' containment reference list.

@@ -26,7 +26,7 @@ public class CanvasSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_ConnectorAnchorElement_SegmentAnchorKeyword_0_1_or___SegmentAnchorKeyword_0_0_0_ColonKeyword_0_0_1__;
 	protected AbstractElementAlias match_ConnectorProps_PropertiesKeyword_1_1_or___PropertiesKeyword_1_0_0_ColonKeyword_1_0_1__;
 	protected AbstractElementAlias match_Connector_ConnectorKeyword_0_1_or___ConnectorKeyword_0_0_0_ColonKeyword_0_0_1__;
-	protected AbstractElementAlias match_Connector_RenderKeyword_5_1_or___RenderKeyword_5_0_0_ColonKeyword_5_0_1__;
+	protected AbstractElementAlias match_Connector_RenderKeyword_6_1_or___RenderKeyword_6_0_0_ColonKeyword_6_0_1__;
 	protected AbstractElementAlias match_Connectors_ConnectorsKeyword_1_1_or___ConnectorsKeyword_1_0_0_ColonKeyword_1_0_1__;
 	protected AbstractElementAlias match_Container_FalseKeyword_2_1_or_TrueKeyword_2_0;
 	protected AbstractElementAlias match_EndAnchor_EndKeyword_0_1_or___EndKeyword_0_0_0_ColonKeyword_0_0_1__;
@@ -40,7 +40,7 @@ public class CanvasSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Segment_SegmentKeyword_0_1_or___SegmentKeyword_0_0_0_ColonKeyword_0_0_1__;
 	protected AbstractElementAlias match_ShapeAnchorElement_ShapeAnchorKeyword_0_1_or___ShapeAnchorKeyword_0_0_0_ColonKeyword_0_0_1__;
 	protected AbstractElementAlias match_ShapeProps_PropertiesKeyword_1_1_or___PropertiesKeyword_1_0_0_ColonKeyword_1_0_1__;
-	protected AbstractElementAlias match_Shape_RenderKeyword_5_1_or___RenderKeyword_5_0_0_ColonKeyword_5_0_1__;
+	protected AbstractElementAlias match_Shape_RenderKeyword_6_1_or___RenderKeyword_6_0_0_ColonKeyword_6_0_1__;
 	protected AbstractElementAlias match_Shape_ShapeKeyword_1_1_or___ShapeKeyword_1_0_0_ColonKeyword_1_0_1__;
 	protected AbstractElementAlias match_Shapes_ShapesKeyword_1_1_or___ShapesKeyword_1_0_0_ColonKeyword_1_0_1__;
 	protected AbstractElementAlias match_StartAnchor_StartKeyword_0_1_or___StartKeyword_0_0_0_ColonKeyword_0_0_1__;
@@ -52,7 +52,7 @@ public class CanvasSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_ConnectorAnchorElement_SegmentAnchorKeyword_0_1_or___SegmentAnchorKeyword_0_0_0_ColonKeyword_0_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectorAnchorElementAccess().getSegmentAnchorKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getConnectorAnchorElementAccess().getColonKeyword_0_0_1())), new TokenAlias(false, false, grammarAccess.getConnectorAnchorElementAccess().getSegmentAnchorKeyword_0_1()));
 		match_ConnectorProps_PropertiesKeyword_1_1_or___PropertiesKeyword_1_0_0_ColonKeyword_1_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectorPropsAccess().getPropertiesKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getConnectorPropsAccess().getColonKeyword_1_0_1())), new TokenAlias(false, false, grammarAccess.getConnectorPropsAccess().getPropertiesKeyword_1_1()));
 		match_Connector_ConnectorKeyword_0_1_or___ConnectorKeyword_0_0_0_ColonKeyword_0_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectorAccess().getConnectorKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getConnectorAccess().getColonKeyword_0_0_1())), new TokenAlias(false, false, grammarAccess.getConnectorAccess().getConnectorKeyword_0_1()));
-		match_Connector_RenderKeyword_5_1_or___RenderKeyword_5_0_0_ColonKeyword_5_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectorAccess().getRenderKeyword_5_0_0()), new TokenAlias(false, false, grammarAccess.getConnectorAccess().getColonKeyword_5_0_1())), new TokenAlias(false, false, grammarAccess.getConnectorAccess().getRenderKeyword_5_1()));
+		match_Connector_RenderKeyword_6_1_or___RenderKeyword_6_0_0_ColonKeyword_6_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectorAccess().getRenderKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getConnectorAccess().getColonKeyword_6_0_1())), new TokenAlias(false, false, grammarAccess.getConnectorAccess().getRenderKeyword_6_1()));
 		match_Connectors_ConnectorsKeyword_1_1_or___ConnectorsKeyword_1_0_0_ColonKeyword_1_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectorsAccess().getConnectorsKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getConnectorsAccess().getColonKeyword_1_0_1())), new TokenAlias(false, false, grammarAccess.getConnectorsAccess().getConnectorsKeyword_1_1()));
 		match_Container_FalseKeyword_2_1_or_TrueKeyword_2_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getContainerAccess().getFalseKeyword_2_1()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getTrueKeyword_2_0()));
 		match_EndAnchor_EndKeyword_0_1_or___EndKeyword_0_0_0_ColonKeyword_0_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getEndAnchorAccess().getEndKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getEndAnchorAccess().getColonKeyword_0_0_1())), new TokenAlias(false, false, grammarAccess.getEndAnchorAccess().getEndKeyword_0_1()));
@@ -66,7 +66,7 @@ public class CanvasSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Segment_SegmentKeyword_0_1_or___SegmentKeyword_0_0_0_ColonKeyword_0_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getSegmentAccess().getSegmentKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getSegmentAccess().getColonKeyword_0_0_1())), new TokenAlias(false, false, grammarAccess.getSegmentAccess().getSegmentKeyword_0_1()));
 		match_ShapeAnchorElement_ShapeAnchorKeyword_0_1_or___ShapeAnchorKeyword_0_0_0_ColonKeyword_0_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getShapeAnchorElementAccess().getShapeAnchorKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getShapeAnchorElementAccess().getColonKeyword_0_0_1())), new TokenAlias(false, false, grammarAccess.getShapeAnchorElementAccess().getShapeAnchorKeyword_0_1()));
 		match_ShapeProps_PropertiesKeyword_1_1_or___PropertiesKeyword_1_0_0_ColonKeyword_1_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getShapePropsAccess().getPropertiesKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getShapePropsAccess().getColonKeyword_1_0_1())), new TokenAlias(false, false, grammarAccess.getShapePropsAccess().getPropertiesKeyword_1_1()));
-		match_Shape_RenderKeyword_5_1_or___RenderKeyword_5_0_0_ColonKeyword_5_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getShapeAccess().getRenderKeyword_5_0_0()), new TokenAlias(false, false, grammarAccess.getShapeAccess().getColonKeyword_5_0_1())), new TokenAlias(false, false, grammarAccess.getShapeAccess().getRenderKeyword_5_1()));
+		match_Shape_RenderKeyword_6_1_or___RenderKeyword_6_0_0_ColonKeyword_6_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getShapeAccess().getRenderKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getShapeAccess().getColonKeyword_6_0_1())), new TokenAlias(false, false, grammarAccess.getShapeAccess().getRenderKeyword_6_1()));
 		match_Shape_ShapeKeyword_1_1_or___ShapeKeyword_1_0_0_ColonKeyword_1_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getShapeAccess().getShapeKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getShapeAccess().getColonKeyword_1_0_1())), new TokenAlias(false, false, grammarAccess.getShapeAccess().getShapeKeyword_1_1()));
 		match_Shapes_ShapesKeyword_1_1_or___ShapesKeyword_1_0_0_ColonKeyword_1_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getShapesAccess().getShapesKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getShapesAccess().getColonKeyword_1_0_1())), new TokenAlias(false, false, grammarAccess.getShapesAccess().getShapesKeyword_1_1()));
 		match_StartAnchor_StartKeyword_0_1_or___StartKeyword_0_0_0_ColonKeyword_0_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStartAnchorAccess().getStartKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getStartAnchorAccess().getColonKeyword_0_0_1())), new TokenAlias(false, false, grammarAccess.getStartAnchorAccess().getStartKeyword_0_1()));
@@ -92,8 +92,8 @@ public class CanvasSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_ConnectorProps_PropertiesKeyword_1_1_or___PropertiesKeyword_1_0_0_ColonKeyword_1_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Connector_ConnectorKeyword_0_1_or___ConnectorKeyword_0_0_0_ColonKeyword_0_0_1__.equals(syntax))
 				emit_Connector_ConnectorKeyword_0_1_or___ConnectorKeyword_0_0_0_ColonKeyword_0_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Connector_RenderKeyword_5_1_or___RenderKeyword_5_0_0_ColonKeyword_5_0_1__.equals(syntax))
-				emit_Connector_RenderKeyword_5_1_or___RenderKeyword_5_0_0_ColonKeyword_5_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Connector_RenderKeyword_6_1_or___RenderKeyword_6_0_0_ColonKeyword_6_0_1__.equals(syntax))
+				emit_Connector_RenderKeyword_6_1_or___RenderKeyword_6_0_0_ColonKeyword_6_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Connectors_ConnectorsKeyword_1_1_or___ConnectorsKeyword_1_0_0_ColonKeyword_1_0_1__.equals(syntax))
 				emit_Connectors_ConnectorsKeyword_1_1_or___ConnectorsKeyword_1_0_0_ColonKeyword_1_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Container_FalseKeyword_2_1_or_TrueKeyword_2_0.equals(syntax))
@@ -120,8 +120,8 @@ public class CanvasSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_ShapeAnchorElement_ShapeAnchorKeyword_0_1_or___ShapeAnchorKeyword_0_0_0_ColonKeyword_0_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ShapeProps_PropertiesKeyword_1_1_or___PropertiesKeyword_1_0_0_ColonKeyword_1_0_1__.equals(syntax))
 				emit_ShapeProps_PropertiesKeyword_1_1_or___PropertiesKeyword_1_0_0_ColonKeyword_1_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Shape_RenderKeyword_5_1_or___RenderKeyword_5_0_0_ColonKeyword_5_0_1__.equals(syntax))
-				emit_Shape_RenderKeyword_5_1_or___RenderKeyword_5_0_0_ColonKeyword_5_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Shape_RenderKeyword_6_1_or___RenderKeyword_6_0_0_ColonKeyword_6_0_1__.equals(syntax))
+				emit_Shape_RenderKeyword_6_1_or___RenderKeyword_6_0_0_ColonKeyword_6_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Shape_ShapeKeyword_1_1_or___ShapeKeyword_1_0_0_ColonKeyword_1_0_1__.equals(syntax))
 				emit_Shape_ShapeKeyword_1_1_or___ShapeKeyword_1_0_0_ColonKeyword_1_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Shapes_ShapesKeyword_1_1_or___ShapesKeyword_1_0_0_ColonKeyword_1_0_1__.equals(syntax))
@@ -182,12 +182,9 @@ public class CanvasSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('render' ':') | 'render:'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     anchors=Anchors (ambiguity) represents=STRING
-	 *     name=ID (ambiguity) represents=STRING
-	 *     polyline=Polyline (ambiguity) represents=STRING
-	 *     props=ConnectorProps (ambiguity) represents=STRING
+	 *     texts=FloatingTexts (ambiguity) represents=STRING
 	 */
-	protected void emit_Connector_RenderKeyword_5_1_or___RenderKeyword_5_0_0_ColonKeyword_5_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Connector_RenderKeyword_6_1_or___RenderKeyword_6_0_0_ColonKeyword_6_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -346,8 +343,9 @@ public class CanvasSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     rect=Rectangle (ambiguity) represents=STRING
+	 *     text=FloatingText (ambiguity) represents=STRING
 	 */
-	protected void emit_Shape_RenderKeyword_5_1_or___RenderKeyword_5_0_0_ColonKeyword_5_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Shape_RenderKeyword_6_1_or___RenderKeyword_6_0_0_ColonKeyword_6_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

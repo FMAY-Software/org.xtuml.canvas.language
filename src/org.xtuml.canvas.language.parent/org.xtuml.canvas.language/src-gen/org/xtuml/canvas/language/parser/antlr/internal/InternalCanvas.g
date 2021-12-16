@@ -332,20 +332,11 @@ ruleGraphicalElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getGraphicalElementAccess().getFloatingTextsParserRuleCall_1());
+			newCompositeNode(grammarAccess.getGraphicalElementAccess().getConnectorsParserRuleCall_1());
 		}
-		this_FloatingTexts_1=ruleFloatingTexts
+		this_Connectors_1=ruleConnectors
 		{
-			$current = $this_FloatingTexts_1.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getGraphicalElementAccess().getConnectorsParserRuleCall_2());
-		}
-		this_Connectors_2=ruleConnectors
-		{
-			$current = $this_Connectors_2.current;
+			$current = $this_Connectors_1.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -511,26 +502,45 @@ ruleShape returns [EObject current=null]
 		)
 		(
 			(
-				otherlv_7='render'
 				{
-					newLeafNode(otherlv_7, grammarAccess.getShapeAccess().getRenderKeyword_5_0_0());
+					newCompositeNode(grammarAccess.getShapeAccess().getTextFloatingTextParserRuleCall_5_0());
 				}
-				otherlv_8=':'
+				lv_text_7_0=ruleFloatingText
 				{
-					newLeafNode(otherlv_8, grammarAccess.getShapeAccess().getColonKeyword_5_0_1());
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getShapeRule());
+					}
+					set(
+						$current,
+						"text",
+						lv_text_7_0,
+						"org.xtuml.canvas.language.Canvas.FloatingText");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		(
+			(
+				otherlv_8='render'
+				{
+					newLeafNode(otherlv_8, grammarAccess.getShapeAccess().getRenderKeyword_6_0_0());
+				}
+				otherlv_9=':'
+				{
+					newLeafNode(otherlv_9, grammarAccess.getShapeAccess().getColonKeyword_6_0_1());
 				}
 			)
 			    |
-			otherlv_9='render:'
+			otherlv_10='render:'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getShapeAccess().getRenderKeyword_5_1());
+				newLeafNode(otherlv_10, grammarAccess.getShapeAccess().getRenderKeyword_6_1());
 			}
 		)
 		(
 			(
-				lv_represents_10_0=RULE_STRING
+				lv_represents_11_0=RULE_STRING
 				{
-					newLeafNode(lv_represents_10_0, grammarAccess.getShapeAccess().getRepresentsSTRINGTerminalRuleCall_6_0());
+					newLeafNode(lv_represents_11_0, grammarAccess.getShapeAccess().getRepresentsSTRINGTerminalRuleCall_7_0());
 				}
 				{
 					if ($current==null) {
@@ -539,7 +549,7 @@ ruleShape returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"represents",
-						lv_represents_10_0,
+						lv_represents_11_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
@@ -670,41 +680,89 @@ ruleFloatingText returns [EObject current=null]
 		)
 		(
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getFloatingTextAccess().getAssociatedShapeParserRuleCall_3_0_0());
+				{
+					newCompositeNode(grammarAccess.getFloatingTextAccess().getEndEnumEndParserRuleCall_3_0());
+				}
+				lv_end_5_0=ruleEnumEnd
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getFloatingTextRule());
 					}
-					lv_associated_5_1=ruleShape
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getFloatingTextRule());
-						}
-						set(
-							$current,
-							"associated",
-							lv_associated_5_1,
-							"org.xtuml.canvas.language.Canvas.Shape");
-						afterParserOrEnumRuleCall();
-					}
-					    |
-					{
-						newCompositeNode(grammarAccess.getFloatingTextAccess().getAssociatedConnectorParserRuleCall_3_0_1());
-					}
-					lv_associated_5_2=ruleConnector
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getFloatingTextRule());
-						}
-						set(
-							$current,
-							"associated",
-							lv_associated_5_2,
-							"org.xtuml.canvas.language.Canvas.Connector");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					set(
+						$current,
+						"end",
+						lv_end_5_0,
+						"org.xtuml.canvas.language.Canvas.EnumEnd");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleEnumEnd
+entryRuleEnumEnd returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getEnumEndRule()); }
+	iv_ruleEnumEnd=ruleEnumEnd
+	{ $current=$iv_ruleEnumEnd.current.getText(); }
+	EOF;
+
+// Rule EnumEnd
+ruleEnumEnd returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		kw='start'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getEnumEndAccess().getStartKeyword_0());
+		}
+		    |
+		kw='end'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getEnumEndAccess().getEndKeyword_1());
+		}
+		    |
+		kw='middle'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getEnumEndAccess().getMiddleKeyword_2());
+		}
+		    |
+		kw='end_fixed'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getEnumEndAccess().getEnd_fixedKeyword_3());
+		}
+		    |
+		kw='start_fixed'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getEnumEndAccess().getStart_fixedKeyword_4());
+		}
+		    |
+		kw='none'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getEnumEndAccess().getNoneKeyword_5());
+		}
+		    |
+		kw='floating'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getEnumEndAccess().getFloatingKeyword_6());
+		}
+		    |
+		kw='additional'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getEnumEndAccess().getAdditionalKeyword_7());
+		}
 	)
 ;
 
@@ -1079,26 +1137,45 @@ ruleConnector returns [EObject current=null]
 		)?
 		(
 			(
-				otherlv_7='render'
 				{
-					newLeafNode(otherlv_7, grammarAccess.getConnectorAccess().getRenderKeyword_5_0_0());
+					newCompositeNode(grammarAccess.getConnectorAccess().getTextsFloatingTextsParserRuleCall_5_0());
 				}
-				otherlv_8=':'
+				lv_texts_7_0=ruleFloatingTexts
 				{
-					newLeafNode(otherlv_8, grammarAccess.getConnectorAccess().getColonKeyword_5_0_1());
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConnectorRule());
+					}
+					set(
+						$current,
+						"texts",
+						lv_texts_7_0,
+						"org.xtuml.canvas.language.Canvas.FloatingTexts");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				otherlv_8='render'
+				{
+					newLeafNode(otherlv_8, grammarAccess.getConnectorAccess().getRenderKeyword_6_0_0());
+				}
+				otherlv_9=':'
+				{
+					newLeafNode(otherlv_9, grammarAccess.getConnectorAccess().getColonKeyword_6_0_1());
 				}
 			)
 			    |
-			otherlv_9='render:'
+			otherlv_10='render:'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getConnectorAccess().getRenderKeyword_5_1());
+				newLeafNode(otherlv_10, grammarAccess.getConnectorAccess().getRenderKeyword_6_1());
 			}
 		)
 		(
 			(
-				lv_represents_10_0=RULE_STRING
+				lv_represents_11_0=RULE_STRING
 				{
-					newLeafNode(lv_represents_10_0, grammarAccess.getConnectorAccess().getRepresentsSTRINGTerminalRuleCall_6_0());
+					newLeafNode(lv_represents_11_0, grammarAccess.getConnectorAccess().getRepresentsSTRINGTerminalRuleCall_7_0());
 				}
 				{
 					if ($current==null) {
@@ -1107,7 +1184,7 @@ ruleConnector returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"represents",
-						lv_represents_10_0,
+						lv_represents_11_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)

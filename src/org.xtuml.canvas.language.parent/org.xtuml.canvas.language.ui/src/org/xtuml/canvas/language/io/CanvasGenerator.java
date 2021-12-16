@@ -14,7 +14,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.xtext.ui.resource.IResourceSetProvider;
+import org.xtuml.bp.core.AcceptEvent_c;
+import org.xtuml.bp.core.AcceptTimeEventAction_c;
+import org.xtuml.bp.core.ActionNode_c;
 import org.xtuml.bp.core.Action_c;
+import org.xtuml.bp.core.ActivityNode_c;
 import org.xtuml.bp.core.Association_c;
 import org.xtuml.bp.core.ClassAsLink_c;
 import org.xtuml.bp.core.ClassAsSubtype_c;
@@ -28,6 +32,7 @@ import org.xtuml.bp.core.ImportedClass_c;
 import org.xtuml.bp.core.InstanceStateMachine_c;
 import org.xtuml.bp.core.LinkedAssociation_c;
 import org.xtuml.bp.core.ModelClass_c;
+import org.xtuml.bp.core.Ooaofooa;
 import org.xtuml.bp.core.Package_c;
 import org.xtuml.bp.core.PackageableElement_c;
 import org.xtuml.bp.core.StateMachineState_c;
@@ -42,6 +47,7 @@ import org.xtuml.bp.core.common.NonRootModelElement;
 import org.xtuml.bp.core.common.PersistenceManager;
 import org.xtuml.bp.ui.canvas.Connector_c;
 import org.xtuml.bp.ui.canvas.Diagram_c;
+import org.xtuml.bp.ui.canvas.FloatingText_c;
 import org.xtuml.bp.ui.canvas.Graphelement_c;
 import org.xtuml.bp.ui.canvas.GraphicalElement_c;
 import org.xtuml.bp.ui.canvas.Graphnode_c;
@@ -52,17 +58,20 @@ import org.xtuml.bp.ui.canvas.Model_c;
 import org.xtuml.bp.ui.canvas.Modeltype_c;
 import org.xtuml.bp.ui.canvas.Ooaofgraphics;
 import org.xtuml.bp.ui.canvas.Ooatype_c;
+import org.xtuml.bp.ui.canvas.Shape_c;
 import org.xtuml.bp.ui.canvas.Waypoint_c;
-import org.xtuml.bp.ui.graphics.persistence.IGraphicalLoader;
+import org.xtuml.bp.ui.canvas.persistence.IGraphicalLoader;
 import org.xtuml.canvas.language.canvas.Anchor;
 import org.xtuml.canvas.language.canvas.Connector;
 import org.xtuml.canvas.language.canvas.ConnectorAnchorElement;
 import org.xtuml.canvas.language.canvas.Connectors;
+import org.xtuml.canvas.language.canvas.FloatingText;
 import org.xtuml.canvas.language.canvas.Model;
 import org.xtuml.canvas.language.canvas.Segment;
 import org.xtuml.canvas.language.canvas.Shape;
 import org.xtuml.canvas.language.canvas.ShapeAnchorElement;
 import org.xtuml.canvas.language.canvas.Shapes;
+import org.xtuml.canvas.language.io.utils.EnumUtils;
 import org.xtuml.canvas.language.ui.internal.LanguageActivator;
 
 import com.google.inject.Inject;
@@ -89,8 +98,7 @@ public class CanvasGenerator implements IGraphicalLoader {
 			IFile xtGraphFile = parentFile.getParent()
 					.getFile(new Path(parentFile.getName().replaceAll(".xtuml", ".xtg")));
 			try {
-				generate(parentElement, Ooaofgraphics.getInstance(parentElement.getModelRoot().getId()),
-						xtGraphFile);
+				generate(parentElement, Ooaofgraphics.getInstance(parentElement.getModelRoot().getId()), xtGraphFile);
 			} catch (IOException | CoreException e) {
 				// TODO: implement logging
 			}
@@ -179,6 +187,15 @@ public class CanvasGenerator implements IGraphicalLoader {
 		});
 	}
 
+	private void updateTextPosition(FloatingText_c txt, FloatingText text) {
+		Graphnode_c node = Graphnode_c.getOneDIM_NDOnR19(txt);
+		Graphelement_c ge = Graphelement_c.getOneDIM_GEOnR301(node);
+		ge.setPositionx(text.getRect().getX());
+		ge.setPositiony(text.getRect().getY());
+		node.setWidth(text.getRect().getW());
+		node.setHeight(text.getRect().getH());
+	}
+
 	private GraphicalElement_c getOrCreateShape(Model_c xtModel, Shape shape) {
 		GraphicalElement_c existing = GraphicalElement_c.getOneGD_GEOnR1(xtModel,
 				ge -> getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents())
@@ -199,6 +216,7 @@ public class CanvasGenerator implements IGraphicalLoader {
 		Graphelement_c graphElem = Graphelement_c.GraphelementInstance(graphicsRoot,
 				ge -> ((Graphelement_c) ge).getElementid().equals(shapeId));
 		GraphicalElement_c graphicalElem = GraphicalElement_c.getOneGD_GEOnR23(graphElem);
+		Shape_c shp = Shape_c.getOneGD_SHPOnR2(graphicalElem);
 		graphicalElem.setRepresents(representedElement);
 		graphicalElem.setOoa_id(representedElement.Get_ooa_id());
 		graphElem.setPositionx(shape.getRect().getX());
@@ -206,6 +224,11 @@ public class CanvasGenerator implements IGraphicalLoader {
 		Graphnode_c node = Graphnode_c.getOneDIM_NDOnR301(graphElem);
 		node.setWidth(shape.getRect().getW());
 		node.setHeight(shape.getRect().getH());
+		// Floating text will have been created with the call to API
+		FloatingText_c txt = FloatingText_c.getOneGD_CTXTOnR27(shp);
+		if (txt != null) {
+			updateTextPosition(txt, shape.getText());
+		}
 	}
 
 	private GraphicalElement_c getOrCreateConnector(Model_c xtModel, Connector connector) {
@@ -247,9 +270,20 @@ public class CanvasGenerator implements IGraphicalLoader {
 			Graphelement_c graphElem = Graphelement_c.GraphelementInstance(graphicsRoot,
 					ge -> ((Graphelement_c) ge).getElementid().equals(connId));
 			GraphicalElement_c graphicalElem = GraphicalElement_c.getOneGD_GEOnR23(graphElem);
+			Connector_c con = Connector_c.getOneGD_CONOnR2(graphicalElem);
 			graphicalElem.setOoa_id(representedElement.Get_ooa_id());
 			createSegments(Connector_c.getOneGD_CONOnR2(graphicalElem), connector);
 			graphicalElem.setRepresents(representedElement);
+			// API will have created Floating texts
+			Stream.of(FloatingText_c.getManyGD_CTXTsOnR8(con)).forEach(txt -> {
+				Optional<FloatingText> potentialtext = Stream
+						.of(connector.getTexts().getTexts().toArray(new FloatingText[0]))
+						.filter(floatingText -> floatingText.getEnd().equals(EnumUtils.endFor(txt.getEnd())))
+						.findFirst();
+				if (potentialtext.isPresent()) {
+					updateTextPosition(txt, potentialtext.get());
+				}
+			});
 		}
 	}
 
@@ -350,6 +384,14 @@ public class CanvasGenerator implements IGraphicalLoader {
 				if (potentialLink.isPresent()) {
 					return potentialLink.get();
 				}
+				Optional<AcceptTimeEventAction_c> potentialAcceptTime = Stream
+						.of(AcceptTimeEventAction_c.getManyA_ATEsOnR1112(AcceptEvent_c.getManyA_AEsOnR1107(
+								ActionNode_c.getManyA_ACTsOnR1105(ActivityNode_c.getManyA_NsOnR8001(
+										PackageableElement_c.getManyPE_PEsOnR8000((Package_c) parent))))))
+						.filter(acc -> getPath(acc).equals(represents)).findFirst();
+				if (potentialAcceptTime.isPresent()) {
+					return potentialAcceptTime.get();
+				}
 			}
 			if (container instanceof StateMachine_c) {
 				Optional<CreationTransition_c> potentialCreationTrans = Stream
@@ -360,6 +402,12 @@ public class CanvasGenerator implements IGraphicalLoader {
 					return potentialCreationTrans.get();
 				}
 			}
+		}
+		// find by path
+		SystemModel_c sys = SystemModel_c.SystemModelInstance(Ooaofooa.getDefaultInstance());
+		ModelClass_c clazz = ModelClass_c.getOneO_OBJOnR8001(PackageableElement_c.getManyPE_PEsOnR8000(Package_c.getManyEP_PKGsOnR1405(sys)));
+		if(clazz != null) {
+			return clazz;
 		}
 		return null;
 	}
@@ -426,6 +474,9 @@ public class CanvasGenerator implements IGraphicalLoader {
 		}
 		if (represents instanceof ClassAsLink_c) {
 			return Ooatype_c.AssociativeLink;
+		}
+		if (represents instanceof AcceptTimeEventAction_c) {
+			return Ooatype_c.AcceptTimeEventAction;
 		}
 		return Ooatype_c.OOA_UNINITIALIZED_ENUM;
 	}

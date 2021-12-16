@@ -5,6 +5,8 @@ package org.xtuml.canvas.language.canvas;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Floating Texts</b></em>'.
@@ -21,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface FloatingTexts extends GraphicalElement
+public interface FloatingTexts extends EObject
 {
   /**
    * Returns the value of the '<em><b>Texts</b></em>' containment reference list.

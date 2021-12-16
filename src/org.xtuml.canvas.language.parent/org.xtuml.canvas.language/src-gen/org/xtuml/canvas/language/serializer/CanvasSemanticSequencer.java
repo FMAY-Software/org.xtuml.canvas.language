@@ -205,7 +205,14 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Connector returns Connector
 	 *
 	 * Constraint:
-	 *     (name=ID props=ConnectorProps? polyline=Polyline? anchors=Anchors? represents=STRING)
+	 *     (
+	 *         name=ID 
+	 *         props=ConnectorProps? 
+	 *         polyline=Polyline? 
+	 *         anchors=Anchors? 
+	 *         texts=FloatingTexts 
+	 *         represents=STRING
+	 *     )
 	 */
 	protected void sequence_Connector(ISerializationContext context, Connector semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -254,16 +261,24 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     FloatingText returns FloatingText
 	 *
 	 * Constraint:
-	 *     (rect=Rectangle (associated=Shape | associated=Connector))
+	 *     (rect=Rectangle end=EnumEnd)
 	 */
 	protected void sequence_FloatingText(ISerializationContext context, FloatingText semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CanvasPackage.Literals.FLOATING_TEXT__RECT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.FLOATING_TEXT__RECT));
+			if (transientValues.isValueTransient(semanticObject, CanvasPackage.Literals.FLOATING_TEXT__END) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.FLOATING_TEXT__END));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getFloatingTextAccess().getRectRectangleParserRuleCall_2_0(), semanticObject.getRect());
+		feeder.accept(grammarAccess.getFloatingTextAccess().getEndEnumEndParserRuleCall_3_0(), semanticObject.getEnd());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     GraphicalElement returns FloatingTexts
 	 *     FloatingTexts returns FloatingTexts
 	 *
 	 * Constraint:
@@ -442,7 +457,7 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Shape returns Shape
 	 *
 	 * Constraint:
-	 *     (name=ID props=ShapeProps? rect=Rectangle represents=STRING)
+	 *     (name=ID props=ShapeProps? rect=Rectangle text=FloatingText? represents=STRING)
 	 */
 	protected void sequence_Shape(ISerializationContext context, Shape semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

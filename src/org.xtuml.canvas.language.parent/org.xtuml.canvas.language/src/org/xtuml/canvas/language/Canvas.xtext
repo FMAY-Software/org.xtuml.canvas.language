@@ -18,13 +18,13 @@ ModelProperties:
 ;
 
 GraphicalElement:
-	Shapes | FloatingTexts | Connectors;
+	Shapes | Connectors;
 
 Shapes:
 	{Shapes} ('shapes' ':' | 'shapes:') (shapes+=Shape)*;
 
 Shape:
-	{Shape} ('shape' ':' | 'shape:') name=ID props=ShapeProps? rect=Rectangle
+	{Shape} ('shape' ':' | 'shape:') name=ID props=ShapeProps? rect=Rectangle text=FloatingText?
 	('render' ':' | 'render:') represents=STRING;
 
 FloatingTexts:
@@ -33,7 +33,12 @@ FloatingTexts:
 FloatingText:
 	{FloatingText} ('text' ':' | 'text:')
 	rect=Rectangle
-	associated=(Shape | Connector);
+	end=EnumEnd
+;
+
+EnumEnd:
+	'start' | 'end' | 'middle' | 'end_fixed' | 'start_fixed' | 'none' | 'floating' | 'additional'
+;
 
 ShapeProps:
 	{ShapeProps} ('properties' ':' | 'properties:')
@@ -51,7 +56,7 @@ Connectors:
 
 Connector:
 	('connector' ':' | 'connector:') name=ID props=ConnectorProps? polyline=Polyline?
-	anchors=Anchors?
+	anchors=Anchors? texts=FloatingTexts
 	('render' ':' | 'render:') represents=STRING;
 
 Anchors:

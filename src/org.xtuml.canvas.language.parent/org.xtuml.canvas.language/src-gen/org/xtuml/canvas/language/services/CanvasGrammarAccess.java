@@ -189,24 +189,20 @@ public class CanvasGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtuml.canvas.language.Canvas.GraphicalElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cShapesParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cFloatingTextsParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cConnectorsParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cConnectorsParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//GraphicalElement:
-		//	Shapes | FloatingTexts | Connectors;
+		//	Shapes | Connectors;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Shapes | FloatingTexts | Connectors
+		//Shapes | Connectors
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Shapes
 		public RuleCall getShapesParserRuleCall_0() { return cShapesParserRuleCall_0; }
 		
-		//FloatingTexts
-		public RuleCall getFloatingTextsParserRuleCall_1() { return cFloatingTextsParserRuleCall_1; }
-		
 		//Connectors
-		public RuleCall getConnectorsParserRuleCall_2() { return cConnectorsParserRuleCall_2; }
+		public RuleCall getConnectorsParserRuleCall_1() { return cConnectorsParserRuleCall_1; }
 	}
 	public class ShapesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtuml.canvas.language.Canvas.Shapes");
@@ -266,20 +262,23 @@ public class CanvasGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final RuleCall cPropsShapePropsParserRuleCall_3_0 = (RuleCall)cPropsAssignment_3.eContents().get(0);
 		private final Assignment cRectAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cRectRectangleParserRuleCall_4_0 = (RuleCall)cRectAssignment_4.eContents().get(0);
-		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
-		private final Group cGroup_5_0 = (Group)cAlternatives_5.eContents().get(0);
-		private final Keyword cRenderKeyword_5_0_0 = (Keyword)cGroup_5_0.eContents().get(0);
-		private final Keyword cColonKeyword_5_0_1 = (Keyword)cGroup_5_0.eContents().get(1);
-		private final Keyword cRenderKeyword_5_1 = (Keyword)cAlternatives_5.eContents().get(1);
-		private final Assignment cRepresentsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cRepresentsSTRINGTerminalRuleCall_6_0 = (RuleCall)cRepresentsAssignment_6.eContents().get(0);
+		private final Assignment cTextAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cTextFloatingTextParserRuleCall_5_0 = (RuleCall)cTextAssignment_5.eContents().get(0);
+		private final Alternatives cAlternatives_6 = (Alternatives)cGroup.eContents().get(6);
+		private final Group cGroup_6_0 = (Group)cAlternatives_6.eContents().get(0);
+		private final Keyword cRenderKeyword_6_0_0 = (Keyword)cGroup_6_0.eContents().get(0);
+		private final Keyword cColonKeyword_6_0_1 = (Keyword)cGroup_6_0.eContents().get(1);
+		private final Keyword cRenderKeyword_6_1 = (Keyword)cAlternatives_6.eContents().get(1);
+		private final Assignment cRepresentsAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cRepresentsSTRINGTerminalRuleCall_7_0 = (RuleCall)cRepresentsAssignment_7.eContents().get(0);
 		
 		//Shape:
-		//	{Shape} ('shape' ':' | 'shape:') name=ID props=ShapeProps? rect=Rectangle ('render' ':' | 'render:')
-		//	represents=STRING;
+		//	{Shape} ('shape' ':' | 'shape:') name=ID props=ShapeProps? rect=Rectangle text=FloatingText? ('render' ':' |
+		//	'render:') represents=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Shape} ('shape' ':' | 'shape:') name=ID props=ShapeProps? rect=Rectangle ('render' ':' | 'render:') represents=STRING
+		//{Shape} ('shape' ':' | 'shape:') name=ID props=ShapeProps? rect=Rectangle text=FloatingText? ('render' ':' | 'render:')
+		//represents=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//{Shape}
@@ -318,26 +317,32 @@ public class CanvasGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//Rectangle
 		public RuleCall getRectRectangleParserRuleCall_4_0() { return cRectRectangleParserRuleCall_4_0; }
 		
+		//text=FloatingText?
+		public Assignment getTextAssignment_5() { return cTextAssignment_5; }
+		
+		//FloatingText
+		public RuleCall getTextFloatingTextParserRuleCall_5_0() { return cTextFloatingTextParserRuleCall_5_0; }
+		
 		//('render' ':' | 'render:')
-		public Alternatives getAlternatives_5() { return cAlternatives_5; }
+		public Alternatives getAlternatives_6() { return cAlternatives_6; }
 		
 		//'render' ':'
-		public Group getGroup_5_0() { return cGroup_5_0; }
+		public Group getGroup_6_0() { return cGroup_6_0; }
 		
 		//'render'
-		public Keyword getRenderKeyword_5_0_0() { return cRenderKeyword_5_0_0; }
+		public Keyword getRenderKeyword_6_0_0() { return cRenderKeyword_6_0_0; }
 		
 		//':'
-		public Keyword getColonKeyword_5_0_1() { return cColonKeyword_5_0_1; }
+		public Keyword getColonKeyword_6_0_1() { return cColonKeyword_6_0_1; }
 		
 		//'render:'
-		public Keyword getRenderKeyword_5_1() { return cRenderKeyword_5_1; }
+		public Keyword getRenderKeyword_6_1() { return cRenderKeyword_6_1; }
 		
 		//represents=STRING
-		public Assignment getRepresentsAssignment_6() { return cRepresentsAssignment_6; }
+		public Assignment getRepresentsAssignment_7() { return cRepresentsAssignment_7; }
 		
 		//STRING
-		public RuleCall getRepresentsSTRINGTerminalRuleCall_6_0() { return cRepresentsSTRINGTerminalRuleCall_6_0; }
+		public RuleCall getRepresentsSTRINGTerminalRuleCall_7_0() { return cRepresentsSTRINGTerminalRuleCall_7_0; }
 	}
 	public class FloatingTextsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtuml.canvas.language.Canvas.FloatingTexts");
@@ -393,17 +398,15 @@ public class CanvasGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final Keyword cTextKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
 		private final Assignment cRectAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cRectRectangleParserRuleCall_2_0 = (RuleCall)cRectAssignment_2.eContents().get(0);
-		private final Assignment cAssociatedAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final Alternatives cAssociatedAlternatives_3_0 = (Alternatives)cAssociatedAssignment_3.eContents().get(0);
-		private final RuleCall cAssociatedShapeParserRuleCall_3_0_0 = (RuleCall)cAssociatedAlternatives_3_0.eContents().get(0);
-		private final RuleCall cAssociatedConnectorParserRuleCall_3_0_1 = (RuleCall)cAssociatedAlternatives_3_0.eContents().get(1);
+		private final Assignment cEndAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cEndEnumEndParserRuleCall_3_0 = (RuleCall)cEndAssignment_3.eContents().get(0);
 		
 		//FloatingText:
 		//	{FloatingText} ('text' ':' | 'text:') rect=Rectangle
-		//	associated=(Shape | Connector);
+		//	end=EnumEnd;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{FloatingText} ('text' ':' | 'text:') rect=Rectangle associated=(Shape | Connector)
+		//{FloatingText} ('text' ':' | 'text:') rect=Rectangle end=EnumEnd
 		public Group getGroup() { return cGroup; }
 		
 		//{FloatingText}
@@ -430,17 +433,54 @@ public class CanvasGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//Rectangle
 		public RuleCall getRectRectangleParserRuleCall_2_0() { return cRectRectangleParserRuleCall_2_0; }
 		
-		//associated=(Shape | Connector)
-		public Assignment getAssociatedAssignment_3() { return cAssociatedAssignment_3; }
+		//end=EnumEnd
+		public Assignment getEndAssignment_3() { return cEndAssignment_3; }
 		
-		//(Shape | Connector)
-		public Alternatives getAssociatedAlternatives_3_0() { return cAssociatedAlternatives_3_0; }
+		//EnumEnd
+		public RuleCall getEndEnumEndParserRuleCall_3_0() { return cEndEnumEndParserRuleCall_3_0; }
+	}
+	public class EnumEndElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtuml.canvas.language.Canvas.EnumEnd");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cStartKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cEndKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cMiddleKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cEnd_fixedKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cStart_fixedKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cNoneKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Keyword cFloatingKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		private final Keyword cAdditionalKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
 		
-		//Shape
-		public RuleCall getAssociatedShapeParserRuleCall_3_0_0() { return cAssociatedShapeParserRuleCall_3_0_0; }
+		//EnumEnd:
+		//	'start' | 'end' | 'middle' | 'end_fixed' | 'start_fixed' | 'none' | 'floating' | 'additional';
+		@Override public ParserRule getRule() { return rule; }
 		
-		//Connector
-		public RuleCall getAssociatedConnectorParserRuleCall_3_0_1() { return cAssociatedConnectorParserRuleCall_3_0_1; }
+		//'start' | 'end' | 'middle' | 'end_fixed' | 'start_fixed' | 'none' | 'floating' | 'additional'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'start'
+		public Keyword getStartKeyword_0() { return cStartKeyword_0; }
+		
+		//'end'
+		public Keyword getEndKeyword_1() { return cEndKeyword_1; }
+		
+		//'middle'
+		public Keyword getMiddleKeyword_2() { return cMiddleKeyword_2; }
+		
+		//'end_fixed'
+		public Keyword getEnd_fixedKeyword_3() { return cEnd_fixedKeyword_3; }
+		
+		//'start_fixed'
+		public Keyword getStart_fixedKeyword_4() { return cStart_fixedKeyword_4; }
+		
+		//'none'
+		public Keyword getNoneKeyword_5() { return cNoneKeyword_5; }
+		
+		//'floating'
+		public Keyword getFloatingKeyword_6() { return cFloatingKeyword_6; }
+		
+		//'additional'
+		public Keyword getAdditionalKeyword_7() { return cAdditionalKeyword_7; }
 	}
 	public class ShapePropsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtuml.canvas.language.Canvas.ShapeProps");
@@ -623,21 +663,23 @@ public class CanvasGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final RuleCall cPolylinePolylineParserRuleCall_3_0 = (RuleCall)cPolylineAssignment_3.eContents().get(0);
 		private final Assignment cAnchorsAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cAnchorsAnchorsParserRuleCall_4_0 = (RuleCall)cAnchorsAssignment_4.eContents().get(0);
-		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
-		private final Group cGroup_5_0 = (Group)cAlternatives_5.eContents().get(0);
-		private final Keyword cRenderKeyword_5_0_0 = (Keyword)cGroup_5_0.eContents().get(0);
-		private final Keyword cColonKeyword_5_0_1 = (Keyword)cGroup_5_0.eContents().get(1);
-		private final Keyword cRenderKeyword_5_1 = (Keyword)cAlternatives_5.eContents().get(1);
-		private final Assignment cRepresentsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cRepresentsSTRINGTerminalRuleCall_6_0 = (RuleCall)cRepresentsAssignment_6.eContents().get(0);
+		private final Assignment cTextsAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cTextsFloatingTextsParserRuleCall_5_0 = (RuleCall)cTextsAssignment_5.eContents().get(0);
+		private final Alternatives cAlternatives_6 = (Alternatives)cGroup.eContents().get(6);
+		private final Group cGroup_6_0 = (Group)cAlternatives_6.eContents().get(0);
+		private final Keyword cRenderKeyword_6_0_0 = (Keyword)cGroup_6_0.eContents().get(0);
+		private final Keyword cColonKeyword_6_0_1 = (Keyword)cGroup_6_0.eContents().get(1);
+		private final Keyword cRenderKeyword_6_1 = (Keyword)cAlternatives_6.eContents().get(1);
+		private final Assignment cRepresentsAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cRepresentsSTRINGTerminalRuleCall_7_0 = (RuleCall)cRepresentsAssignment_7.eContents().get(0);
 		
 		//Connector:
 		//	('connector' ':' | 'connector:') name=ID props=ConnectorProps? polyline=Polyline?
-		//	anchors=Anchors? ('render' ':' | 'render:') represents=STRING;
+		//	anchors=Anchors? texts=FloatingTexts ('render' ':' | 'render:') represents=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('connector' ':' | 'connector:') name=ID props=ConnectorProps? polyline=Polyline? anchors=Anchors? ('render' ':' |
-		//'render:') represents=STRING
+		//('connector' ':' | 'connector:') name=ID props=ConnectorProps? polyline=Polyline? anchors=Anchors? texts=FloatingTexts
+		//('render' ':' | 'render:') represents=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//('connector' ':' | 'connector:')
@@ -679,26 +721,32 @@ public class CanvasGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//Anchors
 		public RuleCall getAnchorsAnchorsParserRuleCall_4_0() { return cAnchorsAnchorsParserRuleCall_4_0; }
 		
+		//texts=FloatingTexts
+		public Assignment getTextsAssignment_5() { return cTextsAssignment_5; }
+		
+		//FloatingTexts
+		public RuleCall getTextsFloatingTextsParserRuleCall_5_0() { return cTextsFloatingTextsParserRuleCall_5_0; }
+		
 		//('render' ':' | 'render:')
-		public Alternatives getAlternatives_5() { return cAlternatives_5; }
+		public Alternatives getAlternatives_6() { return cAlternatives_6; }
 		
 		//'render' ':'
-		public Group getGroup_5_0() { return cGroup_5_0; }
+		public Group getGroup_6_0() { return cGroup_6_0; }
 		
 		//'render'
-		public Keyword getRenderKeyword_5_0_0() { return cRenderKeyword_5_0_0; }
+		public Keyword getRenderKeyword_6_0_0() { return cRenderKeyword_6_0_0; }
 		
 		//':'
-		public Keyword getColonKeyword_5_0_1() { return cColonKeyword_5_0_1; }
+		public Keyword getColonKeyword_6_0_1() { return cColonKeyword_6_0_1; }
 		
 		//'render:'
-		public Keyword getRenderKeyword_5_1() { return cRenderKeyword_5_1; }
+		public Keyword getRenderKeyword_6_1() { return cRenderKeyword_6_1; }
 		
 		//represents=STRING
-		public Assignment getRepresentsAssignment_6() { return cRepresentsAssignment_6; }
+		public Assignment getRepresentsAssignment_7() { return cRepresentsAssignment_7; }
 		
 		//STRING
-		public RuleCall getRepresentsSTRINGTerminalRuleCall_6_0() { return cRepresentsSTRINGTerminalRuleCall_6_0; }
+		public RuleCall getRepresentsSTRINGTerminalRuleCall_7_0() { return cRepresentsSTRINGTerminalRuleCall_7_0; }
 	}
 	public class AnchorsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtuml.canvas.language.Canvas.Anchors");
@@ -1211,6 +1259,7 @@ public class CanvasGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	private final ShapeElements pShape;
 	private final FloatingTextsElements pFloatingTexts;
 	private final FloatingTextElements pFloatingText;
+	private final EnumEndElements pEnumEnd;
 	private final ShapePropsElements pShapeProps;
 	private final ContainerElements pContainer;
 	private final ColorElements pColor;
@@ -1245,6 +1294,7 @@ public class CanvasGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		this.pShape = new ShapeElements();
 		this.pFloatingTexts = new FloatingTextsElements();
 		this.pFloatingText = new FloatingTextElements();
+		this.pEnumEnd = new EnumEndElements();
 		this.pShapeProps = new ShapePropsElements();
 		this.pContainer = new ContainerElements();
 		this.pColor = new ColorElements();
@@ -1324,7 +1374,7 @@ public class CanvasGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	//GraphicalElement:
-	//	Shapes | FloatingTexts | Connectors;
+	//	Shapes | Connectors;
 	public GraphicalElementElements getGraphicalElementAccess() {
 		return pGraphicalElement;
 	}
@@ -1344,8 +1394,8 @@ public class CanvasGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	//Shape:
-	//	{Shape} ('shape' ':' | 'shape:') name=ID props=ShapeProps? rect=Rectangle ('render' ':' | 'render:')
-	//	represents=STRING;
+	//	{Shape} ('shape' ':' | 'shape:') name=ID props=ShapeProps? rect=Rectangle text=FloatingText? ('render' ':' |
+	//	'render:') represents=STRING;
 	public ShapeElements getShapeAccess() {
 		return pShape;
 	}
@@ -1366,13 +1416,23 @@ public class CanvasGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	
 	//FloatingText:
 	//	{FloatingText} ('text' ':' | 'text:') rect=Rectangle
-	//	associated=(Shape | Connector);
+	//	end=EnumEnd;
 	public FloatingTextElements getFloatingTextAccess() {
 		return pFloatingText;
 	}
 	
 	public ParserRule getFloatingTextRule() {
 		return getFloatingTextAccess().getRule();
+	}
+	
+	//EnumEnd:
+	//	'start' | 'end' | 'middle' | 'end_fixed' | 'start_fixed' | 'none' | 'floating' | 'additional';
+	public EnumEndElements getEnumEndAccess() {
+		return pEnumEnd;
+	}
+	
+	public ParserRule getEnumEndRule() {
+		return getEnumEndAccess().getRule();
 	}
 	
 	//ShapeProps:
@@ -1418,7 +1478,7 @@ public class CanvasGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	
 	//Connector:
 	//	('connector' ':' | 'connector:') name=ID props=ConnectorProps? polyline=Polyline?
-	//	anchors=Anchors? ('render' ':' | 'render:') represents=STRING;
+	//	anchors=Anchors? texts=FloatingTexts ('render' ':' | 'render:') represents=STRING;
 	public ConnectorElements getConnectorAccess() {
 		return pConnector;
 	}

@@ -476,9 +476,20 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
    * @generated
    */
   @Override
+  public EReference getShape_Text()
+  {
+    return (EReference)shapeEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EAttribute getShape_Represents()
   {
-    return (EAttribute)shapeEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)shapeEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -531,9 +542,9 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
    * @generated
    */
   @Override
-  public EReference getFloatingText_Associated()
+  public EAttribute getFloatingText_End()
   {
-    return (EReference)floatingTextEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)floatingTextEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -707,9 +718,20 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
    * @generated
    */
   @Override
+  public EReference getConnector_Texts()
+  {
+    return (EReference)connectorEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EAttribute getConnector_Represents()
   {
-    return (EAttribute)connectorEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)connectorEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1095,6 +1117,7 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
     createEAttribute(shapeEClass, SHAPE__NAME);
     createEReference(shapeEClass, SHAPE__PROPS);
     createEReference(shapeEClass, SHAPE__RECT);
+    createEReference(shapeEClass, SHAPE__TEXT);
     createEAttribute(shapeEClass, SHAPE__REPRESENTS);
 
     floatingTextsEClass = createEClass(FLOATING_TEXTS);
@@ -1102,7 +1125,7 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
 
     floatingTextEClass = createEClass(FLOATING_TEXT);
     createEReference(floatingTextEClass, FLOATING_TEXT__RECT);
-    createEReference(floatingTextEClass, FLOATING_TEXT__ASSOCIATED);
+    createEAttribute(floatingTextEClass, FLOATING_TEXT__END);
 
     shapePropsEClass = createEClass(SHAPE_PROPS);
     createEReference(shapePropsEClass, SHAPE_PROPS__CONTAINER);
@@ -1123,6 +1146,7 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
     createEReference(connectorEClass, CONNECTOR__PROPS);
     createEReference(connectorEClass, CONNECTOR__POLYLINE);
     createEReference(connectorEClass, CONNECTOR__ANCHORS);
+    createEReference(connectorEClass, CONNECTOR__TEXTS);
     createEAttribute(connectorEClass, CONNECTOR__REPRESENTS);
 
     anchorsEClass = createEClass(ANCHORS);
@@ -1198,7 +1222,6 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
 
     // Add supertypes to classes
     shapesEClass.getESuperTypes().add(this.getGraphicalElement());
-    floatingTextsEClass.getESuperTypes().add(this.getGraphicalElement());
     connectorsEClass.getESuperTypes().add(this.getGraphicalElement());
     shapeAnchorElementEClass.getESuperTypes().add(this.getAnchor());
     connectorAnchorElementEClass.getESuperTypes().add(this.getAnchor());
@@ -1227,6 +1250,7 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
     initEAttribute(getShape_Name(), ecorePackage.getEString(), "name", null, 0, 1, Shape.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getShape_Props(), this.getShapeProps(), null, "props", null, 0, 1, Shape.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getShape_Rect(), this.getRectangle(), null, "rect", null, 0, 1, Shape.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getShape_Text(), this.getFloatingText(), null, "text", null, 0, 1, Shape.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getShape_Represents(), ecorePackage.getEString(), "represents", null, 0, 1, Shape.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(floatingTextsEClass, FloatingTexts.class, "FloatingTexts", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1234,7 +1258,7 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
 
     initEClass(floatingTextEClass, FloatingText.class, "FloatingText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFloatingText_Rect(), this.getRectangle(), null, "rect", null, 0, 1, FloatingText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFloatingText_Associated(), ecorePackage.getEObject(), null, "associated", null, 0, 1, FloatingText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFloatingText_End(), ecorePackage.getEString(), "end", null, 0, 1, FloatingText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(shapePropsEClass, ShapeProps.class, "ShapeProps", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getShapeProps_Container(), this.getContainer(), null, "container", null, 0, 1, ShapeProps.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1255,6 +1279,7 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
     initEReference(getConnector_Props(), this.getConnectorProps(), null, "props", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConnector_Polyline(), this.getPolyline(), null, "polyline", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConnector_Anchors(), this.getAnchors(), null, "anchors", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConnector_Texts(), this.getFloatingTexts(), null, "texts", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getConnector_Represents(), ecorePackage.getEString(), "represents", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(anchorsEClass, Anchors.class, "Anchors", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

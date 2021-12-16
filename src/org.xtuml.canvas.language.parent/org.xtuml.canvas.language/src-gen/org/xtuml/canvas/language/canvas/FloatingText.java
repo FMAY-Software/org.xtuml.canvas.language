@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtuml.canvas.language.canvas.FloatingText#getRect <em>Rect</em>}</li>
- *   <li>{@link org.xtuml.canvas.language.canvas.FloatingText#getAssociated <em>Associated</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.FloatingText#getEnd <em>End</em>}</li>
  * </ul>
  *
  * @see org.xtuml.canvas.language.canvas.CanvasPackage#getFloatingText()
@@ -47,25 +47,25 @@ public interface FloatingText extends EObject
   void setRect(Rectangle value);
 
   /**
-   * Returns the value of the '<em><b>Associated</b></em>' containment reference.
+   * Returns the value of the '<em><b>End</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Associated</em>' containment reference.
-   * @see #setAssociated(EObject)
-   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getFloatingText_Associated()
-   * @model containment="true"
+   * @return the value of the '<em>End</em>' attribute.
+   * @see #setEnd(String)
+   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getFloatingText_End()
+   * @model
    * @generated
    */
-  EObject getAssociated();
+  String getEnd();
 
   /**
-   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.FloatingText#getAssociated <em>Associated</em>}' containment reference.
+   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.FloatingText#getEnd <em>End</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Associated</em>' containment reference.
-   * @see #getAssociated()
+   * @param value the new value of the '<em>End</em>' attribute.
+   * @see #getEnd()
    * @generated
    */
-  void setAssociated(EObject value);
+  void setEnd(String value);
 
 } // FloatingText

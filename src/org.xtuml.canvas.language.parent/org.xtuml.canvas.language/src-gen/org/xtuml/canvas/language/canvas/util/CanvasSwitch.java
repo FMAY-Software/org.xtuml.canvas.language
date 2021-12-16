@@ -120,7 +120,6 @@ public class CanvasSwitch<T> extends Switch<T>
       {
         FloatingTexts floatingTexts = (FloatingTexts)theEObject;
         T result = caseFloatingTexts(floatingTexts);
-        if (result == null) result = caseGraphicalElement(floatingTexts);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

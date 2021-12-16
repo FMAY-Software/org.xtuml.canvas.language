@@ -30,17 +30,18 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rect" eType="#//Rectangle"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="text" eType="#//FloatingText"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="represents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FloatingTexts" eSuperTypes="#//GraphicalElement">
+  <eClassifiers xsi:type="ecore:EClass" name="FloatingTexts">
     <eStructuralFeatures xsi:type="ecore:EReference" name="texts" upperBound="-1"
         eType="#//FloatingText" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FloatingText">
     <eStructuralFeatures xsi:type="ecore:EReference" name="rect" eType="#//Rectangle"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="associated" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ShapeProps">
     <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//Container"
@@ -65,6 +66,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="polyline" eType="#//Polyline"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="anchors" eType="#//Anchors"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="texts" eType="#//FloatingTexts"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="represents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

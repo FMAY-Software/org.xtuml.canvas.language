@@ -27,6 +27,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Shape/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Shape/props"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Shape/rect"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Shape/text"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Shape/represents"/>
     </genClasses>
     <genClasses ecoreClass="Canvas.ecore#//FloatingTexts">
@@ -34,7 +35,7 @@
     </genClasses>
     <genClasses ecoreClass="Canvas.ecore#//FloatingText">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//FloatingText/rect"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//FloatingText/associated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//FloatingText/end"/>
     </genClasses>
     <genClasses ecoreClass="Canvas.ecore#//ShapeProps">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//ShapeProps/container"/>
@@ -54,6 +55,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Connector/props"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Connector/polyline"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Connector/anchors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Connector/texts"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Connector/represents"/>
     </genClasses>
     <genClasses ecoreClass="Canvas.ecore#//Anchors">

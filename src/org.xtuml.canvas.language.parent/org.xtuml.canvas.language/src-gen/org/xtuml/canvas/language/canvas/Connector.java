@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtuml.canvas.language.canvas.Connector#getProps <em>Props</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.Connector#getPolyline <em>Polyline</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.Connector#getAnchors <em>Anchors</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.Connector#getTexts <em>Texts</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.Connector#getRepresents <em>Represents</em>}</li>
  * </ul>
  *
@@ -114,6 +115,28 @@ public interface Connector extends EObject
    * @generated
    */
   void setAnchors(Anchors value);
+
+  /**
+   * Returns the value of the '<em><b>Texts</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Texts</em>' containment reference.
+   * @see #setTexts(FloatingTexts)
+   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getConnector_Texts()
+   * @model containment="true"
+   * @generated
+   */
+  FloatingTexts getTexts();
+
+  /**
+   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Connector#getTexts <em>Texts</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Texts</em>' containment reference.
+   * @see #getTexts()
+   * @generated
+   */
+  void setTexts(FloatingTexts value);
 
   /**
    * Returns the value of the '<em><b>Represents</b></em>' attribute.
