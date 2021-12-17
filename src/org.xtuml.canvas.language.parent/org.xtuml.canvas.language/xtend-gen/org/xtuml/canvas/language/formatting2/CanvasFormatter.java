@@ -30,34 +30,32 @@ public class CanvasFormatter extends AbstractFormatter2 {
   private CanvasGrammarAccess _canvasGrammarAccess;
   
   protected void _format(final Model model, @Extension final IFormattableDocument document) {
-    EList<SemanticModel> _semantics = model.getSemantics();
-    for (final SemanticModel semanticModel : _semantics) {
-      {
-        this.format(semanticModel);
-        final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
-          it.setNewLines(2);
-        };
-        document.<SemanticModel>append(semanticModel, _function);
-      }
-    }
-    this.format(model.getProperties());
-    EList<GraphicalElement> _elements = model.getElements();
-    for (final GraphicalElement graphicalElement : _elements) {
-      {
-        this.format(graphicalElement);
-        final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
-          it.setNewLines(1);
-        };
-        document.<GraphicalElement>append(graphicalElement, _function);
-      }
-    }
-    final Consumer<ISemanticRegion> _function = (ISemanticRegion it) -> {
-      final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it_1) -> {
-        it_1.setNewLines(2);
-      };
-      document.append(it, _function_1);
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.setNewLines(2);
     };
-    this.textRegionExtensions.allSemanticRegions(model).forEach(_function);
+    document.prepend(this.textRegionExtensions.allRegionsFor(model).keyword("render:"), _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.setNewLines(2);
+    };
+    document.prepend(this.textRegionExtensions.allRegionsFor(model).keyword("properties:"), _function_1);
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.setNewLines(2);
+    };
+    document.prepend(this.textRegionExtensions.allRegionsFor(model).keyword("shapes:"), _function_2);
+    final Consumer<ISemanticRegion> _function_3 = (ISemanticRegion it) -> {
+      final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it_1) -> {
+        it_1.setSpace("    ");
+      };
+      document.prepend(it, _function_4);
+    };
+    this.textRegionExtensions.allRegionsFor(model).keywords("shape:").forEach(_function_3);
+    final Consumer<ISemanticRegion> _function_4 = (ISemanticRegion it) -> {
+      final Procedure1<IHiddenRegionFormatter> _function_5 = (IHiddenRegionFormatter it_1) -> {
+        it_1.newLine();
+      };
+      document.prepend(it, _function_5);
+    };
+    this.textRegionExtensions.allRegionsFor(model).keywords("shape:").forEach(_function_4);
   }
   
   protected void _format(final ModelProperties modelProperties, @Extension final IFormattableDocument document) {

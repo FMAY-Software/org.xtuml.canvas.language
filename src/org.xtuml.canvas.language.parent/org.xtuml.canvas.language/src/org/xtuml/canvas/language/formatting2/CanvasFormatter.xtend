@@ -19,17 +19,11 @@ class CanvasFormatter extends AbstractFormatter2 {
 	@Inject extension CanvasGrammarAccess
 
 	def dispatch void format(Model model, extension IFormattableDocument document) {
-		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (semanticModel : model.semantics) {
-			semanticModel.format
-			semanticModel.append[setNewLines(2)]
-		}
-		model.properties.format
-		for (graphicalElement : model.elements) {
-			graphicalElement.format
-			graphicalElement.append[setNewLines(1)]
-		}
-		model.allSemanticRegions.forEach[append[setNewLines(2)]]
+		model.allRegionsFor.keyword('render:').prepend[newLines = 2]
+		model.allRegionsFor.keyword('properties:').prepend[newLines = 2]
+		model.allRegionsFor.keyword('shapes:').prepend[newLines = 2]
+		model.allRegionsFor.keywords('shape:').forEach[prepend[space = '    ']]
+		model.allRegionsFor.keywords('shape:').forEach[prepend[newLine]]
 	}
 
 	def dispatch void format(ModelProperties modelProperties, extension IFormattableDocument document) {
