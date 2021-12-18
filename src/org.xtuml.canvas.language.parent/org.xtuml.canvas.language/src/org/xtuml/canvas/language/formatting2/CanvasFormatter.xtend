@@ -13,40 +13,41 @@ import org.xtuml.canvas.language.canvas.Shapes
 import org.xtuml.canvas.language.canvas.Shape
 import org.xtuml.canvas.language.canvas.GraphicalElement
 import org.xtuml.canvas.language.canvas.SemanticModel
+import org.xtuml.canvas.language.canvas.Connectors
+import org.xtuml.canvas.language.canvas.Connector
+import org.eclipse.xtext.formatting2.regionaccess.ISemanticRegion
 
 class CanvasFormatter extends AbstractFormatter2 {
 	
 	@Inject extension CanvasGrammarAccess
 
 	def dispatch void format(Model model, extension IFormattableDocument document) {
-		model.allRegionsFor.keyword('render:').prepend[newLines = 2]
-		model.allRegionsFor.keyword('properties:').prepend[newLines = 2]
-		model.allRegionsFor.keyword('shapes:').prepend[newLines = 2]
-		model.allRegionsFor.keywords('shape:').forEach[prepend[space = '    ']]
-		model.allRegionsFor.keywords('shape:').forEach[prepend[newLine]]
+		model.regionFor.keyword('render:').prepend[newLines = 2]
+		model.allRegionsFor.keywords('properties:', 'shapes:', 'shape:', 'connectors:','connector:').forEach[prepend[newLines = 1]]
 	}
 
-	def dispatch void format(ModelProperties modelProperties, extension IFormattableDocument document) {
-		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		modelProperties.point.format
-	}
-	
-	def dispatch void format(GraphicalElement element) {
-		
-	}
-	
 	def dispatch void format(SemanticModel sm) {
 		
 	}
 	
 	// TODO: implement for Shapes, Shape, FloatingTexts, FloatingText, ShapeProps, Connectors, Connector, Anchors, StartAnchor, EndAnchor, ConnectorProps, Polyline, Segment
-	def dispatch void format(Shapes shapes) {
+	def dispatch void format(Shapes shapes, extension IFormattableDocument document) {
 		for (shape : shapes.shapes) {
 			shape.format
 		}
 	}
 	
-	def dispatch void format(Shape shape) {
+	def dispatch void format(Shape shape, extension IFormattableDocument document) {
+		shape.regionFor.keyword('shape:').prepend[newLines = 2];
+	}
 
+	def dispatch void format(Connectors connectors) {
+		for (connector: connectors.connectors) {
+			connector.format
+		}
+	}
+	
+	def dispatch void format(Connector connector) {
+		
 	}
 }

@@ -15,9 +15,9 @@ import org.eclipse.xtext.formatting2.regionaccess.ISemanticRegion;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
-import org.xtuml.canvas.language.canvas.GraphicalElement;
+import org.xtuml.canvas.language.canvas.Connector;
+import org.xtuml.canvas.language.canvas.Connectors;
 import org.xtuml.canvas.language.canvas.Model;
-import org.xtuml.canvas.language.canvas.ModelProperties;
 import org.xtuml.canvas.language.canvas.SemanticModel;
 import org.xtuml.canvas.language.canvas.Shape;
 import org.xtuml.canvas.language.canvas.Shapes;
@@ -33,92 +33,84 @@ public class CanvasFormatter extends AbstractFormatter2 {
     final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
       it.setNewLines(2);
     };
-    document.prepend(this.textRegionExtensions.allRegionsFor(model).keyword("render:"), _function);
-    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
-      it.setNewLines(2);
-    };
-    document.prepend(this.textRegionExtensions.allRegionsFor(model).keyword("properties:"), _function_1);
-    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
-      it.setNewLines(2);
-    };
-    document.prepend(this.textRegionExtensions.allRegionsFor(model).keyword("shapes:"), _function_2);
-    final Consumer<ISemanticRegion> _function_3 = (ISemanticRegion it) -> {
-      final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it_1) -> {
-        it_1.setSpace("    ");
+    document.prepend(this.textRegionExtensions.regionFor(model).keyword("render:"), _function);
+    final Consumer<ISemanticRegion> _function_1 = (ISemanticRegion it) -> {
+      final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it_1) -> {
+        it_1.setNewLines(1);
       };
-      document.prepend(it, _function_4);
+      document.prepend(it, _function_2);
     };
-    this.textRegionExtensions.allRegionsFor(model).keywords("shape:").forEach(_function_3);
-    final Consumer<ISemanticRegion> _function_4 = (ISemanticRegion it) -> {
-      final Procedure1<IHiddenRegionFormatter> _function_5 = (IHiddenRegionFormatter it_1) -> {
-        it_1.newLine();
-      };
-      document.prepend(it, _function_5);
-    };
-    this.textRegionExtensions.allRegionsFor(model).keywords("shape:").forEach(_function_4);
-  }
-  
-  protected void _format(final ModelProperties modelProperties, @Extension final IFormattableDocument document) {
-    this.format(modelProperties.getPoint());
-  }
-  
-  protected void _format(final GraphicalElement element) {
+    this.textRegionExtensions.allRegionsFor(model).keywords("properties:", "shapes:", "shape:", "connectors:", "connector:").forEach(_function_1);
   }
   
   protected void _format(final SemanticModel sm) {
   }
   
-  protected void _format(final Shapes shapes) {
+  protected void _format(final Shapes shapes, @Extension final IFormattableDocument document) {
     EList<Shape> _shapes = shapes.getShapes();
     for (final Shape shape : _shapes) {
       this.format(shape);
     }
   }
   
-  protected void _format(final Shape shape) {
+  protected void _format(final Shape shape, @Extension final IFormattableDocument document) {
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.setNewLines(2);
+    };
+    document.prepend(this.textRegionExtensions.regionFor(shape).keyword("shape:"), _function);
   }
   
-  public void format(final Object model, final IFormattableDocument document) {
-    if (model instanceof XtextResource) {
-      _format((XtextResource)model, document);
-      return;
-    } else if (model instanceof Model) {
-      _format((Model)model, document);
-      return;
-    } else if (model instanceof ModelProperties) {
-      _format((ModelProperties)model, document);
-      return;
-    } else if (model instanceof EObject) {
-      _format((EObject)model, document);
-      return;
-    } else if (model == null) {
-      _format((Void)null, document);
-      return;
-    } else if (model != null) {
-      _format(model, document);
-      return;
-    } else {
-      throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(model, document).toString());
+  protected void _format(final Connectors connectors) {
+    EList<Connector> _connectors = connectors.getConnectors();
+    for (final Connector connector : _connectors) {
+      this.format(connector);
     }
   }
   
-  public void format(final EObject shapes) {
-    if (shapes instanceof Shapes) {
-      _format((Shapes)shapes);
+  protected void _format(final Connector connector) {
+  }
+  
+  public void format(final Object shapes, final IFormattableDocument document) {
+    if (shapes instanceof XtextResource) {
+      _format((XtextResource)shapes, document);
       return;
-    } else if (shapes instanceof GraphicalElement) {
-      _format((GraphicalElement)shapes);
+    } else if (shapes instanceof Shapes) {
+      _format((Shapes)shapes, document);
       return;
-    } else if (shapes instanceof SemanticModel) {
-      _format((SemanticModel)shapes);
+    } else if (shapes instanceof Model) {
+      _format((Model)shapes, document);
       return;
     } else if (shapes instanceof Shape) {
-      _format((Shape)shapes);
+      _format((Shape)shapes, document);
+      return;
+    } else if (shapes instanceof EObject) {
+      _format((EObject)shapes, document);
+      return;
+    } else if (shapes == null) {
+      _format((Void)null, document);
+      return;
+    } else if (shapes != null) {
+      _format(shapes, document);
       return;
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(shapes).toString());
+        Arrays.<Object>asList(shapes, document).toString());
+    }
+  }
+  
+  public void format(final EObject connectors) {
+    if (connectors instanceof Connectors) {
+      _format((Connectors)connectors);
+      return;
+    } else if (connectors instanceof Connector) {
+      _format((Connector)connectors);
+      return;
+    } else if (connectors instanceof SemanticModel) {
+      _format((SemanticModel)connectors);
+      return;
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(connectors).toString());
     }
   }
 }
