@@ -66,16 +66,14 @@ public class CanvasFactoryImpl extends EFactoryImpl implements CanvasFactory
     switch (eClass.getClassifierID())
     {
       case CanvasPackage.MODEL: return createModel();
-      case CanvasPackage.SEMANTIC_MODEL: return createSemanticModel();
+      case CanvasPackage.MODEL_RENDER: return createModelRender();
       case CanvasPackage.MODEL_PROPERTIES: return createModelProperties();
       case CanvasPackage.GRAPHICAL_ELEMENT: return createGraphicalElement();
       case CanvasPackage.SHAPES: return createShapes();
       case CanvasPackage.SHAPE: return createShape();
       case CanvasPackage.FLOATING_TEXTS: return createFloatingTexts();
       case CanvasPackage.FLOATING_TEXT: return createFloatingText();
-      case CanvasPackage.SHAPE_PROPS: return createShapeProps();
-      case CanvasPackage.CONTAINER: return createContainer();
-      case CanvasPackage.COLOR: return createColor();
+      case CanvasPackage.ENUM_END: return createEnumEnd();
       case CanvasPackage.CONNECTORS: return createConnectors();
       case CanvasPackage.CONNECTOR: return createConnector();
       case CanvasPackage.ANCHORS: return createAnchors();
@@ -84,12 +82,11 @@ public class CanvasFactoryImpl extends EFactoryImpl implements CanvasFactory
       case CanvasPackage.ANCHOR: return createAnchor();
       case CanvasPackage.SHAPE_ANCHOR_ELEMENT: return createShapeAnchorElement();
       case CanvasPackage.CONNECTOR_ANCHOR_ELEMENT: return createConnectorAnchorElement();
-      case CanvasPackage.CONNECTOR_PROPS: return createConnectorProps();
       case CanvasPackage.POLYLINE: return createPolyline();
       case CanvasPackage.SEGMENT: return createSegment();
       case CanvasPackage.POINT: return createPoint();
+      case CanvasPackage.POINT_DEFINITION: return createPointDefinition();
       case CanvasPackage.RECTANGLE: return createRectangle();
-      case CanvasPackage.SHAPE_CONTAINER: return createShapeContainer();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -113,10 +110,10 @@ public class CanvasFactoryImpl extends EFactoryImpl implements CanvasFactory
    * @generated
    */
   @Override
-  public SemanticModel createSemanticModel()
+  public ModelRender createModelRender()
   {
-    SemanticModelImpl semanticModel = new SemanticModelImpl();
-    return semanticModel;
+    ModelRenderImpl modelRender = new ModelRenderImpl();
+    return modelRender;
   }
 
   /**
@@ -197,34 +194,10 @@ public class CanvasFactoryImpl extends EFactoryImpl implements CanvasFactory
    * @generated
    */
   @Override
-  public ShapeProps createShapeProps()
+  public EnumEnd createEnumEnd()
   {
-    ShapePropsImpl shapeProps = new ShapePropsImpl();
-    return shapeProps;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public org.xtuml.canvas.language.canvas.Container createContainer()
-  {
-    ContainerImpl container = new ContainerImpl();
-    return container;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Color createColor()
-  {
-    ColorImpl color = new ColorImpl();
-    return color;
+    EnumEndImpl enumEnd = new EnumEndImpl();
+    return enumEnd;
   }
 
   /**
@@ -329,18 +302,6 @@ public class CanvasFactoryImpl extends EFactoryImpl implements CanvasFactory
    * @generated
    */
   @Override
-  public ConnectorProps createConnectorProps()
-  {
-    ConnectorPropsImpl connectorProps = new ConnectorPropsImpl();
-    return connectorProps;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Polyline createPolyline()
   {
     PolylineImpl polyline = new PolylineImpl();
@@ -377,10 +338,10 @@ public class CanvasFactoryImpl extends EFactoryImpl implements CanvasFactory
    * @generated
    */
   @Override
-  public Rectangle createRectangle()
+  public PointDefinition createPointDefinition()
   {
-    RectangleImpl rectangle = new RectangleImpl();
-    return rectangle;
+    PointDefinitionImpl pointDefinition = new PointDefinitionImpl();
+    return pointDefinition;
   }
 
   /**
@@ -389,10 +350,10 @@ public class CanvasFactoryImpl extends EFactoryImpl implements CanvasFactory
    * @generated
    */
   @Override
-  public ShapeContainer createShapeContainer()
+  public Rectangle createRectangle()
   {
-    ShapeContainerImpl shapeContainer = new ShapeContainerImpl();
-    return shapeContainer;
+    RectangleImpl rectangle = new RectangleImpl();
+    return rectangle;
   }
 
   /**

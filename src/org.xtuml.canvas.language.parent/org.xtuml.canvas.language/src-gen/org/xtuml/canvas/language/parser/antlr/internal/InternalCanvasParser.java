@@ -21,12 +21,11 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalCanvasParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'render'", "':'", "'render:'", "'import'", "'properties'", "'properties:'", "'viewport'", "'viewport:'", "'zoom'", "'shapes'", "'shapes:'", "'shape'", "'shape:'", "'texts'", "'texts:'", "'text'", "'text:'", "'start'", "'end'", "'middle'", "'end_fixed'", "'start_fixed'", "'none'", "'floating'", "'additional'", "'container'", "'true'", "'false'", "'color'", "'connectors'", "'connectors:'", "'connector'", "'connector:'", "'anchors'", "'anchors:'", "'start:'", "'shapeAnchor'", "'shapeAnchor:'", "'segmentAnchor'", "'segmentAnchor:'", "'polyline'", "'polyline:'", "'segment'", "'segment:'", "','", "'x'", "'y'", "'rectangle'", "'rectangle:'", "'width'", "'height'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'render'", "':'", "'render:'", "'properties'", "'properties:'", "'viewport'", "'viewport:'", "'zoom'", "'zoom:'", "'shapes'", "'shapes:'", "'shape'", "'shape:'", "'container'", "'texts'", "'texts:'", "'text'", "'text:'", "'where'", "'where:'", "'start'", "'end'", "'middle'", "'end_fixed'", "'start_fixed'", "'none'", "'floating'", "'additional'", "'connectors'", "'connectors:'", "'connector'", "'connector:'", "'anchors'", "'anchors:'", "'start:'", "'end:'", "'polyline'", "'polyline:'", "'segment'", "'segment:'", "'x'", "'y'", "'point'", "'point:'", "'rectangle'", "'rectangle:'", "'width'", "'height'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
     public static final int T__15=15;
-    public static final int T__59=59;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
@@ -42,8 +41,6 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
     public static final int T__52=52;
     public static final int T__53=53;
     public static final int T__54=54;
-    public static final int T__60=60;
-    public static final int T__61=61;
     public static final int RULE_ID=6;
     public static final int T__26=26;
     public static final int T__27=27;
@@ -159,149 +156,51 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleModel"
-    // InternalCanvas.g:71:1: ruleModel returns [EObject current=null] : ( ( (lv_semantics_0_0= ruleSemanticModel ) )* ( (otherlv_1= 'render' otherlv_2= ':' ) | otherlv_3= 'render:' ) ( (lv_represents_4_0= RULE_STRING ) ) ( (lv_properties_5_0= ruleModelProperties ) )? ( (lv_elements_6_0= ruleGraphicalElement ) )* ) ;
+    // InternalCanvas.g:71:1: ruleModel returns [EObject current=null] : ( ( (lv_render_0_0= ruleModelRender ) ) ( (lv_properties_1_0= ruleModelProperties ) )? ( (lv_elements_2_0= ruleGraphicalElement ) )* ) ;
     public final EObject ruleModel() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token otherlv_3=null;
-        Token lv_represents_4_0=null;
-        EObject lv_semantics_0_0 = null;
+        EObject lv_render_0_0 = null;
 
-        EObject lv_properties_5_0 = null;
+        EObject lv_properties_1_0 = null;
 
-        EObject lv_elements_6_0 = null;
+        EObject lv_elements_2_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalCanvas.g:77:2: ( ( ( (lv_semantics_0_0= ruleSemanticModel ) )* ( (otherlv_1= 'render' otherlv_2= ':' ) | otherlv_3= 'render:' ) ( (lv_represents_4_0= RULE_STRING ) ) ( (lv_properties_5_0= ruleModelProperties ) )? ( (lv_elements_6_0= ruleGraphicalElement ) )* ) )
-            // InternalCanvas.g:78:2: ( ( (lv_semantics_0_0= ruleSemanticModel ) )* ( (otherlv_1= 'render' otherlv_2= ':' ) | otherlv_3= 'render:' ) ( (lv_represents_4_0= RULE_STRING ) ) ( (lv_properties_5_0= ruleModelProperties ) )? ( (lv_elements_6_0= ruleGraphicalElement ) )* )
+            // InternalCanvas.g:77:2: ( ( ( (lv_render_0_0= ruleModelRender ) ) ( (lv_properties_1_0= ruleModelProperties ) )? ( (lv_elements_2_0= ruleGraphicalElement ) )* ) )
+            // InternalCanvas.g:78:2: ( ( (lv_render_0_0= ruleModelRender ) ) ( (lv_properties_1_0= ruleModelProperties ) )? ( (lv_elements_2_0= ruleGraphicalElement ) )* )
             {
-            // InternalCanvas.g:78:2: ( ( (lv_semantics_0_0= ruleSemanticModel ) )* ( (otherlv_1= 'render' otherlv_2= ':' ) | otherlv_3= 'render:' ) ( (lv_represents_4_0= RULE_STRING ) ) ( (lv_properties_5_0= ruleModelProperties ) )? ( (lv_elements_6_0= ruleGraphicalElement ) )* )
-            // InternalCanvas.g:79:3: ( (lv_semantics_0_0= ruleSemanticModel ) )* ( (otherlv_1= 'render' otherlv_2= ':' ) | otherlv_3= 'render:' ) ( (lv_represents_4_0= RULE_STRING ) ) ( (lv_properties_5_0= ruleModelProperties ) )? ( (lv_elements_6_0= ruleGraphicalElement ) )*
+            // InternalCanvas.g:78:2: ( ( (lv_render_0_0= ruleModelRender ) ) ( (lv_properties_1_0= ruleModelProperties ) )? ( (lv_elements_2_0= ruleGraphicalElement ) )* )
+            // InternalCanvas.g:79:3: ( (lv_render_0_0= ruleModelRender ) ) ( (lv_properties_1_0= ruleModelProperties ) )? ( (lv_elements_2_0= ruleGraphicalElement ) )*
             {
-            // InternalCanvas.g:79:3: ( (lv_semantics_0_0= ruleSemanticModel ) )*
-            loop1:
-            do {
-                int alt1=2;
-                int LA1_0 = input.LA(1);
-
-                if ( (LA1_0==14) ) {
-                    alt1=1;
-                }
-
-
-                switch (alt1) {
-            	case 1 :
-            	    // InternalCanvas.g:80:4: (lv_semantics_0_0= ruleSemanticModel )
-            	    {
-            	    // InternalCanvas.g:80:4: (lv_semantics_0_0= ruleSemanticModel )
-            	    // InternalCanvas.g:81:5: lv_semantics_0_0= ruleSemanticModel
-            	    {
-
-            	    					newCompositeNode(grammarAccess.getModelAccess().getSemanticsSemanticModelParserRuleCall_0_0());
-            	    				
-            	    pushFollow(FOLLOW_3);
-            	    lv_semantics_0_0=ruleSemanticModel();
-
-            	    state._fsp--;
-
-
-            	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getModelRule());
-            	    					}
-            	    					add(
-            	    						current,
-            	    						"semantics",
-            	    						lv_semantics_0_0,
-            	    						"org.xtuml.canvas.language.Canvas.SemanticModel");
-            	    					afterParserOrEnumRuleCall();
-            	    				
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop1;
-                }
-            } while (true);
-
-            // InternalCanvas.g:98:3: ( (otherlv_1= 'render' otherlv_2= ':' ) | otherlv_3= 'render:' )
-            int alt2=2;
-            int LA2_0 = input.LA(1);
-
-            if ( (LA2_0==11) ) {
-                alt2=1;
-            }
-            else if ( (LA2_0==13) ) {
-                alt2=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 2, 0, input);
-
-                throw nvae;
-            }
-            switch (alt2) {
-                case 1 :
-                    // InternalCanvas.g:99:4: (otherlv_1= 'render' otherlv_2= ':' )
-                    {
-                    // InternalCanvas.g:99:4: (otherlv_1= 'render' otherlv_2= ':' )
-                    // InternalCanvas.g:100:5: otherlv_1= 'render' otherlv_2= ':'
-                    {
-                    otherlv_1=(Token)match(input,11,FOLLOW_4); 
-
-                    					newLeafNode(otherlv_1, grammarAccess.getModelAccess().getRenderKeyword_1_0_0());
-                    				
-                    otherlv_2=(Token)match(input,12,FOLLOW_5); 
-
-                    					newLeafNode(otherlv_2, grammarAccess.getModelAccess().getColonKeyword_1_0_1());
-                    				
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:110:4: otherlv_3= 'render:'
-                    {
-                    otherlv_3=(Token)match(input,13,FOLLOW_5); 
-
-                    				newLeafNode(otherlv_3, grammarAccess.getModelAccess().getRenderKeyword_1_1());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            // InternalCanvas.g:115:3: ( (lv_represents_4_0= RULE_STRING ) )
-            // InternalCanvas.g:116:4: (lv_represents_4_0= RULE_STRING )
+            // InternalCanvas.g:79:3: ( (lv_render_0_0= ruleModelRender ) )
+            // InternalCanvas.g:80:4: (lv_render_0_0= ruleModelRender )
             {
-            // InternalCanvas.g:116:4: (lv_represents_4_0= RULE_STRING )
-            // InternalCanvas.g:117:5: lv_represents_4_0= RULE_STRING
+            // InternalCanvas.g:80:4: (lv_render_0_0= ruleModelRender )
+            // InternalCanvas.g:81:5: lv_render_0_0= ruleModelRender
             {
-            lv_represents_4_0=(Token)match(input,RULE_STRING,FOLLOW_6); 
 
-            					newLeafNode(lv_represents_4_0, grammarAccess.getModelAccess().getRepresentsSTRINGTerminalRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getModelAccess().getRenderModelRenderParserRuleCall_0_0());
             				
+            pushFollow(FOLLOW_3);
+            lv_render_0_0=ruleModelRender();
+
+            state._fsp--;
+
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getModelRule());
+            						current = createModelElementForParent(grammarAccess.getModelRule());
             					}
-            					setWithLastConsumed(
+            					set(
             						current,
-            						"represents",
-            						lv_represents_4_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
+            						"render",
+            						lv_render_0_0,
+            						"org.xtuml.canvas.language.Canvas.ModelRender");
+            					afterParserOrEnumRuleCall();
             				
 
             }
@@ -309,25 +208,25 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:133:3: ( (lv_properties_5_0= ruleModelProperties ) )?
-            int alt3=2;
-            int LA3_0 = input.LA(1);
+            // InternalCanvas.g:98:3: ( (lv_properties_1_0= ruleModelProperties ) )?
+            int alt1=2;
+            int LA1_0 = input.LA(1);
 
-            if ( ((LA3_0>=15 && LA3_0<=16)) ) {
-                alt3=1;
+            if ( ((LA1_0>=14 && LA1_0<=15)) ) {
+                alt1=1;
             }
-            switch (alt3) {
+            switch (alt1) {
                 case 1 :
-                    // InternalCanvas.g:134:4: (lv_properties_5_0= ruleModelProperties )
+                    // InternalCanvas.g:99:4: (lv_properties_1_0= ruleModelProperties )
                     {
-                    // InternalCanvas.g:134:4: (lv_properties_5_0= ruleModelProperties )
-                    // InternalCanvas.g:135:5: lv_properties_5_0= ruleModelProperties
+                    // InternalCanvas.g:99:4: (lv_properties_1_0= ruleModelProperties )
+                    // InternalCanvas.g:100:5: lv_properties_1_0= ruleModelProperties
                     {
 
-                    					newCompositeNode(grammarAccess.getModelAccess().getPropertiesModelPropertiesParserRuleCall_3_0());
+                    					newCompositeNode(grammarAccess.getModelAccess().getPropertiesModelPropertiesParserRuleCall_1_0());
                     				
-                    pushFollow(FOLLOW_7);
-                    lv_properties_5_0=ruleModelProperties();
+                    pushFollow(FOLLOW_4);
+                    lv_properties_1_0=ruleModelProperties();
 
                     state._fsp--;
 
@@ -338,7 +237,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
                     					set(
                     						current,
                     						"properties",
-                    						lv_properties_5_0,
+                    						lv_properties_1_0,
                     						"org.xtuml.canvas.language.Canvas.ModelProperties");
                     					afterParserOrEnumRuleCall();
                     				
@@ -351,29 +250,29 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:152:3: ( (lv_elements_6_0= ruleGraphicalElement ) )*
-            loop4:
+            // InternalCanvas.g:117:3: ( (lv_elements_2_0= ruleGraphicalElement ) )*
+            loop2:
             do {
-                int alt4=2;
-                int LA4_0 = input.LA(1);
+                int alt2=2;
+                int LA2_0 = input.LA(1);
 
-                if ( ((LA4_0>=20 && LA4_0<=21)||(LA4_0>=40 && LA4_0<=41)) ) {
-                    alt4=1;
+                if ( ((LA2_0>=20 && LA2_0<=21)||(LA2_0>=39 && LA2_0<=40)) ) {
+                    alt2=1;
                 }
 
 
-                switch (alt4) {
+                switch (alt2) {
             	case 1 :
-            	    // InternalCanvas.g:153:4: (lv_elements_6_0= ruleGraphicalElement )
+            	    // InternalCanvas.g:118:4: (lv_elements_2_0= ruleGraphicalElement )
             	    {
-            	    // InternalCanvas.g:153:4: (lv_elements_6_0= ruleGraphicalElement )
-            	    // InternalCanvas.g:154:5: lv_elements_6_0= ruleGraphicalElement
+            	    // InternalCanvas.g:118:4: (lv_elements_2_0= ruleGraphicalElement )
+            	    // InternalCanvas.g:119:5: lv_elements_2_0= ruleGraphicalElement
             	    {
 
-            	    					newCompositeNode(grammarAccess.getModelAccess().getElementsGraphicalElementParserRuleCall_4_0());
+            	    					newCompositeNode(grammarAccess.getModelAccess().getElementsGraphicalElementParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_7);
-            	    lv_elements_6_0=ruleGraphicalElement();
+            	    pushFollow(FOLLOW_4);
+            	    lv_elements_2_0=ruleGraphicalElement();
 
             	    state._fsp--;
 
@@ -384,7 +283,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
             	    					add(
             	    						current,
             	    						"elements",
-            	    						lv_elements_6_0,
+            	    						lv_elements_2_0,
             	    						"org.xtuml.canvas.language.Canvas.GraphicalElement");
             	    					afterParserOrEnumRuleCall();
             	    				
@@ -396,7 +295,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop4;
+            	    break loop2;
                 }
             } while (true);
 
@@ -422,25 +321,25 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleModel"
 
 
-    // $ANTLR start "entryRuleSemanticModel"
-    // InternalCanvas.g:175:1: entryRuleSemanticModel returns [EObject current=null] : iv_ruleSemanticModel= ruleSemanticModel EOF ;
-    public final EObject entryRuleSemanticModel() throws RecognitionException {
+    // $ANTLR start "entryRuleModelRender"
+    // InternalCanvas.g:140:1: entryRuleModelRender returns [EObject current=null] : iv_ruleModelRender= ruleModelRender EOF ;
+    public final EObject entryRuleModelRender() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleSemanticModel = null;
+        EObject iv_ruleModelRender = null;
 
 
         try {
-            // InternalCanvas.g:175:54: (iv_ruleSemanticModel= ruleSemanticModel EOF )
-            // InternalCanvas.g:176:2: iv_ruleSemanticModel= ruleSemanticModel EOF
+            // InternalCanvas.g:140:52: (iv_ruleModelRender= ruleModelRender EOF )
+            // InternalCanvas.g:141:2: iv_ruleModelRender= ruleModelRender EOF
             {
-             newCompositeNode(grammarAccess.getSemanticModelRule()); 
+             newCompositeNode(grammarAccess.getModelRenderRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleSemanticModel=ruleSemanticModel();
+            iv_ruleModelRender=ruleModelRender();
 
             state._fsp--;
 
-             current =iv_ruleSemanticModel; 
+             current =iv_ruleModelRender; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -455,49 +354,97 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleSemanticModel"
+    // $ANTLR end "entryRuleModelRender"
 
 
-    // $ANTLR start "ruleSemanticModel"
-    // InternalCanvas.g:182:1: ruleSemanticModel returns [EObject current=null] : (otherlv_0= 'import' ( (lv_importURI_1_0= RULE_STRING ) ) ) ;
-    public final EObject ruleSemanticModel() throws RecognitionException {
+    // $ANTLR start "ruleModelRender"
+    // InternalCanvas.g:147:1: ruleModelRender returns [EObject current=null] : ( ( (otherlv_0= 'render' otherlv_1= ':' ) | otherlv_2= 'render:' ) ( (lv_importURI_3_0= RULE_STRING ) ) ) ;
+    public final EObject ruleModelRender() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_importURI_1_0=null;
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token lv_importURI_3_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalCanvas.g:188:2: ( (otherlv_0= 'import' ( (lv_importURI_1_0= RULE_STRING ) ) ) )
-            // InternalCanvas.g:189:2: (otherlv_0= 'import' ( (lv_importURI_1_0= RULE_STRING ) ) )
+            // InternalCanvas.g:153:2: ( ( ( (otherlv_0= 'render' otherlv_1= ':' ) | otherlv_2= 'render:' ) ( (lv_importURI_3_0= RULE_STRING ) ) ) )
+            // InternalCanvas.g:154:2: ( ( (otherlv_0= 'render' otherlv_1= ':' ) | otherlv_2= 'render:' ) ( (lv_importURI_3_0= RULE_STRING ) ) )
             {
-            // InternalCanvas.g:189:2: (otherlv_0= 'import' ( (lv_importURI_1_0= RULE_STRING ) ) )
-            // InternalCanvas.g:190:3: otherlv_0= 'import' ( (lv_importURI_1_0= RULE_STRING ) )
+            // InternalCanvas.g:154:2: ( ( (otherlv_0= 'render' otherlv_1= ':' ) | otherlv_2= 'render:' ) ( (lv_importURI_3_0= RULE_STRING ) ) )
+            // InternalCanvas.g:155:3: ( (otherlv_0= 'render' otherlv_1= ':' ) | otherlv_2= 'render:' ) ( (lv_importURI_3_0= RULE_STRING ) )
             {
-            otherlv_0=(Token)match(input,14,FOLLOW_5); 
+            // InternalCanvas.g:155:3: ( (otherlv_0= 'render' otherlv_1= ':' ) | otherlv_2= 'render:' )
+            int alt3=2;
+            int LA3_0 = input.LA(1);
 
-            			newLeafNode(otherlv_0, grammarAccess.getSemanticModelAccess().getImportKeyword_0());
-            		
-            // InternalCanvas.g:194:3: ( (lv_importURI_1_0= RULE_STRING ) )
-            // InternalCanvas.g:195:4: (lv_importURI_1_0= RULE_STRING )
-            {
-            // InternalCanvas.g:195:4: (lv_importURI_1_0= RULE_STRING )
-            // InternalCanvas.g:196:5: lv_importURI_1_0= RULE_STRING
-            {
-            lv_importURI_1_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
+            if ( (LA3_0==11) ) {
+                alt3=1;
+            }
+            else if ( (LA3_0==13) ) {
+                alt3=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 3, 0, input);
 
-            					newLeafNode(lv_importURI_1_0, grammarAccess.getSemanticModelAccess().getImportURISTRINGTerminalRuleCall_1_0());
+                throw nvae;
+            }
+            switch (alt3) {
+                case 1 :
+                    // InternalCanvas.g:156:4: (otherlv_0= 'render' otherlv_1= ':' )
+                    {
+                    // InternalCanvas.g:156:4: (otherlv_0= 'render' otherlv_1= ':' )
+                    // InternalCanvas.g:157:5: otherlv_0= 'render' otherlv_1= ':'
+                    {
+                    otherlv_0=(Token)match(input,11,FOLLOW_5); 
+
+                    					newLeafNode(otherlv_0, grammarAccess.getModelRenderAccess().getRenderKeyword_0_0_0());
+                    				
+                    otherlv_1=(Token)match(input,12,FOLLOW_6); 
+
+                    					newLeafNode(otherlv_1, grammarAccess.getModelRenderAccess().getColonKeyword_0_0_1());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalCanvas.g:167:4: otherlv_2= 'render:'
+                    {
+                    otherlv_2=(Token)match(input,13,FOLLOW_6); 
+
+                    				newLeafNode(otherlv_2, grammarAccess.getModelRenderAccess().getRenderKeyword_0_1());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            // InternalCanvas.g:172:3: ( (lv_importURI_3_0= RULE_STRING ) )
+            // InternalCanvas.g:173:4: (lv_importURI_3_0= RULE_STRING )
+            {
+            // InternalCanvas.g:173:4: (lv_importURI_3_0= RULE_STRING )
+            // InternalCanvas.g:174:5: lv_importURI_3_0= RULE_STRING
+            {
+            lv_importURI_3_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
+
+            					newLeafNode(lv_importURI_3_0, grammarAccess.getModelRenderAccess().getImportURISTRINGTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getSemanticModelRule());
+            						current = createModelElement(grammarAccess.getModelRenderRule());
             					}
             					setWithLastConsumed(
             						current,
             						"importURI",
-            						lv_importURI_1_0,
+            						lv_importURI_3_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -525,11 +472,11 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleSemanticModel"
+    // $ANTLR end "ruleModelRender"
 
 
     // $ANTLR start "entryRuleModelProperties"
-    // InternalCanvas.g:216:1: entryRuleModelProperties returns [EObject current=null] : iv_ruleModelProperties= ruleModelProperties EOF ;
+    // InternalCanvas.g:194:1: entryRuleModelProperties returns [EObject current=null] : iv_ruleModelProperties= ruleModelProperties EOF ;
     public final EObject entryRuleModelProperties() throws RecognitionException {
         EObject current = null;
 
@@ -537,8 +484,8 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCanvas.g:216:56: (iv_ruleModelProperties= ruleModelProperties EOF )
-            // InternalCanvas.g:217:2: iv_ruleModelProperties= ruleModelProperties EOF
+            // InternalCanvas.g:194:56: (iv_ruleModelProperties= ruleModelProperties EOF )
+            // InternalCanvas.g:195:2: iv_ruleModelProperties= ruleModelProperties EOF
             {
              newCompositeNode(grammarAccess.getModelPropertiesRule()); 
             pushFollow(FOLLOW_1);
@@ -565,7 +512,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleModelProperties"
-    // InternalCanvas.g:223:1: ruleModelProperties returns [EObject current=null] : ( ( (otherlv_0= 'properties' otherlv_1= ':' ) | otherlv_2= 'properties:' ) ( (otherlv_3= 'viewport' otherlv_4= ':' ) | otherlv_5= 'viewport:' ) ( (lv_point_6_0= rulePoint ) ) otherlv_7= 'zoom' ( (lv_zoom_8_0= RULE_INT ) ) ) ;
+    // InternalCanvas.g:201:1: ruleModelProperties returns [EObject current=null] : ( ( (otherlv_0= 'properties' otherlv_1= ':' ) | otherlv_2= 'properties:' ) ( (otherlv_3= 'viewport' otherlv_4= ':' ) | otherlv_5= 'viewport:' ) ( (lv_point_6_0= rulePoint ) ) ( (otherlv_7= 'zoom' otherlv_8= ':' ) | otherlv_9= 'zoom:' ) ( (lv_zoom_10_0= RULE_INT ) ) ) ;
     public final EObject ruleModelProperties() throws RecognitionException {
         EObject current = null;
 
@@ -576,7 +523,9 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
         Token otherlv_4=null;
         Token otherlv_5=null;
         Token otherlv_7=null;
-        Token lv_zoom_8_0=null;
+        Token otherlv_8=null;
+        Token otherlv_9=null;
+        Token lv_zoom_10_0=null;
         EObject lv_point_6_0 = null;
 
 
@@ -584,40 +533,40 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCanvas.g:229:2: ( ( ( (otherlv_0= 'properties' otherlv_1= ':' ) | otherlv_2= 'properties:' ) ( (otherlv_3= 'viewport' otherlv_4= ':' ) | otherlv_5= 'viewport:' ) ( (lv_point_6_0= rulePoint ) ) otherlv_7= 'zoom' ( (lv_zoom_8_0= RULE_INT ) ) ) )
-            // InternalCanvas.g:230:2: ( ( (otherlv_0= 'properties' otherlv_1= ':' ) | otherlv_2= 'properties:' ) ( (otherlv_3= 'viewport' otherlv_4= ':' ) | otherlv_5= 'viewport:' ) ( (lv_point_6_0= rulePoint ) ) otherlv_7= 'zoom' ( (lv_zoom_8_0= RULE_INT ) ) )
+            // InternalCanvas.g:207:2: ( ( ( (otherlv_0= 'properties' otherlv_1= ':' ) | otherlv_2= 'properties:' ) ( (otherlv_3= 'viewport' otherlv_4= ':' ) | otherlv_5= 'viewport:' ) ( (lv_point_6_0= rulePoint ) ) ( (otherlv_7= 'zoom' otherlv_8= ':' ) | otherlv_9= 'zoom:' ) ( (lv_zoom_10_0= RULE_INT ) ) ) )
+            // InternalCanvas.g:208:2: ( ( (otherlv_0= 'properties' otherlv_1= ':' ) | otherlv_2= 'properties:' ) ( (otherlv_3= 'viewport' otherlv_4= ':' ) | otherlv_5= 'viewport:' ) ( (lv_point_6_0= rulePoint ) ) ( (otherlv_7= 'zoom' otherlv_8= ':' ) | otherlv_9= 'zoom:' ) ( (lv_zoom_10_0= RULE_INT ) ) )
             {
-            // InternalCanvas.g:230:2: ( ( (otherlv_0= 'properties' otherlv_1= ':' ) | otherlv_2= 'properties:' ) ( (otherlv_3= 'viewport' otherlv_4= ':' ) | otherlv_5= 'viewport:' ) ( (lv_point_6_0= rulePoint ) ) otherlv_7= 'zoom' ( (lv_zoom_8_0= RULE_INT ) ) )
-            // InternalCanvas.g:231:3: ( (otherlv_0= 'properties' otherlv_1= ':' ) | otherlv_2= 'properties:' ) ( (otherlv_3= 'viewport' otherlv_4= ':' ) | otherlv_5= 'viewport:' ) ( (lv_point_6_0= rulePoint ) ) otherlv_7= 'zoom' ( (lv_zoom_8_0= RULE_INT ) )
+            // InternalCanvas.g:208:2: ( ( (otherlv_0= 'properties' otherlv_1= ':' ) | otherlv_2= 'properties:' ) ( (otherlv_3= 'viewport' otherlv_4= ':' ) | otherlv_5= 'viewport:' ) ( (lv_point_6_0= rulePoint ) ) ( (otherlv_7= 'zoom' otherlv_8= ':' ) | otherlv_9= 'zoom:' ) ( (lv_zoom_10_0= RULE_INT ) ) )
+            // InternalCanvas.g:209:3: ( (otherlv_0= 'properties' otherlv_1= ':' ) | otherlv_2= 'properties:' ) ( (otherlv_3= 'viewport' otherlv_4= ':' ) | otherlv_5= 'viewport:' ) ( (lv_point_6_0= rulePoint ) ) ( (otherlv_7= 'zoom' otherlv_8= ':' ) | otherlv_9= 'zoom:' ) ( (lv_zoom_10_0= RULE_INT ) )
             {
-            // InternalCanvas.g:231:3: ( (otherlv_0= 'properties' otherlv_1= ':' ) | otherlv_2= 'properties:' )
-            int alt5=2;
-            int LA5_0 = input.LA(1);
+            // InternalCanvas.g:209:3: ( (otherlv_0= 'properties' otherlv_1= ':' ) | otherlv_2= 'properties:' )
+            int alt4=2;
+            int LA4_0 = input.LA(1);
 
-            if ( (LA5_0==15) ) {
-                alt5=1;
+            if ( (LA4_0==14) ) {
+                alt4=1;
             }
-            else if ( (LA5_0==16) ) {
-                alt5=2;
+            else if ( (LA4_0==15) ) {
+                alt4=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
+                    new NoViableAltException("", 4, 0, input);
 
                 throw nvae;
             }
-            switch (alt5) {
+            switch (alt4) {
                 case 1 :
-                    // InternalCanvas.g:232:4: (otherlv_0= 'properties' otherlv_1= ':' )
+                    // InternalCanvas.g:210:4: (otherlv_0= 'properties' otherlv_1= ':' )
                     {
-                    // InternalCanvas.g:232:4: (otherlv_0= 'properties' otherlv_1= ':' )
-                    // InternalCanvas.g:233:5: otherlv_0= 'properties' otherlv_1= ':'
+                    // InternalCanvas.g:210:4: (otherlv_0= 'properties' otherlv_1= ':' )
+                    // InternalCanvas.g:211:5: otherlv_0= 'properties' otherlv_1= ':'
                     {
-                    otherlv_0=(Token)match(input,15,FOLLOW_4); 
+                    otherlv_0=(Token)match(input,14,FOLLOW_5); 
 
                     					newLeafNode(otherlv_0, grammarAccess.getModelPropertiesAccess().getPropertiesKeyword_0_0_0());
                     				
-                    otherlv_1=(Token)match(input,12,FOLLOW_8); 
+                    otherlv_1=(Token)match(input,12,FOLLOW_7); 
 
                     					newLeafNode(otherlv_1, grammarAccess.getModelPropertiesAccess().getColonKeyword_0_0_1());
                     				
@@ -628,9 +577,9 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:243:4: otherlv_2= 'properties:'
+                    // InternalCanvas.g:221:4: otherlv_2= 'properties:'
                     {
-                    otherlv_2=(Token)match(input,16,FOLLOW_8); 
+                    otherlv_2=(Token)match(input,15,FOLLOW_7); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getModelPropertiesAccess().getPropertiesKeyword_0_1());
                     			
@@ -640,34 +589,34 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:248:3: ( (otherlv_3= 'viewport' otherlv_4= ':' ) | otherlv_5= 'viewport:' )
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // InternalCanvas.g:226:3: ( (otherlv_3= 'viewport' otherlv_4= ':' ) | otherlv_5= 'viewport:' )
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-            if ( (LA6_0==17) ) {
-                alt6=1;
+            if ( (LA5_0==16) ) {
+                alt5=1;
             }
-            else if ( (LA6_0==18) ) {
-                alt6=2;
+            else if ( (LA5_0==17) ) {
+                alt5=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
+                    new NoViableAltException("", 5, 0, input);
 
                 throw nvae;
             }
-            switch (alt6) {
+            switch (alt5) {
                 case 1 :
-                    // InternalCanvas.g:249:4: (otherlv_3= 'viewport' otherlv_4= ':' )
+                    // InternalCanvas.g:227:4: (otherlv_3= 'viewport' otherlv_4= ':' )
                     {
-                    // InternalCanvas.g:249:4: (otherlv_3= 'viewport' otherlv_4= ':' )
-                    // InternalCanvas.g:250:5: otherlv_3= 'viewport' otherlv_4= ':'
+                    // InternalCanvas.g:227:4: (otherlv_3= 'viewport' otherlv_4= ':' )
+                    // InternalCanvas.g:228:5: otherlv_3= 'viewport' otherlv_4= ':'
                     {
-                    otherlv_3=(Token)match(input,17,FOLLOW_4); 
+                    otherlv_3=(Token)match(input,16,FOLLOW_5); 
 
                     					newLeafNode(otherlv_3, grammarAccess.getModelPropertiesAccess().getViewportKeyword_1_0_0());
                     				
-                    otherlv_4=(Token)match(input,12,FOLLOW_9); 
+                    otherlv_4=(Token)match(input,12,FOLLOW_8); 
 
                     					newLeafNode(otherlv_4, grammarAccess.getModelPropertiesAccess().getColonKeyword_1_0_1());
                     				
@@ -678,9 +627,9 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:260:4: otherlv_5= 'viewport:'
+                    // InternalCanvas.g:238:4: otherlv_5= 'viewport:'
                     {
-                    otherlv_5=(Token)match(input,18,FOLLOW_9); 
+                    otherlv_5=(Token)match(input,17,FOLLOW_8); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getModelPropertiesAccess().getViewportKeyword_1_1());
                     			
@@ -690,16 +639,16 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:265:3: ( (lv_point_6_0= rulePoint ) )
-            // InternalCanvas.g:266:4: (lv_point_6_0= rulePoint )
+            // InternalCanvas.g:243:3: ( (lv_point_6_0= rulePoint ) )
+            // InternalCanvas.g:244:4: (lv_point_6_0= rulePoint )
             {
-            // InternalCanvas.g:266:4: (lv_point_6_0= rulePoint )
-            // InternalCanvas.g:267:5: lv_point_6_0= rulePoint
+            // InternalCanvas.g:244:4: (lv_point_6_0= rulePoint )
+            // InternalCanvas.g:245:5: lv_point_6_0= rulePoint
             {
 
             					newCompositeNode(grammarAccess.getModelPropertiesAccess().getPointPointParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_9);
             lv_point_6_0=rulePoint();
 
             state._fsp--;
@@ -721,19 +670,65 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,19,FOLLOW_11); 
+            // InternalCanvas.g:262:3: ( (otherlv_7= 'zoom' otherlv_8= ':' ) | otherlv_9= 'zoom:' )
+            int alt6=2;
+            int LA6_0 = input.LA(1);
 
-            			newLeafNode(otherlv_7, grammarAccess.getModelPropertiesAccess().getZoomKeyword_3());
-            		
-            // InternalCanvas.g:288:3: ( (lv_zoom_8_0= RULE_INT ) )
-            // InternalCanvas.g:289:4: (lv_zoom_8_0= RULE_INT )
-            {
-            // InternalCanvas.g:289:4: (lv_zoom_8_0= RULE_INT )
-            // InternalCanvas.g:290:5: lv_zoom_8_0= RULE_INT
-            {
-            lv_zoom_8_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+            if ( (LA6_0==18) ) {
+                alt6=1;
+            }
+            else if ( (LA6_0==19) ) {
+                alt6=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 6, 0, input);
 
-            					newLeafNode(lv_zoom_8_0, grammarAccess.getModelPropertiesAccess().getZoomINTTerminalRuleCall_4_0());
+                throw nvae;
+            }
+            switch (alt6) {
+                case 1 :
+                    // InternalCanvas.g:263:4: (otherlv_7= 'zoom' otherlv_8= ':' )
+                    {
+                    // InternalCanvas.g:263:4: (otherlv_7= 'zoom' otherlv_8= ':' )
+                    // InternalCanvas.g:264:5: otherlv_7= 'zoom' otherlv_8= ':'
+                    {
+                    otherlv_7=(Token)match(input,18,FOLLOW_5); 
+
+                    					newLeafNode(otherlv_7, grammarAccess.getModelPropertiesAccess().getZoomKeyword_3_0_0());
+                    				
+                    otherlv_8=(Token)match(input,12,FOLLOW_10); 
+
+                    					newLeafNode(otherlv_8, grammarAccess.getModelPropertiesAccess().getColonKeyword_3_0_1());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalCanvas.g:274:4: otherlv_9= 'zoom:'
+                    {
+                    otherlv_9=(Token)match(input,19,FOLLOW_10); 
+
+                    				newLeafNode(otherlv_9, grammarAccess.getModelPropertiesAccess().getZoomKeyword_3_1());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            // InternalCanvas.g:279:3: ( (lv_zoom_10_0= RULE_INT ) )
+            // InternalCanvas.g:280:4: (lv_zoom_10_0= RULE_INT )
+            {
+            // InternalCanvas.g:280:4: (lv_zoom_10_0= RULE_INT )
+            // InternalCanvas.g:281:5: lv_zoom_10_0= RULE_INT
+            {
+            lv_zoom_10_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+
+            					newLeafNode(lv_zoom_10_0, grammarAccess.getModelPropertiesAccess().getZoomINTTerminalRuleCall_4_0());
             				
 
             					if (current==null) {
@@ -742,7 +737,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"zoom",
-            						lv_zoom_8_0,
+            						lv_zoom_10_0,
             						"org.eclipse.xtext.common.Terminals.INT");
             				
 
@@ -774,7 +769,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGraphicalElement"
-    // InternalCanvas.g:310:1: entryRuleGraphicalElement returns [EObject current=null] : iv_ruleGraphicalElement= ruleGraphicalElement EOF ;
+    // InternalCanvas.g:301:1: entryRuleGraphicalElement returns [EObject current=null] : iv_ruleGraphicalElement= ruleGraphicalElement EOF ;
     public final EObject entryRuleGraphicalElement() throws RecognitionException {
         EObject current = null;
 
@@ -782,8 +777,8 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCanvas.g:310:57: (iv_ruleGraphicalElement= ruleGraphicalElement EOF )
-            // InternalCanvas.g:311:2: iv_ruleGraphicalElement= ruleGraphicalElement EOF
+            // InternalCanvas.g:301:57: (iv_ruleGraphicalElement= ruleGraphicalElement EOF )
+            // InternalCanvas.g:302:2: iv_ruleGraphicalElement= ruleGraphicalElement EOF
             {
              newCompositeNode(grammarAccess.getGraphicalElementRule()); 
             pushFollow(FOLLOW_1);
@@ -810,7 +805,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGraphicalElement"
-    // InternalCanvas.g:317:1: ruleGraphicalElement returns [EObject current=null] : (this_Shapes_0= ruleShapes | this_Connectors_1= ruleConnectors ) ;
+    // InternalCanvas.g:308:1: ruleGraphicalElement returns [EObject current=null] : (this_Shapes_0= ruleShapes | this_Connectors_1= ruleConnectors ) ;
     public final EObject ruleGraphicalElement() throws RecognitionException {
         EObject current = null;
 
@@ -823,17 +818,17 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCanvas.g:323:2: ( (this_Shapes_0= ruleShapes | this_Connectors_1= ruleConnectors ) )
-            // InternalCanvas.g:324:2: (this_Shapes_0= ruleShapes | this_Connectors_1= ruleConnectors )
+            // InternalCanvas.g:314:2: ( (this_Shapes_0= ruleShapes | this_Connectors_1= ruleConnectors ) )
+            // InternalCanvas.g:315:2: (this_Shapes_0= ruleShapes | this_Connectors_1= ruleConnectors )
             {
-            // InternalCanvas.g:324:2: (this_Shapes_0= ruleShapes | this_Connectors_1= ruleConnectors )
+            // InternalCanvas.g:315:2: (this_Shapes_0= ruleShapes | this_Connectors_1= ruleConnectors )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
             if ( ((LA7_0>=20 && LA7_0<=21)) ) {
                 alt7=1;
             }
-            else if ( ((LA7_0>=40 && LA7_0<=41)) ) {
+            else if ( ((LA7_0>=39 && LA7_0<=40)) ) {
                 alt7=2;
             }
             else {
@@ -844,7 +839,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalCanvas.g:325:3: this_Shapes_0= ruleShapes
+                    // InternalCanvas.g:316:3: this_Shapes_0= ruleShapes
                     {
 
                     			newCompositeNode(grammarAccess.getGraphicalElementAccess().getShapesParserRuleCall_0());
@@ -862,7 +857,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:334:3: this_Connectors_1= ruleConnectors
+                    // InternalCanvas.g:325:3: this_Connectors_1= ruleConnectors
                     {
 
                     			newCompositeNode(grammarAccess.getGraphicalElementAccess().getConnectorsParserRuleCall_1());
@@ -902,7 +897,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleShapes"
-    // InternalCanvas.g:346:1: entryRuleShapes returns [EObject current=null] : iv_ruleShapes= ruleShapes EOF ;
+    // InternalCanvas.g:337:1: entryRuleShapes returns [EObject current=null] : iv_ruleShapes= ruleShapes EOF ;
     public final EObject entryRuleShapes() throws RecognitionException {
         EObject current = null;
 
@@ -910,8 +905,8 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCanvas.g:346:47: (iv_ruleShapes= ruleShapes EOF )
-            // InternalCanvas.g:347:2: iv_ruleShapes= ruleShapes EOF
+            // InternalCanvas.g:337:47: (iv_ruleShapes= ruleShapes EOF )
+            // InternalCanvas.g:338:2: iv_ruleShapes= ruleShapes EOF
             {
              newCompositeNode(grammarAccess.getShapesRule()); 
             pushFollow(FOLLOW_1);
@@ -938,7 +933,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleShapes"
-    // InternalCanvas.g:353:1: ruleShapes returns [EObject current=null] : ( () ( (otherlv_1= 'shapes' otherlv_2= ':' ) | otherlv_3= 'shapes:' ) ( (lv_shapes_4_0= ruleShape ) )* ) ;
+    // InternalCanvas.g:344:1: ruleShapes returns [EObject current=null] : ( () ( (otherlv_1= 'shapes' otherlv_2= ':' ) | otherlv_3= 'shapes:' ) ( (lv_shapes_4_0= ruleShape ) )* ) ;
     public final EObject ruleShapes() throws RecognitionException {
         EObject current = null;
 
@@ -952,14 +947,14 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCanvas.g:359:2: ( ( () ( (otherlv_1= 'shapes' otherlv_2= ':' ) | otherlv_3= 'shapes:' ) ( (lv_shapes_4_0= ruleShape ) )* ) )
-            // InternalCanvas.g:360:2: ( () ( (otherlv_1= 'shapes' otherlv_2= ':' ) | otherlv_3= 'shapes:' ) ( (lv_shapes_4_0= ruleShape ) )* )
+            // InternalCanvas.g:350:2: ( ( () ( (otherlv_1= 'shapes' otherlv_2= ':' ) | otherlv_3= 'shapes:' ) ( (lv_shapes_4_0= ruleShape ) )* ) )
+            // InternalCanvas.g:351:2: ( () ( (otherlv_1= 'shapes' otherlv_2= ':' ) | otherlv_3= 'shapes:' ) ( (lv_shapes_4_0= ruleShape ) )* )
             {
-            // InternalCanvas.g:360:2: ( () ( (otherlv_1= 'shapes' otherlv_2= ':' ) | otherlv_3= 'shapes:' ) ( (lv_shapes_4_0= ruleShape ) )* )
-            // InternalCanvas.g:361:3: () ( (otherlv_1= 'shapes' otherlv_2= ':' ) | otherlv_3= 'shapes:' ) ( (lv_shapes_4_0= ruleShape ) )*
+            // InternalCanvas.g:351:2: ( () ( (otherlv_1= 'shapes' otherlv_2= ':' ) | otherlv_3= 'shapes:' ) ( (lv_shapes_4_0= ruleShape ) )* )
+            // InternalCanvas.g:352:3: () ( (otherlv_1= 'shapes' otherlv_2= ':' ) | otherlv_3= 'shapes:' ) ( (lv_shapes_4_0= ruleShape ) )*
             {
-            // InternalCanvas.g:361:3: ()
-            // InternalCanvas.g:362:4: 
+            // InternalCanvas.g:352:3: ()
+            // InternalCanvas.g:353:4: 
             {
 
             				current = forceCreateModelElement(
@@ -969,7 +964,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:368:3: ( (otherlv_1= 'shapes' otherlv_2= ':' ) | otherlv_3= 'shapes:' )
+            // InternalCanvas.g:359:3: ( (otherlv_1= 'shapes' otherlv_2= ':' ) | otherlv_3= 'shapes:' )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -987,16 +982,16 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalCanvas.g:369:4: (otherlv_1= 'shapes' otherlv_2= ':' )
+                    // InternalCanvas.g:360:4: (otherlv_1= 'shapes' otherlv_2= ':' )
                     {
-                    // InternalCanvas.g:369:4: (otherlv_1= 'shapes' otherlv_2= ':' )
-                    // InternalCanvas.g:370:5: otherlv_1= 'shapes' otherlv_2= ':'
+                    // InternalCanvas.g:360:4: (otherlv_1= 'shapes' otherlv_2= ':' )
+                    // InternalCanvas.g:361:5: otherlv_1= 'shapes' otherlv_2= ':'
                     {
-                    otherlv_1=(Token)match(input,20,FOLLOW_4); 
+                    otherlv_1=(Token)match(input,20,FOLLOW_5); 
 
                     					newLeafNode(otherlv_1, grammarAccess.getShapesAccess().getShapesKeyword_1_0_0());
                     				
-                    otherlv_2=(Token)match(input,12,FOLLOW_12); 
+                    otherlv_2=(Token)match(input,12,FOLLOW_11); 
 
                     					newLeafNode(otherlv_2, grammarAccess.getShapesAccess().getColonKeyword_1_0_1());
                     				
@@ -1007,9 +1002,9 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:380:4: otherlv_3= 'shapes:'
+                    // InternalCanvas.g:371:4: otherlv_3= 'shapes:'
                     {
-                    otherlv_3=(Token)match(input,21,FOLLOW_12); 
+                    otherlv_3=(Token)match(input,21,FOLLOW_11); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getShapesAccess().getShapesKeyword_1_1());
                     			
@@ -1019,7 +1014,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:385:3: ( (lv_shapes_4_0= ruleShape ) )*
+            // InternalCanvas.g:376:3: ( (lv_shapes_4_0= ruleShape ) )*
             loop9:
             do {
                 int alt9=2;
@@ -1032,15 +1027,15 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalCanvas.g:386:4: (lv_shapes_4_0= ruleShape )
+            	    // InternalCanvas.g:377:4: (lv_shapes_4_0= ruleShape )
             	    {
-            	    // InternalCanvas.g:386:4: (lv_shapes_4_0= ruleShape )
-            	    // InternalCanvas.g:387:5: lv_shapes_4_0= ruleShape
+            	    // InternalCanvas.g:377:4: (lv_shapes_4_0= ruleShape )
+            	    // InternalCanvas.g:378:5: lv_shapes_4_0= ruleShape
             	    {
 
             	    					newCompositeNode(grammarAccess.getShapesAccess().getShapesShapeParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_12);
+            	    pushFollow(FOLLOW_11);
             	    lv_shapes_4_0=ruleShape();
 
             	    state._fsp--;
@@ -1091,7 +1086,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleShape"
-    // InternalCanvas.g:408:1: entryRuleShape returns [EObject current=null] : iv_ruleShape= ruleShape EOF ;
+    // InternalCanvas.g:399:1: entryRuleShape returns [EObject current=null] : iv_ruleShape= ruleShape EOF ;
     public final EObject entryRuleShape() throws RecognitionException {
         EObject current = null;
 
@@ -1099,8 +1094,8 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCanvas.g:408:46: (iv_ruleShape= ruleShape EOF )
-            // InternalCanvas.g:409:2: iv_ruleShape= ruleShape EOF
+            // InternalCanvas.g:399:46: (iv_ruleShape= ruleShape EOF )
+            // InternalCanvas.g:400:2: iv_ruleShape= ruleShape EOF
             {
              newCompositeNode(grammarAccess.getShapeRule()); 
             pushFollow(FOLLOW_1);
@@ -1127,7 +1122,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleShape"
-    // InternalCanvas.g:415:1: ruleShape returns [EObject current=null] : ( () ( (otherlv_1= 'shape' otherlv_2= ':' ) | otherlv_3= 'shape:' ) ( (lv_name_4_0= RULE_ID ) ) ( (lv_props_5_0= ruleShapeProps ) )? ( (lv_rect_6_0= ruleRectangle ) ) ( (lv_text_7_0= ruleFloatingText ) )? ( (otherlv_8= 'render' otherlv_9= ':' ) | otherlv_10= 'render:' ) ( (lv_represents_11_0= RULE_STRING ) ) ) ;
+    // InternalCanvas.g:406:1: ruleShape returns [EObject current=null] : ( () ( (otherlv_1= 'shape' otherlv_2= ':' ) | otherlv_3= 'shape:' ) ( (lv_name_4_0= RULE_ID ) ) ( (lv_container_5_0= ruleContainer ) )? ( (otherlv_6= 'render' otherlv_7= ':' ) | otherlv_8= 'render:' ) ( (lv_represents_9_0= RULE_STRING ) ) ( (lv_rect_10_0= ruleRectangle ) ) ( (lv_text_11_0= ruleFloatingText ) )? ) ;
     public final EObject ruleShape() throws RecognitionException {
         EObject current = null;
 
@@ -1135,29 +1130,29 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
         Token otherlv_2=null;
         Token otherlv_3=null;
         Token lv_name_4_0=null;
+        Token otherlv_6=null;
+        Token otherlv_7=null;
         Token otherlv_8=null;
-        Token otherlv_9=null;
-        Token otherlv_10=null;
-        Token lv_represents_11_0=null;
-        EObject lv_props_5_0 = null;
+        Token lv_represents_9_0=null;
+        AntlrDatatypeRuleToken lv_container_5_0 = null;
 
-        EObject lv_rect_6_0 = null;
+        EObject lv_rect_10_0 = null;
 
-        EObject lv_text_7_0 = null;
+        EObject lv_text_11_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalCanvas.g:421:2: ( ( () ( (otherlv_1= 'shape' otherlv_2= ':' ) | otherlv_3= 'shape:' ) ( (lv_name_4_0= RULE_ID ) ) ( (lv_props_5_0= ruleShapeProps ) )? ( (lv_rect_6_0= ruleRectangle ) ) ( (lv_text_7_0= ruleFloatingText ) )? ( (otherlv_8= 'render' otherlv_9= ':' ) | otherlv_10= 'render:' ) ( (lv_represents_11_0= RULE_STRING ) ) ) )
-            // InternalCanvas.g:422:2: ( () ( (otherlv_1= 'shape' otherlv_2= ':' ) | otherlv_3= 'shape:' ) ( (lv_name_4_0= RULE_ID ) ) ( (lv_props_5_0= ruleShapeProps ) )? ( (lv_rect_6_0= ruleRectangle ) ) ( (lv_text_7_0= ruleFloatingText ) )? ( (otherlv_8= 'render' otherlv_9= ':' ) | otherlv_10= 'render:' ) ( (lv_represents_11_0= RULE_STRING ) ) )
+            // InternalCanvas.g:412:2: ( ( () ( (otherlv_1= 'shape' otherlv_2= ':' ) | otherlv_3= 'shape:' ) ( (lv_name_4_0= RULE_ID ) ) ( (lv_container_5_0= ruleContainer ) )? ( (otherlv_6= 'render' otherlv_7= ':' ) | otherlv_8= 'render:' ) ( (lv_represents_9_0= RULE_STRING ) ) ( (lv_rect_10_0= ruleRectangle ) ) ( (lv_text_11_0= ruleFloatingText ) )? ) )
+            // InternalCanvas.g:413:2: ( () ( (otherlv_1= 'shape' otherlv_2= ':' ) | otherlv_3= 'shape:' ) ( (lv_name_4_0= RULE_ID ) ) ( (lv_container_5_0= ruleContainer ) )? ( (otherlv_6= 'render' otherlv_7= ':' ) | otherlv_8= 'render:' ) ( (lv_represents_9_0= RULE_STRING ) ) ( (lv_rect_10_0= ruleRectangle ) ) ( (lv_text_11_0= ruleFloatingText ) )? )
             {
-            // InternalCanvas.g:422:2: ( () ( (otherlv_1= 'shape' otherlv_2= ':' ) | otherlv_3= 'shape:' ) ( (lv_name_4_0= RULE_ID ) ) ( (lv_props_5_0= ruleShapeProps ) )? ( (lv_rect_6_0= ruleRectangle ) ) ( (lv_text_7_0= ruleFloatingText ) )? ( (otherlv_8= 'render' otherlv_9= ':' ) | otherlv_10= 'render:' ) ( (lv_represents_11_0= RULE_STRING ) ) )
-            // InternalCanvas.g:423:3: () ( (otherlv_1= 'shape' otherlv_2= ':' ) | otherlv_3= 'shape:' ) ( (lv_name_4_0= RULE_ID ) ) ( (lv_props_5_0= ruleShapeProps ) )? ( (lv_rect_6_0= ruleRectangle ) ) ( (lv_text_7_0= ruleFloatingText ) )? ( (otherlv_8= 'render' otherlv_9= ':' ) | otherlv_10= 'render:' ) ( (lv_represents_11_0= RULE_STRING ) )
+            // InternalCanvas.g:413:2: ( () ( (otherlv_1= 'shape' otherlv_2= ':' ) | otherlv_3= 'shape:' ) ( (lv_name_4_0= RULE_ID ) ) ( (lv_container_5_0= ruleContainer ) )? ( (otherlv_6= 'render' otherlv_7= ':' ) | otherlv_8= 'render:' ) ( (lv_represents_9_0= RULE_STRING ) ) ( (lv_rect_10_0= ruleRectangle ) ) ( (lv_text_11_0= ruleFloatingText ) )? )
+            // InternalCanvas.g:414:3: () ( (otherlv_1= 'shape' otherlv_2= ':' ) | otherlv_3= 'shape:' ) ( (lv_name_4_0= RULE_ID ) ) ( (lv_container_5_0= ruleContainer ) )? ( (otherlv_6= 'render' otherlv_7= ':' ) | otherlv_8= 'render:' ) ( (lv_represents_9_0= RULE_STRING ) ) ( (lv_rect_10_0= ruleRectangle ) ) ( (lv_text_11_0= ruleFloatingText ) )?
             {
-            // InternalCanvas.g:423:3: ()
-            // InternalCanvas.g:424:4: 
+            // InternalCanvas.g:414:3: ()
+            // InternalCanvas.g:415:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1167,7 +1162,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:430:3: ( (otherlv_1= 'shape' otherlv_2= ':' ) | otherlv_3= 'shape:' )
+            // InternalCanvas.g:421:3: ( (otherlv_1= 'shape' otherlv_2= ':' ) | otherlv_3= 'shape:' )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1185,16 +1180,16 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalCanvas.g:431:4: (otherlv_1= 'shape' otherlv_2= ':' )
+                    // InternalCanvas.g:422:4: (otherlv_1= 'shape' otherlv_2= ':' )
                     {
-                    // InternalCanvas.g:431:4: (otherlv_1= 'shape' otherlv_2= ':' )
-                    // InternalCanvas.g:432:5: otherlv_1= 'shape' otherlv_2= ':'
+                    // InternalCanvas.g:422:4: (otherlv_1= 'shape' otherlv_2= ':' )
+                    // InternalCanvas.g:423:5: otherlv_1= 'shape' otherlv_2= ':'
                     {
-                    otherlv_1=(Token)match(input,22,FOLLOW_4); 
+                    otherlv_1=(Token)match(input,22,FOLLOW_5); 
 
                     					newLeafNode(otherlv_1, grammarAccess.getShapeAccess().getShapeKeyword_1_0_0());
                     				
-                    otherlv_2=(Token)match(input,12,FOLLOW_13); 
+                    otherlv_2=(Token)match(input,12,FOLLOW_12); 
 
                     					newLeafNode(otherlv_2, grammarAccess.getShapeAccess().getColonKeyword_1_0_1());
                     				
@@ -1205,9 +1200,9 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:442:4: otherlv_3= 'shape:'
+                    // InternalCanvas.g:433:4: otherlv_3= 'shape:'
                     {
-                    otherlv_3=(Token)match(input,23,FOLLOW_13); 
+                    otherlv_3=(Token)match(input,23,FOLLOW_12); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getShapeAccess().getShapeKeyword_1_1());
                     			
@@ -1217,13 +1212,13 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:447:3: ( (lv_name_4_0= RULE_ID ) )
-            // InternalCanvas.g:448:4: (lv_name_4_0= RULE_ID )
+            // InternalCanvas.g:438:3: ( (lv_name_4_0= RULE_ID ) )
+            // InternalCanvas.g:439:4: (lv_name_4_0= RULE_ID )
             {
-            // InternalCanvas.g:448:4: (lv_name_4_0= RULE_ID )
-            // InternalCanvas.g:449:5: lv_name_4_0= RULE_ID
+            // InternalCanvas.g:439:4: (lv_name_4_0= RULE_ID )
+            // InternalCanvas.g:440:5: lv_name_4_0= RULE_ID
             {
-            lv_name_4_0=(Token)match(input,RULE_ID,FOLLOW_14); 
+            lv_name_4_0=(Token)match(input,RULE_ID,FOLLOW_13); 
 
             					newLeafNode(lv_name_4_0, grammarAccess.getShapeAccess().getNameIDTerminalRuleCall_2_0());
             				
@@ -1243,25 +1238,25 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:465:3: ( (lv_props_5_0= ruleShapeProps ) )?
+            // InternalCanvas.g:456:3: ( (lv_container_5_0= ruleContainer ) )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
-            if ( ((LA11_0>=15 && LA11_0<=16)) ) {
+            if ( (LA11_0==24) ) {
                 alt11=1;
             }
             switch (alt11) {
                 case 1 :
-                    // InternalCanvas.g:466:4: (lv_props_5_0= ruleShapeProps )
+                    // InternalCanvas.g:457:4: (lv_container_5_0= ruleContainer )
                     {
-                    // InternalCanvas.g:466:4: (lv_props_5_0= ruleShapeProps )
-                    // InternalCanvas.g:467:5: lv_props_5_0= ruleShapeProps
+                    // InternalCanvas.g:457:4: (lv_container_5_0= ruleContainer )
+                    // InternalCanvas.g:458:5: lv_container_5_0= ruleContainer
                     {
 
-                    					newCompositeNode(grammarAccess.getShapeAccess().getPropsShapePropsParserRuleCall_3_0());
+                    					newCompositeNode(grammarAccess.getShapeAccess().getContainerContainerParserRuleCall_3_0());
                     				
                     pushFollow(FOLLOW_14);
-                    lv_props_5_0=ruleShapeProps();
+                    lv_container_5_0=ruleContainer();
 
                     state._fsp--;
 
@@ -1271,9 +1266,9 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
                     					}
                     					set(
                     						current,
-                    						"props",
-                    						lv_props_5_0,
-                    						"org.xtuml.canvas.language.Canvas.ShapeProps");
+                    						"container",
+                    						lv_container_5_0,
+                    						"org.xtuml.canvas.language.Canvas.Container");
                     					afterParserOrEnumRuleCall();
                     				
 
@@ -1285,17 +1280,93 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:484:3: ( (lv_rect_6_0= ruleRectangle ) )
-            // InternalCanvas.g:485:4: (lv_rect_6_0= ruleRectangle )
+            // InternalCanvas.g:475:3: ( (otherlv_6= 'render' otherlv_7= ':' ) | otherlv_8= 'render:' )
+            int alt12=2;
+            int LA12_0 = input.LA(1);
+
+            if ( (LA12_0==11) ) {
+                alt12=1;
+            }
+            else if ( (LA12_0==13) ) {
+                alt12=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 12, 0, input);
+
+                throw nvae;
+            }
+            switch (alt12) {
+                case 1 :
+                    // InternalCanvas.g:476:4: (otherlv_6= 'render' otherlv_7= ':' )
+                    {
+                    // InternalCanvas.g:476:4: (otherlv_6= 'render' otherlv_7= ':' )
+                    // InternalCanvas.g:477:5: otherlv_6= 'render' otherlv_7= ':'
+                    {
+                    otherlv_6=(Token)match(input,11,FOLLOW_5); 
+
+                    					newLeafNode(otherlv_6, grammarAccess.getShapeAccess().getRenderKeyword_4_0_0());
+                    				
+                    otherlv_7=(Token)match(input,12,FOLLOW_6); 
+
+                    					newLeafNode(otherlv_7, grammarAccess.getShapeAccess().getColonKeyword_4_0_1());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalCanvas.g:487:4: otherlv_8= 'render:'
+                    {
+                    otherlv_8=(Token)match(input,13,FOLLOW_6); 
+
+                    				newLeafNode(otherlv_8, grammarAccess.getShapeAccess().getRenderKeyword_4_1());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            // InternalCanvas.g:492:3: ( (lv_represents_9_0= RULE_STRING ) )
+            // InternalCanvas.g:493:4: (lv_represents_9_0= RULE_STRING )
             {
-            // InternalCanvas.g:485:4: (lv_rect_6_0= ruleRectangle )
-            // InternalCanvas.g:486:5: lv_rect_6_0= ruleRectangle
+            // InternalCanvas.g:493:4: (lv_represents_9_0= RULE_STRING )
+            // InternalCanvas.g:494:5: lv_represents_9_0= RULE_STRING
+            {
+            lv_represents_9_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
+
+            					newLeafNode(lv_represents_9_0, grammarAccess.getShapeAccess().getRepresentsSTRINGTerminalRuleCall_5_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getShapeRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"represents",
+            						lv_represents_9_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            // InternalCanvas.g:510:3: ( (lv_rect_10_0= ruleRectangle ) )
+            // InternalCanvas.g:511:4: (lv_rect_10_0= ruleRectangle )
+            {
+            // InternalCanvas.g:511:4: (lv_rect_10_0= ruleRectangle )
+            // InternalCanvas.g:512:5: lv_rect_10_0= ruleRectangle
             {
 
-            					newCompositeNode(grammarAccess.getShapeAccess().getRectRectangleParserRuleCall_4_0());
+            					newCompositeNode(grammarAccess.getShapeAccess().getRectRectangleParserRuleCall_6_0());
             				
-            pushFollow(FOLLOW_15);
-            lv_rect_6_0=ruleRectangle();
+            pushFollow(FOLLOW_16);
+            lv_rect_10_0=ruleRectangle();
 
             state._fsp--;
 
@@ -1306,7 +1377,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"rect",
-            						lv_rect_6_0,
+            						lv_rect_10_0,
             						"org.xtuml.canvas.language.Canvas.Rectangle");
             					afterParserOrEnumRuleCall();
             				
@@ -1316,25 +1387,25 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:503:3: ( (lv_text_7_0= ruleFloatingText ) )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            // InternalCanvas.g:529:3: ( (lv_text_11_0= ruleFloatingText ) )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
 
-            if ( ((LA12_0>=26 && LA12_0<=27)) ) {
-                alt12=1;
+            if ( ((LA13_0>=27 && LA13_0<=28)) ) {
+                alt13=1;
             }
-            switch (alt12) {
+            switch (alt13) {
                 case 1 :
-                    // InternalCanvas.g:504:4: (lv_text_7_0= ruleFloatingText )
+                    // InternalCanvas.g:530:4: (lv_text_11_0= ruleFloatingText )
                     {
-                    // InternalCanvas.g:504:4: (lv_text_7_0= ruleFloatingText )
-                    // InternalCanvas.g:505:5: lv_text_7_0= ruleFloatingText
+                    // InternalCanvas.g:530:4: (lv_text_11_0= ruleFloatingText )
+                    // InternalCanvas.g:531:5: lv_text_11_0= ruleFloatingText
                     {
 
-                    					newCompositeNode(grammarAccess.getShapeAccess().getTextFloatingTextParserRuleCall_5_0());
+                    					newCompositeNode(grammarAccess.getShapeAccess().getTextFloatingTextParserRuleCall_7_0());
                     				
-                    pushFollow(FOLLOW_16);
-                    lv_text_7_0=ruleFloatingText();
+                    pushFollow(FOLLOW_2);
+                    lv_text_11_0=ruleFloatingText();
 
                     state._fsp--;
 
@@ -1345,7 +1416,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
                     					set(
                     						current,
                     						"text",
-                    						lv_text_7_0,
+                    						lv_text_11_0,
                     						"org.xtuml.canvas.language.Canvas.FloatingText");
                     					afterParserOrEnumRuleCall();
                     				
@@ -1355,82 +1426,6 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-
-            }
-
-            // InternalCanvas.g:522:3: ( (otherlv_8= 'render' otherlv_9= ':' ) | otherlv_10= 'render:' )
-            int alt13=2;
-            int LA13_0 = input.LA(1);
-
-            if ( (LA13_0==11) ) {
-                alt13=1;
-            }
-            else if ( (LA13_0==13) ) {
-                alt13=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
-
-                throw nvae;
-            }
-            switch (alt13) {
-                case 1 :
-                    // InternalCanvas.g:523:4: (otherlv_8= 'render' otherlv_9= ':' )
-                    {
-                    // InternalCanvas.g:523:4: (otherlv_8= 'render' otherlv_9= ':' )
-                    // InternalCanvas.g:524:5: otherlv_8= 'render' otherlv_9= ':'
-                    {
-                    otherlv_8=(Token)match(input,11,FOLLOW_4); 
-
-                    					newLeafNode(otherlv_8, grammarAccess.getShapeAccess().getRenderKeyword_6_0_0());
-                    				
-                    otherlv_9=(Token)match(input,12,FOLLOW_5); 
-
-                    					newLeafNode(otherlv_9, grammarAccess.getShapeAccess().getColonKeyword_6_0_1());
-                    				
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:534:4: otherlv_10= 'render:'
-                    {
-                    otherlv_10=(Token)match(input,13,FOLLOW_5); 
-
-                    				newLeafNode(otherlv_10, grammarAccess.getShapeAccess().getRenderKeyword_6_1());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            // InternalCanvas.g:539:3: ( (lv_represents_11_0= RULE_STRING ) )
-            // InternalCanvas.g:540:4: (lv_represents_11_0= RULE_STRING )
-            {
-            // InternalCanvas.g:540:4: (lv_represents_11_0= RULE_STRING )
-            // InternalCanvas.g:541:5: lv_represents_11_0= RULE_STRING
-            {
-            lv_represents_11_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
-
-            					newLeafNode(lv_represents_11_0, grammarAccess.getShapeAccess().getRepresentsSTRINGTerminalRuleCall_7_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getShapeRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"represents",
-            						lv_represents_11_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
-            				
-
-            }
-
 
             }
 
@@ -1456,8 +1451,82 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleShape"
 
 
+    // $ANTLR start "entryRuleContainer"
+    // InternalCanvas.g:552:1: entryRuleContainer returns [String current=null] : iv_ruleContainer= ruleContainer EOF ;
+    public final String entryRuleContainer() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleContainer = null;
+
+
+        try {
+            // InternalCanvas.g:552:49: (iv_ruleContainer= ruleContainer EOF )
+            // InternalCanvas.g:553:2: iv_ruleContainer= ruleContainer EOF
+            {
+             newCompositeNode(grammarAccess.getContainerRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleContainer=ruleContainer();
+
+            state._fsp--;
+
+             current =iv_ruleContainer.getText(); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleContainer"
+
+
+    // $ANTLR start "ruleContainer"
+    // InternalCanvas.g:559:1: ruleContainer returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'container' ;
+    public final AntlrDatatypeRuleToken ruleContainer() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalCanvas.g:565:2: (kw= 'container' )
+            // InternalCanvas.g:566:2: kw= 'container'
+            {
+            kw=(Token)match(input,24,FOLLOW_2); 
+
+            		current.merge(kw);
+            		newLeafNode(kw, grammarAccess.getContainerAccess().getContainerKeyword());
+            	
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleContainer"
+
+
     // $ANTLR start "entryRuleFloatingTexts"
-    // InternalCanvas.g:561:1: entryRuleFloatingTexts returns [EObject current=null] : iv_ruleFloatingTexts= ruleFloatingTexts EOF ;
+    // InternalCanvas.g:574:1: entryRuleFloatingTexts returns [EObject current=null] : iv_ruleFloatingTexts= ruleFloatingTexts EOF ;
     public final EObject entryRuleFloatingTexts() throws RecognitionException {
         EObject current = null;
 
@@ -1465,8 +1534,8 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCanvas.g:561:54: (iv_ruleFloatingTexts= ruleFloatingTexts EOF )
-            // InternalCanvas.g:562:2: iv_ruleFloatingTexts= ruleFloatingTexts EOF
+            // InternalCanvas.g:574:54: (iv_ruleFloatingTexts= ruleFloatingTexts EOF )
+            // InternalCanvas.g:575:2: iv_ruleFloatingTexts= ruleFloatingTexts EOF
             {
              newCompositeNode(grammarAccess.getFloatingTextsRule()); 
             pushFollow(FOLLOW_1);
@@ -1493,7 +1562,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFloatingTexts"
-    // InternalCanvas.g:568:1: ruleFloatingTexts returns [EObject current=null] : ( () ( (otherlv_1= 'texts' otherlv_2= ':' ) | otherlv_3= 'texts:' ) ( (lv_texts_4_0= ruleFloatingText ) )* ) ;
+    // InternalCanvas.g:581:1: ruleFloatingTexts returns [EObject current=null] : ( () ( (otherlv_1= 'texts' otherlv_2= ':' ) | otherlv_3= 'texts:' ) ( (lv_texts_4_0= ruleFloatingText ) )* ) ;
     public final EObject ruleFloatingTexts() throws RecognitionException {
         EObject current = null;
 
@@ -1507,14 +1576,14 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCanvas.g:574:2: ( ( () ( (otherlv_1= 'texts' otherlv_2= ':' ) | otherlv_3= 'texts:' ) ( (lv_texts_4_0= ruleFloatingText ) )* ) )
-            // InternalCanvas.g:575:2: ( () ( (otherlv_1= 'texts' otherlv_2= ':' ) | otherlv_3= 'texts:' ) ( (lv_texts_4_0= ruleFloatingText ) )* )
+            // InternalCanvas.g:587:2: ( ( () ( (otherlv_1= 'texts' otherlv_2= ':' ) | otherlv_3= 'texts:' ) ( (lv_texts_4_0= ruleFloatingText ) )* ) )
+            // InternalCanvas.g:588:2: ( () ( (otherlv_1= 'texts' otherlv_2= ':' ) | otherlv_3= 'texts:' ) ( (lv_texts_4_0= ruleFloatingText ) )* )
             {
-            // InternalCanvas.g:575:2: ( () ( (otherlv_1= 'texts' otherlv_2= ':' ) | otherlv_3= 'texts:' ) ( (lv_texts_4_0= ruleFloatingText ) )* )
-            // InternalCanvas.g:576:3: () ( (otherlv_1= 'texts' otherlv_2= ':' ) | otherlv_3= 'texts:' ) ( (lv_texts_4_0= ruleFloatingText ) )*
+            // InternalCanvas.g:588:2: ( () ( (otherlv_1= 'texts' otherlv_2= ':' ) | otherlv_3= 'texts:' ) ( (lv_texts_4_0= ruleFloatingText ) )* )
+            // InternalCanvas.g:589:3: () ( (otherlv_1= 'texts' otherlv_2= ':' ) | otherlv_3= 'texts:' ) ( (lv_texts_4_0= ruleFloatingText ) )*
             {
-            // InternalCanvas.g:576:3: ()
-            // InternalCanvas.g:577:4: 
+            // InternalCanvas.g:589:3: ()
+            // InternalCanvas.g:590:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1524,14 +1593,14 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:583:3: ( (otherlv_1= 'texts' otherlv_2= ':' ) | otherlv_3= 'texts:' )
+            // InternalCanvas.g:596:3: ( (otherlv_1= 'texts' otherlv_2= ':' ) | otherlv_3= 'texts:' )
             int alt14=2;
             int LA14_0 = input.LA(1);
 
-            if ( (LA14_0==24) ) {
+            if ( (LA14_0==25) ) {
                 alt14=1;
             }
-            else if ( (LA14_0==25) ) {
+            else if ( (LA14_0==26) ) {
                 alt14=2;
             }
             else {
@@ -1542,16 +1611,16 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
             }
             switch (alt14) {
                 case 1 :
-                    // InternalCanvas.g:584:4: (otherlv_1= 'texts' otherlv_2= ':' )
+                    // InternalCanvas.g:597:4: (otherlv_1= 'texts' otherlv_2= ':' )
                     {
-                    // InternalCanvas.g:584:4: (otherlv_1= 'texts' otherlv_2= ':' )
-                    // InternalCanvas.g:585:5: otherlv_1= 'texts' otherlv_2= ':'
+                    // InternalCanvas.g:597:4: (otherlv_1= 'texts' otherlv_2= ':' )
+                    // InternalCanvas.g:598:5: otherlv_1= 'texts' otherlv_2= ':'
                     {
-                    otherlv_1=(Token)match(input,24,FOLLOW_4); 
+                    otherlv_1=(Token)match(input,25,FOLLOW_5); 
 
                     					newLeafNode(otherlv_1, grammarAccess.getFloatingTextsAccess().getTextsKeyword_1_0_0());
                     				
-                    otherlv_2=(Token)match(input,12,FOLLOW_17); 
+                    otherlv_2=(Token)match(input,12,FOLLOW_16); 
 
                     					newLeafNode(otherlv_2, grammarAccess.getFloatingTextsAccess().getColonKeyword_1_0_1());
                     				
@@ -1562,9 +1631,9 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:595:4: otherlv_3= 'texts:'
+                    // InternalCanvas.g:608:4: otherlv_3= 'texts:'
                     {
-                    otherlv_3=(Token)match(input,25,FOLLOW_17); 
+                    otherlv_3=(Token)match(input,26,FOLLOW_16); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getFloatingTextsAccess().getTextsKeyword_1_1());
                     			
@@ -1574,28 +1643,28 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:600:3: ( (lv_texts_4_0= ruleFloatingText ) )*
+            // InternalCanvas.g:613:3: ( (lv_texts_4_0= ruleFloatingText ) )*
             loop15:
             do {
                 int alt15=2;
                 int LA15_0 = input.LA(1);
 
-                if ( ((LA15_0>=26 && LA15_0<=27)) ) {
+                if ( ((LA15_0>=27 && LA15_0<=28)) ) {
                     alt15=1;
                 }
 
 
                 switch (alt15) {
             	case 1 :
-            	    // InternalCanvas.g:601:4: (lv_texts_4_0= ruleFloatingText )
+            	    // InternalCanvas.g:614:4: (lv_texts_4_0= ruleFloatingText )
             	    {
-            	    // InternalCanvas.g:601:4: (lv_texts_4_0= ruleFloatingText )
-            	    // InternalCanvas.g:602:5: lv_texts_4_0= ruleFloatingText
+            	    // InternalCanvas.g:614:4: (lv_texts_4_0= ruleFloatingText )
+            	    // InternalCanvas.g:615:5: lv_texts_4_0= ruleFloatingText
             	    {
 
             	    					newCompositeNode(grammarAccess.getFloatingTextsAccess().getTextsFloatingTextParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_17);
+            	    pushFollow(FOLLOW_16);
             	    lv_texts_4_0=ruleFloatingText();
 
             	    state._fsp--;
@@ -1646,7 +1715,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFloatingText"
-    // InternalCanvas.g:623:1: entryRuleFloatingText returns [EObject current=null] : iv_ruleFloatingText= ruleFloatingText EOF ;
+    // InternalCanvas.g:636:1: entryRuleFloatingText returns [EObject current=null] : iv_ruleFloatingText= ruleFloatingText EOF ;
     public final EObject entryRuleFloatingText() throws RecognitionException {
         EObject current = null;
 
@@ -1654,8 +1723,8 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCanvas.g:623:53: (iv_ruleFloatingText= ruleFloatingText EOF )
-            // InternalCanvas.g:624:2: iv_ruleFloatingText= ruleFloatingText EOF
+            // InternalCanvas.g:636:53: (iv_ruleFloatingText= ruleFloatingText EOF )
+            // InternalCanvas.g:637:2: iv_ruleFloatingText= ruleFloatingText EOF
             {
              newCompositeNode(grammarAccess.getFloatingTextRule()); 
             pushFollow(FOLLOW_1);
@@ -1682,7 +1751,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFloatingText"
-    // InternalCanvas.g:630:1: ruleFloatingText returns [EObject current=null] : ( () ( (otherlv_1= 'text' otherlv_2= ':' ) | otherlv_3= 'text:' ) ( (lv_rect_4_0= ruleRectangle ) ) ( (lv_end_5_0= ruleEnumEnd ) ) ) ;
+    // InternalCanvas.g:643:1: ruleFloatingText returns [EObject current=null] : ( () ( (otherlv_1= 'text' otherlv_2= ':' ) | otherlv_3= 'text:' ) ( (lv_rect_4_0= ruleRectangle ) ) ( (lv_end_5_0= ruleEnumEnd ) ) ) ;
     public final EObject ruleFloatingText() throws RecognitionException {
         EObject current = null;
 
@@ -1691,21 +1760,21 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
         Token otherlv_3=null;
         EObject lv_rect_4_0 = null;
 
-        AntlrDatatypeRuleToken lv_end_5_0 = null;
+        EObject lv_end_5_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalCanvas.g:636:2: ( ( () ( (otherlv_1= 'text' otherlv_2= ':' ) | otherlv_3= 'text:' ) ( (lv_rect_4_0= ruleRectangle ) ) ( (lv_end_5_0= ruleEnumEnd ) ) ) )
-            // InternalCanvas.g:637:2: ( () ( (otherlv_1= 'text' otherlv_2= ':' ) | otherlv_3= 'text:' ) ( (lv_rect_4_0= ruleRectangle ) ) ( (lv_end_5_0= ruleEnumEnd ) ) )
+            // InternalCanvas.g:649:2: ( ( () ( (otherlv_1= 'text' otherlv_2= ':' ) | otherlv_3= 'text:' ) ( (lv_rect_4_0= ruleRectangle ) ) ( (lv_end_5_0= ruleEnumEnd ) ) ) )
+            // InternalCanvas.g:650:2: ( () ( (otherlv_1= 'text' otherlv_2= ':' ) | otherlv_3= 'text:' ) ( (lv_rect_4_0= ruleRectangle ) ) ( (lv_end_5_0= ruleEnumEnd ) ) )
             {
-            // InternalCanvas.g:637:2: ( () ( (otherlv_1= 'text' otherlv_2= ':' ) | otherlv_3= 'text:' ) ( (lv_rect_4_0= ruleRectangle ) ) ( (lv_end_5_0= ruleEnumEnd ) ) )
-            // InternalCanvas.g:638:3: () ( (otherlv_1= 'text' otherlv_2= ':' ) | otherlv_3= 'text:' ) ( (lv_rect_4_0= ruleRectangle ) ) ( (lv_end_5_0= ruleEnumEnd ) )
+            // InternalCanvas.g:650:2: ( () ( (otherlv_1= 'text' otherlv_2= ':' ) | otherlv_3= 'text:' ) ( (lv_rect_4_0= ruleRectangle ) ) ( (lv_end_5_0= ruleEnumEnd ) ) )
+            // InternalCanvas.g:651:3: () ( (otherlv_1= 'text' otherlv_2= ':' ) | otherlv_3= 'text:' ) ( (lv_rect_4_0= ruleRectangle ) ) ( (lv_end_5_0= ruleEnumEnd ) )
             {
-            // InternalCanvas.g:638:3: ()
-            // InternalCanvas.g:639:4: 
+            // InternalCanvas.g:651:3: ()
+            // InternalCanvas.g:652:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1715,14 +1784,14 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:645:3: ( (otherlv_1= 'text' otherlv_2= ':' ) | otherlv_3= 'text:' )
+            // InternalCanvas.g:658:3: ( (otherlv_1= 'text' otherlv_2= ':' ) | otherlv_3= 'text:' )
             int alt16=2;
             int LA16_0 = input.LA(1);
 
-            if ( (LA16_0==26) ) {
+            if ( (LA16_0==27) ) {
                 alt16=1;
             }
-            else if ( (LA16_0==27) ) {
+            else if ( (LA16_0==28) ) {
                 alt16=2;
             }
             else {
@@ -1733,16 +1802,16 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
             }
             switch (alt16) {
                 case 1 :
-                    // InternalCanvas.g:646:4: (otherlv_1= 'text' otherlv_2= ':' )
+                    // InternalCanvas.g:659:4: (otherlv_1= 'text' otherlv_2= ':' )
                     {
-                    // InternalCanvas.g:646:4: (otherlv_1= 'text' otherlv_2= ':' )
-                    // InternalCanvas.g:647:5: otherlv_1= 'text' otherlv_2= ':'
+                    // InternalCanvas.g:659:4: (otherlv_1= 'text' otherlv_2= ':' )
+                    // InternalCanvas.g:660:5: otherlv_1= 'text' otherlv_2= ':'
                     {
-                    otherlv_1=(Token)match(input,26,FOLLOW_4); 
+                    otherlv_1=(Token)match(input,27,FOLLOW_5); 
 
                     					newLeafNode(otherlv_1, grammarAccess.getFloatingTextAccess().getTextKeyword_1_0_0());
                     				
-                    otherlv_2=(Token)match(input,12,FOLLOW_14); 
+                    otherlv_2=(Token)match(input,12,FOLLOW_15); 
 
                     					newLeafNode(otherlv_2, grammarAccess.getFloatingTextAccess().getColonKeyword_1_0_1());
                     				
@@ -1753,9 +1822,9 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:657:4: otherlv_3= 'text:'
+                    // InternalCanvas.g:670:4: otherlv_3= 'text:'
                     {
-                    otherlv_3=(Token)match(input,27,FOLLOW_14); 
+                    otherlv_3=(Token)match(input,28,FOLLOW_15); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getFloatingTextAccess().getTextKeyword_1_1());
                     			
@@ -1765,16 +1834,16 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:662:3: ( (lv_rect_4_0= ruleRectangle ) )
-            // InternalCanvas.g:663:4: (lv_rect_4_0= ruleRectangle )
+            // InternalCanvas.g:675:3: ( (lv_rect_4_0= ruleRectangle ) )
+            // InternalCanvas.g:676:4: (lv_rect_4_0= ruleRectangle )
             {
-            // InternalCanvas.g:663:4: (lv_rect_4_0= ruleRectangle )
-            // InternalCanvas.g:664:5: lv_rect_4_0= ruleRectangle
+            // InternalCanvas.g:676:4: (lv_rect_4_0= ruleRectangle )
+            // InternalCanvas.g:677:5: lv_rect_4_0= ruleRectangle
             {
 
             					newCompositeNode(grammarAccess.getFloatingTextAccess().getRectRectangleParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_17);
             lv_rect_4_0=ruleRectangle();
 
             state._fsp--;
@@ -1796,11 +1865,11 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:681:3: ( (lv_end_5_0= ruleEnumEnd ) )
-            // InternalCanvas.g:682:4: (lv_end_5_0= ruleEnumEnd )
+            // InternalCanvas.g:694:3: ( (lv_end_5_0= ruleEnumEnd ) )
+            // InternalCanvas.g:695:4: (lv_end_5_0= ruleEnumEnd )
             {
-            // InternalCanvas.g:682:4: (lv_end_5_0= ruleEnumEnd )
-            // InternalCanvas.g:683:5: lv_end_5_0= ruleEnumEnd
+            // InternalCanvas.g:695:4: (lv_end_5_0= ruleEnumEnd )
+            // InternalCanvas.g:696:5: lv_end_5_0= ruleEnumEnd
             {
 
             					newCompositeNode(grammarAccess.getFloatingTextAccess().getEndEnumEndParserRuleCall_3_0());
@@ -1850,16 +1919,16 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEnumEnd"
-    // InternalCanvas.g:704:1: entryRuleEnumEnd returns [String current=null] : iv_ruleEnumEnd= ruleEnumEnd EOF ;
-    public final String entryRuleEnumEnd() throws RecognitionException {
-        String current = null;
+    // InternalCanvas.g:717:1: entryRuleEnumEnd returns [EObject current=null] : iv_ruleEnumEnd= ruleEnumEnd EOF ;
+    public final EObject entryRuleEnumEnd() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken iv_ruleEnumEnd = null;
+        EObject iv_ruleEnumEnd = null;
 
 
         try {
-            // InternalCanvas.g:704:47: (iv_ruleEnumEnd= ruleEnumEnd EOF )
-            // InternalCanvas.g:705:2: iv_ruleEnumEnd= ruleEnumEnd EOF
+            // InternalCanvas.g:717:48: (iv_ruleEnumEnd= ruleEnumEnd EOF )
+            // InternalCanvas.g:718:2: iv_ruleEnumEnd= ruleEnumEnd EOF
             {
              newCompositeNode(grammarAccess.getEnumEndRule()); 
             pushFollow(FOLLOW_1);
@@ -1867,7 +1936,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             state._fsp--;
 
-             current =iv_ruleEnumEnd.getText(); 
+             current =iv_ruleEnumEnd; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -1886,158 +1955,276 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEnumEnd"
-    // InternalCanvas.g:711:1: ruleEnumEnd returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'start' | kw= 'end' | kw= 'middle' | kw= 'end_fixed' | kw= 'start_fixed' | kw= 'none' | kw= 'floating' | kw= 'additional' ) ;
-    public final AntlrDatatypeRuleToken ruleEnumEnd() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+    // InternalCanvas.g:724:1: ruleEnumEnd returns [EObject current=null] : ( ( (otherlv_0= 'where' otherlv_1= ':' ) | otherlv_2= 'where:' ) ( ( (lv_where_3_1= 'start' | lv_where_3_2= 'end' | lv_where_3_3= 'middle' | lv_where_3_4= 'end_fixed' | lv_where_3_5= 'start_fixed' | lv_where_3_6= 'none' | lv_where_3_7= 'floating' | lv_where_3_8= 'additional' ) ) ) ) ;
+    public final EObject ruleEnumEnd() throws RecognitionException {
+        EObject current = null;
 
-        Token kw=null;
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token lv_where_3_1=null;
+        Token lv_where_3_2=null;
+        Token lv_where_3_3=null;
+        Token lv_where_3_4=null;
+        Token lv_where_3_5=null;
+        Token lv_where_3_6=null;
+        Token lv_where_3_7=null;
+        Token lv_where_3_8=null;
 
 
         	enterRule();
 
         try {
-            // InternalCanvas.g:717:2: ( (kw= 'start' | kw= 'end' | kw= 'middle' | kw= 'end_fixed' | kw= 'start_fixed' | kw= 'none' | kw= 'floating' | kw= 'additional' ) )
-            // InternalCanvas.g:718:2: (kw= 'start' | kw= 'end' | kw= 'middle' | kw= 'end_fixed' | kw= 'start_fixed' | kw= 'none' | kw= 'floating' | kw= 'additional' )
+            // InternalCanvas.g:730:2: ( ( ( (otherlv_0= 'where' otherlv_1= ':' ) | otherlv_2= 'where:' ) ( ( (lv_where_3_1= 'start' | lv_where_3_2= 'end' | lv_where_3_3= 'middle' | lv_where_3_4= 'end_fixed' | lv_where_3_5= 'start_fixed' | lv_where_3_6= 'none' | lv_where_3_7= 'floating' | lv_where_3_8= 'additional' ) ) ) ) )
+            // InternalCanvas.g:731:2: ( ( (otherlv_0= 'where' otherlv_1= ':' ) | otherlv_2= 'where:' ) ( ( (lv_where_3_1= 'start' | lv_where_3_2= 'end' | lv_where_3_3= 'middle' | lv_where_3_4= 'end_fixed' | lv_where_3_5= 'start_fixed' | lv_where_3_6= 'none' | lv_where_3_7= 'floating' | lv_where_3_8= 'additional' ) ) ) )
             {
-            // InternalCanvas.g:718:2: (kw= 'start' | kw= 'end' | kw= 'middle' | kw= 'end_fixed' | kw= 'start_fixed' | kw= 'none' | kw= 'floating' | kw= 'additional' )
-            int alt17=8;
-            switch ( input.LA(1) ) {
-            case 28:
-                {
+            // InternalCanvas.g:731:2: ( ( (otherlv_0= 'where' otherlv_1= ':' ) | otherlv_2= 'where:' ) ( ( (lv_where_3_1= 'start' | lv_where_3_2= 'end' | lv_where_3_3= 'middle' | lv_where_3_4= 'end_fixed' | lv_where_3_5= 'start_fixed' | lv_where_3_6= 'none' | lv_where_3_7= 'floating' | lv_where_3_8= 'additional' ) ) ) )
+            // InternalCanvas.g:732:3: ( (otherlv_0= 'where' otherlv_1= ':' ) | otherlv_2= 'where:' ) ( ( (lv_where_3_1= 'start' | lv_where_3_2= 'end' | lv_where_3_3= 'middle' | lv_where_3_4= 'end_fixed' | lv_where_3_5= 'start_fixed' | lv_where_3_6= 'none' | lv_where_3_7= 'floating' | lv_where_3_8= 'additional' ) ) )
+            {
+            // InternalCanvas.g:732:3: ( (otherlv_0= 'where' otherlv_1= ':' ) | otherlv_2= 'where:' )
+            int alt17=2;
+            int LA17_0 = input.LA(1);
+
+            if ( (LA17_0==29) ) {
                 alt17=1;
-                }
-                break;
-            case 29:
-                {
+            }
+            else if ( (LA17_0==30) ) {
                 alt17=2;
-                }
-                break;
-            case 30:
-                {
-                alt17=3;
-                }
-                break;
-            case 31:
-                {
-                alt17=4;
-                }
-                break;
-            case 32:
-                {
-                alt17=5;
-                }
-                break;
-            case 33:
-                {
-                alt17=6;
-                }
-                break;
-            case 34:
-                {
-                alt17=7;
-                }
-                break;
-            case 35:
-                {
-                alt17=8;
-                }
-                break;
-            default:
+            }
+            else {
                 NoViableAltException nvae =
                     new NoViableAltException("", 17, 0, input);
 
                 throw nvae;
             }
-
             switch (alt17) {
                 case 1 :
-                    // InternalCanvas.g:719:3: kw= 'start'
+                    // InternalCanvas.g:733:4: (otherlv_0= 'where' otherlv_1= ':' )
                     {
-                    kw=(Token)match(input,28,FOLLOW_2); 
+                    // InternalCanvas.g:733:4: (otherlv_0= 'where' otherlv_1= ':' )
+                    // InternalCanvas.g:734:5: otherlv_0= 'where' otherlv_1= ':'
+                    {
+                    otherlv_0=(Token)match(input,29,FOLLOW_5); 
 
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getEnumEndAccess().getStartKeyword_0());
-                    		
+                    					newLeafNode(otherlv_0, grammarAccess.getEnumEndAccess().getWhereKeyword_0_0_0());
+                    				
+                    otherlv_1=(Token)match(input,12,FOLLOW_18); 
+
+                    					newLeafNode(otherlv_1, grammarAccess.getEnumEndAccess().getColonKeyword_0_0_1());
+                    				
+
+                    }
+
 
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:725:3: kw= 'end'
+                    // InternalCanvas.g:744:4: otherlv_2= 'where:'
                     {
-                    kw=(Token)match(input,29,FOLLOW_2); 
+                    otherlv_2=(Token)match(input,30,FOLLOW_18); 
 
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getEnumEndAccess().getEndKeyword_1());
-                    		
+                    				newLeafNode(otherlv_2, grammarAccess.getEnumEndAccess().getWhereKeyword_0_1());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            // InternalCanvas.g:749:3: ( ( (lv_where_3_1= 'start' | lv_where_3_2= 'end' | lv_where_3_3= 'middle' | lv_where_3_4= 'end_fixed' | lv_where_3_5= 'start_fixed' | lv_where_3_6= 'none' | lv_where_3_7= 'floating' | lv_where_3_8= 'additional' ) ) )
+            // InternalCanvas.g:750:4: ( (lv_where_3_1= 'start' | lv_where_3_2= 'end' | lv_where_3_3= 'middle' | lv_where_3_4= 'end_fixed' | lv_where_3_5= 'start_fixed' | lv_where_3_6= 'none' | lv_where_3_7= 'floating' | lv_where_3_8= 'additional' ) )
+            {
+            // InternalCanvas.g:750:4: ( (lv_where_3_1= 'start' | lv_where_3_2= 'end' | lv_where_3_3= 'middle' | lv_where_3_4= 'end_fixed' | lv_where_3_5= 'start_fixed' | lv_where_3_6= 'none' | lv_where_3_7= 'floating' | lv_where_3_8= 'additional' ) )
+            // InternalCanvas.g:751:5: (lv_where_3_1= 'start' | lv_where_3_2= 'end' | lv_where_3_3= 'middle' | lv_where_3_4= 'end_fixed' | lv_where_3_5= 'start_fixed' | lv_where_3_6= 'none' | lv_where_3_7= 'floating' | lv_where_3_8= 'additional' )
+            {
+            // InternalCanvas.g:751:5: (lv_where_3_1= 'start' | lv_where_3_2= 'end' | lv_where_3_3= 'middle' | lv_where_3_4= 'end_fixed' | lv_where_3_5= 'start_fixed' | lv_where_3_6= 'none' | lv_where_3_7= 'floating' | lv_where_3_8= 'additional' )
+            int alt18=8;
+            switch ( input.LA(1) ) {
+            case 31:
+                {
+                alt18=1;
+                }
+                break;
+            case 32:
+                {
+                alt18=2;
+                }
+                break;
+            case 33:
+                {
+                alt18=3;
+                }
+                break;
+            case 34:
+                {
+                alt18=4;
+                }
+                break;
+            case 35:
+                {
+                alt18=5;
+                }
+                break;
+            case 36:
+                {
+                alt18=6;
+                }
+                break;
+            case 37:
+                {
+                alt18=7;
+                }
+                break;
+            case 38:
+                {
+                alt18=8;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 18, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt18) {
+                case 1 :
+                    // InternalCanvas.g:752:6: lv_where_3_1= 'start'
+                    {
+                    lv_where_3_1=(Token)match(input,31,FOLLOW_2); 
+
+                    						newLeafNode(lv_where_3_1, grammarAccess.getEnumEndAccess().getWhereStartKeyword_1_0_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getEnumEndRule());
+                    						}
+                    						setWithLastConsumed(current, "where", lv_where_3_1, null);
+                    					
+
+                    }
+                    break;
+                case 2 :
+                    // InternalCanvas.g:763:6: lv_where_3_2= 'end'
+                    {
+                    lv_where_3_2=(Token)match(input,32,FOLLOW_2); 
+
+                    						newLeafNode(lv_where_3_2, grammarAccess.getEnumEndAccess().getWhereEndKeyword_1_0_1());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getEnumEndRule());
+                    						}
+                    						setWithLastConsumed(current, "where", lv_where_3_2, null);
+                    					
 
                     }
                     break;
                 case 3 :
-                    // InternalCanvas.g:731:3: kw= 'middle'
+                    // InternalCanvas.g:774:6: lv_where_3_3= 'middle'
                     {
-                    kw=(Token)match(input,30,FOLLOW_2); 
+                    lv_where_3_3=(Token)match(input,33,FOLLOW_2); 
 
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getEnumEndAccess().getMiddleKeyword_2());
-                    		
+                    						newLeafNode(lv_where_3_3, grammarAccess.getEnumEndAccess().getWhereMiddleKeyword_1_0_2());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getEnumEndRule());
+                    						}
+                    						setWithLastConsumed(current, "where", lv_where_3_3, null);
+                    					
 
                     }
                     break;
                 case 4 :
-                    // InternalCanvas.g:737:3: kw= 'end_fixed'
+                    // InternalCanvas.g:785:6: lv_where_3_4= 'end_fixed'
                     {
-                    kw=(Token)match(input,31,FOLLOW_2); 
+                    lv_where_3_4=(Token)match(input,34,FOLLOW_2); 
 
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getEnumEndAccess().getEnd_fixedKeyword_3());
-                    		
+                    						newLeafNode(lv_where_3_4, grammarAccess.getEnumEndAccess().getWhereEnd_fixedKeyword_1_0_3());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getEnumEndRule());
+                    						}
+                    						setWithLastConsumed(current, "where", lv_where_3_4, null);
+                    					
 
                     }
                     break;
                 case 5 :
-                    // InternalCanvas.g:743:3: kw= 'start_fixed'
+                    // InternalCanvas.g:796:6: lv_where_3_5= 'start_fixed'
                     {
-                    kw=(Token)match(input,32,FOLLOW_2); 
+                    lv_where_3_5=(Token)match(input,35,FOLLOW_2); 
 
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getEnumEndAccess().getStart_fixedKeyword_4());
-                    		
+                    						newLeafNode(lv_where_3_5, grammarAccess.getEnumEndAccess().getWhereStart_fixedKeyword_1_0_4());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getEnumEndRule());
+                    						}
+                    						setWithLastConsumed(current, "where", lv_where_3_5, null);
+                    					
 
                     }
                     break;
                 case 6 :
-                    // InternalCanvas.g:749:3: kw= 'none'
+                    // InternalCanvas.g:807:6: lv_where_3_6= 'none'
                     {
-                    kw=(Token)match(input,33,FOLLOW_2); 
+                    lv_where_3_6=(Token)match(input,36,FOLLOW_2); 
 
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getEnumEndAccess().getNoneKeyword_5());
-                    		
+                    						newLeafNode(lv_where_3_6, grammarAccess.getEnumEndAccess().getWhereNoneKeyword_1_0_5());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getEnumEndRule());
+                    						}
+                    						setWithLastConsumed(current, "where", lv_where_3_6, null);
+                    					
 
                     }
                     break;
                 case 7 :
-                    // InternalCanvas.g:755:3: kw= 'floating'
+                    // InternalCanvas.g:818:6: lv_where_3_7= 'floating'
                     {
-                    kw=(Token)match(input,34,FOLLOW_2); 
+                    lv_where_3_7=(Token)match(input,37,FOLLOW_2); 
 
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getEnumEndAccess().getFloatingKeyword_6());
-                    		
+                    						newLeafNode(lv_where_3_7, grammarAccess.getEnumEndAccess().getWhereFloatingKeyword_1_0_6());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getEnumEndRule());
+                    						}
+                    						setWithLastConsumed(current, "where", lv_where_3_7, null);
+                    					
 
                     }
                     break;
                 case 8 :
-                    // InternalCanvas.g:761:3: kw= 'additional'
+                    // InternalCanvas.g:829:6: lv_where_3_8= 'additional'
                     {
-                    kw=(Token)match(input,35,FOLLOW_2); 
+                    lv_where_3_8=(Token)match(input,38,FOLLOW_2); 
 
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getEnumEndAccess().getAdditionalKeyword_7());
-                    		
+                    						newLeafNode(lv_where_3_8, grammarAccess.getEnumEndAccess().getWhereAdditionalKeyword_1_0_7());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getEnumEndRule());
+                    						}
+                    						setWithLastConsumed(current, "where", lv_where_3_8, null);
+                    					
 
                     }
                     break;
+
+            }
+
+
+            }
+
+
+            }
+
 
             }
 
@@ -2060,526 +2247,8 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleEnumEnd"
 
 
-    // $ANTLR start "entryRuleShapeProps"
-    // InternalCanvas.g:770:1: entryRuleShapeProps returns [EObject current=null] : iv_ruleShapeProps= ruleShapeProps EOF ;
-    public final EObject entryRuleShapeProps() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleShapeProps = null;
-
-
-        try {
-            // InternalCanvas.g:770:51: (iv_ruleShapeProps= ruleShapeProps EOF )
-            // InternalCanvas.g:771:2: iv_ruleShapeProps= ruleShapeProps EOF
-            {
-             newCompositeNode(grammarAccess.getShapePropsRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleShapeProps=ruleShapeProps();
-
-            state._fsp--;
-
-             current =iv_ruleShapeProps; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleShapeProps"
-
-
-    // $ANTLR start "ruleShapeProps"
-    // InternalCanvas.g:777:1: ruleShapeProps returns [EObject current=null] : ( () ( (otherlv_1= 'properties' otherlv_2= ':' ) | otherlv_3= 'properties:' ) ( (lv_container_4_0= ruleContainer ) )? ( (lv_color_5_0= ruleColor ) )? ) ;
-    public final EObject ruleShapeProps() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token otherlv_3=null;
-        EObject lv_container_4_0 = null;
-
-        EObject lv_color_5_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalCanvas.g:783:2: ( ( () ( (otherlv_1= 'properties' otherlv_2= ':' ) | otherlv_3= 'properties:' ) ( (lv_container_4_0= ruleContainer ) )? ( (lv_color_5_0= ruleColor ) )? ) )
-            // InternalCanvas.g:784:2: ( () ( (otherlv_1= 'properties' otherlv_2= ':' ) | otherlv_3= 'properties:' ) ( (lv_container_4_0= ruleContainer ) )? ( (lv_color_5_0= ruleColor ) )? )
-            {
-            // InternalCanvas.g:784:2: ( () ( (otherlv_1= 'properties' otherlv_2= ':' ) | otherlv_3= 'properties:' ) ( (lv_container_4_0= ruleContainer ) )? ( (lv_color_5_0= ruleColor ) )? )
-            // InternalCanvas.g:785:3: () ( (otherlv_1= 'properties' otherlv_2= ':' ) | otherlv_3= 'properties:' ) ( (lv_container_4_0= ruleContainer ) )? ( (lv_color_5_0= ruleColor ) )?
-            {
-            // InternalCanvas.g:785:3: ()
-            // InternalCanvas.g:786:4: 
-            {
-
-            				current = forceCreateModelElement(
-            					grammarAccess.getShapePropsAccess().getShapePropsAction_0(),
-            					current);
-            			
-
-            }
-
-            // InternalCanvas.g:792:3: ( (otherlv_1= 'properties' otherlv_2= ':' ) | otherlv_3= 'properties:' )
-            int alt18=2;
-            int LA18_0 = input.LA(1);
-
-            if ( (LA18_0==15) ) {
-                alt18=1;
-            }
-            else if ( (LA18_0==16) ) {
-                alt18=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 18, 0, input);
-
-                throw nvae;
-            }
-            switch (alt18) {
-                case 1 :
-                    // InternalCanvas.g:793:4: (otherlv_1= 'properties' otherlv_2= ':' )
-                    {
-                    // InternalCanvas.g:793:4: (otherlv_1= 'properties' otherlv_2= ':' )
-                    // InternalCanvas.g:794:5: otherlv_1= 'properties' otherlv_2= ':'
-                    {
-                    otherlv_1=(Token)match(input,15,FOLLOW_4); 
-
-                    					newLeafNode(otherlv_1, grammarAccess.getShapePropsAccess().getPropertiesKeyword_1_0_0());
-                    				
-                    otherlv_2=(Token)match(input,12,FOLLOW_19); 
-
-                    					newLeafNode(otherlv_2, grammarAccess.getShapePropsAccess().getColonKeyword_1_0_1());
-                    				
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:804:4: otherlv_3= 'properties:'
-                    {
-                    otherlv_3=(Token)match(input,16,FOLLOW_19); 
-
-                    				newLeafNode(otherlv_3, grammarAccess.getShapePropsAccess().getPropertiesKeyword_1_1());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            // InternalCanvas.g:809:3: ( (lv_container_4_0= ruleContainer ) )?
-            int alt19=2;
-            int LA19_0 = input.LA(1);
-
-            if ( (LA19_0==36) ) {
-                alt19=1;
-            }
-            switch (alt19) {
-                case 1 :
-                    // InternalCanvas.g:810:4: (lv_container_4_0= ruleContainer )
-                    {
-                    // InternalCanvas.g:810:4: (lv_container_4_0= ruleContainer )
-                    // InternalCanvas.g:811:5: lv_container_4_0= ruleContainer
-                    {
-
-                    					newCompositeNode(grammarAccess.getShapePropsAccess().getContainerContainerParserRuleCall_2_0());
-                    				
-                    pushFollow(FOLLOW_20);
-                    lv_container_4_0=ruleContainer();
-
-                    state._fsp--;
-
-
-                    					if (current==null) {
-                    						current = createModelElementForParent(grammarAccess.getShapePropsRule());
-                    					}
-                    					set(
-                    						current,
-                    						"container",
-                    						lv_container_4_0,
-                    						"org.xtuml.canvas.language.Canvas.Container");
-                    					afterParserOrEnumRuleCall();
-                    				
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // InternalCanvas.g:828:3: ( (lv_color_5_0= ruleColor ) )?
-            int alt20=2;
-            int LA20_0 = input.LA(1);
-
-            if ( (LA20_0==39) ) {
-                alt20=1;
-            }
-            switch (alt20) {
-                case 1 :
-                    // InternalCanvas.g:829:4: (lv_color_5_0= ruleColor )
-                    {
-                    // InternalCanvas.g:829:4: (lv_color_5_0= ruleColor )
-                    // InternalCanvas.g:830:5: lv_color_5_0= ruleColor
-                    {
-
-                    					newCompositeNode(grammarAccess.getShapePropsAccess().getColorColorParserRuleCall_3_0());
-                    				
-                    pushFollow(FOLLOW_2);
-                    lv_color_5_0=ruleColor();
-
-                    state._fsp--;
-
-
-                    					if (current==null) {
-                    						current = createModelElementForParent(grammarAccess.getShapePropsRule());
-                    					}
-                    					set(
-                    						current,
-                    						"color",
-                    						lv_color_5_0,
-                    						"org.xtuml.canvas.language.Canvas.Color");
-                    					afterParserOrEnumRuleCall();
-                    				
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleShapeProps"
-
-
-    // $ANTLR start "entryRuleContainer"
-    // InternalCanvas.g:851:1: entryRuleContainer returns [EObject current=null] : iv_ruleContainer= ruleContainer EOF ;
-    public final EObject entryRuleContainer() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleContainer = null;
-
-
-        try {
-            // InternalCanvas.g:851:50: (iv_ruleContainer= ruleContainer EOF )
-            // InternalCanvas.g:852:2: iv_ruleContainer= ruleContainer EOF
-            {
-             newCompositeNode(grammarAccess.getContainerRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleContainer=ruleContainer();
-
-            state._fsp--;
-
-             current =iv_ruleContainer; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleContainer"
-
-
-    // $ANTLR start "ruleContainer"
-    // InternalCanvas.g:858:1: ruleContainer returns [EObject current=null] : ( () otherlv_1= 'container' (otherlv_2= 'true' | otherlv_3= 'false' ) ) ;
-    public final EObject ruleContainer() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token otherlv_3=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalCanvas.g:864:2: ( ( () otherlv_1= 'container' (otherlv_2= 'true' | otherlv_3= 'false' ) ) )
-            // InternalCanvas.g:865:2: ( () otherlv_1= 'container' (otherlv_2= 'true' | otherlv_3= 'false' ) )
-            {
-            // InternalCanvas.g:865:2: ( () otherlv_1= 'container' (otherlv_2= 'true' | otherlv_3= 'false' ) )
-            // InternalCanvas.g:866:3: () otherlv_1= 'container' (otherlv_2= 'true' | otherlv_3= 'false' )
-            {
-            // InternalCanvas.g:866:3: ()
-            // InternalCanvas.g:867:4: 
-            {
-
-            				current = forceCreateModelElement(
-            					grammarAccess.getContainerAccess().getShapeContainerAction_0(),
-            					current);
-            			
-
-            }
-
-            otherlv_1=(Token)match(input,36,FOLLOW_21); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getContainerAccess().getContainerKeyword_1());
-            		
-            // InternalCanvas.g:877:3: (otherlv_2= 'true' | otherlv_3= 'false' )
-            int alt21=2;
-            int LA21_0 = input.LA(1);
-
-            if ( (LA21_0==37) ) {
-                alt21=1;
-            }
-            else if ( (LA21_0==38) ) {
-                alt21=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 21, 0, input);
-
-                throw nvae;
-            }
-            switch (alt21) {
-                case 1 :
-                    // InternalCanvas.g:878:4: otherlv_2= 'true'
-                    {
-                    otherlv_2=(Token)match(input,37,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_2, grammarAccess.getContainerAccess().getTrueKeyword_2_0());
-                    			
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:883:4: otherlv_3= 'false'
-                    {
-                    otherlv_3=(Token)match(input,38,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_3, grammarAccess.getContainerAccess().getFalseKeyword_2_1());
-                    			
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleContainer"
-
-
-    // $ANTLR start "entryRuleColor"
-    // InternalCanvas.g:892:1: entryRuleColor returns [EObject current=null] : iv_ruleColor= ruleColor EOF ;
-    public final EObject entryRuleColor() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleColor = null;
-
-
-        try {
-            // InternalCanvas.g:892:46: (iv_ruleColor= ruleColor EOF )
-            // InternalCanvas.g:893:2: iv_ruleColor= ruleColor EOF
-            {
-             newCompositeNode(grammarAccess.getColorRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleColor=ruleColor();
-
-            state._fsp--;
-
-             current =iv_ruleColor; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleColor"
-
-
-    // $ANTLR start "ruleColor"
-    // InternalCanvas.g:899:1: ruleColor returns [EObject current=null] : (otherlv_0= 'color' ( (lv_r_1_0= RULE_INT ) ) ( (lv_g_2_0= RULE_INT ) ) ( (lv_b_3_0= RULE_INT ) ) ) ;
-    public final EObject ruleColor() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token lv_r_1_0=null;
-        Token lv_g_2_0=null;
-        Token lv_b_3_0=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalCanvas.g:905:2: ( (otherlv_0= 'color' ( (lv_r_1_0= RULE_INT ) ) ( (lv_g_2_0= RULE_INT ) ) ( (lv_b_3_0= RULE_INT ) ) ) )
-            // InternalCanvas.g:906:2: (otherlv_0= 'color' ( (lv_r_1_0= RULE_INT ) ) ( (lv_g_2_0= RULE_INT ) ) ( (lv_b_3_0= RULE_INT ) ) )
-            {
-            // InternalCanvas.g:906:2: (otherlv_0= 'color' ( (lv_r_1_0= RULE_INT ) ) ( (lv_g_2_0= RULE_INT ) ) ( (lv_b_3_0= RULE_INT ) ) )
-            // InternalCanvas.g:907:3: otherlv_0= 'color' ( (lv_r_1_0= RULE_INT ) ) ( (lv_g_2_0= RULE_INT ) ) ( (lv_b_3_0= RULE_INT ) )
-            {
-            otherlv_0=(Token)match(input,39,FOLLOW_11); 
-
-            			newLeafNode(otherlv_0, grammarAccess.getColorAccess().getColorKeyword_0());
-            		
-            // InternalCanvas.g:911:3: ( (lv_r_1_0= RULE_INT ) )
-            // InternalCanvas.g:912:4: (lv_r_1_0= RULE_INT )
-            {
-            // InternalCanvas.g:912:4: (lv_r_1_0= RULE_INT )
-            // InternalCanvas.g:913:5: lv_r_1_0= RULE_INT
-            {
-            lv_r_1_0=(Token)match(input,RULE_INT,FOLLOW_11); 
-
-            					newLeafNode(lv_r_1_0, grammarAccess.getColorAccess().getRINTTerminalRuleCall_1_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getColorRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"r",
-            						lv_r_1_0,
-            						"org.eclipse.xtext.common.Terminals.INT");
-            				
-
-            }
-
-
-            }
-
-            // InternalCanvas.g:929:3: ( (lv_g_2_0= RULE_INT ) )
-            // InternalCanvas.g:930:4: (lv_g_2_0= RULE_INT )
-            {
-            // InternalCanvas.g:930:4: (lv_g_2_0= RULE_INT )
-            // InternalCanvas.g:931:5: lv_g_2_0= RULE_INT
-            {
-            lv_g_2_0=(Token)match(input,RULE_INT,FOLLOW_11); 
-
-            					newLeafNode(lv_g_2_0, grammarAccess.getColorAccess().getGINTTerminalRuleCall_2_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getColorRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"g",
-            						lv_g_2_0,
-            						"org.eclipse.xtext.common.Terminals.INT");
-            				
-
-            }
-
-
-            }
-
-            // InternalCanvas.g:947:3: ( (lv_b_3_0= RULE_INT ) )
-            // InternalCanvas.g:948:4: (lv_b_3_0= RULE_INT )
-            {
-            // InternalCanvas.g:948:4: (lv_b_3_0= RULE_INT )
-            // InternalCanvas.g:949:5: lv_b_3_0= RULE_INT
-            {
-            lv_b_3_0=(Token)match(input,RULE_INT,FOLLOW_2); 
-
-            					newLeafNode(lv_b_3_0, grammarAccess.getColorAccess().getBINTTerminalRuleCall_3_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getColorRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"b",
-            						lv_b_3_0,
-            						"org.eclipse.xtext.common.Terminals.INT");
-            				
-
-            }
-
-
-            }
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleColor"
-
-
     // $ANTLR start "entryRuleConnectors"
-    // InternalCanvas.g:969:1: entryRuleConnectors returns [EObject current=null] : iv_ruleConnectors= ruleConnectors EOF ;
+    // InternalCanvas.g:846:1: entryRuleConnectors returns [EObject current=null] : iv_ruleConnectors= ruleConnectors EOF ;
     public final EObject entryRuleConnectors() throws RecognitionException {
         EObject current = null;
 
@@ -2587,8 +2256,8 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCanvas.g:969:51: (iv_ruleConnectors= ruleConnectors EOF )
-            // InternalCanvas.g:970:2: iv_ruleConnectors= ruleConnectors EOF
+            // InternalCanvas.g:846:51: (iv_ruleConnectors= ruleConnectors EOF )
+            // InternalCanvas.g:847:2: iv_ruleConnectors= ruleConnectors EOF
             {
              newCompositeNode(grammarAccess.getConnectorsRule()); 
             pushFollow(FOLLOW_1);
@@ -2615,7 +2284,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConnectors"
-    // InternalCanvas.g:976:1: ruleConnectors returns [EObject current=null] : ( () ( (otherlv_1= 'connectors' otherlv_2= ':' ) | otherlv_3= 'connectors:' ) ( (lv_connectors_4_0= ruleConnector ) )* ) ;
+    // InternalCanvas.g:853:1: ruleConnectors returns [EObject current=null] : ( () ( (otherlv_1= 'connectors' otherlv_2= ':' ) | otherlv_3= 'connectors:' ) ( (lv_connectors_4_0= ruleConnector ) )* ) ;
     public final EObject ruleConnectors() throws RecognitionException {
         EObject current = null;
 
@@ -2629,14 +2298,14 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCanvas.g:982:2: ( ( () ( (otherlv_1= 'connectors' otherlv_2= ':' ) | otherlv_3= 'connectors:' ) ( (lv_connectors_4_0= ruleConnector ) )* ) )
-            // InternalCanvas.g:983:2: ( () ( (otherlv_1= 'connectors' otherlv_2= ':' ) | otherlv_3= 'connectors:' ) ( (lv_connectors_4_0= ruleConnector ) )* )
+            // InternalCanvas.g:859:2: ( ( () ( (otherlv_1= 'connectors' otherlv_2= ':' ) | otherlv_3= 'connectors:' ) ( (lv_connectors_4_0= ruleConnector ) )* ) )
+            // InternalCanvas.g:860:2: ( () ( (otherlv_1= 'connectors' otherlv_2= ':' ) | otherlv_3= 'connectors:' ) ( (lv_connectors_4_0= ruleConnector ) )* )
             {
-            // InternalCanvas.g:983:2: ( () ( (otherlv_1= 'connectors' otherlv_2= ':' ) | otherlv_3= 'connectors:' ) ( (lv_connectors_4_0= ruleConnector ) )* )
-            // InternalCanvas.g:984:3: () ( (otherlv_1= 'connectors' otherlv_2= ':' ) | otherlv_3= 'connectors:' ) ( (lv_connectors_4_0= ruleConnector ) )*
+            // InternalCanvas.g:860:2: ( () ( (otherlv_1= 'connectors' otherlv_2= ':' ) | otherlv_3= 'connectors:' ) ( (lv_connectors_4_0= ruleConnector ) )* )
+            // InternalCanvas.g:861:3: () ( (otherlv_1= 'connectors' otherlv_2= ':' ) | otherlv_3= 'connectors:' ) ( (lv_connectors_4_0= ruleConnector ) )*
             {
-            // InternalCanvas.g:984:3: ()
-            // InternalCanvas.g:985:4: 
+            // InternalCanvas.g:861:3: ()
+            // InternalCanvas.g:862:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2646,34 +2315,34 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:991:3: ( (otherlv_1= 'connectors' otherlv_2= ':' ) | otherlv_3= 'connectors:' )
-            int alt22=2;
-            int LA22_0 = input.LA(1);
+            // InternalCanvas.g:868:3: ( (otherlv_1= 'connectors' otherlv_2= ':' ) | otherlv_3= 'connectors:' )
+            int alt19=2;
+            int LA19_0 = input.LA(1);
 
-            if ( (LA22_0==40) ) {
-                alt22=1;
+            if ( (LA19_0==39) ) {
+                alt19=1;
             }
-            else if ( (LA22_0==41) ) {
-                alt22=2;
+            else if ( (LA19_0==40) ) {
+                alt19=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 22, 0, input);
+                    new NoViableAltException("", 19, 0, input);
 
                 throw nvae;
             }
-            switch (alt22) {
+            switch (alt19) {
                 case 1 :
-                    // InternalCanvas.g:992:4: (otherlv_1= 'connectors' otherlv_2= ':' )
+                    // InternalCanvas.g:869:4: (otherlv_1= 'connectors' otherlv_2= ':' )
                     {
-                    // InternalCanvas.g:992:4: (otherlv_1= 'connectors' otherlv_2= ':' )
-                    // InternalCanvas.g:993:5: otherlv_1= 'connectors' otherlv_2= ':'
+                    // InternalCanvas.g:869:4: (otherlv_1= 'connectors' otherlv_2= ':' )
+                    // InternalCanvas.g:870:5: otherlv_1= 'connectors' otherlv_2= ':'
                     {
-                    otherlv_1=(Token)match(input,40,FOLLOW_4); 
+                    otherlv_1=(Token)match(input,39,FOLLOW_5); 
 
                     					newLeafNode(otherlv_1, grammarAccess.getConnectorsAccess().getConnectorsKeyword_1_0_0());
                     				
-                    otherlv_2=(Token)match(input,12,FOLLOW_22); 
+                    otherlv_2=(Token)match(input,12,FOLLOW_19); 
 
                     					newLeafNode(otherlv_2, grammarAccess.getConnectorsAccess().getColonKeyword_1_0_1());
                     				
@@ -2684,9 +2353,9 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:1003:4: otherlv_3= 'connectors:'
+                    // InternalCanvas.g:880:4: otherlv_3= 'connectors:'
                     {
-                    otherlv_3=(Token)match(input,41,FOLLOW_22); 
+                    otherlv_3=(Token)match(input,40,FOLLOW_19); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getConnectorsAccess().getConnectorsKeyword_1_1());
                     			
@@ -2696,28 +2365,28 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:1008:3: ( (lv_connectors_4_0= ruleConnector ) )*
-            loop23:
+            // InternalCanvas.g:885:3: ( (lv_connectors_4_0= ruleConnector ) )*
+            loop20:
             do {
-                int alt23=2;
-                int LA23_0 = input.LA(1);
+                int alt20=2;
+                int LA20_0 = input.LA(1);
 
-                if ( ((LA23_0>=42 && LA23_0<=43)) ) {
-                    alt23=1;
+                if ( ((LA20_0>=41 && LA20_0<=42)) ) {
+                    alt20=1;
                 }
 
 
-                switch (alt23) {
+                switch (alt20) {
             	case 1 :
-            	    // InternalCanvas.g:1009:4: (lv_connectors_4_0= ruleConnector )
+            	    // InternalCanvas.g:886:4: (lv_connectors_4_0= ruleConnector )
             	    {
-            	    // InternalCanvas.g:1009:4: (lv_connectors_4_0= ruleConnector )
-            	    // InternalCanvas.g:1010:5: lv_connectors_4_0= ruleConnector
+            	    // InternalCanvas.g:886:4: (lv_connectors_4_0= ruleConnector )
+            	    // InternalCanvas.g:887:5: lv_connectors_4_0= ruleConnector
             	    {
 
             	    					newCompositeNode(grammarAccess.getConnectorsAccess().getConnectorsConnectorParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_22);
+            	    pushFollow(FOLLOW_19);
             	    lv_connectors_4_0=ruleConnector();
 
             	    state._fsp--;
@@ -2741,7 +2410,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop23;
+            	    break loop20;
                 }
             } while (true);
 
@@ -2768,7 +2437,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConnector"
-    // InternalCanvas.g:1031:1: entryRuleConnector returns [EObject current=null] : iv_ruleConnector= ruleConnector EOF ;
+    // InternalCanvas.g:908:1: entryRuleConnector returns [EObject current=null] : iv_ruleConnector= ruleConnector EOF ;
     public final EObject entryRuleConnector() throws RecognitionException {
         EObject current = null;
 
@@ -2776,8 +2445,8 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCanvas.g:1031:50: (iv_ruleConnector= ruleConnector EOF )
-            // InternalCanvas.g:1032:2: iv_ruleConnector= ruleConnector EOF
+            // InternalCanvas.g:908:50: (iv_ruleConnector= ruleConnector EOF )
+            // InternalCanvas.g:909:2: iv_ruleConnector= ruleConnector EOF
             {
              newCompositeNode(grammarAccess.getConnectorRule()); 
             pushFollow(FOLLOW_1);
@@ -2804,7 +2473,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConnector"
-    // InternalCanvas.g:1038:1: ruleConnector returns [EObject current=null] : ( ( (otherlv_0= 'connector' otherlv_1= ':' ) | otherlv_2= 'connector:' ) ( (lv_name_3_0= RULE_ID ) ) ( (lv_props_4_0= ruleConnectorProps ) )? ( (lv_polyline_5_0= rulePolyline ) )? ( (lv_anchors_6_0= ruleAnchors ) )? ( (lv_texts_7_0= ruleFloatingTexts ) ) ( (otherlv_8= 'render' otherlv_9= ':' ) | otherlv_10= 'render:' ) ( (lv_represents_11_0= RULE_STRING ) ) ) ;
+    // InternalCanvas.g:915:1: ruleConnector returns [EObject current=null] : ( ( (otherlv_0= 'connector' otherlv_1= ':' ) | otherlv_2= 'connector:' ) ( (lv_name_3_0= RULE_ID ) ) ( (otherlv_4= 'render' otherlv_5= ':' ) | otherlv_6= 'render:' ) ( (lv_represents_7_0= RULE_STRING ) ) ( (lv_polyline_8_0= rulePolyline ) ) ( (lv_anchors_9_0= ruleAnchors ) )? ( (lv_texts_10_0= ruleFloatingTexts ) ) ) ;
     public final EObject ruleConnector() throws RecognitionException {
         EObject current = null;
 
@@ -2812,57 +2481,55 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
         Token otherlv_1=null;
         Token otherlv_2=null;
         Token lv_name_3_0=null;
-        Token otherlv_8=null;
-        Token otherlv_9=null;
-        Token otherlv_10=null;
-        Token lv_represents_11_0=null;
-        EObject lv_props_4_0 = null;
+        Token otherlv_4=null;
+        Token otherlv_5=null;
+        Token otherlv_6=null;
+        Token lv_represents_7_0=null;
+        EObject lv_polyline_8_0 = null;
 
-        EObject lv_polyline_5_0 = null;
+        EObject lv_anchors_9_0 = null;
 
-        EObject lv_anchors_6_0 = null;
-
-        EObject lv_texts_7_0 = null;
+        EObject lv_texts_10_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalCanvas.g:1044:2: ( ( ( (otherlv_0= 'connector' otherlv_1= ':' ) | otherlv_2= 'connector:' ) ( (lv_name_3_0= RULE_ID ) ) ( (lv_props_4_0= ruleConnectorProps ) )? ( (lv_polyline_5_0= rulePolyline ) )? ( (lv_anchors_6_0= ruleAnchors ) )? ( (lv_texts_7_0= ruleFloatingTexts ) ) ( (otherlv_8= 'render' otherlv_9= ':' ) | otherlv_10= 'render:' ) ( (lv_represents_11_0= RULE_STRING ) ) ) )
-            // InternalCanvas.g:1045:2: ( ( (otherlv_0= 'connector' otherlv_1= ':' ) | otherlv_2= 'connector:' ) ( (lv_name_3_0= RULE_ID ) ) ( (lv_props_4_0= ruleConnectorProps ) )? ( (lv_polyline_5_0= rulePolyline ) )? ( (lv_anchors_6_0= ruleAnchors ) )? ( (lv_texts_7_0= ruleFloatingTexts ) ) ( (otherlv_8= 'render' otherlv_9= ':' ) | otherlv_10= 'render:' ) ( (lv_represents_11_0= RULE_STRING ) ) )
+            // InternalCanvas.g:921:2: ( ( ( (otherlv_0= 'connector' otherlv_1= ':' ) | otherlv_2= 'connector:' ) ( (lv_name_3_0= RULE_ID ) ) ( (otherlv_4= 'render' otherlv_5= ':' ) | otherlv_6= 'render:' ) ( (lv_represents_7_0= RULE_STRING ) ) ( (lv_polyline_8_0= rulePolyline ) ) ( (lv_anchors_9_0= ruleAnchors ) )? ( (lv_texts_10_0= ruleFloatingTexts ) ) ) )
+            // InternalCanvas.g:922:2: ( ( (otherlv_0= 'connector' otherlv_1= ':' ) | otherlv_2= 'connector:' ) ( (lv_name_3_0= RULE_ID ) ) ( (otherlv_4= 'render' otherlv_5= ':' ) | otherlv_6= 'render:' ) ( (lv_represents_7_0= RULE_STRING ) ) ( (lv_polyline_8_0= rulePolyline ) ) ( (lv_anchors_9_0= ruleAnchors ) )? ( (lv_texts_10_0= ruleFloatingTexts ) ) )
             {
-            // InternalCanvas.g:1045:2: ( ( (otherlv_0= 'connector' otherlv_1= ':' ) | otherlv_2= 'connector:' ) ( (lv_name_3_0= RULE_ID ) ) ( (lv_props_4_0= ruleConnectorProps ) )? ( (lv_polyline_5_0= rulePolyline ) )? ( (lv_anchors_6_0= ruleAnchors ) )? ( (lv_texts_7_0= ruleFloatingTexts ) ) ( (otherlv_8= 'render' otherlv_9= ':' ) | otherlv_10= 'render:' ) ( (lv_represents_11_0= RULE_STRING ) ) )
-            // InternalCanvas.g:1046:3: ( (otherlv_0= 'connector' otherlv_1= ':' ) | otherlv_2= 'connector:' ) ( (lv_name_3_0= RULE_ID ) ) ( (lv_props_4_0= ruleConnectorProps ) )? ( (lv_polyline_5_0= rulePolyline ) )? ( (lv_anchors_6_0= ruleAnchors ) )? ( (lv_texts_7_0= ruleFloatingTexts ) ) ( (otherlv_8= 'render' otherlv_9= ':' ) | otherlv_10= 'render:' ) ( (lv_represents_11_0= RULE_STRING ) )
+            // InternalCanvas.g:922:2: ( ( (otherlv_0= 'connector' otherlv_1= ':' ) | otherlv_2= 'connector:' ) ( (lv_name_3_0= RULE_ID ) ) ( (otherlv_4= 'render' otherlv_5= ':' ) | otherlv_6= 'render:' ) ( (lv_represents_7_0= RULE_STRING ) ) ( (lv_polyline_8_0= rulePolyline ) ) ( (lv_anchors_9_0= ruleAnchors ) )? ( (lv_texts_10_0= ruleFloatingTexts ) ) )
+            // InternalCanvas.g:923:3: ( (otherlv_0= 'connector' otherlv_1= ':' ) | otherlv_2= 'connector:' ) ( (lv_name_3_0= RULE_ID ) ) ( (otherlv_4= 'render' otherlv_5= ':' ) | otherlv_6= 'render:' ) ( (lv_represents_7_0= RULE_STRING ) ) ( (lv_polyline_8_0= rulePolyline ) ) ( (lv_anchors_9_0= ruleAnchors ) )? ( (lv_texts_10_0= ruleFloatingTexts ) )
             {
-            // InternalCanvas.g:1046:3: ( (otherlv_0= 'connector' otherlv_1= ':' ) | otherlv_2= 'connector:' )
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            // InternalCanvas.g:923:3: ( (otherlv_0= 'connector' otherlv_1= ':' ) | otherlv_2= 'connector:' )
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            if ( (LA24_0==42) ) {
-                alt24=1;
+            if ( (LA21_0==41) ) {
+                alt21=1;
             }
-            else if ( (LA24_0==43) ) {
-                alt24=2;
+            else if ( (LA21_0==42) ) {
+                alt21=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 24, 0, input);
+                    new NoViableAltException("", 21, 0, input);
 
                 throw nvae;
             }
-            switch (alt24) {
+            switch (alt21) {
                 case 1 :
-                    // InternalCanvas.g:1047:4: (otherlv_0= 'connector' otherlv_1= ':' )
+                    // InternalCanvas.g:924:4: (otherlv_0= 'connector' otherlv_1= ':' )
                     {
-                    // InternalCanvas.g:1047:4: (otherlv_0= 'connector' otherlv_1= ':' )
-                    // InternalCanvas.g:1048:5: otherlv_0= 'connector' otherlv_1= ':'
+                    // InternalCanvas.g:924:4: (otherlv_0= 'connector' otherlv_1= ':' )
+                    // InternalCanvas.g:925:5: otherlv_0= 'connector' otherlv_1= ':'
                     {
-                    otherlv_0=(Token)match(input,42,FOLLOW_4); 
+                    otherlv_0=(Token)match(input,41,FOLLOW_5); 
 
                     					newLeafNode(otherlv_0, grammarAccess.getConnectorAccess().getConnectorKeyword_0_0_0());
                     				
-                    otherlv_1=(Token)match(input,12,FOLLOW_13); 
+                    otherlv_1=(Token)match(input,12,FOLLOW_12); 
 
                     					newLeafNode(otherlv_1, grammarAccess.getConnectorAccess().getColonKeyword_0_0_1());
                     				
@@ -2873,9 +2540,9 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:1058:4: otherlv_2= 'connector:'
+                    // InternalCanvas.g:935:4: otherlv_2= 'connector:'
                     {
-                    otherlv_2=(Token)match(input,43,FOLLOW_13); 
+                    otherlv_2=(Token)match(input,42,FOLLOW_12); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getConnectorAccess().getConnectorKeyword_0_1());
                     			
@@ -2885,13 +2552,13 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:1063:3: ( (lv_name_3_0= RULE_ID ) )
-            // InternalCanvas.g:1064:4: (lv_name_3_0= RULE_ID )
+            // InternalCanvas.g:940:3: ( (lv_name_3_0= RULE_ID ) )
+            // InternalCanvas.g:941:4: (lv_name_3_0= RULE_ID )
             {
-            // InternalCanvas.g:1064:4: (lv_name_3_0= RULE_ID )
-            // InternalCanvas.g:1065:5: lv_name_3_0= RULE_ID
+            // InternalCanvas.g:941:4: (lv_name_3_0= RULE_ID )
+            // InternalCanvas.g:942:5: lv_name_3_0= RULE_ID
             {
-            lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_23); 
+            lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_14); 
 
             					newLeafNode(lv_name_3_0, grammarAccess.getConnectorAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -2911,38 +2578,36 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:1081:3: ( (lv_props_4_0= ruleConnectorProps ) )?
-            int alt25=2;
-            int LA25_0 = input.LA(1);
+            // InternalCanvas.g:958:3: ( (otherlv_4= 'render' otherlv_5= ':' ) | otherlv_6= 'render:' )
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( ((LA25_0>=15 && LA25_0<=16)) ) {
-                alt25=1;
+            if ( (LA22_0==11) ) {
+                alt22=1;
             }
-            switch (alt25) {
+            else if ( (LA22_0==13) ) {
+                alt22=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 22, 0, input);
+
+                throw nvae;
+            }
+            switch (alt22) {
                 case 1 :
-                    // InternalCanvas.g:1082:4: (lv_props_4_0= ruleConnectorProps )
+                    // InternalCanvas.g:959:4: (otherlv_4= 'render' otherlv_5= ':' )
                     {
-                    // InternalCanvas.g:1082:4: (lv_props_4_0= ruleConnectorProps )
-                    // InternalCanvas.g:1083:5: lv_props_4_0= ruleConnectorProps
+                    // InternalCanvas.g:959:4: (otherlv_4= 'render' otherlv_5= ':' )
+                    // InternalCanvas.g:960:5: otherlv_4= 'render' otherlv_5= ':'
                     {
+                    otherlv_4=(Token)match(input,11,FOLLOW_5); 
 
-                    					newCompositeNode(grammarAccess.getConnectorAccess().getPropsConnectorPropsParserRuleCall_2_0());
+                    					newLeafNode(otherlv_4, grammarAccess.getConnectorAccess().getRenderKeyword_2_0_0());
                     				
-                    pushFollow(FOLLOW_23);
-                    lv_props_4_0=ruleConnectorProps();
+                    otherlv_5=(Token)match(input,12,FOLLOW_6); 
 
-                    state._fsp--;
-
-
-                    					if (current==null) {
-                    						current = createModelElementForParent(grammarAccess.getConnectorRule());
-                    					}
-                    					set(
-                    						current,
-                    						"props",
-                    						lv_props_4_0,
-                    						"org.xtuml.canvas.language.Canvas.ConnectorProps");
-                    					afterParserOrEnumRuleCall();
+                    					newLeafNode(otherlv_5, grammarAccess.getConnectorAccess().getColonKeyword_2_0_1());
                     				
 
                     }
@@ -2950,70 +2615,95 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-
-            }
-
-            // InternalCanvas.g:1100:3: ( (lv_polyline_5_0= rulePolyline ) )?
-            int alt26=2;
-            int LA26_0 = input.LA(1);
-
-            if ( ((LA26_0>=51 && LA26_0<=52)) ) {
-                alt26=1;
-            }
-            switch (alt26) {
-                case 1 :
-                    // InternalCanvas.g:1101:4: (lv_polyline_5_0= rulePolyline )
+                case 2 :
+                    // InternalCanvas.g:970:4: otherlv_6= 'render:'
                     {
-                    // InternalCanvas.g:1101:4: (lv_polyline_5_0= rulePolyline )
-                    // InternalCanvas.g:1102:5: lv_polyline_5_0= rulePolyline
-                    {
+                    otherlv_6=(Token)match(input,13,FOLLOW_6); 
 
-                    					newCompositeNode(grammarAccess.getConnectorAccess().getPolylinePolylineParserRuleCall_3_0());
-                    				
-                    pushFollow(FOLLOW_23);
-                    lv_polyline_5_0=rulePolyline();
-
-                    state._fsp--;
-
-
-                    					if (current==null) {
-                    						current = createModelElementForParent(grammarAccess.getConnectorRule());
-                    					}
-                    					set(
-                    						current,
-                    						"polyline",
-                    						lv_polyline_5_0,
-                    						"org.xtuml.canvas.language.Canvas.Polyline");
-                    					afterParserOrEnumRuleCall();
-                    				
-
-                    }
-
+                    				newLeafNode(otherlv_6, grammarAccess.getConnectorAccess().getRenderKeyword_2_1());
+                    			
 
                     }
                     break;
 
             }
 
-            // InternalCanvas.g:1119:3: ( (lv_anchors_6_0= ruleAnchors ) )?
-            int alt27=2;
-            int LA27_0 = input.LA(1);
+            // InternalCanvas.g:975:3: ( (lv_represents_7_0= RULE_STRING ) )
+            // InternalCanvas.g:976:4: (lv_represents_7_0= RULE_STRING )
+            {
+            // InternalCanvas.g:976:4: (lv_represents_7_0= RULE_STRING )
+            // InternalCanvas.g:977:5: lv_represents_7_0= RULE_STRING
+            {
+            lv_represents_7_0=(Token)match(input,RULE_STRING,FOLLOW_20); 
 
-            if ( ((LA27_0>=44 && LA27_0<=45)) ) {
-                alt27=1;
+            					newLeafNode(lv_represents_7_0, grammarAccess.getConnectorAccess().getRepresentsSTRINGTerminalRuleCall_3_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getConnectorRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"represents",
+            						lv_represents_7_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
             }
-            switch (alt27) {
+
+
+            }
+
+            // InternalCanvas.g:993:3: ( (lv_polyline_8_0= rulePolyline ) )
+            // InternalCanvas.g:994:4: (lv_polyline_8_0= rulePolyline )
+            {
+            // InternalCanvas.g:994:4: (lv_polyline_8_0= rulePolyline )
+            // InternalCanvas.g:995:5: lv_polyline_8_0= rulePolyline
+            {
+
+            					newCompositeNode(grammarAccess.getConnectorAccess().getPolylinePolylineParserRuleCall_4_0());
+            				
+            pushFollow(FOLLOW_21);
+            lv_polyline_8_0=rulePolyline();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getConnectorRule());
+            					}
+            					set(
+            						current,
+            						"polyline",
+            						lv_polyline_8_0,
+            						"org.xtuml.canvas.language.Canvas.Polyline");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            // InternalCanvas.g:1012:3: ( (lv_anchors_9_0= ruleAnchors ) )?
+            int alt23=2;
+            int LA23_0 = input.LA(1);
+
+            if ( ((LA23_0>=43 && LA23_0<=44)) ) {
+                alt23=1;
+            }
+            switch (alt23) {
                 case 1 :
-                    // InternalCanvas.g:1120:4: (lv_anchors_6_0= ruleAnchors )
+                    // InternalCanvas.g:1013:4: (lv_anchors_9_0= ruleAnchors )
                     {
-                    // InternalCanvas.g:1120:4: (lv_anchors_6_0= ruleAnchors )
-                    // InternalCanvas.g:1121:5: lv_anchors_6_0= ruleAnchors
+                    // InternalCanvas.g:1013:4: (lv_anchors_9_0= ruleAnchors )
+                    // InternalCanvas.g:1014:5: lv_anchors_9_0= ruleAnchors
                     {
 
-                    					newCompositeNode(grammarAccess.getConnectorAccess().getAnchorsAnchorsParserRuleCall_4_0());
+                    					newCompositeNode(grammarAccess.getConnectorAccess().getAnchorsAnchorsParserRuleCall_5_0());
                     				
-                    pushFollow(FOLLOW_23);
-                    lv_anchors_6_0=ruleAnchors();
+                    pushFollow(FOLLOW_21);
+                    lv_anchors_9_0=ruleAnchors();
 
                     state._fsp--;
 
@@ -3024,7 +2714,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
                     					set(
                     						current,
                     						"anchors",
-                    						lv_anchors_6_0,
+                    						lv_anchors_9_0,
                     						"org.xtuml.canvas.language.Canvas.Anchors");
                     					afterParserOrEnumRuleCall();
                     				
@@ -3037,17 +2727,17 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:1138:3: ( (lv_texts_7_0= ruleFloatingTexts ) )
-            // InternalCanvas.g:1139:4: (lv_texts_7_0= ruleFloatingTexts )
+            // InternalCanvas.g:1031:3: ( (lv_texts_10_0= ruleFloatingTexts ) )
+            // InternalCanvas.g:1032:4: (lv_texts_10_0= ruleFloatingTexts )
             {
-            // InternalCanvas.g:1139:4: (lv_texts_7_0= ruleFloatingTexts )
-            // InternalCanvas.g:1140:5: lv_texts_7_0= ruleFloatingTexts
+            // InternalCanvas.g:1032:4: (lv_texts_10_0= ruleFloatingTexts )
+            // InternalCanvas.g:1033:5: lv_texts_10_0= ruleFloatingTexts
             {
 
-            					newCompositeNode(grammarAccess.getConnectorAccess().getTextsFloatingTextsParserRuleCall_5_0());
+            					newCompositeNode(grammarAccess.getConnectorAccess().getTextsFloatingTextsParserRuleCall_6_0());
             				
-            pushFollow(FOLLOW_16);
-            lv_texts_7_0=ruleFloatingTexts();
+            pushFollow(FOLLOW_2);
+            lv_texts_10_0=ruleFloatingTexts();
 
             state._fsp--;
 
@@ -3058,85 +2748,9 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"texts",
-            						lv_texts_7_0,
+            						lv_texts_10_0,
             						"org.xtuml.canvas.language.Canvas.FloatingTexts");
             					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            // InternalCanvas.g:1157:3: ( (otherlv_8= 'render' otherlv_9= ':' ) | otherlv_10= 'render:' )
-            int alt28=2;
-            int LA28_0 = input.LA(1);
-
-            if ( (LA28_0==11) ) {
-                alt28=1;
-            }
-            else if ( (LA28_0==13) ) {
-                alt28=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 28, 0, input);
-
-                throw nvae;
-            }
-            switch (alt28) {
-                case 1 :
-                    // InternalCanvas.g:1158:4: (otherlv_8= 'render' otherlv_9= ':' )
-                    {
-                    // InternalCanvas.g:1158:4: (otherlv_8= 'render' otherlv_9= ':' )
-                    // InternalCanvas.g:1159:5: otherlv_8= 'render' otherlv_9= ':'
-                    {
-                    otherlv_8=(Token)match(input,11,FOLLOW_4); 
-
-                    					newLeafNode(otherlv_8, grammarAccess.getConnectorAccess().getRenderKeyword_6_0_0());
-                    				
-                    otherlv_9=(Token)match(input,12,FOLLOW_5); 
-
-                    					newLeafNode(otherlv_9, grammarAccess.getConnectorAccess().getColonKeyword_6_0_1());
-                    				
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:1169:4: otherlv_10= 'render:'
-                    {
-                    otherlv_10=(Token)match(input,13,FOLLOW_5); 
-
-                    				newLeafNode(otherlv_10, grammarAccess.getConnectorAccess().getRenderKeyword_6_1());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            // InternalCanvas.g:1174:3: ( (lv_represents_11_0= RULE_STRING ) )
-            // InternalCanvas.g:1175:4: (lv_represents_11_0= RULE_STRING )
-            {
-            // InternalCanvas.g:1175:4: (lv_represents_11_0= RULE_STRING )
-            // InternalCanvas.g:1176:5: lv_represents_11_0= RULE_STRING
-            {
-            lv_represents_11_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
-
-            					newLeafNode(lv_represents_11_0, grammarAccess.getConnectorAccess().getRepresentsSTRINGTerminalRuleCall_7_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getConnectorRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"represents",
-            						lv_represents_11_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
             }
@@ -3167,7 +2781,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAnchors"
-    // InternalCanvas.g:1196:1: entryRuleAnchors returns [EObject current=null] : iv_ruleAnchors= ruleAnchors EOF ;
+    // InternalCanvas.g:1054:1: entryRuleAnchors returns [EObject current=null] : iv_ruleAnchors= ruleAnchors EOF ;
     public final EObject entryRuleAnchors() throws RecognitionException {
         EObject current = null;
 
@@ -3175,8 +2789,8 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCanvas.g:1196:48: (iv_ruleAnchors= ruleAnchors EOF )
-            // InternalCanvas.g:1197:2: iv_ruleAnchors= ruleAnchors EOF
+            // InternalCanvas.g:1054:48: (iv_ruleAnchors= ruleAnchors EOF )
+            // InternalCanvas.g:1055:2: iv_ruleAnchors= ruleAnchors EOF
             {
              newCompositeNode(grammarAccess.getAnchorsRule()); 
             pushFollow(FOLLOW_1);
@@ -3203,7 +2817,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAnchors"
-    // InternalCanvas.g:1203:1: ruleAnchors returns [EObject current=null] : ( ( (otherlv_0= 'anchors' otherlv_1= ':' ) | otherlv_2= 'anchors:' ) ( (lv_startAnchor_3_0= ruleStartAnchor ) ) ( (lv_endAnchor_4_0= ruleEndAnchor ) ) ) ;
+    // InternalCanvas.g:1061:1: ruleAnchors returns [EObject current=null] : ( ( (otherlv_0= 'anchors' otherlv_1= ':' ) | otherlv_2= 'anchors:' ) ( (lv_startAnchor_3_0= ruleStartAnchor ) ) ( (lv_endAnchor_4_0= ruleEndAnchor ) ) ) ;
     public final EObject ruleAnchors() throws RecognitionException {
         EObject current = null;
 
@@ -3219,40 +2833,40 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCanvas.g:1209:2: ( ( ( (otherlv_0= 'anchors' otherlv_1= ':' ) | otherlv_2= 'anchors:' ) ( (lv_startAnchor_3_0= ruleStartAnchor ) ) ( (lv_endAnchor_4_0= ruleEndAnchor ) ) ) )
-            // InternalCanvas.g:1210:2: ( ( (otherlv_0= 'anchors' otherlv_1= ':' ) | otherlv_2= 'anchors:' ) ( (lv_startAnchor_3_0= ruleStartAnchor ) ) ( (lv_endAnchor_4_0= ruleEndAnchor ) ) )
+            // InternalCanvas.g:1067:2: ( ( ( (otherlv_0= 'anchors' otherlv_1= ':' ) | otherlv_2= 'anchors:' ) ( (lv_startAnchor_3_0= ruleStartAnchor ) ) ( (lv_endAnchor_4_0= ruleEndAnchor ) ) ) )
+            // InternalCanvas.g:1068:2: ( ( (otherlv_0= 'anchors' otherlv_1= ':' ) | otherlv_2= 'anchors:' ) ( (lv_startAnchor_3_0= ruleStartAnchor ) ) ( (lv_endAnchor_4_0= ruleEndAnchor ) ) )
             {
-            // InternalCanvas.g:1210:2: ( ( (otherlv_0= 'anchors' otherlv_1= ':' ) | otherlv_2= 'anchors:' ) ( (lv_startAnchor_3_0= ruleStartAnchor ) ) ( (lv_endAnchor_4_0= ruleEndAnchor ) ) )
-            // InternalCanvas.g:1211:3: ( (otherlv_0= 'anchors' otherlv_1= ':' ) | otherlv_2= 'anchors:' ) ( (lv_startAnchor_3_0= ruleStartAnchor ) ) ( (lv_endAnchor_4_0= ruleEndAnchor ) )
+            // InternalCanvas.g:1068:2: ( ( (otherlv_0= 'anchors' otherlv_1= ':' ) | otherlv_2= 'anchors:' ) ( (lv_startAnchor_3_0= ruleStartAnchor ) ) ( (lv_endAnchor_4_0= ruleEndAnchor ) ) )
+            // InternalCanvas.g:1069:3: ( (otherlv_0= 'anchors' otherlv_1= ':' ) | otherlv_2= 'anchors:' ) ( (lv_startAnchor_3_0= ruleStartAnchor ) ) ( (lv_endAnchor_4_0= ruleEndAnchor ) )
             {
-            // InternalCanvas.g:1211:3: ( (otherlv_0= 'anchors' otherlv_1= ':' ) | otherlv_2= 'anchors:' )
-            int alt29=2;
-            int LA29_0 = input.LA(1);
+            // InternalCanvas.g:1069:3: ( (otherlv_0= 'anchors' otherlv_1= ':' ) | otherlv_2= 'anchors:' )
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( (LA29_0==44) ) {
-                alt29=1;
+            if ( (LA24_0==43) ) {
+                alt24=1;
             }
-            else if ( (LA29_0==45) ) {
-                alt29=2;
+            else if ( (LA24_0==44) ) {
+                alt24=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 29, 0, input);
+                    new NoViableAltException("", 24, 0, input);
 
                 throw nvae;
             }
-            switch (alt29) {
+            switch (alt24) {
                 case 1 :
-                    // InternalCanvas.g:1212:4: (otherlv_0= 'anchors' otherlv_1= ':' )
+                    // InternalCanvas.g:1070:4: (otherlv_0= 'anchors' otherlv_1= ':' )
                     {
-                    // InternalCanvas.g:1212:4: (otherlv_0= 'anchors' otherlv_1= ':' )
-                    // InternalCanvas.g:1213:5: otherlv_0= 'anchors' otherlv_1= ':'
+                    // InternalCanvas.g:1070:4: (otherlv_0= 'anchors' otherlv_1= ':' )
+                    // InternalCanvas.g:1071:5: otherlv_0= 'anchors' otherlv_1= ':'
                     {
-                    otherlv_0=(Token)match(input,44,FOLLOW_4); 
+                    otherlv_0=(Token)match(input,43,FOLLOW_5); 
 
                     					newLeafNode(otherlv_0, grammarAccess.getAnchorsAccess().getAnchorsKeyword_0_0_0());
                     				
-                    otherlv_1=(Token)match(input,12,FOLLOW_24); 
+                    otherlv_1=(Token)match(input,12,FOLLOW_22); 
 
                     					newLeafNode(otherlv_1, grammarAccess.getAnchorsAccess().getColonKeyword_0_0_1());
                     				
@@ -3263,9 +2877,9 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:1223:4: otherlv_2= 'anchors:'
+                    // InternalCanvas.g:1081:4: otherlv_2= 'anchors:'
                     {
-                    otherlv_2=(Token)match(input,45,FOLLOW_24); 
+                    otherlv_2=(Token)match(input,44,FOLLOW_22); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getAnchorsAccess().getAnchorsKeyword_0_1());
                     			
@@ -3275,16 +2889,16 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:1228:3: ( (lv_startAnchor_3_0= ruleStartAnchor ) )
-            // InternalCanvas.g:1229:4: (lv_startAnchor_3_0= ruleStartAnchor )
+            // InternalCanvas.g:1086:3: ( (lv_startAnchor_3_0= ruleStartAnchor ) )
+            // InternalCanvas.g:1087:4: (lv_startAnchor_3_0= ruleStartAnchor )
             {
-            // InternalCanvas.g:1229:4: (lv_startAnchor_3_0= ruleStartAnchor )
-            // InternalCanvas.g:1230:5: lv_startAnchor_3_0= ruleStartAnchor
+            // InternalCanvas.g:1087:4: (lv_startAnchor_3_0= ruleStartAnchor )
+            // InternalCanvas.g:1088:5: lv_startAnchor_3_0= ruleStartAnchor
             {
 
             					newCompositeNode(grammarAccess.getAnchorsAccess().getStartAnchorStartAnchorParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_23);
             lv_startAnchor_3_0=ruleStartAnchor();
 
             state._fsp--;
@@ -3306,11 +2920,11 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:1247:3: ( (lv_endAnchor_4_0= ruleEndAnchor ) )
-            // InternalCanvas.g:1248:4: (lv_endAnchor_4_0= ruleEndAnchor )
+            // InternalCanvas.g:1105:3: ( (lv_endAnchor_4_0= ruleEndAnchor ) )
+            // InternalCanvas.g:1106:4: (lv_endAnchor_4_0= ruleEndAnchor )
             {
-            // InternalCanvas.g:1248:4: (lv_endAnchor_4_0= ruleEndAnchor )
-            // InternalCanvas.g:1249:5: lv_endAnchor_4_0= ruleEndAnchor
+            // InternalCanvas.g:1106:4: (lv_endAnchor_4_0= ruleEndAnchor )
+            // InternalCanvas.g:1107:5: lv_endAnchor_4_0= ruleEndAnchor
             {
 
             					newCompositeNode(grammarAccess.getAnchorsAccess().getEndAnchorEndAnchorParserRuleCall_2_0());
@@ -3360,7 +2974,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStartAnchor"
-    // InternalCanvas.g:1270:1: entryRuleStartAnchor returns [EObject current=null] : iv_ruleStartAnchor= ruleStartAnchor EOF ;
+    // InternalCanvas.g:1128:1: entryRuleStartAnchor returns [EObject current=null] : iv_ruleStartAnchor= ruleStartAnchor EOF ;
     public final EObject entryRuleStartAnchor() throws RecognitionException {
         EObject current = null;
 
@@ -3368,8 +2982,8 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCanvas.g:1270:52: (iv_ruleStartAnchor= ruleStartAnchor EOF )
-            // InternalCanvas.g:1271:2: iv_ruleStartAnchor= ruleStartAnchor EOF
+            // InternalCanvas.g:1128:52: (iv_ruleStartAnchor= ruleStartAnchor EOF )
+            // InternalCanvas.g:1129:2: iv_ruleStartAnchor= ruleStartAnchor EOF
             {
              newCompositeNode(grammarAccess.getStartAnchorRule()); 
             pushFollow(FOLLOW_1);
@@ -3396,7 +3010,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStartAnchor"
-    // InternalCanvas.g:1277:1: ruleStartAnchor returns [EObject current=null] : ( ( (otherlv_0= 'start' otherlv_1= ':' ) | otherlv_2= 'start:' ) ( (lv_point_3_0= rulePoint ) ) ( (lv_anchor_4_0= ruleAnchor ) )? ) ;
+    // InternalCanvas.g:1135:1: ruleStartAnchor returns [EObject current=null] : ( ( (otherlv_0= 'start' otherlv_1= ':' ) | otherlv_2= 'start:' ) ( (lv_point_3_0= rulePointDefinition ) ) ( (lv_anchor_4_0= ruleAnchor ) )? ) ;
     public final EObject ruleStartAnchor() throws RecognitionException {
         EObject current = null;
 
@@ -3412,40 +3026,40 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCanvas.g:1283:2: ( ( ( (otherlv_0= 'start' otherlv_1= ':' ) | otherlv_2= 'start:' ) ( (lv_point_3_0= rulePoint ) ) ( (lv_anchor_4_0= ruleAnchor ) )? ) )
-            // InternalCanvas.g:1284:2: ( ( (otherlv_0= 'start' otherlv_1= ':' ) | otherlv_2= 'start:' ) ( (lv_point_3_0= rulePoint ) ) ( (lv_anchor_4_0= ruleAnchor ) )? )
+            // InternalCanvas.g:1141:2: ( ( ( (otherlv_0= 'start' otherlv_1= ':' ) | otherlv_2= 'start:' ) ( (lv_point_3_0= rulePointDefinition ) ) ( (lv_anchor_4_0= ruleAnchor ) )? ) )
+            // InternalCanvas.g:1142:2: ( ( (otherlv_0= 'start' otherlv_1= ':' ) | otherlv_2= 'start:' ) ( (lv_point_3_0= rulePointDefinition ) ) ( (lv_anchor_4_0= ruleAnchor ) )? )
             {
-            // InternalCanvas.g:1284:2: ( ( (otherlv_0= 'start' otherlv_1= ':' ) | otherlv_2= 'start:' ) ( (lv_point_3_0= rulePoint ) ) ( (lv_anchor_4_0= ruleAnchor ) )? )
-            // InternalCanvas.g:1285:3: ( (otherlv_0= 'start' otherlv_1= ':' ) | otherlv_2= 'start:' ) ( (lv_point_3_0= rulePoint ) ) ( (lv_anchor_4_0= ruleAnchor ) )?
+            // InternalCanvas.g:1142:2: ( ( (otherlv_0= 'start' otherlv_1= ':' ) | otherlv_2= 'start:' ) ( (lv_point_3_0= rulePointDefinition ) ) ( (lv_anchor_4_0= ruleAnchor ) )? )
+            // InternalCanvas.g:1143:3: ( (otherlv_0= 'start' otherlv_1= ':' ) | otherlv_2= 'start:' ) ( (lv_point_3_0= rulePointDefinition ) ) ( (lv_anchor_4_0= ruleAnchor ) )?
             {
-            // InternalCanvas.g:1285:3: ( (otherlv_0= 'start' otherlv_1= ':' ) | otherlv_2= 'start:' )
-            int alt30=2;
-            int LA30_0 = input.LA(1);
+            // InternalCanvas.g:1143:3: ( (otherlv_0= 'start' otherlv_1= ':' ) | otherlv_2= 'start:' )
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-            if ( (LA30_0==28) ) {
-                alt30=1;
+            if ( (LA25_0==31) ) {
+                alt25=1;
             }
-            else if ( (LA30_0==46) ) {
-                alt30=2;
+            else if ( (LA25_0==45) ) {
+                alt25=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 30, 0, input);
+                    new NoViableAltException("", 25, 0, input);
 
                 throw nvae;
             }
-            switch (alt30) {
+            switch (alt25) {
                 case 1 :
-                    // InternalCanvas.g:1286:4: (otherlv_0= 'start' otherlv_1= ':' )
+                    // InternalCanvas.g:1144:4: (otherlv_0= 'start' otherlv_1= ':' )
                     {
-                    // InternalCanvas.g:1286:4: (otherlv_0= 'start' otherlv_1= ':' )
-                    // InternalCanvas.g:1287:5: otherlv_0= 'start' otherlv_1= ':'
+                    // InternalCanvas.g:1144:4: (otherlv_0= 'start' otherlv_1= ':' )
+                    // InternalCanvas.g:1145:5: otherlv_0= 'start' otherlv_1= ':'
                     {
-                    otherlv_0=(Token)match(input,28,FOLLOW_4); 
+                    otherlv_0=(Token)match(input,31,FOLLOW_5); 
 
                     					newLeafNode(otherlv_0, grammarAccess.getStartAnchorAccess().getStartKeyword_0_0_0());
                     				
-                    otherlv_1=(Token)match(input,12,FOLLOW_9); 
+                    otherlv_1=(Token)match(input,12,FOLLOW_24); 
 
                     					newLeafNode(otherlv_1, grammarAccess.getStartAnchorAccess().getColonKeyword_0_0_1());
                     				
@@ -3456,9 +3070,9 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:1297:4: otherlv_2= 'start:'
+                    // InternalCanvas.g:1155:4: otherlv_2= 'start:'
                     {
-                    otherlv_2=(Token)match(input,46,FOLLOW_9); 
+                    otherlv_2=(Token)match(input,45,FOLLOW_24); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getStartAnchorAccess().getStartKeyword_0_1());
                     			
@@ -3468,17 +3082,17 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:1302:3: ( (lv_point_3_0= rulePoint ) )
-            // InternalCanvas.g:1303:4: (lv_point_3_0= rulePoint )
+            // InternalCanvas.g:1160:3: ( (lv_point_3_0= rulePointDefinition ) )
+            // InternalCanvas.g:1161:4: (lv_point_3_0= rulePointDefinition )
             {
-            // InternalCanvas.g:1303:4: (lv_point_3_0= rulePoint )
-            // InternalCanvas.g:1304:5: lv_point_3_0= rulePoint
+            // InternalCanvas.g:1161:4: (lv_point_3_0= rulePointDefinition )
+            // InternalCanvas.g:1162:5: lv_point_3_0= rulePointDefinition
             {
 
-            					newCompositeNode(grammarAccess.getStartAnchorAccess().getPointPointParserRuleCall_1_0());
+            					newCompositeNode(grammarAccess.getStartAnchorAccess().getPointPointDefinitionParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_26);
-            lv_point_3_0=rulePoint();
+            pushFollow(FOLLOW_25);
+            lv_point_3_0=rulePointDefinition();
 
             state._fsp--;
 
@@ -3490,7 +3104,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
             						current,
             						"point",
             						lv_point_3_0,
-            						"org.xtuml.canvas.language.Canvas.Point");
+            						"org.xtuml.canvas.language.Canvas.PointDefinition");
             					afterParserOrEnumRuleCall();
             				
 
@@ -3499,19 +3113,19 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:1321:3: ( (lv_anchor_4_0= ruleAnchor ) )?
-            int alt31=2;
-            int LA31_0 = input.LA(1);
+            // InternalCanvas.g:1179:3: ( (lv_anchor_4_0= ruleAnchor ) )?
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( ((LA31_0>=47 && LA31_0<=50)) ) {
-                alt31=1;
+            if ( ((LA26_0>=22 && LA26_0<=23)||(LA26_0>=41 && LA26_0<=42)) ) {
+                alt26=1;
             }
-            switch (alt31) {
+            switch (alt26) {
                 case 1 :
-                    // InternalCanvas.g:1322:4: (lv_anchor_4_0= ruleAnchor )
+                    // InternalCanvas.g:1180:4: (lv_anchor_4_0= ruleAnchor )
                     {
-                    // InternalCanvas.g:1322:4: (lv_anchor_4_0= ruleAnchor )
-                    // InternalCanvas.g:1323:5: lv_anchor_4_0= ruleAnchor
+                    // InternalCanvas.g:1180:4: (lv_anchor_4_0= ruleAnchor )
+                    // InternalCanvas.g:1181:5: lv_anchor_4_0= ruleAnchor
                     {
 
                     					newCompositeNode(grammarAccess.getStartAnchorAccess().getAnchorAnchorParserRuleCall_2_0());
@@ -3564,7 +3178,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEndAnchor"
-    // InternalCanvas.g:1344:1: entryRuleEndAnchor returns [EObject current=null] : iv_ruleEndAnchor= ruleEndAnchor EOF ;
+    // InternalCanvas.g:1202:1: entryRuleEndAnchor returns [EObject current=null] : iv_ruleEndAnchor= ruleEndAnchor EOF ;
     public final EObject entryRuleEndAnchor() throws RecognitionException {
         EObject current = null;
 
@@ -3572,8 +3186,8 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCanvas.g:1344:50: (iv_ruleEndAnchor= ruleEndAnchor EOF )
-            // InternalCanvas.g:1345:2: iv_ruleEndAnchor= ruleEndAnchor EOF
+            // InternalCanvas.g:1202:50: (iv_ruleEndAnchor= ruleEndAnchor EOF )
+            // InternalCanvas.g:1203:2: iv_ruleEndAnchor= ruleEndAnchor EOF
             {
              newCompositeNode(grammarAccess.getEndAnchorRule()); 
             pushFollow(FOLLOW_1);
@@ -3600,7 +3214,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEndAnchor"
-    // InternalCanvas.g:1351:1: ruleEndAnchor returns [EObject current=null] : ( ( (otherlv_0= 'end' otherlv_1= ':' ) | otherlv_2= 'end' ) ( (lv_point_3_0= rulePoint ) ) ( (lv_anchor_4_0= ruleAnchor ) )? ) ;
+    // InternalCanvas.g:1209:1: ruleEndAnchor returns [EObject current=null] : ( ( (otherlv_0= 'end' otherlv_1= ':' ) | otherlv_2= 'end:' ) ( (lv_point_3_0= rulePointDefinition ) ) ( (lv_anchor_4_0= ruleAnchor ) )? ) ;
     public final EObject ruleEndAnchor() throws RecognitionException {
         EObject current = null;
 
@@ -3616,50 +3230,40 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCanvas.g:1357:2: ( ( ( (otherlv_0= 'end' otherlv_1= ':' ) | otherlv_2= 'end' ) ( (lv_point_3_0= rulePoint ) ) ( (lv_anchor_4_0= ruleAnchor ) )? ) )
-            // InternalCanvas.g:1358:2: ( ( (otherlv_0= 'end' otherlv_1= ':' ) | otherlv_2= 'end' ) ( (lv_point_3_0= rulePoint ) ) ( (lv_anchor_4_0= ruleAnchor ) )? )
+            // InternalCanvas.g:1215:2: ( ( ( (otherlv_0= 'end' otherlv_1= ':' ) | otherlv_2= 'end:' ) ( (lv_point_3_0= rulePointDefinition ) ) ( (lv_anchor_4_0= ruleAnchor ) )? ) )
+            // InternalCanvas.g:1216:2: ( ( (otherlv_0= 'end' otherlv_1= ':' ) | otherlv_2= 'end:' ) ( (lv_point_3_0= rulePointDefinition ) ) ( (lv_anchor_4_0= ruleAnchor ) )? )
             {
-            // InternalCanvas.g:1358:2: ( ( (otherlv_0= 'end' otherlv_1= ':' ) | otherlv_2= 'end' ) ( (lv_point_3_0= rulePoint ) ) ( (lv_anchor_4_0= ruleAnchor ) )? )
-            // InternalCanvas.g:1359:3: ( (otherlv_0= 'end' otherlv_1= ':' ) | otherlv_2= 'end' ) ( (lv_point_3_0= rulePoint ) ) ( (lv_anchor_4_0= ruleAnchor ) )?
+            // InternalCanvas.g:1216:2: ( ( (otherlv_0= 'end' otherlv_1= ':' ) | otherlv_2= 'end:' ) ( (lv_point_3_0= rulePointDefinition ) ) ( (lv_anchor_4_0= ruleAnchor ) )? )
+            // InternalCanvas.g:1217:3: ( (otherlv_0= 'end' otherlv_1= ':' ) | otherlv_2= 'end:' ) ( (lv_point_3_0= rulePointDefinition ) ) ( (lv_anchor_4_0= ruleAnchor ) )?
             {
-            // InternalCanvas.g:1359:3: ( (otherlv_0= 'end' otherlv_1= ':' ) | otherlv_2= 'end' )
-            int alt32=2;
-            int LA32_0 = input.LA(1);
+            // InternalCanvas.g:1217:3: ( (otherlv_0= 'end' otherlv_1= ':' ) | otherlv_2= 'end:' )
+            int alt27=2;
+            int LA27_0 = input.LA(1);
 
-            if ( (LA32_0==29) ) {
-                int LA32_1 = input.LA(2);
-
-                if ( (LA32_1==56) ) {
-                    alt32=2;
-                }
-                else if ( (LA32_1==12) ) {
-                    alt32=1;
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 32, 1, input);
-
-                    throw nvae;
-                }
+            if ( (LA27_0==32) ) {
+                alt27=1;
+            }
+            else if ( (LA27_0==46) ) {
+                alt27=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 32, 0, input);
+                    new NoViableAltException("", 27, 0, input);
 
                 throw nvae;
             }
-            switch (alt32) {
+            switch (alt27) {
                 case 1 :
-                    // InternalCanvas.g:1360:4: (otherlv_0= 'end' otherlv_1= ':' )
+                    // InternalCanvas.g:1218:4: (otherlv_0= 'end' otherlv_1= ':' )
                     {
-                    // InternalCanvas.g:1360:4: (otherlv_0= 'end' otherlv_1= ':' )
-                    // InternalCanvas.g:1361:5: otherlv_0= 'end' otherlv_1= ':'
+                    // InternalCanvas.g:1218:4: (otherlv_0= 'end' otherlv_1= ':' )
+                    // InternalCanvas.g:1219:5: otherlv_0= 'end' otherlv_1= ':'
                     {
-                    otherlv_0=(Token)match(input,29,FOLLOW_4); 
+                    otherlv_0=(Token)match(input,32,FOLLOW_5); 
 
                     					newLeafNode(otherlv_0, grammarAccess.getEndAnchorAccess().getEndKeyword_0_0_0());
                     				
-                    otherlv_1=(Token)match(input,12,FOLLOW_9); 
+                    otherlv_1=(Token)match(input,12,FOLLOW_24); 
 
                     					newLeafNode(otherlv_1, grammarAccess.getEndAnchorAccess().getColonKeyword_0_0_1());
                     				
@@ -3670,9 +3274,9 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:1371:4: otherlv_2= 'end'
+                    // InternalCanvas.g:1229:4: otherlv_2= 'end:'
                     {
-                    otherlv_2=(Token)match(input,29,FOLLOW_9); 
+                    otherlv_2=(Token)match(input,46,FOLLOW_24); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getEndAnchorAccess().getEndKeyword_0_1());
                     			
@@ -3682,17 +3286,17 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:1376:3: ( (lv_point_3_0= rulePoint ) )
-            // InternalCanvas.g:1377:4: (lv_point_3_0= rulePoint )
+            // InternalCanvas.g:1234:3: ( (lv_point_3_0= rulePointDefinition ) )
+            // InternalCanvas.g:1235:4: (lv_point_3_0= rulePointDefinition )
             {
-            // InternalCanvas.g:1377:4: (lv_point_3_0= rulePoint )
-            // InternalCanvas.g:1378:5: lv_point_3_0= rulePoint
+            // InternalCanvas.g:1235:4: (lv_point_3_0= rulePointDefinition )
+            // InternalCanvas.g:1236:5: lv_point_3_0= rulePointDefinition
             {
 
-            					newCompositeNode(grammarAccess.getEndAnchorAccess().getPointPointParserRuleCall_1_0());
+            					newCompositeNode(grammarAccess.getEndAnchorAccess().getPointPointDefinitionParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_26);
-            lv_point_3_0=rulePoint();
+            pushFollow(FOLLOW_25);
+            lv_point_3_0=rulePointDefinition();
 
             state._fsp--;
 
@@ -3704,7 +3308,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
             						current,
             						"point",
             						lv_point_3_0,
-            						"org.xtuml.canvas.language.Canvas.Point");
+            						"org.xtuml.canvas.language.Canvas.PointDefinition");
             					afterParserOrEnumRuleCall();
             				
 
@@ -3713,19 +3317,19 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:1395:3: ( (lv_anchor_4_0= ruleAnchor ) )?
-            int alt33=2;
-            int LA33_0 = input.LA(1);
+            // InternalCanvas.g:1253:3: ( (lv_anchor_4_0= ruleAnchor ) )?
+            int alt28=2;
+            int LA28_0 = input.LA(1);
 
-            if ( ((LA33_0>=47 && LA33_0<=50)) ) {
-                alt33=1;
+            if ( ((LA28_0>=22 && LA28_0<=23)||(LA28_0>=41 && LA28_0<=42)) ) {
+                alt28=1;
             }
-            switch (alt33) {
+            switch (alt28) {
                 case 1 :
-                    // InternalCanvas.g:1396:4: (lv_anchor_4_0= ruleAnchor )
+                    // InternalCanvas.g:1254:4: (lv_anchor_4_0= ruleAnchor )
                     {
-                    // InternalCanvas.g:1396:4: (lv_anchor_4_0= ruleAnchor )
-                    // InternalCanvas.g:1397:5: lv_anchor_4_0= ruleAnchor
+                    // InternalCanvas.g:1254:4: (lv_anchor_4_0= ruleAnchor )
+                    // InternalCanvas.g:1255:5: lv_anchor_4_0= ruleAnchor
                     {
 
                     					newCompositeNode(grammarAccess.getEndAnchorAccess().getAnchorAnchorParserRuleCall_2_0());
@@ -3778,7 +3382,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAnchor"
-    // InternalCanvas.g:1418:1: entryRuleAnchor returns [EObject current=null] : iv_ruleAnchor= ruleAnchor EOF ;
+    // InternalCanvas.g:1276:1: entryRuleAnchor returns [EObject current=null] : iv_ruleAnchor= ruleAnchor EOF ;
     public final EObject entryRuleAnchor() throws RecognitionException {
         EObject current = null;
 
@@ -3786,8 +3390,8 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCanvas.g:1418:47: (iv_ruleAnchor= ruleAnchor EOF )
-            // InternalCanvas.g:1419:2: iv_ruleAnchor= ruleAnchor EOF
+            // InternalCanvas.g:1276:47: (iv_ruleAnchor= ruleAnchor EOF )
+            // InternalCanvas.g:1277:2: iv_ruleAnchor= ruleAnchor EOF
             {
              newCompositeNode(grammarAccess.getAnchorRule()); 
             pushFollow(FOLLOW_1);
@@ -3814,7 +3418,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAnchor"
-    // InternalCanvas.g:1425:1: ruleAnchor returns [EObject current=null] : (this_ShapeAnchorElement_0= ruleShapeAnchorElement | this_ConnectorAnchorElement_1= ruleConnectorAnchorElement ) ;
+    // InternalCanvas.g:1283:1: ruleAnchor returns [EObject current=null] : (this_ShapeAnchorElement_0= ruleShapeAnchorElement | this_ConnectorAnchorElement_1= ruleConnectorAnchorElement ) ;
     public final EObject ruleAnchor() throws RecognitionException {
         EObject current = null;
 
@@ -3827,28 +3431,28 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCanvas.g:1431:2: ( (this_ShapeAnchorElement_0= ruleShapeAnchorElement | this_ConnectorAnchorElement_1= ruleConnectorAnchorElement ) )
-            // InternalCanvas.g:1432:2: (this_ShapeAnchorElement_0= ruleShapeAnchorElement | this_ConnectorAnchorElement_1= ruleConnectorAnchorElement )
+            // InternalCanvas.g:1289:2: ( (this_ShapeAnchorElement_0= ruleShapeAnchorElement | this_ConnectorAnchorElement_1= ruleConnectorAnchorElement ) )
+            // InternalCanvas.g:1290:2: (this_ShapeAnchorElement_0= ruleShapeAnchorElement | this_ConnectorAnchorElement_1= ruleConnectorAnchorElement )
             {
-            // InternalCanvas.g:1432:2: (this_ShapeAnchorElement_0= ruleShapeAnchorElement | this_ConnectorAnchorElement_1= ruleConnectorAnchorElement )
-            int alt34=2;
-            int LA34_0 = input.LA(1);
+            // InternalCanvas.g:1290:2: (this_ShapeAnchorElement_0= ruleShapeAnchorElement | this_ConnectorAnchorElement_1= ruleConnectorAnchorElement )
+            int alt29=2;
+            int LA29_0 = input.LA(1);
 
-            if ( ((LA34_0>=47 && LA34_0<=48)) ) {
-                alt34=1;
+            if ( ((LA29_0>=22 && LA29_0<=23)) ) {
+                alt29=1;
             }
-            else if ( ((LA34_0>=49 && LA34_0<=50)) ) {
-                alt34=2;
+            else if ( ((LA29_0>=41 && LA29_0<=42)) ) {
+                alt29=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 34, 0, input);
+                    new NoViableAltException("", 29, 0, input);
 
                 throw nvae;
             }
-            switch (alt34) {
+            switch (alt29) {
                 case 1 :
-                    // InternalCanvas.g:1433:3: this_ShapeAnchorElement_0= ruleShapeAnchorElement
+                    // InternalCanvas.g:1291:3: this_ShapeAnchorElement_0= ruleShapeAnchorElement
                     {
 
                     			newCompositeNode(grammarAccess.getAnchorAccess().getShapeAnchorElementParserRuleCall_0());
@@ -3866,7 +3470,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:1442:3: this_ConnectorAnchorElement_1= ruleConnectorAnchorElement
+                    // InternalCanvas.g:1300:3: this_ConnectorAnchorElement_1= ruleConnectorAnchorElement
                     {
 
                     			newCompositeNode(grammarAccess.getAnchorAccess().getConnectorAnchorElementParserRuleCall_1());
@@ -3906,7 +3510,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleShapeAnchorElement"
-    // InternalCanvas.g:1454:1: entryRuleShapeAnchorElement returns [EObject current=null] : iv_ruleShapeAnchorElement= ruleShapeAnchorElement EOF ;
+    // InternalCanvas.g:1312:1: entryRuleShapeAnchorElement returns [EObject current=null] : iv_ruleShapeAnchorElement= ruleShapeAnchorElement EOF ;
     public final EObject entryRuleShapeAnchorElement() throws RecognitionException {
         EObject current = null;
 
@@ -3914,8 +3518,8 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCanvas.g:1454:59: (iv_ruleShapeAnchorElement= ruleShapeAnchorElement EOF )
-            // InternalCanvas.g:1455:2: iv_ruleShapeAnchorElement= ruleShapeAnchorElement EOF
+            // InternalCanvas.g:1312:59: (iv_ruleShapeAnchorElement= ruleShapeAnchorElement EOF )
+            // InternalCanvas.g:1313:2: iv_ruleShapeAnchorElement= ruleShapeAnchorElement EOF
             {
              newCompositeNode(grammarAccess.getShapeAnchorElementRule()); 
             pushFollow(FOLLOW_1);
@@ -3942,7 +3546,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleShapeAnchorElement"
-    // InternalCanvas.g:1461:1: ruleShapeAnchorElement returns [EObject current=null] : ( ( (otherlv_0= 'shapeAnchor' otherlv_1= ':' ) | otherlv_2= 'shapeAnchor:' ) ( (otherlv_3= RULE_ID ) ) ) ;
+    // InternalCanvas.g:1319:1: ruleShapeAnchorElement returns [EObject current=null] : ( ( (otherlv_0= 'shape' otherlv_1= ':' ) | otherlv_2= 'shape:' ) ( (otherlv_3= RULE_ID ) ) ) ;
     public final EObject ruleShapeAnchorElement() throws RecognitionException {
         EObject current = null;
 
@@ -3955,40 +3559,40 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCanvas.g:1467:2: ( ( ( (otherlv_0= 'shapeAnchor' otherlv_1= ':' ) | otherlv_2= 'shapeAnchor:' ) ( (otherlv_3= RULE_ID ) ) ) )
-            // InternalCanvas.g:1468:2: ( ( (otherlv_0= 'shapeAnchor' otherlv_1= ':' ) | otherlv_2= 'shapeAnchor:' ) ( (otherlv_3= RULE_ID ) ) )
+            // InternalCanvas.g:1325:2: ( ( ( (otherlv_0= 'shape' otherlv_1= ':' ) | otherlv_2= 'shape:' ) ( (otherlv_3= RULE_ID ) ) ) )
+            // InternalCanvas.g:1326:2: ( ( (otherlv_0= 'shape' otherlv_1= ':' ) | otherlv_2= 'shape:' ) ( (otherlv_3= RULE_ID ) ) )
             {
-            // InternalCanvas.g:1468:2: ( ( (otherlv_0= 'shapeAnchor' otherlv_1= ':' ) | otherlv_2= 'shapeAnchor:' ) ( (otherlv_3= RULE_ID ) ) )
-            // InternalCanvas.g:1469:3: ( (otherlv_0= 'shapeAnchor' otherlv_1= ':' ) | otherlv_2= 'shapeAnchor:' ) ( (otherlv_3= RULE_ID ) )
+            // InternalCanvas.g:1326:2: ( ( (otherlv_0= 'shape' otherlv_1= ':' ) | otherlv_2= 'shape:' ) ( (otherlv_3= RULE_ID ) ) )
+            // InternalCanvas.g:1327:3: ( (otherlv_0= 'shape' otherlv_1= ':' ) | otherlv_2= 'shape:' ) ( (otherlv_3= RULE_ID ) )
             {
-            // InternalCanvas.g:1469:3: ( (otherlv_0= 'shapeAnchor' otherlv_1= ':' ) | otherlv_2= 'shapeAnchor:' )
-            int alt35=2;
-            int LA35_0 = input.LA(1);
+            // InternalCanvas.g:1327:3: ( (otherlv_0= 'shape' otherlv_1= ':' ) | otherlv_2= 'shape:' )
+            int alt30=2;
+            int LA30_0 = input.LA(1);
 
-            if ( (LA35_0==47) ) {
-                alt35=1;
+            if ( (LA30_0==22) ) {
+                alt30=1;
             }
-            else if ( (LA35_0==48) ) {
-                alt35=2;
+            else if ( (LA30_0==23) ) {
+                alt30=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 35, 0, input);
+                    new NoViableAltException("", 30, 0, input);
 
                 throw nvae;
             }
-            switch (alt35) {
+            switch (alt30) {
                 case 1 :
-                    // InternalCanvas.g:1470:4: (otherlv_0= 'shapeAnchor' otherlv_1= ':' )
+                    // InternalCanvas.g:1328:4: (otherlv_0= 'shape' otherlv_1= ':' )
                     {
-                    // InternalCanvas.g:1470:4: (otherlv_0= 'shapeAnchor' otherlv_1= ':' )
-                    // InternalCanvas.g:1471:5: otherlv_0= 'shapeAnchor' otherlv_1= ':'
+                    // InternalCanvas.g:1328:4: (otherlv_0= 'shape' otherlv_1= ':' )
+                    // InternalCanvas.g:1329:5: otherlv_0= 'shape' otherlv_1= ':'
                     {
-                    otherlv_0=(Token)match(input,47,FOLLOW_4); 
+                    otherlv_0=(Token)match(input,22,FOLLOW_5); 
 
-                    					newLeafNode(otherlv_0, grammarAccess.getShapeAnchorElementAccess().getShapeAnchorKeyword_0_0_0());
+                    					newLeafNode(otherlv_0, grammarAccess.getShapeAnchorElementAccess().getShapeKeyword_0_0_0());
                     				
-                    otherlv_1=(Token)match(input,12,FOLLOW_13); 
+                    otherlv_1=(Token)match(input,12,FOLLOW_12); 
 
                     					newLeafNode(otherlv_1, grammarAccess.getShapeAnchorElementAccess().getColonKeyword_0_0_1());
                     				
@@ -3999,11 +3603,11 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:1481:4: otherlv_2= 'shapeAnchor:'
+                    // InternalCanvas.g:1339:4: otherlv_2= 'shape:'
                     {
-                    otherlv_2=(Token)match(input,48,FOLLOW_13); 
+                    otherlv_2=(Token)match(input,23,FOLLOW_12); 
 
-                    				newLeafNode(otherlv_2, grammarAccess.getShapeAnchorElementAccess().getShapeAnchorKeyword_0_1());
+                    				newLeafNode(otherlv_2, grammarAccess.getShapeAnchorElementAccess().getShapeKeyword_0_1());
                     			
 
                     }
@@ -4011,11 +3615,11 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:1486:3: ( (otherlv_3= RULE_ID ) )
-            // InternalCanvas.g:1487:4: (otherlv_3= RULE_ID )
+            // InternalCanvas.g:1344:3: ( (otherlv_3= RULE_ID ) )
+            // InternalCanvas.g:1345:4: (otherlv_3= RULE_ID )
             {
-            // InternalCanvas.g:1487:4: (otherlv_3= RULE_ID )
-            // InternalCanvas.g:1488:5: otherlv_3= RULE_ID
+            // InternalCanvas.g:1345:4: (otherlv_3= RULE_ID )
+            // InternalCanvas.g:1346:5: otherlv_3= RULE_ID
             {
 
             					if (current==null) {
@@ -4055,7 +3659,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConnectorAnchorElement"
-    // InternalCanvas.g:1503:1: entryRuleConnectorAnchorElement returns [EObject current=null] : iv_ruleConnectorAnchorElement= ruleConnectorAnchorElement EOF ;
+    // InternalCanvas.g:1361:1: entryRuleConnectorAnchorElement returns [EObject current=null] : iv_ruleConnectorAnchorElement= ruleConnectorAnchorElement EOF ;
     public final EObject entryRuleConnectorAnchorElement() throws RecognitionException {
         EObject current = null;
 
@@ -4063,8 +3667,8 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCanvas.g:1503:63: (iv_ruleConnectorAnchorElement= ruleConnectorAnchorElement EOF )
-            // InternalCanvas.g:1504:2: iv_ruleConnectorAnchorElement= ruleConnectorAnchorElement EOF
+            // InternalCanvas.g:1361:63: (iv_ruleConnectorAnchorElement= ruleConnectorAnchorElement EOF )
+            // InternalCanvas.g:1362:2: iv_ruleConnectorAnchorElement= ruleConnectorAnchorElement EOF
             {
              newCompositeNode(grammarAccess.getConnectorAnchorElementRule()); 
             pushFollow(FOLLOW_1);
@@ -4091,7 +3695,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConnectorAnchorElement"
-    // InternalCanvas.g:1510:1: ruleConnectorAnchorElement returns [EObject current=null] : ( ( (otherlv_0= 'segmentAnchor' otherlv_1= ':' ) | otherlv_2= 'segmentAnchor:' ) ( (otherlv_3= RULE_ID ) ) ) ;
+    // InternalCanvas.g:1368:1: ruleConnectorAnchorElement returns [EObject current=null] : ( ( (otherlv_0= 'connector' otherlv_1= ':' ) | otherlv_2= 'connector:' ) ( (otherlv_3= RULE_ID ) ) ) ;
     public final EObject ruleConnectorAnchorElement() throws RecognitionException {
         EObject current = null;
 
@@ -4104,40 +3708,40 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCanvas.g:1516:2: ( ( ( (otherlv_0= 'segmentAnchor' otherlv_1= ':' ) | otherlv_2= 'segmentAnchor:' ) ( (otherlv_3= RULE_ID ) ) ) )
-            // InternalCanvas.g:1517:2: ( ( (otherlv_0= 'segmentAnchor' otherlv_1= ':' ) | otherlv_2= 'segmentAnchor:' ) ( (otherlv_3= RULE_ID ) ) )
+            // InternalCanvas.g:1374:2: ( ( ( (otherlv_0= 'connector' otherlv_1= ':' ) | otherlv_2= 'connector:' ) ( (otherlv_3= RULE_ID ) ) ) )
+            // InternalCanvas.g:1375:2: ( ( (otherlv_0= 'connector' otherlv_1= ':' ) | otherlv_2= 'connector:' ) ( (otherlv_3= RULE_ID ) ) )
             {
-            // InternalCanvas.g:1517:2: ( ( (otherlv_0= 'segmentAnchor' otherlv_1= ':' ) | otherlv_2= 'segmentAnchor:' ) ( (otherlv_3= RULE_ID ) ) )
-            // InternalCanvas.g:1518:3: ( (otherlv_0= 'segmentAnchor' otherlv_1= ':' ) | otherlv_2= 'segmentAnchor:' ) ( (otherlv_3= RULE_ID ) )
+            // InternalCanvas.g:1375:2: ( ( (otherlv_0= 'connector' otherlv_1= ':' ) | otherlv_2= 'connector:' ) ( (otherlv_3= RULE_ID ) ) )
+            // InternalCanvas.g:1376:3: ( (otherlv_0= 'connector' otherlv_1= ':' ) | otherlv_2= 'connector:' ) ( (otherlv_3= RULE_ID ) )
             {
-            // InternalCanvas.g:1518:3: ( (otherlv_0= 'segmentAnchor' otherlv_1= ':' ) | otherlv_2= 'segmentAnchor:' )
-            int alt36=2;
-            int LA36_0 = input.LA(1);
+            // InternalCanvas.g:1376:3: ( (otherlv_0= 'connector' otherlv_1= ':' ) | otherlv_2= 'connector:' )
+            int alt31=2;
+            int LA31_0 = input.LA(1);
 
-            if ( (LA36_0==49) ) {
-                alt36=1;
+            if ( (LA31_0==41) ) {
+                alt31=1;
             }
-            else if ( (LA36_0==50) ) {
-                alt36=2;
+            else if ( (LA31_0==42) ) {
+                alt31=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 36, 0, input);
+                    new NoViableAltException("", 31, 0, input);
 
                 throw nvae;
             }
-            switch (alt36) {
+            switch (alt31) {
                 case 1 :
-                    // InternalCanvas.g:1519:4: (otherlv_0= 'segmentAnchor' otherlv_1= ':' )
+                    // InternalCanvas.g:1377:4: (otherlv_0= 'connector' otherlv_1= ':' )
                     {
-                    // InternalCanvas.g:1519:4: (otherlv_0= 'segmentAnchor' otherlv_1= ':' )
-                    // InternalCanvas.g:1520:5: otherlv_0= 'segmentAnchor' otherlv_1= ':'
+                    // InternalCanvas.g:1377:4: (otherlv_0= 'connector' otherlv_1= ':' )
+                    // InternalCanvas.g:1378:5: otherlv_0= 'connector' otherlv_1= ':'
                     {
-                    otherlv_0=(Token)match(input,49,FOLLOW_4); 
+                    otherlv_0=(Token)match(input,41,FOLLOW_5); 
 
-                    					newLeafNode(otherlv_0, grammarAccess.getConnectorAnchorElementAccess().getSegmentAnchorKeyword_0_0_0());
+                    					newLeafNode(otherlv_0, grammarAccess.getConnectorAnchorElementAccess().getConnectorKeyword_0_0_0());
                     				
-                    otherlv_1=(Token)match(input,12,FOLLOW_13); 
+                    otherlv_1=(Token)match(input,12,FOLLOW_12); 
 
                     					newLeafNode(otherlv_1, grammarAccess.getConnectorAnchorElementAccess().getColonKeyword_0_0_1());
                     				
@@ -4148,11 +3752,11 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:1530:4: otherlv_2= 'segmentAnchor:'
+                    // InternalCanvas.g:1388:4: otherlv_2= 'connector:'
                     {
-                    otherlv_2=(Token)match(input,50,FOLLOW_13); 
+                    otherlv_2=(Token)match(input,42,FOLLOW_12); 
 
-                    				newLeafNode(otherlv_2, grammarAccess.getConnectorAnchorElementAccess().getSegmentAnchorKeyword_0_1());
+                    				newLeafNode(otherlv_2, grammarAccess.getConnectorAnchorElementAccess().getConnectorKeyword_0_1());
                     			
 
                     }
@@ -4160,11 +3764,11 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:1535:3: ( (otherlv_3= RULE_ID ) )
-            // InternalCanvas.g:1536:4: (otherlv_3= RULE_ID )
+            // InternalCanvas.g:1393:3: ( (otherlv_3= RULE_ID ) )
+            // InternalCanvas.g:1394:4: (otherlv_3= RULE_ID )
             {
-            // InternalCanvas.g:1536:4: (otherlv_3= RULE_ID )
-            // InternalCanvas.g:1537:5: otherlv_3= RULE_ID
+            // InternalCanvas.g:1394:4: (otherlv_3= RULE_ID )
+            // InternalCanvas.g:1395:5: otherlv_3= RULE_ID
             {
 
             					if (current==null) {
@@ -4203,190 +3807,8 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleConnectorAnchorElement"
 
 
-    // $ANTLR start "entryRuleConnectorProps"
-    // InternalCanvas.g:1552:1: entryRuleConnectorProps returns [EObject current=null] : iv_ruleConnectorProps= ruleConnectorProps EOF ;
-    public final EObject entryRuleConnectorProps() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleConnectorProps = null;
-
-
-        try {
-            // InternalCanvas.g:1552:55: (iv_ruleConnectorProps= ruleConnectorProps EOF )
-            // InternalCanvas.g:1553:2: iv_ruleConnectorProps= ruleConnectorProps EOF
-            {
-             newCompositeNode(grammarAccess.getConnectorPropsRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleConnectorProps=ruleConnectorProps();
-
-            state._fsp--;
-
-             current =iv_ruleConnectorProps; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleConnectorProps"
-
-
-    // $ANTLR start "ruleConnectorProps"
-    // InternalCanvas.g:1559:1: ruleConnectorProps returns [EObject current=null] : ( () ( (otherlv_1= 'properties' otherlv_2= ':' ) | otherlv_3= 'properties:' ) ( (lv_color_4_0= ruleColor ) )? ) ;
-    public final EObject ruleConnectorProps() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token otherlv_3=null;
-        EObject lv_color_4_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalCanvas.g:1565:2: ( ( () ( (otherlv_1= 'properties' otherlv_2= ':' ) | otherlv_3= 'properties:' ) ( (lv_color_4_0= ruleColor ) )? ) )
-            // InternalCanvas.g:1566:2: ( () ( (otherlv_1= 'properties' otherlv_2= ':' ) | otherlv_3= 'properties:' ) ( (lv_color_4_0= ruleColor ) )? )
-            {
-            // InternalCanvas.g:1566:2: ( () ( (otherlv_1= 'properties' otherlv_2= ':' ) | otherlv_3= 'properties:' ) ( (lv_color_4_0= ruleColor ) )? )
-            // InternalCanvas.g:1567:3: () ( (otherlv_1= 'properties' otherlv_2= ':' ) | otherlv_3= 'properties:' ) ( (lv_color_4_0= ruleColor ) )?
-            {
-            // InternalCanvas.g:1567:3: ()
-            // InternalCanvas.g:1568:4: 
-            {
-
-            				current = forceCreateModelElement(
-            					grammarAccess.getConnectorPropsAccess().getConnectorPropsAction_0(),
-            					current);
-            			
-
-            }
-
-            // InternalCanvas.g:1574:3: ( (otherlv_1= 'properties' otherlv_2= ':' ) | otherlv_3= 'properties:' )
-            int alt37=2;
-            int LA37_0 = input.LA(1);
-
-            if ( (LA37_0==15) ) {
-                alt37=1;
-            }
-            else if ( (LA37_0==16) ) {
-                alt37=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 37, 0, input);
-
-                throw nvae;
-            }
-            switch (alt37) {
-                case 1 :
-                    // InternalCanvas.g:1575:4: (otherlv_1= 'properties' otherlv_2= ':' )
-                    {
-                    // InternalCanvas.g:1575:4: (otherlv_1= 'properties' otherlv_2= ':' )
-                    // InternalCanvas.g:1576:5: otherlv_1= 'properties' otherlv_2= ':'
-                    {
-                    otherlv_1=(Token)match(input,15,FOLLOW_4); 
-
-                    					newLeafNode(otherlv_1, grammarAccess.getConnectorPropsAccess().getPropertiesKeyword_1_0_0());
-                    				
-                    otherlv_2=(Token)match(input,12,FOLLOW_20); 
-
-                    					newLeafNode(otherlv_2, grammarAccess.getConnectorPropsAccess().getColonKeyword_1_0_1());
-                    				
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:1586:4: otherlv_3= 'properties:'
-                    {
-                    otherlv_3=(Token)match(input,16,FOLLOW_20); 
-
-                    				newLeafNode(otherlv_3, grammarAccess.getConnectorPropsAccess().getPropertiesKeyword_1_1());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            // InternalCanvas.g:1591:3: ( (lv_color_4_0= ruleColor ) )?
-            int alt38=2;
-            int LA38_0 = input.LA(1);
-
-            if ( (LA38_0==39) ) {
-                alt38=1;
-            }
-            switch (alt38) {
-                case 1 :
-                    // InternalCanvas.g:1592:4: (lv_color_4_0= ruleColor )
-                    {
-                    // InternalCanvas.g:1592:4: (lv_color_4_0= ruleColor )
-                    // InternalCanvas.g:1593:5: lv_color_4_0= ruleColor
-                    {
-
-                    					newCompositeNode(grammarAccess.getConnectorPropsAccess().getColorColorParserRuleCall_2_0());
-                    				
-                    pushFollow(FOLLOW_2);
-                    lv_color_4_0=ruleColor();
-
-                    state._fsp--;
-
-
-                    					if (current==null) {
-                    						current = createModelElementForParent(grammarAccess.getConnectorPropsRule());
-                    					}
-                    					set(
-                    						current,
-                    						"color",
-                    						lv_color_4_0,
-                    						"org.xtuml.canvas.language.Canvas.Color");
-                    					afterParserOrEnumRuleCall();
-                    				
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleConnectorProps"
-
-
     // $ANTLR start "entryRulePolyline"
-    // InternalCanvas.g:1614:1: entryRulePolyline returns [EObject current=null] : iv_rulePolyline= rulePolyline EOF ;
+    // InternalCanvas.g:1410:1: entryRulePolyline returns [EObject current=null] : iv_rulePolyline= rulePolyline EOF ;
     public final EObject entryRulePolyline() throws RecognitionException {
         EObject current = null;
 
@@ -4394,8 +3816,8 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCanvas.g:1614:49: (iv_rulePolyline= rulePolyline EOF )
-            // InternalCanvas.g:1615:2: iv_rulePolyline= rulePolyline EOF
+            // InternalCanvas.g:1410:49: (iv_rulePolyline= rulePolyline EOF )
+            // InternalCanvas.g:1411:2: iv_rulePolyline= rulePolyline EOF
             {
              newCompositeNode(grammarAccess.getPolylineRule()); 
             pushFollow(FOLLOW_1);
@@ -4422,7 +3844,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePolyline"
-    // InternalCanvas.g:1621:1: rulePolyline returns [EObject current=null] : ( () ( (otherlv_1= 'polyline' otherlv_2= ':' ) | otherlv_3= 'polyline:' ) ( (lv_segments_4_0= ruleSegment ) )* ) ;
+    // InternalCanvas.g:1417:1: rulePolyline returns [EObject current=null] : ( () ( (otherlv_1= 'polyline' otherlv_2= ':' ) | otherlv_3= 'polyline:' ) ( (lv_segments_4_0= ruleSegment ) )* ) ;
     public final EObject rulePolyline() throws RecognitionException {
         EObject current = null;
 
@@ -4436,14 +3858,14 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCanvas.g:1627:2: ( ( () ( (otherlv_1= 'polyline' otherlv_2= ':' ) | otherlv_3= 'polyline:' ) ( (lv_segments_4_0= ruleSegment ) )* ) )
-            // InternalCanvas.g:1628:2: ( () ( (otherlv_1= 'polyline' otherlv_2= ':' ) | otherlv_3= 'polyline:' ) ( (lv_segments_4_0= ruleSegment ) )* )
+            // InternalCanvas.g:1423:2: ( ( () ( (otherlv_1= 'polyline' otherlv_2= ':' ) | otherlv_3= 'polyline:' ) ( (lv_segments_4_0= ruleSegment ) )* ) )
+            // InternalCanvas.g:1424:2: ( () ( (otherlv_1= 'polyline' otherlv_2= ':' ) | otherlv_3= 'polyline:' ) ( (lv_segments_4_0= ruleSegment ) )* )
             {
-            // InternalCanvas.g:1628:2: ( () ( (otherlv_1= 'polyline' otherlv_2= ':' ) | otherlv_3= 'polyline:' ) ( (lv_segments_4_0= ruleSegment ) )* )
-            // InternalCanvas.g:1629:3: () ( (otherlv_1= 'polyline' otherlv_2= ':' ) | otherlv_3= 'polyline:' ) ( (lv_segments_4_0= ruleSegment ) )*
+            // InternalCanvas.g:1424:2: ( () ( (otherlv_1= 'polyline' otherlv_2= ':' ) | otherlv_3= 'polyline:' ) ( (lv_segments_4_0= ruleSegment ) )* )
+            // InternalCanvas.g:1425:3: () ( (otherlv_1= 'polyline' otherlv_2= ':' ) | otherlv_3= 'polyline:' ) ( (lv_segments_4_0= ruleSegment ) )*
             {
-            // InternalCanvas.g:1629:3: ()
-            // InternalCanvas.g:1630:4: 
+            // InternalCanvas.g:1425:3: ()
+            // InternalCanvas.g:1426:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4453,34 +3875,34 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:1636:3: ( (otherlv_1= 'polyline' otherlv_2= ':' ) | otherlv_3= 'polyline:' )
-            int alt39=2;
-            int LA39_0 = input.LA(1);
+            // InternalCanvas.g:1432:3: ( (otherlv_1= 'polyline' otherlv_2= ':' ) | otherlv_3= 'polyline:' )
+            int alt32=2;
+            int LA32_0 = input.LA(1);
 
-            if ( (LA39_0==51) ) {
-                alt39=1;
+            if ( (LA32_0==47) ) {
+                alt32=1;
             }
-            else if ( (LA39_0==52) ) {
-                alt39=2;
+            else if ( (LA32_0==48) ) {
+                alt32=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 39, 0, input);
+                    new NoViableAltException("", 32, 0, input);
 
                 throw nvae;
             }
-            switch (alt39) {
+            switch (alt32) {
                 case 1 :
-                    // InternalCanvas.g:1637:4: (otherlv_1= 'polyline' otherlv_2= ':' )
+                    // InternalCanvas.g:1433:4: (otherlv_1= 'polyline' otherlv_2= ':' )
                     {
-                    // InternalCanvas.g:1637:4: (otherlv_1= 'polyline' otherlv_2= ':' )
-                    // InternalCanvas.g:1638:5: otherlv_1= 'polyline' otherlv_2= ':'
+                    // InternalCanvas.g:1433:4: (otherlv_1= 'polyline' otherlv_2= ':' )
+                    // InternalCanvas.g:1434:5: otherlv_1= 'polyline' otherlv_2= ':'
                     {
-                    otherlv_1=(Token)match(input,51,FOLLOW_4); 
+                    otherlv_1=(Token)match(input,47,FOLLOW_5); 
 
                     					newLeafNode(otherlv_1, grammarAccess.getPolylineAccess().getPolylineKeyword_1_0_0());
                     				
-                    otherlv_2=(Token)match(input,12,FOLLOW_27); 
+                    otherlv_2=(Token)match(input,12,FOLLOW_26); 
 
                     					newLeafNode(otherlv_2, grammarAccess.getPolylineAccess().getColonKeyword_1_0_1());
                     				
@@ -4491,9 +3913,9 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:1648:4: otherlv_3= 'polyline:'
+                    // InternalCanvas.g:1444:4: otherlv_3= 'polyline:'
                     {
-                    otherlv_3=(Token)match(input,52,FOLLOW_27); 
+                    otherlv_3=(Token)match(input,48,FOLLOW_26); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getPolylineAccess().getPolylineKeyword_1_1());
                     			
@@ -4503,28 +3925,28 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:1653:3: ( (lv_segments_4_0= ruleSegment ) )*
-            loop40:
+            // InternalCanvas.g:1449:3: ( (lv_segments_4_0= ruleSegment ) )*
+            loop33:
             do {
-                int alt40=2;
-                int LA40_0 = input.LA(1);
+                int alt33=2;
+                int LA33_0 = input.LA(1);
 
-                if ( ((LA40_0>=53 && LA40_0<=54)) ) {
-                    alt40=1;
+                if ( ((LA33_0>=49 && LA33_0<=50)) ) {
+                    alt33=1;
                 }
 
 
-                switch (alt40) {
+                switch (alt33) {
             	case 1 :
-            	    // InternalCanvas.g:1654:4: (lv_segments_4_0= ruleSegment )
+            	    // InternalCanvas.g:1450:4: (lv_segments_4_0= ruleSegment )
             	    {
-            	    // InternalCanvas.g:1654:4: (lv_segments_4_0= ruleSegment )
-            	    // InternalCanvas.g:1655:5: lv_segments_4_0= ruleSegment
+            	    // InternalCanvas.g:1450:4: (lv_segments_4_0= ruleSegment )
+            	    // InternalCanvas.g:1451:5: lv_segments_4_0= ruleSegment
             	    {
 
             	    					newCompositeNode(grammarAccess.getPolylineAccess().getSegmentsSegmentParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_27);
+            	    pushFollow(FOLLOW_26);
             	    lv_segments_4_0=ruleSegment();
 
             	    state._fsp--;
@@ -4548,7 +3970,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop40;
+            	    break loop33;
                 }
             } while (true);
 
@@ -4575,7 +3997,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSegment"
-    // InternalCanvas.g:1676:1: entryRuleSegment returns [EObject current=null] : iv_ruleSegment= ruleSegment EOF ;
+    // InternalCanvas.g:1472:1: entryRuleSegment returns [EObject current=null] : iv_ruleSegment= ruleSegment EOF ;
     public final EObject entryRuleSegment() throws RecognitionException {
         EObject current = null;
 
@@ -4583,8 +4005,8 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCanvas.g:1676:48: (iv_ruleSegment= ruleSegment EOF )
-            // InternalCanvas.g:1677:2: iv_ruleSegment= ruleSegment EOF
+            // InternalCanvas.g:1472:48: (iv_ruleSegment= ruleSegment EOF )
+            // InternalCanvas.g:1473:2: iv_ruleSegment= ruleSegment EOF
             {
              newCompositeNode(grammarAccess.getSegmentRule()); 
             pushFollow(FOLLOW_1);
@@ -4611,57 +4033,62 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSegment"
-    // InternalCanvas.g:1683:1: ruleSegment returns [EObject current=null] : ( ( (otherlv_0= 'segment' otherlv_1= ':' ) | otherlv_2= 'segment:' ) ( (lv_startPoint_3_0= rulePoint ) ) otherlv_4= ',' ( (lv_endPoint_5_0= rulePoint ) ) ) ;
+    // InternalCanvas.g:1479:1: ruleSegment returns [EObject current=null] : ( ( (otherlv_0= 'segment' otherlv_1= ':' ) | otherlv_2= 'segment:' ) ( (otherlv_3= 'start' otherlv_4= ':' ) | otherlv_5= 'start:' ) ( (lv_startPoint_6_0= rulePoint ) ) ( (otherlv_7= 'end' otherlv_8= ':' ) | otherlv_9= 'end:' ) ( (lv_endPoint_10_0= rulePoint ) ) ) ;
     public final EObject ruleSegment() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
         Token otherlv_2=null;
+        Token otherlv_3=null;
         Token otherlv_4=null;
-        EObject lv_startPoint_3_0 = null;
+        Token otherlv_5=null;
+        Token otherlv_7=null;
+        Token otherlv_8=null;
+        Token otherlv_9=null;
+        EObject lv_startPoint_6_0 = null;
 
-        EObject lv_endPoint_5_0 = null;
+        EObject lv_endPoint_10_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalCanvas.g:1689:2: ( ( ( (otherlv_0= 'segment' otherlv_1= ':' ) | otherlv_2= 'segment:' ) ( (lv_startPoint_3_0= rulePoint ) ) otherlv_4= ',' ( (lv_endPoint_5_0= rulePoint ) ) ) )
-            // InternalCanvas.g:1690:2: ( ( (otherlv_0= 'segment' otherlv_1= ':' ) | otherlv_2= 'segment:' ) ( (lv_startPoint_3_0= rulePoint ) ) otherlv_4= ',' ( (lv_endPoint_5_0= rulePoint ) ) )
+            // InternalCanvas.g:1485:2: ( ( ( (otherlv_0= 'segment' otherlv_1= ':' ) | otherlv_2= 'segment:' ) ( (otherlv_3= 'start' otherlv_4= ':' ) | otherlv_5= 'start:' ) ( (lv_startPoint_6_0= rulePoint ) ) ( (otherlv_7= 'end' otherlv_8= ':' ) | otherlv_9= 'end:' ) ( (lv_endPoint_10_0= rulePoint ) ) ) )
+            // InternalCanvas.g:1486:2: ( ( (otherlv_0= 'segment' otherlv_1= ':' ) | otherlv_2= 'segment:' ) ( (otherlv_3= 'start' otherlv_4= ':' ) | otherlv_5= 'start:' ) ( (lv_startPoint_6_0= rulePoint ) ) ( (otherlv_7= 'end' otherlv_8= ':' ) | otherlv_9= 'end:' ) ( (lv_endPoint_10_0= rulePoint ) ) )
             {
-            // InternalCanvas.g:1690:2: ( ( (otherlv_0= 'segment' otherlv_1= ':' ) | otherlv_2= 'segment:' ) ( (lv_startPoint_3_0= rulePoint ) ) otherlv_4= ',' ( (lv_endPoint_5_0= rulePoint ) ) )
-            // InternalCanvas.g:1691:3: ( (otherlv_0= 'segment' otherlv_1= ':' ) | otherlv_2= 'segment:' ) ( (lv_startPoint_3_0= rulePoint ) ) otherlv_4= ',' ( (lv_endPoint_5_0= rulePoint ) )
+            // InternalCanvas.g:1486:2: ( ( (otherlv_0= 'segment' otherlv_1= ':' ) | otherlv_2= 'segment:' ) ( (otherlv_3= 'start' otherlv_4= ':' ) | otherlv_5= 'start:' ) ( (lv_startPoint_6_0= rulePoint ) ) ( (otherlv_7= 'end' otherlv_8= ':' ) | otherlv_9= 'end:' ) ( (lv_endPoint_10_0= rulePoint ) ) )
+            // InternalCanvas.g:1487:3: ( (otherlv_0= 'segment' otherlv_1= ':' ) | otherlv_2= 'segment:' ) ( (otherlv_3= 'start' otherlv_4= ':' ) | otherlv_5= 'start:' ) ( (lv_startPoint_6_0= rulePoint ) ) ( (otherlv_7= 'end' otherlv_8= ':' ) | otherlv_9= 'end:' ) ( (lv_endPoint_10_0= rulePoint ) )
             {
-            // InternalCanvas.g:1691:3: ( (otherlv_0= 'segment' otherlv_1= ':' ) | otherlv_2= 'segment:' )
-            int alt41=2;
-            int LA41_0 = input.LA(1);
+            // InternalCanvas.g:1487:3: ( (otherlv_0= 'segment' otherlv_1= ':' ) | otherlv_2= 'segment:' )
+            int alt34=2;
+            int LA34_0 = input.LA(1);
 
-            if ( (LA41_0==53) ) {
-                alt41=1;
+            if ( (LA34_0==49) ) {
+                alt34=1;
             }
-            else if ( (LA41_0==54) ) {
-                alt41=2;
+            else if ( (LA34_0==50) ) {
+                alt34=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 41, 0, input);
+                    new NoViableAltException("", 34, 0, input);
 
                 throw nvae;
             }
-            switch (alt41) {
+            switch (alt34) {
                 case 1 :
-                    // InternalCanvas.g:1692:4: (otherlv_0= 'segment' otherlv_1= ':' )
+                    // InternalCanvas.g:1488:4: (otherlv_0= 'segment' otherlv_1= ':' )
                     {
-                    // InternalCanvas.g:1692:4: (otherlv_0= 'segment' otherlv_1= ':' )
-                    // InternalCanvas.g:1693:5: otherlv_0= 'segment' otherlv_1= ':'
+                    // InternalCanvas.g:1488:4: (otherlv_0= 'segment' otherlv_1= ':' )
+                    // InternalCanvas.g:1489:5: otherlv_0= 'segment' otherlv_1= ':'
                     {
-                    otherlv_0=(Token)match(input,53,FOLLOW_4); 
+                    otherlv_0=(Token)match(input,49,FOLLOW_5); 
 
                     					newLeafNode(otherlv_0, grammarAccess.getSegmentAccess().getSegmentKeyword_0_0_0());
                     				
-                    otherlv_1=(Token)match(input,12,FOLLOW_9); 
+                    otherlv_1=(Token)match(input,12,FOLLOW_22); 
 
                     					newLeafNode(otherlv_1, grammarAccess.getSegmentAccess().getColonKeyword_0_0_1());
                     				
@@ -4672,9 +4099,9 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:1703:4: otherlv_2= 'segment:'
+                    // InternalCanvas.g:1499:4: otherlv_2= 'segment:'
                     {
-                    otherlv_2=(Token)match(input,54,FOLLOW_9); 
+                    otherlv_2=(Token)match(input,50,FOLLOW_22); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getSegmentAccess().getSegmentKeyword_0_1());
                     			
@@ -4684,17 +4111,67 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCanvas.g:1708:3: ( (lv_startPoint_3_0= rulePoint ) )
-            // InternalCanvas.g:1709:4: (lv_startPoint_3_0= rulePoint )
+            // InternalCanvas.g:1504:3: ( (otherlv_3= 'start' otherlv_4= ':' ) | otherlv_5= 'start:' )
+            int alt35=2;
+            int LA35_0 = input.LA(1);
+
+            if ( (LA35_0==31) ) {
+                alt35=1;
+            }
+            else if ( (LA35_0==45) ) {
+                alt35=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 35, 0, input);
+
+                throw nvae;
+            }
+            switch (alt35) {
+                case 1 :
+                    // InternalCanvas.g:1505:4: (otherlv_3= 'start' otherlv_4= ':' )
+                    {
+                    // InternalCanvas.g:1505:4: (otherlv_3= 'start' otherlv_4= ':' )
+                    // InternalCanvas.g:1506:5: otherlv_3= 'start' otherlv_4= ':'
+                    {
+                    otherlv_3=(Token)match(input,31,FOLLOW_5); 
+
+                    					newLeafNode(otherlv_3, grammarAccess.getSegmentAccess().getStartKeyword_1_0_0());
+                    				
+                    otherlv_4=(Token)match(input,12,FOLLOW_8); 
+
+                    					newLeafNode(otherlv_4, grammarAccess.getSegmentAccess().getColonKeyword_1_0_1());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalCanvas.g:1516:4: otherlv_5= 'start:'
+                    {
+                    otherlv_5=(Token)match(input,45,FOLLOW_8); 
+
+                    				newLeafNode(otherlv_5, grammarAccess.getSegmentAccess().getStartKeyword_1_1());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            // InternalCanvas.g:1521:3: ( (lv_startPoint_6_0= rulePoint ) )
+            // InternalCanvas.g:1522:4: (lv_startPoint_6_0= rulePoint )
             {
-            // InternalCanvas.g:1709:4: (lv_startPoint_3_0= rulePoint )
-            // InternalCanvas.g:1710:5: lv_startPoint_3_0= rulePoint
+            // InternalCanvas.g:1522:4: (lv_startPoint_6_0= rulePoint )
+            // InternalCanvas.g:1523:5: lv_startPoint_6_0= rulePoint
             {
 
-            					newCompositeNode(grammarAccess.getSegmentAccess().getStartPointPointParserRuleCall_1_0());
+            					newCompositeNode(grammarAccess.getSegmentAccess().getStartPointPointParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_28);
-            lv_startPoint_3_0=rulePoint();
+            pushFollow(FOLLOW_23);
+            lv_startPoint_6_0=rulePoint();
 
             state._fsp--;
 
@@ -4705,7 +4182,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"startPoint",
-            						lv_startPoint_3_0,
+            						lv_startPoint_6_0,
             						"org.xtuml.canvas.language.Canvas.Point");
             					afterParserOrEnumRuleCall();
             				
@@ -4715,21 +4192,67 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,55,FOLLOW_9); 
+            // InternalCanvas.g:1540:3: ( (otherlv_7= 'end' otherlv_8= ':' ) | otherlv_9= 'end:' )
+            int alt36=2;
+            int LA36_0 = input.LA(1);
 
-            			newLeafNode(otherlv_4, grammarAccess.getSegmentAccess().getCommaKeyword_2());
-            		
-            // InternalCanvas.g:1731:3: ( (lv_endPoint_5_0= rulePoint ) )
-            // InternalCanvas.g:1732:4: (lv_endPoint_5_0= rulePoint )
+            if ( (LA36_0==32) ) {
+                alt36=1;
+            }
+            else if ( (LA36_0==46) ) {
+                alt36=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 36, 0, input);
+
+                throw nvae;
+            }
+            switch (alt36) {
+                case 1 :
+                    // InternalCanvas.g:1541:4: (otherlv_7= 'end' otherlv_8= ':' )
+                    {
+                    // InternalCanvas.g:1541:4: (otherlv_7= 'end' otherlv_8= ':' )
+                    // InternalCanvas.g:1542:5: otherlv_7= 'end' otherlv_8= ':'
+                    {
+                    otherlv_7=(Token)match(input,32,FOLLOW_5); 
+
+                    					newLeafNode(otherlv_7, grammarAccess.getSegmentAccess().getEndKeyword_3_0_0());
+                    				
+                    otherlv_8=(Token)match(input,12,FOLLOW_8); 
+
+                    					newLeafNode(otherlv_8, grammarAccess.getSegmentAccess().getColonKeyword_3_0_1());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalCanvas.g:1552:4: otherlv_9= 'end:'
+                    {
+                    otherlv_9=(Token)match(input,46,FOLLOW_8); 
+
+                    				newLeafNode(otherlv_9, grammarAccess.getSegmentAccess().getEndKeyword_3_1());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            // InternalCanvas.g:1557:3: ( (lv_endPoint_10_0= rulePoint ) )
+            // InternalCanvas.g:1558:4: (lv_endPoint_10_0= rulePoint )
             {
-            // InternalCanvas.g:1732:4: (lv_endPoint_5_0= rulePoint )
-            // InternalCanvas.g:1733:5: lv_endPoint_5_0= rulePoint
+            // InternalCanvas.g:1558:4: (lv_endPoint_10_0= rulePoint )
+            // InternalCanvas.g:1559:5: lv_endPoint_10_0= rulePoint
             {
 
-            					newCompositeNode(grammarAccess.getSegmentAccess().getEndPointPointParserRuleCall_3_0());
+            					newCompositeNode(grammarAccess.getSegmentAccess().getEndPointPointParserRuleCall_4_0());
             				
             pushFollow(FOLLOW_2);
-            lv_endPoint_5_0=rulePoint();
+            lv_endPoint_10_0=rulePoint();
 
             state._fsp--;
 
@@ -4740,7 +4263,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"endPoint",
-            						lv_endPoint_5_0,
+            						lv_endPoint_10_0,
             						"org.xtuml.canvas.language.Canvas.Point");
             					afterParserOrEnumRuleCall();
             				
@@ -4773,7 +4296,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePoint"
-    // InternalCanvas.g:1754:1: entryRulePoint returns [EObject current=null] : iv_rulePoint= rulePoint EOF ;
+    // InternalCanvas.g:1580:1: entryRulePoint returns [EObject current=null] : iv_rulePoint= rulePoint EOF ;
     public final EObject entryRulePoint() throws RecognitionException {
         EObject current = null;
 
@@ -4781,8 +4304,8 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCanvas.g:1754:46: (iv_rulePoint= rulePoint EOF )
-            // InternalCanvas.g:1755:2: iv_rulePoint= rulePoint EOF
+            // InternalCanvas.g:1580:46: (iv_rulePoint= rulePoint EOF )
+            // InternalCanvas.g:1581:2: iv_rulePoint= rulePoint EOF
             {
              newCompositeNode(grammarAccess.getPointRule()); 
             pushFollow(FOLLOW_1);
@@ -4809,7 +4332,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePoint"
-    // InternalCanvas.g:1761:1: rulePoint returns [EObject current=null] : (otherlv_0= 'x' ( (lv_x_1_0= RULE_INT ) ) otherlv_2= 'y' ( (lv_y_3_0= RULE_INT ) ) ) ;
+    // InternalCanvas.g:1587:1: rulePoint returns [EObject current=null] : (otherlv_0= 'x' ( (lv_x_1_0= RULE_INT ) ) otherlv_2= 'y' ( (lv_y_3_0= RULE_INT ) ) ) ;
     public final EObject rulePoint() throws RecognitionException {
         EObject current = null;
 
@@ -4822,23 +4345,23 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCanvas.g:1767:2: ( (otherlv_0= 'x' ( (lv_x_1_0= RULE_INT ) ) otherlv_2= 'y' ( (lv_y_3_0= RULE_INT ) ) ) )
-            // InternalCanvas.g:1768:2: (otherlv_0= 'x' ( (lv_x_1_0= RULE_INT ) ) otherlv_2= 'y' ( (lv_y_3_0= RULE_INT ) ) )
+            // InternalCanvas.g:1593:2: ( (otherlv_0= 'x' ( (lv_x_1_0= RULE_INT ) ) otherlv_2= 'y' ( (lv_y_3_0= RULE_INT ) ) ) )
+            // InternalCanvas.g:1594:2: (otherlv_0= 'x' ( (lv_x_1_0= RULE_INT ) ) otherlv_2= 'y' ( (lv_y_3_0= RULE_INT ) ) )
             {
-            // InternalCanvas.g:1768:2: (otherlv_0= 'x' ( (lv_x_1_0= RULE_INT ) ) otherlv_2= 'y' ( (lv_y_3_0= RULE_INT ) ) )
-            // InternalCanvas.g:1769:3: otherlv_0= 'x' ( (lv_x_1_0= RULE_INT ) ) otherlv_2= 'y' ( (lv_y_3_0= RULE_INT ) )
+            // InternalCanvas.g:1594:2: (otherlv_0= 'x' ( (lv_x_1_0= RULE_INT ) ) otherlv_2= 'y' ( (lv_y_3_0= RULE_INT ) ) )
+            // InternalCanvas.g:1595:3: otherlv_0= 'x' ( (lv_x_1_0= RULE_INT ) ) otherlv_2= 'y' ( (lv_y_3_0= RULE_INT ) )
             {
-            otherlv_0=(Token)match(input,56,FOLLOW_11); 
+            otherlv_0=(Token)match(input,51,FOLLOW_10); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPointAccess().getXKeyword_0());
             		
-            // InternalCanvas.g:1773:3: ( (lv_x_1_0= RULE_INT ) )
-            // InternalCanvas.g:1774:4: (lv_x_1_0= RULE_INT )
+            // InternalCanvas.g:1599:3: ( (lv_x_1_0= RULE_INT ) )
+            // InternalCanvas.g:1600:4: (lv_x_1_0= RULE_INT )
             {
-            // InternalCanvas.g:1774:4: (lv_x_1_0= RULE_INT )
-            // InternalCanvas.g:1775:5: lv_x_1_0= RULE_INT
+            // InternalCanvas.g:1600:4: (lv_x_1_0= RULE_INT )
+            // InternalCanvas.g:1601:5: lv_x_1_0= RULE_INT
             {
-            lv_x_1_0=(Token)match(input,RULE_INT,FOLLOW_29); 
+            lv_x_1_0=(Token)match(input,RULE_INT,FOLLOW_27); 
 
             					newLeafNode(lv_x_1_0, grammarAccess.getPointAccess().getXINTTerminalRuleCall_1_0());
             				
@@ -4858,15 +4381,15 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,57,FOLLOW_11); 
+            otherlv_2=(Token)match(input,52,FOLLOW_10); 
 
             			newLeafNode(otherlv_2, grammarAccess.getPointAccess().getYKeyword_2());
             		
-            // InternalCanvas.g:1795:3: ( (lv_y_3_0= RULE_INT ) )
-            // InternalCanvas.g:1796:4: (lv_y_3_0= RULE_INT )
+            // InternalCanvas.g:1621:3: ( (lv_y_3_0= RULE_INT ) )
+            // InternalCanvas.g:1622:4: (lv_y_3_0= RULE_INT )
             {
-            // InternalCanvas.g:1796:4: (lv_y_3_0= RULE_INT )
-            // InternalCanvas.g:1797:5: lv_y_3_0= RULE_INT
+            // InternalCanvas.g:1622:4: (lv_y_3_0= RULE_INT )
+            // InternalCanvas.g:1623:5: lv_y_3_0= RULE_INT
             {
             lv_y_3_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -4910,8 +4433,199 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
     // $ANTLR end "rulePoint"
 
 
+    // $ANTLR start "entryRulePointDefinition"
+    // InternalCanvas.g:1643:1: entryRulePointDefinition returns [EObject current=null] : iv_rulePointDefinition= rulePointDefinition EOF ;
+    public final EObject entryRulePointDefinition() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_rulePointDefinition = null;
+
+
+        try {
+            // InternalCanvas.g:1643:56: (iv_rulePointDefinition= rulePointDefinition EOF )
+            // InternalCanvas.g:1644:2: iv_rulePointDefinition= rulePointDefinition EOF
+            {
+             newCompositeNode(grammarAccess.getPointDefinitionRule()); 
+            pushFollow(FOLLOW_1);
+            iv_rulePointDefinition=rulePointDefinition();
+
+            state._fsp--;
+
+             current =iv_rulePointDefinition; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulePointDefinition"
+
+
+    // $ANTLR start "rulePointDefinition"
+    // InternalCanvas.g:1650:1: rulePointDefinition returns [EObject current=null] : ( ( (otherlv_0= 'point' otherlv_1= ':' ) | otherlv_2= 'point:' ) otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) ) ;
+    public final EObject rulePointDefinition() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+        Token lv_x_4_0=null;
+        Token otherlv_5=null;
+        Token lv_y_6_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalCanvas.g:1656:2: ( ( ( (otherlv_0= 'point' otherlv_1= ':' ) | otherlv_2= 'point:' ) otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) ) )
+            // InternalCanvas.g:1657:2: ( ( (otherlv_0= 'point' otherlv_1= ':' ) | otherlv_2= 'point:' ) otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) )
+            {
+            // InternalCanvas.g:1657:2: ( ( (otherlv_0= 'point' otherlv_1= ':' ) | otherlv_2= 'point:' ) otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) )
+            // InternalCanvas.g:1658:3: ( (otherlv_0= 'point' otherlv_1= ':' ) | otherlv_2= 'point:' ) otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) )
+            {
+            // InternalCanvas.g:1658:3: ( (otherlv_0= 'point' otherlv_1= ':' ) | otherlv_2= 'point:' )
+            int alt37=2;
+            int LA37_0 = input.LA(1);
+
+            if ( (LA37_0==53) ) {
+                alt37=1;
+            }
+            else if ( (LA37_0==54) ) {
+                alt37=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 37, 0, input);
+
+                throw nvae;
+            }
+            switch (alt37) {
+                case 1 :
+                    // InternalCanvas.g:1659:4: (otherlv_0= 'point' otherlv_1= ':' )
+                    {
+                    // InternalCanvas.g:1659:4: (otherlv_0= 'point' otherlv_1= ':' )
+                    // InternalCanvas.g:1660:5: otherlv_0= 'point' otherlv_1= ':'
+                    {
+                    otherlv_0=(Token)match(input,53,FOLLOW_5); 
+
+                    					newLeafNode(otherlv_0, grammarAccess.getPointDefinitionAccess().getPointKeyword_0_0_0());
+                    				
+                    otherlv_1=(Token)match(input,12,FOLLOW_8); 
+
+                    					newLeafNode(otherlv_1, grammarAccess.getPointDefinitionAccess().getColonKeyword_0_0_1());
+                    				
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalCanvas.g:1670:4: otherlv_2= 'point:'
+                    {
+                    otherlv_2=(Token)match(input,54,FOLLOW_8); 
+
+                    				newLeafNode(otherlv_2, grammarAccess.getPointDefinitionAccess().getPointKeyword_0_1());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            otherlv_3=(Token)match(input,51,FOLLOW_10); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getPointDefinitionAccess().getXKeyword_1());
+            		
+            // InternalCanvas.g:1679:3: ( (lv_x_4_0= RULE_INT ) )
+            // InternalCanvas.g:1680:4: (lv_x_4_0= RULE_INT )
+            {
+            // InternalCanvas.g:1680:4: (lv_x_4_0= RULE_INT )
+            // InternalCanvas.g:1681:5: lv_x_4_0= RULE_INT
+            {
+            lv_x_4_0=(Token)match(input,RULE_INT,FOLLOW_27); 
+
+            					newLeafNode(lv_x_4_0, grammarAccess.getPointDefinitionAccess().getXINTTerminalRuleCall_2_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getPointDefinitionRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"x",
+            						lv_x_4_0,
+            						"org.eclipse.xtext.common.Terminals.INT");
+            				
+
+            }
+
+
+            }
+
+            otherlv_5=(Token)match(input,52,FOLLOW_10); 
+
+            			newLeafNode(otherlv_5, grammarAccess.getPointDefinitionAccess().getYKeyword_3());
+            		
+            // InternalCanvas.g:1701:3: ( (lv_y_6_0= RULE_INT ) )
+            // InternalCanvas.g:1702:4: (lv_y_6_0= RULE_INT )
+            {
+            // InternalCanvas.g:1702:4: (lv_y_6_0= RULE_INT )
+            // InternalCanvas.g:1703:5: lv_y_6_0= RULE_INT
+            {
+            lv_y_6_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+
+            					newLeafNode(lv_y_6_0, grammarAccess.getPointDefinitionAccess().getYINTTerminalRuleCall_4_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getPointDefinitionRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"y",
+            						lv_y_6_0,
+            						"org.eclipse.xtext.common.Terminals.INT");
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePointDefinition"
+
+
     // $ANTLR start "entryRuleRectangle"
-    // InternalCanvas.g:1817:1: entryRuleRectangle returns [EObject current=null] : iv_ruleRectangle= ruleRectangle EOF ;
+    // InternalCanvas.g:1723:1: entryRuleRectangle returns [EObject current=null] : iv_ruleRectangle= ruleRectangle EOF ;
     public final EObject entryRuleRectangle() throws RecognitionException {
         EObject current = null;
 
@@ -4919,8 +4633,8 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCanvas.g:1817:50: (iv_ruleRectangle= ruleRectangle EOF )
-            // InternalCanvas.g:1818:2: iv_ruleRectangle= ruleRectangle EOF
+            // InternalCanvas.g:1723:50: (iv_ruleRectangle= ruleRectangle EOF )
+            // InternalCanvas.g:1724:2: iv_ruleRectangle= ruleRectangle EOF
             {
              newCompositeNode(grammarAccess.getRectangleRule()); 
             pushFollow(FOLLOW_1);
@@ -4947,7 +4661,7 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRectangle"
-    // InternalCanvas.g:1824:1: ruleRectangle returns [EObject current=null] : ( ( (otherlv_0= 'rectangle' otherlv_1= ':' ) | otherlv_2= 'rectangle:' ) otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_w_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_h_10_0= RULE_INT ) ) ) ;
+    // InternalCanvas.g:1730:1: ruleRectangle returns [EObject current=null] : ( ( (otherlv_0= 'rectangle' otherlv_1= ':' ) | otherlv_2= 'rectangle:' ) otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_w_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_h_10_0= RULE_INT ) ) ) ;
     public final EObject ruleRectangle() throws RecognitionException {
         EObject current = null;
 
@@ -4967,40 +4681,40 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCanvas.g:1830:2: ( ( ( (otherlv_0= 'rectangle' otherlv_1= ':' ) | otherlv_2= 'rectangle:' ) otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_w_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_h_10_0= RULE_INT ) ) ) )
-            // InternalCanvas.g:1831:2: ( ( (otherlv_0= 'rectangle' otherlv_1= ':' ) | otherlv_2= 'rectangle:' ) otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_w_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_h_10_0= RULE_INT ) ) )
+            // InternalCanvas.g:1736:2: ( ( ( (otherlv_0= 'rectangle' otherlv_1= ':' ) | otherlv_2= 'rectangle:' ) otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_w_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_h_10_0= RULE_INT ) ) ) )
+            // InternalCanvas.g:1737:2: ( ( (otherlv_0= 'rectangle' otherlv_1= ':' ) | otherlv_2= 'rectangle:' ) otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_w_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_h_10_0= RULE_INT ) ) )
             {
-            // InternalCanvas.g:1831:2: ( ( (otherlv_0= 'rectangle' otherlv_1= ':' ) | otherlv_2= 'rectangle:' ) otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_w_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_h_10_0= RULE_INT ) ) )
-            // InternalCanvas.g:1832:3: ( (otherlv_0= 'rectangle' otherlv_1= ':' ) | otherlv_2= 'rectangle:' ) otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_w_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_h_10_0= RULE_INT ) )
+            // InternalCanvas.g:1737:2: ( ( (otherlv_0= 'rectangle' otherlv_1= ':' ) | otherlv_2= 'rectangle:' ) otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_w_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_h_10_0= RULE_INT ) ) )
+            // InternalCanvas.g:1738:3: ( (otherlv_0= 'rectangle' otherlv_1= ':' ) | otherlv_2= 'rectangle:' ) otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_w_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_h_10_0= RULE_INT ) )
             {
-            // InternalCanvas.g:1832:3: ( (otherlv_0= 'rectangle' otherlv_1= ':' ) | otherlv_2= 'rectangle:' )
-            int alt42=2;
-            int LA42_0 = input.LA(1);
+            // InternalCanvas.g:1738:3: ( (otherlv_0= 'rectangle' otherlv_1= ':' ) | otherlv_2= 'rectangle:' )
+            int alt38=2;
+            int LA38_0 = input.LA(1);
 
-            if ( (LA42_0==58) ) {
-                alt42=1;
+            if ( (LA38_0==55) ) {
+                alt38=1;
             }
-            else if ( (LA42_0==59) ) {
-                alt42=2;
+            else if ( (LA38_0==56) ) {
+                alt38=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 42, 0, input);
+                    new NoViableAltException("", 38, 0, input);
 
                 throw nvae;
             }
-            switch (alt42) {
+            switch (alt38) {
                 case 1 :
-                    // InternalCanvas.g:1833:4: (otherlv_0= 'rectangle' otherlv_1= ':' )
+                    // InternalCanvas.g:1739:4: (otherlv_0= 'rectangle' otherlv_1= ':' )
                     {
-                    // InternalCanvas.g:1833:4: (otherlv_0= 'rectangle' otherlv_1= ':' )
-                    // InternalCanvas.g:1834:5: otherlv_0= 'rectangle' otherlv_1= ':'
+                    // InternalCanvas.g:1739:4: (otherlv_0= 'rectangle' otherlv_1= ':' )
+                    // InternalCanvas.g:1740:5: otherlv_0= 'rectangle' otherlv_1= ':'
                     {
-                    otherlv_0=(Token)match(input,58,FOLLOW_4); 
+                    otherlv_0=(Token)match(input,55,FOLLOW_5); 
 
                     					newLeafNode(otherlv_0, grammarAccess.getRectangleAccess().getRectangleKeyword_0_0_0());
                     				
-                    otherlv_1=(Token)match(input,12,FOLLOW_9); 
+                    otherlv_1=(Token)match(input,12,FOLLOW_8); 
 
                     					newLeafNode(otherlv_1, grammarAccess.getRectangleAccess().getColonKeyword_0_0_1());
                     				
@@ -5011,9 +4725,9 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:1844:4: otherlv_2= 'rectangle:'
+                    // InternalCanvas.g:1750:4: otherlv_2= 'rectangle:'
                     {
-                    otherlv_2=(Token)match(input,59,FOLLOW_9); 
+                    otherlv_2=(Token)match(input,56,FOLLOW_8); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getRectangleAccess().getRectangleKeyword_0_1());
                     			
@@ -5023,17 +4737,17 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,56,FOLLOW_11); 
+            otherlv_3=(Token)match(input,51,FOLLOW_10); 
 
             			newLeafNode(otherlv_3, grammarAccess.getRectangleAccess().getXKeyword_1());
             		
-            // InternalCanvas.g:1853:3: ( (lv_x_4_0= RULE_INT ) )
-            // InternalCanvas.g:1854:4: (lv_x_4_0= RULE_INT )
+            // InternalCanvas.g:1759:3: ( (lv_x_4_0= RULE_INT ) )
+            // InternalCanvas.g:1760:4: (lv_x_4_0= RULE_INT )
             {
-            // InternalCanvas.g:1854:4: (lv_x_4_0= RULE_INT )
-            // InternalCanvas.g:1855:5: lv_x_4_0= RULE_INT
+            // InternalCanvas.g:1760:4: (lv_x_4_0= RULE_INT )
+            // InternalCanvas.g:1761:5: lv_x_4_0= RULE_INT
             {
-            lv_x_4_0=(Token)match(input,RULE_INT,FOLLOW_29); 
+            lv_x_4_0=(Token)match(input,RULE_INT,FOLLOW_27); 
 
             					newLeafNode(lv_x_4_0, grammarAccess.getRectangleAccess().getXINTTerminalRuleCall_2_0());
             				
@@ -5053,17 +4767,17 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,57,FOLLOW_11); 
+            otherlv_5=(Token)match(input,52,FOLLOW_10); 
 
             			newLeafNode(otherlv_5, grammarAccess.getRectangleAccess().getYKeyword_3());
             		
-            // InternalCanvas.g:1875:3: ( (lv_y_6_0= RULE_INT ) )
-            // InternalCanvas.g:1876:4: (lv_y_6_0= RULE_INT )
+            // InternalCanvas.g:1781:3: ( (lv_y_6_0= RULE_INT ) )
+            // InternalCanvas.g:1782:4: (lv_y_6_0= RULE_INT )
             {
-            // InternalCanvas.g:1876:4: (lv_y_6_0= RULE_INT )
-            // InternalCanvas.g:1877:5: lv_y_6_0= RULE_INT
+            // InternalCanvas.g:1782:4: (lv_y_6_0= RULE_INT )
+            // InternalCanvas.g:1783:5: lv_y_6_0= RULE_INT
             {
-            lv_y_6_0=(Token)match(input,RULE_INT,FOLLOW_30); 
+            lv_y_6_0=(Token)match(input,RULE_INT,FOLLOW_28); 
 
             					newLeafNode(lv_y_6_0, grammarAccess.getRectangleAccess().getYINTTerminalRuleCall_4_0());
             				
@@ -5083,17 +4797,17 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,60,FOLLOW_11); 
+            otherlv_7=(Token)match(input,57,FOLLOW_10); 
 
             			newLeafNode(otherlv_7, grammarAccess.getRectangleAccess().getWidthKeyword_5());
             		
-            // InternalCanvas.g:1897:3: ( (lv_w_8_0= RULE_INT ) )
-            // InternalCanvas.g:1898:4: (lv_w_8_0= RULE_INT )
+            // InternalCanvas.g:1803:3: ( (lv_w_8_0= RULE_INT ) )
+            // InternalCanvas.g:1804:4: (lv_w_8_0= RULE_INT )
             {
-            // InternalCanvas.g:1898:4: (lv_w_8_0= RULE_INT )
-            // InternalCanvas.g:1899:5: lv_w_8_0= RULE_INT
+            // InternalCanvas.g:1804:4: (lv_w_8_0= RULE_INT )
+            // InternalCanvas.g:1805:5: lv_w_8_0= RULE_INT
             {
-            lv_w_8_0=(Token)match(input,RULE_INT,FOLLOW_31); 
+            lv_w_8_0=(Token)match(input,RULE_INT,FOLLOW_29); 
 
             					newLeafNode(lv_w_8_0, grammarAccess.getRectangleAccess().getWINTTerminalRuleCall_6_0());
             				
@@ -5113,15 +4827,15 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,61,FOLLOW_11); 
+            otherlv_9=(Token)match(input,58,FOLLOW_10); 
 
             			newLeafNode(otherlv_9, grammarAccess.getRectangleAccess().getHeightKeyword_7());
             		
-            // InternalCanvas.g:1919:3: ( (lv_h_10_0= RULE_INT ) )
-            // InternalCanvas.g:1920:4: (lv_h_10_0= RULE_INT )
+            // InternalCanvas.g:1825:3: ( (lv_h_10_0= RULE_INT ) )
+            // InternalCanvas.g:1826:4: (lv_h_10_0= RULE_INT )
             {
-            // InternalCanvas.g:1920:4: (lv_h_10_0= RULE_INT )
-            // InternalCanvas.g:1921:5: lv_h_10_0= RULE_INT
+            // InternalCanvas.g:1826:4: (lv_h_10_0= RULE_INT )
+            // InternalCanvas.g:1827:5: lv_h_10_0= RULE_INT
             {
             lv_h_10_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -5171,34 +4885,32 @@ public class InternalCanvasParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000006800L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000030000318002L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000030000300002L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000060000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0100000000000000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000C00002L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0C00000000018000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x000000000C002800L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000002800L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x000000000C000002L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000FF0000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000009000000002L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000008000000002L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000006000000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x00000C0000000002L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0018300003018000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000400010000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0007800000000002L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0060000000000002L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0080000000000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x1000000000000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x2000000000000000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x000001800030C002L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000018000300002L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000030000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x00000000000C0000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000C00002L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000001002800L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000002800L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0180000000000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000018000002L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000060000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000007F80000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000060000000002L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0001800000000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000180006000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000200080000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000400100000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0060000000000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000060000C00002L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0006000000000002L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0010000000000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0400000000000000L});
 
 }

@@ -15,10 +15,10 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtuml.canvas.language.canvas.Shape#getName <em>Name</em>}</li>
- *   <li>{@link org.xtuml.canvas.language.canvas.Shape#getProps <em>Props</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.Shape#getContainer <em>Container</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.Shape#getRepresents <em>Represents</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.Shape#getRect <em>Rect</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.Shape#getText <em>Text</em>}</li>
- *   <li>{@link org.xtuml.canvas.language.canvas.Shape#getRepresents <em>Represents</em>}</li>
  * </ul>
  *
  * @see org.xtuml.canvas.language.canvas.CanvasPackage#getShape()
@@ -50,26 +50,48 @@ public interface Shape extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Props</b></em>' containment reference.
+   * Returns the value of the '<em><b>Container</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Props</em>' containment reference.
-   * @see #setProps(ShapeProps)
-   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getShape_Props()
-   * @model containment="true"
+   * @return the value of the '<em>Container</em>' attribute.
+   * @see #setContainer(String)
+   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getShape_Container()
+   * @model
    * @generated
    */
-  ShapeProps getProps();
+  String getContainer();
 
   /**
-   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Shape#getProps <em>Props</em>}' containment reference.
+   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Shape#getContainer <em>Container</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Props</em>' containment reference.
-   * @see #getProps()
+   * @param value the new value of the '<em>Container</em>' attribute.
+   * @see #getContainer()
    * @generated
    */
-  void setProps(ShapeProps value);
+  void setContainer(String value);
+
+  /**
+   * Returns the value of the '<em><b>Represents</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Represents</em>' attribute.
+   * @see #setRepresents(String)
+   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getShape_Represents()
+   * @model
+   * @generated
+   */
+  String getRepresents();
+
+  /**
+   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Shape#getRepresents <em>Represents</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Represents</em>' attribute.
+   * @see #getRepresents()
+   * @generated
+   */
+  void setRepresents(String value);
 
   /**
    * Returns the value of the '<em><b>Rect</b></em>' containment reference.
@@ -114,27 +136,5 @@ public interface Shape extends EObject
    * @generated
    */
   void setText(FloatingText value);
-
-  /**
-   * Returns the value of the '<em><b>Represents</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Represents</em>' attribute.
-   * @see #setRepresents(String)
-   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getShape_Represents()
-   * @model
-   * @generated
-   */
-  String getRepresents();
-
-  /**
-   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Shape#getRepresents <em>Represents</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Represents</em>' attribute.
-   * @see #getRepresents()
-   * @generated
-   */
-  void setRepresents(String value);
 
 } // Shape

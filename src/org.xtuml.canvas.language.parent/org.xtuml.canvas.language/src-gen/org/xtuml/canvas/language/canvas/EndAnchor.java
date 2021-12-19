@@ -29,12 +29,12 @@ public interface EndAnchor extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Point</em>' containment reference.
-   * @see #setPoint(Point)
+   * @see #setPoint(PointDefinition)
    * @see org.xtuml.canvas.language.canvas.CanvasPackage#getEndAnchor_Point()
    * @model containment="true"
    * @generated
    */
-  Point getPoint();
+  PointDefinition getPoint();
 
   /**
    * Sets the value of the '{@link org.xtuml.canvas.language.canvas.EndAnchor#getPoint <em>Point</em>}' containment reference.
@@ -44,7 +44,7 @@ public interface EndAnchor extends EObject
    * @see #getPoint()
    * @generated
    */
-  void setPoint(Point value);
+  void setPoint(PointDefinition value);
 
   /**
    * Returns the value of the '<em><b>Anchor</b></em>' containment reference.

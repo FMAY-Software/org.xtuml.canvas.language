@@ -29,12 +29,12 @@ public interface StartAnchor extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Point</em>' containment reference.
-   * @see #setPoint(Point)
+   * @see #setPoint(PointDefinition)
    * @see org.xtuml.canvas.language.canvas.CanvasPackage#getStartAnchor_Point()
    * @model containment="true"
    * @generated
    */
-  Point getPoint();
+  PointDefinition getPoint();
 
   /**
    * Sets the value of the '{@link org.xtuml.canvas.language.canvas.StartAnchor#getPoint <em>Point</em>}' containment reference.
@@ -44,7 +44,7 @@ public interface StartAnchor extends EObject
    * @see #getPoint()
    * @generated
    */
-  void setPoint(Point value);
+  void setPoint(PointDefinition value);
 
   /**
    * Returns the value of the '<em><b>Anchor</b></em>' containment reference.

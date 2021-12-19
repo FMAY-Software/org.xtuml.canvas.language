@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.xtuml.canvas.language.canvas.Anchor;
 import org.xtuml.canvas.language.canvas.CanvasPackage;
 import org.xtuml.canvas.language.canvas.EndAnchor;
-import org.xtuml.canvas.language.canvas.Point;
+import org.xtuml.canvas.language.canvas.PointDefinition;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,7 +41,7 @@ public class EndAnchorImpl extends MinimalEObjectImpl.Container implements EndAn
    * @generated
    * @ordered
    */
-  protected Point point;
+  protected PointDefinition point;
 
   /**
    * The cached value of the '{@link #getAnchor() <em>Anchor</em>}' containment reference.
@@ -80,7 +80,7 @@ public class EndAnchorImpl extends MinimalEObjectImpl.Container implements EndAn
    * @generated
    */
   @Override
-  public Point getPoint()
+  public PointDefinition getPoint()
   {
     return point;
   }
@@ -90,9 +90,9 @@ public class EndAnchorImpl extends MinimalEObjectImpl.Container implements EndAn
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPoint(Point newPoint, NotificationChain msgs)
+  public NotificationChain basicSetPoint(PointDefinition newPoint, NotificationChain msgs)
   {
-    Point oldPoint = point;
+    PointDefinition oldPoint = point;
     point = newPoint;
     if (eNotificationRequired())
     {
@@ -108,7 +108,7 @@ public class EndAnchorImpl extends MinimalEObjectImpl.Container implements EndAn
    * @generated
    */
   @Override
-  public void setPoint(Point newPoint)
+  public void setPoint(PointDefinition newPoint)
   {
     if (newPoint != point)
     {
@@ -221,7 +221,7 @@ public class EndAnchorImpl extends MinimalEObjectImpl.Container implements EndAn
     switch (featureID)
     {
       case CanvasPackage.END_ANCHOR__POINT:
-        setPoint((Point)newValue);
+        setPoint((PointDefinition)newValue);
         return;
       case CanvasPackage.END_ANCHOR__ANCHOR:
         setAnchor((Anchor)newValue);
@@ -241,7 +241,7 @@ public class EndAnchorImpl extends MinimalEObjectImpl.Container implements EndAn
     switch (featureID)
     {
       case CanvasPackage.END_ANCHOR__POINT:
-        setPoint((Point)null);
+        setPoint((PointDefinition)null);
         return;
       case CanvasPackage.END_ANCHOR__ANCHOR:
         setAnchor((Anchor)null);

@@ -16,8 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtuml.canvas.language.canvas.Model#getSemantics <em>Semantics</em>}</li>
- *   <li>{@link org.xtuml.canvas.language.canvas.Model#getRepresents <em>Represents</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.Model#getRender <em>Render</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.Model#getProperties <em>Properties</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.Model#getElements <em>Elements</em>}</li>
  * </ul>
@@ -29,38 +28,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Semantics</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtuml.canvas.language.canvas.SemanticModel}.
+   * Returns the value of the '<em><b>Render</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Semantics</em>' containment reference list.
-   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getModel_Semantics()
+   * @return the value of the '<em>Render</em>' containment reference.
+   * @see #setRender(ModelRender)
+   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getModel_Render()
    * @model containment="true"
    * @generated
    */
-  EList<SemanticModel> getSemantics();
+  ModelRender getRender();
 
   /**
-   * Returns the value of the '<em><b>Represents</b></em>' attribute.
+   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Model#getRender <em>Render</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Represents</em>' attribute.
-   * @see #setRepresents(String)
-   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getModel_Represents()
-   * @model
+   * @param value the new value of the '<em>Render</em>' containment reference.
+   * @see #getRender()
    * @generated
    */
-  String getRepresents();
-
-  /**
-   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Model#getRepresents <em>Represents</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Represents</em>' attribute.
-   * @see #getRepresents()
-   * @generated
-   */
-  void setRepresents(String value);
+  void setRender(ModelRender value);
 
   /**
    * Returns the value of the '<em><b>Properties</b></em>' containment reference.

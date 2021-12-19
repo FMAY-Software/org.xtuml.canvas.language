@@ -80,10 +80,10 @@ public class CanvasSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CanvasPackage.SEMANTIC_MODEL:
+      case CanvasPackage.MODEL_RENDER:
       {
-        SemanticModel semanticModel = (SemanticModel)theEObject;
-        T result = caseSemanticModel(semanticModel);
+        ModelRender modelRender = (ModelRender)theEObject;
+        T result = caseModelRender(modelRender);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -130,24 +130,10 @@ public class CanvasSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CanvasPackage.SHAPE_PROPS:
+      case CanvasPackage.ENUM_END:
       {
-        ShapeProps shapeProps = (ShapeProps)theEObject;
-        T result = caseShapeProps(shapeProps);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CanvasPackage.CONTAINER:
-      {
-        Container container = (Container)theEObject;
-        T result = caseContainer(container);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CanvasPackage.COLOR:
-      {
-        Color color = (Color)theEObject;
-        T result = caseColor(color);
+        EnumEnd enumEnd = (EnumEnd)theEObject;
+        T result = caseEnumEnd(enumEnd);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -210,13 +196,6 @@ public class CanvasSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CanvasPackage.CONNECTOR_PROPS:
-      {
-        ConnectorProps connectorProps = (ConnectorProps)theEObject;
-        T result = caseConnectorProps(connectorProps);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case CanvasPackage.POLYLINE:
       {
         Polyline polyline = (Polyline)theEObject;
@@ -238,18 +217,17 @@ public class CanvasSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case CanvasPackage.POINT_DEFINITION:
+      {
+        PointDefinition pointDefinition = (PointDefinition)theEObject;
+        T result = casePointDefinition(pointDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case CanvasPackage.RECTANGLE:
       {
         Rectangle rectangle = (Rectangle)theEObject;
         T result = caseRectangle(rectangle);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CanvasPackage.SHAPE_CONTAINER:
-      {
-        ShapeContainer shapeContainer = (ShapeContainer)theEObject;
-        T result = caseShapeContainer(shapeContainer);
-        if (result == null) result = caseContainer(shapeContainer);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -274,17 +252,17 @@ public class CanvasSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Semantic Model</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Model Render</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Semantic Model</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Model Render</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSemanticModel(SemanticModel object)
+  public T caseModelRender(ModelRender object)
   {
     return null;
   }
@@ -386,49 +364,17 @@ public class CanvasSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Shape Props</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Enum End</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Shape Props</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Enum End</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseShapeProps(ShapeProps object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Container</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Container</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseContainer(Container object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Color</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Color</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseColor(Color object)
+  public T caseEnumEnd(EnumEnd object)
   {
     return null;
   }
@@ -562,22 +508,6 @@ public class CanvasSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Connector Props</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Connector Props</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseConnectorProps(ConnectorProps object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Polyline</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -626,6 +556,22 @@ public class CanvasSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Point Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Point Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePointDefinition(PointDefinition object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Rectangle</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -637,22 +583,6 @@ public class CanvasSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRectangle(Rectangle object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Shape Container</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Shape Container</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseShapeContainer(ShapeContainer object)
   {
     return null;
   }

@@ -15,11 +15,10 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtuml.canvas.language.canvas.Connector#getName <em>Name</em>}</li>
- *   <li>{@link org.xtuml.canvas.language.canvas.Connector#getProps <em>Props</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.Connector#getRepresents <em>Represents</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.Connector#getPolyline <em>Polyline</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.Connector#getAnchors <em>Anchors</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.Connector#getTexts <em>Texts</em>}</li>
- *   <li>{@link org.xtuml.canvas.language.canvas.Connector#getRepresents <em>Represents</em>}</li>
  * </ul>
  *
  * @see org.xtuml.canvas.language.canvas.CanvasPackage#getConnector()
@@ -51,26 +50,26 @@ public interface Connector extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Props</b></em>' containment reference.
+   * Returns the value of the '<em><b>Represents</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Props</em>' containment reference.
-   * @see #setProps(ConnectorProps)
-   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getConnector_Props()
-   * @model containment="true"
+   * @return the value of the '<em>Represents</em>' attribute.
+   * @see #setRepresents(String)
+   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getConnector_Represents()
+   * @model
    * @generated
    */
-  ConnectorProps getProps();
+  String getRepresents();
 
   /**
-   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Connector#getProps <em>Props</em>}' containment reference.
+   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Connector#getRepresents <em>Represents</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Props</em>' containment reference.
-   * @see #getProps()
+   * @param value the new value of the '<em>Represents</em>' attribute.
+   * @see #getRepresents()
    * @generated
    */
-  void setProps(ConnectorProps value);
+  void setRepresents(String value);
 
   /**
    * Returns the value of the '<em><b>Polyline</b></em>' containment reference.
@@ -137,27 +136,5 @@ public interface Connector extends EObject
    * @generated
    */
   void setTexts(FloatingTexts value);
-
-  /**
-   * Returns the value of the '<em><b>Represents</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Represents</em>' attribute.
-   * @see #setRepresents(String)
-   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getConnector_Represents()
-   * @model
-   * @generated
-   */
-  String getRepresents();
-
-  /**
-   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Connector#getRepresents <em>Represents</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Represents</em>' attribute.
-   * @see #getRepresents()
-   * @generated
-   */
-  void setRepresents(String value);
 
 } // Connector

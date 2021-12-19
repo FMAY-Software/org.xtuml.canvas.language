@@ -1,6 +1,6 @@
 define(["ace/lib/oop", "ace/mode/text", "ace/mode/text_highlight_rules"], function(oop, mText, mTextHighlightRules) {
 	var HighlightRules = function() {
-		var keywords = "additional|anchors|color|connector|connectors|container|end|end_fixed|false|floating|height|import|middle|none|polyline|properties|rectangle|render|segment|segmentAnchor|shape|shapeAnchor|shapes|start|start_fixed|text|texts|true|viewport|width|x|y|zoom";
+		var keywords = "additional|anchors|connector|connectors|container|end|end_fixed|floating|height|middle|none|point|polyline|properties|rectangle|render|segment|shape|shapes|start|start_fixed|text|texts|viewport|where|width|x|y|zoom";
 		this.$rules = {
 			"start": [
 				{token: "comment", regex: "\\/\\/.*$"},

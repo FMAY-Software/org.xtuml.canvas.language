@@ -23,24 +23,26 @@ public class CanvasSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected CanvasGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Anchors_AnchorsKeyword_0_1_or___AnchorsKeyword_0_0_0_ColonKeyword_0_0_1__;
-	protected AbstractElementAlias match_ConnectorAnchorElement_SegmentAnchorKeyword_0_1_or___SegmentAnchorKeyword_0_0_0_ColonKeyword_0_0_1__;
-	protected AbstractElementAlias match_ConnectorProps_PropertiesKeyword_1_1_or___PropertiesKeyword_1_0_0_ColonKeyword_1_0_1__;
+	protected AbstractElementAlias match_ConnectorAnchorElement_ConnectorKeyword_0_1_or___ConnectorKeyword_0_0_0_ColonKeyword_0_0_1__;
 	protected AbstractElementAlias match_Connector_ConnectorKeyword_0_1_or___ConnectorKeyword_0_0_0_ColonKeyword_0_0_1__;
-	protected AbstractElementAlias match_Connector_RenderKeyword_6_1_or___RenderKeyword_6_0_0_ColonKeyword_6_0_1__;
+	protected AbstractElementAlias match_Connector_RenderKeyword_2_1_or___RenderKeyword_2_0_0_ColonKeyword_2_0_1__;
 	protected AbstractElementAlias match_Connectors_ConnectorsKeyword_1_1_or___ConnectorsKeyword_1_0_0_ColonKeyword_1_0_1__;
-	protected AbstractElementAlias match_Container_FalseKeyword_2_1_or_TrueKeyword_2_0;
 	protected AbstractElementAlias match_EndAnchor_EndKeyword_0_1_or___EndKeyword_0_0_0_ColonKeyword_0_0_1__;
+	protected AbstractElementAlias match_EnumEnd_WhereKeyword_0_1_or___WhereKeyword_0_0_0_ColonKeyword_0_0_1__;
 	protected AbstractElementAlias match_FloatingText_TextKeyword_1_1_or___TextKeyword_1_0_0_ColonKeyword_1_0_1__;
 	protected AbstractElementAlias match_FloatingTexts_TextsKeyword_1_1_or___TextsKeyword_1_0_0_ColonKeyword_1_0_1__;
 	protected AbstractElementAlias match_ModelProperties_PropertiesKeyword_0_1_or___PropertiesKeyword_0_0_0_ColonKeyword_0_0_1__;
 	protected AbstractElementAlias match_ModelProperties_ViewportKeyword_1_1_or___ViewportKeyword_1_0_0_ColonKeyword_1_0_1__;
-	protected AbstractElementAlias match_Model_RenderKeyword_1_1_or___RenderKeyword_1_0_0_ColonKeyword_1_0_1__;
+	protected AbstractElementAlias match_ModelProperties_ZoomKeyword_3_1_or___ZoomKeyword_3_0_0_ColonKeyword_3_0_1__;
+	protected AbstractElementAlias match_ModelRender_RenderKeyword_0_1_or___RenderKeyword_0_0_0_ColonKeyword_0_0_1__;
+	protected AbstractElementAlias match_PointDefinition_PointKeyword_0_1_or___PointKeyword_0_0_0_ColonKeyword_0_0_1__;
 	protected AbstractElementAlias match_Polyline_PolylineKeyword_1_1_or___PolylineKeyword_1_0_0_ColonKeyword_1_0_1__;
 	protected AbstractElementAlias match_Rectangle_RectangleKeyword_0_1_or___RectangleKeyword_0_0_0_ColonKeyword_0_0_1__;
+	protected AbstractElementAlias match_Segment_EndKeyword_3_1_or___EndKeyword_3_0_0_ColonKeyword_3_0_1__;
 	protected AbstractElementAlias match_Segment_SegmentKeyword_0_1_or___SegmentKeyword_0_0_0_ColonKeyword_0_0_1__;
-	protected AbstractElementAlias match_ShapeAnchorElement_ShapeAnchorKeyword_0_1_or___ShapeAnchorKeyword_0_0_0_ColonKeyword_0_0_1__;
-	protected AbstractElementAlias match_ShapeProps_PropertiesKeyword_1_1_or___PropertiesKeyword_1_0_0_ColonKeyword_1_0_1__;
-	protected AbstractElementAlias match_Shape_RenderKeyword_6_1_or___RenderKeyword_6_0_0_ColonKeyword_6_0_1__;
+	protected AbstractElementAlias match_Segment_StartKeyword_1_1_or___StartKeyword_1_0_0_ColonKeyword_1_0_1__;
+	protected AbstractElementAlias match_ShapeAnchorElement_ShapeKeyword_0_1_or___ShapeKeyword_0_0_0_ColonKeyword_0_0_1__;
+	protected AbstractElementAlias match_Shape_RenderKeyword_4_1_or___RenderKeyword_4_0_0_ColonKeyword_4_0_1__;
 	protected AbstractElementAlias match_Shape_ShapeKeyword_1_1_or___ShapeKeyword_1_0_0_ColonKeyword_1_0_1__;
 	protected AbstractElementAlias match_Shapes_ShapesKeyword_1_1_or___ShapesKeyword_1_0_0_ColonKeyword_1_0_1__;
 	protected AbstractElementAlias match_StartAnchor_StartKeyword_0_1_or___StartKeyword_0_0_0_ColonKeyword_0_0_1__;
@@ -49,24 +51,26 @@ public class CanvasSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (CanvasGrammarAccess) access;
 		match_Anchors_AnchorsKeyword_0_1_or___AnchorsKeyword_0_0_0_ColonKeyword_0_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getAnchorsAccess().getAnchorsKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getAnchorsAccess().getColonKeyword_0_0_1())), new TokenAlias(false, false, grammarAccess.getAnchorsAccess().getAnchorsKeyword_0_1()));
-		match_ConnectorAnchorElement_SegmentAnchorKeyword_0_1_or___SegmentAnchorKeyword_0_0_0_ColonKeyword_0_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectorAnchorElementAccess().getSegmentAnchorKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getConnectorAnchorElementAccess().getColonKeyword_0_0_1())), new TokenAlias(false, false, grammarAccess.getConnectorAnchorElementAccess().getSegmentAnchorKeyword_0_1()));
-		match_ConnectorProps_PropertiesKeyword_1_1_or___PropertiesKeyword_1_0_0_ColonKeyword_1_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectorPropsAccess().getPropertiesKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getConnectorPropsAccess().getColonKeyword_1_0_1())), new TokenAlias(false, false, grammarAccess.getConnectorPropsAccess().getPropertiesKeyword_1_1()));
+		match_ConnectorAnchorElement_ConnectorKeyword_0_1_or___ConnectorKeyword_0_0_0_ColonKeyword_0_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectorAnchorElementAccess().getConnectorKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getConnectorAnchorElementAccess().getColonKeyword_0_0_1())), new TokenAlias(false, false, grammarAccess.getConnectorAnchorElementAccess().getConnectorKeyword_0_1()));
 		match_Connector_ConnectorKeyword_0_1_or___ConnectorKeyword_0_0_0_ColonKeyword_0_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectorAccess().getConnectorKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getConnectorAccess().getColonKeyword_0_0_1())), new TokenAlias(false, false, grammarAccess.getConnectorAccess().getConnectorKeyword_0_1()));
-		match_Connector_RenderKeyword_6_1_or___RenderKeyword_6_0_0_ColonKeyword_6_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectorAccess().getRenderKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getConnectorAccess().getColonKeyword_6_0_1())), new TokenAlias(false, false, grammarAccess.getConnectorAccess().getRenderKeyword_6_1()));
+		match_Connector_RenderKeyword_2_1_or___RenderKeyword_2_0_0_ColonKeyword_2_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectorAccess().getRenderKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getConnectorAccess().getColonKeyword_2_0_1())), new TokenAlias(false, false, grammarAccess.getConnectorAccess().getRenderKeyword_2_1()));
 		match_Connectors_ConnectorsKeyword_1_1_or___ConnectorsKeyword_1_0_0_ColonKeyword_1_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectorsAccess().getConnectorsKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getConnectorsAccess().getColonKeyword_1_0_1())), new TokenAlias(false, false, grammarAccess.getConnectorsAccess().getConnectorsKeyword_1_1()));
-		match_Container_FalseKeyword_2_1_or_TrueKeyword_2_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getContainerAccess().getFalseKeyword_2_1()), new TokenAlias(false, false, grammarAccess.getContainerAccess().getTrueKeyword_2_0()));
 		match_EndAnchor_EndKeyword_0_1_or___EndKeyword_0_0_0_ColonKeyword_0_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getEndAnchorAccess().getEndKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getEndAnchorAccess().getColonKeyword_0_0_1())), new TokenAlias(false, false, grammarAccess.getEndAnchorAccess().getEndKeyword_0_1()));
+		match_EnumEnd_WhereKeyword_0_1_or___WhereKeyword_0_0_0_ColonKeyword_0_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getEnumEndAccess().getWhereKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getEnumEndAccess().getColonKeyword_0_0_1())), new TokenAlias(false, false, grammarAccess.getEnumEndAccess().getWhereKeyword_0_1()));
 		match_FloatingText_TextKeyword_1_1_or___TextKeyword_1_0_0_ColonKeyword_1_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFloatingTextAccess().getTextKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getFloatingTextAccess().getColonKeyword_1_0_1())), new TokenAlias(false, false, grammarAccess.getFloatingTextAccess().getTextKeyword_1_1()));
 		match_FloatingTexts_TextsKeyword_1_1_or___TextsKeyword_1_0_0_ColonKeyword_1_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFloatingTextsAccess().getTextsKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getFloatingTextsAccess().getColonKeyword_1_0_1())), new TokenAlias(false, false, grammarAccess.getFloatingTextsAccess().getTextsKeyword_1_1()));
 		match_ModelProperties_PropertiesKeyword_0_1_or___PropertiesKeyword_0_0_0_ColonKeyword_0_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getModelPropertiesAccess().getPropertiesKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getModelPropertiesAccess().getColonKeyword_0_0_1())), new TokenAlias(false, false, grammarAccess.getModelPropertiesAccess().getPropertiesKeyword_0_1()));
 		match_ModelProperties_ViewportKeyword_1_1_or___ViewportKeyword_1_0_0_ColonKeyword_1_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getModelPropertiesAccess().getViewportKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getModelPropertiesAccess().getColonKeyword_1_0_1())), new TokenAlias(false, false, grammarAccess.getModelPropertiesAccess().getViewportKeyword_1_1()));
-		match_Model_RenderKeyword_1_1_or___RenderKeyword_1_0_0_ColonKeyword_1_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getModelAccess().getRenderKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getModelAccess().getColonKeyword_1_0_1())), new TokenAlias(false, false, grammarAccess.getModelAccess().getRenderKeyword_1_1()));
+		match_ModelProperties_ZoomKeyword_3_1_or___ZoomKeyword_3_0_0_ColonKeyword_3_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getModelPropertiesAccess().getZoomKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getModelPropertiesAccess().getColonKeyword_3_0_1())), new TokenAlias(false, false, grammarAccess.getModelPropertiesAccess().getZoomKeyword_3_1()));
+		match_ModelRender_RenderKeyword_0_1_or___RenderKeyword_0_0_0_ColonKeyword_0_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getModelRenderAccess().getRenderKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getModelRenderAccess().getColonKeyword_0_0_1())), new TokenAlias(false, false, grammarAccess.getModelRenderAccess().getRenderKeyword_0_1()));
+		match_PointDefinition_PointKeyword_0_1_or___PointKeyword_0_0_0_ColonKeyword_0_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPointDefinitionAccess().getPointKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getPointDefinitionAccess().getColonKeyword_0_0_1())), new TokenAlias(false, false, grammarAccess.getPointDefinitionAccess().getPointKeyword_0_1()));
 		match_Polyline_PolylineKeyword_1_1_or___PolylineKeyword_1_0_0_ColonKeyword_1_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPolylineAccess().getPolylineKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getPolylineAccess().getColonKeyword_1_0_1())), new TokenAlias(false, false, grammarAccess.getPolylineAccess().getPolylineKeyword_1_1()));
 		match_Rectangle_RectangleKeyword_0_1_or___RectangleKeyword_0_0_0_ColonKeyword_0_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRectangleAccess().getRectangleKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getRectangleAccess().getColonKeyword_0_0_1())), new TokenAlias(false, false, grammarAccess.getRectangleAccess().getRectangleKeyword_0_1()));
+		match_Segment_EndKeyword_3_1_or___EndKeyword_3_0_0_ColonKeyword_3_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getSegmentAccess().getEndKeyword_3_0_0()), new TokenAlias(false, false, grammarAccess.getSegmentAccess().getColonKeyword_3_0_1())), new TokenAlias(false, false, grammarAccess.getSegmentAccess().getEndKeyword_3_1()));
 		match_Segment_SegmentKeyword_0_1_or___SegmentKeyword_0_0_0_ColonKeyword_0_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getSegmentAccess().getSegmentKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getSegmentAccess().getColonKeyword_0_0_1())), new TokenAlias(false, false, grammarAccess.getSegmentAccess().getSegmentKeyword_0_1()));
-		match_ShapeAnchorElement_ShapeAnchorKeyword_0_1_or___ShapeAnchorKeyword_0_0_0_ColonKeyword_0_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getShapeAnchorElementAccess().getShapeAnchorKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getShapeAnchorElementAccess().getColonKeyword_0_0_1())), new TokenAlias(false, false, grammarAccess.getShapeAnchorElementAccess().getShapeAnchorKeyword_0_1()));
-		match_ShapeProps_PropertiesKeyword_1_1_or___PropertiesKeyword_1_0_0_ColonKeyword_1_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getShapePropsAccess().getPropertiesKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getShapePropsAccess().getColonKeyword_1_0_1())), new TokenAlias(false, false, grammarAccess.getShapePropsAccess().getPropertiesKeyword_1_1()));
-		match_Shape_RenderKeyword_6_1_or___RenderKeyword_6_0_0_ColonKeyword_6_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getShapeAccess().getRenderKeyword_6_0_0()), new TokenAlias(false, false, grammarAccess.getShapeAccess().getColonKeyword_6_0_1())), new TokenAlias(false, false, grammarAccess.getShapeAccess().getRenderKeyword_6_1()));
+		match_Segment_StartKeyword_1_1_or___StartKeyword_1_0_0_ColonKeyword_1_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getSegmentAccess().getStartKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getSegmentAccess().getColonKeyword_1_0_1())), new TokenAlias(false, false, grammarAccess.getSegmentAccess().getStartKeyword_1_1()));
+		match_ShapeAnchorElement_ShapeKeyword_0_1_or___ShapeKeyword_0_0_0_ColonKeyword_0_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getShapeAnchorElementAccess().getShapeKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getShapeAnchorElementAccess().getColonKeyword_0_0_1())), new TokenAlias(false, false, grammarAccess.getShapeAnchorElementAccess().getShapeKeyword_0_1()));
+		match_Shape_RenderKeyword_4_1_or___RenderKeyword_4_0_0_ColonKeyword_4_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getShapeAccess().getRenderKeyword_4_0_0()), new TokenAlias(false, false, grammarAccess.getShapeAccess().getColonKeyword_4_0_1())), new TokenAlias(false, false, grammarAccess.getShapeAccess().getRenderKeyword_4_1()));
 		match_Shape_ShapeKeyword_1_1_or___ShapeKeyword_1_0_0_ColonKeyword_1_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getShapeAccess().getShapeKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getShapeAccess().getColonKeyword_1_0_1())), new TokenAlias(false, false, grammarAccess.getShapeAccess().getShapeKeyword_1_1()));
 		match_Shapes_ShapesKeyword_1_1_or___ShapesKeyword_1_0_0_ColonKeyword_1_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getShapesAccess().getShapesKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getShapesAccess().getColonKeyword_1_0_1())), new TokenAlias(false, false, grammarAccess.getShapesAccess().getShapesKeyword_1_1()));
 		match_StartAnchor_StartKeyword_0_1_or___StartKeyword_0_0_0_ColonKeyword_0_0_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStartAnchorAccess().getStartKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getStartAnchorAccess().getColonKeyword_0_0_1())), new TokenAlias(false, false, grammarAccess.getStartAnchorAccess().getStartKeyword_0_1()));
@@ -86,20 +90,18 @@ public class CanvasSyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if (match_Anchors_AnchorsKeyword_0_1_or___AnchorsKeyword_0_0_0_ColonKeyword_0_0_1__.equals(syntax))
 				emit_Anchors_AnchorsKeyword_0_1_or___AnchorsKeyword_0_0_0_ColonKeyword_0_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ConnectorAnchorElement_SegmentAnchorKeyword_0_1_or___SegmentAnchorKeyword_0_0_0_ColonKeyword_0_0_1__.equals(syntax))
-				emit_ConnectorAnchorElement_SegmentAnchorKeyword_0_1_or___SegmentAnchorKeyword_0_0_0_ColonKeyword_0_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ConnectorProps_PropertiesKeyword_1_1_or___PropertiesKeyword_1_0_0_ColonKeyword_1_0_1__.equals(syntax))
-				emit_ConnectorProps_PropertiesKeyword_1_1_or___PropertiesKeyword_1_0_0_ColonKeyword_1_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ConnectorAnchorElement_ConnectorKeyword_0_1_or___ConnectorKeyword_0_0_0_ColonKeyword_0_0_1__.equals(syntax))
+				emit_ConnectorAnchorElement_ConnectorKeyword_0_1_or___ConnectorKeyword_0_0_0_ColonKeyword_0_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Connector_ConnectorKeyword_0_1_or___ConnectorKeyword_0_0_0_ColonKeyword_0_0_1__.equals(syntax))
 				emit_Connector_ConnectorKeyword_0_1_or___ConnectorKeyword_0_0_0_ColonKeyword_0_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Connector_RenderKeyword_6_1_or___RenderKeyword_6_0_0_ColonKeyword_6_0_1__.equals(syntax))
-				emit_Connector_RenderKeyword_6_1_or___RenderKeyword_6_0_0_ColonKeyword_6_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Connector_RenderKeyword_2_1_or___RenderKeyword_2_0_0_ColonKeyword_2_0_1__.equals(syntax))
+				emit_Connector_RenderKeyword_2_1_or___RenderKeyword_2_0_0_ColonKeyword_2_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Connectors_ConnectorsKeyword_1_1_or___ConnectorsKeyword_1_0_0_ColonKeyword_1_0_1__.equals(syntax))
 				emit_Connectors_ConnectorsKeyword_1_1_or___ConnectorsKeyword_1_0_0_ColonKeyword_1_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Container_FalseKeyword_2_1_or_TrueKeyword_2_0.equals(syntax))
-				emit_Container_FalseKeyword_2_1_or_TrueKeyword_2_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_EndAnchor_EndKeyword_0_1_or___EndKeyword_0_0_0_ColonKeyword_0_0_1__.equals(syntax))
 				emit_EndAnchor_EndKeyword_0_1_or___EndKeyword_0_0_0_ColonKeyword_0_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_EnumEnd_WhereKeyword_0_1_or___WhereKeyword_0_0_0_ColonKeyword_0_0_1__.equals(syntax))
+				emit_EnumEnd_WhereKeyword_0_1_or___WhereKeyword_0_0_0_ColonKeyword_0_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_FloatingText_TextKeyword_1_1_or___TextKeyword_1_0_0_ColonKeyword_1_0_1__.equals(syntax))
 				emit_FloatingText_TextKeyword_1_1_or___TextKeyword_1_0_0_ColonKeyword_1_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_FloatingTexts_TextsKeyword_1_1_or___TextsKeyword_1_0_0_ColonKeyword_1_0_1__.equals(syntax))
@@ -108,20 +110,26 @@ public class CanvasSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_ModelProperties_PropertiesKeyword_0_1_or___PropertiesKeyword_0_0_0_ColonKeyword_0_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ModelProperties_ViewportKeyword_1_1_or___ViewportKeyword_1_0_0_ColonKeyword_1_0_1__.equals(syntax))
 				emit_ModelProperties_ViewportKeyword_1_1_or___ViewportKeyword_1_0_0_ColonKeyword_1_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Model_RenderKeyword_1_1_or___RenderKeyword_1_0_0_ColonKeyword_1_0_1__.equals(syntax))
-				emit_Model_RenderKeyword_1_1_or___RenderKeyword_1_0_0_ColonKeyword_1_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ModelProperties_ZoomKeyword_3_1_or___ZoomKeyword_3_0_0_ColonKeyword_3_0_1__.equals(syntax))
+				emit_ModelProperties_ZoomKeyword_3_1_or___ZoomKeyword_3_0_0_ColonKeyword_3_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ModelRender_RenderKeyword_0_1_or___RenderKeyword_0_0_0_ColonKeyword_0_0_1__.equals(syntax))
+				emit_ModelRender_RenderKeyword_0_1_or___RenderKeyword_0_0_0_ColonKeyword_0_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_PointDefinition_PointKeyword_0_1_or___PointKeyword_0_0_0_ColonKeyword_0_0_1__.equals(syntax))
+				emit_PointDefinition_PointKeyword_0_1_or___PointKeyword_0_0_0_ColonKeyword_0_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Polyline_PolylineKeyword_1_1_or___PolylineKeyword_1_0_0_ColonKeyword_1_0_1__.equals(syntax))
 				emit_Polyline_PolylineKeyword_1_1_or___PolylineKeyword_1_0_0_ColonKeyword_1_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Rectangle_RectangleKeyword_0_1_or___RectangleKeyword_0_0_0_ColonKeyword_0_0_1__.equals(syntax))
 				emit_Rectangle_RectangleKeyword_0_1_or___RectangleKeyword_0_0_0_ColonKeyword_0_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Segment_EndKeyword_3_1_or___EndKeyword_3_0_0_ColonKeyword_3_0_1__.equals(syntax))
+				emit_Segment_EndKeyword_3_1_or___EndKeyword_3_0_0_ColonKeyword_3_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Segment_SegmentKeyword_0_1_or___SegmentKeyword_0_0_0_ColonKeyword_0_0_1__.equals(syntax))
 				emit_Segment_SegmentKeyword_0_1_or___SegmentKeyword_0_0_0_ColonKeyword_0_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ShapeAnchorElement_ShapeAnchorKeyword_0_1_or___ShapeAnchorKeyword_0_0_0_ColonKeyword_0_0_1__.equals(syntax))
-				emit_ShapeAnchorElement_ShapeAnchorKeyword_0_1_or___ShapeAnchorKeyword_0_0_0_ColonKeyword_0_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ShapeProps_PropertiesKeyword_1_1_or___PropertiesKeyword_1_0_0_ColonKeyword_1_0_1__.equals(syntax))
-				emit_ShapeProps_PropertiesKeyword_1_1_or___PropertiesKeyword_1_0_0_ColonKeyword_1_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Shape_RenderKeyword_6_1_or___RenderKeyword_6_0_0_ColonKeyword_6_0_1__.equals(syntax))
-				emit_Shape_RenderKeyword_6_1_or___RenderKeyword_6_0_0_ColonKeyword_6_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Segment_StartKeyword_1_1_or___StartKeyword_1_0_0_ColonKeyword_1_0_1__.equals(syntax))
+				emit_Segment_StartKeyword_1_1_or___StartKeyword_1_0_0_ColonKeyword_1_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ShapeAnchorElement_ShapeKeyword_0_1_or___ShapeKeyword_0_0_0_ColonKeyword_0_0_1__.equals(syntax))
+				emit_ShapeAnchorElement_ShapeKeyword_0_1_or___ShapeKeyword_0_0_0_ColonKeyword_0_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Shape_RenderKeyword_4_1_or___RenderKeyword_4_0_0_ColonKeyword_4_0_1__.equals(syntax))
+				emit_Shape_RenderKeyword_4_1_or___RenderKeyword_4_0_0_ColonKeyword_4_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Shape_ShapeKeyword_1_1_or___ShapeKeyword_1_0_0_ColonKeyword_1_0_1__.equals(syntax))
 				emit_Shape_ShapeKeyword_1_1_or___ShapeKeyword_1_0_0_ColonKeyword_1_0_1__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Shapes_ShapesKeyword_1_1_or___ShapesKeyword_1_0_0_ColonKeyword_1_0_1__.equals(syntax))
@@ -145,24 +153,12 @@ public class CanvasSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ('segmentAnchor' ':') | 'segmentAnchor:'
+	 *     ('connector' ':') | 'connector:'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) element=[Connector|ID]
 	 */
-	protected void emit_ConnectorAnchorElement_SegmentAnchorKeyword_0_1_or___SegmentAnchorKeyword_0_0_0_ColonKeyword_0_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ('properties' ':') | 'properties:'
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) (rule start)
-	 *     (rule start) (ambiguity) color=Color
-	 */
-	protected void emit_ConnectorProps_PropertiesKeyword_1_1_or___PropertiesKeyword_1_0_0_ColonKeyword_1_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ConnectorAnchorElement_ConnectorKeyword_0_1_or___ConnectorKeyword_0_0_0_ColonKeyword_0_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -182,9 +178,9 @@ public class CanvasSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('render' ':') | 'render:'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     texts=FloatingTexts (ambiguity) represents=STRING
+	 *     name=ID (ambiguity) represents=STRING
 	 */
-	protected void emit_Connector_RenderKeyword_6_1_or___RenderKeyword_6_0_0_ColonKeyword_6_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Connector_RenderKeyword_2_1_or___RenderKeyword_2_0_0_ColonKeyword_2_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -202,23 +198,30 @@ public class CanvasSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'true' | 'false'
+	 *     ('end' ':') | 'end:'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'container' (ambiguity) (rule start)
+	 *     (rule start) (ambiguity) point=PointDefinition
 	 */
-	protected void emit_Container_FalseKeyword_2_1_or_TrueKeyword_2_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_EndAnchor_EndKeyword_0_1_or___EndKeyword_0_0_0_ColonKeyword_0_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ('end' ':') | 'end'
+	 *     ('where' ':') | 'where:'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) point=Point
+	 *     (rule start) (ambiguity) where='additional'
+	 *     (rule start) (ambiguity) where='end'
+	 *     (rule start) (ambiguity) where='end_fixed'
+	 *     (rule start) (ambiguity) where='floating'
+	 *     (rule start) (ambiguity) where='middle'
+	 *     (rule start) (ambiguity) where='none'
+	 *     (rule start) (ambiguity) where='start'
+	 *     (rule start) (ambiguity) where='start_fixed'
 	 */
-	protected void emit_EndAnchor_EndKeyword_0_1_or___EndKeyword_0_0_0_ColonKeyword_0_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_EnumEnd_WhereKeyword_0_1_or___WhereKeyword_0_0_0_ColonKeyword_0_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -269,13 +272,34 @@ public class CanvasSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
+	 *     ('zoom' ':') | 'zoom:'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     point=Point (ambiguity) zoom=INT
+	 */
+	protected void emit_ModelProperties_ZoomKeyword_3_1_or___ZoomKeyword_3_0_0_ColonKeyword_3_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
 	 *     ('render' ':') | 'render:'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) represents=STRING
-	 *     semantics+=SemanticModel (ambiguity) represents=STRING
+	 *     (rule start) (ambiguity) importURI=STRING
 	 */
-	protected void emit_Model_RenderKeyword_1_1_or___RenderKeyword_1_0_0_ColonKeyword_1_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ModelRender_RenderKeyword_0_1_or___RenderKeyword_0_0_0_ColonKeyword_0_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('point' ':') | 'point:'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) 'x' x=INT
+	 */
+	protected void emit_PointDefinition_PointKeyword_0_1_or___PointKeyword_0_0_0_ColonKeyword_0_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -304,10 +328,21 @@ public class CanvasSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
+	 *     ('end' ':') | 'end:'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     startPoint=Point (ambiguity) endPoint=Point
+	 */
+	protected void emit_Segment_EndKeyword_3_1_or___EndKeyword_3_0_0_ColonKeyword_3_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
 	 *     ('segment' ':') | 'segment:'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) startPoint=Point
+	 *     (rule start) (ambiguity) (('start' ':') | 'start:') startPoint=Point
 	 */
 	protected void emit_Segment_SegmentKeyword_0_1_or___SegmentKeyword_0_0_0_ColonKeyword_0_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -315,25 +350,23 @@ public class CanvasSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ('shapeAnchor' ':') | 'shapeAnchor:'
+	 *     ('start' ':') | 'start:'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) element=[Shape|ID]
+	 *     (rule start) (('segment' ':') | 'segment:') (ambiguity) startPoint=Point
 	 */
-	protected void emit_ShapeAnchorElement_ShapeAnchorKeyword_0_1_or___ShapeAnchorKeyword_0_0_0_ColonKeyword_0_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Segment_StartKeyword_1_1_or___StartKeyword_1_0_0_ColonKeyword_1_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ('properties' ':') | 'properties:'
+	 *     ('shape' ':') | 'shape:'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) (rule start)
-	 *     (rule start) (ambiguity) color=Color
-	 *     (rule start) (ambiguity) container=Container
+	 *     (rule start) (ambiguity) element=[Shape|ID]
 	 */
-	protected void emit_ShapeProps_PropertiesKeyword_1_1_or___PropertiesKeyword_1_0_0_ColonKeyword_1_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ShapeAnchorElement_ShapeKeyword_0_1_or___ShapeKeyword_0_0_0_ColonKeyword_0_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -342,10 +375,10 @@ public class CanvasSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('render' ':') | 'render:'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     rect=Rectangle (ambiguity) represents=STRING
-	 *     text=FloatingText (ambiguity) represents=STRING
+	 *     container=Container (ambiguity) represents=STRING
+	 *     name=ID (ambiguity) represents=STRING
 	 */
-	protected void emit_Shape_RenderKeyword_6_1_or___RenderKeyword_6_0_0_ColonKeyword_6_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Shape_RenderKeyword_4_1_or___RenderKeyword_4_0_0_ColonKeyword_4_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -377,7 +410,7 @@ public class CanvasSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('start' ':') | 'start:'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) point=Point
+	 *     (rule start) (ambiguity) point=PointDefinition
 	 */
 	protected void emit_StartAnchor_StartKeyword_0_1_or___StartKeyword_0_0_0_ColonKeyword_0_0_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

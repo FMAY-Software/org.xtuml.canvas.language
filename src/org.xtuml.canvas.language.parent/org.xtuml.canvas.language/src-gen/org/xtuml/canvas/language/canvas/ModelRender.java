@@ -7,21 +7,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Semantic Model</b></em>'.
+ * A representation of the model object '<em><b>Model Render</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtuml.canvas.language.canvas.SemanticModel#getImportURI <em>Import URI</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.ModelRender#getImportURI <em>Import URI</em>}</li>
  * </ul>
  *
- * @see org.xtuml.canvas.language.canvas.CanvasPackage#getSemanticModel()
+ * @see org.xtuml.canvas.language.canvas.CanvasPackage#getModelRender()
  * @model
  * @generated
  */
-public interface SemanticModel extends EObject
+public interface ModelRender extends EObject
 {
   /**
    * Returns the value of the '<em><b>Import URI</b></em>' attribute.
@@ -29,14 +29,14 @@ public interface SemanticModel extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Import URI</em>' attribute.
    * @see #setImportURI(String)
-   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getSemanticModel_ImportURI()
+   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getModelRender_ImportURI()
    * @model
    * @generated
    */
   String getImportURI();
 
   /**
-   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.SemanticModel#getImportURI <em>Import URI</em>}' attribute.
+   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.ModelRender#getImportURI <em>Import URI</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Import URI</em>' attribute.
@@ -45,4 +45,4 @@ public interface SemanticModel extends EObject
    */
   void setImportURI(String value);
 
-} // SemanticModel
+} // ModelRender

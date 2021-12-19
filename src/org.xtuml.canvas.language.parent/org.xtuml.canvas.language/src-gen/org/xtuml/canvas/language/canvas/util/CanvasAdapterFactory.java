@@ -81,9 +81,9 @@ public class CanvasAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseSemanticModel(SemanticModel object)
+      public Adapter caseModelRender(ModelRender object)
       {
-        return createSemanticModelAdapter();
+        return createModelRenderAdapter();
       }
       @Override
       public Adapter caseModelProperties(ModelProperties object)
@@ -116,19 +116,9 @@ public class CanvasAdapterFactory extends AdapterFactoryImpl
         return createFloatingTextAdapter();
       }
       @Override
-      public Adapter caseShapeProps(ShapeProps object)
+      public Adapter caseEnumEnd(EnumEnd object)
       {
-        return createShapePropsAdapter();
-      }
-      @Override
-      public Adapter caseContainer(Container object)
-      {
-        return createContainerAdapter();
-      }
-      @Override
-      public Adapter caseColor(Color object)
-      {
-        return createColorAdapter();
+        return createEnumEndAdapter();
       }
       @Override
       public Adapter caseConnectors(Connectors object)
@@ -171,11 +161,6 @@ public class CanvasAdapterFactory extends AdapterFactoryImpl
         return createConnectorAnchorElementAdapter();
       }
       @Override
-      public Adapter caseConnectorProps(ConnectorProps object)
-      {
-        return createConnectorPropsAdapter();
-      }
-      @Override
       public Adapter casePolyline(Polyline object)
       {
         return createPolylineAdapter();
@@ -191,14 +176,14 @@ public class CanvasAdapterFactory extends AdapterFactoryImpl
         return createPointAdapter();
       }
       @Override
+      public Adapter casePointDefinition(PointDefinition object)
+      {
+        return createPointDefinitionAdapter();
+      }
+      @Override
       public Adapter caseRectangle(Rectangle object)
       {
         return createRectangleAdapter();
-      }
-      @Override
-      public Adapter caseShapeContainer(ShapeContainer object)
-      {
-        return createShapeContainerAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -238,16 +223,16 @@ public class CanvasAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtuml.canvas.language.canvas.SemanticModel <em>Semantic Model</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtuml.canvas.language.canvas.ModelRender <em>Model Render</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtuml.canvas.language.canvas.SemanticModel
+   * @see org.xtuml.canvas.language.canvas.ModelRender
    * @generated
    */
-  public Adapter createSemanticModelAdapter()
+  public Adapter createModelRenderAdapter()
   {
     return null;
   }
@@ -343,46 +328,16 @@ public class CanvasAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtuml.canvas.language.canvas.ShapeProps <em>Shape Props</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtuml.canvas.language.canvas.EnumEnd <em>Enum End</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtuml.canvas.language.canvas.ShapeProps
+   * @see org.xtuml.canvas.language.canvas.EnumEnd
    * @generated
    */
-  public Adapter createShapePropsAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtuml.canvas.language.canvas.Container <em>Container</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtuml.canvas.language.canvas.Container
-   * @generated
-   */
-  public Adapter createContainerAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtuml.canvas.language.canvas.Color <em>Color</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtuml.canvas.language.canvas.Color
-   * @generated
-   */
-  public Adapter createColorAdapter()
+  public Adapter createEnumEndAdapter()
   {
     return null;
   }
@@ -508,21 +463,6 @@ public class CanvasAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtuml.canvas.language.canvas.ConnectorProps <em>Connector Props</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtuml.canvas.language.canvas.ConnectorProps
-   * @generated
-   */
-  public Adapter createConnectorPropsAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.xtuml.canvas.language.canvas.Polyline <em>Polyline</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -568,6 +508,21 @@ public class CanvasAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtuml.canvas.language.canvas.PointDefinition <em>Point Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtuml.canvas.language.canvas.PointDefinition
+   * @generated
+   */
+  public Adapter createPointDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtuml.canvas.language.canvas.Rectangle <em>Rectangle</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -578,21 +533,6 @@ public class CanvasAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRectangleAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtuml.canvas.language.canvas.ShapeContainer <em>Shape Container</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtuml.canvas.language.canvas.ShapeContainer
-   * @generated
-   */
-  public Adapter createShapeContainerAdapter()
   {
     return null;
   }

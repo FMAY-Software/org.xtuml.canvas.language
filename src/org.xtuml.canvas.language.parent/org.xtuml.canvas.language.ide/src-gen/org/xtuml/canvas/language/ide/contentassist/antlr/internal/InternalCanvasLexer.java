@@ -15,7 +15,6 @@ public class InternalCanvasLexer extends Lexer {
     public static final int T__50=50;
     public static final int T__19=19;
     public static final int T__15=15;
-    public static final int T__59=59;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
@@ -31,8 +30,6 @@ public class InternalCanvasLexer extends Lexer {
     public static final int T__52=52;
     public static final int T__53=53;
     public static final int T__54=54;
-    public static final int T__60=60;
-    public static final int T__61=61;
     public static final int RULE_ID=6;
     public static final int T__26=26;
     public static final int T__27=27;
@@ -90,10 +87,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:11:7: ( 'render:' )
-            // InternalCanvas.g:11:9: 'render:'
+            // InternalCanvas.g:11:7: ( 'container' )
+            // InternalCanvas.g:11:9: 'container'
             {
-            match("render:"); 
+            match("container"); 
 
 
             }
@@ -111,10 +108,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:12:7: ( 'properties:' )
-            // InternalCanvas.g:12:9: 'properties:'
+            // InternalCanvas.g:12:7: ( 'render:' )
+            // InternalCanvas.g:12:9: 'render:'
             {
-            match("properties:"); 
+            match("render:"); 
 
 
             }
@@ -132,10 +129,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:13:7: ( 'viewport:' )
-            // InternalCanvas.g:13:9: 'viewport:'
+            // InternalCanvas.g:13:7: ( 'properties:' )
+            // InternalCanvas.g:13:9: 'properties:'
             {
-            match("viewport:"); 
+            match("properties:"); 
 
 
             }
@@ -153,10 +150,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:14:7: ( 'shapes:' )
-            // InternalCanvas.g:14:9: 'shapes:'
+            // InternalCanvas.g:14:7: ( 'viewport:' )
+            // InternalCanvas.g:14:9: 'viewport:'
             {
-            match("shapes:"); 
+            match("viewport:"); 
 
 
             }
@@ -174,10 +171,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:15:7: ( 'shape:' )
-            // InternalCanvas.g:15:9: 'shape:'
+            // InternalCanvas.g:15:7: ( 'zoom:' )
+            // InternalCanvas.g:15:9: 'zoom:'
             {
-            match("shape:"); 
+            match("zoom:"); 
 
 
             }
@@ -195,10 +192,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:16:7: ( 'texts:' )
-            // InternalCanvas.g:16:9: 'texts:'
+            // InternalCanvas.g:16:7: ( 'shapes:' )
+            // InternalCanvas.g:16:9: 'shapes:'
             {
-            match("texts:"); 
+            match("shapes:"); 
 
 
             }
@@ -216,10 +213,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:17:7: ( 'text:' )
-            // InternalCanvas.g:17:9: 'text:'
+            // InternalCanvas.g:17:7: ( 'shape:' )
+            // InternalCanvas.g:17:9: 'shape:'
             {
-            match("text:"); 
+            match("shape:"); 
 
 
             }
@@ -237,10 +234,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:18:7: ( 'start' )
-            // InternalCanvas.g:18:9: 'start'
+            // InternalCanvas.g:18:7: ( 'texts:' )
+            // InternalCanvas.g:18:9: 'texts:'
             {
-            match("start"); 
+            match("texts:"); 
 
 
             }
@@ -258,10 +255,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:19:7: ( 'end' )
-            // InternalCanvas.g:19:9: 'end'
+            // InternalCanvas.g:19:7: ( 'text:' )
+            // InternalCanvas.g:19:9: 'text:'
             {
-            match("end"); 
+            match("text:"); 
 
 
             }
@@ -279,10 +276,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:20:7: ( 'middle' )
-            // InternalCanvas.g:20:9: 'middle'
+            // InternalCanvas.g:20:7: ( 'where:' )
+            // InternalCanvas.g:20:9: 'where:'
             {
-            match("middle"); 
+            match("where:"); 
 
 
             }
@@ -300,10 +297,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:21:7: ( 'end_fixed' )
-            // InternalCanvas.g:21:9: 'end_fixed'
+            // InternalCanvas.g:21:7: ( 'start' )
+            // InternalCanvas.g:21:9: 'start'
             {
-            match("end_fixed"); 
+            match("start"); 
 
 
             }
@@ -321,10 +318,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:22:7: ( 'start_fixed' )
-            // InternalCanvas.g:22:9: 'start_fixed'
+            // InternalCanvas.g:22:7: ( 'end' )
+            // InternalCanvas.g:22:9: 'end'
             {
-            match("start_fixed"); 
+            match("end"); 
 
 
             }
@@ -342,10 +339,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:23:7: ( 'none' )
-            // InternalCanvas.g:23:9: 'none'
+            // InternalCanvas.g:23:7: ( 'middle' )
+            // InternalCanvas.g:23:9: 'middle'
             {
-            match("none"); 
+            match("middle"); 
 
 
             }
@@ -363,10 +360,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:24:7: ( 'floating' )
-            // InternalCanvas.g:24:9: 'floating'
+            // InternalCanvas.g:24:7: ( 'end_fixed' )
+            // InternalCanvas.g:24:9: 'end_fixed'
             {
-            match("floating"); 
+            match("end_fixed"); 
 
 
             }
@@ -384,10 +381,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:25:7: ( 'additional' )
-            // InternalCanvas.g:25:9: 'additional'
+            // InternalCanvas.g:25:7: ( 'start_fixed' )
+            // InternalCanvas.g:25:9: 'start_fixed'
             {
-            match("additional"); 
+            match("start_fixed"); 
 
 
             }
@@ -405,10 +402,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:26:7: ( 'true' )
-            // InternalCanvas.g:26:9: 'true'
+            // InternalCanvas.g:26:7: ( 'none' )
+            // InternalCanvas.g:26:9: 'none'
             {
-            match("true"); 
+            match("none"); 
 
 
             }
@@ -426,10 +423,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:27:7: ( 'false' )
-            // InternalCanvas.g:27:9: 'false'
+            // InternalCanvas.g:27:7: ( 'floating' )
+            // InternalCanvas.g:27:9: 'floating'
             {
-            match("false"); 
+            match("floating"); 
 
 
             }
@@ -447,10 +444,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:28:7: ( 'connectors:' )
-            // InternalCanvas.g:28:9: 'connectors:'
+            // InternalCanvas.g:28:7: ( 'additional' )
+            // InternalCanvas.g:28:9: 'additional'
             {
-            match("connectors:"); 
+            match("additional"); 
 
 
             }
@@ -468,10 +465,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:29:7: ( 'connector:' )
-            // InternalCanvas.g:29:9: 'connector:'
+            // InternalCanvas.g:29:7: ( 'connectors:' )
+            // InternalCanvas.g:29:9: 'connectors:'
             {
-            match("connector:"); 
+            match("connectors:"); 
 
 
             }
@@ -489,10 +486,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:30:7: ( 'anchors:' )
-            // InternalCanvas.g:30:9: 'anchors:'
+            // InternalCanvas.g:30:7: ( 'connector:' )
+            // InternalCanvas.g:30:9: 'connector:'
             {
-            match("anchors:"); 
+            match("connector:"); 
 
 
             }
@@ -510,10 +507,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:31:7: ( 'start:' )
-            // InternalCanvas.g:31:9: 'start:'
+            // InternalCanvas.g:31:7: ( 'anchors:' )
+            // InternalCanvas.g:31:9: 'anchors:'
             {
-            match("start:"); 
+            match("anchors:"); 
 
 
             }
@@ -531,10 +528,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:32:7: ( 'shapeAnchor:' )
-            // InternalCanvas.g:32:9: 'shapeAnchor:'
+            // InternalCanvas.g:32:7: ( 'start:' )
+            // InternalCanvas.g:32:9: 'start:'
             {
-            match("shapeAnchor:"); 
+            match("start:"); 
 
 
             }
@@ -552,10 +549,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:33:7: ( 'segmentAnchor:' )
-            // InternalCanvas.g:33:9: 'segmentAnchor:'
+            // InternalCanvas.g:33:7: ( 'end:' )
+            // InternalCanvas.g:33:9: 'end:'
             {
-            match("segmentAnchor:"); 
+            match("end:"); 
 
 
             }
@@ -615,10 +612,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:36:7: ( 'rectangle:' )
-            // InternalCanvas.g:36:9: 'rectangle:'
+            // InternalCanvas.g:36:7: ( 'point:' )
+            // InternalCanvas.g:36:9: 'point:'
             {
-            match("rectangle:"); 
+            match("point:"); 
 
 
             }
@@ -636,10 +633,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:37:7: ( 'render' )
-            // InternalCanvas.g:37:9: 'render'
+            // InternalCanvas.g:37:7: ( 'rectangle:' )
+            // InternalCanvas.g:37:9: 'rectangle:'
             {
-            match("render"); 
+            match("rectangle:"); 
 
 
             }
@@ -657,10 +654,11 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:38:7: ( ':' )
-            // InternalCanvas.g:38:9: ':'
+            // InternalCanvas.g:38:7: ( 'render' )
+            // InternalCanvas.g:38:9: 'render'
             {
-            match(':'); 
+            match("render"); 
+
 
             }
 
@@ -677,11 +675,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:39:7: ( 'import' )
-            // InternalCanvas.g:39:9: 'import'
+            // InternalCanvas.g:39:7: ( ':' )
+            // InternalCanvas.g:39:9: ':'
             {
-            match("import"); 
-
+            match(':'); 
 
             }
 
@@ -698,10 +695,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:40:7: ( 'zoom' )
-            // InternalCanvas.g:40:9: 'zoom'
+            // InternalCanvas.g:40:7: ( 'properties' )
+            // InternalCanvas.g:40:9: 'properties'
             {
-            match("zoom"); 
+            match("properties"); 
 
 
             }
@@ -719,10 +716,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:41:7: ( 'properties' )
-            // InternalCanvas.g:41:9: 'properties'
+            // InternalCanvas.g:41:7: ( 'viewport' )
+            // InternalCanvas.g:41:9: 'viewport'
             {
-            match("properties"); 
+            match("viewport"); 
 
 
             }
@@ -740,10 +737,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:42:7: ( 'viewport' )
-            // InternalCanvas.g:42:9: 'viewport'
+            // InternalCanvas.g:42:7: ( 'zoom' )
+            // InternalCanvas.g:42:9: 'zoom'
             {
-            match("viewport"); 
+            match("zoom"); 
 
 
             }
@@ -845,10 +842,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:47:7: ( 'container' )
-            // InternalCanvas.g:47:9: 'container'
+            // InternalCanvas.g:47:7: ( 'where' )
+            // InternalCanvas.g:47:9: 'where'
             {
-            match("container"); 
+            match("where"); 
 
 
             }
@@ -866,10 +863,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:48:7: ( 'color' )
-            // InternalCanvas.g:48:9: 'color'
+            // InternalCanvas.g:48:7: ( 'connectors' )
+            // InternalCanvas.g:48:9: 'connectors'
             {
-            match("color"); 
+            match("connectors"); 
 
 
             }
@@ -887,10 +884,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:49:7: ( 'connectors' )
-            // InternalCanvas.g:49:9: 'connectors'
+            // InternalCanvas.g:49:7: ( 'connector' )
+            // InternalCanvas.g:49:9: 'connector'
             {
-            match("connectors"); 
+            match("connector"); 
 
 
             }
@@ -908,10 +905,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:50:7: ( 'connector' )
-            // InternalCanvas.g:50:9: 'connector'
+            // InternalCanvas.g:50:7: ( 'anchors' )
+            // InternalCanvas.g:50:9: 'anchors'
             {
-            match("connector"); 
+            match("anchors"); 
 
 
             }
@@ -929,10 +926,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:51:7: ( 'anchors' )
-            // InternalCanvas.g:51:9: 'anchors'
+            // InternalCanvas.g:51:7: ( 'polyline' )
+            // InternalCanvas.g:51:9: 'polyline'
             {
-            match("anchors"); 
+            match("polyline"); 
 
 
             }
@@ -950,10 +947,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:52:7: ( 'shapeAnchor' )
-            // InternalCanvas.g:52:9: 'shapeAnchor'
+            // InternalCanvas.g:52:7: ( 'segment' )
+            // InternalCanvas.g:52:9: 'segment'
             {
-            match("shapeAnchor"); 
+            match("segment"); 
 
 
             }
@@ -971,11 +968,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:53:7: ( 'segmentAnchor' )
-            // InternalCanvas.g:53:9: 'segmentAnchor'
+            // InternalCanvas.g:53:7: ( 'x' )
+            // InternalCanvas.g:53:9: 'x'
             {
-            match("segmentAnchor"); 
-
+            match('x'); 
 
             }
 
@@ -992,11 +988,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:54:7: ( 'polyline' )
-            // InternalCanvas.g:54:9: 'polyline'
+            // InternalCanvas.g:54:7: ( 'y' )
+            // InternalCanvas.g:54:9: 'y'
             {
-            match("polyline"); 
-
+            match('y'); 
 
             }
 
@@ -1013,10 +1008,11 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:55:7: ( ',' )
-            // InternalCanvas.g:55:9: ','
+            // InternalCanvas.g:55:7: ( 'point' )
+            // InternalCanvas.g:55:9: 'point'
             {
-            match(','); 
+            match("point"); 
+
 
             }
 
@@ -1033,10 +1029,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:56:7: ( 'segment' )
-            // InternalCanvas.g:56:9: 'segment'
+            // InternalCanvas.g:56:7: ( 'width' )
+            // InternalCanvas.g:56:9: 'width'
             {
-            match("segment"); 
+            match("width"); 
 
 
             }
@@ -1054,10 +1050,11 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:57:7: ( 'x' )
-            // InternalCanvas.g:57:9: 'x'
+            // InternalCanvas.g:57:7: ( 'height' )
+            // InternalCanvas.g:57:9: 'height'
             {
-            match('x'); 
+            match("height"); 
+
 
             }
 
@@ -1074,70 +1071,8 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:58:7: ( 'y' )
-            // InternalCanvas.g:58:9: 'y'
-            {
-            match('y'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__58"
-
-    // $ANTLR start "T__59"
-    public final void mT__59() throws RecognitionException {
-        try {
-            int _type = T__59;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:59:7: ( 'width' )
-            // InternalCanvas.g:59:9: 'width'
-            {
-            match("width"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__59"
-
-    // $ANTLR start "T__60"
-    public final void mT__60() throws RecognitionException {
-        try {
-            int _type = T__60;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:60:7: ( 'height' )
-            // InternalCanvas.g:60:9: 'height'
-            {
-            match("height"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__60"
-
-    // $ANTLR start "T__61"
-    public final void mT__61() throws RecognitionException {
-        try {
-            int _type = T__61;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:61:7: ( 'rectangle' )
-            // InternalCanvas.g:61:9: 'rectangle'
+            // InternalCanvas.g:58:7: ( 'rectangle' )
+            // InternalCanvas.g:58:9: 'rectangle'
             {
             match("rectangle"); 
 
@@ -1150,17 +1085,17 @@ public class InternalCanvasLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__61"
+    // $ANTLR end "T__58"
 
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:5446:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalCanvas.g:5446:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalCanvas.g:5282:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalCanvas.g:5282:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalCanvas.g:5446:11: ( '^' )?
+            // InternalCanvas.g:5282:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1169,7 +1104,7 @@ public class InternalCanvasLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalCanvas.g:5446:11: '^'
+                    // InternalCanvas.g:5282:11: '^'
                     {
                     match('^'); 
 
@@ -1187,7 +1122,7 @@ public class InternalCanvasLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalCanvas.g:5446:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalCanvas.g:5282:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -1236,10 +1171,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:5448:10: ( ( '0' .. '9' )+ )
-            // InternalCanvas.g:5448:12: ( '0' .. '9' )+
+            // InternalCanvas.g:5284:10: ( ( '0' .. '9' )+ )
+            // InternalCanvas.g:5284:12: ( '0' .. '9' )+
             {
-            // InternalCanvas.g:5448:12: ( '0' .. '9' )+
+            // InternalCanvas.g:5284:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -1253,7 +1188,7 @@ public class InternalCanvasLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalCanvas.g:5448:13: '0' .. '9'
+            	    // InternalCanvas.g:5284:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1285,10 +1220,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:5450:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalCanvas.g:5450:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalCanvas.g:5286:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalCanvas.g:5286:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalCanvas.g:5450:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalCanvas.g:5286:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1306,10 +1241,10 @@ public class InternalCanvasLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalCanvas.g:5450:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalCanvas.g:5286:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalCanvas.g:5450:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalCanvas.g:5286:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1325,7 +1260,7 @@ public class InternalCanvasLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalCanvas.g:5450:21: '\\\\' .
+                    	    // InternalCanvas.g:5286:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1333,7 +1268,7 @@ public class InternalCanvasLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalCanvas.g:5450:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalCanvas.g:5286:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1358,10 +1293,10 @@ public class InternalCanvasLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:5450:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalCanvas.g:5286:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalCanvas.g:5450:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalCanvas.g:5286:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1377,7 +1312,7 @@ public class InternalCanvasLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalCanvas.g:5450:54: '\\\\' .
+                    	    // InternalCanvas.g:5286:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1385,7 +1320,7 @@ public class InternalCanvasLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalCanvas.g:5450:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalCanvas.g:5286:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1428,12 +1363,12 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:5452:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalCanvas.g:5452:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalCanvas.g:5288:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalCanvas.g:5288:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalCanvas.g:5452:24: ( options {greedy=false; } : . )*
+            // InternalCanvas.g:5288:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1458,7 +1393,7 @@ public class InternalCanvasLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalCanvas.g:5452:52: .
+            	    // InternalCanvas.g:5288:52: .
             	    {
             	    matchAny(); 
 
@@ -1488,12 +1423,12 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:5454:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalCanvas.g:5454:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalCanvas.g:5290:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalCanvas.g:5290:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalCanvas.g:5454:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalCanvas.g:5290:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1506,7 +1441,7 @@ public class InternalCanvasLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalCanvas.g:5454:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalCanvas.g:5290:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1526,7 +1461,7 @@ public class InternalCanvasLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalCanvas.g:5454:40: ( ( '\\r' )? '\\n' )?
+            // InternalCanvas.g:5290:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1535,9 +1470,9 @@ public class InternalCanvasLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalCanvas.g:5454:41: ( '\\r' )? '\\n'
+                    // InternalCanvas.g:5290:41: ( '\\r' )? '\\n'
                     {
-                    // InternalCanvas.g:5454:41: ( '\\r' )?
+                    // InternalCanvas.g:5290:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1546,7 +1481,7 @@ public class InternalCanvasLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalCanvas.g:5454:41: '\\r'
+                            // InternalCanvas.g:5290:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1578,10 +1513,10 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:5456:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalCanvas.g:5456:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalCanvas.g:5292:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalCanvas.g:5292:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalCanvas.g:5456:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalCanvas.g:5292:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1635,8 +1570,8 @@ public class InternalCanvasLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCanvas.g:5458:16: ( . )
-            // InternalCanvas.g:5458:18: .
+            // InternalCanvas.g:5294:16: ( . )
+            // InternalCanvas.g:5294:18: .
             {
             matchAny(); 
 
@@ -1651,8 +1586,8 @@ public class InternalCanvasLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // InternalCanvas.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=58;
+        // InternalCanvas.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=55;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -1992,70 +1927,49 @@ public class InternalCanvasLexer extends Lexer {
                 }
                 break;
             case 49 :
-                // InternalCanvas.g:1:298: T__59
-                {
-                mT__59(); 
-
-                }
-                break;
-            case 50 :
-                // InternalCanvas.g:1:304: T__60
-                {
-                mT__60(); 
-
-                }
-                break;
-            case 51 :
-                // InternalCanvas.g:1:310: T__61
-                {
-                mT__61(); 
-
-                }
-                break;
-            case 52 :
-                // InternalCanvas.g:1:316: RULE_ID
+                // InternalCanvas.g:1:298: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 53 :
-                // InternalCanvas.g:1:324: RULE_INT
+            case 50 :
+                // InternalCanvas.g:1:306: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 54 :
-                // InternalCanvas.g:1:333: RULE_STRING
+            case 51 :
+                // InternalCanvas.g:1:315: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 55 :
-                // InternalCanvas.g:1:345: RULE_ML_COMMENT
+            case 52 :
+                // InternalCanvas.g:1:327: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 56 :
-                // InternalCanvas.g:1:361: RULE_SL_COMMENT
+            case 53 :
+                // InternalCanvas.g:1:343: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 57 :
-                // InternalCanvas.g:1:377: RULE_WS
+            case 54 :
+                // InternalCanvas.g:1:359: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 58 :
-                // InternalCanvas.g:1:385: RULE_ANY_OTHER
+            case 55 :
+                // InternalCanvas.g:1:367: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -2069,48 +1983,50 @@ public class InternalCanvasLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\13\35\1\uffff\2\35\1\uffff\1\62\1\63\2\35\1\33\2\uffff\3\33\2\uffff\1\35\1\uffff\20\35\1\uffff\2\35\3\uffff\2\35\5\uffff\12\35\1\135\24\35\1\165\1\166\1\35\1\uffff\1\35\1\171\10\35\1\u0082\7\35\1\u008d\1\u0090\1\35\1\u0093\3\uffff\2\35\1\uffff\1\35\1\u0097\4\35\1\u009c\1\35\1\uffff\1\u009e\1\35\1\u00a1\4\35\1\u00a7\1\uffff\1\35\1\uffff\1\35\2\uffff\1\35\2\uffff\1\35\1\u00ac\1\35\1\uffff\4\35\1\uffff\1\u00b2\1\uffff\1\u00b3\2\uffff\4\35\2\uffff\2\35\1\u00bc\1\35\1\uffff\2\35\1\u00c1\2\35\2\uffff\2\35\1\u00c7\1\u00c9\3\35\2\uffff\1\35\1\u00ce\1\35\2\uffff\2\35\1\u00d3\1\35\4\uffff\3\35\1\u00d8\1\uffff\1\35\1\u00dc\1\u00dd\2\uffff\1\u00df\3\35\1\uffff\1\u00e3\1\u00e5\5\uffff\1\u00e7\1\u00e8\1\35\6\uffff\1\35\1\u00ec\2\uffff";
+        "\1\uffff\15\33\1\uffff\1\56\1\57\1\33\1\31\2\uffff\3\31\2\uffff\1\33\1\uffff\21\33\3\uffff\1\33\5\uffff\16\33\1\134\16\33\1\154\3\33\1\162\3\33\2\uffff\1\33\1\167\12\33\1\u0083\1\33\2\uffff\1\u0087\1\u008a\1\33\1\u008d\2\uffff\1\u008f\1\u0090\2\33\1\uffff\6\33\1\u009a\3\33\2\uffff\1\33\1\u00a0\2\uffff\1\33\2\uffff\1\33\5\uffff\1\33\1\u00a4\3\33\1\u00a8\2\33\2\uffff\4\33\2\uffff\1\33\1\u00b1\1\33\1\uffff\2\33\1\u00b6\1\uffff\4\33\1\u00bc\1\u00be\1\33\2\uffff\1\33\1\u00c1\1\33\2\uffff\1\u00c3\1\u00c6\1\u00c8\1\33\4\uffff\1\33\1\u00cb\1\uffff\1\33\1\uffff\1\u00ce\4\uffff\1\u00d0\1\33\1\uffff\1\u00d2\4\uffff\1\u00d3\2\uffff";
     static final String DFA12_eofS =
-        "\u00ed\uffff";
+        "\u00d4\uffff";
     static final String DFA12_minS =
-        "\1\0\1\145\1\157\1\151\2\145\1\156\1\151\1\157\1\141\1\144\1\157\1\uffff\1\155\1\157\1\uffff\2\60\1\151\1\145\1\101\2\uffff\2\0\1\52\2\uffff\1\143\1\uffff\1\157\1\154\1\145\2\141\1\147\1\170\1\165\2\144\1\156\1\157\1\154\1\144\1\143\1\154\1\uffff\1\160\1\157\3\uffff\1\144\1\151\5\uffff\1\144\1\164\1\160\1\171\1\167\1\160\1\162\1\155\1\164\1\145\1\60\1\144\1\145\1\141\1\163\1\151\1\150\1\156\2\157\1\155\1\164\1\147\1\145\1\141\1\145\1\154\1\160\1\145\1\164\1\145\2\60\1\146\1\uffff\1\154\1\60\1\164\1\145\1\164\1\157\1\145\1\141\2\162\1\60\2\150\1\162\1\156\1\162\1\151\1\157\2\60\1\156\1\60\3\uffff\1\151\1\145\1\uffff\1\151\1\60\1\151\1\162\1\143\1\151\1\60\1\164\1\uffff\1\60\1\164\1\60\1\147\1\164\1\156\1\162\1\60\1\uffff\1\156\1\uffff\1\146\2\uffff\1\164\2\uffff\1\170\1\60\1\156\1\uffff\1\157\1\163\1\164\1\156\1\uffff\1\60\1\uffff\1\60\2\uffff\1\154\1\151\1\145\1\164\2\uffff\1\143\1\151\1\60\1\145\1\uffff\1\147\1\156\1\60\1\157\1\145\2\uffff\2\145\2\60\1\150\1\170\1\156\2\uffff\1\144\1\60\1\141\2\uffff\2\162\1\60\1\163\4\uffff\1\157\1\145\1\143\1\60\1\uffff\1\154\2\60\2\uffff\1\60\1\162\1\144\1\150\1\uffff\2\60\5\uffff\2\60\1\157\6\uffff\1\162\1\60\2\uffff";
+        "\1\0\1\157\1\145\1\157\1\151\1\157\2\145\1\150\1\156\1\151\1\157\1\154\1\144\1\uffff\2\60\1\145\1\101\2\uffff\2\0\1\52\2\uffff\1\156\1\uffff\1\143\1\157\1\151\1\145\1\157\2\141\1\147\1\170\1\145\3\144\1\156\1\157\1\144\1\143\3\uffff\1\151\5\uffff\1\156\1\144\1\164\1\160\1\171\1\156\1\167\1\155\1\160\1\162\1\155\1\164\1\162\1\164\1\60\1\144\1\145\1\141\1\151\1\150\1\147\1\141\2\145\1\141\1\145\1\154\1\164\1\160\1\60\1\145\1\164\1\145\1\60\1\145\1\150\1\146\2\uffff\1\154\1\60\2\164\1\157\1\150\1\151\1\143\1\162\1\156\1\162\1\151\1\60\1\157\2\uffff\2\60\1\156\1\60\2\uffff\2\60\1\151\1\145\1\uffff\2\151\1\162\1\164\1\156\1\164\1\60\1\147\1\164\1\156\2\uffff\1\162\1\60\2\uffff\1\146\2\uffff\1\164\5\uffff\1\170\1\60\1\156\1\157\1\163\1\60\1\145\1\157\2\uffff\1\154\1\151\1\145\1\164\2\uffff\1\151\1\60\1\145\1\uffff\1\147\1\156\1\60\1\uffff\2\162\2\145\2\60\1\170\2\uffff\1\144\1\60\1\141\2\uffff\3\60\1\163\4\uffff\1\145\1\60\1\uffff\1\154\1\uffff\1\60\4\uffff\1\60\1\144\1\uffff\1\60\4\uffff\1\60\2\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\145\1\162\1\151\1\164\1\162\1\156\1\151\1\157\1\154\1\156\1\157\1\uffff\1\155\1\157\1\uffff\2\172\1\151\1\145\1\172\2\uffff\2\uffff\1\57\2\uffff\1\156\1\uffff\1\157\1\154\1\145\2\141\1\147\1\170\1\165\2\144\1\156\1\157\1\154\1\144\1\143\1\156\1\uffff\1\160\1\157\3\uffff\1\144\1\151\5\uffff\1\144\1\164\1\160\1\171\1\167\1\160\1\162\1\155\1\164\1\145\1\172\1\144\1\145\1\141\1\163\1\151\1\150\1\164\2\157\1\155\1\164\1\147\1\145\1\141\1\145\1\154\1\160\1\145\1\164\1\145\2\172\1\146\1\uffff\1\154\1\172\1\164\1\145\1\164\1\157\1\145\1\141\2\162\1\172\2\150\1\162\1\156\1\162\1\151\1\157\2\172\1\156\1\172\3\uffff\1\151\1\145\1\uffff\1\151\1\172\1\151\1\162\1\143\1\151\1\172\1\164\1\uffff\1\172\1\164\1\172\1\147\1\164\1\156\1\162\1\172\1\uffff\1\156\1\uffff\1\146\2\uffff\1\164\2\uffff\1\170\1\172\1\156\1\uffff\1\157\1\163\1\164\1\156\1\uffff\1\172\1\uffff\1\172\2\uffff\1\154\1\151\1\145\1\164\2\uffff\1\143\1\151\1\172\1\145\1\uffff\1\147\1\156\1\172\1\157\1\145\2\uffff\2\145\2\172\1\150\1\170\1\156\2\uffff\1\144\1\172\1\141\2\uffff\2\162\1\172\1\163\4\uffff\1\157\1\145\1\143\1\172\1\uffff\1\154\2\172\2\uffff\1\172\1\162\1\144\1\150\1\uffff\2\172\5\uffff\2\172\1\157\6\uffff\1\162\1\172\2\uffff";
+        "\1\uffff\1\157\1\145\1\162\1\151\1\157\1\164\1\145\1\151\1\156\1\151\1\157\1\154\1\156\1\uffff\2\172\1\145\1\172\2\uffff\2\uffff\1\57\2\uffff\1\156\1\uffff\1\156\1\157\1\154\1\145\1\157\2\141\1\147\1\170\1\145\3\144\1\156\1\157\1\144\1\143\3\uffff\1\151\5\uffff\1\164\1\144\1\164\1\160\1\171\1\156\1\167\1\155\1\160\1\162\1\155\1\164\1\162\1\164\1\172\1\144\1\145\1\141\1\151\1\150\1\147\1\141\2\145\1\141\1\145\1\154\1\164\1\160\1\172\1\145\1\164\1\145\1\172\1\145\1\150\1\146\2\uffff\1\154\1\172\2\164\1\157\1\150\1\151\1\143\1\162\1\156\1\162\1\151\1\172\1\157\2\uffff\2\172\1\156\1\172\2\uffff\2\172\1\151\1\145\1\uffff\2\151\1\162\1\164\1\156\1\164\1\172\1\147\1\164\1\156\2\uffff\1\162\1\172\2\uffff\1\146\2\uffff\1\164\5\uffff\1\170\1\172\1\156\1\157\1\163\1\172\1\145\1\157\2\uffff\1\154\1\151\1\145\1\164\2\uffff\1\151\1\172\1\145\1\uffff\1\147\1\156\1\172\1\uffff\2\162\2\145\2\172\1\170\2\uffff\1\144\1\172\1\141\2\uffff\3\172\1\163\4\uffff\1\145\1\172\1\uffff\1\154\1\uffff\1\172\4\uffff\1\172\1\144\1\uffff\1\172\4\uffff\1\172\2\uffff";
     static final String DFA12_acceptS =
-        "\14\uffff\1\34\2\uffff\1\55\5\uffff\1\64\1\65\3\uffff\1\71\1\72\1\uffff\1\64\20\uffff\1\34\2\uffff\1\55\1\57\1\60\2\uffff\1\65\1\66\1\67\1\70\1\71\42\uffff\1\11\26\uffff\1\7\1\44\1\20\2\uffff\1\15\10\uffff\1\36\10\uffff\1\5\1\uffff\1\42\1\uffff\1\25\1\10\1\uffff\1\6\1\43\3\uffff\1\21\4\uffff\1\46\1\uffff\1\61\1\uffff\1\1\1\33\4\uffff\1\4\1\41\4\uffff\1\12\5\uffff\1\35\1\62\7\uffff\1\31\1\56\3\uffff\1\24\1\51\4\uffff\1\30\1\54\1\3\1\40\4\uffff\1\16\3\uffff\1\32\1\63\4\uffff\1\13\2\uffff\1\23\1\50\1\45\1\2\1\37\3\uffff\1\17\1\22\1\47\1\26\1\52\1\14\2\uffff\1\27\1\53";
+        "\16\uffff\1\35\4\uffff\1\61\1\62\3\uffff\1\66\1\67\1\uffff\1\61\21\uffff\1\35\1\53\1\54\1\uffff\1\62\1\63\1\64\1\65\1\66\45\uffff\1\27\1\14\16\uffff\1\5\1\40\4\uffff\1\11\1\44\4\uffff\1\20\12\uffff\1\32\1\55\2\uffff\1\7\1\42\1\uffff\1\26\1\13\1\uffff\1\10\1\43\1\12\1\45\1\56\10\uffff\1\2\1\34\4\uffff\1\6\1\41\3\uffff\1\15\3\uffff\1\57\7\uffff\1\31\1\52\3\uffff\1\25\1\50\4\uffff\1\30\1\51\1\4\1\37\2\uffff\1\21\1\uffff\1\1\1\uffff\1\24\1\47\1\33\1\60\2\uffff\1\16\1\uffff\1\23\1\46\1\3\1\36\1\uffff\1\22\1\17";
     static final String DFA12_specialS =
-        "\1\0\26\uffff\1\2\1\1\u00d4\uffff}>";
+        "\1\0\24\uffff\1\1\1\2\u00bd\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\33\2\32\2\33\1\32\22\33\1\32\1\33\1\27\4\33\1\30\4\33\1\17\2\33\1\31\12\26\1\14\6\33\32\25\3\33\1\24\1\25\1\33\1\12\1\25\1\13\1\25\1\6\1\11\1\25\1\23\1\15\3\25\1\7\1\10\1\25\1\2\1\25\1\1\1\4\1\5\1\25\1\3\1\22\1\20\1\21\1\16\uff85\33",
+            "\11\31\2\30\2\31\1\30\22\31\1\30\1\31\1\25\4\31\1\26\7\31\1\27\12\24\1\16\6\31\32\23\3\31\1\22\1\23\1\31\1\15\1\23\1\1\1\23\1\11\1\14\1\23\1\21\4\23\1\12\1\13\1\23\1\3\1\23\1\2\1\6\1\7\1\23\1\4\1\10\1\17\1\20\1\5\uff85\31",
+            "\1\32",
             "\1\34",
-            "\1\37\2\uffff\1\36",
+            "\1\36\2\uffff\1\35",
+            "\1\37",
             "\1\40",
             "\1\43\2\uffff\1\41\13\uffff\1\42",
-            "\1\44\14\uffff\1\45",
-            "\1\46",
+            "\1\44",
+            "\1\45\1\46",
             "\1\47",
             "\1\50",
-            "\1\52\12\uffff\1\51",
+            "\1\51",
+            "\1\52",
             "\1\53\11\uffff\1\54",
-            "\1\55",
             "",
-            "\1\57",
+            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
             "\1\60",
-            "",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "\1\64",
-            "\1\65",
-            "\32\35\4\uffff\1\35\1\uffff\32\35",
+            "\32\33\4\uffff\1\33\1\uffff\32\33",
             "",
             "",
-            "\0\67",
-            "\0\67",
-            "\1\70\4\uffff\1\71",
+            "\0\62",
+            "\0\62",
+            "\1\63\4\uffff\1\64",
             "",
             "",
-            "\1\74\12\uffff\1\73",
+            "\1\66",
             "",
+            "\1\70\12\uffff\1\67",
+            "\1\71",
+            "\1\73\2\uffff\1\72",
+            "\1\74",
             "\1\75",
             "\1\76",
             "\1\77",
@@ -2124,22 +2040,21 @@ public class InternalCanvasLexer extends Lexer {
             "\1\107",
             "\1\110",
             "\1\111",
-            "\1\112",
-            "\1\113",
-            "\1\115\1\uffff\1\114",
             "",
+            "",
+            "",
+            "\1\112",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\114\5\uffff\1\113",
+            "\1\115",
             "\1\116",
             "\1\117",
-            "",
-            "",
-            "",
             "\1\120",
             "\1\121",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\122",
             "\1\123",
             "\1\124",
@@ -2148,35 +2063,35 @@ public class InternalCanvasLexer extends Lexer {
             "\1\127",
             "\1\130",
             "\1\131",
-            "\1\132",
-            "\1\133",
-            "\12\35\7\uffff\32\35\4\uffff\1\134\1\uffff\32\35",
+            "\12\33\1\133\6\uffff\32\33\4\uffff\1\132\1\uffff\32\33",
+            "\1\135",
             "\1\136",
             "\1\137",
             "\1\140",
             "\1\141",
             "\1\142",
             "\1\143",
-            "\1\144\5\uffff\1\145",
+            "\1\144",
+            "\1\145",
             "\1\146",
             "\1\147",
             "\1\150",
             "\1\151",
             "\1\152",
-            "\1\153",
-            "\1\154",
+            "\12\33\1\153\6\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
             "\1\155",
             "\1\156",
             "\1\157",
-            "\1\160",
-            "\1\161",
-            "\1\162",
-            "\12\35\1\164\6\uffff\32\35\4\uffff\1\35\1\uffff\22\35\1\163\7\35",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "\1\167",
+            "\12\33\1\161\6\uffff\32\33\4\uffff\1\33\1\uffff\22\33\1\160\7\33",
+            "\1\163",
+            "\1\164",
+            "\1\165",
             "",
+            "",
+            "\1\166",
+            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
             "\1\170",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
+            "\1\171",
             "\1\172",
             "\1\173",
             "\1\174",
@@ -2185,137 +2100,111 @@ public class InternalCanvasLexer extends Lexer {
             "\1\177",
             "\1\u0080",
             "\1\u0081",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "\1\u0083",
+            "\12\33\1\u0082\6\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
             "\1\u0084",
-            "\1\u0085",
-            "\1\u0086",
-            "\1\u0087",
-            "\1\u0088",
-            "\1\u0089",
-            "\12\35\1\u008b\6\uffff\1\u008c\31\35\4\uffff\1\35\1\uffff\22\35\1\u008a\7\35",
-            "\12\35\1\u008f\6\uffff\32\35\4\uffff\1\u008e\1\uffff\32\35",
+            "",
+            "",
+            "\12\33\1\u0086\6\uffff\32\33\4\uffff\1\33\1\uffff\22\33\1\u0085\7\33",
+            "\12\33\1\u0089\6\uffff\32\33\4\uffff\1\u0088\1\uffff\32\33",
+            "\1\u008b",
+            "\12\33\1\u008c\6\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "",
+            "",
+            "\12\33\1\u008e\6\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
             "\1\u0091",
-            "\12\35\1\u0092\6\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
+            "\1\u0092",
             "",
-            "",
-            "",
+            "\1\u0093",
             "\1\u0094",
             "\1\u0095",
-            "",
             "\1\u0096",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
+            "\1\u0097",
             "\1\u0098",
-            "\1\u0099",
-            "\1\u009a",
+            "\12\33\1\u0099\6\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
             "\1\u009b",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
+            "\1\u009c",
             "\1\u009d",
             "",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "\1\u009f",
-            "\12\35\1\u00a0\6\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
+            "",
+            "\1\u009e",
+            "\12\33\1\u009f\6\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "",
+            "",
+            "\1\u00a1",
+            "",
+            "",
             "\1\u00a2",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u00a3",
-            "\1\u00a4",
+            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
             "\1\u00a5",
-            "\12\35\1\u00a6\6\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "",
-            "\1\u00a8",
-            "",
+            "\1\u00a6",
+            "\1\u00a7",
+            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
             "\1\u00a9",
-            "",
-            "",
             "\1\u00aa",
             "",
             "",
             "\1\u00ab",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
+            "\1\u00ac",
             "\1\u00ad",
-            "",
             "\1\u00ae",
+            "",
+            "",
             "\1\u00af",
-            "\1\u00b0",
-            "\1\u00b1",
+            "\12\33\1\u00b0\6\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\1\u00b2",
             "",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "",
-            "",
+            "\1\u00b3",
             "\1\u00b4",
-            "\1\u00b5",
-            "\1\u00b6",
+            "\12\33\1\u00b5\6\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "",
             "\1\u00b7",
-            "",
-            "",
             "\1\u00b8",
             "\1\u00b9",
-            "\12\35\1\u00bb\6\uffff\1\u00ba\31\35\4\uffff\1\35\1\uffff\32\35",
-            "\1\u00bd",
-            "",
-            "\1\u00be",
+            "\1\u00ba",
+            "\12\33\1\u00bb\6\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\12\33\1\u00bd\6\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
             "\1\u00bf",
-            "\12\35\1\u00c0\6\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
+            "",
+            "",
+            "\1\u00c0",
+            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
             "\1\u00c2",
-            "\1\u00c3",
             "",
             "",
-            "\1\u00c4",
-            "\1\u00c5",
-            "\12\35\1\u00c6\6\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "\12\35\1\u00c8\6\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
+            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\12\33\1\u00c5\6\uffff\32\33\4\uffff\1\33\1\uffff\22\33\1\u00c4\7\33",
+            "\12\33\1\u00c7\6\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\1\u00c9",
+            "",
+            "",
+            "",
+            "",
             "\1\u00ca",
-            "\1\u00cb",
+            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "",
             "\1\u00cc",
             "",
-            "",
-            "\1\u00cd",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "\1\u00cf",
+            "\12\33\1\u00cd\6\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
             "",
             "",
-            "\1\u00d0",
+            "",
+            "",
+            "\12\33\1\u00cf\6\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
             "\1\u00d1",
-            "\12\35\1\u00d2\6\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "\1\u00d4",
+            "",
+            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
             "",
             "",
             "",
             "",
-            "\1\u00d5",
-            "\1\u00d6",
-            "\1\u00d7",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "",
-            "\1\u00d9",
-            "\12\35\1\u00db\6\uffff\32\35\4\uffff\1\35\1\uffff\22\35\1\u00da\7\35",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "",
-            "",
-            "\12\35\1\u00de\6\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "\1\u00e0",
-            "\1\u00e1",
-            "\1\u00e2",
-            "",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "\12\35\1\u00e4\6\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\12\35\1\u00e6\6\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "\1\u00e9",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u00ea",
-            "\12\35\1\u00eb\6\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
+            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
             "",
             ""
     };
@@ -2350,7 +2239,7 @@ public class InternalCanvasLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
@@ -2360,79 +2249,75 @@ public class InternalCanvasLexer extends Lexer {
                         int LA12_0 = input.LA(1);
 
                         s = -1;
-                        if ( (LA12_0=='r') ) {s = 1;}
+                        if ( (LA12_0=='c') ) {s = 1;}
 
-                        else if ( (LA12_0=='p') ) {s = 2;}
+                        else if ( (LA12_0=='r') ) {s = 2;}
 
-                        else if ( (LA12_0=='v') ) {s = 3;}
+                        else if ( (LA12_0=='p') ) {s = 3;}
 
-                        else if ( (LA12_0=='s') ) {s = 4;}
+                        else if ( (LA12_0=='v') ) {s = 4;}
 
-                        else if ( (LA12_0=='t') ) {s = 5;}
+                        else if ( (LA12_0=='z') ) {s = 5;}
 
-                        else if ( (LA12_0=='e') ) {s = 6;}
+                        else if ( (LA12_0=='s') ) {s = 6;}
 
-                        else if ( (LA12_0=='m') ) {s = 7;}
+                        else if ( (LA12_0=='t') ) {s = 7;}
 
-                        else if ( (LA12_0=='n') ) {s = 8;}
+                        else if ( (LA12_0=='w') ) {s = 8;}
 
-                        else if ( (LA12_0=='f') ) {s = 9;}
+                        else if ( (LA12_0=='e') ) {s = 9;}
 
-                        else if ( (LA12_0=='a') ) {s = 10;}
+                        else if ( (LA12_0=='m') ) {s = 10;}
 
-                        else if ( (LA12_0=='c') ) {s = 11;}
+                        else if ( (LA12_0=='n') ) {s = 11;}
 
-                        else if ( (LA12_0==':') ) {s = 12;}
+                        else if ( (LA12_0=='f') ) {s = 12;}
 
-                        else if ( (LA12_0=='i') ) {s = 13;}
+                        else if ( (LA12_0=='a') ) {s = 13;}
 
-                        else if ( (LA12_0=='z') ) {s = 14;}
+                        else if ( (LA12_0==':') ) {s = 14;}
 
-                        else if ( (LA12_0==',') ) {s = 15;}
+                        else if ( (LA12_0=='x') ) {s = 15;}
 
-                        else if ( (LA12_0=='x') ) {s = 16;}
+                        else if ( (LA12_0=='y') ) {s = 16;}
 
-                        else if ( (LA12_0=='y') ) {s = 17;}
+                        else if ( (LA12_0=='h') ) {s = 17;}
 
-                        else if ( (LA12_0=='w') ) {s = 18;}
+                        else if ( (LA12_0=='^') ) {s = 18;}
 
-                        else if ( (LA12_0=='h') ) {s = 19;}
+                        else if ( ((LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||LA12_0=='b'||LA12_0=='d'||LA12_0=='g'||(LA12_0>='i' && LA12_0<='l')||LA12_0=='o'||LA12_0=='q'||LA12_0=='u') ) {s = 19;}
 
-                        else if ( (LA12_0=='^') ) {s = 20;}
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 20;}
 
-                        else if ( ((LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||LA12_0=='b'||LA12_0=='d'||LA12_0=='g'||(LA12_0>='j' && LA12_0<='l')||LA12_0=='o'||LA12_0=='q'||LA12_0=='u') ) {s = 21;}
+                        else if ( (LA12_0=='\"') ) {s = 21;}
 
-                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 22;}
+                        else if ( (LA12_0=='\'') ) {s = 22;}
 
-                        else if ( (LA12_0=='\"') ) {s = 23;}
+                        else if ( (LA12_0=='/') ) {s = 23;}
 
-                        else if ( (LA12_0=='\'') ) {s = 24;}
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 24;}
 
-                        else if ( (LA12_0=='/') ) {s = 25;}
-
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 26;}
-
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='+')||(LA12_0>='-' && LA12_0<='.')||(LA12_0>=';' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||(LA12_0>='{' && LA12_0<='\uFFFF')) ) {s = 27;}
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='.')||(LA12_0>=';' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||(LA12_0>='{' && LA12_0<='\uFFFF')) ) {s = 25;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA12_24 = input.LA(1);
+                        int LA12_21 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_24>='\u0000' && LA12_24<='\uFFFF')) ) {s = 55;}
+                        if ( ((LA12_21>='\u0000' && LA12_21<='\uFFFF')) ) {s = 50;}
 
-                        else s = 27;
+                        else s = 25;
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA12_23 = input.LA(1);
+                        int LA12_22 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_23>='\u0000' && LA12_23<='\uFFFF')) ) {s = 55;}
+                        if ( ((LA12_22>='\u0000' && LA12_22<='\uFFFF')) ) {s = 50;}
 
-                        else s = 27;
+                        else s = 25;
 
                         if ( s>=0 ) return s;
                         break;

@@ -6,21 +6,27 @@ package org.xtuml.canvas.language.formatting2;
 import com.google.inject.Inject;
 import java.util.Arrays;
 import java.util.function.Consumer;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.formatting2.AbstractFormatter2;
 import org.eclipse.xtext.formatting2.IFormattableDocument;
 import org.eclipse.xtext.formatting2.IHiddenRegionFormatter;
-import org.eclipse.xtext.formatting2.regionaccess.ISemanticRegion;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
+import org.xtuml.canvas.language.canvas.Anchors;
 import org.xtuml.canvas.language.canvas.Connector;
 import org.xtuml.canvas.language.canvas.Connectors;
+import org.xtuml.canvas.language.canvas.EndAnchor;
+import org.xtuml.canvas.language.canvas.FloatingText;
+import org.xtuml.canvas.language.canvas.FloatingTexts;
+import org.xtuml.canvas.language.canvas.GraphicalElement;
 import org.xtuml.canvas.language.canvas.Model;
-import org.xtuml.canvas.language.canvas.SemanticModel;
+import org.xtuml.canvas.language.canvas.ModelProperties;
+import org.xtuml.canvas.language.canvas.Polyline;
+import org.xtuml.canvas.language.canvas.Segment;
 import org.xtuml.canvas.language.canvas.Shape;
 import org.xtuml.canvas.language.canvas.Shapes;
+import org.xtuml.canvas.language.canvas.StartAnchor;
 import org.xtuml.canvas.language.services.CanvasGrammarAccess;
 
 @SuppressWarnings("all")
@@ -29,88 +35,198 @@ public class CanvasFormatter extends AbstractFormatter2 {
   @Extension
   private CanvasGrammarAccess _canvasGrammarAccess;
   
-  protected void _format(final Model model, @Extension final IFormattableDocument document) {
-    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
-      it.setNewLines(2);
+  protected void _format(final Model it, @Extension final IFormattableDocument document) {
+    this.formatShapes(it, document);
+  }
+  
+  public void formatShapes(final Model it, @Extension final IFormattableDocument document) {
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it_1) -> {
+      it_1.setNewLines(2);
     };
-    document.prepend(this.textRegionExtensions.regionFor(model).keyword("render:"), _function);
-    final Consumer<ISemanticRegion> _function_1 = (ISemanticRegion it) -> {
-      final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it_1) -> {
-        it_1.setNewLines(1);
+    document.prepend(this.textRegionExtensions.allRegionsFor(it).keyword("properties:"), _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it_1) -> {
+      it_1.setNewLines(2);
+    };
+    document.prepend(this.textRegionExtensions.allRegionsFor(it).keyword("shapes:"), _function_1);
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it_1) -> {
+      it_1.setNewLines(2);
+    };
+    document.prepend(this.textRegionExtensions.allRegionsFor(it).keyword("connectors:"), _function_2);
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it_1) -> {
+      it_1.setNewLines(2);
+    };
+    document.prepend(this.textRegionExtensions.regionFor(it).keyword("render:"), _function_3);
+    this.format(it.getProperties(), document);
+    final Consumer<GraphicalElement> _function_4 = (GraphicalElement it_1) -> {
+      document.<GraphicalElement>format(it_1);
+    };
+    it.getElements().forEach(_function_4);
+  }
+  
+  public void format(final ModelProperties it, @Extension final IFormattableDocument document) {
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it_1) -> {
+      it_1.setSpace("\n    ");
+    };
+    document.prepend(this.textRegionExtensions.regionFor(it).keyword("viewport:"), _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it_1) -> {
+      it_1.setSpace("\n    ");
+    };
+    document.prepend(this.textRegionExtensions.regionFor(it).keyword("zoom:"), _function_1);
+  }
+  
+  public void format(final GraphicalElement element, @Extension final IFormattableDocument document) {
+    if ((element instanceof Shapes)) {
+      final Consumer<Shape> _function = (Shape it) -> {
+        document.<Shape>format(it);
       };
-      document.prepend(it, _function_2);
-    };
-    this.textRegionExtensions.allRegionsFor(model).keywords("properties:", "shapes:", "shape:", "connectors:", "connector:").forEach(_function_1);
-  }
-  
-  protected void _format(final SemanticModel sm) {
-  }
-  
-  protected void _format(final Shapes shapes, @Extension final IFormattableDocument document) {
-    EList<Shape> _shapes = shapes.getShapes();
-    for (final Shape shape : _shapes) {
-      this.format(shape);
+      ((Shapes) element).getShapes().forEach(_function);
+    }
+    if ((element instanceof Connectors)) {
+      final Consumer<Connector> _function_1 = (Connector it) -> {
+        document.<Connector>format(it);
+      };
+      ((Connectors) element).getConnectors().forEach(_function_1);
     }
   }
   
-  protected void _format(final Shape shape, @Extension final IFormattableDocument document) {
-    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
-      it.setNewLines(2);
+  protected void _format(final Shape it, @Extension final IFormattableDocument document) {
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it_1) -> {
+      it_1.setSpace("\n    ");
     };
-    document.prepend(this.textRegionExtensions.regionFor(shape).keyword("shape:"), _function);
+    document.prepend(this.textRegionExtensions.regionFor(it).keyword("shape:"), _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it_1) -> {
+      it_1.setSpace("\n        ");
+    };
+    document.prepend(this.textRegionExtensions.regionFor(it).keyword("render:"), _function_1);
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it_1) -> {
+      it_1.setSpace("\n        ");
+    };
+    document.prepend(this.textRegionExtensions.regionFor(it.getRect()).keyword("rectangle:"), _function_2);
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it_1) -> {
+      it_1.setSpace("\n        ");
+    };
+    document.prepend(this.textRegionExtensions.regionFor(it.getText()).keyword("text:"), _function_3);
   }
   
-  protected void _format(final Connectors connectors) {
-    EList<Connector> _connectors = connectors.getConnectors();
-    for (final Connector connector : _connectors) {
-      this.format(connector);
-    }
+  protected void _format(final Connector it, @Extension final IFormattableDocument document) {
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it_1) -> {
+      it_1.setSpace("\n    ");
+    };
+    document.prepend(this.textRegionExtensions.regionFor(it).keyword("connector:"), _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it_1) -> {
+      it_1.setSpace("\n        ");
+    };
+    document.prepend(this.textRegionExtensions.regionFor(it).keyword("render:"), _function_1);
+    document.<Polyline>format(it.getPolyline());
+    document.<Anchors>format(it.getAnchors());
+    document.<FloatingTexts>format(it.getTexts());
   }
   
-  protected void _format(final Connector connector) {
+  protected void _format(final Polyline it, @Extension final IFormattableDocument document) {
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it_1) -> {
+      it_1.setSpace("\n        ");
+    };
+    document.prepend(this.textRegionExtensions.regionFor(it).keyword("polyline:"), _function);
+    final Consumer<Segment> _function_1 = (Segment it_1) -> {
+      document.<Segment>format(it_1);
+    };
+    it.getSegments().forEach(_function_1);
   }
   
-  public void format(final Object shapes, final IFormattableDocument document) {
-    if (shapes instanceof XtextResource) {
-      _format((XtextResource)shapes, document);
+  protected void _format(final Segment it, @Extension final IFormattableDocument document) {
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it_1) -> {
+      it_1.setSpace("\n            ");
+    };
+    document.prepend(this.textRegionExtensions.regionFor(it).keyword("segment:"), _function);
+  }
+  
+  protected void _format(final Anchors it, @Extension final IFormattableDocument document) {
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it_1) -> {
+      it_1.setSpace("\n        ");
+    };
+    document.prepend(this.textRegionExtensions.regionFor(it).keyword("anchors:"), _function);
+    document.<StartAnchor>format(it.getStartAnchor());
+    document.<EndAnchor>format(it.getEndAnchor());
+  }
+  
+  protected void _format(final StartAnchor it, @Extension final IFormattableDocument document) {
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it_1) -> {
+      it_1.setSpace("\n            ");
+    };
+    document.prepend(this.textRegionExtensions.regionFor(it).keyword("start:"), _function);
+  }
+  
+  protected void _format(final EndAnchor it, @Extension final IFormattableDocument document) {
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it_1) -> {
+      it_1.setSpace("\n            ");
+    };
+    document.prepend(this.textRegionExtensions.regionFor(it).keyword("end:"), _function);
+  }
+  
+  protected void _format(final FloatingTexts it, @Extension final IFormattableDocument document) {
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it_1) -> {
+      it_1.setSpace("\n        ");
+    };
+    document.prepend(this.textRegionExtensions.regionFor(it).keyword("texts:"), _function);
+    final Consumer<FloatingText> _function_1 = (FloatingText it_1) -> {
+      document.<FloatingText>format(it_1);
+    };
+    it.getTexts().forEach(_function_1);
+  }
+  
+  protected void _format(final FloatingText it, @Extension final IFormattableDocument document) {
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it_1) -> {
+      it_1.setSpace("\n            ");
+    };
+    document.prepend(this.textRegionExtensions.regionFor(it).keyword("text:"), _function);
+  }
+  
+  public void format(final Object it, final IFormattableDocument document) {
+    if (it instanceof XtextResource) {
+      _format((XtextResource)it, document);
       return;
-    } else if (shapes instanceof Shapes) {
-      _format((Shapes)shapes, document);
+    } else if (it instanceof Anchors) {
+      _format((Anchors)it, document);
       return;
-    } else if (shapes instanceof Model) {
-      _format((Model)shapes, document);
+    } else if (it instanceof Connector) {
+      _format((Connector)it, document);
       return;
-    } else if (shapes instanceof Shape) {
-      _format((Shape)shapes, document);
+    } else if (it instanceof EndAnchor) {
+      _format((EndAnchor)it, document);
       return;
-    } else if (shapes instanceof EObject) {
-      _format((EObject)shapes, document);
+    } else if (it instanceof FloatingText) {
+      _format((FloatingText)it, document);
       return;
-    } else if (shapes == null) {
+    } else if (it instanceof FloatingTexts) {
+      _format((FloatingTexts)it, document);
+      return;
+    } else if (it instanceof Model) {
+      _format((Model)it, document);
+      return;
+    } else if (it instanceof Polyline) {
+      _format((Polyline)it, document);
+      return;
+    } else if (it instanceof Segment) {
+      _format((Segment)it, document);
+      return;
+    } else if (it instanceof Shape) {
+      _format((Shape)it, document);
+      return;
+    } else if (it instanceof StartAnchor) {
+      _format((StartAnchor)it, document);
+      return;
+    } else if (it instanceof EObject) {
+      _format((EObject)it, document);
+      return;
+    } else if (it == null) {
       _format((Void)null, document);
       return;
-    } else if (shapes != null) {
-      _format(shapes, document);
+    } else if (it != null) {
+      _format(it, document);
       return;
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(shapes, document).toString());
-    }
-  }
-  
-  public void format(final EObject connectors) {
-    if (connectors instanceof Connectors) {
-      _format((Connectors)connectors);
-      return;
-    } else if (connectors instanceof Connector) {
-      _format((Connector)connectors);
-      return;
-    } else if (connectors instanceof SemanticModel) {
-      _format((SemanticModel)connectors);
-      return;
-    } else {
-      throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(connectors).toString());
+        Arrays.<Object>asList(it, document).toString());
     }
   }
 }

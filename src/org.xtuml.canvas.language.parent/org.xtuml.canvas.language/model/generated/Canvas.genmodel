@@ -7,13 +7,12 @@
   <genPackages prefix="Canvas" basePackage="org.xtuml.canvas.language" disposableProviderFactory="true"
       fileExtensions="xtg" ecorePackage="Canvas.ecore#/">
     <genClasses ecoreClass="Canvas.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Model/semantics"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Model/represents"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Model/render"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Model/properties"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Model/elements"/>
     </genClasses>
-    <genClasses ecoreClass="Canvas.ecore#//SemanticModel">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//SemanticModel/importURI"/>
+    <genClasses ecoreClass="Canvas.ecore#//ModelRender">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//ModelRender/importURI"/>
     </genClasses>
     <genClasses ecoreClass="Canvas.ecore#//ModelProperties">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//ModelProperties/point"/>
@@ -25,38 +24,30 @@
     </genClasses>
     <genClasses ecoreClass="Canvas.ecore#//Shape">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Shape/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Shape/props"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Shape/container"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Shape/represents"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Shape/rect"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Shape/text"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Shape/represents"/>
     </genClasses>
     <genClasses ecoreClass="Canvas.ecore#//FloatingTexts">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//FloatingTexts/texts"/>
     </genClasses>
     <genClasses ecoreClass="Canvas.ecore#//FloatingText">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//FloatingText/rect"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//FloatingText/end"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//FloatingText/end"/>
     </genClasses>
-    <genClasses ecoreClass="Canvas.ecore#//ShapeProps">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//ShapeProps/container"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//ShapeProps/color"/>
-    </genClasses>
-    <genClasses ecoreClass="Canvas.ecore#//Container"/>
-    <genClasses ecoreClass="Canvas.ecore#//Color">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Color/r"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Color/g"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Color/b"/>
+    <genClasses ecoreClass="Canvas.ecore#//EnumEnd">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//EnumEnd/where"/>
     </genClasses>
     <genClasses ecoreClass="Canvas.ecore#//Connectors">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Connectors/connectors"/>
     </genClasses>
     <genClasses ecoreClass="Canvas.ecore#//Connector">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Connector/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Connector/props"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Connector/represents"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Connector/polyline"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Connector/anchors"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Connector/texts"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Connector/represents"/>
     </genClasses>
     <genClasses ecoreClass="Canvas.ecore#//Anchors">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Anchors/startAnchor"/>
@@ -77,9 +68,6 @@
     <genClasses ecoreClass="Canvas.ecore#//ConnectorAnchorElement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Canvas.ecore#//ConnectorAnchorElement/element"/>
     </genClasses>
-    <genClasses ecoreClass="Canvas.ecore#//ConnectorProps">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//ConnectorProps/color"/>
-    </genClasses>
     <genClasses ecoreClass="Canvas.ecore#//Polyline">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Polyline/segments"/>
     </genClasses>
@@ -91,12 +79,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Point/x"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Point/y"/>
     </genClasses>
+    <genClasses ecoreClass="Canvas.ecore#//PointDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//PointDefinition/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//PointDefinition/y"/>
+    </genClasses>
     <genClasses ecoreClass="Canvas.ecore#//Rectangle">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Rectangle/x"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Rectangle/y"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Rectangle/w"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Rectangle/h"/>
     </genClasses>
-    <genClasses ecoreClass="Canvas.ecore#//ShapeContainer"/>
   </genPackages>
 </genmodel:GenModel>

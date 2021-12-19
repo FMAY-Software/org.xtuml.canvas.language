@@ -23,6 +23,7 @@ import org.xtuml.bp.core.Association_c;
 import org.xtuml.bp.core.ClassAsLink_c;
 import org.xtuml.bp.core.ClassAsSubtype_c;
 import org.xtuml.bp.core.ClassStateMachine_c;
+import org.xtuml.bp.core.Component_c;
 import org.xtuml.bp.core.CreationTransition_c;
 import org.xtuml.bp.core.DataType_c;
 import org.xtuml.bp.core.EnumerationDataType_c;
@@ -32,7 +33,6 @@ import org.xtuml.bp.core.ImportedClass_c;
 import org.xtuml.bp.core.InstanceStateMachine_c;
 import org.xtuml.bp.core.LinkedAssociation_c;
 import org.xtuml.bp.core.ModelClass_c;
-import org.xtuml.bp.core.Ooaofooa;
 import org.xtuml.bp.core.Package_c;
 import org.xtuml.bp.core.PackageableElement_c;
 import org.xtuml.bp.core.StateMachineState_c;
@@ -45,8 +45,10 @@ import org.xtuml.bp.core.UserDataType_c;
 import org.xtuml.bp.core.common.ModelRoot;
 import org.xtuml.bp.core.common.NonRootModelElement;
 import org.xtuml.bp.core.common.PersistenceManager;
+import org.xtuml.bp.core.util.SupertypeSubtypeUtil;
 import org.xtuml.bp.ui.canvas.Connector_c;
 import org.xtuml.bp.ui.canvas.Diagram_c;
+import org.xtuml.bp.ui.canvas.ElementSpecification_c;
 import org.xtuml.bp.ui.canvas.FloatingText_c;
 import org.xtuml.bp.ui.canvas.Graphelement_c;
 import org.xtuml.bp.ui.canvas.GraphicalElement_c;
@@ -128,28 +130,28 @@ public class CanvasGenerator implements IGraphicalLoader {
 			if (potentialModel != null && potentialModel instanceof Model) {
 				// only one model supported at this time
 				Model model = (Model) potentialModel;
-				if (model.getProperties() != null) {
-					xtModel = new Model_c(destinationRoot);
-					int modelType = getModelType();
-					xtModel.setModel_type(modelType);
-					xtModel.setOoa_id(parent.Get_ooa_id());
-					Diagram_c xtDiagram = new Diagram_c(destinationRoot);
-					xtModel.relateAcrossR18To(xtDiagram);
+				xtModel = new Model_c(destinationRoot);
+				int modelType = getModelType();
+				xtModel.setModel_type(modelType);
+				xtModel.setOoa_id(parent.Get_ooa_id());
+				Diagram_c xtDiagram = new Diagram_c(destinationRoot);
+				xtModel.relateAcrossR18To(xtDiagram);
+				if(model.getProperties() != null) {
 					xtDiagram.setViewportx(model.getProperties().getPoint().getX());
 					xtDiagram.setViewporty(model.getProperties().getPoint().getY());
 					xtDiagram.setZoom(model.getProperties().getZoom());
-					xtModel.setRepresents(parentElement);
-					ModelSpecification_c[] modelSpecs = ModelSpecification_c
-							.ModelSpecificationInstances(Ooaofgraphics.getDefaultInstance());
-					for (ModelSpecification_c spec : modelSpecs) {
-						if (spec.getModel_type() == modelType) {
-							spec.relateAcrossR9To(xtModel);
-							break;
-						}
-					}
-					xtModel.Initializetools();
-					createGraphicalElements(xtModel, model);
 				}
+				xtModel.setRepresents(parentElement);
+				ModelSpecification_c[] modelSpecs = ModelSpecification_c
+						.ModelSpecificationInstances(Ooaofgraphics.getDefaultInstance());
+				for (ModelSpecification_c spec : modelSpecs) {
+					if (spec.getModel_type() == modelType) {
+						spec.relateAcrossR9To(xtModel);
+						break;
+					}
+				}
+				xtModel.Initializetools();
+				createGraphicalElements(xtModel, model);
 			}
 		}
 	}
@@ -166,6 +168,9 @@ public class CanvasGenerator implements IGraphicalLoader {
 		}
 		if (parent instanceof ClassStateMachine_c) {
 			return Modeltype_c.ClassStateChartDiagram;
+		}
+		if (parent instanceof Component_c) {
+			return Modeltype_c.ComponentDiagram;
 		}
 		return Modeltype_c.OOA_UNINITIALIZED_ENUM;
 	}
@@ -210,8 +215,9 @@ public class CanvasGenerator implements IGraphicalLoader {
 	}
 
 	private void createShape(Model_c xtModel, Shape shape) {
+		String container = shape.getContainer();
 		NonRootModelElement representedElement = getElementByPath(shape.getRepresents());
-		UUID toolId = getToolId(xtModel, representedElement);
+		UUID toolId = getToolId(xtModel, representedElement, container != null);
 		UUID shapeId = xtModel.Createshape(false, toolId);
 		Graphelement_c graphElem = Graphelement_c.GraphelementInstance(graphicsRoot,
 				ge -> ((Graphelement_c) ge).getElementid().equals(shapeId));
@@ -246,7 +252,7 @@ public class CanvasGenerator implements IGraphicalLoader {
 
 	private void createConnector(Model_c xtModel, Connector connector) {
 		NonRootModelElement representedElement = getElementByPath(connector.getRepresents());
-		UUID toolId = getToolId(xtModel, representedElement);
+		UUID toolId = getToolId(xtModel, representedElement, false);
 		GraphicalElement_c startElem = getStartElement(xtModel, connector);
 		UUID startElemId = Gd_c.Null_unique_id();
 		if (startElem == null) {
@@ -349,6 +355,9 @@ public class CanvasGenerator implements IGraphicalLoader {
 				.findAny();
 		if (findAny.isPresent()) {
 			NonRootModelElement result = (NonRootModelElement) findAny.get();
+			if(result instanceof PackageableElement_c) {
+				result = SupertypeSubtypeUtil.getSubtypes(result).get(0);
+			}
 			if (result instanceof DataType_c) {
 				UserDataType_c udt = UserDataType_c.getOneS_UDTOnR17((DataType_c) result);
 				if (udt != null) {
@@ -403,31 +412,37 @@ public class CanvasGenerator implements IGraphicalLoader {
 				}
 			}
 		}
-		// find by path
-		SystemModel_c sys = SystemModel_c.SystemModelInstance(Ooaofooa.getDefaultInstance());
-		ModelClass_c clazz = ModelClass_c.getOneO_OBJOnR8001(PackageableElement_c.getManyPE_PEsOnR8000(Package_c.getManyEP_PKGsOnR1405(sys)));
-		if(clazz != null) {
-			return clazz;
-		}
 		return null;
 	}
 
 	private String getPath(NonRootModelElement ele) {
+		if(ele instanceof PackageableElement_c) {
+			List<NonRootModelElement> subtypes = SupertypeSubtypeUtil.getSubtypes(ele);
+			if(subtypes != null) {
+				return subtypes.get(0).getPath();
+			}
+		}
 		return ele.getPath();
 	}
 
-	private UUID getToolId(Model_c xtModel, NonRootModelElement represents) {
+	private UUID getToolId(Model_c xtModel, NonRootModelElement represents, boolean container) {
 		ModelTool_c[] tools = ModelTool_c.getManyCT_MTLsOnR100(xtModel);
 		for (int i = 0; i < tools.length; i++) {
 			ModelTool_c tool = tools[i];
-			if (tool.getOoa_type() == getTypeFromReference(represents)) {
-				return tool.getTool_id();
+			if (tool.getOoa_type() == getTypeFromReference(represents, container)) {
+				ElementSpecification_c spec = ElementSpecification_c.getOneGD_ESOnR103(tool);
+				if(!container) {
+					return tool.getTool_id();
+				}
+				if(container && spec.getSymboltype().equals("container")) {
+					return tool.getTool_id();
+				}
 			}
 		}
 		return Gd_c.Null_unique_id();
 	}
 
-	private int getTypeFromReference(NonRootModelElement represents) {
+	private int getTypeFromReference(NonRootModelElement represents, boolean container) {
 		if (represents instanceof ModelClass_c) {
 			return Ooatype_c.Class;
 		}
@@ -478,6 +493,13 @@ public class CanvasGenerator implements IGraphicalLoader {
 		if (represents instanceof AcceptTimeEventAction_c) {
 			return Ooatype_c.AcceptTimeEventAction;
 		}
+		if (represents instanceof Component_c) {
+			if(container) {
+				return Ooatype_c.ComponentContainer;
+			}
+			return Ooatype_c.Component;
+		}
+		
 		return Ooatype_c.OOA_UNINITIALIZED_ENUM;
 	}
 }

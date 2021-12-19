@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtuml.canvas.language.canvas.CanvasPackage;
+import org.xtuml.canvas.language.canvas.EnumEnd;
 import org.xtuml.canvas.language.canvas.FloatingText;
 import org.xtuml.canvas.language.canvas.Rectangle;
 
@@ -43,24 +44,14 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
   protected Rectangle rect;
 
   /**
-   * The default value of the '{@link #getEnd() <em>End</em>}' attribute.
+   * The cached value of the '{@link #getEnd() <em>End</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getEnd()
    * @generated
    * @ordered
    */
-  protected static final String END_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getEnd() <em>End</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEnd()
-   * @generated
-   * @ordered
-   */
-  protected String end = END_EDEFAULT;
+  protected EnumEnd end;
 
   /**
    * <!-- begin-user-doc -->
@@ -139,7 +130,7 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
    * @generated
    */
   @Override
-  public String getEnd()
+  public EnumEnd getEnd()
   {
     return end;
   }
@@ -149,13 +140,38 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setEnd(String newEnd)
+  public NotificationChain basicSetEnd(EnumEnd newEnd, NotificationChain msgs)
   {
-    String oldEnd = end;
+    EnumEnd oldEnd = end;
     end = newEnd;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.FLOATING_TEXT__END, oldEnd, end));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CanvasPackage.FLOATING_TEXT__END, oldEnd, newEnd);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setEnd(EnumEnd newEnd)
+  {
+    if (newEnd != end)
+    {
+      NotificationChain msgs = null;
+      if (end != null)
+        msgs = ((InternalEObject)end).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CanvasPackage.FLOATING_TEXT__END, null, msgs);
+      if (newEnd != null)
+        msgs = ((InternalEObject)newEnd).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CanvasPackage.FLOATING_TEXT__END, null, msgs);
+      msgs = basicSetEnd(newEnd, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.FLOATING_TEXT__END, newEnd, newEnd));
   }
 
   /**
@@ -170,6 +186,8 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
     {
       case CanvasPackage.FLOATING_TEXT__RECT:
         return basicSetRect(null, msgs);
+      case CanvasPackage.FLOATING_TEXT__END:
+        return basicSetEnd(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -206,7 +224,7 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
         setRect((Rectangle)newValue);
         return;
       case CanvasPackage.FLOATING_TEXT__END:
-        setEnd((String)newValue);
+        setEnd((EnumEnd)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -226,7 +244,7 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
         setRect((Rectangle)null);
         return;
       case CanvasPackage.FLOATING_TEXT__END:
-        setEnd(END_EDEFAULT);
+        setEnd((EnumEnd)null);
         return;
     }
     super.eUnset(featureID);
@@ -245,26 +263,9 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
       case CanvasPackage.FLOATING_TEXT__RECT:
         return rect != null;
       case CanvasPackage.FLOATING_TEXT__END:
-        return END_EDEFAULT == null ? end != null : !END_EDEFAULT.equals(end);
+        return end != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (end: ");
-    result.append(end);
-    result.append(')');
-    return result.toString();
   }
 
 } //FloatingTextImpl

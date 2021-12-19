@@ -68,22 +68,13 @@ public interface CanvasPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Semantics</b></em>' containment reference list.
+   * The feature id for the '<em><b>Render</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__SEMANTICS = 0;
-
-  /**
-   * The feature id for the '<em><b>Represents</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__REPRESENTS = 1;
+  int MODEL__RENDER = 0;
 
   /**
    * The feature id for the '<em><b>Properties</b></em>' containment reference.
@@ -92,7 +83,7 @@ public interface CanvasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__PROPERTIES = 2;
+  int MODEL__PROPERTIES = 1;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -101,7 +92,7 @@ public interface CanvasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__ELEMENTS = 3;
+  int MODEL__ELEMENTS = 2;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -110,17 +101,17 @@ public interface CanvasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 4;
+  int MODEL_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link org.xtuml.canvas.language.canvas.impl.SemanticModelImpl <em>Semantic Model</em>}' class.
+   * The meta object id for the '{@link org.xtuml.canvas.language.canvas.impl.ModelRenderImpl <em>Model Render</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtuml.canvas.language.canvas.impl.SemanticModelImpl
-   * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getSemanticModel()
+   * @see org.xtuml.canvas.language.canvas.impl.ModelRenderImpl
+   * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getModelRender()
    * @generated
    */
-  int SEMANTIC_MODEL = 1;
+  int MODEL_RENDER = 1;
 
   /**
    * The feature id for the '<em><b>Import URI</b></em>' attribute.
@@ -129,16 +120,16 @@ public interface CanvasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SEMANTIC_MODEL__IMPORT_URI = 0;
+  int MODEL_RENDER__IMPORT_URI = 0;
 
   /**
-   * The number of structural features of the '<em>Semantic Model</em>' class.
+   * The number of structural features of the '<em>Model Render</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SEMANTIC_MODEL_FEATURE_COUNT = 1;
+  int MODEL_RENDER_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtuml.canvas.language.canvas.impl.ModelPropertiesImpl <em>Model Properties</em>}' class.
@@ -244,31 +235,13 @@ public interface CanvasPackage extends EPackage
   int SHAPE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Props</b></em>' containment reference.
+   * The feature id for the '<em><b>Container</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SHAPE__PROPS = 1;
-
-  /**
-   * The feature id for the '<em><b>Rect</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SHAPE__RECT = 2;
-
-  /**
-   * The feature id for the '<em><b>Text</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SHAPE__TEXT = 3;
+  int SHAPE__CONTAINER = 1;
 
   /**
    * The feature id for the '<em><b>Represents</b></em>' attribute.
@@ -277,7 +250,25 @@ public interface CanvasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHAPE__REPRESENTS = 4;
+  int SHAPE__REPRESENTS = 2;
+
+  /**
+   * The feature id for the '<em><b>Rect</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHAPE__RECT = 3;
+
+  /**
+   * The feature id for the '<em><b>Text</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHAPE__TEXT = 4;
 
   /**
    * The number of structural features of the '<em>Shape</em>' class.
@@ -336,7 +327,7 @@ public interface CanvasPackage extends EPackage
   int FLOATING_TEXT__RECT = 0;
 
   /**
-   * The feature id for the '<em><b>End</b></em>' attribute.
+   * The feature id for the '<em><b>End</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -354,106 +345,32 @@ public interface CanvasPackage extends EPackage
   int FLOATING_TEXT_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.xtuml.canvas.language.canvas.impl.ShapePropsImpl <em>Shape Props</em>}' class.
+   * The meta object id for the '{@link org.xtuml.canvas.language.canvas.impl.EnumEndImpl <em>Enum End</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtuml.canvas.language.canvas.impl.ShapePropsImpl
-   * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getShapeProps()
+   * @see org.xtuml.canvas.language.canvas.impl.EnumEndImpl
+   * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getEnumEnd()
    * @generated
    */
-  int SHAPE_PROPS = 8;
+  int ENUM_END = 8;
 
   /**
-   * The feature id for the '<em><b>Container</b></em>' containment reference.
+   * The feature id for the '<em><b>Where</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SHAPE_PROPS__CONTAINER = 0;
+  int ENUM_END__WHERE = 0;
 
   /**
-   * The feature id for the '<em><b>Color</b></em>' containment reference.
+   * The number of structural features of the '<em>Enum End</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SHAPE_PROPS__COLOR = 1;
-
-  /**
-   * The number of structural features of the '<em>Shape Props</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SHAPE_PROPS_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link org.xtuml.canvas.language.canvas.impl.ContainerImpl <em>Container</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtuml.canvas.language.canvas.impl.ContainerImpl
-   * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getContainer()
-   * @generated
-   */
-  int CONTAINER = 9;
-
-  /**
-   * The number of structural features of the '<em>Container</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONTAINER_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link org.xtuml.canvas.language.canvas.impl.ColorImpl <em>Color</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtuml.canvas.language.canvas.impl.ColorImpl
-   * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getColor()
-   * @generated
-   */
-  int COLOR = 10;
-
-  /**
-   * The feature id for the '<em><b>R</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COLOR__R = 0;
-
-  /**
-   * The feature id for the '<em><b>G</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COLOR__G = 1;
-
-  /**
-   * The feature id for the '<em><b>B</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COLOR__B = 2;
-
-  /**
-   * The number of structural features of the '<em>Color</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COLOR_FEATURE_COUNT = 3;
+  int ENUM_END_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtuml.canvas.language.canvas.impl.ConnectorsImpl <em>Connectors</em>}' class.
@@ -463,7 +380,7 @@ public interface CanvasPackage extends EPackage
    * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getConnectors()
    * @generated
    */
-  int CONNECTORS = 11;
+  int CONNECTORS = 9;
 
   /**
    * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
@@ -491,7 +408,7 @@ public interface CanvasPackage extends EPackage
    * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getConnector()
    * @generated
    */
-  int CONNECTOR = 12;
+  int CONNECTOR = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -503,13 +420,13 @@ public interface CanvasPackage extends EPackage
   int CONNECTOR__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Props</b></em>' containment reference.
+   * The feature id for the '<em><b>Represents</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONNECTOR__PROPS = 1;
+  int CONNECTOR__REPRESENTS = 1;
 
   /**
    * The feature id for the '<em><b>Polyline</b></em>' containment reference.
@@ -539,22 +456,13 @@ public interface CanvasPackage extends EPackage
   int CONNECTOR__TEXTS = 4;
 
   /**
-   * The feature id for the '<em><b>Represents</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR__REPRESENTS = 5;
-
-  /**
    * The number of structural features of the '<em>Connector</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONNECTOR_FEATURE_COUNT = 6;
+  int CONNECTOR_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link org.xtuml.canvas.language.canvas.impl.AnchorsImpl <em>Anchors</em>}' class.
@@ -564,7 +472,7 @@ public interface CanvasPackage extends EPackage
    * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getAnchors()
    * @generated
    */
-  int ANCHORS = 13;
+  int ANCHORS = 11;
 
   /**
    * The feature id for the '<em><b>Start Anchor</b></em>' containment reference.
@@ -601,7 +509,7 @@ public interface CanvasPackage extends EPackage
    * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getStartAnchor()
    * @generated
    */
-  int START_ANCHOR = 14;
+  int START_ANCHOR = 12;
 
   /**
    * The feature id for the '<em><b>Point</b></em>' containment reference.
@@ -638,7 +546,7 @@ public interface CanvasPackage extends EPackage
    * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getEndAnchor()
    * @generated
    */
-  int END_ANCHOR = 15;
+  int END_ANCHOR = 13;
 
   /**
    * The feature id for the '<em><b>Point</b></em>' containment reference.
@@ -675,7 +583,7 @@ public interface CanvasPackage extends EPackage
    * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getAnchor()
    * @generated
    */
-  int ANCHOR = 16;
+  int ANCHOR = 14;
 
   /**
    * The number of structural features of the '<em>Anchor</em>' class.
@@ -694,7 +602,7 @@ public interface CanvasPackage extends EPackage
    * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getShapeAnchorElement()
    * @generated
    */
-  int SHAPE_ANCHOR_ELEMENT = 17;
+  int SHAPE_ANCHOR_ELEMENT = 15;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' reference.
@@ -722,7 +630,7 @@ public interface CanvasPackage extends EPackage
    * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getConnectorAnchorElement()
    * @generated
    */
-  int CONNECTOR_ANCHOR_ELEMENT = 18;
+  int CONNECTOR_ANCHOR_ELEMENT = 16;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' reference.
@@ -743,34 +651,6 @@ public interface CanvasPackage extends EPackage
   int CONNECTOR_ANCHOR_ELEMENT_FEATURE_COUNT = ANCHOR_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link org.xtuml.canvas.language.canvas.impl.ConnectorPropsImpl <em>Connector Props</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtuml.canvas.language.canvas.impl.ConnectorPropsImpl
-   * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getConnectorProps()
-   * @generated
-   */
-  int CONNECTOR_PROPS = 19;
-
-  /**
-   * The feature id for the '<em><b>Color</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_PROPS__COLOR = 0;
-
-  /**
-   * The number of structural features of the '<em>Connector Props</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONNECTOR_PROPS_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link org.xtuml.canvas.language.canvas.impl.PolylineImpl <em>Polyline</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -778,7 +658,7 @@ public interface CanvasPackage extends EPackage
    * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getPolyline()
    * @generated
    */
-  int POLYLINE = 20;
+  int POLYLINE = 17;
 
   /**
    * The feature id for the '<em><b>Segments</b></em>' containment reference list.
@@ -806,7 +686,7 @@ public interface CanvasPackage extends EPackage
    * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getSegment()
    * @generated
    */
-  int SEGMENT = 21;
+  int SEGMENT = 18;
 
   /**
    * The feature id for the '<em><b>Start Point</b></em>' containment reference.
@@ -843,7 +723,7 @@ public interface CanvasPackage extends EPackage
    * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getPoint()
    * @generated
    */
-  int POINT = 22;
+  int POINT = 19;
 
   /**
    * The feature id for the '<em><b>X</b></em>' attribute.
@@ -873,6 +753,43 @@ public interface CanvasPackage extends EPackage
   int POINT_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link org.xtuml.canvas.language.canvas.impl.PointDefinitionImpl <em>Point Definition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtuml.canvas.language.canvas.impl.PointDefinitionImpl
+   * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getPointDefinition()
+   * @generated
+   */
+  int POINT_DEFINITION = 20;
+
+  /**
+   * The feature id for the '<em><b>X</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POINT_DEFINITION__X = 0;
+
+  /**
+   * The feature id for the '<em><b>Y</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POINT_DEFINITION__Y = 1;
+
+  /**
+   * The number of structural features of the '<em>Point Definition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POINT_DEFINITION_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link org.xtuml.canvas.language.canvas.impl.RectangleImpl <em>Rectangle</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -880,7 +797,7 @@ public interface CanvasPackage extends EPackage
    * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getRectangle()
    * @generated
    */
-  int RECTANGLE = 23;
+  int RECTANGLE = 21;
 
   /**
    * The feature id for the '<em><b>X</b></em>' attribute.
@@ -927,25 +844,6 @@ public interface CanvasPackage extends EPackage
    */
   int RECTANGLE_FEATURE_COUNT = 4;
 
-  /**
-   * The meta object id for the '{@link org.xtuml.canvas.language.canvas.impl.ShapeContainerImpl <em>Shape Container</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtuml.canvas.language.canvas.impl.ShapeContainerImpl
-   * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getShapeContainer()
-   * @generated
-   */
-  int SHAPE_CONTAINER = 24;
-
-  /**
-   * The number of structural features of the '<em>Shape Container</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SHAPE_CONTAINER_FEATURE_COUNT = CONTAINER_FEATURE_COUNT + 0;
-
 
   /**
    * Returns the meta object for class '{@link org.xtuml.canvas.language.canvas.Model <em>Model</em>}'.
@@ -958,26 +856,15 @@ public interface CanvasPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtuml.canvas.language.canvas.Model#getSemantics <em>Semantics</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtuml.canvas.language.canvas.Model#getRender <em>Render</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Semantics</em>'.
-   * @see org.xtuml.canvas.language.canvas.Model#getSemantics()
+   * @return the meta object for the containment reference '<em>Render</em>'.
+   * @see org.xtuml.canvas.language.canvas.Model#getRender()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Semantics();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Model#getRepresents <em>Represents</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Represents</em>'.
-   * @see org.xtuml.canvas.language.canvas.Model#getRepresents()
-   * @see #getModel()
-   * @generated
-   */
-  EAttribute getModel_Represents();
+  EReference getModel_Render();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtuml.canvas.language.canvas.Model#getProperties <em>Properties</em>}'.
@@ -1002,25 +889,25 @@ public interface CanvasPackage extends EPackage
   EReference getModel_Elements();
 
   /**
-   * Returns the meta object for class '{@link org.xtuml.canvas.language.canvas.SemanticModel <em>Semantic Model</em>}'.
+   * Returns the meta object for class '{@link org.xtuml.canvas.language.canvas.ModelRender <em>Model Render</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Semantic Model</em>'.
-   * @see org.xtuml.canvas.language.canvas.SemanticModel
+   * @return the meta object for class '<em>Model Render</em>'.
+   * @see org.xtuml.canvas.language.canvas.ModelRender
    * @generated
    */
-  EClass getSemanticModel();
+  EClass getModelRender();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.SemanticModel#getImportURI <em>Import URI</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.ModelRender#getImportURI <em>Import URI</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Import URI</em>'.
-   * @see org.xtuml.canvas.language.canvas.SemanticModel#getImportURI()
-   * @see #getSemanticModel()
+   * @see org.xtuml.canvas.language.canvas.ModelRender#getImportURI()
+   * @see #getModelRender()
    * @generated
    */
-  EAttribute getSemanticModel_ImportURI();
+  EAttribute getModelRender_ImportURI();
 
   /**
    * Returns the meta object for class '{@link org.xtuml.canvas.language.canvas.ModelProperties <em>Model Properties</em>}'.
@@ -1107,15 +994,26 @@ public interface CanvasPackage extends EPackage
   EAttribute getShape_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtuml.canvas.language.canvas.Shape#getProps <em>Props</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Shape#getContainer <em>Container</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Props</em>'.
-   * @see org.xtuml.canvas.language.canvas.Shape#getProps()
+   * @return the meta object for the attribute '<em>Container</em>'.
+   * @see org.xtuml.canvas.language.canvas.Shape#getContainer()
    * @see #getShape()
    * @generated
    */
-  EReference getShape_Props();
+  EAttribute getShape_Container();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Shape#getRepresents <em>Represents</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Represents</em>'.
+   * @see org.xtuml.canvas.language.canvas.Shape#getRepresents()
+   * @see #getShape()
+   * @generated
+   */
+  EAttribute getShape_Represents();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtuml.canvas.language.canvas.Shape#getRect <em>Rect</em>}'.
@@ -1138,17 +1036,6 @@ public interface CanvasPackage extends EPackage
    * @generated
    */
   EReference getShape_Text();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Shape#getRepresents <em>Represents</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Represents</em>'.
-   * @see org.xtuml.canvas.language.canvas.Shape#getRepresents()
-   * @see #getShape()
-   * @generated
-   */
-  EAttribute getShape_Represents();
 
   /**
    * Returns the meta object for class '{@link org.xtuml.canvas.language.canvas.FloatingTexts <em>Floating Texts</em>}'.
@@ -1193,100 +1080,36 @@ public interface CanvasPackage extends EPackage
   EReference getFloatingText_Rect();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.FloatingText#getEnd <em>End</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtuml.canvas.language.canvas.FloatingText#getEnd <em>End</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>End</em>'.
+   * @return the meta object for the containment reference '<em>End</em>'.
    * @see org.xtuml.canvas.language.canvas.FloatingText#getEnd()
    * @see #getFloatingText()
    * @generated
    */
-  EAttribute getFloatingText_End();
+  EReference getFloatingText_End();
 
   /**
-   * Returns the meta object for class '{@link org.xtuml.canvas.language.canvas.ShapeProps <em>Shape Props</em>}'.
+   * Returns the meta object for class '{@link org.xtuml.canvas.language.canvas.EnumEnd <em>Enum End</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Shape Props</em>'.
-   * @see org.xtuml.canvas.language.canvas.ShapeProps
+   * @return the meta object for class '<em>Enum End</em>'.
+   * @see org.xtuml.canvas.language.canvas.EnumEnd
    * @generated
    */
-  EClass getShapeProps();
+  EClass getEnumEnd();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtuml.canvas.language.canvas.ShapeProps#getContainer <em>Container</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.EnumEnd#getWhere <em>Where</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Container</em>'.
-   * @see org.xtuml.canvas.language.canvas.ShapeProps#getContainer()
-   * @see #getShapeProps()
+   * @return the meta object for the attribute '<em>Where</em>'.
+   * @see org.xtuml.canvas.language.canvas.EnumEnd#getWhere()
+   * @see #getEnumEnd()
    * @generated
    */
-  EReference getShapeProps_Container();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtuml.canvas.language.canvas.ShapeProps#getColor <em>Color</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Color</em>'.
-   * @see org.xtuml.canvas.language.canvas.ShapeProps#getColor()
-   * @see #getShapeProps()
-   * @generated
-   */
-  EReference getShapeProps_Color();
-
-  /**
-   * Returns the meta object for class '{@link org.xtuml.canvas.language.canvas.Container <em>Container</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Container</em>'.
-   * @see org.xtuml.canvas.language.canvas.Container
-   * @generated
-   */
-  EClass getContainer();
-
-  /**
-   * Returns the meta object for class '{@link org.xtuml.canvas.language.canvas.Color <em>Color</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Color</em>'.
-   * @see org.xtuml.canvas.language.canvas.Color
-   * @generated
-   */
-  EClass getColor();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Color#getR <em>R</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>R</em>'.
-   * @see org.xtuml.canvas.language.canvas.Color#getR()
-   * @see #getColor()
-   * @generated
-   */
-  EAttribute getColor_R();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Color#getG <em>G</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>G</em>'.
-   * @see org.xtuml.canvas.language.canvas.Color#getG()
-   * @see #getColor()
-   * @generated
-   */
-  EAttribute getColor_G();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Color#getB <em>B</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>B</em>'.
-   * @see org.xtuml.canvas.language.canvas.Color#getB()
-   * @see #getColor()
-   * @generated
-   */
-  EAttribute getColor_B();
+  EAttribute getEnumEnd_Where();
 
   /**
    * Returns the meta object for class '{@link org.xtuml.canvas.language.canvas.Connectors <em>Connectors</em>}'.
@@ -1331,15 +1154,15 @@ public interface CanvasPackage extends EPackage
   EAttribute getConnector_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtuml.canvas.language.canvas.Connector#getProps <em>Props</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Connector#getRepresents <em>Represents</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Props</em>'.
-   * @see org.xtuml.canvas.language.canvas.Connector#getProps()
+   * @return the meta object for the attribute '<em>Represents</em>'.
+   * @see org.xtuml.canvas.language.canvas.Connector#getRepresents()
    * @see #getConnector()
    * @generated
    */
-  EReference getConnector_Props();
+  EAttribute getConnector_Represents();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtuml.canvas.language.canvas.Connector#getPolyline <em>Polyline</em>}'.
@@ -1373,17 +1196,6 @@ public interface CanvasPackage extends EPackage
    * @generated
    */
   EReference getConnector_Texts();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Connector#getRepresents <em>Represents</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Represents</em>'.
-   * @see org.xtuml.canvas.language.canvas.Connector#getRepresents()
-   * @see #getConnector()
-   * @generated
-   */
-  EAttribute getConnector_Represents();
 
   /**
    * Returns the meta object for class '{@link org.xtuml.canvas.language.canvas.Anchors <em>Anchors</em>}'.
@@ -1534,27 +1346,6 @@ public interface CanvasPackage extends EPackage
   EReference getConnectorAnchorElement_Element();
 
   /**
-   * Returns the meta object for class '{@link org.xtuml.canvas.language.canvas.ConnectorProps <em>Connector Props</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Connector Props</em>'.
-   * @see org.xtuml.canvas.language.canvas.ConnectorProps
-   * @generated
-   */
-  EClass getConnectorProps();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtuml.canvas.language.canvas.ConnectorProps#getColor <em>Color</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Color</em>'.
-   * @see org.xtuml.canvas.language.canvas.ConnectorProps#getColor()
-   * @see #getConnectorProps()
-   * @generated
-   */
-  EReference getConnectorProps_Color();
-
-  /**
    * Returns the meta object for class '{@link org.xtuml.canvas.language.canvas.Polyline <em>Polyline</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1640,6 +1431,38 @@ public interface CanvasPackage extends EPackage
   EAttribute getPoint_Y();
 
   /**
+   * Returns the meta object for class '{@link org.xtuml.canvas.language.canvas.PointDefinition <em>Point Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Point Definition</em>'.
+   * @see org.xtuml.canvas.language.canvas.PointDefinition
+   * @generated
+   */
+  EClass getPointDefinition();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.PointDefinition#getX <em>X</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>X</em>'.
+   * @see org.xtuml.canvas.language.canvas.PointDefinition#getX()
+   * @see #getPointDefinition()
+   * @generated
+   */
+  EAttribute getPointDefinition_X();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.PointDefinition#getY <em>Y</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Y</em>'.
+   * @see org.xtuml.canvas.language.canvas.PointDefinition#getY()
+   * @see #getPointDefinition()
+   * @generated
+   */
+  EAttribute getPointDefinition_Y();
+
+  /**
    * Returns the meta object for class '{@link org.xtuml.canvas.language.canvas.Rectangle <em>Rectangle</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1694,16 +1517,6 @@ public interface CanvasPackage extends EPackage
   EAttribute getRectangle_H();
 
   /**
-   * Returns the meta object for class '{@link org.xtuml.canvas.language.canvas.ShapeContainer <em>Shape Container</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Shape Container</em>'.
-   * @see org.xtuml.canvas.language.canvas.ShapeContainer
-   * @generated
-   */
-  EClass getShapeContainer();
-
-  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1737,20 +1550,12 @@ public interface CanvasPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Semantics</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Render</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__SEMANTICS = eINSTANCE.getModel_Semantics();
-
-    /**
-     * The meta object literal for the '<em><b>Represents</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MODEL__REPRESENTS = eINSTANCE.getModel_Represents();
+    EReference MODEL__RENDER = eINSTANCE.getModel_Render();
 
     /**
      * The meta object literal for the '<em><b>Properties</b></em>' containment reference feature.
@@ -1769,14 +1574,14 @@ public interface CanvasPackage extends EPackage
     EReference MODEL__ELEMENTS = eINSTANCE.getModel_Elements();
 
     /**
-     * The meta object literal for the '{@link org.xtuml.canvas.language.canvas.impl.SemanticModelImpl <em>Semantic Model</em>}' class.
+     * The meta object literal for the '{@link org.xtuml.canvas.language.canvas.impl.ModelRenderImpl <em>Model Render</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtuml.canvas.language.canvas.impl.SemanticModelImpl
-     * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getSemanticModel()
+     * @see org.xtuml.canvas.language.canvas.impl.ModelRenderImpl
+     * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getModelRender()
      * @generated
      */
-    EClass SEMANTIC_MODEL = eINSTANCE.getSemanticModel();
+    EClass MODEL_RENDER = eINSTANCE.getModelRender();
 
     /**
      * The meta object literal for the '<em><b>Import URI</b></em>' attribute feature.
@@ -1784,7 +1589,7 @@ public interface CanvasPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SEMANTIC_MODEL__IMPORT_URI = eINSTANCE.getSemanticModel_ImportURI();
+    EAttribute MODEL_RENDER__IMPORT_URI = eINSTANCE.getModelRender_ImportURI();
 
     /**
      * The meta object literal for the '{@link org.xtuml.canvas.language.canvas.impl.ModelPropertiesImpl <em>Model Properties</em>}' class.
@@ -1859,12 +1664,20 @@ public interface CanvasPackage extends EPackage
     EAttribute SHAPE__NAME = eINSTANCE.getShape_Name();
 
     /**
-     * The meta object literal for the '<em><b>Props</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Container</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SHAPE__PROPS = eINSTANCE.getShape_Props();
+    EAttribute SHAPE__CONTAINER = eINSTANCE.getShape_Container();
+
+    /**
+     * The meta object literal for the '<em><b>Represents</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SHAPE__REPRESENTS = eINSTANCE.getShape_Represents();
 
     /**
      * The meta object literal for the '<em><b>Rect</b></em>' containment reference feature.
@@ -1881,14 +1694,6 @@ public interface CanvasPackage extends EPackage
      * @generated
      */
     EReference SHAPE__TEXT = eINSTANCE.getShape_Text();
-
-    /**
-     * The meta object literal for the '<em><b>Represents</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SHAPE__REPRESENTS = eINSTANCE.getShape_Represents();
 
     /**
      * The meta object literal for the '{@link org.xtuml.canvas.language.canvas.impl.FloatingTextsImpl <em>Floating Texts</em>}' class.
@@ -1927,82 +1732,30 @@ public interface CanvasPackage extends EPackage
     EReference FLOATING_TEXT__RECT = eINSTANCE.getFloatingText_Rect();
 
     /**
-     * The meta object literal for the '<em><b>End</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>End</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FLOATING_TEXT__END = eINSTANCE.getFloatingText_End();
+    EReference FLOATING_TEXT__END = eINSTANCE.getFloatingText_End();
 
     /**
-     * The meta object literal for the '{@link org.xtuml.canvas.language.canvas.impl.ShapePropsImpl <em>Shape Props</em>}' class.
+     * The meta object literal for the '{@link org.xtuml.canvas.language.canvas.impl.EnumEndImpl <em>Enum End</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtuml.canvas.language.canvas.impl.ShapePropsImpl
-     * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getShapeProps()
+     * @see org.xtuml.canvas.language.canvas.impl.EnumEndImpl
+     * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getEnumEnd()
      * @generated
      */
-    EClass SHAPE_PROPS = eINSTANCE.getShapeProps();
+    EClass ENUM_END = eINSTANCE.getEnumEnd();
 
     /**
-     * The meta object literal for the '<em><b>Container</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Where</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SHAPE_PROPS__CONTAINER = eINSTANCE.getShapeProps_Container();
-
-    /**
-     * The meta object literal for the '<em><b>Color</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SHAPE_PROPS__COLOR = eINSTANCE.getShapeProps_Color();
-
-    /**
-     * The meta object literal for the '{@link org.xtuml.canvas.language.canvas.impl.ContainerImpl <em>Container</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtuml.canvas.language.canvas.impl.ContainerImpl
-     * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getContainer()
-     * @generated
-     */
-    EClass CONTAINER = eINSTANCE.getContainer();
-
-    /**
-     * The meta object literal for the '{@link org.xtuml.canvas.language.canvas.impl.ColorImpl <em>Color</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtuml.canvas.language.canvas.impl.ColorImpl
-     * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getColor()
-     * @generated
-     */
-    EClass COLOR = eINSTANCE.getColor();
-
-    /**
-     * The meta object literal for the '<em><b>R</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute COLOR__R = eINSTANCE.getColor_R();
-
-    /**
-     * The meta object literal for the '<em><b>G</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute COLOR__G = eINSTANCE.getColor_G();
-
-    /**
-     * The meta object literal for the '<em><b>B</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute COLOR__B = eINSTANCE.getColor_B();
+    EAttribute ENUM_END__WHERE = eINSTANCE.getEnumEnd_Where();
 
     /**
      * The meta object literal for the '{@link org.xtuml.canvas.language.canvas.impl.ConnectorsImpl <em>Connectors</em>}' class.
@@ -2041,12 +1794,12 @@ public interface CanvasPackage extends EPackage
     EAttribute CONNECTOR__NAME = eINSTANCE.getConnector_Name();
 
     /**
-     * The meta object literal for the '<em><b>Props</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Represents</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CONNECTOR__PROPS = eINSTANCE.getConnector_Props();
+    EAttribute CONNECTOR__REPRESENTS = eINSTANCE.getConnector_Represents();
 
     /**
      * The meta object literal for the '<em><b>Polyline</b></em>' containment reference feature.
@@ -2071,14 +1824,6 @@ public interface CanvasPackage extends EPackage
      * @generated
      */
     EReference CONNECTOR__TEXTS = eINSTANCE.getConnector_Texts();
-
-    /**
-     * The meta object literal for the '<em><b>Represents</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CONNECTOR__REPRESENTS = eINSTANCE.getConnector_Represents();
 
     /**
      * The meta object literal for the '{@link org.xtuml.canvas.language.canvas.impl.AnchorsImpl <em>Anchors</em>}' class.
@@ -2205,24 +1950,6 @@ public interface CanvasPackage extends EPackage
     EReference CONNECTOR_ANCHOR_ELEMENT__ELEMENT = eINSTANCE.getConnectorAnchorElement_Element();
 
     /**
-     * The meta object literal for the '{@link org.xtuml.canvas.language.canvas.impl.ConnectorPropsImpl <em>Connector Props</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtuml.canvas.language.canvas.impl.ConnectorPropsImpl
-     * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getConnectorProps()
-     * @generated
-     */
-    EClass CONNECTOR_PROPS = eINSTANCE.getConnectorProps();
-
-    /**
-     * The meta object literal for the '<em><b>Color</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CONNECTOR_PROPS__COLOR = eINSTANCE.getConnectorProps_Color();
-
-    /**
      * The meta object literal for the '{@link org.xtuml.canvas.language.canvas.impl.PolylineImpl <em>Polyline</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2293,6 +2020,32 @@ public interface CanvasPackage extends EPackage
     EAttribute POINT__Y = eINSTANCE.getPoint_Y();
 
     /**
+     * The meta object literal for the '{@link org.xtuml.canvas.language.canvas.impl.PointDefinitionImpl <em>Point Definition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtuml.canvas.language.canvas.impl.PointDefinitionImpl
+     * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getPointDefinition()
+     * @generated
+     */
+    EClass POINT_DEFINITION = eINSTANCE.getPointDefinition();
+
+    /**
+     * The meta object literal for the '<em><b>X</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute POINT_DEFINITION__X = eINSTANCE.getPointDefinition_X();
+
+    /**
+     * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute POINT_DEFINITION__Y = eINSTANCE.getPointDefinition_Y();
+
+    /**
      * The meta object literal for the '{@link org.xtuml.canvas.language.canvas.impl.RectangleImpl <em>Rectangle</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2333,16 +2086,6 @@ public interface CanvasPackage extends EPackage
      * @generated
      */
     EAttribute RECTANGLE__H = eINSTANCE.getRectangle_H();
-
-    /**
-     * The meta object literal for the '{@link org.xtuml.canvas.language.canvas.impl.ShapeContainerImpl <em>Shape Container</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtuml.canvas.language.canvas.impl.ShapeContainerImpl
-     * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getShapeContainer()
-     * @generated
-     */
-    EClass SHAPE_CONTAINER = eINSTANCE.getShapeContainer();
 
   }
 

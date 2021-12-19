@@ -16,6 +16,7 @@ import org.eclipse.xtext.ui.resource.IResourceSetProvider;
 import org.xtuml.bp.core.common.NonRootModelElement;
 import org.xtuml.bp.ui.canvas.CanvasPlugin;
 import org.xtuml.bp.ui.canvas.Connector_c;
+import org.xtuml.bp.ui.canvas.ContainingShape_c;
 import org.xtuml.bp.ui.canvas.Diagram_c;
 import org.xtuml.bp.ui.canvas.FloatingText_c;
 import org.xtuml.bp.ui.canvas.Graphconnector_c;
@@ -35,16 +36,18 @@ import org.xtuml.canvas.language.canvas.Connector;
 import org.xtuml.canvas.language.canvas.ConnectorAnchorElement;
 import org.xtuml.canvas.language.canvas.Connectors;
 import org.xtuml.canvas.language.canvas.EndAnchor;
+import org.xtuml.canvas.language.canvas.EnumEnd;
 import org.xtuml.canvas.language.canvas.FloatingText;
 import org.xtuml.canvas.language.canvas.FloatingTexts;
 import org.xtuml.canvas.language.canvas.GraphicalElement;
 import org.xtuml.canvas.language.canvas.Model;
 import org.xtuml.canvas.language.canvas.ModelProperties;
+import org.xtuml.canvas.language.canvas.ModelRender;
 import org.xtuml.canvas.language.canvas.Point;
+import org.xtuml.canvas.language.canvas.PointDefinition;
 import org.xtuml.canvas.language.canvas.Polyline;
 import org.xtuml.canvas.language.canvas.Rectangle;
 import org.xtuml.canvas.language.canvas.Segment;
-import org.xtuml.canvas.language.canvas.SemanticModel;
 import org.xtuml.canvas.language.canvas.Shape;
 import org.xtuml.canvas.language.canvas.ShapeAnchorElement;
 import org.xtuml.canvas.language.canvas.Shapes;
@@ -92,18 +95,19 @@ public class CanvasWriter implements IGraphicalWriter {
 		Resource r = rs.getResource(uri, true);
 		r.getContents().clear();
 		model = factory.createModel();
-		model.setRepresents(getPath(diagramRepresents));
-		ModelProperties properties = factory.createModelProperties();
+		ModelRender modelRender = factory.createModelRender();
+		modelRender.setImportURI(getPath(diagramRepresents));
+		model.setRender(modelRender);
 		Diagram_c diagram = Diagram_c.getOneDIM_DIAOnR18(xtModel);
-		properties.setZoom((int) diagram.getZoom());
-		Point viewport = factory.createPoint();
-		viewport.setX((int) diagram.getViewportx());
-		viewport.setY((int) diagram.getViewporty());
-		properties.setPoint(viewport);
-		SemanticModel sm = factory.createSemanticModel();
-		sm.setImportURI(diagramRepresents.getPath());
-		model.getSemantics().add(sm);
-		model.setProperties(properties);
+		if(diagram.getViewportx() != 0 && diagram.getViewporty() != 0) {
+			ModelProperties properties = factory.createModelProperties();
+			properties.setZoom((int) diagram.getZoom());
+			Point viewport = factory.createPoint();
+			viewport.setX((int) diagram.getViewportx());
+			viewport.setY((int) diagram.getViewporty());
+			properties.setPoint(viewport);
+			model.setProperties(properties);
+		}
 		populateModel(diagramRepresents);
 		r.getContents().add(model);
 		SaveOptions.Builder options = SaveOptions.newBuilder();
@@ -168,7 +172,9 @@ public class CanvasWriter implements IGraphicalWriter {
 			rect.setW((int) node.getWidth());
 			rect.setH((int) node.getHeight());
 			floatingText.setRect(rect);
-			floatingText.setEnd(EnumUtils.endFor(text.getEnd()));
+			EnumEnd end = factory.createEnumEnd();
+			end.setWhere(EnumUtils.endFor(text.getEnd()));
+			floatingText.setEnd(end);
 			floatingTexts.getTexts().add(floatingText);
 		});
 		connector.setTexts(floatingTexts);
@@ -186,7 +192,9 @@ public class CanvasWriter implements IGraphicalWriter {
 			rect.setW((int) node.getWidth());
 			rect.setH((int) node.getHeight());
 			floatingText.setRect(rect);
-			floatingText.setEnd(EnumUtils.endFor(text.getEnd()));
+			EnumEnd end = factory.createEnumEnd();
+			end.setWhere(EnumUtils.endFor(text.getEnd()));
+			floatingText.setEnd(end);
 			shape.setText(floatingText);
 		}
 	}
@@ -230,6 +238,10 @@ public class CanvasWriter implements IGraphicalWriter {
 		shape.setRect(rect);
 		shape.setRepresents(getPath(ele));
 		shape.setName(getNameFromPath(shape.getRepresents()));
+		ContainingShape_c containerShp = ContainingShape_c.getOneGD_CTROnR28(shp);
+		if(containerShp != null) {
+			shape.setContainer("container");
+		}
 		createText(shp, shape);
 		return shape;
 	}
@@ -266,7 +278,7 @@ public class CanvasWriter implements IGraphicalWriter {
 			}
 		}
 		// some connectors start on whitespace
-		Point anchorPoint = factory.createPoint();
+		PointDefinition anchorPoint = factory.createPointDefinition();
 		if (startElem != null) {
 			anchorPoint.setX((int) graphConnector.getPositionx());
 			anchorPoint.setY((int) graphConnector.getPositiony());
@@ -306,7 +318,7 @@ public class CanvasWriter implements IGraphicalWriter {
 			}
 		}
 		// some connectors end on whitespace
-		Point anchorPoint = factory.createPoint();
+		PointDefinition anchorPoint = factory.createPointDefinition();
 		if (endElem != null) {
 			anchorPoint.setX((int) graphConnector.getPositionx());
 			anchorPoint.setY((int) graphConnector.getPositiony());

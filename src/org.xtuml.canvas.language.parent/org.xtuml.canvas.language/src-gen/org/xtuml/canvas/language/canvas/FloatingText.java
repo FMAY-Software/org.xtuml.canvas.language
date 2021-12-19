@@ -47,25 +47,25 @@ public interface FloatingText extends EObject
   void setRect(Rectangle value);
 
   /**
-   * Returns the value of the '<em><b>End</b></em>' attribute.
+   * Returns the value of the '<em><b>End</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>End</em>' attribute.
-   * @see #setEnd(String)
+   * @return the value of the '<em>End</em>' containment reference.
+   * @see #setEnd(EnumEnd)
    * @see org.xtuml.canvas.language.canvas.CanvasPackage#getFloatingText_End()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getEnd();
+  EnumEnd getEnd();
 
   /**
-   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.FloatingText#getEnd <em>End</em>}' attribute.
+   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.FloatingText#getEnd <em>End</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>End</em>' attribute.
+   * @param value the new value of the '<em>End</em>' containment reference.
    * @see #getEnd()
    * @generated
    */
-  void setEnd(String value);
+  void setEnd(EnumEnd value);
 
 } // FloatingText

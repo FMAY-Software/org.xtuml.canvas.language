@@ -11,49 +11,49 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtuml.canvas.language.canvas.CanvasPackage;
-import org.xtuml.canvas.language.canvas.SemanticModel;
+import org.xtuml.canvas.language.canvas.EnumEnd;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Semantic Model</b></em>'.
+ * An implementation of the model object '<em><b>Enum End</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtuml.canvas.language.canvas.impl.SemanticModelImpl#getImportURI <em>Import URI</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.impl.EnumEndImpl#getWhere <em>Where</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SemanticModelImpl extends MinimalEObjectImpl.Container implements SemanticModel
+public class EnumEndImpl extends MinimalEObjectImpl.Container implements EnumEnd
 {
   /**
-   * The default value of the '{@link #getImportURI() <em>Import URI</em>}' attribute.
+   * The default value of the '{@link #getWhere() <em>Where</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImportURI()
+   * @see #getWhere()
    * @generated
    * @ordered
    */
-  protected static final String IMPORT_URI_EDEFAULT = null;
+  protected static final String WHERE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getImportURI() <em>Import URI</em>}' attribute.
+   * The cached value of the '{@link #getWhere() <em>Where</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImportURI()
+   * @see #getWhere()
    * @generated
    * @ordered
    */
-  protected String importURI = IMPORT_URI_EDEFAULT;
+  protected String where = WHERE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SemanticModelImpl()
+  protected EnumEndImpl()
   {
     super();
   }
@@ -66,7 +66,7 @@ public class SemanticModelImpl extends MinimalEObjectImpl.Container implements S
   @Override
   protected EClass eStaticClass()
   {
-    return CanvasPackage.Literals.SEMANTIC_MODEL;
+    return CanvasPackage.Literals.ENUM_END;
   }
 
   /**
@@ -75,9 +75,9 @@ public class SemanticModelImpl extends MinimalEObjectImpl.Container implements S
    * @generated
    */
   @Override
-  public String getImportURI()
+  public String getWhere()
   {
-    return importURI;
+    return where;
   }
 
   /**
@@ -86,12 +86,12 @@ public class SemanticModelImpl extends MinimalEObjectImpl.Container implements S
    * @generated
    */
   @Override
-  public void setImportURI(String newImportURI)
+  public void setWhere(String newWhere)
   {
-    String oldImportURI = importURI;
-    importURI = newImportURI;
+    String oldWhere = where;
+    where = newWhere;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.SEMANTIC_MODEL__IMPORT_URI, oldImportURI, importURI));
+      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.ENUM_END__WHERE, oldWhere, where));
   }
 
   /**
@@ -104,8 +104,8 @@ public class SemanticModelImpl extends MinimalEObjectImpl.Container implements S
   {
     switch (featureID)
     {
-      case CanvasPackage.SEMANTIC_MODEL__IMPORT_URI:
-        return getImportURI();
+      case CanvasPackage.ENUM_END__WHERE:
+        return getWhere();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +120,8 @@ public class SemanticModelImpl extends MinimalEObjectImpl.Container implements S
   {
     switch (featureID)
     {
-      case CanvasPackage.SEMANTIC_MODEL__IMPORT_URI:
-        setImportURI((String)newValue);
+      case CanvasPackage.ENUM_END__WHERE:
+        setWhere((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +137,8 @@ public class SemanticModelImpl extends MinimalEObjectImpl.Container implements S
   {
     switch (featureID)
     {
-      case CanvasPackage.SEMANTIC_MODEL__IMPORT_URI:
-        setImportURI(IMPORT_URI_EDEFAULT);
+      case CanvasPackage.ENUM_END__WHERE:
+        setWhere(WHERE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +154,8 @@ public class SemanticModelImpl extends MinimalEObjectImpl.Container implements S
   {
     switch (featureID)
     {
-      case CanvasPackage.SEMANTIC_MODEL__IMPORT_URI:
-        return IMPORT_URI_EDEFAULT == null ? importURI != null : !IMPORT_URI_EDEFAULT.equals(importURI);
+      case CanvasPackage.ENUM_END__WHERE:
+        return WHERE_EDEFAULT == null ? where != null : !WHERE_EDEFAULT.equals(where);
     }
     return super.eIsSet(featureID);
   }
@@ -171,10 +171,10 @@ public class SemanticModelImpl extends MinimalEObjectImpl.Container implements S
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (importURI: ");
-    result.append(importURI);
+    result.append(" (where: ");
+    result.append(where);
     result.append(')');
     return result.toString();
   }
 
-} //SemanticModelImpl
+} //EnumEndImpl

@@ -23,7 +23,7 @@ import org.xtuml.canvas.language.canvas.CanvasPackage;
 import org.xtuml.canvas.language.canvas.GraphicalElement;
 import org.xtuml.canvas.language.canvas.Model;
 import org.xtuml.canvas.language.canvas.ModelProperties;
-import org.xtuml.canvas.language.canvas.SemanticModel;
+import org.xtuml.canvas.language.canvas.ModelRender;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,8 +33,7 @@ import org.xtuml.canvas.language.canvas.SemanticModel;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtuml.canvas.language.canvas.impl.ModelImpl#getSemantics <em>Semantics</em>}</li>
- *   <li>{@link org.xtuml.canvas.language.canvas.impl.ModelImpl#getRepresents <em>Represents</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.impl.ModelImpl#getRender <em>Render</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.impl.ModelImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.impl.ModelImpl#getElements <em>Elements</em>}</li>
  * </ul>
@@ -44,34 +43,14 @@ import org.xtuml.canvas.language.canvas.SemanticModel;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getSemantics() <em>Semantics</em>}' containment reference list.
+   * The cached value of the '{@link #getRender() <em>Render</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSemantics()
+   * @see #getRender()
    * @generated
    * @ordered
    */
-  protected EList<SemanticModel> semantics;
-
-  /**
-   * The default value of the '{@link #getRepresents() <em>Represents</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRepresents()
-   * @generated
-   * @ordered
-   */
-  protected static final String REPRESENTS_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getRepresents() <em>Represents</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRepresents()
-   * @generated
-   * @ordered
-   */
-  protected String represents = REPRESENTS_EDEFAULT;
+  protected ModelRender render;
 
   /**
    * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference.
@@ -120,13 +99,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
-  public EList<SemanticModel> getSemantics()
+  public ModelRender getRender()
   {
-    if (semantics == null)
-    {
-      semantics = new EObjectContainmentEList<SemanticModel>(SemanticModel.class, this, CanvasPackage.MODEL__SEMANTICS);
-    }
-    return semantics;
+    return render;
   }
 
   /**
@@ -134,24 +109,38 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public String getRepresents()
+  public NotificationChain basicSetRender(ModelRender newRender, NotificationChain msgs)
   {
-    return represents;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setRepresents(String newRepresents)
-  {
-    String oldRepresents = represents;
-    represents = newRepresents;
+    ModelRender oldRender = render;
+    render = newRender;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.MODEL__REPRESENTS, oldRepresents, represents));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CanvasPackage.MODEL__RENDER, oldRender, newRender);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setRender(ModelRender newRender)
+  {
+    if (newRender != render)
+    {
+      NotificationChain msgs = null;
+      if (render != null)
+        msgs = ((InternalEObject)render).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CanvasPackage.MODEL__RENDER, null, msgs);
+      if (newRender != null)
+        msgs = ((InternalEObject)newRender).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CanvasPackage.MODEL__RENDER, null, msgs);
+      msgs = basicSetRender(newRender, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.MODEL__RENDER, newRender, newRender));
   }
 
   /**
@@ -229,8 +218,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CanvasPackage.MODEL__SEMANTICS:
-        return ((InternalEList<?>)getSemantics()).basicRemove(otherEnd, msgs);
+      case CanvasPackage.MODEL__RENDER:
+        return basicSetRender(null, msgs);
       case CanvasPackage.MODEL__PROPERTIES:
         return basicSetProperties(null, msgs);
       case CanvasPackage.MODEL__ELEMENTS:
@@ -249,10 +238,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CanvasPackage.MODEL__SEMANTICS:
-        return getSemantics();
-      case CanvasPackage.MODEL__REPRESENTS:
-        return getRepresents();
+      case CanvasPackage.MODEL__RENDER:
+        return getRender();
       case CanvasPackage.MODEL__PROPERTIES:
         return getProperties();
       case CanvasPackage.MODEL__ELEMENTS:
@@ -272,12 +259,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CanvasPackage.MODEL__SEMANTICS:
-        getSemantics().clear();
-        getSemantics().addAll((Collection<? extends SemanticModel>)newValue);
-        return;
-      case CanvasPackage.MODEL__REPRESENTS:
-        setRepresents((String)newValue);
+      case CanvasPackage.MODEL__RENDER:
+        setRender((ModelRender)newValue);
         return;
       case CanvasPackage.MODEL__PROPERTIES:
         setProperties((ModelProperties)newValue);
@@ -300,11 +283,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CanvasPackage.MODEL__SEMANTICS:
-        getSemantics().clear();
-        return;
-      case CanvasPackage.MODEL__REPRESENTS:
-        setRepresents(REPRESENTS_EDEFAULT);
+      case CanvasPackage.MODEL__RENDER:
+        setRender((ModelRender)null);
         return;
       case CanvasPackage.MODEL__PROPERTIES:
         setProperties((ModelProperties)null);
@@ -326,33 +306,14 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CanvasPackage.MODEL__SEMANTICS:
-        return semantics != null && !semantics.isEmpty();
-      case CanvasPackage.MODEL__REPRESENTS:
-        return REPRESENTS_EDEFAULT == null ? represents != null : !REPRESENTS_EDEFAULT.equals(represents);
+      case CanvasPackage.MODEL__RENDER:
+        return render != null;
       case CanvasPackage.MODEL__PROPERTIES:
         return properties != null;
       case CanvasPackage.MODEL__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (represents: ");
-    result.append(represents);
-    result.append(')');
-    return result.toString();
   }
 
 } //ModelImpl

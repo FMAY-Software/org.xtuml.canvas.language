@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtuml.canvas.language.canvas.Anchor;
 import org.xtuml.canvas.language.canvas.CanvasPackage;
-import org.xtuml.canvas.language.canvas.Point;
+import org.xtuml.canvas.language.canvas.PointDefinition;
 import org.xtuml.canvas.language.canvas.StartAnchor;
 
 /**
@@ -41,7 +41,7 @@ public class StartAnchorImpl extends MinimalEObjectImpl.Container implements Sta
    * @generated
    * @ordered
    */
-  protected Point point;
+  protected PointDefinition point;
 
   /**
    * The cached value of the '{@link #getAnchor() <em>Anchor</em>}' containment reference.
@@ -80,7 +80,7 @@ public class StartAnchorImpl extends MinimalEObjectImpl.Container implements Sta
    * @generated
    */
   @Override
-  public Point getPoint()
+  public PointDefinition getPoint()
   {
     return point;
   }
@@ -90,9 +90,9 @@ public class StartAnchorImpl extends MinimalEObjectImpl.Container implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPoint(Point newPoint, NotificationChain msgs)
+  public NotificationChain basicSetPoint(PointDefinition newPoint, NotificationChain msgs)
   {
-    Point oldPoint = point;
+    PointDefinition oldPoint = point;
     point = newPoint;
     if (eNotificationRequired())
     {
@@ -108,7 +108,7 @@ public class StartAnchorImpl extends MinimalEObjectImpl.Container implements Sta
    * @generated
    */
   @Override
-  public void setPoint(Point newPoint)
+  public void setPoint(PointDefinition newPoint)
   {
     if (newPoint != point)
     {
@@ -221,7 +221,7 @@ public class StartAnchorImpl extends MinimalEObjectImpl.Container implements Sta
     switch (featureID)
     {
       case CanvasPackage.START_ANCHOR__POINT:
-        setPoint((Point)newValue);
+        setPoint((PointDefinition)newValue);
         return;
       case CanvasPackage.START_ANCHOR__ANCHOR:
         setAnchor((Anchor)newValue);
@@ -241,7 +241,7 @@ public class StartAnchorImpl extends MinimalEObjectImpl.Container implements Sta
     switch (featureID)
     {
       case CanvasPackage.START_ANCHOR__POINT:
-        setPoint((Point)null);
+        setPoint((PointDefinition)null);
         return;
       case CanvasPackage.START_ANCHOR__ANCHOR:
         setAnchor((Anchor)null);

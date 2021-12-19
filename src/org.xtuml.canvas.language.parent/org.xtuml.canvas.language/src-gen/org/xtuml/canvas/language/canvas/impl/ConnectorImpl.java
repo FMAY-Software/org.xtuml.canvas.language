@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.xtuml.canvas.language.canvas.Anchors;
 import org.xtuml.canvas.language.canvas.CanvasPackage;
 import org.xtuml.canvas.language.canvas.Connector;
-import org.xtuml.canvas.language.canvas.ConnectorProps;
 import org.xtuml.canvas.language.canvas.FloatingTexts;
 import org.xtuml.canvas.language.canvas.Polyline;
 
@@ -28,11 +27,10 @@ import org.xtuml.canvas.language.canvas.Polyline;
  * </p>
  * <ul>
  *   <li>{@link org.xtuml.canvas.language.canvas.impl.ConnectorImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtuml.canvas.language.canvas.impl.ConnectorImpl#getProps <em>Props</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.impl.ConnectorImpl#getRepresents <em>Represents</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.impl.ConnectorImpl#getPolyline <em>Polyline</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.impl.ConnectorImpl#getAnchors <em>Anchors</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.impl.ConnectorImpl#getTexts <em>Texts</em>}</li>
- *   <li>{@link org.xtuml.canvas.language.canvas.impl.ConnectorImpl#getRepresents <em>Represents</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,14 +58,24 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getProps() <em>Props</em>}' containment reference.
+   * The default value of the '{@link #getRepresents() <em>Represents</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getProps()
+   * @see #getRepresents()
    * @generated
    * @ordered
    */
-  protected ConnectorProps props;
+  protected static final String REPRESENTS_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getRepresents() <em>Represents</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRepresents()
+   * @generated
+   * @ordered
+   */
+  protected String represents = REPRESENTS_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getPolyline() <em>Polyline</em>}' containment reference.
@@ -98,26 +106,6 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
    * @ordered
    */
   protected FloatingTexts texts;
-
-  /**
-   * The default value of the '{@link #getRepresents() <em>Represents</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRepresents()
-   * @generated
-   * @ordered
-   */
-  protected static final String REPRESENTS_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getRepresents() <em>Represents</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRepresents()
-   * @generated
-   * @ordered
-   */
-  protected String represents = REPRESENTS_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -171,26 +159,9 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
    * @generated
    */
   @Override
-  public ConnectorProps getProps()
+  public String getRepresents()
   {
-    return props;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetProps(ConnectorProps newProps, NotificationChain msgs)
-  {
-    ConnectorProps oldProps = props;
-    props = newProps;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CanvasPackage.CONNECTOR__PROPS, oldProps, newProps);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+    return represents;
   }
 
   /**
@@ -199,20 +170,12 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
    * @generated
    */
   @Override
-  public void setProps(ConnectorProps newProps)
+  public void setRepresents(String newRepresents)
   {
-    if (newProps != props)
-    {
-      NotificationChain msgs = null;
-      if (props != null)
-        msgs = ((InternalEObject)props).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CanvasPackage.CONNECTOR__PROPS, null, msgs);
-      if (newProps != null)
-        msgs = ((InternalEObject)newProps).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CanvasPackage.CONNECTOR__PROPS, null, msgs);
-      msgs = basicSetProps(newProps, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.CONNECTOR__PROPS, newProps, newProps));
+    String oldRepresents = represents;
+    represents = newRepresents;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.CONNECTOR__REPRESENTS, oldRepresents, represents));
   }
 
   /**
@@ -371,37 +334,10 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
    * @generated
    */
   @Override
-  public String getRepresents()
-  {
-    return represents;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setRepresents(String newRepresents)
-  {
-    String oldRepresents = represents;
-    represents = newRepresents;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.CONNECTOR__REPRESENTS, oldRepresents, represents));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
-      case CanvasPackage.CONNECTOR__PROPS:
-        return basicSetProps(null, msgs);
       case CanvasPackage.CONNECTOR__POLYLINE:
         return basicSetPolyline(null, msgs);
       case CanvasPackage.CONNECTOR__ANCHORS:
@@ -424,16 +360,14 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
     {
       case CanvasPackage.CONNECTOR__NAME:
         return getName();
-      case CanvasPackage.CONNECTOR__PROPS:
-        return getProps();
+      case CanvasPackage.CONNECTOR__REPRESENTS:
+        return getRepresents();
       case CanvasPackage.CONNECTOR__POLYLINE:
         return getPolyline();
       case CanvasPackage.CONNECTOR__ANCHORS:
         return getAnchors();
       case CanvasPackage.CONNECTOR__TEXTS:
         return getTexts();
-      case CanvasPackage.CONNECTOR__REPRESENTS:
-        return getRepresents();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -451,8 +385,8 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
       case CanvasPackage.CONNECTOR__NAME:
         setName((String)newValue);
         return;
-      case CanvasPackage.CONNECTOR__PROPS:
-        setProps((ConnectorProps)newValue);
+      case CanvasPackage.CONNECTOR__REPRESENTS:
+        setRepresents((String)newValue);
         return;
       case CanvasPackage.CONNECTOR__POLYLINE:
         setPolyline((Polyline)newValue);
@@ -462,9 +396,6 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
         return;
       case CanvasPackage.CONNECTOR__TEXTS:
         setTexts((FloatingTexts)newValue);
-        return;
-      case CanvasPackage.CONNECTOR__REPRESENTS:
-        setRepresents((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -483,8 +414,8 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
       case CanvasPackage.CONNECTOR__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case CanvasPackage.CONNECTOR__PROPS:
-        setProps((ConnectorProps)null);
+      case CanvasPackage.CONNECTOR__REPRESENTS:
+        setRepresents(REPRESENTS_EDEFAULT);
         return;
       case CanvasPackage.CONNECTOR__POLYLINE:
         setPolyline((Polyline)null);
@@ -494,9 +425,6 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
         return;
       case CanvasPackage.CONNECTOR__TEXTS:
         setTexts((FloatingTexts)null);
-        return;
-      case CanvasPackage.CONNECTOR__REPRESENTS:
-        setRepresents(REPRESENTS_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -514,16 +442,14 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
     {
       case CanvasPackage.CONNECTOR__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case CanvasPackage.CONNECTOR__PROPS:
-        return props != null;
+      case CanvasPackage.CONNECTOR__REPRESENTS:
+        return REPRESENTS_EDEFAULT == null ? represents != null : !REPRESENTS_EDEFAULT.equals(represents);
       case CanvasPackage.CONNECTOR__POLYLINE:
         return polyline != null;
       case CanvasPackage.CONNECTOR__ANCHORS:
         return anchors != null;
       case CanvasPackage.CONNECTOR__TEXTS:
         return texts != null;
-      case CanvasPackage.CONNECTOR__REPRESENTS:
-        return REPRESENTS_EDEFAULT == null ? represents != null : !REPRESENTS_EDEFAULT.equals(represents);
     }
     return super.eIsSet(featureID);
   }

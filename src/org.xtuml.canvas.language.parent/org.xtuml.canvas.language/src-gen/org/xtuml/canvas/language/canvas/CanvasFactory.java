@@ -33,13 +33,13 @@ public interface CanvasFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Semantic Model</em>'.
+   * Returns a new object of class '<em>Model Render</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Semantic Model</em>'.
+   * @return a new object of class '<em>Model Render</em>'.
    * @generated
    */
-  SemanticModel createSemanticModel();
+  ModelRender createModelRender();
 
   /**
    * Returns a new object of class '<em>Model Properties</em>'.
@@ -96,31 +96,13 @@ public interface CanvasFactory extends EFactory
   FloatingText createFloatingText();
 
   /**
-   * Returns a new object of class '<em>Shape Props</em>'.
+   * Returns a new object of class '<em>Enum End</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Shape Props</em>'.
+   * @return a new object of class '<em>Enum End</em>'.
    * @generated
    */
-  ShapeProps createShapeProps();
-
-  /**
-   * Returns a new object of class '<em>Container</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Container</em>'.
-   * @generated
-   */
-  Container createContainer();
-
-  /**
-   * Returns a new object of class '<em>Color</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Color</em>'.
-   * @generated
-   */
-  Color createColor();
+  EnumEnd createEnumEnd();
 
   /**
    * Returns a new object of class '<em>Connectors</em>'.
@@ -195,15 +177,6 @@ public interface CanvasFactory extends EFactory
   ConnectorAnchorElement createConnectorAnchorElement();
 
   /**
-   * Returns a new object of class '<em>Connector Props</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Connector Props</em>'.
-   * @generated
-   */
-  ConnectorProps createConnectorProps();
-
-  /**
    * Returns a new object of class '<em>Polyline</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -231,6 +204,15 @@ public interface CanvasFactory extends EFactory
   Point createPoint();
 
   /**
+   * Returns a new object of class '<em>Point Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Point Definition</em>'.
+   * @generated
+   */
+  PointDefinition createPointDefinition();
+
+  /**
    * Returns a new object of class '<em>Rectangle</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -238,15 +220,6 @@ public interface CanvasFactory extends EFactory
    * @generated
    */
   Rectangle createRectangle();
-
-  /**
-   * Returns a new object of class '<em>Shape Container</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Shape Container</em>'.
-   * @generated
-   */
-  ShapeContainer createShapeContainer();
 
   /**
    * Returns the package supported by this factory.

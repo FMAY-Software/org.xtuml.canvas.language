@@ -79,63 +79,28 @@ ruleModel returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getModelAccess().getSemanticsSemanticModelParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getModelAccess().getRenderModelRenderParserRuleCall_0_0());
 				}
-				lv_semantics_0_0=ruleSemanticModel
+				lv_render_0_0=ruleModelRender
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getModelRule());
 					}
-					add(
+					set(
 						$current,
-						"semantics",
-						lv_semantics_0_0,
-						"org.xtuml.canvas.language.Canvas.SemanticModel");
+						"render",
+						lv_render_0_0,
+						"org.xtuml.canvas.language.Canvas.ModelRender");
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)*
-		(
-			(
-				otherlv_1='render'
-				{
-					newLeafNode(otherlv_1, grammarAccess.getModelAccess().getRenderKeyword_1_0_0());
-				}
-				otherlv_2=':'
-				{
-					newLeafNode(otherlv_2, grammarAccess.getModelAccess().getColonKeyword_1_0_1());
-				}
-			)
-			    |
-			otherlv_3='render:'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getModelAccess().getRenderKeyword_1_1());
-			}
-		)
-		(
-			(
-				lv_represents_4_0=RULE_STRING
-				{
-					newLeafNode(lv_represents_4_0, grammarAccess.getModelAccess().getRepresentsSTRINGTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getModelRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"represents",
-						lv_represents_4_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
 		)
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getModelAccess().getPropertiesModelPropertiesParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getModelAccess().getPropertiesModelPropertiesParserRuleCall_1_0());
 				}
-				lv_properties_5_0=ruleModelProperties
+				lv_properties_1_0=ruleModelProperties
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getModelRule());
@@ -143,7 +108,7 @@ ruleModel returns [EObject current=null]
 					set(
 						$current,
 						"properties",
-						lv_properties_5_0,
+						lv_properties_1_0,
 						"org.xtuml.canvas.language.Canvas.ModelProperties");
 					afterParserOrEnumRuleCall();
 				}
@@ -152,9 +117,9 @@ ruleModel returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getModelAccess().getElementsGraphicalElementParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getModelAccess().getElementsGraphicalElementParserRuleCall_2_0());
 				}
-				lv_elements_6_0=ruleGraphicalElement
+				lv_elements_2_0=ruleGraphicalElement
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getModelRule());
@@ -162,7 +127,7 @@ ruleModel returns [EObject current=null]
 					add(
 						$current,
 						"elements",
-						lv_elements_6_0,
+						lv_elements_2_0,
 						"org.xtuml.canvas.language.Canvas.GraphicalElement");
 					afterParserOrEnumRuleCall();
 				}
@@ -171,15 +136,15 @@ ruleModel returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleSemanticModel
-entryRuleSemanticModel returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getSemanticModelRule()); }
-	iv_ruleSemanticModel=ruleSemanticModel
-	{ $current=$iv_ruleSemanticModel.current; }
+// Entry rule entryRuleModelRender
+entryRuleModelRender returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getModelRenderRule()); }
+	iv_ruleModelRender=ruleModelRender
+	{ $current=$iv_ruleModelRender.current; }
 	EOF;
 
-// Rule SemanticModel
-ruleSemanticModel returns [EObject current=null]
+// Rule ModelRender
+ruleModelRender returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -187,24 +152,37 @@ ruleSemanticModel returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='import'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getSemanticModelAccess().getImportKeyword_0());
-		}
 		(
 			(
-				lv_importURI_1_0=RULE_STRING
+				otherlv_0='render'
 				{
-					newLeafNode(lv_importURI_1_0, grammarAccess.getSemanticModelAccess().getImportURISTRINGTerminalRuleCall_1_0());
+					newLeafNode(otherlv_0, grammarAccess.getModelRenderAccess().getRenderKeyword_0_0_0());
+				}
+				otherlv_1=':'
+				{
+					newLeafNode(otherlv_1, grammarAccess.getModelRenderAccess().getColonKeyword_0_0_1());
+				}
+			)
+			    |
+			otherlv_2='render:'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getModelRenderAccess().getRenderKeyword_0_1());
+			}
+		)
+		(
+			(
+				lv_importURI_3_0=RULE_STRING
+				{
+					newLeafNode(lv_importURI_3_0, grammarAccess.getModelRenderAccess().getImportURISTRINGTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSemanticModelRule());
+						$current = createModelElement(grammarAccess.getModelRenderRule());
 					}
 					setWithLastConsumed(
 						$current,
 						"importURI",
-						lv_importURI_1_0,
+						lv_importURI_3_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
@@ -281,15 +259,28 @@ ruleModelProperties returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_7='zoom'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getModelPropertiesAccess().getZoomKeyword_3());
-		}
 		(
 			(
-				lv_zoom_8_0=RULE_INT
+				otherlv_7='zoom'
 				{
-					newLeafNode(lv_zoom_8_0, grammarAccess.getModelPropertiesAccess().getZoomINTTerminalRuleCall_4_0());
+					newLeafNode(otherlv_7, grammarAccess.getModelPropertiesAccess().getZoomKeyword_3_0_0());
+				}
+				otherlv_8=':'
+				{
+					newLeafNode(otherlv_8, grammarAccess.getModelPropertiesAccess().getColonKeyword_3_0_1());
+				}
+			)
+			    |
+			otherlv_9='zoom:'
+			{
+				newLeafNode(otherlv_9, grammarAccess.getModelPropertiesAccess().getZoomKeyword_3_1());
+			}
+		)
+		(
+			(
+				lv_zoom_10_0=RULE_INT
+				{
+					newLeafNode(lv_zoom_10_0, grammarAccess.getModelPropertiesAccess().getZoomINTTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
@@ -298,7 +289,7 @@ ruleModelProperties returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"zoom",
-						lv_zoom_8_0,
+						lv_zoom_10_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
@@ -465,82 +456,44 @@ ruleShape returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getShapeAccess().getPropsShapePropsParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getShapeAccess().getContainerContainerParserRuleCall_3_0());
 				}
-				lv_props_5_0=ruleShapeProps
+				lv_container_5_0=ruleContainer
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getShapeRule());
 					}
 					set(
 						$current,
-						"props",
-						lv_props_5_0,
-						"org.xtuml.canvas.language.Canvas.ShapeProps");
+						"container",
+						lv_container_5_0,
+						"org.xtuml.canvas.language.Canvas.Container");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)?
 		(
 			(
+				otherlv_6='render'
 				{
-					newCompositeNode(grammarAccess.getShapeAccess().getRectRectangleParserRuleCall_4_0());
+					newLeafNode(otherlv_6, grammarAccess.getShapeAccess().getRenderKeyword_4_0_0());
 				}
-				lv_rect_6_0=ruleRectangle
+				otherlv_7=':'
 				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getShapeRule());
-					}
-					set(
-						$current,
-						"rect",
-						lv_rect_6_0,
-						"org.xtuml.canvas.language.Canvas.Rectangle");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getShapeAccess().getTextFloatingTextParserRuleCall_5_0());
-				}
-				lv_text_7_0=ruleFloatingText
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getShapeRule());
-					}
-					set(
-						$current,
-						"text",
-						lv_text_7_0,
-						"org.xtuml.canvas.language.Canvas.FloatingText");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-		(
-			(
-				otherlv_8='render'
-				{
-					newLeafNode(otherlv_8, grammarAccess.getShapeAccess().getRenderKeyword_6_0_0());
-				}
-				otherlv_9=':'
-				{
-					newLeafNode(otherlv_9, grammarAccess.getShapeAccess().getColonKeyword_6_0_1());
+					newLeafNode(otherlv_7, grammarAccess.getShapeAccess().getColonKeyword_4_0_1());
 				}
 			)
 			    |
-			otherlv_10='render:'
+			otherlv_8='render:'
 			{
-				newLeafNode(otherlv_10, grammarAccess.getShapeAccess().getRenderKeyword_6_1());
+				newLeafNode(otherlv_8, grammarAccess.getShapeAccess().getRenderKeyword_4_1());
 			}
 		)
 		(
 			(
-				lv_represents_11_0=RULE_STRING
+				lv_represents_9_0=RULE_STRING
 				{
-					newLeafNode(lv_represents_11_0, grammarAccess.getShapeAccess().getRepresentsSTRINGTerminalRuleCall_7_0());
+					newLeafNode(lv_represents_9_0, grammarAccess.getShapeAccess().getRepresentsSTRINGTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -549,12 +502,72 @@ ruleShape returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"represents",
-						lv_represents_11_0,
+						lv_represents_9_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getShapeAccess().getRectRectangleParserRuleCall_6_0());
+				}
+				lv_rect_10_0=ruleRectangle
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getShapeRule());
+					}
+					set(
+						$current,
+						"rect",
+						lv_rect_10_0,
+						"org.xtuml.canvas.language.Canvas.Rectangle");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getShapeAccess().getTextFloatingTextParserRuleCall_7_0());
+				}
+				lv_text_11_0=ruleFloatingText
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getShapeRule());
+					}
+					set(
+						$current,
+						"text",
+						lv_text_11_0,
+						"org.xtuml.canvas.language.Canvas.FloatingText");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
 	)
+;
+
+// Entry rule entryRuleContainer
+entryRuleContainer returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getContainerRule()); }
+	iv_ruleContainer=ruleContainer
+	{ $current=$iv_ruleContainer.current.getText(); }
+	EOF;
+
+// Rule Container
+ruleContainer returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	kw='container'
+	{
+		$current.merge(kw);
+		newLeafNode(kw, grammarAccess.getContainerAccess().getContainerKeyword());
+	}
 ;
 
 // Entry rule entryRuleFloatingTexts
@@ -701,14 +714,14 @@ ruleFloatingText returns [EObject current=null]
 ;
 
 // Entry rule entryRuleEnumEnd
-entryRuleEnumEnd returns [String current=null]:
+entryRuleEnumEnd returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getEnumEndRule()); }
 	iv_ruleEnumEnd=ruleEnumEnd
-	{ $current=$iv_ruleEnumEnd.current.getText(); }
+	{ $current=$iv_ruleEnumEnd.current; }
 	EOF;
 
 // Rule EnumEnd
-ruleEnumEnd returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleEnumEnd returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -716,250 +729,114 @@ ruleEnumEnd returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 	leaveRule();
 }:
 	(
-		kw='start'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getEnumEndAccess().getStartKeyword_0());
-		}
-		    |
-		kw='end'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getEnumEndAccess().getEndKeyword_1());
-		}
-		    |
-		kw='middle'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getEnumEndAccess().getMiddleKeyword_2());
-		}
-		    |
-		kw='end_fixed'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getEnumEndAccess().getEnd_fixedKeyword_3());
-		}
-		    |
-		kw='start_fixed'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getEnumEndAccess().getStart_fixedKeyword_4());
-		}
-		    |
-		kw='none'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getEnumEndAccess().getNoneKeyword_5());
-		}
-		    |
-		kw='floating'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getEnumEndAccess().getFloatingKeyword_6());
-		}
-		    |
-		kw='additional'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getEnumEndAccess().getAdditionalKeyword_7());
-		}
-	)
-;
-
-// Entry rule entryRuleShapeProps
-entryRuleShapeProps returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getShapePropsRule()); }
-	iv_ruleShapeProps=ruleShapeProps
-	{ $current=$iv_ruleShapeProps.current; }
-	EOF;
-
-// Rule ShapeProps
-ruleShapeProps returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getShapePropsAccess().getShapePropsAction_0(),
-					$current);
-			}
-		)
 		(
 			(
-				otherlv_1='properties'
+				otherlv_0='where'
 				{
-					newLeafNode(otherlv_1, grammarAccess.getShapePropsAccess().getPropertiesKeyword_1_0_0());
+					newLeafNode(otherlv_0, grammarAccess.getEnumEndAccess().getWhereKeyword_0_0_0());
 				}
-				otherlv_2=':'
+				otherlv_1=':'
 				{
-					newLeafNode(otherlv_2, grammarAccess.getShapePropsAccess().getColonKeyword_1_0_1());
+					newLeafNode(otherlv_1, grammarAccess.getEnumEndAccess().getColonKeyword_0_0_1());
 				}
 			)
 			    |
-			otherlv_3='properties:'
+			otherlv_2='where:'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getShapePropsAccess().getPropertiesKeyword_1_1());
+				newLeafNode(otherlv_2, grammarAccess.getEnumEndAccess().getWhereKeyword_0_1());
 			}
 		)
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getShapePropsAccess().getContainerContainerParserRuleCall_2_0());
-				}
-				lv_container_4_0=ruleContainer
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getShapePropsRule());
+				(
+					lv_where_3_1='start'
+					{
+						newLeafNode(lv_where_3_1, grammarAccess.getEnumEndAccess().getWhereStartKeyword_1_0_0());
 					}
-					set(
-						$current,
-						"container",
-						lv_container_4_0,
-						"org.xtuml.canvas.language.Canvas.Container");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getShapePropsAccess().getColorColorParserRuleCall_3_0());
-				}
-				lv_color_5_0=ruleColor
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getShapePropsRule());
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getEnumEndRule());
+						}
+						setWithLastConsumed($current, "where", lv_where_3_1, null);
 					}
-					set(
-						$current,
-						"color",
-						lv_color_5_0,
-						"org.xtuml.canvas.language.Canvas.Color");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-	)
-;
-
-// Entry rule entryRuleContainer
-entryRuleContainer returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getContainerRule()); }
-	iv_ruleContainer=ruleContainer
-	{ $current=$iv_ruleContainer.current; }
-	EOF;
-
-// Rule Container
-ruleContainer returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getContainerAccess().getShapeContainerAction_0(),
-					$current);
-			}
-		)
-		otherlv_1='container'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getContainerAccess().getContainerKeyword_1());
-		}
-		(
-			otherlv_2='true'
-			{
-				newLeafNode(otherlv_2, grammarAccess.getContainerAccess().getTrueKeyword_2_0());
-			}
-			    |
-			otherlv_3='false'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getContainerAccess().getFalseKeyword_2_1());
-			}
-		)
-	)
-;
-
-// Entry rule entryRuleColor
-entryRuleColor returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getColorRule()); }
-	iv_ruleColor=ruleColor
-	{ $current=$iv_ruleColor.current; }
-	EOF;
-
-// Rule Color
-ruleColor returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='color'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getColorAccess().getColorKeyword_0());
-		}
-		(
-			(
-				lv_r_1_0=RULE_INT
-				{
-					newLeafNode(lv_r_1_0, grammarAccess.getColorAccess().getRINTTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getColorRule());
+					    |
+					lv_where_3_2='end'
+					{
+						newLeafNode(lv_where_3_2, grammarAccess.getEnumEndAccess().getWhereEndKeyword_1_0_1());
 					}
-					setWithLastConsumed(
-						$current,
-						"r",
-						lv_r_1_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		(
-			(
-				lv_g_2_0=RULE_INT
-				{
-					newLeafNode(lv_g_2_0, grammarAccess.getColorAccess().getGINTTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getColorRule());
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getEnumEndRule());
+						}
+						setWithLastConsumed($current, "where", lv_where_3_2, null);
 					}
-					setWithLastConsumed(
-						$current,
-						"g",
-						lv_g_2_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		(
-			(
-				lv_b_3_0=RULE_INT
-				{
-					newLeafNode(lv_b_3_0, grammarAccess.getColorAccess().getBINTTerminalRuleCall_3_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getColorRule());
+					    |
+					lv_where_3_3='middle'
+					{
+						newLeafNode(lv_where_3_3, grammarAccess.getEnumEndAccess().getWhereMiddleKeyword_1_0_2());
 					}
-					setWithLastConsumed(
-						$current,
-						"b",
-						lv_b_3_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getEnumEndRule());
+						}
+						setWithLastConsumed($current, "where", lv_where_3_3, null);
+					}
+					    |
+					lv_where_3_4='end_fixed'
+					{
+						newLeafNode(lv_where_3_4, grammarAccess.getEnumEndAccess().getWhereEnd_fixedKeyword_1_0_3());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getEnumEndRule());
+						}
+						setWithLastConsumed($current, "where", lv_where_3_4, null);
+					}
+					    |
+					lv_where_3_5='start_fixed'
+					{
+						newLeafNode(lv_where_3_5, grammarAccess.getEnumEndAccess().getWhereStart_fixedKeyword_1_0_4());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getEnumEndRule());
+						}
+						setWithLastConsumed($current, "where", lv_where_3_5, null);
+					}
+					    |
+					lv_where_3_6='none'
+					{
+						newLeafNode(lv_where_3_6, grammarAccess.getEnumEndAccess().getWhereNoneKeyword_1_0_5());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getEnumEndRule());
+						}
+						setWithLastConsumed($current, "where", lv_where_3_6, null);
+					}
+					    |
+					lv_where_3_7='floating'
+					{
+						newLeafNode(lv_where_3_7, grammarAccess.getEnumEndAccess().getWhereFloatingKeyword_1_0_6());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getEnumEndRule());
+						}
+						setWithLastConsumed($current, "where", lv_where_3_7, null);
+					}
+					    |
+					lv_where_3_8='additional'
+					{
+						newLeafNode(lv_where_3_8, grammarAccess.getEnumEndAccess().getWhereAdditionalKeyword_1_0_7());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getEnumEndRule());
+						}
+						setWithLastConsumed($current, "where", lv_where_3_8, null);
+					}
+				)
 			)
 		)
 	)
@@ -1080,102 +957,26 @@ ruleConnector returns [EObject current=null]
 		)
 		(
 			(
+				otherlv_4='render'
 				{
-					newCompositeNode(grammarAccess.getConnectorAccess().getPropsConnectorPropsParserRuleCall_2_0());
+					newLeafNode(otherlv_4, grammarAccess.getConnectorAccess().getRenderKeyword_2_0_0());
 				}
-				lv_props_4_0=ruleConnectorProps
+				otherlv_5=':'
 				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConnectorRule());
-					}
-					set(
-						$current,
-						"props",
-						lv_props_4_0,
-						"org.xtuml.canvas.language.Canvas.ConnectorProps");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getConnectorAccess().getPolylinePolylineParserRuleCall_3_0());
-				}
-				lv_polyline_5_0=rulePolyline
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConnectorRule());
-					}
-					set(
-						$current,
-						"polyline",
-						lv_polyline_5_0,
-						"org.xtuml.canvas.language.Canvas.Polyline");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getConnectorAccess().getAnchorsAnchorsParserRuleCall_4_0());
-				}
-				lv_anchors_6_0=ruleAnchors
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConnectorRule());
-					}
-					set(
-						$current,
-						"anchors",
-						lv_anchors_6_0,
-						"org.xtuml.canvas.language.Canvas.Anchors");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getConnectorAccess().getTextsFloatingTextsParserRuleCall_5_0());
-				}
-				lv_texts_7_0=ruleFloatingTexts
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConnectorRule());
-					}
-					set(
-						$current,
-						"texts",
-						lv_texts_7_0,
-						"org.xtuml.canvas.language.Canvas.FloatingTexts");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			(
-				otherlv_8='render'
-				{
-					newLeafNode(otherlv_8, grammarAccess.getConnectorAccess().getRenderKeyword_6_0_0());
-				}
-				otherlv_9=':'
-				{
-					newLeafNode(otherlv_9, grammarAccess.getConnectorAccess().getColonKeyword_6_0_1());
+					newLeafNode(otherlv_5, grammarAccess.getConnectorAccess().getColonKeyword_2_0_1());
 				}
 			)
 			    |
-			otherlv_10='render:'
+			otherlv_6='render:'
 			{
-				newLeafNode(otherlv_10, grammarAccess.getConnectorAccess().getRenderKeyword_6_1());
+				newLeafNode(otherlv_6, grammarAccess.getConnectorAccess().getRenderKeyword_2_1());
 			}
 		)
 		(
 			(
-				lv_represents_11_0=RULE_STRING
+				lv_represents_7_0=RULE_STRING
 				{
-					newLeafNode(lv_represents_11_0, grammarAccess.getConnectorAccess().getRepresentsSTRINGTerminalRuleCall_7_0());
+					newLeafNode(lv_represents_7_0, grammarAccess.getConnectorAccess().getRepresentsSTRINGTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -1184,8 +985,65 @@ ruleConnector returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"represents",
-						lv_represents_11_0,
+						lv_represents_7_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getConnectorAccess().getPolylinePolylineParserRuleCall_4_0());
+				}
+				lv_polyline_8_0=rulePolyline
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConnectorRule());
+					}
+					set(
+						$current,
+						"polyline",
+						lv_polyline_8_0,
+						"org.xtuml.canvas.language.Canvas.Polyline");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getConnectorAccess().getAnchorsAnchorsParserRuleCall_5_0());
+				}
+				lv_anchors_9_0=ruleAnchors
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConnectorRule());
+					}
+					set(
+						$current,
+						"anchors",
+						lv_anchors_9_0,
+						"org.xtuml.canvas.language.Canvas.Anchors");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getConnectorAccess().getTextsFloatingTextsParserRuleCall_6_0());
+				}
+				lv_texts_10_0=ruleFloatingTexts
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConnectorRule());
+					}
+					set(
+						$current,
+						"texts",
+						lv_texts_10_0,
+						"org.xtuml.canvas.language.Canvas.FloatingTexts");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -1302,9 +1160,9 @@ ruleStartAnchor returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getStartAnchorAccess().getPointPointParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getStartAnchorAccess().getPointPointDefinitionParserRuleCall_1_0());
 				}
-				lv_point_3_0=rulePoint
+				lv_point_3_0=rulePointDefinition
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getStartAnchorRule());
@@ -1313,7 +1171,7 @@ ruleStartAnchor returns [EObject current=null]
 						$current,
 						"point",
 						lv_point_3_0,
-						"org.xtuml.canvas.language.Canvas.Point");
+						"org.xtuml.canvas.language.Canvas.PointDefinition");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1368,7 +1226,7 @@ ruleEndAnchor returns [EObject current=null]
 				}
 			)
 			    |
-			otherlv_2='end'
+			otherlv_2='end:'
 			{
 				newLeafNode(otherlv_2, grammarAccess.getEndAnchorAccess().getEndKeyword_0_1());
 			}
@@ -1376,9 +1234,9 @@ ruleEndAnchor returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEndAnchorAccess().getPointPointParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getEndAnchorAccess().getPointPointDefinitionParserRuleCall_1_0());
 				}
-				lv_point_3_0=rulePoint
+				lv_point_3_0=rulePointDefinition
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEndAnchorRule());
@@ -1387,7 +1245,7 @@ ruleEndAnchor returns [EObject current=null]
 						$current,
 						"point",
 						lv_point_3_0,
-						"org.xtuml.canvas.language.Canvas.Point");
+						"org.xtuml.canvas.language.Canvas.PointDefinition");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1468,9 +1326,9 @@ ruleShapeAnchorElement returns [EObject current=null]
 	(
 		(
 			(
-				otherlv_0='shapeAnchor'
+				otherlv_0='shape'
 				{
-					newLeafNode(otherlv_0, grammarAccess.getShapeAnchorElementAccess().getShapeAnchorKeyword_0_0_0());
+					newLeafNode(otherlv_0, grammarAccess.getShapeAnchorElementAccess().getShapeKeyword_0_0_0());
 				}
 				otherlv_1=':'
 				{
@@ -1478,9 +1336,9 @@ ruleShapeAnchorElement returns [EObject current=null]
 				}
 			)
 			    |
-			otherlv_2='shapeAnchor:'
+			otherlv_2='shape:'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getShapeAnchorElementAccess().getShapeAnchorKeyword_0_1());
+				newLeafNode(otherlv_2, grammarAccess.getShapeAnchorElementAccess().getShapeKeyword_0_1());
 			}
 		)
 		(
@@ -1517,9 +1375,9 @@ ruleConnectorAnchorElement returns [EObject current=null]
 	(
 		(
 			(
-				otherlv_0='segmentAnchor'
+				otherlv_0='connector'
 				{
-					newLeafNode(otherlv_0, grammarAccess.getConnectorAnchorElementAccess().getSegmentAnchorKeyword_0_0_0());
+					newLeafNode(otherlv_0, grammarAccess.getConnectorAnchorElementAccess().getConnectorKeyword_0_0_0());
 				}
 				otherlv_1=':'
 				{
@@ -1527,9 +1385,9 @@ ruleConnectorAnchorElement returns [EObject current=null]
 				}
 			)
 			    |
-			otherlv_2='segmentAnchor:'
+			otherlv_2='connector:'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getConnectorAnchorElementAccess().getSegmentAnchorKeyword_0_1());
+				newLeafNode(otherlv_2, grammarAccess.getConnectorAnchorElementAccess().getConnectorKeyword_0_1());
 			}
 		)
 		(
@@ -1545,68 +1403,6 @@ ruleConnectorAnchorElement returns [EObject current=null]
 				}
 			)
 		)
-	)
-;
-
-// Entry rule entryRuleConnectorProps
-entryRuleConnectorProps returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getConnectorPropsRule()); }
-	iv_ruleConnectorProps=ruleConnectorProps
-	{ $current=$iv_ruleConnectorProps.current; }
-	EOF;
-
-// Rule ConnectorProps
-ruleConnectorProps returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getConnectorPropsAccess().getConnectorPropsAction_0(),
-					$current);
-			}
-		)
-		(
-			(
-				otherlv_1='properties'
-				{
-					newLeafNode(otherlv_1, grammarAccess.getConnectorPropsAccess().getPropertiesKeyword_1_0_0());
-				}
-				otherlv_2=':'
-				{
-					newLeafNode(otherlv_2, grammarAccess.getConnectorPropsAccess().getColonKeyword_1_0_1());
-				}
-			)
-			    |
-			otherlv_3='properties:'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getConnectorPropsAccess().getPropertiesKeyword_1_1());
-			}
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getConnectorPropsAccess().getColorColorParserRuleCall_2_0());
-				}
-				lv_color_4_0=ruleColor
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConnectorPropsRule());
-					}
-					set(
-						$current,
-						"color",
-						lv_color_4_0,
-						"org.xtuml.canvas.language.Canvas.Color");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
 	)
 ;
 
@@ -1707,10 +1503,27 @@ ruleSegment returns [EObject current=null]
 		)
 		(
 			(
+				otherlv_3='start'
 				{
-					newCompositeNode(grammarAccess.getSegmentAccess().getStartPointPointParserRuleCall_1_0());
+					newLeafNode(otherlv_3, grammarAccess.getSegmentAccess().getStartKeyword_1_0_0());
 				}
-				lv_startPoint_3_0=rulePoint
+				otherlv_4=':'
+				{
+					newLeafNode(otherlv_4, grammarAccess.getSegmentAccess().getColonKeyword_1_0_1());
+				}
+			)
+			    |
+			otherlv_5='start:'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getSegmentAccess().getStartKeyword_1_1());
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSegmentAccess().getStartPointPointParserRuleCall_2_0());
+				}
+				lv_startPoint_6_0=rulePoint
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSegmentRule());
@@ -1718,22 +1531,35 @@ ruleSegment returns [EObject current=null]
 					set(
 						$current,
 						"startPoint",
-						lv_startPoint_3_0,
+						lv_startPoint_6_0,
 						"org.xtuml.canvas.language.Canvas.Point");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_4=','
-		{
-			newLeafNode(otherlv_4, grammarAccess.getSegmentAccess().getCommaKeyword_2());
-		}
+		(
+			(
+				otherlv_7='end'
+				{
+					newLeafNode(otherlv_7, grammarAccess.getSegmentAccess().getEndKeyword_3_0_0());
+				}
+				otherlv_8=':'
+				{
+					newLeafNode(otherlv_8, grammarAccess.getSegmentAccess().getColonKeyword_3_0_1());
+				}
+			)
+			    |
+			otherlv_9='end:'
+			{
+				newLeafNode(otherlv_9, grammarAccess.getSegmentAccess().getEndKeyword_3_1());
+			}
+		)
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSegmentAccess().getEndPointPointParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getSegmentAccess().getEndPointPointParserRuleCall_4_0());
 				}
-				lv_endPoint_5_0=rulePoint
+				lv_endPoint_10_0=rulePoint
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSegmentRule());
@@ -1741,7 +1567,7 @@ ruleSegment returns [EObject current=null]
 					set(
 						$current,
 						"endPoint",
-						lv_endPoint_5_0,
+						lv_endPoint_10_0,
 						"org.xtuml.canvas.language.Canvas.Point");
 					afterParserOrEnumRuleCall();
 				}
@@ -1806,6 +1632,86 @@ rulePoint returns [EObject current=null]
 						$current,
 						"y",
 						lv_y_3_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRulePointDefinition
+entryRulePointDefinition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPointDefinitionRule()); }
+	iv_rulePointDefinition=rulePointDefinition
+	{ $current=$iv_rulePointDefinition.current; }
+	EOF;
+
+// Rule PointDefinition
+rulePointDefinition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				otherlv_0='point'
+				{
+					newLeafNode(otherlv_0, grammarAccess.getPointDefinitionAccess().getPointKeyword_0_0_0());
+				}
+				otherlv_1=':'
+				{
+					newLeafNode(otherlv_1, grammarAccess.getPointDefinitionAccess().getColonKeyword_0_0_1());
+				}
+			)
+			    |
+			otherlv_2='point:'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getPointDefinitionAccess().getPointKeyword_0_1());
+			}
+		)
+		otherlv_3='x'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getPointDefinitionAccess().getXKeyword_1());
+		}
+		(
+			(
+				lv_x_4_0=RULE_INT
+				{
+					newLeafNode(lv_x_4_0, grammarAccess.getPointDefinitionAccess().getXINTTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPointDefinitionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"x",
+						lv_x_4_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_5='y'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getPointDefinitionAccess().getYKeyword_3());
+		}
+		(
+			(
+				lv_y_6_0=RULE_INT
+				{
+					newLeafNode(lv_y_6_0, grammarAccess.getPointDefinitionAccess().getYINTTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPointDefinitionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"y",
+						lv_y_6_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)

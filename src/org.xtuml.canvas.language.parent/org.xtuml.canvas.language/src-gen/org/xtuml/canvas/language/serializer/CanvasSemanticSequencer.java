@@ -16,25 +16,23 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtuml.canvas.language.canvas.Anchors;
 import org.xtuml.canvas.language.canvas.CanvasPackage;
-import org.xtuml.canvas.language.canvas.Color;
 import org.xtuml.canvas.language.canvas.Connector;
 import org.xtuml.canvas.language.canvas.ConnectorAnchorElement;
-import org.xtuml.canvas.language.canvas.ConnectorProps;
 import org.xtuml.canvas.language.canvas.Connectors;
 import org.xtuml.canvas.language.canvas.EndAnchor;
+import org.xtuml.canvas.language.canvas.EnumEnd;
 import org.xtuml.canvas.language.canvas.FloatingText;
 import org.xtuml.canvas.language.canvas.FloatingTexts;
 import org.xtuml.canvas.language.canvas.Model;
 import org.xtuml.canvas.language.canvas.ModelProperties;
+import org.xtuml.canvas.language.canvas.ModelRender;
 import org.xtuml.canvas.language.canvas.Point;
+import org.xtuml.canvas.language.canvas.PointDefinition;
 import org.xtuml.canvas.language.canvas.Polyline;
 import org.xtuml.canvas.language.canvas.Rectangle;
 import org.xtuml.canvas.language.canvas.Segment;
-import org.xtuml.canvas.language.canvas.SemanticModel;
 import org.xtuml.canvas.language.canvas.Shape;
 import org.xtuml.canvas.language.canvas.ShapeAnchorElement;
-import org.xtuml.canvas.language.canvas.ShapeContainer;
-import org.xtuml.canvas.language.canvas.ShapeProps;
 import org.xtuml.canvas.language.canvas.Shapes;
 import org.xtuml.canvas.language.canvas.StartAnchor;
 import org.xtuml.canvas.language.services.CanvasGrammarAccess;
@@ -56,23 +54,20 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case CanvasPackage.ANCHORS:
 				sequence_Anchors(context, (Anchors) semanticObject); 
 				return; 
-			case CanvasPackage.COLOR:
-				sequence_Color(context, (Color) semanticObject); 
-				return; 
 			case CanvasPackage.CONNECTOR:
 				sequence_Connector(context, (Connector) semanticObject); 
 				return; 
 			case CanvasPackage.CONNECTOR_ANCHOR_ELEMENT:
 				sequence_ConnectorAnchorElement(context, (ConnectorAnchorElement) semanticObject); 
 				return; 
-			case CanvasPackage.CONNECTOR_PROPS:
-				sequence_ConnectorProps(context, (ConnectorProps) semanticObject); 
-				return; 
 			case CanvasPackage.CONNECTORS:
 				sequence_Connectors(context, (Connectors) semanticObject); 
 				return; 
 			case CanvasPackage.END_ANCHOR:
 				sequence_EndAnchor(context, (EndAnchor) semanticObject); 
+				return; 
+			case CanvasPackage.ENUM_END:
+				sequence_EnumEnd(context, (EnumEnd) semanticObject); 
 				return; 
 			case CanvasPackage.FLOATING_TEXT:
 				sequence_FloatingText(context, (FloatingText) semanticObject); 
@@ -86,8 +81,14 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case CanvasPackage.MODEL_PROPERTIES:
 				sequence_ModelProperties(context, (ModelProperties) semanticObject); 
 				return; 
+			case CanvasPackage.MODEL_RENDER:
+				sequence_ModelRender(context, (ModelRender) semanticObject); 
+				return; 
 			case CanvasPackage.POINT:
 				sequence_Point(context, (Point) semanticObject); 
+				return; 
+			case CanvasPackage.POINT_DEFINITION:
+				sequence_PointDefinition(context, (PointDefinition) semanticObject); 
 				return; 
 			case CanvasPackage.POLYLINE:
 				sequence_Polyline(context, (Polyline) semanticObject); 
@@ -98,20 +99,11 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case CanvasPackage.SEGMENT:
 				sequence_Segment(context, (Segment) semanticObject); 
 				return; 
-			case CanvasPackage.SEMANTIC_MODEL:
-				sequence_SemanticModel(context, (SemanticModel) semanticObject); 
-				return; 
 			case CanvasPackage.SHAPE:
 				sequence_Shape(context, (Shape) semanticObject); 
 				return; 
 			case CanvasPackage.SHAPE_ANCHOR_ELEMENT:
 				sequence_ShapeAnchorElement(context, (ShapeAnchorElement) semanticObject); 
-				return; 
-			case CanvasPackage.SHAPE_CONTAINER:
-				sequence_Container(context, (ShapeContainer) semanticObject); 
-				return; 
-			case CanvasPackage.SHAPE_PROPS:
-				sequence_ShapeProps(context, (ShapeProps) semanticObject); 
 				return; 
 			case CanvasPackage.SHAPES:
 				sequence_Shapes(context, (Shapes) semanticObject); 
@@ -147,30 +139,6 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
-	 *     Color returns Color
-	 *
-	 * Constraint:
-	 *     (r=INT g=INT b=INT)
-	 */
-	protected void sequence_Color(ISerializationContext context, Color semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CanvasPackage.Literals.COLOR__R) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.COLOR__R));
-			if (transientValues.isValueTransient(semanticObject, CanvasPackage.Literals.COLOR__G) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.COLOR__G));
-			if (transientValues.isValueTransient(semanticObject, CanvasPackage.Literals.COLOR__B) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.COLOR__B));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getColorAccess().getRINTTerminalRuleCall_1_0(), semanticObject.getR());
-		feeder.accept(grammarAccess.getColorAccess().getGINTTerminalRuleCall_2_0(), semanticObject.getG());
-		feeder.accept(grammarAccess.getColorAccess().getBINTTerminalRuleCall_3_0(), semanticObject.getB());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Anchor returns ConnectorAnchorElement
 	 *     ConnectorAnchorElement returns ConnectorAnchorElement
 	 *
@@ -190,29 +158,10 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
-	 *     ConnectorProps returns ConnectorProps
-	 *
-	 * Constraint:
-	 *     color=Color?
-	 */
-	protected void sequence_ConnectorProps(ISerializationContext context, ConnectorProps semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Connector returns Connector
 	 *
 	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         props=ConnectorProps? 
-	 *         polyline=Polyline? 
-	 *         anchors=Anchors? 
-	 *         texts=FloatingTexts 
-	 *         represents=STRING
-	 *     )
+	 *     (name=ID represents=STRING polyline=Polyline anchors=Anchors? texts=FloatingTexts)
 	 */
 	protected void sequence_Connector(ISerializationContext context, Connector semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -234,24 +183,33 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
-	 *     Container returns ShapeContainer
+	 *     EndAnchor returns EndAnchor
 	 *
 	 * Constraint:
-	 *     {ShapeContainer}
+	 *     (point=PointDefinition anchor=Anchor?)
 	 */
-	protected void sequence_Container(ISerializationContext context, ShapeContainer semanticObject) {
+	protected void sequence_EndAnchor(ISerializationContext context, EndAnchor semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     EndAnchor returns EndAnchor
+	 *     EnumEnd returns EnumEnd
 	 *
 	 * Constraint:
-	 *     (point=Point anchor=Anchor?)
+	 *     (
+	 *         where='start' | 
+	 *         where='end' | 
+	 *         where='middle' | 
+	 *         where='end_fixed' | 
+	 *         where='start_fixed' | 
+	 *         where='none' | 
+	 *         where='floating' | 
+	 *         where='additional'
+	 *     )
 	 */
-	protected void sequence_EndAnchor(ISerializationContext context, EndAnchor semanticObject) {
+	protected void sequence_EnumEnd(ISerializationContext context, EnumEnd semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -312,13 +270,52 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
+	 *     ModelRender returns ModelRender
+	 *
+	 * Constraint:
+	 *     importURI=STRING
+	 */
+	protected void sequence_ModelRender(ISerializationContext context, ModelRender semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CanvasPackage.Literals.MODEL_RENDER__IMPORT_URI) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.MODEL_RENDER__IMPORT_URI));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getModelRenderAccess().getImportURISTRINGTerminalRuleCall_1_0(), semanticObject.getImportURI());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (semantics+=SemanticModel* represents=STRING properties=ModelProperties? elements+=GraphicalElement*)
+	 *     (render=ModelRender properties=ModelProperties? elements+=GraphicalElement*)
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     PointDefinition returns PointDefinition
+	 *
+	 * Constraint:
+	 *     (x=INT y=INT)
+	 */
+	protected void sequence_PointDefinition(ISerializationContext context, PointDefinition semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CanvasPackage.Literals.POINT_DEFINITION__X) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.POINT_DEFINITION__X));
+			if (transientValues.isValueTransient(semanticObject, CanvasPackage.Literals.POINT_DEFINITION__Y) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.POINT_DEFINITION__Y));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPointDefinitionAccess().getXINTTerminalRuleCall_2_0(), semanticObject.getX());
+		feeder.accept(grammarAccess.getPointDefinitionAccess().getYINTTerminalRuleCall_4_0(), semanticObject.getY());
+		feeder.finish();
 	}
 	
 	
@@ -397,26 +394,8 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.SEGMENT__END_POINT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSegmentAccess().getStartPointPointParserRuleCall_1_0(), semanticObject.getStartPoint());
-		feeder.accept(grammarAccess.getSegmentAccess().getEndPointPointParserRuleCall_3_0(), semanticObject.getEndPoint());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     SemanticModel returns SemanticModel
-	 *
-	 * Constraint:
-	 *     importURI=STRING
-	 */
-	protected void sequence_SemanticModel(ISerializationContext context, SemanticModel semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CanvasPackage.Literals.SEMANTIC_MODEL__IMPORT_URI) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.SEMANTIC_MODEL__IMPORT_URI));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSemanticModelAccess().getImportURISTRINGTerminalRuleCall_1_0(), semanticObject.getImportURI());
+		feeder.accept(grammarAccess.getSegmentAccess().getStartPointPointParserRuleCall_2_0(), semanticObject.getStartPoint());
+		feeder.accept(grammarAccess.getSegmentAccess().getEndPointPointParserRuleCall_4_0(), semanticObject.getEndPoint());
 		feeder.finish();
 	}
 	
@@ -442,22 +421,10 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
-	 *     ShapeProps returns ShapeProps
-	 *
-	 * Constraint:
-	 *     (container=Container? color=Color?)
-	 */
-	protected void sequence_ShapeProps(ISerializationContext context, ShapeProps semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Shape returns Shape
 	 *
 	 * Constraint:
-	 *     (name=ID props=ShapeProps? rect=Rectangle text=FloatingText? represents=STRING)
+	 *     (name=ID container=Container? represents=STRING rect=Rectangle text=FloatingText?)
 	 */
 	protected void sequence_Shape(ISerializationContext context, Shape semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -482,7 +449,7 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     StartAnchor returns StartAnchor
 	 *
 	 * Constraint:
-	 *     (point=Point anchor=Anchor?)
+	 *     (point=PointDefinition anchor=Anchor?)
 	 */
 	protected void sequence_StartAnchor(ISerializationContext context, StartAnchor semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
