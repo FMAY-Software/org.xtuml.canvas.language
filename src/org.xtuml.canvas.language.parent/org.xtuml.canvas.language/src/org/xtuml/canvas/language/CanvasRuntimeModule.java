@@ -3,10 +3,6 @@
  */
 package org.xtuml.canvas.language;
 
-import org.eclipse.xtext.resource.IDefaultResourceDescriptionStrategy;
-import org.eclipse.xtext.scoping.IGlobalScopeProvider;
-import org.xtuml.canvas.language.scoping.CanvasGlobalScopeProvider;
-
 import com.google.inject.Binder;
 
 /**
@@ -17,12 +13,5 @@ public class CanvasRuntimeModule extends AbstractCanvasRuntimeModule {
 	@Override
 	public void configure(Binder binder) {
 		super.configure(binder);
-	}
-	@Override
-	public Class<? extends IGlobalScopeProvider> bindIGlobalScopeProvider() {
-		return CanvasGlobalScopeProvider.class;
-	}
-	public Class<? extends IDefaultResourceDescriptionStrategy> bindIDefaultResourceDescriptionStrategy() {
-		return XtumlImportStrategy.class;
 	}
 }
