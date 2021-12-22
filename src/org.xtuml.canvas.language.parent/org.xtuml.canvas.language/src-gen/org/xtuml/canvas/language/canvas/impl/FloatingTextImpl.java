@@ -12,10 +12,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtuml.canvas.language.canvas.Bounds;
 import org.xtuml.canvas.language.canvas.CanvasPackage;
 import org.xtuml.canvas.language.canvas.EnumEnd;
 import org.xtuml.canvas.language.canvas.FloatingText;
-import org.xtuml.canvas.language.canvas.Rectangle;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +25,7 @@ import org.xtuml.canvas.language.canvas.Rectangle;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtuml.canvas.language.canvas.impl.FloatingTextImpl#getRect <em>Rect</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.impl.FloatingTextImpl#getBounds <em>Bounds</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.impl.FloatingTextImpl#getEnd <em>End</em>}</li>
  * </ul>
  *
@@ -34,14 +34,14 @@ import org.xtuml.canvas.language.canvas.Rectangle;
 public class FloatingTextImpl extends MinimalEObjectImpl.Container implements FloatingText
 {
   /**
-   * The cached value of the '{@link #getRect() <em>Rect</em>}' containment reference.
+   * The cached value of the '{@link #getBounds() <em>Bounds</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRect()
+   * @see #getBounds()
    * @generated
    * @ordered
    */
-  protected Rectangle rect;
+  protected Bounds bounds;
 
   /**
    * The cached value of the '{@link #getEnd() <em>End</em>}' containment reference.
@@ -80,9 +80,9 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
    * @generated
    */
   @Override
-  public Rectangle getRect()
+  public Bounds getBounds()
   {
-    return rect;
+    return bounds;
   }
 
   /**
@@ -90,13 +90,13 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetRect(Rectangle newRect, NotificationChain msgs)
+  public NotificationChain basicSetBounds(Bounds newBounds, NotificationChain msgs)
   {
-    Rectangle oldRect = rect;
-    rect = newRect;
+    Bounds oldBounds = bounds;
+    bounds = newBounds;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CanvasPackage.FLOATING_TEXT__RECT, oldRect, newRect);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CanvasPackage.FLOATING_TEXT__BOUNDS, oldBounds, newBounds);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -108,20 +108,20 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
    * @generated
    */
   @Override
-  public void setRect(Rectangle newRect)
+  public void setBounds(Bounds newBounds)
   {
-    if (newRect != rect)
+    if (newBounds != bounds)
     {
       NotificationChain msgs = null;
-      if (rect != null)
-        msgs = ((InternalEObject)rect).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CanvasPackage.FLOATING_TEXT__RECT, null, msgs);
-      if (newRect != null)
-        msgs = ((InternalEObject)newRect).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CanvasPackage.FLOATING_TEXT__RECT, null, msgs);
-      msgs = basicSetRect(newRect, msgs);
+      if (bounds != null)
+        msgs = ((InternalEObject)bounds).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CanvasPackage.FLOATING_TEXT__BOUNDS, null, msgs);
+      if (newBounds != null)
+        msgs = ((InternalEObject)newBounds).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CanvasPackage.FLOATING_TEXT__BOUNDS, null, msgs);
+      msgs = basicSetBounds(newBounds, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.FLOATING_TEXT__RECT, newRect, newRect));
+      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.FLOATING_TEXT__BOUNDS, newBounds, newBounds));
   }
 
   /**
@@ -184,8 +184,8 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
   {
     switch (featureID)
     {
-      case CanvasPackage.FLOATING_TEXT__RECT:
-        return basicSetRect(null, msgs);
+      case CanvasPackage.FLOATING_TEXT__BOUNDS:
+        return basicSetBounds(null, msgs);
       case CanvasPackage.FLOATING_TEXT__END:
         return basicSetEnd(null, msgs);
     }
@@ -202,8 +202,8 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
   {
     switch (featureID)
     {
-      case CanvasPackage.FLOATING_TEXT__RECT:
-        return getRect();
+      case CanvasPackage.FLOATING_TEXT__BOUNDS:
+        return getBounds();
       case CanvasPackage.FLOATING_TEXT__END:
         return getEnd();
     }
@@ -220,8 +220,8 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
   {
     switch (featureID)
     {
-      case CanvasPackage.FLOATING_TEXT__RECT:
-        setRect((Rectangle)newValue);
+      case CanvasPackage.FLOATING_TEXT__BOUNDS:
+        setBounds((Bounds)newValue);
         return;
       case CanvasPackage.FLOATING_TEXT__END:
         setEnd((EnumEnd)newValue);
@@ -240,8 +240,8 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
   {
     switch (featureID)
     {
-      case CanvasPackage.FLOATING_TEXT__RECT:
-        setRect((Rectangle)null);
+      case CanvasPackage.FLOATING_TEXT__BOUNDS:
+        setBounds((Bounds)null);
         return;
       case CanvasPackage.FLOATING_TEXT__END:
         setEnd((EnumEnd)null);
@@ -260,8 +260,8 @@ public class FloatingTextImpl extends MinimalEObjectImpl.Container implements Fl
   {
     switch (featureID)
     {
-      case CanvasPackage.FLOATING_TEXT__RECT:
-        return rect != null;
+      case CanvasPackage.FLOATING_TEXT__BOUNDS:
+        return bounds != null;
       case CanvasPackage.FLOATING_TEXT__END:
         return end != null;
     }

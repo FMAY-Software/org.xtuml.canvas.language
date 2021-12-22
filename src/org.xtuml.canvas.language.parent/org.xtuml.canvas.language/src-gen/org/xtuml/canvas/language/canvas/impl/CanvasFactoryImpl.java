@@ -86,7 +86,7 @@ public class CanvasFactoryImpl extends EFactoryImpl implements CanvasFactory
       case CanvasPackage.SEGMENT: return createSegment();
       case CanvasPackage.POINT: return createPoint();
       case CanvasPackage.POINT_DEFINITION: return createPointDefinition();
-      case CanvasPackage.RECTANGLE: return createRectangle();
+      case CanvasPackage.BOUNDS: return createBounds();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -350,10 +350,10 @@ public class CanvasFactoryImpl extends EFactoryImpl implements CanvasFactory
    * @generated
    */
   @Override
-  public Rectangle createRectangle()
+  public Bounds createBounds()
   {
-    RectangleImpl rectangle = new RectangleImpl();
-    return rectangle;
+    BoundsImpl bounds = new BoundsImpl();
+    return bounds;
   }
 
   /**

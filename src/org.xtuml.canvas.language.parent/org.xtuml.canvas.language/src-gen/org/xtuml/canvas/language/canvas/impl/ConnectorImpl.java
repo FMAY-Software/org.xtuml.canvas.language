@@ -27,6 +27,7 @@ import org.xtuml.canvas.language.canvas.Polyline;
  * </p>
  * <ul>
  *   <li>{@link org.xtuml.canvas.language.canvas.impl.ConnectorImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.impl.ConnectorImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.impl.ConnectorImpl#getRepresents <em>Represents</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.impl.ConnectorImpl#getPolyline <em>Polyline</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.impl.ConnectorImpl#getAnchors <em>Anchors</em>}</li>
@@ -56,6 +57,26 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected static final String TYPE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected String type = TYPE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getRepresents() <em>Represents</em>}' attribute.
@@ -151,6 +172,31 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
     name = newName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.CONNECTOR__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getType()
+  {
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setType(String newType)
+  {
+    String oldType = type;
+    type = newType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.CONNECTOR__TYPE, oldType, type));
   }
 
   /**
@@ -360,6 +406,8 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
     {
       case CanvasPackage.CONNECTOR__NAME:
         return getName();
+      case CanvasPackage.CONNECTOR__TYPE:
+        return getType();
       case CanvasPackage.CONNECTOR__REPRESENTS:
         return getRepresents();
       case CanvasPackage.CONNECTOR__POLYLINE:
@@ -384,6 +432,9 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
     {
       case CanvasPackage.CONNECTOR__NAME:
         setName((String)newValue);
+        return;
+      case CanvasPackage.CONNECTOR__TYPE:
+        setType((String)newValue);
         return;
       case CanvasPackage.CONNECTOR__REPRESENTS:
         setRepresents((String)newValue);
@@ -414,6 +465,9 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
       case CanvasPackage.CONNECTOR__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case CanvasPackage.CONNECTOR__TYPE:
+        setType(TYPE_EDEFAULT);
+        return;
       case CanvasPackage.CONNECTOR__REPRESENTS:
         setRepresents(REPRESENTS_EDEFAULT);
         return;
@@ -442,6 +496,8 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
     {
       case CanvasPackage.CONNECTOR__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case CanvasPackage.CONNECTOR__TYPE:
+        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
       case CanvasPackage.CONNECTOR__REPRESENTS:
         return REPRESENTS_EDEFAULT == null ? represents != null : !REPRESENTS_EDEFAULT.equals(represents);
       case CanvasPackage.CONNECTOR__POLYLINE:
@@ -467,6 +523,8 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", type: ");
+    result.append(type);
     result.append(", represents: ");
     result.append(represents);
     result.append(')');

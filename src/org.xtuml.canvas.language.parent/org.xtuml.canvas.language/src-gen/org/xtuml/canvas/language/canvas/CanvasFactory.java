@@ -213,13 +213,13 @@ public interface CanvasFactory extends EFactory
   PointDefinition createPointDefinition();
 
   /**
-   * Returns a new object of class '<em>Rectangle</em>'.
+   * Returns a new object of class '<em>Bounds</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Rectangle</em>'.
+   * @return a new object of class '<em>Bounds</em>'.
    * @generated
    */
-  Rectangle createRectangle();
+  Bounds createBounds();
 
   /**
    * Returns the package supported by this factory.

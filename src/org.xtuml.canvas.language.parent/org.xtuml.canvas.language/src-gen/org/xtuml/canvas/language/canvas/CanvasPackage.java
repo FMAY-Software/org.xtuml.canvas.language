@@ -244,22 +244,31 @@ public interface CanvasPackage extends EPackage
   int SHAPE__CONTAINER = 1;
 
   /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHAPE__TYPE = 2;
+
+  /**
    * The feature id for the '<em><b>Represents</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SHAPE__REPRESENTS = 2;
+  int SHAPE__REPRESENTS = 3;
 
   /**
-   * The feature id for the '<em><b>Rect</b></em>' containment reference.
+   * The feature id for the '<em><b>Bounds</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SHAPE__RECT = 3;
+  int SHAPE__BOUNDS = 4;
 
   /**
    * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -268,7 +277,7 @@ public interface CanvasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHAPE__TEXT = 4;
+  int SHAPE__TEXT = 5;
 
   /**
    * The number of structural features of the '<em>Shape</em>' class.
@@ -277,7 +286,7 @@ public interface CanvasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHAPE_FEATURE_COUNT = 5;
+  int SHAPE_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link org.xtuml.canvas.language.canvas.impl.FloatingTextsImpl <em>Floating Texts</em>}' class.
@@ -318,13 +327,13 @@ public interface CanvasPackage extends EPackage
   int FLOATING_TEXT = 7;
 
   /**
-   * The feature id for the '<em><b>Rect</b></em>' containment reference.
+   * The feature id for the '<em><b>Bounds</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FLOATING_TEXT__RECT = 0;
+  int FLOATING_TEXT__BOUNDS = 0;
 
   /**
    * The feature id for the '<em><b>End</b></em>' containment reference.
@@ -420,13 +429,22 @@ public interface CanvasPackage extends EPackage
   int CONNECTOR__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONNECTOR__TYPE = 1;
+
+  /**
    * The feature id for the '<em><b>Represents</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONNECTOR__REPRESENTS = 1;
+  int CONNECTOR__REPRESENTS = 2;
 
   /**
    * The feature id for the '<em><b>Polyline</b></em>' containment reference.
@@ -435,7 +453,7 @@ public interface CanvasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTOR__POLYLINE = 2;
+  int CONNECTOR__POLYLINE = 3;
 
   /**
    * The feature id for the '<em><b>Anchors</b></em>' containment reference.
@@ -444,7 +462,7 @@ public interface CanvasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTOR__ANCHORS = 3;
+  int CONNECTOR__ANCHORS = 4;
 
   /**
    * The feature id for the '<em><b>Texts</b></em>' containment reference.
@@ -453,7 +471,7 @@ public interface CanvasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTOR__TEXTS = 4;
+  int CONNECTOR__TEXTS = 5;
 
   /**
    * The number of structural features of the '<em>Connector</em>' class.
@@ -462,7 +480,7 @@ public interface CanvasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTOR_FEATURE_COUNT = 5;
+  int CONNECTOR_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link org.xtuml.canvas.language.canvas.impl.AnchorsImpl <em>Anchors</em>}' class.
@@ -790,14 +808,14 @@ public interface CanvasPackage extends EPackage
   int POINT_DEFINITION_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.xtuml.canvas.language.canvas.impl.RectangleImpl <em>Rectangle</em>}' class.
+   * The meta object id for the '{@link org.xtuml.canvas.language.canvas.impl.BoundsImpl <em>Bounds</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtuml.canvas.language.canvas.impl.RectangleImpl
-   * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getRectangle()
+   * @see org.xtuml.canvas.language.canvas.impl.BoundsImpl
+   * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getBounds()
    * @generated
    */
-  int RECTANGLE = 21;
+  int BOUNDS = 21;
 
   /**
    * The feature id for the '<em><b>X</b></em>' attribute.
@@ -806,7 +824,7 @@ public interface CanvasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RECTANGLE__X = 0;
+  int BOUNDS__X = 0;
 
   /**
    * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -815,7 +833,7 @@ public interface CanvasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RECTANGLE__Y = 1;
+  int BOUNDS__Y = 1;
 
   /**
    * The feature id for the '<em><b>W</b></em>' attribute.
@@ -824,7 +842,7 @@ public interface CanvasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RECTANGLE__W = 2;
+  int BOUNDS__W = 2;
 
   /**
    * The feature id for the '<em><b>H</b></em>' attribute.
@@ -833,16 +851,16 @@ public interface CanvasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RECTANGLE__H = 3;
+  int BOUNDS__H = 3;
 
   /**
-   * The number of structural features of the '<em>Rectangle</em>' class.
+   * The number of structural features of the '<em>Bounds</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RECTANGLE_FEATURE_COUNT = 4;
+  int BOUNDS_FEATURE_COUNT = 4;
 
 
   /**
@@ -1005,6 +1023,17 @@ public interface CanvasPackage extends EPackage
   EAttribute getShape_Container();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Shape#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see org.xtuml.canvas.language.canvas.Shape#getType()
+   * @see #getShape()
+   * @generated
+   */
+  EAttribute getShape_Type();
+
+  /**
    * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Shape#getRepresents <em>Represents</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1016,15 +1045,15 @@ public interface CanvasPackage extends EPackage
   EAttribute getShape_Represents();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtuml.canvas.language.canvas.Shape#getRect <em>Rect</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtuml.canvas.language.canvas.Shape#getBounds <em>Bounds</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Rect</em>'.
-   * @see org.xtuml.canvas.language.canvas.Shape#getRect()
+   * @return the meta object for the containment reference '<em>Bounds</em>'.
+   * @see org.xtuml.canvas.language.canvas.Shape#getBounds()
    * @see #getShape()
    * @generated
    */
-  EReference getShape_Rect();
+  EReference getShape_Bounds();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtuml.canvas.language.canvas.Shape#getText <em>Text</em>}'.
@@ -1069,15 +1098,15 @@ public interface CanvasPackage extends EPackage
   EClass getFloatingText();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtuml.canvas.language.canvas.FloatingText#getRect <em>Rect</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtuml.canvas.language.canvas.FloatingText#getBounds <em>Bounds</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Rect</em>'.
-   * @see org.xtuml.canvas.language.canvas.FloatingText#getRect()
+   * @return the meta object for the containment reference '<em>Bounds</em>'.
+   * @see org.xtuml.canvas.language.canvas.FloatingText#getBounds()
    * @see #getFloatingText()
    * @generated
    */
-  EReference getFloatingText_Rect();
+  EReference getFloatingText_Bounds();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtuml.canvas.language.canvas.FloatingText#getEnd <em>End</em>}'.
@@ -1152,6 +1181,17 @@ public interface CanvasPackage extends EPackage
    * @generated
    */
   EAttribute getConnector_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Connector#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see org.xtuml.canvas.language.canvas.Connector#getType()
+   * @see #getConnector()
+   * @generated
+   */
+  EAttribute getConnector_Type();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Connector#getRepresents <em>Represents</em>}'.
@@ -1463,58 +1503,58 @@ public interface CanvasPackage extends EPackage
   EAttribute getPointDefinition_Y();
 
   /**
-   * Returns the meta object for class '{@link org.xtuml.canvas.language.canvas.Rectangle <em>Rectangle</em>}'.
+   * Returns the meta object for class '{@link org.xtuml.canvas.language.canvas.Bounds <em>Bounds</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Rectangle</em>'.
-   * @see org.xtuml.canvas.language.canvas.Rectangle
+   * @return the meta object for class '<em>Bounds</em>'.
+   * @see org.xtuml.canvas.language.canvas.Bounds
    * @generated
    */
-  EClass getRectangle();
+  EClass getBounds();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Rectangle#getX <em>X</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Bounds#getX <em>X</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>X</em>'.
-   * @see org.xtuml.canvas.language.canvas.Rectangle#getX()
-   * @see #getRectangle()
+   * @see org.xtuml.canvas.language.canvas.Bounds#getX()
+   * @see #getBounds()
    * @generated
    */
-  EAttribute getRectangle_X();
+  EAttribute getBounds_X();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Rectangle#getY <em>Y</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Bounds#getY <em>Y</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Y</em>'.
-   * @see org.xtuml.canvas.language.canvas.Rectangle#getY()
-   * @see #getRectangle()
+   * @see org.xtuml.canvas.language.canvas.Bounds#getY()
+   * @see #getBounds()
    * @generated
    */
-  EAttribute getRectangle_Y();
+  EAttribute getBounds_Y();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Rectangle#getW <em>W</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Bounds#getW <em>W</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>W</em>'.
-   * @see org.xtuml.canvas.language.canvas.Rectangle#getW()
-   * @see #getRectangle()
+   * @see org.xtuml.canvas.language.canvas.Bounds#getW()
+   * @see #getBounds()
    * @generated
    */
-  EAttribute getRectangle_W();
+  EAttribute getBounds_W();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Rectangle#getH <em>H</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtuml.canvas.language.canvas.Bounds#getH <em>H</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>H</em>'.
-   * @see org.xtuml.canvas.language.canvas.Rectangle#getH()
-   * @see #getRectangle()
+   * @see org.xtuml.canvas.language.canvas.Bounds#getH()
+   * @see #getBounds()
    * @generated
    */
-  EAttribute getRectangle_H();
+  EAttribute getBounds_H();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1672,6 +1712,14 @@ public interface CanvasPackage extends EPackage
     EAttribute SHAPE__CONTAINER = eINSTANCE.getShape_Container();
 
     /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SHAPE__TYPE = eINSTANCE.getShape_Type();
+
+    /**
      * The meta object literal for the '<em><b>Represents</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1680,12 +1728,12 @@ public interface CanvasPackage extends EPackage
     EAttribute SHAPE__REPRESENTS = eINSTANCE.getShape_Represents();
 
     /**
-     * The meta object literal for the '<em><b>Rect</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Bounds</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SHAPE__RECT = eINSTANCE.getShape_Rect();
+    EReference SHAPE__BOUNDS = eINSTANCE.getShape_Bounds();
 
     /**
      * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
@@ -1724,12 +1772,12 @@ public interface CanvasPackage extends EPackage
     EClass FLOATING_TEXT = eINSTANCE.getFloatingText();
 
     /**
-     * The meta object literal for the '<em><b>Rect</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Bounds</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FLOATING_TEXT__RECT = eINSTANCE.getFloatingText_Rect();
+    EReference FLOATING_TEXT__BOUNDS = eINSTANCE.getFloatingText_Bounds();
 
     /**
      * The meta object literal for the '<em><b>End</b></em>' containment reference feature.
@@ -1792,6 +1840,14 @@ public interface CanvasPackage extends EPackage
      * @generated
      */
     EAttribute CONNECTOR__NAME = eINSTANCE.getConnector_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONNECTOR__TYPE = eINSTANCE.getConnector_Type();
 
     /**
      * The meta object literal for the '<em><b>Represents</b></em>' attribute feature.
@@ -2046,14 +2102,14 @@ public interface CanvasPackage extends EPackage
     EAttribute POINT_DEFINITION__Y = eINSTANCE.getPointDefinition_Y();
 
     /**
-     * The meta object literal for the '{@link org.xtuml.canvas.language.canvas.impl.RectangleImpl <em>Rectangle</em>}' class.
+     * The meta object literal for the '{@link org.xtuml.canvas.language.canvas.impl.BoundsImpl <em>Bounds</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtuml.canvas.language.canvas.impl.RectangleImpl
-     * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getRectangle()
+     * @see org.xtuml.canvas.language.canvas.impl.BoundsImpl
+     * @see org.xtuml.canvas.language.canvas.impl.CanvasPackageImpl#getBounds()
      * @generated
      */
-    EClass RECTANGLE = eINSTANCE.getRectangle();
+    EClass BOUNDS = eINSTANCE.getBounds();
 
     /**
      * The meta object literal for the '<em><b>X</b></em>' attribute feature.
@@ -2061,7 +2117,7 @@ public interface CanvasPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RECTANGLE__X = eINSTANCE.getRectangle_X();
+    EAttribute BOUNDS__X = eINSTANCE.getBounds_X();
 
     /**
      * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
@@ -2069,7 +2125,7 @@ public interface CanvasPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RECTANGLE__Y = eINSTANCE.getRectangle_Y();
+    EAttribute BOUNDS__Y = eINSTANCE.getBounds_Y();
 
     /**
      * The meta object literal for the '<em><b>W</b></em>' attribute feature.
@@ -2077,7 +2133,7 @@ public interface CanvasPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RECTANGLE__W = eINSTANCE.getRectangle_W();
+    EAttribute BOUNDS__W = eINSTANCE.getBounds_W();
 
     /**
      * The meta object literal for the '<em><b>H</b></em>' attribute feature.
@@ -2085,7 +2141,7 @@ public interface CanvasPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RECTANGLE__H = eINSTANCE.getRectangle_H();
+    EAttribute BOUNDS__H = eINSTANCE.getBounds_H();
 
   }
 

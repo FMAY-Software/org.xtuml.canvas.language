@@ -5,7 +5,7 @@
     updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="8.0" copyrightFields="false" runtimeVersion="2.20">
   <genPackages prefix="Canvas" basePackage="org.xtuml.canvas.language" disposableProviderFactory="true"
-      fileExtensions="xtg" ecorePackage="Canvas.ecore#/">
+      fileExtensions="xtumlg" ecorePackage="Canvas.ecore#/">
     <genClasses ecoreClass="Canvas.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Model/render"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Model/properties"/>
@@ -25,15 +25,16 @@
     <genClasses ecoreClass="Canvas.ecore#//Shape">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Shape/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Shape/container"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Shape/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Shape/represents"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Shape/rect"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Shape/bounds"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Shape/text"/>
     </genClasses>
     <genClasses ecoreClass="Canvas.ecore#//FloatingTexts">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//FloatingTexts/texts"/>
     </genClasses>
     <genClasses ecoreClass="Canvas.ecore#//FloatingText">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//FloatingText/rect"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//FloatingText/bounds"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//FloatingText/end"/>
     </genClasses>
     <genClasses ecoreClass="Canvas.ecore#//EnumEnd">
@@ -44,6 +45,7 @@
     </genClasses>
     <genClasses ecoreClass="Canvas.ecore#//Connector">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Connector/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Connector/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Connector/represents"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Connector/polyline"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Canvas.ecore#//Connector/anchors"/>
@@ -83,11 +85,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//PointDefinition/x"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//PointDefinition/y"/>
     </genClasses>
-    <genClasses ecoreClass="Canvas.ecore#//Rectangle">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Rectangle/x"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Rectangle/y"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Rectangle/w"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Rectangle/h"/>
+    <genClasses ecoreClass="Canvas.ecore#//Bounds">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Bounds/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Bounds/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Bounds/w"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Canvas.ecore#//Bounds/h"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

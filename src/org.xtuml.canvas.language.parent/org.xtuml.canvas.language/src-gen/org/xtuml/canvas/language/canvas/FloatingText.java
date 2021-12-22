@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtuml.canvas.language.canvas.FloatingText#getRect <em>Rect</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.FloatingText#getBounds <em>Bounds</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.FloatingText#getEnd <em>End</em>}</li>
  * </ul>
  *
@@ -25,26 +25,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface FloatingText extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Rect</b></em>' containment reference.
+   * Returns the value of the '<em><b>Bounds</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Rect</em>' containment reference.
-   * @see #setRect(Rectangle)
-   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getFloatingText_Rect()
+   * @return the value of the '<em>Bounds</em>' containment reference.
+   * @see #setBounds(Bounds)
+   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getFloatingText_Bounds()
    * @model containment="true"
    * @generated
    */
-  Rectangle getRect();
+  Bounds getBounds();
 
   /**
-   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.FloatingText#getRect <em>Rect</em>}' containment reference.
+   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.FloatingText#getBounds <em>Bounds</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Rect</em>' containment reference.
-   * @see #getRect()
+   * @param value the new value of the '<em>Bounds</em>' containment reference.
+   * @see #getBounds()
    * @generated
    */
-  void setRect(Rectangle value);
+  void setBounds(Bounds value);
 
   /**
    * Returns the value of the '<em><b>End</b></em>' containment reference.

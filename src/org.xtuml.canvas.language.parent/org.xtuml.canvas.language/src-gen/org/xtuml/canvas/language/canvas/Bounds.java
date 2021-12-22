@@ -7,24 +7,24 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Rectangle</b></em>'.
+ * A representation of the model object '<em><b>Bounds</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtuml.canvas.language.canvas.Rectangle#getX <em>X</em>}</li>
- *   <li>{@link org.xtuml.canvas.language.canvas.Rectangle#getY <em>Y</em>}</li>
- *   <li>{@link org.xtuml.canvas.language.canvas.Rectangle#getW <em>W</em>}</li>
- *   <li>{@link org.xtuml.canvas.language.canvas.Rectangle#getH <em>H</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.Bounds#getX <em>X</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.Bounds#getY <em>Y</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.Bounds#getW <em>W</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.Bounds#getH <em>H</em>}</li>
  * </ul>
  *
- * @see org.xtuml.canvas.language.canvas.CanvasPackage#getRectangle()
+ * @see org.xtuml.canvas.language.canvas.CanvasPackage#getBounds()
  * @model
  * @generated
  */
-public interface Rectangle extends EObject
+public interface Bounds extends EObject
 {
   /**
    * Returns the value of the '<em><b>X</b></em>' attribute.
@@ -32,14 +32,14 @@ public interface Rectangle extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>X</em>' attribute.
    * @see #setX(int)
-   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getRectangle_X()
+   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getBounds_X()
    * @model
    * @generated
    */
   int getX();
 
   /**
-   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Rectangle#getX <em>X</em>}' attribute.
+   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Bounds#getX <em>X</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>X</em>' attribute.
@@ -54,14 +54,14 @@ public interface Rectangle extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Y</em>' attribute.
    * @see #setY(int)
-   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getRectangle_Y()
+   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getBounds_Y()
    * @model
    * @generated
    */
   int getY();
 
   /**
-   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Rectangle#getY <em>Y</em>}' attribute.
+   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Bounds#getY <em>Y</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Y</em>' attribute.
@@ -76,14 +76,14 @@ public interface Rectangle extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>W</em>' attribute.
    * @see #setW(int)
-   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getRectangle_W()
+   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getBounds_W()
    * @model
    * @generated
    */
   int getW();
 
   /**
-   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Rectangle#getW <em>W</em>}' attribute.
+   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Bounds#getW <em>W</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>W</em>' attribute.
@@ -98,14 +98,14 @@ public interface Rectangle extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>H</em>' attribute.
    * @see #setH(int)
-   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getRectangle_H()
+   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getBounds_H()
    * @model
    * @generated
    */
   int getH();
 
   /**
-   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Rectangle#getH <em>H</em>}' attribute.
+   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Bounds#getH <em>H</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>H</em>' attribute.
@@ -114,4 +114,4 @@ public interface Rectangle extends EObject
    */
   void setH(int value);
 
-} // Rectangle
+} // Bounds

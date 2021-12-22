@@ -16,8 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtuml.canvas.language.canvas.Shape#getName <em>Name</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.Shape#getContainer <em>Container</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.Shape#getType <em>Type</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.Shape#getRepresents <em>Represents</em>}</li>
- *   <li>{@link org.xtuml.canvas.language.canvas.Shape#getRect <em>Rect</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.Shape#getBounds <em>Bounds</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.Shape#getText <em>Text</em>}</li>
  * </ul>
  *
@@ -72,6 +73,28 @@ public interface Shape extends EObject
   void setContainer(String value);
 
   /**
+   * Returns the value of the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Type</em>' attribute.
+   * @see #setType(String)
+   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getShape_Type()
+   * @model
+   * @generated
+   */
+  String getType();
+
+  /**
+   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Shape#getType <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Type</em>' attribute.
+   * @see #getType()
+   * @generated
+   */
+  void setType(String value);
+
+  /**
    * Returns the value of the '<em><b>Represents</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -94,26 +117,26 @@ public interface Shape extends EObject
   void setRepresents(String value);
 
   /**
-   * Returns the value of the '<em><b>Rect</b></em>' containment reference.
+   * Returns the value of the '<em><b>Bounds</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Rect</em>' containment reference.
-   * @see #setRect(Rectangle)
-   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getShape_Rect()
+   * @return the value of the '<em>Bounds</em>' containment reference.
+   * @see #setBounds(Bounds)
+   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getShape_Bounds()
    * @model containment="true"
    * @generated
    */
-  Rectangle getRect();
+  Bounds getBounds();
 
   /**
-   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Shape#getRect <em>Rect</em>}' containment reference.
+   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Shape#getBounds <em>Bounds</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Rect</em>' containment reference.
-   * @see #getRect()
+   * @param value the new value of the '<em>Bounds</em>' containment reference.
+   * @see #getBounds()
    * @generated
    */
-  void setRect(Rectangle value);
+  void setBounds(Bounds value);
 
   /**
    * Returns the value of the '<em><b>Text</b></em>' containment reference.

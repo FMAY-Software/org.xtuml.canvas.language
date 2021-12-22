@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtuml.canvas.language.canvas.Anchor;
 import org.xtuml.canvas.language.canvas.Anchors;
+import org.xtuml.canvas.language.canvas.Bounds;
 import org.xtuml.canvas.language.canvas.CanvasFactory;
 import org.xtuml.canvas.language.canvas.CanvasPackage;
 import org.xtuml.canvas.language.canvas.Connector;
@@ -28,7 +29,6 @@ import org.xtuml.canvas.language.canvas.ModelRender;
 import org.xtuml.canvas.language.canvas.Point;
 import org.xtuml.canvas.language.canvas.PointDefinition;
 import org.xtuml.canvas.language.canvas.Polyline;
-import org.xtuml.canvas.language.canvas.Rectangle;
 import org.xtuml.canvas.language.canvas.Segment;
 import org.xtuml.canvas.language.canvas.Shape;
 import org.xtuml.canvas.language.canvas.ShapeAnchorElement;
@@ -195,7 +195,7 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass rectangleEClass = null;
+  private EClass boundsEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -431,7 +431,7 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
    * @generated
    */
   @Override
-  public EAttribute getShape_Represents()
+  public EAttribute getShape_Type()
   {
     return (EAttribute)shapeEClass.getEStructuralFeatures().get(2);
   }
@@ -442,9 +442,20 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
    * @generated
    */
   @Override
-  public EReference getShape_Rect()
+  public EAttribute getShape_Represents()
   {
-    return (EReference)shapeEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)shapeEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getShape_Bounds()
+  {
+    return (EReference)shapeEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -455,7 +466,7 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
   @Override
   public EReference getShape_Text()
   {
-    return (EReference)shapeEClass.getEStructuralFeatures().get(4);
+    return (EReference)shapeEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -497,7 +508,7 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
    * @generated
    */
   @Override
-  public EReference getFloatingText_Rect()
+  public EReference getFloatingText_Bounds()
   {
     return (EReference)floatingTextEClass.getEStructuralFeatures().get(0);
   }
@@ -585,7 +596,7 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
    * @generated
    */
   @Override
-  public EAttribute getConnector_Represents()
+  public EAttribute getConnector_Type()
   {
     return (EAttribute)connectorEClass.getEStructuralFeatures().get(1);
   }
@@ -596,9 +607,9 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
    * @generated
    */
   @Override
-  public EReference getConnector_Polyline()
+  public EAttribute getConnector_Represents()
   {
-    return (EReference)connectorEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)connectorEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -607,7 +618,7 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
    * @generated
    */
   @Override
-  public EReference getConnector_Anchors()
+  public EReference getConnector_Polyline()
   {
     return (EReference)connectorEClass.getEStructuralFeatures().get(3);
   }
@@ -618,9 +629,20 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
    * @generated
    */
   @Override
-  public EReference getConnector_Texts()
+  public EReference getConnector_Anchors()
   {
     return (EReference)connectorEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getConnector_Texts()
+  {
+    return (EReference)connectorEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -904,9 +926,9 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
    * @generated
    */
   @Override
-  public EClass getRectangle()
+  public EClass getBounds()
   {
-    return rectangleEClass;
+    return boundsEClass;
   }
 
   /**
@@ -915,9 +937,9 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
    * @generated
    */
   @Override
-  public EAttribute getRectangle_X()
+  public EAttribute getBounds_X()
   {
-    return (EAttribute)rectangleEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)boundsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -926,9 +948,9 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
    * @generated
    */
   @Override
-  public EAttribute getRectangle_Y()
+  public EAttribute getBounds_Y()
   {
-    return (EAttribute)rectangleEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)boundsEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -937,9 +959,9 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
    * @generated
    */
   @Override
-  public EAttribute getRectangle_W()
+  public EAttribute getBounds_W()
   {
-    return (EAttribute)rectangleEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)boundsEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -948,9 +970,9 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
    * @generated
    */
   @Override
-  public EAttribute getRectangle_H()
+  public EAttribute getBounds_H()
   {
-    return (EAttribute)rectangleEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)boundsEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1004,15 +1026,16 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
     shapeEClass = createEClass(SHAPE);
     createEAttribute(shapeEClass, SHAPE__NAME);
     createEAttribute(shapeEClass, SHAPE__CONTAINER);
+    createEAttribute(shapeEClass, SHAPE__TYPE);
     createEAttribute(shapeEClass, SHAPE__REPRESENTS);
-    createEReference(shapeEClass, SHAPE__RECT);
+    createEReference(shapeEClass, SHAPE__BOUNDS);
     createEReference(shapeEClass, SHAPE__TEXT);
 
     floatingTextsEClass = createEClass(FLOATING_TEXTS);
     createEReference(floatingTextsEClass, FLOATING_TEXTS__TEXTS);
 
     floatingTextEClass = createEClass(FLOATING_TEXT);
-    createEReference(floatingTextEClass, FLOATING_TEXT__RECT);
+    createEReference(floatingTextEClass, FLOATING_TEXT__BOUNDS);
     createEReference(floatingTextEClass, FLOATING_TEXT__END);
 
     enumEndEClass = createEClass(ENUM_END);
@@ -1023,6 +1046,7 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
 
     connectorEClass = createEClass(CONNECTOR);
     createEAttribute(connectorEClass, CONNECTOR__NAME);
+    createEAttribute(connectorEClass, CONNECTOR__TYPE);
     createEAttribute(connectorEClass, CONNECTOR__REPRESENTS);
     createEReference(connectorEClass, CONNECTOR__POLYLINE);
     createEReference(connectorEClass, CONNECTOR__ANCHORS);
@@ -1063,11 +1087,11 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
     createEAttribute(pointDefinitionEClass, POINT_DEFINITION__X);
     createEAttribute(pointDefinitionEClass, POINT_DEFINITION__Y);
 
-    rectangleEClass = createEClass(RECTANGLE);
-    createEAttribute(rectangleEClass, RECTANGLE__X);
-    createEAttribute(rectangleEClass, RECTANGLE__Y);
-    createEAttribute(rectangleEClass, RECTANGLE__W);
-    createEAttribute(rectangleEClass, RECTANGLE__H);
+    boundsEClass = createEClass(BOUNDS);
+    createEAttribute(boundsEClass, BOUNDS__X);
+    createEAttribute(boundsEClass, BOUNDS__Y);
+    createEAttribute(boundsEClass, BOUNDS__W);
+    createEAttribute(boundsEClass, BOUNDS__H);
   }
 
   /**
@@ -1125,15 +1149,16 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
     initEClass(shapeEClass, Shape.class, "Shape", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getShape_Name(), ecorePackage.getEString(), "name", null, 0, 1, Shape.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getShape_Container(), ecorePackage.getEString(), "container", null, 0, 1, Shape.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getShape_Type(), ecorePackage.getEString(), "type", null, 0, 1, Shape.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getShape_Represents(), ecorePackage.getEString(), "represents", null, 0, 1, Shape.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getShape_Rect(), this.getRectangle(), null, "rect", null, 0, 1, Shape.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getShape_Bounds(), this.getBounds(), null, "bounds", null, 0, 1, Shape.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getShape_Text(), this.getFloatingText(), null, "text", null, 0, 1, Shape.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(floatingTextsEClass, FloatingTexts.class, "FloatingTexts", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFloatingTexts_Texts(), this.getFloatingText(), null, "texts", null, 0, -1, FloatingTexts.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(floatingTextEClass, FloatingText.class, "FloatingText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFloatingText_Rect(), this.getRectangle(), null, "rect", null, 0, 1, FloatingText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFloatingText_Bounds(), this.getBounds(), null, "bounds", null, 0, 1, FloatingText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFloatingText_End(), this.getEnumEnd(), null, "end", null, 0, 1, FloatingText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(enumEndEClass, EnumEnd.class, "EnumEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1144,6 +1169,7 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
 
     initEClass(connectorEClass, Connector.class, "Connector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getConnector_Name(), ecorePackage.getEString(), "name", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getConnector_Type(), ecorePackage.getEString(), "type", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getConnector_Represents(), ecorePackage.getEString(), "represents", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConnector_Polyline(), this.getPolyline(), null, "polyline", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConnector_Anchors(), this.getAnchors(), null, "anchors", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1184,11 +1210,11 @@ public class CanvasPackageImpl extends EPackageImpl implements CanvasPackage
     initEAttribute(getPointDefinition_X(), ecorePackage.getEInt(), "x", null, 0, 1, PointDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPointDefinition_Y(), ecorePackage.getEInt(), "y", null, 0, 1, PointDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(rectangleEClass, Rectangle.class, "Rectangle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRectangle_X(), ecorePackage.getEInt(), "x", null, 0, 1, Rectangle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRectangle_Y(), ecorePackage.getEInt(), "y", null, 0, 1, Rectangle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRectangle_W(), ecorePackage.getEInt(), "w", null, 0, 1, Rectangle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRectangle_H(), ecorePackage.getEInt(), "h", null, 0, 1, Rectangle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(boundsEClass, Bounds.class, "Bounds", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBounds_X(), ecorePackage.getEInt(), "x", null, 0, 1, Bounds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBounds_Y(), ecorePackage.getEInt(), "y", null, 0, 1, Bounds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBounds_W(), ecorePackage.getEInt(), "w", null, 0, 1, Bounds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBounds_H(), ecorePackage.getEInt(), "h", null, 0, 1, Bounds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

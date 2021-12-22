@@ -224,10 +224,10 @@ public class CanvasSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CanvasPackage.RECTANGLE:
+      case CanvasPackage.BOUNDS:
       {
-        Rectangle rectangle = (Rectangle)theEObject;
-        T result = caseRectangle(rectangle);
+        Bounds bounds = (Bounds)theEObject;
+        T result = caseBounds(bounds);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -572,17 +572,17 @@ public class CanvasSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Rectangle</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Bounds</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Rectangle</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Bounds</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseRectangle(Rectangle object)
+  public T caseBounds(Bounds object)
   {
     return null;
   }

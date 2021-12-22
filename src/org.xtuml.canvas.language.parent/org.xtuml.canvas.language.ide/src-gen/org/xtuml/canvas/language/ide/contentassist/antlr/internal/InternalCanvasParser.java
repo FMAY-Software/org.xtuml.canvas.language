@@ -22,41 +22,31 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'container'", "'render:'", "'properties:'", "'viewport:'", "'zoom:'", "'shapes:'", "'shape:'", "'texts:'", "'text:'", "'where:'", "'start'", "'end'", "'middle'", "'end_fixed'", "'start_fixed'", "'none'", "'floating'", "'additional'", "'connectors:'", "'connector:'", "'anchors:'", "'start:'", "'end:'", "'polyline:'", "'segment:'", "'point:'", "'rectangle:'", "'render'", "':'", "'properties'", "'viewport'", "'zoom'", "'shapes'", "'shape'", "'texts'", "'text'", "'where'", "'connectors'", "'connector'", "'anchors'", "'polyline'", "'segment'", "'x'", "'y'", "'point'", "'width'", "'height'", "'rectangle'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'container'", "'start'", "'end'", "'middle'", "'end_fixed'", "'start_fixed'", "'none'", "'floating'", "'additional'", "'access_path'", "'association'", "'associative_link'", "'class'", "'communication_path'", "'data_type'", "'derived_access_path'", "'derived_communication_path'", "'ee'", "'enumeration_data_type'", "'imported_class'", "'state'", "'state_machine'", "'subsystem'", "'transition'", "'user_data_type'", "'subtype'", "'supertype'", "'creation_transition'", "'sequence'", "'lifeline'", "'timing_mark'", "'time_span'", "'synchronous_message'", "'class_instance_participant'", "'external_entity_participant'", "'class_participant'", "'actor'", "'asynchronous_message'", "'return_message'", "'communication'", "'communication_link'", "'communication_return_message'", "'communication_asynchronous_message'", "'communication_synchronous_message'", "'use_case'", "'use_case_diagram'", "'use_case_binary_association'", "'generalization'", "'include'", "'extend'", "'forkJoin'", "'activity'", "'initial_node'", "'activity_edge'", "'activity_final_node'", "'flow_final_node'", "'generic_action'", "'decision_merge_node'", "'object_node'", "'accept_event_action'", "'send_signal_action'", "'accept_time_event_action'", "'partition'", "'component'", "'provided_interface'", "'required_interface'", "'interface'", "'system_model'", "'structured_data_type'", "'component_reference'", "'component_diagram'", "'delegation'", "'component_container'", "'imported_provided_interface'", "'imported_required_interface'", "'component_participant'", "'package'", "'constant_specification'", "'package_participant'", "'shape'", "'connector'", "'diagram'", "'exception'", "'satisfaction'", "'deployment'", "'render'", "':'", "'properties'", "'viewport'", "'zoom'", "'shapes'", "'texts'", "'text'", "'where'", "'connectors'", "'anchors'", "'polyline'", "'segment'", "'x'", "'y'", "'point'", "'bounds'", "'width'", "'height'"
     };
     public static final int T__50=50;
-    public static final int T__19=19;
-    public static final int T__15=15;
-    public static final int T__16=16;
-    public static final int T__17=17;
-    public static final int T__18=18;
-    public static final int T__11=11;
+    public static final int T__59=59;
     public static final int T__55=55;
-    public static final int T__12=12;
     public static final int T__56=56;
-    public static final int T__13=13;
     public static final int T__57=57;
-    public static final int T__14=14;
     public static final int T__58=58;
     public static final int T__51=51;
     public static final int T__52=52;
     public static final int T__53=53;
     public static final int T__54=54;
+    public static final int T__60=60;
+    public static final int T__61=61;
     public static final int RULE_ID=6;
-    public static final int T__26=26;
-    public static final int T__27=27;
-    public static final int T__28=28;
     public static final int RULE_INT=5;
-    public static final int T__29=29;
-    public static final int T__22=22;
+    public static final int T__66=66;
     public static final int RULE_ML_COMMENT=7;
-    public static final int T__23=23;
-    public static final int T__24=24;
-    public static final int T__25=25;
-    public static final int T__20=20;
-    public static final int T__21=21;
-    public static final int RULE_STRING=4;
-    public static final int RULE_SL_COMMENT=8;
+    public static final int T__67=67;
+    public static final int T__68=68;
+    public static final int T__69=69;
+    public static final int T__62=62;
+    public static final int T__63=63;
+    public static final int T__64=64;
+    public static final int T__65=65;
     public static final int T__37=37;
     public static final int T__38=38;
     public static final int T__39=39;
@@ -64,12 +54,9 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
     public static final int T__32=32;
-    public static final int RULE_WS=9;
-    public static final int RULE_ANY_OTHER=10;
     public static final int T__48=48;
     public static final int T__49=49;
     public static final int T__44=44;
@@ -80,6 +67,75 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     public static final int T__41=41;
     public static final int T__42=42;
     public static final int T__43=43;
+    public static final int T__91=91;
+    public static final int T__100=100;
+    public static final int T__92=92;
+    public static final int T__93=93;
+    public static final int T__102=102;
+    public static final int T__94=94;
+    public static final int T__101=101;
+    public static final int T__90=90;
+    public static final int T__19=19;
+    public static final int T__15=15;
+    public static final int T__16=16;
+    public static final int T__17=17;
+    public static final int T__18=18;
+    public static final int T__11=11;
+    public static final int T__99=99;
+    public static final int T__12=12;
+    public static final int T__13=13;
+    public static final int T__14=14;
+    public static final int T__95=95;
+    public static final int T__96=96;
+    public static final int T__97=97;
+    public static final int T__98=98;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int T__29=29;
+    public static final int T__22=22;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
+    public static final int T__70=70;
+    public static final int T__71=71;
+    public static final int T__72=72;
+    public static final int RULE_STRING=4;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int T__77=77;
+    public static final int T__78=78;
+    public static final int T__79=79;
+    public static final int T__73=73;
+    public static final int EOF=-1;
+    public static final int T__74=74;
+    public static final int T__114=114;
+    public static final int T__75=75;
+    public static final int T__76=76;
+    public static final int T__80=80;
+    public static final int T__111=111;
+    public static final int T__81=81;
+    public static final int T__110=110;
+    public static final int T__82=82;
+    public static final int T__113=113;
+    public static final int T__83=83;
+    public static final int T__112=112;
+    public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int T__88=88;
+    public static final int T__108=108;
+    public static final int T__89=89;
+    public static final int T__107=107;
+    public static final int T__109=109;
+    public static final int T__84=84;
+    public static final int T__104=104;
+    public static final int T__85=85;
+    public static final int T__103=103;
+    public static final int T__86=86;
+    public static final int T__106=106;
+    public static final int T__87=87;
+    public static final int T__105=105;
 
     // delegates
     // delegators
@@ -1800,20 +1856,20 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rulePointDefinition"
 
 
-    // $ANTLR start "entryRuleRectangle"
-    // InternalCanvas.g:603:1: entryRuleRectangle : ruleRectangle EOF ;
-    public final void entryRuleRectangle() throws RecognitionException {
+    // $ANTLR start "entryRuleBounds"
+    // InternalCanvas.g:603:1: entryRuleBounds : ruleBounds EOF ;
+    public final void entryRuleBounds() throws RecognitionException {
         try {
-            // InternalCanvas.g:604:1: ( ruleRectangle EOF )
-            // InternalCanvas.g:605:1: ruleRectangle EOF
+            // InternalCanvas.g:604:1: ( ruleBounds EOF )
+            // InternalCanvas.g:605:1: ruleBounds EOF
             {
-             before(grammarAccess.getRectangleRule()); 
+             before(grammarAccess.getBoundsRule()); 
             pushFollow(FOLLOW_1);
-            ruleRectangle();
+            ruleBounds();
 
             state._fsp--;
 
-             after(grammarAccess.getRectangleRule()); 
+             after(grammarAccess.getBoundsRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -1827,35 +1883,35 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleRectangle"
+    // $ANTLR end "entryRuleBounds"
 
 
-    // $ANTLR start "ruleRectangle"
-    // InternalCanvas.g:612:1: ruleRectangle : ( ( rule__Rectangle__Group__0 ) ) ;
-    public final void ruleRectangle() throws RecognitionException {
+    // $ANTLR start "ruleBounds"
+    // InternalCanvas.g:612:1: ruleBounds : ( ( rule__Bounds__Group__0 ) ) ;
+    public final void ruleBounds() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:616:2: ( ( ( rule__Rectangle__Group__0 ) ) )
-            // InternalCanvas.g:617:2: ( ( rule__Rectangle__Group__0 ) )
+            // InternalCanvas.g:616:2: ( ( ( rule__Bounds__Group__0 ) ) )
+            // InternalCanvas.g:617:2: ( ( rule__Bounds__Group__0 ) )
             {
-            // InternalCanvas.g:617:2: ( ( rule__Rectangle__Group__0 ) )
-            // InternalCanvas.g:618:3: ( rule__Rectangle__Group__0 )
+            // InternalCanvas.g:617:2: ( ( rule__Bounds__Group__0 ) )
+            // InternalCanvas.g:618:3: ( rule__Bounds__Group__0 )
             {
-             before(grammarAccess.getRectangleAccess().getGroup()); 
-            // InternalCanvas.g:619:3: ( rule__Rectangle__Group__0 )
-            // InternalCanvas.g:619:4: rule__Rectangle__Group__0
+             before(grammarAccess.getBoundsAccess().getGroup()); 
+            // InternalCanvas.g:619:3: ( rule__Bounds__Group__0 )
+            // InternalCanvas.g:619:4: rule__Bounds__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__Rectangle__Group__0();
+            rule__Bounds__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getRectangleAccess().getGroup()); 
+             after(grammarAccess.getBoundsAccess().getGroup()); 
 
             }
 
@@ -1874,24 +1930,172 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleRectangle"
+    // $ANTLR end "ruleBounds"
 
 
-    // $ANTLR start "rule__ModelRender__Alternatives_0"
-    // InternalCanvas.g:627:1: rule__ModelRender__Alternatives_0 : ( ( ( rule__ModelRender__Group_0_0__0 ) ) | ( 'render:' ) );
-    public final void rule__ModelRender__Alternatives_0() throws RecognitionException {
+    // $ANTLR start "entryRuleTypeLabel"
+    // InternalCanvas.g:628:1: entryRuleTypeLabel : ruleTypeLabel EOF ;
+    public final void entryRuleTypeLabel() throws RecognitionException {
+        try {
+            // InternalCanvas.g:629:1: ( ruleTypeLabel EOF )
+            // InternalCanvas.g:630:1: ruleTypeLabel EOF
+            {
+             before(grammarAccess.getTypeLabelRule()); 
+            pushFollow(FOLLOW_1);
+            ruleTypeLabel();
+
+            state._fsp--;
+
+             after(grammarAccess.getTypeLabelRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleTypeLabel"
+
+
+    // $ANTLR start "ruleTypeLabel"
+    // InternalCanvas.g:637:1: ruleTypeLabel : ( ruleOOAType ) ;
+    public final void ruleTypeLabel() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:631:1: ( ( ( rule__ModelRender__Group_0_0__0 ) ) | ( 'render:' ) )
+            // InternalCanvas.g:641:2: ( ( ruleOOAType ) )
+            // InternalCanvas.g:642:2: ( ruleOOAType )
+            {
+            // InternalCanvas.g:642:2: ( ruleOOAType )
+            // InternalCanvas.g:643:3: ruleOOAType
+            {
+             before(grammarAccess.getTypeLabelAccess().getOOATypeParserRuleCall()); 
+            pushFollow(FOLLOW_2);
+            ruleOOAType();
+
+            state._fsp--;
+
+             after(grammarAccess.getTypeLabelAccess().getOOATypeParserRuleCall()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleTypeLabel"
+
+
+    // $ANTLR start "entryRuleOOAType"
+    // InternalCanvas.g:653:1: entryRuleOOAType : ruleOOAType EOF ;
+    public final void entryRuleOOAType() throws RecognitionException {
+        try {
+            // InternalCanvas.g:654:1: ( ruleOOAType EOF )
+            // InternalCanvas.g:655:1: ruleOOAType EOF
+            {
+             before(grammarAccess.getOOATypeRule()); 
+            pushFollow(FOLLOW_1);
+            ruleOOAType();
+
+            state._fsp--;
+
+             after(grammarAccess.getOOATypeRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleOOAType"
+
+
+    // $ANTLR start "ruleOOAType"
+    // InternalCanvas.g:662:1: ruleOOAType : ( ( rule__OOAType__Alternatives ) ) ;
+    public final void ruleOOAType() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:666:2: ( ( ( rule__OOAType__Alternatives ) ) )
+            // InternalCanvas.g:667:2: ( ( rule__OOAType__Alternatives ) )
+            {
+            // InternalCanvas.g:667:2: ( ( rule__OOAType__Alternatives ) )
+            // InternalCanvas.g:668:3: ( rule__OOAType__Alternatives )
+            {
+             before(grammarAccess.getOOATypeAccess().getAlternatives()); 
+            // InternalCanvas.g:669:3: ( rule__OOAType__Alternatives )
+            // InternalCanvas.g:669:4: rule__OOAType__Alternatives
+            {
+            pushFollow(FOLLOW_2);
+            rule__OOAType__Alternatives();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getOOATypeAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleOOAType"
+
+
+    // $ANTLR start "rule__GraphicalElement__Alternatives"
+    // InternalCanvas.g:677:1: rule__GraphicalElement__Alternatives : ( ( ruleShapes ) | ( ruleConnectors ) );
+    public final void rule__GraphicalElement__Alternatives() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:681:1: ( ( ruleShapes ) | ( ruleConnectors ) )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==38) ) {
+            if ( (LA1_0==101) ) {
                 alt1=1;
             }
-            else if ( (LA1_0==12) ) {
+            else if ( (LA1_0==105) ) {
                 alt1=2;
             }
             else {
@@ -1902,334 +2106,10 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalCanvas.g:632:2: ( ( rule__ModelRender__Group_0_0__0 ) )
+                    // InternalCanvas.g:682:2: ( ruleShapes )
                     {
-                    // InternalCanvas.g:632:2: ( ( rule__ModelRender__Group_0_0__0 ) )
-                    // InternalCanvas.g:633:3: ( rule__ModelRender__Group_0_0__0 )
-                    {
-                     before(grammarAccess.getModelRenderAccess().getGroup_0_0()); 
-                    // InternalCanvas.g:634:3: ( rule__ModelRender__Group_0_0__0 )
-                    // InternalCanvas.g:634:4: rule__ModelRender__Group_0_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ModelRender__Group_0_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getModelRenderAccess().getGroup_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:638:2: ( 'render:' )
-                    {
-                    // InternalCanvas.g:638:2: ( 'render:' )
-                    // InternalCanvas.g:639:3: 'render:'
-                    {
-                     before(grammarAccess.getModelRenderAccess().getRenderKeyword_0_1()); 
-                    match(input,12,FOLLOW_2); 
-                     after(grammarAccess.getModelRenderAccess().getRenderKeyword_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ModelRender__Alternatives_0"
-
-
-    // $ANTLR start "rule__ModelProperties__Alternatives_0"
-    // InternalCanvas.g:648:1: rule__ModelProperties__Alternatives_0 : ( ( ( rule__ModelProperties__Group_0_0__0 ) ) | ( 'properties:' ) );
-    public final void rule__ModelProperties__Alternatives_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:652:1: ( ( ( rule__ModelProperties__Group_0_0__0 ) ) | ( 'properties:' ) )
-            int alt2=2;
-            int LA2_0 = input.LA(1);
-
-            if ( (LA2_0==40) ) {
-                alt2=1;
-            }
-            else if ( (LA2_0==13) ) {
-                alt2=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 2, 0, input);
-
-                throw nvae;
-            }
-            switch (alt2) {
-                case 1 :
-                    // InternalCanvas.g:653:2: ( ( rule__ModelProperties__Group_0_0__0 ) )
-                    {
-                    // InternalCanvas.g:653:2: ( ( rule__ModelProperties__Group_0_0__0 ) )
-                    // InternalCanvas.g:654:3: ( rule__ModelProperties__Group_0_0__0 )
-                    {
-                     before(grammarAccess.getModelPropertiesAccess().getGroup_0_0()); 
-                    // InternalCanvas.g:655:3: ( rule__ModelProperties__Group_0_0__0 )
-                    // InternalCanvas.g:655:4: rule__ModelProperties__Group_0_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ModelProperties__Group_0_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getModelPropertiesAccess().getGroup_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:659:2: ( 'properties:' )
-                    {
-                    // InternalCanvas.g:659:2: ( 'properties:' )
-                    // InternalCanvas.g:660:3: 'properties:'
-                    {
-                     before(grammarAccess.getModelPropertiesAccess().getPropertiesKeyword_0_1()); 
-                    match(input,13,FOLLOW_2); 
-                     after(grammarAccess.getModelPropertiesAccess().getPropertiesKeyword_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ModelProperties__Alternatives_0"
-
-
-    // $ANTLR start "rule__ModelProperties__Alternatives_1"
-    // InternalCanvas.g:669:1: rule__ModelProperties__Alternatives_1 : ( ( ( rule__ModelProperties__Group_1_0__0 ) ) | ( 'viewport:' ) );
-    public final void rule__ModelProperties__Alternatives_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:673:1: ( ( ( rule__ModelProperties__Group_1_0__0 ) ) | ( 'viewport:' ) )
-            int alt3=2;
-            int LA3_0 = input.LA(1);
-
-            if ( (LA3_0==41) ) {
-                alt3=1;
-            }
-            else if ( (LA3_0==14) ) {
-                alt3=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 3, 0, input);
-
-                throw nvae;
-            }
-            switch (alt3) {
-                case 1 :
-                    // InternalCanvas.g:674:2: ( ( rule__ModelProperties__Group_1_0__0 ) )
-                    {
-                    // InternalCanvas.g:674:2: ( ( rule__ModelProperties__Group_1_0__0 ) )
-                    // InternalCanvas.g:675:3: ( rule__ModelProperties__Group_1_0__0 )
-                    {
-                     before(grammarAccess.getModelPropertiesAccess().getGroup_1_0()); 
-                    // InternalCanvas.g:676:3: ( rule__ModelProperties__Group_1_0__0 )
-                    // InternalCanvas.g:676:4: rule__ModelProperties__Group_1_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ModelProperties__Group_1_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getModelPropertiesAccess().getGroup_1_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:680:2: ( 'viewport:' )
-                    {
-                    // InternalCanvas.g:680:2: ( 'viewport:' )
-                    // InternalCanvas.g:681:3: 'viewport:'
-                    {
-                     before(grammarAccess.getModelPropertiesAccess().getViewportKeyword_1_1()); 
-                    match(input,14,FOLLOW_2); 
-                     after(grammarAccess.getModelPropertiesAccess().getViewportKeyword_1_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ModelProperties__Alternatives_1"
-
-
-    // $ANTLR start "rule__ModelProperties__Alternatives_3"
-    // InternalCanvas.g:690:1: rule__ModelProperties__Alternatives_3 : ( ( ( rule__ModelProperties__Group_3_0__0 ) ) | ( 'zoom:' ) );
-    public final void rule__ModelProperties__Alternatives_3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:694:1: ( ( ( rule__ModelProperties__Group_3_0__0 ) ) | ( 'zoom:' ) )
-            int alt4=2;
-            int LA4_0 = input.LA(1);
-
-            if ( (LA4_0==42) ) {
-                alt4=1;
-            }
-            else if ( (LA4_0==15) ) {
-                alt4=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
-
-                throw nvae;
-            }
-            switch (alt4) {
-                case 1 :
-                    // InternalCanvas.g:695:2: ( ( rule__ModelProperties__Group_3_0__0 ) )
-                    {
-                    // InternalCanvas.g:695:2: ( ( rule__ModelProperties__Group_3_0__0 ) )
-                    // InternalCanvas.g:696:3: ( rule__ModelProperties__Group_3_0__0 )
-                    {
-                     before(grammarAccess.getModelPropertiesAccess().getGroup_3_0()); 
-                    // InternalCanvas.g:697:3: ( rule__ModelProperties__Group_3_0__0 )
-                    // InternalCanvas.g:697:4: rule__ModelProperties__Group_3_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ModelProperties__Group_3_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getModelPropertiesAccess().getGroup_3_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:701:2: ( 'zoom:' )
-                    {
-                    // InternalCanvas.g:701:2: ( 'zoom:' )
-                    // InternalCanvas.g:702:3: 'zoom:'
-                    {
-                     before(grammarAccess.getModelPropertiesAccess().getZoomKeyword_3_1()); 
-                    match(input,15,FOLLOW_2); 
-                     after(grammarAccess.getModelPropertiesAccess().getZoomKeyword_3_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ModelProperties__Alternatives_3"
-
-
-    // $ANTLR start "rule__GraphicalElement__Alternatives"
-    // InternalCanvas.g:711:1: rule__GraphicalElement__Alternatives : ( ( ruleShapes ) | ( ruleConnectors ) );
-    public final void rule__GraphicalElement__Alternatives() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:715:1: ( ( ruleShapes ) | ( ruleConnectors ) )
-            int alt5=2;
-            int LA5_0 = input.LA(1);
-
-            if ( (LA5_0==16||LA5_0==43) ) {
-                alt5=1;
-            }
-            else if ( (LA5_0==29||LA5_0==48) ) {
-                alt5=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
-
-                throw nvae;
-            }
-            switch (alt5) {
-                case 1 :
-                    // InternalCanvas.g:716:2: ( ruleShapes )
-                    {
-                    // InternalCanvas.g:716:2: ( ruleShapes )
-                    // InternalCanvas.g:717:3: ruleShapes
+                    // InternalCanvas.g:682:2: ( ruleShapes )
+                    // InternalCanvas.g:683:3: ruleShapes
                     {
                      before(grammarAccess.getGraphicalElementAccess().getShapesParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -2245,10 +2125,10 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:722:2: ( ruleConnectors )
+                    // InternalCanvas.g:688:2: ( ruleConnectors )
                     {
-                    // InternalCanvas.g:722:2: ( ruleConnectors )
-                    // InternalCanvas.g:723:3: ruleConnectors
+                    // InternalCanvas.g:688:2: ( ruleConnectors )
+                    // InternalCanvas.g:689:3: ruleConnectors
                     {
                      before(grammarAccess.getGraphicalElementAccess().getConnectorsParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -2280,559 +2160,73 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__GraphicalElement__Alternatives"
 
 
-    // $ANTLR start "rule__Shapes__Alternatives_1"
-    // InternalCanvas.g:732:1: rule__Shapes__Alternatives_1 : ( ( ( rule__Shapes__Group_1_0__0 ) ) | ( 'shapes:' ) );
-    public final void rule__Shapes__Alternatives_1() throws RecognitionException {
+    // $ANTLR start "rule__EnumEnd__WhereAlternatives_2_0"
+    // InternalCanvas.g:698:1: rule__EnumEnd__WhereAlternatives_2_0 : ( ( 'start' ) | ( 'end' ) | ( 'middle' ) | ( 'end_fixed' ) | ( 'start_fixed' ) | ( 'none' ) | ( 'floating' ) | ( 'additional' ) );
+    public final void rule__EnumEnd__WhereAlternatives_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:736:1: ( ( ( rule__Shapes__Group_1_0__0 ) ) | ( 'shapes:' ) )
-            int alt6=2;
-            int LA6_0 = input.LA(1);
-
-            if ( (LA6_0==43) ) {
-                alt6=1;
-            }
-            else if ( (LA6_0==16) ) {
-                alt6=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
-
-                throw nvae;
-            }
-            switch (alt6) {
-                case 1 :
-                    // InternalCanvas.g:737:2: ( ( rule__Shapes__Group_1_0__0 ) )
-                    {
-                    // InternalCanvas.g:737:2: ( ( rule__Shapes__Group_1_0__0 ) )
-                    // InternalCanvas.g:738:3: ( rule__Shapes__Group_1_0__0 )
-                    {
-                     before(grammarAccess.getShapesAccess().getGroup_1_0()); 
-                    // InternalCanvas.g:739:3: ( rule__Shapes__Group_1_0__0 )
-                    // InternalCanvas.g:739:4: rule__Shapes__Group_1_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Shapes__Group_1_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getShapesAccess().getGroup_1_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:743:2: ( 'shapes:' )
-                    {
-                    // InternalCanvas.g:743:2: ( 'shapes:' )
-                    // InternalCanvas.g:744:3: 'shapes:'
-                    {
-                     before(grammarAccess.getShapesAccess().getShapesKeyword_1_1()); 
-                    match(input,16,FOLLOW_2); 
-                     after(grammarAccess.getShapesAccess().getShapesKeyword_1_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Shapes__Alternatives_1"
-
-
-    // $ANTLR start "rule__Shape__Alternatives_1"
-    // InternalCanvas.g:753:1: rule__Shape__Alternatives_1 : ( ( ( rule__Shape__Group_1_0__0 ) ) | ( 'shape:' ) );
-    public final void rule__Shape__Alternatives_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:757:1: ( ( ( rule__Shape__Group_1_0__0 ) ) | ( 'shape:' ) )
-            int alt7=2;
-            int LA7_0 = input.LA(1);
-
-            if ( (LA7_0==44) ) {
-                alt7=1;
-            }
-            else if ( (LA7_0==17) ) {
-                alt7=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
-
-                throw nvae;
-            }
-            switch (alt7) {
-                case 1 :
-                    // InternalCanvas.g:758:2: ( ( rule__Shape__Group_1_0__0 ) )
-                    {
-                    // InternalCanvas.g:758:2: ( ( rule__Shape__Group_1_0__0 ) )
-                    // InternalCanvas.g:759:3: ( rule__Shape__Group_1_0__0 )
-                    {
-                     before(grammarAccess.getShapeAccess().getGroup_1_0()); 
-                    // InternalCanvas.g:760:3: ( rule__Shape__Group_1_0__0 )
-                    // InternalCanvas.g:760:4: rule__Shape__Group_1_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Shape__Group_1_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getShapeAccess().getGroup_1_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:764:2: ( 'shape:' )
-                    {
-                    // InternalCanvas.g:764:2: ( 'shape:' )
-                    // InternalCanvas.g:765:3: 'shape:'
-                    {
-                     before(grammarAccess.getShapeAccess().getShapeKeyword_1_1()); 
-                    match(input,17,FOLLOW_2); 
-                     after(grammarAccess.getShapeAccess().getShapeKeyword_1_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Shape__Alternatives_1"
-
-
-    // $ANTLR start "rule__Shape__Alternatives_4"
-    // InternalCanvas.g:774:1: rule__Shape__Alternatives_4 : ( ( ( rule__Shape__Group_4_0__0 ) ) | ( 'render:' ) );
-    public final void rule__Shape__Alternatives_4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:778:1: ( ( ( rule__Shape__Group_4_0__0 ) ) | ( 'render:' ) )
-            int alt8=2;
-            int LA8_0 = input.LA(1);
-
-            if ( (LA8_0==38) ) {
-                alt8=1;
-            }
-            else if ( (LA8_0==12) ) {
-                alt8=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
-
-                throw nvae;
-            }
-            switch (alt8) {
-                case 1 :
-                    // InternalCanvas.g:779:2: ( ( rule__Shape__Group_4_0__0 ) )
-                    {
-                    // InternalCanvas.g:779:2: ( ( rule__Shape__Group_4_0__0 ) )
-                    // InternalCanvas.g:780:3: ( rule__Shape__Group_4_0__0 )
-                    {
-                     before(grammarAccess.getShapeAccess().getGroup_4_0()); 
-                    // InternalCanvas.g:781:3: ( rule__Shape__Group_4_0__0 )
-                    // InternalCanvas.g:781:4: rule__Shape__Group_4_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Shape__Group_4_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getShapeAccess().getGroup_4_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:785:2: ( 'render:' )
-                    {
-                    // InternalCanvas.g:785:2: ( 'render:' )
-                    // InternalCanvas.g:786:3: 'render:'
-                    {
-                     before(grammarAccess.getShapeAccess().getRenderKeyword_4_1()); 
-                    match(input,12,FOLLOW_2); 
-                     after(grammarAccess.getShapeAccess().getRenderKeyword_4_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Shape__Alternatives_4"
-
-
-    // $ANTLR start "rule__FloatingTexts__Alternatives_1"
-    // InternalCanvas.g:795:1: rule__FloatingTexts__Alternatives_1 : ( ( ( rule__FloatingTexts__Group_1_0__0 ) ) | ( 'texts:' ) );
-    public final void rule__FloatingTexts__Alternatives_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:799:1: ( ( ( rule__FloatingTexts__Group_1_0__0 ) ) | ( 'texts:' ) )
-            int alt9=2;
-            int LA9_0 = input.LA(1);
-
-            if ( (LA9_0==45) ) {
-                alt9=1;
-            }
-            else if ( (LA9_0==18) ) {
-                alt9=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 9, 0, input);
-
-                throw nvae;
-            }
-            switch (alt9) {
-                case 1 :
-                    // InternalCanvas.g:800:2: ( ( rule__FloatingTexts__Group_1_0__0 ) )
-                    {
-                    // InternalCanvas.g:800:2: ( ( rule__FloatingTexts__Group_1_0__0 ) )
-                    // InternalCanvas.g:801:3: ( rule__FloatingTexts__Group_1_0__0 )
-                    {
-                     before(grammarAccess.getFloatingTextsAccess().getGroup_1_0()); 
-                    // InternalCanvas.g:802:3: ( rule__FloatingTexts__Group_1_0__0 )
-                    // InternalCanvas.g:802:4: rule__FloatingTexts__Group_1_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__FloatingTexts__Group_1_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getFloatingTextsAccess().getGroup_1_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:806:2: ( 'texts:' )
-                    {
-                    // InternalCanvas.g:806:2: ( 'texts:' )
-                    // InternalCanvas.g:807:3: 'texts:'
-                    {
-                     before(grammarAccess.getFloatingTextsAccess().getTextsKeyword_1_1()); 
-                    match(input,18,FOLLOW_2); 
-                     after(grammarAccess.getFloatingTextsAccess().getTextsKeyword_1_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__FloatingTexts__Alternatives_1"
-
-
-    // $ANTLR start "rule__FloatingText__Alternatives_1"
-    // InternalCanvas.g:816:1: rule__FloatingText__Alternatives_1 : ( ( ( rule__FloatingText__Group_1_0__0 ) ) | ( 'text:' ) );
-    public final void rule__FloatingText__Alternatives_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:820:1: ( ( ( rule__FloatingText__Group_1_0__0 ) ) | ( 'text:' ) )
-            int alt10=2;
-            int LA10_0 = input.LA(1);
-
-            if ( (LA10_0==46) ) {
-                alt10=1;
-            }
-            else if ( (LA10_0==19) ) {
-                alt10=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
-
-                throw nvae;
-            }
-            switch (alt10) {
-                case 1 :
-                    // InternalCanvas.g:821:2: ( ( rule__FloatingText__Group_1_0__0 ) )
-                    {
-                    // InternalCanvas.g:821:2: ( ( rule__FloatingText__Group_1_0__0 ) )
-                    // InternalCanvas.g:822:3: ( rule__FloatingText__Group_1_0__0 )
-                    {
-                     before(grammarAccess.getFloatingTextAccess().getGroup_1_0()); 
-                    // InternalCanvas.g:823:3: ( rule__FloatingText__Group_1_0__0 )
-                    // InternalCanvas.g:823:4: rule__FloatingText__Group_1_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__FloatingText__Group_1_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getFloatingTextAccess().getGroup_1_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:827:2: ( 'text:' )
-                    {
-                    // InternalCanvas.g:827:2: ( 'text:' )
-                    // InternalCanvas.g:828:3: 'text:'
-                    {
-                     before(grammarAccess.getFloatingTextAccess().getTextKeyword_1_1()); 
-                    match(input,19,FOLLOW_2); 
-                     after(grammarAccess.getFloatingTextAccess().getTextKeyword_1_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__FloatingText__Alternatives_1"
-
-
-    // $ANTLR start "rule__EnumEnd__Alternatives_0"
-    // InternalCanvas.g:837:1: rule__EnumEnd__Alternatives_0 : ( ( ( rule__EnumEnd__Group_0_0__0 ) ) | ( 'where:' ) );
-    public final void rule__EnumEnd__Alternatives_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:841:1: ( ( ( rule__EnumEnd__Group_0_0__0 ) ) | ( 'where:' ) )
-            int alt11=2;
-            int LA11_0 = input.LA(1);
-
-            if ( (LA11_0==47) ) {
-                alt11=1;
-            }
-            else if ( (LA11_0==20) ) {
-                alt11=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 11, 0, input);
-
-                throw nvae;
-            }
-            switch (alt11) {
-                case 1 :
-                    // InternalCanvas.g:842:2: ( ( rule__EnumEnd__Group_0_0__0 ) )
-                    {
-                    // InternalCanvas.g:842:2: ( ( rule__EnumEnd__Group_0_0__0 ) )
-                    // InternalCanvas.g:843:3: ( rule__EnumEnd__Group_0_0__0 )
-                    {
-                     before(grammarAccess.getEnumEndAccess().getGroup_0_0()); 
-                    // InternalCanvas.g:844:3: ( rule__EnumEnd__Group_0_0__0 )
-                    // InternalCanvas.g:844:4: rule__EnumEnd__Group_0_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__EnumEnd__Group_0_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getEnumEndAccess().getGroup_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:848:2: ( 'where:' )
-                    {
-                    // InternalCanvas.g:848:2: ( 'where:' )
-                    // InternalCanvas.g:849:3: 'where:'
-                    {
-                     before(grammarAccess.getEnumEndAccess().getWhereKeyword_0_1()); 
-                    match(input,20,FOLLOW_2); 
-                     after(grammarAccess.getEnumEndAccess().getWhereKeyword_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EnumEnd__Alternatives_0"
-
-
-    // $ANTLR start "rule__EnumEnd__WhereAlternatives_1_0"
-    // InternalCanvas.g:858:1: rule__EnumEnd__WhereAlternatives_1_0 : ( ( 'start' ) | ( 'end' ) | ( 'middle' ) | ( 'end_fixed' ) | ( 'start_fixed' ) | ( 'none' ) | ( 'floating' ) | ( 'additional' ) );
-    public final void rule__EnumEnd__WhereAlternatives_1_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:862:1: ( ( 'start' ) | ( 'end' ) | ( 'middle' ) | ( 'end_fixed' ) | ( 'start_fixed' ) | ( 'none' ) | ( 'floating' ) | ( 'additional' ) )
-            int alt12=8;
+            // InternalCanvas.g:702:1: ( ( 'start' ) | ( 'end' ) | ( 'middle' ) | ( 'end_fixed' ) | ( 'start_fixed' ) | ( 'none' ) | ( 'floating' ) | ( 'additional' ) )
+            int alt2=8;
             switch ( input.LA(1) ) {
-            case 21:
+            case 12:
                 {
-                alt12=1;
+                alt2=1;
                 }
                 break;
-            case 22:
+            case 13:
                 {
-                alt12=2;
+                alt2=2;
                 }
                 break;
-            case 23:
+            case 14:
                 {
-                alt12=3;
+                alt2=3;
                 }
                 break;
-            case 24:
+            case 15:
                 {
-                alt12=4;
+                alt2=4;
                 }
                 break;
-            case 25:
+            case 16:
                 {
-                alt12=5;
+                alt2=5;
                 }
                 break;
-            case 26:
+            case 17:
                 {
-                alt12=6;
+                alt2=6;
                 }
                 break;
-            case 27:
+            case 18:
                 {
-                alt12=7;
+                alt2=7;
                 }
                 break;
-            case 28:
+            case 19:
                 {
-                alt12=8;
+                alt2=8;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 12, 0, input);
+                    new NoViableAltException("", 2, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt12) {
+            switch (alt2) {
                 case 1 :
-                    // InternalCanvas.g:863:2: ( 'start' )
+                    // InternalCanvas.g:703:2: ( 'start' )
                     {
-                    // InternalCanvas.g:863:2: ( 'start' )
-                    // InternalCanvas.g:864:3: 'start'
+                    // InternalCanvas.g:703:2: ( 'start' )
+                    // InternalCanvas.g:704:3: 'start'
                     {
-                     before(grammarAccess.getEnumEndAccess().getWhereStartKeyword_1_0_0()); 
-                    match(input,21,FOLLOW_2); 
-                     after(grammarAccess.getEnumEndAccess().getWhereStartKeyword_1_0_0()); 
+                     before(grammarAccess.getEnumEndAccess().getWhereStartKeyword_2_0_0()); 
+                    match(input,12,FOLLOW_2); 
+                     after(grammarAccess.getEnumEndAccess().getWhereStartKeyword_2_0_0()); 
 
                     }
 
@@ -2840,14 +2234,14 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:869:2: ( 'end' )
+                    // InternalCanvas.g:709:2: ( 'end' )
                     {
-                    // InternalCanvas.g:869:2: ( 'end' )
-                    // InternalCanvas.g:870:3: 'end'
+                    // InternalCanvas.g:709:2: ( 'end' )
+                    // InternalCanvas.g:710:3: 'end'
                     {
-                     before(grammarAccess.getEnumEndAccess().getWhereEndKeyword_1_0_1()); 
-                    match(input,22,FOLLOW_2); 
-                     after(grammarAccess.getEnumEndAccess().getWhereEndKeyword_1_0_1()); 
+                     before(grammarAccess.getEnumEndAccess().getWhereEndKeyword_2_0_1()); 
+                    match(input,13,FOLLOW_2); 
+                     after(grammarAccess.getEnumEndAccess().getWhereEndKeyword_2_0_1()); 
 
                     }
 
@@ -2855,14 +2249,14 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalCanvas.g:875:2: ( 'middle' )
+                    // InternalCanvas.g:715:2: ( 'middle' )
                     {
-                    // InternalCanvas.g:875:2: ( 'middle' )
-                    // InternalCanvas.g:876:3: 'middle'
+                    // InternalCanvas.g:715:2: ( 'middle' )
+                    // InternalCanvas.g:716:3: 'middle'
                     {
-                     before(grammarAccess.getEnumEndAccess().getWhereMiddleKeyword_1_0_2()); 
-                    match(input,23,FOLLOW_2); 
-                     after(grammarAccess.getEnumEndAccess().getWhereMiddleKeyword_1_0_2()); 
+                     before(grammarAccess.getEnumEndAccess().getWhereMiddleKeyword_2_0_2()); 
+                    match(input,14,FOLLOW_2); 
+                     after(grammarAccess.getEnumEndAccess().getWhereMiddleKeyword_2_0_2()); 
 
                     }
 
@@ -2870,14 +2264,14 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalCanvas.g:881:2: ( 'end_fixed' )
+                    // InternalCanvas.g:721:2: ( 'end_fixed' )
                     {
-                    // InternalCanvas.g:881:2: ( 'end_fixed' )
-                    // InternalCanvas.g:882:3: 'end_fixed'
+                    // InternalCanvas.g:721:2: ( 'end_fixed' )
+                    // InternalCanvas.g:722:3: 'end_fixed'
                     {
-                     before(grammarAccess.getEnumEndAccess().getWhereEnd_fixedKeyword_1_0_3()); 
-                    match(input,24,FOLLOW_2); 
-                     after(grammarAccess.getEnumEndAccess().getWhereEnd_fixedKeyword_1_0_3()); 
+                     before(grammarAccess.getEnumEndAccess().getWhereEnd_fixedKeyword_2_0_3()); 
+                    match(input,15,FOLLOW_2); 
+                     after(grammarAccess.getEnumEndAccess().getWhereEnd_fixedKeyword_2_0_3()); 
 
                     }
 
@@ -2885,14 +2279,14 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalCanvas.g:887:2: ( 'start_fixed' )
+                    // InternalCanvas.g:727:2: ( 'start_fixed' )
                     {
-                    // InternalCanvas.g:887:2: ( 'start_fixed' )
-                    // InternalCanvas.g:888:3: 'start_fixed'
+                    // InternalCanvas.g:727:2: ( 'start_fixed' )
+                    // InternalCanvas.g:728:3: 'start_fixed'
                     {
-                     before(grammarAccess.getEnumEndAccess().getWhereStart_fixedKeyword_1_0_4()); 
-                    match(input,25,FOLLOW_2); 
-                     after(grammarAccess.getEnumEndAccess().getWhereStart_fixedKeyword_1_0_4()); 
+                     before(grammarAccess.getEnumEndAccess().getWhereStart_fixedKeyword_2_0_4()); 
+                    match(input,16,FOLLOW_2); 
+                     after(grammarAccess.getEnumEndAccess().getWhereStart_fixedKeyword_2_0_4()); 
 
                     }
 
@@ -2900,14 +2294,14 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // InternalCanvas.g:893:2: ( 'none' )
+                    // InternalCanvas.g:733:2: ( 'none' )
                     {
-                    // InternalCanvas.g:893:2: ( 'none' )
-                    // InternalCanvas.g:894:3: 'none'
+                    // InternalCanvas.g:733:2: ( 'none' )
+                    // InternalCanvas.g:734:3: 'none'
                     {
-                     before(grammarAccess.getEnumEndAccess().getWhereNoneKeyword_1_0_5()); 
-                    match(input,26,FOLLOW_2); 
-                     after(grammarAccess.getEnumEndAccess().getWhereNoneKeyword_1_0_5()); 
+                     before(grammarAccess.getEnumEndAccess().getWhereNoneKeyword_2_0_5()); 
+                    match(input,17,FOLLOW_2); 
+                     after(grammarAccess.getEnumEndAccess().getWhereNoneKeyword_2_0_5()); 
 
                     }
 
@@ -2915,14 +2309,14 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 7 :
-                    // InternalCanvas.g:899:2: ( 'floating' )
+                    // InternalCanvas.g:739:2: ( 'floating' )
                     {
-                    // InternalCanvas.g:899:2: ( 'floating' )
-                    // InternalCanvas.g:900:3: 'floating'
+                    // InternalCanvas.g:739:2: ( 'floating' )
+                    // InternalCanvas.g:740:3: 'floating'
                     {
-                     before(grammarAccess.getEnumEndAccess().getWhereFloatingKeyword_1_0_6()); 
-                    match(input,27,FOLLOW_2); 
-                     after(grammarAccess.getEnumEndAccess().getWhereFloatingKeyword_1_0_6()); 
+                     before(grammarAccess.getEnumEndAccess().getWhereFloatingKeyword_2_0_6()); 
+                    match(input,18,FOLLOW_2); 
+                     after(grammarAccess.getEnumEndAccess().getWhereFloatingKeyword_2_0_6()); 
 
                     }
 
@@ -2930,14 +2324,14 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 8 :
-                    // InternalCanvas.g:905:2: ( 'additional' )
+                    // InternalCanvas.g:745:2: ( 'additional' )
                     {
-                    // InternalCanvas.g:905:2: ( 'additional' )
-                    // InternalCanvas.g:906:3: 'additional'
+                    // InternalCanvas.g:745:2: ( 'additional' )
+                    // InternalCanvas.g:746:3: 'additional'
                     {
-                     before(grammarAccess.getEnumEndAccess().getWhereAdditionalKeyword_1_0_7()); 
-                    match(input,28,FOLLOW_2); 
-                     after(grammarAccess.getEnumEndAccess().getWhereAdditionalKeyword_1_0_7()); 
+                     before(grammarAccess.getEnumEndAccess().getWhereAdditionalKeyword_2_0_7()); 
+                    match(input,19,FOLLOW_2); 
+                     after(grammarAccess.getEnumEndAccess().getWhereAdditionalKeyword_2_0_7()); 
 
                     }
 
@@ -2958,524 +2352,38 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EnumEnd__WhereAlternatives_1_0"
-
-
-    // $ANTLR start "rule__Connectors__Alternatives_1"
-    // InternalCanvas.g:915:1: rule__Connectors__Alternatives_1 : ( ( ( rule__Connectors__Group_1_0__0 ) ) | ( 'connectors:' ) );
-    public final void rule__Connectors__Alternatives_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:919:1: ( ( ( rule__Connectors__Group_1_0__0 ) ) | ( 'connectors:' ) )
-            int alt13=2;
-            int LA13_0 = input.LA(1);
-
-            if ( (LA13_0==48) ) {
-                alt13=1;
-            }
-            else if ( (LA13_0==29) ) {
-                alt13=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
-
-                throw nvae;
-            }
-            switch (alt13) {
-                case 1 :
-                    // InternalCanvas.g:920:2: ( ( rule__Connectors__Group_1_0__0 ) )
-                    {
-                    // InternalCanvas.g:920:2: ( ( rule__Connectors__Group_1_0__0 ) )
-                    // InternalCanvas.g:921:3: ( rule__Connectors__Group_1_0__0 )
-                    {
-                     before(grammarAccess.getConnectorsAccess().getGroup_1_0()); 
-                    // InternalCanvas.g:922:3: ( rule__Connectors__Group_1_0__0 )
-                    // InternalCanvas.g:922:4: rule__Connectors__Group_1_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Connectors__Group_1_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getConnectorsAccess().getGroup_1_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:926:2: ( 'connectors:' )
-                    {
-                    // InternalCanvas.g:926:2: ( 'connectors:' )
-                    // InternalCanvas.g:927:3: 'connectors:'
-                    {
-                     before(grammarAccess.getConnectorsAccess().getConnectorsKeyword_1_1()); 
-                    match(input,29,FOLLOW_2); 
-                     after(grammarAccess.getConnectorsAccess().getConnectorsKeyword_1_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Connectors__Alternatives_1"
-
-
-    // $ANTLR start "rule__Connector__Alternatives_0"
-    // InternalCanvas.g:936:1: rule__Connector__Alternatives_0 : ( ( ( rule__Connector__Group_0_0__0 ) ) | ( 'connector:' ) );
-    public final void rule__Connector__Alternatives_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:940:1: ( ( ( rule__Connector__Group_0_0__0 ) ) | ( 'connector:' ) )
-            int alt14=2;
-            int LA14_0 = input.LA(1);
-
-            if ( (LA14_0==49) ) {
-                alt14=1;
-            }
-            else if ( (LA14_0==30) ) {
-                alt14=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 14, 0, input);
-
-                throw nvae;
-            }
-            switch (alt14) {
-                case 1 :
-                    // InternalCanvas.g:941:2: ( ( rule__Connector__Group_0_0__0 ) )
-                    {
-                    // InternalCanvas.g:941:2: ( ( rule__Connector__Group_0_0__0 ) )
-                    // InternalCanvas.g:942:3: ( rule__Connector__Group_0_0__0 )
-                    {
-                     before(grammarAccess.getConnectorAccess().getGroup_0_0()); 
-                    // InternalCanvas.g:943:3: ( rule__Connector__Group_0_0__0 )
-                    // InternalCanvas.g:943:4: rule__Connector__Group_0_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Connector__Group_0_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getConnectorAccess().getGroup_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:947:2: ( 'connector:' )
-                    {
-                    // InternalCanvas.g:947:2: ( 'connector:' )
-                    // InternalCanvas.g:948:3: 'connector:'
-                    {
-                     before(grammarAccess.getConnectorAccess().getConnectorKeyword_0_1()); 
-                    match(input,30,FOLLOW_2); 
-                     after(grammarAccess.getConnectorAccess().getConnectorKeyword_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Connector__Alternatives_0"
-
-
-    // $ANTLR start "rule__Connector__Alternatives_2"
-    // InternalCanvas.g:957:1: rule__Connector__Alternatives_2 : ( ( ( rule__Connector__Group_2_0__0 ) ) | ( 'render:' ) );
-    public final void rule__Connector__Alternatives_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:961:1: ( ( ( rule__Connector__Group_2_0__0 ) ) | ( 'render:' ) )
-            int alt15=2;
-            int LA15_0 = input.LA(1);
-
-            if ( (LA15_0==38) ) {
-                alt15=1;
-            }
-            else if ( (LA15_0==12) ) {
-                alt15=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 15, 0, input);
-
-                throw nvae;
-            }
-            switch (alt15) {
-                case 1 :
-                    // InternalCanvas.g:962:2: ( ( rule__Connector__Group_2_0__0 ) )
-                    {
-                    // InternalCanvas.g:962:2: ( ( rule__Connector__Group_2_0__0 ) )
-                    // InternalCanvas.g:963:3: ( rule__Connector__Group_2_0__0 )
-                    {
-                     before(grammarAccess.getConnectorAccess().getGroup_2_0()); 
-                    // InternalCanvas.g:964:3: ( rule__Connector__Group_2_0__0 )
-                    // InternalCanvas.g:964:4: rule__Connector__Group_2_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Connector__Group_2_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getConnectorAccess().getGroup_2_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:968:2: ( 'render:' )
-                    {
-                    // InternalCanvas.g:968:2: ( 'render:' )
-                    // InternalCanvas.g:969:3: 'render:'
-                    {
-                     before(grammarAccess.getConnectorAccess().getRenderKeyword_2_1()); 
-                    match(input,12,FOLLOW_2); 
-                     after(grammarAccess.getConnectorAccess().getRenderKeyword_2_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Connector__Alternatives_2"
-
-
-    // $ANTLR start "rule__Anchors__Alternatives_0"
-    // InternalCanvas.g:978:1: rule__Anchors__Alternatives_0 : ( ( ( rule__Anchors__Group_0_0__0 ) ) | ( 'anchors:' ) );
-    public final void rule__Anchors__Alternatives_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:982:1: ( ( ( rule__Anchors__Group_0_0__0 ) ) | ( 'anchors:' ) )
-            int alt16=2;
-            int LA16_0 = input.LA(1);
-
-            if ( (LA16_0==50) ) {
-                alt16=1;
-            }
-            else if ( (LA16_0==31) ) {
-                alt16=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 16, 0, input);
-
-                throw nvae;
-            }
-            switch (alt16) {
-                case 1 :
-                    // InternalCanvas.g:983:2: ( ( rule__Anchors__Group_0_0__0 ) )
-                    {
-                    // InternalCanvas.g:983:2: ( ( rule__Anchors__Group_0_0__0 ) )
-                    // InternalCanvas.g:984:3: ( rule__Anchors__Group_0_0__0 )
-                    {
-                     before(grammarAccess.getAnchorsAccess().getGroup_0_0()); 
-                    // InternalCanvas.g:985:3: ( rule__Anchors__Group_0_0__0 )
-                    // InternalCanvas.g:985:4: rule__Anchors__Group_0_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Anchors__Group_0_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getAnchorsAccess().getGroup_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:989:2: ( 'anchors:' )
-                    {
-                    // InternalCanvas.g:989:2: ( 'anchors:' )
-                    // InternalCanvas.g:990:3: 'anchors:'
-                    {
-                     before(grammarAccess.getAnchorsAccess().getAnchorsKeyword_0_1()); 
-                    match(input,31,FOLLOW_2); 
-                     after(grammarAccess.getAnchorsAccess().getAnchorsKeyword_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Anchors__Alternatives_0"
-
-
-    // $ANTLR start "rule__StartAnchor__Alternatives_0"
-    // InternalCanvas.g:999:1: rule__StartAnchor__Alternatives_0 : ( ( ( rule__StartAnchor__Group_0_0__0 ) ) | ( 'start:' ) );
-    public final void rule__StartAnchor__Alternatives_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:1003:1: ( ( ( rule__StartAnchor__Group_0_0__0 ) ) | ( 'start:' ) )
-            int alt17=2;
-            int LA17_0 = input.LA(1);
-
-            if ( (LA17_0==21) ) {
-                alt17=1;
-            }
-            else if ( (LA17_0==32) ) {
-                alt17=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 17, 0, input);
-
-                throw nvae;
-            }
-            switch (alt17) {
-                case 1 :
-                    // InternalCanvas.g:1004:2: ( ( rule__StartAnchor__Group_0_0__0 ) )
-                    {
-                    // InternalCanvas.g:1004:2: ( ( rule__StartAnchor__Group_0_0__0 ) )
-                    // InternalCanvas.g:1005:3: ( rule__StartAnchor__Group_0_0__0 )
-                    {
-                     before(grammarAccess.getStartAnchorAccess().getGroup_0_0()); 
-                    // InternalCanvas.g:1006:3: ( rule__StartAnchor__Group_0_0__0 )
-                    // InternalCanvas.g:1006:4: rule__StartAnchor__Group_0_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__StartAnchor__Group_0_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getStartAnchorAccess().getGroup_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:1010:2: ( 'start:' )
-                    {
-                    // InternalCanvas.g:1010:2: ( 'start:' )
-                    // InternalCanvas.g:1011:3: 'start:'
-                    {
-                     before(grammarAccess.getStartAnchorAccess().getStartKeyword_0_1()); 
-                    match(input,32,FOLLOW_2); 
-                     after(grammarAccess.getStartAnchorAccess().getStartKeyword_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__StartAnchor__Alternatives_0"
-
-
-    // $ANTLR start "rule__EndAnchor__Alternatives_0"
-    // InternalCanvas.g:1020:1: rule__EndAnchor__Alternatives_0 : ( ( ( rule__EndAnchor__Group_0_0__0 ) ) | ( 'end:' ) );
-    public final void rule__EndAnchor__Alternatives_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:1024:1: ( ( ( rule__EndAnchor__Group_0_0__0 ) ) | ( 'end:' ) )
-            int alt18=2;
-            int LA18_0 = input.LA(1);
-
-            if ( (LA18_0==22) ) {
-                alt18=1;
-            }
-            else if ( (LA18_0==33) ) {
-                alt18=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 18, 0, input);
-
-                throw nvae;
-            }
-            switch (alt18) {
-                case 1 :
-                    // InternalCanvas.g:1025:2: ( ( rule__EndAnchor__Group_0_0__0 ) )
-                    {
-                    // InternalCanvas.g:1025:2: ( ( rule__EndAnchor__Group_0_0__0 ) )
-                    // InternalCanvas.g:1026:3: ( rule__EndAnchor__Group_0_0__0 )
-                    {
-                     before(grammarAccess.getEndAnchorAccess().getGroup_0_0()); 
-                    // InternalCanvas.g:1027:3: ( rule__EndAnchor__Group_0_0__0 )
-                    // InternalCanvas.g:1027:4: rule__EndAnchor__Group_0_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__EndAnchor__Group_0_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getEndAnchorAccess().getGroup_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:1031:2: ( 'end:' )
-                    {
-                    // InternalCanvas.g:1031:2: ( 'end:' )
-                    // InternalCanvas.g:1032:3: 'end:'
-                    {
-                     before(grammarAccess.getEndAnchorAccess().getEndKeyword_0_1()); 
-                    match(input,33,FOLLOW_2); 
-                     after(grammarAccess.getEndAnchorAccess().getEndKeyword_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EndAnchor__Alternatives_0"
+    // $ANTLR end "rule__EnumEnd__WhereAlternatives_2_0"
 
 
     // $ANTLR start "rule__Anchor__Alternatives"
-    // InternalCanvas.g:1041:1: rule__Anchor__Alternatives : ( ( ruleShapeAnchorElement ) | ( ruleConnectorAnchorElement ) );
+    // InternalCanvas.g:755:1: rule__Anchor__Alternatives : ( ( ruleShapeAnchorElement ) | ( ruleConnectorAnchorElement ) );
     public final void rule__Anchor__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1045:1: ( ( ruleShapeAnchorElement ) | ( ruleConnectorAnchorElement ) )
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            // InternalCanvas.g:759:1: ( ( ruleShapeAnchorElement ) | ( ruleConnectorAnchorElement ) )
+            int alt3=2;
+            int LA3_0 = input.LA(1);
 
-            if ( (LA19_0==17||LA19_0==44) ) {
-                alt19=1;
+            if ( (LA3_0==90) ) {
+                alt3=1;
             }
-            else if ( (LA19_0==30||LA19_0==49) ) {
-                alt19=2;
+            else if ( (LA3_0==91) ) {
+                alt3=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 19, 0, input);
+                    new NoViableAltException("", 3, 0, input);
 
                 throw nvae;
             }
-            switch (alt19) {
+            switch (alt3) {
                 case 1 :
-                    // InternalCanvas.g:1046:2: ( ruleShapeAnchorElement )
+                    // InternalCanvas.g:760:2: ( ruleShapeAnchorElement )
                     {
-                    // InternalCanvas.g:1046:2: ( ruleShapeAnchorElement )
-                    // InternalCanvas.g:1047:3: ruleShapeAnchorElement
+                    // InternalCanvas.g:760:2: ( ruleShapeAnchorElement )
+                    // InternalCanvas.g:761:3: ruleShapeAnchorElement
                     {
                      before(grammarAccess.getAnchorAccess().getShapeAnchorElementParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -3491,10 +2399,10 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:1052:2: ( ruleConnectorAnchorElement )
+                    // InternalCanvas.g:766:2: ( ruleConnectorAnchorElement )
                     {
-                    // InternalCanvas.g:1052:2: ( ruleConnectorAnchorElement )
-                    // InternalCanvas.g:1053:3: ruleConnectorAnchorElement
+                    // InternalCanvas.g:766:2: ( ruleConnectorAnchorElement )
+                    // InternalCanvas.g:767:3: ruleConnectorAnchorElement
                     {
                      before(grammarAccess.getAnchorAccess().getConnectorAnchorElementParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -3526,49 +2434,418 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Anchor__Alternatives"
 
 
-    // $ANTLR start "rule__ShapeAnchorElement__Alternatives_0"
-    // InternalCanvas.g:1062:1: rule__ShapeAnchorElement__Alternatives_0 : ( ( ( rule__ShapeAnchorElement__Group_0_0__0 ) ) | ( 'shape:' ) );
-    public final void rule__ShapeAnchorElement__Alternatives_0() throws RecognitionException {
+    // $ANTLR start "rule__OOAType__Alternatives"
+    // InternalCanvas.g:776:1: rule__OOAType__Alternatives : ( ( 'access_path' ) | ( 'association' ) | ( 'associative_link' ) | ( 'class' ) | ( 'communication_path' ) | ( 'data_type' ) | ( 'derived_access_path' ) | ( 'derived_communication_path' ) | ( 'ee' ) | ( 'enumeration_data_type' ) | ( 'imported_class' ) | ( 'none' ) | ( 'state' ) | ( 'state_machine' ) | ( 'subsystem' ) | ( 'transition' ) | ( 'user_data_type' ) | ( 'subtype' ) | ( 'supertype' ) | ( 'creation_transition' ) | ( 'sequence' ) | ( 'lifeline' ) | ( 'timing_mark' ) | ( 'time_span' ) | ( 'synchronous_message' ) | ( 'class_instance_participant' ) | ( 'external_entity_participant' ) | ( 'class_participant' ) | ( 'actor' ) | ( 'asynchronous_message' ) | ( 'return_message' ) | ( 'communication' ) | ( 'communication_link' ) | ( 'communication_return_message' ) | ( 'communication_asynchronous_message' ) | ( 'communication_synchronous_message' ) | ( 'use_case' ) | ( 'use_case_diagram' ) | ( 'use_case_binary_association' ) | ( 'generalization' ) | ( 'include' ) | ( 'extend' ) | ( 'forkJoin' ) | ( 'activity' ) | ( 'initial_node' ) | ( 'activity_edge' ) | ( 'activity_final_node' ) | ( 'flow_final_node' ) | ( 'generic_action' ) | ( 'decision_merge_node' ) | ( 'object_node' ) | ( 'accept_event_action' ) | ( 'send_signal_action' ) | ( 'accept_time_event_action' ) | ( 'partition' ) | ( 'component' ) | ( 'provided_interface' ) | ( 'required_interface' ) | ( 'interface' ) | ( 'system_model' ) | ( 'structured_data_type' ) | ( 'component_reference' ) | ( 'component_diagram' ) | ( 'delegation' ) | ( 'component_container' ) | ( 'imported_provided_interface' ) | ( 'imported_required_interface' ) | ( 'component_participant' ) | ( 'package' ) | ( 'constant_specification' ) | ( 'package_participant' ) | ( 'shape' ) | ( 'connector' ) | ( 'diagram' ) | ( 'exception' ) | ( 'satisfaction' ) | ( 'deployment' ) );
+    public final void rule__OOAType__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1066:1: ( ( ( rule__ShapeAnchorElement__Group_0_0__0 ) ) | ( 'shape:' ) )
-            int alt20=2;
-            int LA20_0 = input.LA(1);
-
-            if ( (LA20_0==44) ) {
-                alt20=1;
-            }
-            else if ( (LA20_0==17) ) {
-                alt20=2;
-            }
-            else {
+            // InternalCanvas.g:780:1: ( ( 'access_path' ) | ( 'association' ) | ( 'associative_link' ) | ( 'class' ) | ( 'communication_path' ) | ( 'data_type' ) | ( 'derived_access_path' ) | ( 'derived_communication_path' ) | ( 'ee' ) | ( 'enumeration_data_type' ) | ( 'imported_class' ) | ( 'none' ) | ( 'state' ) | ( 'state_machine' ) | ( 'subsystem' ) | ( 'transition' ) | ( 'user_data_type' ) | ( 'subtype' ) | ( 'supertype' ) | ( 'creation_transition' ) | ( 'sequence' ) | ( 'lifeline' ) | ( 'timing_mark' ) | ( 'time_span' ) | ( 'synchronous_message' ) | ( 'class_instance_participant' ) | ( 'external_entity_participant' ) | ( 'class_participant' ) | ( 'actor' ) | ( 'asynchronous_message' ) | ( 'return_message' ) | ( 'communication' ) | ( 'communication_link' ) | ( 'communication_return_message' ) | ( 'communication_asynchronous_message' ) | ( 'communication_synchronous_message' ) | ( 'use_case' ) | ( 'use_case_diagram' ) | ( 'use_case_binary_association' ) | ( 'generalization' ) | ( 'include' ) | ( 'extend' ) | ( 'forkJoin' ) | ( 'activity' ) | ( 'initial_node' ) | ( 'activity_edge' ) | ( 'activity_final_node' ) | ( 'flow_final_node' ) | ( 'generic_action' ) | ( 'decision_merge_node' ) | ( 'object_node' ) | ( 'accept_event_action' ) | ( 'send_signal_action' ) | ( 'accept_time_event_action' ) | ( 'partition' ) | ( 'component' ) | ( 'provided_interface' ) | ( 'required_interface' ) | ( 'interface' ) | ( 'system_model' ) | ( 'structured_data_type' ) | ( 'component_reference' ) | ( 'component_diagram' ) | ( 'delegation' ) | ( 'component_container' ) | ( 'imported_provided_interface' ) | ( 'imported_required_interface' ) | ( 'component_participant' ) | ( 'package' ) | ( 'constant_specification' ) | ( 'package_participant' ) | ( 'shape' ) | ( 'connector' ) | ( 'diagram' ) | ( 'exception' ) | ( 'satisfaction' ) | ( 'deployment' ) )
+            int alt4=77;
+            switch ( input.LA(1) ) {
+            case 20:
+                {
+                alt4=1;
+                }
+                break;
+            case 21:
+                {
+                alt4=2;
+                }
+                break;
+            case 22:
+                {
+                alt4=3;
+                }
+                break;
+            case 23:
+                {
+                alt4=4;
+                }
+                break;
+            case 24:
+                {
+                alt4=5;
+                }
+                break;
+            case 25:
+                {
+                alt4=6;
+                }
+                break;
+            case 26:
+                {
+                alt4=7;
+                }
+                break;
+            case 27:
+                {
+                alt4=8;
+                }
+                break;
+            case 28:
+                {
+                alt4=9;
+                }
+                break;
+            case 29:
+                {
+                alt4=10;
+                }
+                break;
+            case 30:
+                {
+                alt4=11;
+                }
+                break;
+            case 17:
+                {
+                alt4=12;
+                }
+                break;
+            case 31:
+                {
+                alt4=13;
+                }
+                break;
+            case 32:
+                {
+                alt4=14;
+                }
+                break;
+            case 33:
+                {
+                alt4=15;
+                }
+                break;
+            case 34:
+                {
+                alt4=16;
+                }
+                break;
+            case 35:
+                {
+                alt4=17;
+                }
+                break;
+            case 36:
+                {
+                alt4=18;
+                }
+                break;
+            case 37:
+                {
+                alt4=19;
+                }
+                break;
+            case 38:
+                {
+                alt4=20;
+                }
+                break;
+            case 39:
+                {
+                alt4=21;
+                }
+                break;
+            case 40:
+                {
+                alt4=22;
+                }
+                break;
+            case 41:
+                {
+                alt4=23;
+                }
+                break;
+            case 42:
+                {
+                alt4=24;
+                }
+                break;
+            case 43:
+                {
+                alt4=25;
+                }
+                break;
+            case 44:
+                {
+                alt4=26;
+                }
+                break;
+            case 45:
+                {
+                alt4=27;
+                }
+                break;
+            case 46:
+                {
+                alt4=28;
+                }
+                break;
+            case 47:
+                {
+                alt4=29;
+                }
+                break;
+            case 48:
+                {
+                alt4=30;
+                }
+                break;
+            case 49:
+                {
+                alt4=31;
+                }
+                break;
+            case 50:
+                {
+                alt4=32;
+                }
+                break;
+            case 51:
+                {
+                alt4=33;
+                }
+                break;
+            case 52:
+                {
+                alt4=34;
+                }
+                break;
+            case 53:
+                {
+                alt4=35;
+                }
+                break;
+            case 54:
+                {
+                alt4=36;
+                }
+                break;
+            case 55:
+                {
+                alt4=37;
+                }
+                break;
+            case 56:
+                {
+                alt4=38;
+                }
+                break;
+            case 57:
+                {
+                alt4=39;
+                }
+                break;
+            case 58:
+                {
+                alt4=40;
+                }
+                break;
+            case 59:
+                {
+                alt4=41;
+                }
+                break;
+            case 60:
+                {
+                alt4=42;
+                }
+                break;
+            case 61:
+                {
+                alt4=43;
+                }
+                break;
+            case 62:
+                {
+                alt4=44;
+                }
+                break;
+            case 63:
+                {
+                alt4=45;
+                }
+                break;
+            case 64:
+                {
+                alt4=46;
+                }
+                break;
+            case 65:
+                {
+                alt4=47;
+                }
+                break;
+            case 66:
+                {
+                alt4=48;
+                }
+                break;
+            case 67:
+                {
+                alt4=49;
+                }
+                break;
+            case 68:
+                {
+                alt4=50;
+                }
+                break;
+            case 69:
+                {
+                alt4=51;
+                }
+                break;
+            case 70:
+                {
+                alt4=52;
+                }
+                break;
+            case 71:
+                {
+                alt4=53;
+                }
+                break;
+            case 72:
+                {
+                alt4=54;
+                }
+                break;
+            case 73:
+                {
+                alt4=55;
+                }
+                break;
+            case 74:
+                {
+                alt4=56;
+                }
+                break;
+            case 75:
+                {
+                alt4=57;
+                }
+                break;
+            case 76:
+                {
+                alt4=58;
+                }
+                break;
+            case 77:
+                {
+                alt4=59;
+                }
+                break;
+            case 78:
+                {
+                alt4=60;
+                }
+                break;
+            case 79:
+                {
+                alt4=61;
+                }
+                break;
+            case 80:
+                {
+                alt4=62;
+                }
+                break;
+            case 81:
+                {
+                alt4=63;
+                }
+                break;
+            case 82:
+                {
+                alt4=64;
+                }
+                break;
+            case 83:
+                {
+                alt4=65;
+                }
+                break;
+            case 84:
+                {
+                alt4=66;
+                }
+                break;
+            case 85:
+                {
+                alt4=67;
+                }
+                break;
+            case 86:
+                {
+                alt4=68;
+                }
+                break;
+            case 87:
+                {
+                alt4=69;
+                }
+                break;
+            case 88:
+                {
+                alt4=70;
+                }
+                break;
+            case 89:
+                {
+                alt4=71;
+                }
+                break;
+            case 90:
+                {
+                alt4=72;
+                }
+                break;
+            case 91:
+                {
+                alt4=73;
+                }
+                break;
+            case 92:
+                {
+                alt4=74;
+                }
+                break;
+            case 93:
+                {
+                alt4=75;
+                }
+                break;
+            case 94:
+                {
+                alt4=76;
+                }
+                break;
+            case 95:
+                {
+                alt4=77;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 20, 0, input);
+                    new NoViableAltException("", 4, 0, input);
 
                 throw nvae;
             }
-            switch (alt20) {
+
+            switch (alt4) {
                 case 1 :
-                    // InternalCanvas.g:1067:2: ( ( rule__ShapeAnchorElement__Group_0_0__0 ) )
+                    // InternalCanvas.g:781:2: ( 'access_path' )
                     {
-                    // InternalCanvas.g:1067:2: ( ( rule__ShapeAnchorElement__Group_0_0__0 ) )
-                    // InternalCanvas.g:1068:3: ( rule__ShapeAnchorElement__Group_0_0__0 )
+                    // InternalCanvas.g:781:2: ( 'access_path' )
+                    // InternalCanvas.g:782:3: 'access_path'
                     {
-                     before(grammarAccess.getShapeAnchorElementAccess().getGroup_0_0()); 
-                    // InternalCanvas.g:1069:3: ( rule__ShapeAnchorElement__Group_0_0__0 )
-                    // InternalCanvas.g:1069:4: rule__ShapeAnchorElement__Group_0_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ShapeAnchorElement__Group_0_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getShapeAnchorElementAccess().getGroup_0_0()); 
+                     before(grammarAccess.getOOATypeAccess().getAccess_pathKeyword_0()); 
+                    match(input,20,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getAccess_pathKeyword_0()); 
 
                     }
 
@@ -3576,581 +2853,1139 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalCanvas.g:1073:2: ( 'shape:' )
+                    // InternalCanvas.g:787:2: ( 'association' )
                     {
-                    // InternalCanvas.g:1073:2: ( 'shape:' )
-                    // InternalCanvas.g:1074:3: 'shape:'
+                    // InternalCanvas.g:787:2: ( 'association' )
+                    // InternalCanvas.g:788:3: 'association'
                     {
-                     before(grammarAccess.getShapeAnchorElementAccess().getShapeKeyword_0_1()); 
-                    match(input,17,FOLLOW_2); 
-                     after(grammarAccess.getShapeAnchorElementAccess().getShapeKeyword_0_1()); 
+                     before(grammarAccess.getOOATypeAccess().getAssociationKeyword_1()); 
+                    match(input,21,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getAssociationKeyword_1()); 
 
                     }
 
 
                     }
                     break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ShapeAnchorElement__Alternatives_0"
-
-
-    // $ANTLR start "rule__ConnectorAnchorElement__Alternatives_0"
-    // InternalCanvas.g:1083:1: rule__ConnectorAnchorElement__Alternatives_0 : ( ( ( rule__ConnectorAnchorElement__Group_0_0__0 ) ) | ( 'connector:' ) );
-    public final void rule__ConnectorAnchorElement__Alternatives_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:1087:1: ( ( ( rule__ConnectorAnchorElement__Group_0_0__0 ) ) | ( 'connector:' ) )
-            int alt21=2;
-            int LA21_0 = input.LA(1);
-
-            if ( (LA21_0==49) ) {
-                alt21=1;
-            }
-            else if ( (LA21_0==30) ) {
-                alt21=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 21, 0, input);
-
-                throw nvae;
-            }
-            switch (alt21) {
-                case 1 :
-                    // InternalCanvas.g:1088:2: ( ( rule__ConnectorAnchorElement__Group_0_0__0 ) )
+                case 3 :
+                    // InternalCanvas.g:793:2: ( 'associative_link' )
                     {
-                    // InternalCanvas.g:1088:2: ( ( rule__ConnectorAnchorElement__Group_0_0__0 ) )
-                    // InternalCanvas.g:1089:3: ( rule__ConnectorAnchorElement__Group_0_0__0 )
+                    // InternalCanvas.g:793:2: ( 'associative_link' )
+                    // InternalCanvas.g:794:3: 'associative_link'
                     {
-                     before(grammarAccess.getConnectorAnchorElementAccess().getGroup_0_0()); 
-                    // InternalCanvas.g:1090:3: ( rule__ConnectorAnchorElement__Group_0_0__0 )
-                    // InternalCanvas.g:1090:4: rule__ConnectorAnchorElement__Group_0_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__ConnectorAnchorElement__Group_0_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getConnectorAnchorElementAccess().getGroup_0_0()); 
+                     before(grammarAccess.getOOATypeAccess().getAssociative_linkKeyword_2()); 
+                    match(input,22,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getAssociative_linkKeyword_2()); 
 
                     }
 
 
                     }
                     break;
-                case 2 :
-                    // InternalCanvas.g:1094:2: ( 'connector:' )
+                case 4 :
+                    // InternalCanvas.g:799:2: ( 'class' )
                     {
-                    // InternalCanvas.g:1094:2: ( 'connector:' )
-                    // InternalCanvas.g:1095:3: 'connector:'
+                    // InternalCanvas.g:799:2: ( 'class' )
+                    // InternalCanvas.g:800:3: 'class'
                     {
-                     before(grammarAccess.getConnectorAnchorElementAccess().getConnectorKeyword_0_1()); 
+                     before(grammarAccess.getOOATypeAccess().getClassKeyword_3()); 
+                    match(input,23,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getClassKeyword_3()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // InternalCanvas.g:805:2: ( 'communication_path' )
+                    {
+                    // InternalCanvas.g:805:2: ( 'communication_path' )
+                    // InternalCanvas.g:806:3: 'communication_path'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getCommunication_pathKeyword_4()); 
+                    match(input,24,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getCommunication_pathKeyword_4()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 6 :
+                    // InternalCanvas.g:811:2: ( 'data_type' )
+                    {
+                    // InternalCanvas.g:811:2: ( 'data_type' )
+                    // InternalCanvas.g:812:3: 'data_type'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getData_typeKeyword_5()); 
+                    match(input,25,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getData_typeKeyword_5()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 7 :
+                    // InternalCanvas.g:817:2: ( 'derived_access_path' )
+                    {
+                    // InternalCanvas.g:817:2: ( 'derived_access_path' )
+                    // InternalCanvas.g:818:3: 'derived_access_path'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getDerived_access_pathKeyword_6()); 
+                    match(input,26,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getDerived_access_pathKeyword_6()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 8 :
+                    // InternalCanvas.g:823:2: ( 'derived_communication_path' )
+                    {
+                    // InternalCanvas.g:823:2: ( 'derived_communication_path' )
+                    // InternalCanvas.g:824:3: 'derived_communication_path'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getDerived_communication_pathKeyword_7()); 
+                    match(input,27,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getDerived_communication_pathKeyword_7()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 9 :
+                    // InternalCanvas.g:829:2: ( 'ee' )
+                    {
+                    // InternalCanvas.g:829:2: ( 'ee' )
+                    // InternalCanvas.g:830:3: 'ee'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getEeKeyword_8()); 
+                    match(input,28,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getEeKeyword_8()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 10 :
+                    // InternalCanvas.g:835:2: ( 'enumeration_data_type' )
+                    {
+                    // InternalCanvas.g:835:2: ( 'enumeration_data_type' )
+                    // InternalCanvas.g:836:3: 'enumeration_data_type'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getEnumeration_data_typeKeyword_9()); 
+                    match(input,29,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getEnumeration_data_typeKeyword_9()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 11 :
+                    // InternalCanvas.g:841:2: ( 'imported_class' )
+                    {
+                    // InternalCanvas.g:841:2: ( 'imported_class' )
+                    // InternalCanvas.g:842:3: 'imported_class'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getImported_classKeyword_10()); 
                     match(input,30,FOLLOW_2); 
-                     after(grammarAccess.getConnectorAnchorElementAccess().getConnectorKeyword_0_1()); 
+                     after(grammarAccess.getOOATypeAccess().getImported_classKeyword_10()); 
 
                     }
 
 
                     }
                     break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ConnectorAnchorElement__Alternatives_0"
-
-
-    // $ANTLR start "rule__Polyline__Alternatives_1"
-    // InternalCanvas.g:1104:1: rule__Polyline__Alternatives_1 : ( ( ( rule__Polyline__Group_1_0__0 ) ) | ( 'polyline:' ) );
-    public final void rule__Polyline__Alternatives_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:1108:1: ( ( ( rule__Polyline__Group_1_0__0 ) ) | ( 'polyline:' ) )
-            int alt22=2;
-            int LA22_0 = input.LA(1);
-
-            if ( (LA22_0==51) ) {
-                alt22=1;
-            }
-            else if ( (LA22_0==34) ) {
-                alt22=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 22, 0, input);
-
-                throw nvae;
-            }
-            switch (alt22) {
-                case 1 :
-                    // InternalCanvas.g:1109:2: ( ( rule__Polyline__Group_1_0__0 ) )
+                case 12 :
+                    // InternalCanvas.g:847:2: ( 'none' )
                     {
-                    // InternalCanvas.g:1109:2: ( ( rule__Polyline__Group_1_0__0 ) )
-                    // InternalCanvas.g:1110:3: ( rule__Polyline__Group_1_0__0 )
+                    // InternalCanvas.g:847:2: ( 'none' )
+                    // InternalCanvas.g:848:3: 'none'
                     {
-                     before(grammarAccess.getPolylineAccess().getGroup_1_0()); 
-                    // InternalCanvas.g:1111:3: ( rule__Polyline__Group_1_0__0 )
-                    // InternalCanvas.g:1111:4: rule__Polyline__Group_1_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Polyline__Group_1_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getPolylineAccess().getGroup_1_0()); 
+                     before(grammarAccess.getOOATypeAccess().getNoneKeyword_11()); 
+                    match(input,17,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getNoneKeyword_11()); 
 
                     }
 
 
                     }
                     break;
-                case 2 :
-                    // InternalCanvas.g:1115:2: ( 'polyline:' )
+                case 13 :
+                    // InternalCanvas.g:853:2: ( 'state' )
                     {
-                    // InternalCanvas.g:1115:2: ( 'polyline:' )
-                    // InternalCanvas.g:1116:3: 'polyline:'
+                    // InternalCanvas.g:853:2: ( 'state' )
+                    // InternalCanvas.g:854:3: 'state'
                     {
-                     before(grammarAccess.getPolylineAccess().getPolylineKeyword_1_1()); 
-                    match(input,34,FOLLOW_2); 
-                     after(grammarAccess.getPolylineAccess().getPolylineKeyword_1_1()); 
+                     before(grammarAccess.getOOATypeAccess().getStateKeyword_12()); 
+                    match(input,31,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getStateKeyword_12()); 
 
                     }
 
 
                     }
                     break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Polyline__Alternatives_1"
-
-
-    // $ANTLR start "rule__Segment__Alternatives_0"
-    // InternalCanvas.g:1125:1: rule__Segment__Alternatives_0 : ( ( ( rule__Segment__Group_0_0__0 ) ) | ( 'segment:' ) );
-    public final void rule__Segment__Alternatives_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:1129:1: ( ( ( rule__Segment__Group_0_0__0 ) ) | ( 'segment:' ) )
-            int alt23=2;
-            int LA23_0 = input.LA(1);
-
-            if ( (LA23_0==52) ) {
-                alt23=1;
-            }
-            else if ( (LA23_0==35) ) {
-                alt23=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 23, 0, input);
-
-                throw nvae;
-            }
-            switch (alt23) {
-                case 1 :
-                    // InternalCanvas.g:1130:2: ( ( rule__Segment__Group_0_0__0 ) )
+                case 14 :
+                    // InternalCanvas.g:859:2: ( 'state_machine' )
                     {
-                    // InternalCanvas.g:1130:2: ( ( rule__Segment__Group_0_0__0 ) )
-                    // InternalCanvas.g:1131:3: ( rule__Segment__Group_0_0__0 )
+                    // InternalCanvas.g:859:2: ( 'state_machine' )
+                    // InternalCanvas.g:860:3: 'state_machine'
                     {
-                     before(grammarAccess.getSegmentAccess().getGroup_0_0()); 
-                    // InternalCanvas.g:1132:3: ( rule__Segment__Group_0_0__0 )
-                    // InternalCanvas.g:1132:4: rule__Segment__Group_0_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Segment__Group_0_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getSegmentAccess().getGroup_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:1136:2: ( 'segment:' )
-                    {
-                    // InternalCanvas.g:1136:2: ( 'segment:' )
-                    // InternalCanvas.g:1137:3: 'segment:'
-                    {
-                     before(grammarAccess.getSegmentAccess().getSegmentKeyword_0_1()); 
-                    match(input,35,FOLLOW_2); 
-                     after(grammarAccess.getSegmentAccess().getSegmentKeyword_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Segment__Alternatives_0"
-
-
-    // $ANTLR start "rule__Segment__Alternatives_1"
-    // InternalCanvas.g:1146:1: rule__Segment__Alternatives_1 : ( ( ( rule__Segment__Group_1_0__0 ) ) | ( 'start:' ) );
-    public final void rule__Segment__Alternatives_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:1150:1: ( ( ( rule__Segment__Group_1_0__0 ) ) | ( 'start:' ) )
-            int alt24=2;
-            int LA24_0 = input.LA(1);
-
-            if ( (LA24_0==21) ) {
-                alt24=1;
-            }
-            else if ( (LA24_0==32) ) {
-                alt24=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 24, 0, input);
-
-                throw nvae;
-            }
-            switch (alt24) {
-                case 1 :
-                    // InternalCanvas.g:1151:2: ( ( rule__Segment__Group_1_0__0 ) )
-                    {
-                    // InternalCanvas.g:1151:2: ( ( rule__Segment__Group_1_0__0 ) )
-                    // InternalCanvas.g:1152:3: ( rule__Segment__Group_1_0__0 )
-                    {
-                     before(grammarAccess.getSegmentAccess().getGroup_1_0()); 
-                    // InternalCanvas.g:1153:3: ( rule__Segment__Group_1_0__0 )
-                    // InternalCanvas.g:1153:4: rule__Segment__Group_1_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Segment__Group_1_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getSegmentAccess().getGroup_1_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:1157:2: ( 'start:' )
-                    {
-                    // InternalCanvas.g:1157:2: ( 'start:' )
-                    // InternalCanvas.g:1158:3: 'start:'
-                    {
-                     before(grammarAccess.getSegmentAccess().getStartKeyword_1_1()); 
+                     before(grammarAccess.getOOATypeAccess().getState_machineKeyword_13()); 
                     match(input,32,FOLLOW_2); 
-                     after(grammarAccess.getSegmentAccess().getStartKeyword_1_1()); 
+                     after(grammarAccess.getOOATypeAccess().getState_machineKeyword_13()); 
 
                     }
 
 
                     }
                     break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Segment__Alternatives_1"
-
-
-    // $ANTLR start "rule__Segment__Alternatives_3"
-    // InternalCanvas.g:1167:1: rule__Segment__Alternatives_3 : ( ( ( rule__Segment__Group_3_0__0 ) ) | ( 'end:' ) );
-    public final void rule__Segment__Alternatives_3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:1171:1: ( ( ( rule__Segment__Group_3_0__0 ) ) | ( 'end:' ) )
-            int alt25=2;
-            int LA25_0 = input.LA(1);
-
-            if ( (LA25_0==22) ) {
-                alt25=1;
-            }
-            else if ( (LA25_0==33) ) {
-                alt25=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 25, 0, input);
-
-                throw nvae;
-            }
-            switch (alt25) {
-                case 1 :
-                    // InternalCanvas.g:1172:2: ( ( rule__Segment__Group_3_0__0 ) )
+                case 15 :
+                    // InternalCanvas.g:865:2: ( 'subsystem' )
                     {
-                    // InternalCanvas.g:1172:2: ( ( rule__Segment__Group_3_0__0 ) )
-                    // InternalCanvas.g:1173:3: ( rule__Segment__Group_3_0__0 )
+                    // InternalCanvas.g:865:2: ( 'subsystem' )
+                    // InternalCanvas.g:866:3: 'subsystem'
                     {
-                     before(grammarAccess.getSegmentAccess().getGroup_3_0()); 
-                    // InternalCanvas.g:1174:3: ( rule__Segment__Group_3_0__0 )
-                    // InternalCanvas.g:1174:4: rule__Segment__Group_3_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Segment__Group_3_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getSegmentAccess().getGroup_3_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:1178:2: ( 'end:' )
-                    {
-                    // InternalCanvas.g:1178:2: ( 'end:' )
-                    // InternalCanvas.g:1179:3: 'end:'
-                    {
-                     before(grammarAccess.getSegmentAccess().getEndKeyword_3_1()); 
+                     before(grammarAccess.getOOATypeAccess().getSubsystemKeyword_14()); 
                     match(input,33,FOLLOW_2); 
-                     after(grammarAccess.getSegmentAccess().getEndKeyword_3_1()); 
+                     after(grammarAccess.getOOATypeAccess().getSubsystemKeyword_14()); 
 
                     }
 
 
                     }
                     break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Segment__Alternatives_3"
-
-
-    // $ANTLR start "rule__PointDefinition__Alternatives_0"
-    // InternalCanvas.g:1188:1: rule__PointDefinition__Alternatives_0 : ( ( ( rule__PointDefinition__Group_0_0__0 ) ) | ( 'point:' ) );
-    public final void rule__PointDefinition__Alternatives_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:1192:1: ( ( ( rule__PointDefinition__Group_0_0__0 ) ) | ( 'point:' ) )
-            int alt26=2;
-            int LA26_0 = input.LA(1);
-
-            if ( (LA26_0==55) ) {
-                alt26=1;
-            }
-            else if ( (LA26_0==36) ) {
-                alt26=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 26, 0, input);
-
-                throw nvae;
-            }
-            switch (alt26) {
-                case 1 :
-                    // InternalCanvas.g:1193:2: ( ( rule__PointDefinition__Group_0_0__0 ) )
+                case 16 :
+                    // InternalCanvas.g:871:2: ( 'transition' )
                     {
-                    // InternalCanvas.g:1193:2: ( ( rule__PointDefinition__Group_0_0__0 ) )
-                    // InternalCanvas.g:1194:3: ( rule__PointDefinition__Group_0_0__0 )
+                    // InternalCanvas.g:871:2: ( 'transition' )
+                    // InternalCanvas.g:872:3: 'transition'
                     {
-                     before(grammarAccess.getPointDefinitionAccess().getGroup_0_0()); 
-                    // InternalCanvas.g:1195:3: ( rule__PointDefinition__Group_0_0__0 )
-                    // InternalCanvas.g:1195:4: rule__PointDefinition__Group_0_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__PointDefinition__Group_0_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getPointDefinitionAccess().getGroup_0_0()); 
+                     before(grammarAccess.getOOATypeAccess().getTransitionKeyword_15()); 
+                    match(input,34,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getTransitionKeyword_15()); 
 
                     }
 
 
                     }
                     break;
-                case 2 :
-                    // InternalCanvas.g:1199:2: ( 'point:' )
+                case 17 :
+                    // InternalCanvas.g:877:2: ( 'user_data_type' )
                     {
-                    // InternalCanvas.g:1199:2: ( 'point:' )
-                    // InternalCanvas.g:1200:3: 'point:'
+                    // InternalCanvas.g:877:2: ( 'user_data_type' )
+                    // InternalCanvas.g:878:3: 'user_data_type'
                     {
-                     before(grammarAccess.getPointDefinitionAccess().getPointKeyword_0_1()); 
+                     before(grammarAccess.getOOATypeAccess().getUser_data_typeKeyword_16()); 
+                    match(input,35,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getUser_data_typeKeyword_16()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 18 :
+                    // InternalCanvas.g:883:2: ( 'subtype' )
+                    {
+                    // InternalCanvas.g:883:2: ( 'subtype' )
+                    // InternalCanvas.g:884:3: 'subtype'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getSubtypeKeyword_17()); 
                     match(input,36,FOLLOW_2); 
-                     after(grammarAccess.getPointDefinitionAccess().getPointKeyword_0_1()); 
+                     after(grammarAccess.getOOATypeAccess().getSubtypeKeyword_17()); 
 
                     }
 
 
                     }
                     break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__PointDefinition__Alternatives_0"
-
-
-    // $ANTLR start "rule__Rectangle__Alternatives_0"
-    // InternalCanvas.g:1209:1: rule__Rectangle__Alternatives_0 : ( ( ( rule__Rectangle__Group_0_0__0 ) ) | ( 'rectangle:' ) );
-    public final void rule__Rectangle__Alternatives_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:1213:1: ( ( ( rule__Rectangle__Group_0_0__0 ) ) | ( 'rectangle:' ) )
-            int alt27=2;
-            int LA27_0 = input.LA(1);
-
-            if ( (LA27_0==58) ) {
-                alt27=1;
-            }
-            else if ( (LA27_0==37) ) {
-                alt27=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 27, 0, input);
-
-                throw nvae;
-            }
-            switch (alt27) {
-                case 1 :
-                    // InternalCanvas.g:1214:2: ( ( rule__Rectangle__Group_0_0__0 ) )
+                case 19 :
+                    // InternalCanvas.g:889:2: ( 'supertype' )
                     {
-                    // InternalCanvas.g:1214:2: ( ( rule__Rectangle__Group_0_0__0 ) )
-                    // InternalCanvas.g:1215:3: ( rule__Rectangle__Group_0_0__0 )
+                    // InternalCanvas.g:889:2: ( 'supertype' )
+                    // InternalCanvas.g:890:3: 'supertype'
                     {
-                     before(grammarAccess.getRectangleAccess().getGroup_0_0()); 
-                    // InternalCanvas.g:1216:3: ( rule__Rectangle__Group_0_0__0 )
-                    // InternalCanvas.g:1216:4: rule__Rectangle__Group_0_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Rectangle__Group_0_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getRectangleAccess().getGroup_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalCanvas.g:1220:2: ( 'rectangle:' )
-                    {
-                    // InternalCanvas.g:1220:2: ( 'rectangle:' )
-                    // InternalCanvas.g:1221:3: 'rectangle:'
-                    {
-                     before(grammarAccess.getRectangleAccess().getRectangleKeyword_0_1()); 
+                     before(grammarAccess.getOOATypeAccess().getSupertypeKeyword_18()); 
                     match(input,37,FOLLOW_2); 
-                     after(grammarAccess.getRectangleAccess().getRectangleKeyword_0_1()); 
+                     after(grammarAccess.getOOATypeAccess().getSupertypeKeyword_18()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 20 :
+                    // InternalCanvas.g:895:2: ( 'creation_transition' )
+                    {
+                    // InternalCanvas.g:895:2: ( 'creation_transition' )
+                    // InternalCanvas.g:896:3: 'creation_transition'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getCreation_transitionKeyword_19()); 
+                    match(input,38,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getCreation_transitionKeyword_19()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 21 :
+                    // InternalCanvas.g:901:2: ( 'sequence' )
+                    {
+                    // InternalCanvas.g:901:2: ( 'sequence' )
+                    // InternalCanvas.g:902:3: 'sequence'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getSequenceKeyword_20()); 
+                    match(input,39,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getSequenceKeyword_20()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 22 :
+                    // InternalCanvas.g:907:2: ( 'lifeline' )
+                    {
+                    // InternalCanvas.g:907:2: ( 'lifeline' )
+                    // InternalCanvas.g:908:3: 'lifeline'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getLifelineKeyword_21()); 
+                    match(input,40,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getLifelineKeyword_21()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 23 :
+                    // InternalCanvas.g:913:2: ( 'timing_mark' )
+                    {
+                    // InternalCanvas.g:913:2: ( 'timing_mark' )
+                    // InternalCanvas.g:914:3: 'timing_mark'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getTiming_markKeyword_22()); 
+                    match(input,41,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getTiming_markKeyword_22()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 24 :
+                    // InternalCanvas.g:919:2: ( 'time_span' )
+                    {
+                    // InternalCanvas.g:919:2: ( 'time_span' )
+                    // InternalCanvas.g:920:3: 'time_span'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getTime_spanKeyword_23()); 
+                    match(input,42,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getTime_spanKeyword_23()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 25 :
+                    // InternalCanvas.g:925:2: ( 'synchronous_message' )
+                    {
+                    // InternalCanvas.g:925:2: ( 'synchronous_message' )
+                    // InternalCanvas.g:926:3: 'synchronous_message'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getSynchronous_messageKeyword_24()); 
+                    match(input,43,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getSynchronous_messageKeyword_24()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 26 :
+                    // InternalCanvas.g:931:2: ( 'class_instance_participant' )
+                    {
+                    // InternalCanvas.g:931:2: ( 'class_instance_participant' )
+                    // InternalCanvas.g:932:3: 'class_instance_participant'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getClass_instance_participantKeyword_25()); 
+                    match(input,44,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getClass_instance_participantKeyword_25()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 27 :
+                    // InternalCanvas.g:937:2: ( 'external_entity_participant' )
+                    {
+                    // InternalCanvas.g:937:2: ( 'external_entity_participant' )
+                    // InternalCanvas.g:938:3: 'external_entity_participant'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getExternal_entity_participantKeyword_26()); 
+                    match(input,45,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getExternal_entity_participantKeyword_26()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 28 :
+                    // InternalCanvas.g:943:2: ( 'class_participant' )
+                    {
+                    // InternalCanvas.g:943:2: ( 'class_participant' )
+                    // InternalCanvas.g:944:3: 'class_participant'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getClass_participantKeyword_27()); 
+                    match(input,46,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getClass_participantKeyword_27()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 29 :
+                    // InternalCanvas.g:949:2: ( 'actor' )
+                    {
+                    // InternalCanvas.g:949:2: ( 'actor' )
+                    // InternalCanvas.g:950:3: 'actor'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getActorKeyword_28()); 
+                    match(input,47,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getActorKeyword_28()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 30 :
+                    // InternalCanvas.g:955:2: ( 'asynchronous_message' )
+                    {
+                    // InternalCanvas.g:955:2: ( 'asynchronous_message' )
+                    // InternalCanvas.g:956:3: 'asynchronous_message'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getAsynchronous_messageKeyword_29()); 
+                    match(input,48,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getAsynchronous_messageKeyword_29()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 31 :
+                    // InternalCanvas.g:961:2: ( 'return_message' )
+                    {
+                    // InternalCanvas.g:961:2: ( 'return_message' )
+                    // InternalCanvas.g:962:3: 'return_message'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getReturn_messageKeyword_30()); 
+                    match(input,49,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getReturn_messageKeyword_30()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 32 :
+                    // InternalCanvas.g:967:2: ( 'communication' )
+                    {
+                    // InternalCanvas.g:967:2: ( 'communication' )
+                    // InternalCanvas.g:968:3: 'communication'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getCommunicationKeyword_31()); 
+                    match(input,50,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getCommunicationKeyword_31()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 33 :
+                    // InternalCanvas.g:973:2: ( 'communication_link' )
+                    {
+                    // InternalCanvas.g:973:2: ( 'communication_link' )
+                    // InternalCanvas.g:974:3: 'communication_link'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getCommunication_linkKeyword_32()); 
+                    match(input,51,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getCommunication_linkKeyword_32()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 34 :
+                    // InternalCanvas.g:979:2: ( 'communication_return_message' )
+                    {
+                    // InternalCanvas.g:979:2: ( 'communication_return_message' )
+                    // InternalCanvas.g:980:3: 'communication_return_message'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getCommunication_return_messageKeyword_33()); 
+                    match(input,52,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getCommunication_return_messageKeyword_33()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 35 :
+                    // InternalCanvas.g:985:2: ( 'communication_asynchronous_message' )
+                    {
+                    // InternalCanvas.g:985:2: ( 'communication_asynchronous_message' )
+                    // InternalCanvas.g:986:3: 'communication_asynchronous_message'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getCommunication_asynchronous_messageKeyword_34()); 
+                    match(input,53,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getCommunication_asynchronous_messageKeyword_34()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 36 :
+                    // InternalCanvas.g:991:2: ( 'communication_synchronous_message' )
+                    {
+                    // InternalCanvas.g:991:2: ( 'communication_synchronous_message' )
+                    // InternalCanvas.g:992:3: 'communication_synchronous_message'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getCommunication_synchronous_messageKeyword_35()); 
+                    match(input,54,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getCommunication_synchronous_messageKeyword_35()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 37 :
+                    // InternalCanvas.g:997:2: ( 'use_case' )
+                    {
+                    // InternalCanvas.g:997:2: ( 'use_case' )
+                    // InternalCanvas.g:998:3: 'use_case'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getUse_caseKeyword_36()); 
+                    match(input,55,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getUse_caseKeyword_36()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 38 :
+                    // InternalCanvas.g:1003:2: ( 'use_case_diagram' )
+                    {
+                    // InternalCanvas.g:1003:2: ( 'use_case_diagram' )
+                    // InternalCanvas.g:1004:3: 'use_case_diagram'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getUse_case_diagramKeyword_37()); 
+                    match(input,56,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getUse_case_diagramKeyword_37()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 39 :
+                    // InternalCanvas.g:1009:2: ( 'use_case_binary_association' )
+                    {
+                    // InternalCanvas.g:1009:2: ( 'use_case_binary_association' )
+                    // InternalCanvas.g:1010:3: 'use_case_binary_association'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getUse_case_binary_associationKeyword_38()); 
+                    match(input,57,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getUse_case_binary_associationKeyword_38()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 40 :
+                    // InternalCanvas.g:1015:2: ( 'generalization' )
+                    {
+                    // InternalCanvas.g:1015:2: ( 'generalization' )
+                    // InternalCanvas.g:1016:3: 'generalization'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getGeneralizationKeyword_39()); 
+                    match(input,58,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getGeneralizationKeyword_39()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 41 :
+                    // InternalCanvas.g:1021:2: ( 'include' )
+                    {
+                    // InternalCanvas.g:1021:2: ( 'include' )
+                    // InternalCanvas.g:1022:3: 'include'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getIncludeKeyword_40()); 
+                    match(input,59,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getIncludeKeyword_40()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 42 :
+                    // InternalCanvas.g:1027:2: ( 'extend' )
+                    {
+                    // InternalCanvas.g:1027:2: ( 'extend' )
+                    // InternalCanvas.g:1028:3: 'extend'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getExtendKeyword_41()); 
+                    match(input,60,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getExtendKeyword_41()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 43 :
+                    // InternalCanvas.g:1033:2: ( 'forkJoin' )
+                    {
+                    // InternalCanvas.g:1033:2: ( 'forkJoin' )
+                    // InternalCanvas.g:1034:3: 'forkJoin'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getForkJoinKeyword_42()); 
+                    match(input,61,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getForkJoinKeyword_42()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 44 :
+                    // InternalCanvas.g:1039:2: ( 'activity' )
+                    {
+                    // InternalCanvas.g:1039:2: ( 'activity' )
+                    // InternalCanvas.g:1040:3: 'activity'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getActivityKeyword_43()); 
+                    match(input,62,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getActivityKeyword_43()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 45 :
+                    // InternalCanvas.g:1045:2: ( 'initial_node' )
+                    {
+                    // InternalCanvas.g:1045:2: ( 'initial_node' )
+                    // InternalCanvas.g:1046:3: 'initial_node'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getInitial_nodeKeyword_44()); 
+                    match(input,63,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getInitial_nodeKeyword_44()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 46 :
+                    // InternalCanvas.g:1051:2: ( 'activity_edge' )
+                    {
+                    // InternalCanvas.g:1051:2: ( 'activity_edge' )
+                    // InternalCanvas.g:1052:3: 'activity_edge'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getActivity_edgeKeyword_45()); 
+                    match(input,64,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getActivity_edgeKeyword_45()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 47 :
+                    // InternalCanvas.g:1057:2: ( 'activity_final_node' )
+                    {
+                    // InternalCanvas.g:1057:2: ( 'activity_final_node' )
+                    // InternalCanvas.g:1058:3: 'activity_final_node'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getActivity_final_nodeKeyword_46()); 
+                    match(input,65,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getActivity_final_nodeKeyword_46()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 48 :
+                    // InternalCanvas.g:1063:2: ( 'flow_final_node' )
+                    {
+                    // InternalCanvas.g:1063:2: ( 'flow_final_node' )
+                    // InternalCanvas.g:1064:3: 'flow_final_node'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getFlow_final_nodeKeyword_47()); 
+                    match(input,66,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getFlow_final_nodeKeyword_47()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 49 :
+                    // InternalCanvas.g:1069:2: ( 'generic_action' )
+                    {
+                    // InternalCanvas.g:1069:2: ( 'generic_action' )
+                    // InternalCanvas.g:1070:3: 'generic_action'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getGeneric_actionKeyword_48()); 
+                    match(input,67,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getGeneric_actionKeyword_48()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 50 :
+                    // InternalCanvas.g:1075:2: ( 'decision_merge_node' )
+                    {
+                    // InternalCanvas.g:1075:2: ( 'decision_merge_node' )
+                    // InternalCanvas.g:1076:3: 'decision_merge_node'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getDecision_merge_nodeKeyword_49()); 
+                    match(input,68,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getDecision_merge_nodeKeyword_49()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 51 :
+                    // InternalCanvas.g:1081:2: ( 'object_node' )
+                    {
+                    // InternalCanvas.g:1081:2: ( 'object_node' )
+                    // InternalCanvas.g:1082:3: 'object_node'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getObject_nodeKeyword_50()); 
+                    match(input,69,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getObject_nodeKeyword_50()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 52 :
+                    // InternalCanvas.g:1087:2: ( 'accept_event_action' )
+                    {
+                    // InternalCanvas.g:1087:2: ( 'accept_event_action' )
+                    // InternalCanvas.g:1088:3: 'accept_event_action'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getAccept_event_actionKeyword_51()); 
+                    match(input,70,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getAccept_event_actionKeyword_51()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 53 :
+                    // InternalCanvas.g:1093:2: ( 'send_signal_action' )
+                    {
+                    // InternalCanvas.g:1093:2: ( 'send_signal_action' )
+                    // InternalCanvas.g:1094:3: 'send_signal_action'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getSend_signal_actionKeyword_52()); 
+                    match(input,71,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getSend_signal_actionKeyword_52()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 54 :
+                    // InternalCanvas.g:1099:2: ( 'accept_time_event_action' )
+                    {
+                    // InternalCanvas.g:1099:2: ( 'accept_time_event_action' )
+                    // InternalCanvas.g:1100:3: 'accept_time_event_action'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getAccept_time_event_actionKeyword_53()); 
+                    match(input,72,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getAccept_time_event_actionKeyword_53()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 55 :
+                    // InternalCanvas.g:1105:2: ( 'partition' )
+                    {
+                    // InternalCanvas.g:1105:2: ( 'partition' )
+                    // InternalCanvas.g:1106:3: 'partition'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getPartitionKeyword_54()); 
+                    match(input,73,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getPartitionKeyword_54()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 56 :
+                    // InternalCanvas.g:1111:2: ( 'component' )
+                    {
+                    // InternalCanvas.g:1111:2: ( 'component' )
+                    // InternalCanvas.g:1112:3: 'component'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getComponentKeyword_55()); 
+                    match(input,74,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getComponentKeyword_55()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 57 :
+                    // InternalCanvas.g:1117:2: ( 'provided_interface' )
+                    {
+                    // InternalCanvas.g:1117:2: ( 'provided_interface' )
+                    // InternalCanvas.g:1118:3: 'provided_interface'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getProvided_interfaceKeyword_56()); 
+                    match(input,75,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getProvided_interfaceKeyword_56()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 58 :
+                    // InternalCanvas.g:1123:2: ( 'required_interface' )
+                    {
+                    // InternalCanvas.g:1123:2: ( 'required_interface' )
+                    // InternalCanvas.g:1124:3: 'required_interface'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getRequired_interfaceKeyword_57()); 
+                    match(input,76,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getRequired_interfaceKeyword_57()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 59 :
+                    // InternalCanvas.g:1129:2: ( 'interface' )
+                    {
+                    // InternalCanvas.g:1129:2: ( 'interface' )
+                    // InternalCanvas.g:1130:3: 'interface'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getInterfaceKeyword_58()); 
+                    match(input,77,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getInterfaceKeyword_58()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 60 :
+                    // InternalCanvas.g:1135:2: ( 'system_model' )
+                    {
+                    // InternalCanvas.g:1135:2: ( 'system_model' )
+                    // InternalCanvas.g:1136:3: 'system_model'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getSystem_modelKeyword_59()); 
+                    match(input,78,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getSystem_modelKeyword_59()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 61 :
+                    // InternalCanvas.g:1141:2: ( 'structured_data_type' )
+                    {
+                    // InternalCanvas.g:1141:2: ( 'structured_data_type' )
+                    // InternalCanvas.g:1142:3: 'structured_data_type'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getStructured_data_typeKeyword_60()); 
+                    match(input,79,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getStructured_data_typeKeyword_60()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 62 :
+                    // InternalCanvas.g:1147:2: ( 'component_reference' )
+                    {
+                    // InternalCanvas.g:1147:2: ( 'component_reference' )
+                    // InternalCanvas.g:1148:3: 'component_reference'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getComponent_referenceKeyword_61()); 
+                    match(input,80,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getComponent_referenceKeyword_61()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 63 :
+                    // InternalCanvas.g:1153:2: ( 'component_diagram' )
+                    {
+                    // InternalCanvas.g:1153:2: ( 'component_diagram' )
+                    // InternalCanvas.g:1154:3: 'component_diagram'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getComponent_diagramKeyword_62()); 
+                    match(input,81,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getComponent_diagramKeyword_62()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 64 :
+                    // InternalCanvas.g:1159:2: ( 'delegation' )
+                    {
+                    // InternalCanvas.g:1159:2: ( 'delegation' )
+                    // InternalCanvas.g:1160:3: 'delegation'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getDelegationKeyword_63()); 
+                    match(input,82,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getDelegationKeyword_63()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 65 :
+                    // InternalCanvas.g:1165:2: ( 'component_container' )
+                    {
+                    // InternalCanvas.g:1165:2: ( 'component_container' )
+                    // InternalCanvas.g:1166:3: 'component_container'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getComponent_containerKeyword_64()); 
+                    match(input,83,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getComponent_containerKeyword_64()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 66 :
+                    // InternalCanvas.g:1171:2: ( 'imported_provided_interface' )
+                    {
+                    // InternalCanvas.g:1171:2: ( 'imported_provided_interface' )
+                    // InternalCanvas.g:1172:3: 'imported_provided_interface'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getImported_provided_interfaceKeyword_65()); 
+                    match(input,84,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getImported_provided_interfaceKeyword_65()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 67 :
+                    // InternalCanvas.g:1177:2: ( 'imported_required_interface' )
+                    {
+                    // InternalCanvas.g:1177:2: ( 'imported_required_interface' )
+                    // InternalCanvas.g:1178:3: 'imported_required_interface'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getImported_required_interfaceKeyword_66()); 
+                    match(input,85,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getImported_required_interfaceKeyword_66()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 68 :
+                    // InternalCanvas.g:1183:2: ( 'component_participant' )
+                    {
+                    // InternalCanvas.g:1183:2: ( 'component_participant' )
+                    // InternalCanvas.g:1184:3: 'component_participant'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getComponent_participantKeyword_67()); 
+                    match(input,86,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getComponent_participantKeyword_67()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 69 :
+                    // InternalCanvas.g:1189:2: ( 'package' )
+                    {
+                    // InternalCanvas.g:1189:2: ( 'package' )
+                    // InternalCanvas.g:1190:3: 'package'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getPackageKeyword_68()); 
+                    match(input,87,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getPackageKeyword_68()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 70 :
+                    // InternalCanvas.g:1195:2: ( 'constant_specification' )
+                    {
+                    // InternalCanvas.g:1195:2: ( 'constant_specification' )
+                    // InternalCanvas.g:1196:3: 'constant_specification'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getConstant_specificationKeyword_69()); 
+                    match(input,88,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getConstant_specificationKeyword_69()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 71 :
+                    // InternalCanvas.g:1201:2: ( 'package_participant' )
+                    {
+                    // InternalCanvas.g:1201:2: ( 'package_participant' )
+                    // InternalCanvas.g:1202:3: 'package_participant'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getPackage_participantKeyword_70()); 
+                    match(input,89,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getPackage_participantKeyword_70()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 72 :
+                    // InternalCanvas.g:1207:2: ( 'shape' )
+                    {
+                    // InternalCanvas.g:1207:2: ( 'shape' )
+                    // InternalCanvas.g:1208:3: 'shape'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getShapeKeyword_71()); 
+                    match(input,90,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getShapeKeyword_71()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 73 :
+                    // InternalCanvas.g:1213:2: ( 'connector' )
+                    {
+                    // InternalCanvas.g:1213:2: ( 'connector' )
+                    // InternalCanvas.g:1214:3: 'connector'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getConnectorKeyword_72()); 
+                    match(input,91,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getConnectorKeyword_72()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 74 :
+                    // InternalCanvas.g:1219:2: ( 'diagram' )
+                    {
+                    // InternalCanvas.g:1219:2: ( 'diagram' )
+                    // InternalCanvas.g:1220:3: 'diagram'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getDiagramKeyword_73()); 
+                    match(input,92,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getDiagramKeyword_73()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 75 :
+                    // InternalCanvas.g:1225:2: ( 'exception' )
+                    {
+                    // InternalCanvas.g:1225:2: ( 'exception' )
+                    // InternalCanvas.g:1226:3: 'exception'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getExceptionKeyword_74()); 
+                    match(input,93,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getExceptionKeyword_74()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 76 :
+                    // InternalCanvas.g:1231:2: ( 'satisfaction' )
+                    {
+                    // InternalCanvas.g:1231:2: ( 'satisfaction' )
+                    // InternalCanvas.g:1232:3: 'satisfaction'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getSatisfactionKeyword_75()); 
+                    match(input,94,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getSatisfactionKeyword_75()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 77 :
+                    // InternalCanvas.g:1237:2: ( 'deployment' )
+                    {
+                    // InternalCanvas.g:1237:2: ( 'deployment' )
+                    // InternalCanvas.g:1238:3: 'deployment'
+                    {
+                     before(grammarAccess.getOOATypeAccess().getDeploymentKeyword_76()); 
+                    match(input,95,FOLLOW_2); 
+                     after(grammarAccess.getOOATypeAccess().getDeploymentKeyword_76()); 
 
                     }
 
@@ -4171,18 +4006,18 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Rectangle__Alternatives_0"
+    // $ANTLR end "rule__OOAType__Alternatives"
 
 
     // $ANTLR start "rule__Model__Group__0"
-    // InternalCanvas.g:1230:1: rule__Model__Group__0 : rule__Model__Group__0__Impl rule__Model__Group__1 ;
+    // InternalCanvas.g:1247:1: rule__Model__Group__0 : rule__Model__Group__0__Impl rule__Model__Group__1 ;
     public final void rule__Model__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1234:1: ( rule__Model__Group__0__Impl rule__Model__Group__1 )
-            // InternalCanvas.g:1235:2: rule__Model__Group__0__Impl rule__Model__Group__1
+            // InternalCanvas.g:1251:1: ( rule__Model__Group__0__Impl rule__Model__Group__1 )
+            // InternalCanvas.g:1252:2: rule__Model__Group__0__Impl rule__Model__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Model__Group__0__Impl();
@@ -4213,21 +4048,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__0__Impl"
-    // InternalCanvas.g:1242:1: rule__Model__Group__0__Impl : ( ( rule__Model__RenderAssignment_0 ) ) ;
+    // InternalCanvas.g:1259:1: rule__Model__Group__0__Impl : ( ( rule__Model__RenderAssignment_0 ) ) ;
     public final void rule__Model__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1246:1: ( ( ( rule__Model__RenderAssignment_0 ) ) )
-            // InternalCanvas.g:1247:1: ( ( rule__Model__RenderAssignment_0 ) )
+            // InternalCanvas.g:1263:1: ( ( ( rule__Model__RenderAssignment_0 ) ) )
+            // InternalCanvas.g:1264:1: ( ( rule__Model__RenderAssignment_0 ) )
             {
-            // InternalCanvas.g:1247:1: ( ( rule__Model__RenderAssignment_0 ) )
-            // InternalCanvas.g:1248:2: ( rule__Model__RenderAssignment_0 )
+            // InternalCanvas.g:1264:1: ( ( rule__Model__RenderAssignment_0 ) )
+            // InternalCanvas.g:1265:2: ( rule__Model__RenderAssignment_0 )
             {
              before(grammarAccess.getModelAccess().getRenderAssignment_0()); 
-            // InternalCanvas.g:1249:2: ( rule__Model__RenderAssignment_0 )
-            // InternalCanvas.g:1249:3: rule__Model__RenderAssignment_0
+            // InternalCanvas.g:1266:2: ( rule__Model__RenderAssignment_0 )
+            // InternalCanvas.g:1266:3: rule__Model__RenderAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Model__RenderAssignment_0();
@@ -4260,14 +4095,14 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__1"
-    // InternalCanvas.g:1257:1: rule__Model__Group__1 : rule__Model__Group__1__Impl rule__Model__Group__2 ;
+    // InternalCanvas.g:1274:1: rule__Model__Group__1 : rule__Model__Group__1__Impl rule__Model__Group__2 ;
     public final void rule__Model__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1261:1: ( rule__Model__Group__1__Impl rule__Model__Group__2 )
-            // InternalCanvas.g:1262:2: rule__Model__Group__1__Impl rule__Model__Group__2
+            // InternalCanvas.g:1278:1: ( rule__Model__Group__1__Impl rule__Model__Group__2 )
+            // InternalCanvas.g:1279:2: rule__Model__Group__1__Impl rule__Model__Group__2
             {
             pushFollow(FOLLOW_3);
             rule__Model__Group__1__Impl();
@@ -4298,29 +4133,29 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__1__Impl"
-    // InternalCanvas.g:1269:1: rule__Model__Group__1__Impl : ( ( rule__Model__PropertiesAssignment_1 )? ) ;
+    // InternalCanvas.g:1286:1: rule__Model__Group__1__Impl : ( ( rule__Model__PropertiesAssignment_1 )? ) ;
     public final void rule__Model__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1273:1: ( ( ( rule__Model__PropertiesAssignment_1 )? ) )
-            // InternalCanvas.g:1274:1: ( ( rule__Model__PropertiesAssignment_1 )? )
+            // InternalCanvas.g:1290:1: ( ( ( rule__Model__PropertiesAssignment_1 )? ) )
+            // InternalCanvas.g:1291:1: ( ( rule__Model__PropertiesAssignment_1 )? )
             {
-            // InternalCanvas.g:1274:1: ( ( rule__Model__PropertiesAssignment_1 )? )
-            // InternalCanvas.g:1275:2: ( rule__Model__PropertiesAssignment_1 )?
+            // InternalCanvas.g:1291:1: ( ( rule__Model__PropertiesAssignment_1 )? )
+            // InternalCanvas.g:1292:2: ( rule__Model__PropertiesAssignment_1 )?
             {
              before(grammarAccess.getModelAccess().getPropertiesAssignment_1()); 
-            // InternalCanvas.g:1276:2: ( rule__Model__PropertiesAssignment_1 )?
-            int alt28=2;
-            int LA28_0 = input.LA(1);
+            // InternalCanvas.g:1293:2: ( rule__Model__PropertiesAssignment_1 )?
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-            if ( (LA28_0==13||LA28_0==40) ) {
-                alt28=1;
+            if ( (LA5_0==98) ) {
+                alt5=1;
             }
-            switch (alt28) {
+            switch (alt5) {
                 case 1 :
-                    // InternalCanvas.g:1276:3: rule__Model__PropertiesAssignment_1
+                    // InternalCanvas.g:1293:3: rule__Model__PropertiesAssignment_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__Model__PropertiesAssignment_1();
@@ -4356,14 +4191,14 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__2"
-    // InternalCanvas.g:1284:1: rule__Model__Group__2 : rule__Model__Group__2__Impl ;
+    // InternalCanvas.g:1301:1: rule__Model__Group__2 : rule__Model__Group__2__Impl ;
     public final void rule__Model__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1288:1: ( rule__Model__Group__2__Impl )
-            // InternalCanvas.g:1289:2: rule__Model__Group__2__Impl
+            // InternalCanvas.g:1305:1: ( rule__Model__Group__2__Impl )
+            // InternalCanvas.g:1306:2: rule__Model__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Model__Group__2__Impl();
@@ -4389,33 +4224,33 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__2__Impl"
-    // InternalCanvas.g:1295:1: rule__Model__Group__2__Impl : ( ( rule__Model__ElementsAssignment_2 )* ) ;
+    // InternalCanvas.g:1312:1: rule__Model__Group__2__Impl : ( ( rule__Model__ElementsAssignment_2 )* ) ;
     public final void rule__Model__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1299:1: ( ( ( rule__Model__ElementsAssignment_2 )* ) )
-            // InternalCanvas.g:1300:1: ( ( rule__Model__ElementsAssignment_2 )* )
+            // InternalCanvas.g:1316:1: ( ( ( rule__Model__ElementsAssignment_2 )* ) )
+            // InternalCanvas.g:1317:1: ( ( rule__Model__ElementsAssignment_2 )* )
             {
-            // InternalCanvas.g:1300:1: ( ( rule__Model__ElementsAssignment_2 )* )
-            // InternalCanvas.g:1301:2: ( rule__Model__ElementsAssignment_2 )*
+            // InternalCanvas.g:1317:1: ( ( rule__Model__ElementsAssignment_2 )* )
+            // InternalCanvas.g:1318:2: ( rule__Model__ElementsAssignment_2 )*
             {
              before(grammarAccess.getModelAccess().getElementsAssignment_2()); 
-            // InternalCanvas.g:1302:2: ( rule__Model__ElementsAssignment_2 )*
-            loop29:
+            // InternalCanvas.g:1319:2: ( rule__Model__ElementsAssignment_2 )*
+            loop6:
             do {
-                int alt29=2;
-                int LA29_0 = input.LA(1);
+                int alt6=2;
+                int LA6_0 = input.LA(1);
 
-                if ( (LA29_0==16||LA29_0==29||LA29_0==43||LA29_0==48) ) {
-                    alt29=1;
+                if ( (LA6_0==101||LA6_0==105) ) {
+                    alt6=1;
                 }
 
 
-                switch (alt29) {
+                switch (alt6) {
             	case 1 :
-            	    // InternalCanvas.g:1302:3: rule__Model__ElementsAssignment_2
+            	    // InternalCanvas.g:1319:3: rule__Model__ElementsAssignment_2
             	    {
             	    pushFollow(FOLLOW_4);
             	    rule__Model__ElementsAssignment_2();
@@ -4427,7 +4262,7 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop29;
+            	    break loop6;
                 }
             } while (true);
 
@@ -4454,14 +4289,14 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ModelRender__Group__0"
-    // InternalCanvas.g:1311:1: rule__ModelRender__Group__0 : rule__ModelRender__Group__0__Impl rule__ModelRender__Group__1 ;
+    // InternalCanvas.g:1328:1: rule__ModelRender__Group__0 : rule__ModelRender__Group__0__Impl rule__ModelRender__Group__1 ;
     public final void rule__ModelRender__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1315:1: ( rule__ModelRender__Group__0__Impl rule__ModelRender__Group__1 )
-            // InternalCanvas.g:1316:2: rule__ModelRender__Group__0__Impl rule__ModelRender__Group__1
+            // InternalCanvas.g:1332:1: ( rule__ModelRender__Group__0__Impl rule__ModelRender__Group__1 )
+            // InternalCanvas.g:1333:2: rule__ModelRender__Group__0__Impl rule__ModelRender__Group__1
             {
             pushFollow(FOLLOW_5);
             rule__ModelRender__Group__0__Impl();
@@ -4492,31 +4327,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ModelRender__Group__0__Impl"
-    // InternalCanvas.g:1323:1: rule__ModelRender__Group__0__Impl : ( ( rule__ModelRender__Alternatives_0 ) ) ;
+    // InternalCanvas.g:1340:1: rule__ModelRender__Group__0__Impl : ( 'render' ) ;
     public final void rule__ModelRender__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1327:1: ( ( ( rule__ModelRender__Alternatives_0 ) ) )
-            // InternalCanvas.g:1328:1: ( ( rule__ModelRender__Alternatives_0 ) )
+            // InternalCanvas.g:1344:1: ( ( 'render' ) )
+            // InternalCanvas.g:1345:1: ( 'render' )
             {
-            // InternalCanvas.g:1328:1: ( ( rule__ModelRender__Alternatives_0 ) )
-            // InternalCanvas.g:1329:2: ( rule__ModelRender__Alternatives_0 )
+            // InternalCanvas.g:1345:1: ( 'render' )
+            // InternalCanvas.g:1346:2: 'render'
             {
-             before(grammarAccess.getModelRenderAccess().getAlternatives_0()); 
-            // InternalCanvas.g:1330:2: ( rule__ModelRender__Alternatives_0 )
-            // InternalCanvas.g:1330:3: rule__ModelRender__Alternatives_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__ModelRender__Alternatives_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getModelRenderAccess().getAlternatives_0()); 
+             before(grammarAccess.getModelRenderAccess().getRenderKeyword_0()); 
+            match(input,96,FOLLOW_2); 
+             after(grammarAccess.getModelRenderAccess().getRenderKeyword_0()); 
 
             }
 
@@ -4539,17 +4364,22 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ModelRender__Group__1"
-    // InternalCanvas.g:1338:1: rule__ModelRender__Group__1 : rule__ModelRender__Group__1__Impl ;
+    // InternalCanvas.g:1355:1: rule__ModelRender__Group__1 : rule__ModelRender__Group__1__Impl rule__ModelRender__Group__2 ;
     public final void rule__ModelRender__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1342:1: ( rule__ModelRender__Group__1__Impl )
-            // InternalCanvas.g:1343:2: rule__ModelRender__Group__1__Impl
+            // InternalCanvas.g:1359:1: ( rule__ModelRender__Group__1__Impl rule__ModelRender__Group__2 )
+            // InternalCanvas.g:1360:2: rule__ModelRender__Group__1__Impl rule__ModelRender__Group__2
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_6);
             rule__ModelRender__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ModelRender__Group__2();
 
             state._fsp--;
 
@@ -4572,31 +4402,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ModelRender__Group__1__Impl"
-    // InternalCanvas.g:1349:1: rule__ModelRender__Group__1__Impl : ( ( rule__ModelRender__ImportURIAssignment_1 ) ) ;
+    // InternalCanvas.g:1367:1: rule__ModelRender__Group__1__Impl : ( ':' ) ;
     public final void rule__ModelRender__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1353:1: ( ( ( rule__ModelRender__ImportURIAssignment_1 ) ) )
-            // InternalCanvas.g:1354:1: ( ( rule__ModelRender__ImportURIAssignment_1 ) )
+            // InternalCanvas.g:1371:1: ( ( ':' ) )
+            // InternalCanvas.g:1372:1: ( ':' )
             {
-            // InternalCanvas.g:1354:1: ( ( rule__ModelRender__ImportURIAssignment_1 ) )
-            // InternalCanvas.g:1355:2: ( rule__ModelRender__ImportURIAssignment_1 )
+            // InternalCanvas.g:1372:1: ( ':' )
+            // InternalCanvas.g:1373:2: ':'
             {
-             before(grammarAccess.getModelRenderAccess().getImportURIAssignment_1()); 
-            // InternalCanvas.g:1356:2: ( rule__ModelRender__ImportURIAssignment_1 )
-            // InternalCanvas.g:1356:3: rule__ModelRender__ImportURIAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__ModelRender__ImportURIAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getModelRenderAccess().getImportURIAssignment_1()); 
+             before(grammarAccess.getModelRenderAccess().getColonKeyword_1()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getModelRenderAccess().getColonKeyword_1()); 
 
             }
 
@@ -4618,93 +4438,18 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ModelRender__Group__1__Impl"
 
 
-    // $ANTLR start "rule__ModelRender__Group_0_0__0"
-    // InternalCanvas.g:1365:1: rule__ModelRender__Group_0_0__0 : rule__ModelRender__Group_0_0__0__Impl rule__ModelRender__Group_0_0__1 ;
-    public final void rule__ModelRender__Group_0_0__0() throws RecognitionException {
+    // $ANTLR start "rule__ModelRender__Group__2"
+    // InternalCanvas.g:1382:1: rule__ModelRender__Group__2 : rule__ModelRender__Group__2__Impl ;
+    public final void rule__ModelRender__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1369:1: ( rule__ModelRender__Group_0_0__0__Impl rule__ModelRender__Group_0_0__1 )
-            // InternalCanvas.g:1370:2: rule__ModelRender__Group_0_0__0__Impl rule__ModelRender__Group_0_0__1
-            {
-            pushFollow(FOLLOW_6);
-            rule__ModelRender__Group_0_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__ModelRender__Group_0_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ModelRender__Group_0_0__0"
-
-
-    // $ANTLR start "rule__ModelRender__Group_0_0__0__Impl"
-    // InternalCanvas.g:1377:1: rule__ModelRender__Group_0_0__0__Impl : ( 'render' ) ;
-    public final void rule__ModelRender__Group_0_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:1381:1: ( ( 'render' ) )
-            // InternalCanvas.g:1382:1: ( 'render' )
-            {
-            // InternalCanvas.g:1382:1: ( 'render' )
-            // InternalCanvas.g:1383:2: 'render'
-            {
-             before(grammarAccess.getModelRenderAccess().getRenderKeyword_0_0_0()); 
-            match(input,38,FOLLOW_2); 
-             after(grammarAccess.getModelRenderAccess().getRenderKeyword_0_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ModelRender__Group_0_0__0__Impl"
-
-
-    // $ANTLR start "rule__ModelRender__Group_0_0__1"
-    // InternalCanvas.g:1392:1: rule__ModelRender__Group_0_0__1 : rule__ModelRender__Group_0_0__1__Impl ;
-    public final void rule__ModelRender__Group_0_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:1396:1: ( rule__ModelRender__Group_0_0__1__Impl )
-            // InternalCanvas.g:1397:2: rule__ModelRender__Group_0_0__1__Impl
+            // InternalCanvas.g:1386:1: ( rule__ModelRender__Group__2__Impl )
+            // InternalCanvas.g:1387:2: rule__ModelRender__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__ModelRender__Group_0_0__1__Impl();
+            rule__ModelRender__Group__2__Impl();
 
             state._fsp--;
 
@@ -4723,25 +4468,35 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ModelRender__Group_0_0__1"
+    // $ANTLR end "rule__ModelRender__Group__2"
 
 
-    // $ANTLR start "rule__ModelRender__Group_0_0__1__Impl"
-    // InternalCanvas.g:1403:1: rule__ModelRender__Group_0_0__1__Impl : ( ':' ) ;
-    public final void rule__ModelRender__Group_0_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ModelRender__Group__2__Impl"
+    // InternalCanvas.g:1393:1: rule__ModelRender__Group__2__Impl : ( ( rule__ModelRender__ImportURIAssignment_2 ) ) ;
+    public final void rule__ModelRender__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1407:1: ( ( ':' ) )
-            // InternalCanvas.g:1408:1: ( ':' )
+            // InternalCanvas.g:1397:1: ( ( ( rule__ModelRender__ImportURIAssignment_2 ) ) )
+            // InternalCanvas.g:1398:1: ( ( rule__ModelRender__ImportURIAssignment_2 ) )
             {
-            // InternalCanvas.g:1408:1: ( ':' )
-            // InternalCanvas.g:1409:2: ':'
+            // InternalCanvas.g:1398:1: ( ( rule__ModelRender__ImportURIAssignment_2 ) )
+            // InternalCanvas.g:1399:2: ( rule__ModelRender__ImportURIAssignment_2 )
             {
-             before(grammarAccess.getModelRenderAccess().getColonKeyword_0_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getModelRenderAccess().getColonKeyword_0_0_1()); 
+             before(grammarAccess.getModelRenderAccess().getImportURIAssignment_2()); 
+            // InternalCanvas.g:1400:2: ( rule__ModelRender__ImportURIAssignment_2 )
+            // InternalCanvas.g:1400:3: rule__ModelRender__ImportURIAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__ModelRender__ImportURIAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getModelRenderAccess().getImportURIAssignment_2()); 
 
             }
 
@@ -4760,20 +4515,20 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ModelRender__Group_0_0__1__Impl"
+    // $ANTLR end "rule__ModelRender__Group__2__Impl"
 
 
     // $ANTLR start "rule__ModelProperties__Group__0"
-    // InternalCanvas.g:1419:1: rule__ModelProperties__Group__0 : rule__ModelProperties__Group__0__Impl rule__ModelProperties__Group__1 ;
+    // InternalCanvas.g:1409:1: rule__ModelProperties__Group__0 : rule__ModelProperties__Group__0__Impl rule__ModelProperties__Group__1 ;
     public final void rule__ModelProperties__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1423:1: ( rule__ModelProperties__Group__0__Impl rule__ModelProperties__Group__1 )
-            // InternalCanvas.g:1424:2: rule__ModelProperties__Group__0__Impl rule__ModelProperties__Group__1
+            // InternalCanvas.g:1413:1: ( rule__ModelProperties__Group__0__Impl rule__ModelProperties__Group__1 )
+            // InternalCanvas.g:1414:2: rule__ModelProperties__Group__0__Impl rule__ModelProperties__Group__1
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_5);
             rule__ModelProperties__Group__0__Impl();
 
             state._fsp--;
@@ -4802,31 +4557,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ModelProperties__Group__0__Impl"
-    // InternalCanvas.g:1431:1: rule__ModelProperties__Group__0__Impl : ( ( rule__ModelProperties__Alternatives_0 ) ) ;
+    // InternalCanvas.g:1421:1: rule__ModelProperties__Group__0__Impl : ( 'properties' ) ;
     public final void rule__ModelProperties__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1435:1: ( ( ( rule__ModelProperties__Alternatives_0 ) ) )
-            // InternalCanvas.g:1436:1: ( ( rule__ModelProperties__Alternatives_0 ) )
+            // InternalCanvas.g:1425:1: ( ( 'properties' ) )
+            // InternalCanvas.g:1426:1: ( 'properties' )
             {
-            // InternalCanvas.g:1436:1: ( ( rule__ModelProperties__Alternatives_0 ) )
-            // InternalCanvas.g:1437:2: ( rule__ModelProperties__Alternatives_0 )
+            // InternalCanvas.g:1426:1: ( 'properties' )
+            // InternalCanvas.g:1427:2: 'properties'
             {
-             before(grammarAccess.getModelPropertiesAccess().getAlternatives_0()); 
-            // InternalCanvas.g:1438:2: ( rule__ModelProperties__Alternatives_0 )
-            // InternalCanvas.g:1438:3: rule__ModelProperties__Alternatives_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__ModelProperties__Alternatives_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getModelPropertiesAccess().getAlternatives_0()); 
+             before(grammarAccess.getModelPropertiesAccess().getPropertiesKeyword_0()); 
+            match(input,98,FOLLOW_2); 
+             after(grammarAccess.getModelPropertiesAccess().getPropertiesKeyword_0()); 
 
             }
 
@@ -4849,16 +4594,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ModelProperties__Group__1"
-    // InternalCanvas.g:1446:1: rule__ModelProperties__Group__1 : rule__ModelProperties__Group__1__Impl rule__ModelProperties__Group__2 ;
+    // InternalCanvas.g:1436:1: rule__ModelProperties__Group__1 : rule__ModelProperties__Group__1__Impl rule__ModelProperties__Group__2 ;
     public final void rule__ModelProperties__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1450:1: ( rule__ModelProperties__Group__1__Impl rule__ModelProperties__Group__2 )
-            // InternalCanvas.g:1451:2: rule__ModelProperties__Group__1__Impl rule__ModelProperties__Group__2
+            // InternalCanvas.g:1440:1: ( rule__ModelProperties__Group__1__Impl rule__ModelProperties__Group__2 )
+            // InternalCanvas.g:1441:2: rule__ModelProperties__Group__1__Impl rule__ModelProperties__Group__2
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_7);
             rule__ModelProperties__Group__1__Impl();
 
             state._fsp--;
@@ -4887,31 +4632,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ModelProperties__Group__1__Impl"
-    // InternalCanvas.g:1458:1: rule__ModelProperties__Group__1__Impl : ( ( rule__ModelProperties__Alternatives_1 ) ) ;
+    // InternalCanvas.g:1448:1: rule__ModelProperties__Group__1__Impl : ( ':' ) ;
     public final void rule__ModelProperties__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1462:1: ( ( ( rule__ModelProperties__Alternatives_1 ) ) )
-            // InternalCanvas.g:1463:1: ( ( rule__ModelProperties__Alternatives_1 ) )
+            // InternalCanvas.g:1452:1: ( ( ':' ) )
+            // InternalCanvas.g:1453:1: ( ':' )
             {
-            // InternalCanvas.g:1463:1: ( ( rule__ModelProperties__Alternatives_1 ) )
-            // InternalCanvas.g:1464:2: ( rule__ModelProperties__Alternatives_1 )
+            // InternalCanvas.g:1453:1: ( ':' )
+            // InternalCanvas.g:1454:2: ':'
             {
-             before(grammarAccess.getModelPropertiesAccess().getAlternatives_1()); 
-            // InternalCanvas.g:1465:2: ( rule__ModelProperties__Alternatives_1 )
-            // InternalCanvas.g:1465:3: rule__ModelProperties__Alternatives_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__ModelProperties__Alternatives_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getModelPropertiesAccess().getAlternatives_1()); 
+             before(grammarAccess.getModelPropertiesAccess().getColonKeyword_1()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getModelPropertiesAccess().getColonKeyword_1()); 
 
             }
 
@@ -4934,16 +4669,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ModelProperties__Group__2"
-    // InternalCanvas.g:1473:1: rule__ModelProperties__Group__2 : rule__ModelProperties__Group__2__Impl rule__ModelProperties__Group__3 ;
+    // InternalCanvas.g:1463:1: rule__ModelProperties__Group__2 : rule__ModelProperties__Group__2__Impl rule__ModelProperties__Group__3 ;
     public final void rule__ModelProperties__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1477:1: ( rule__ModelProperties__Group__2__Impl rule__ModelProperties__Group__3 )
-            // InternalCanvas.g:1478:2: rule__ModelProperties__Group__2__Impl rule__ModelProperties__Group__3
+            // InternalCanvas.g:1467:1: ( rule__ModelProperties__Group__2__Impl rule__ModelProperties__Group__3 )
+            // InternalCanvas.g:1468:2: rule__ModelProperties__Group__2__Impl rule__ModelProperties__Group__3
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_5);
             rule__ModelProperties__Group__2__Impl();
 
             state._fsp--;
@@ -4972,31 +4707,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ModelProperties__Group__2__Impl"
-    // InternalCanvas.g:1485:1: rule__ModelProperties__Group__2__Impl : ( ( rule__ModelProperties__PointAssignment_2 ) ) ;
+    // InternalCanvas.g:1475:1: rule__ModelProperties__Group__2__Impl : ( 'viewport' ) ;
     public final void rule__ModelProperties__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1489:1: ( ( ( rule__ModelProperties__PointAssignment_2 ) ) )
-            // InternalCanvas.g:1490:1: ( ( rule__ModelProperties__PointAssignment_2 ) )
+            // InternalCanvas.g:1479:1: ( ( 'viewport' ) )
+            // InternalCanvas.g:1480:1: ( 'viewport' )
             {
-            // InternalCanvas.g:1490:1: ( ( rule__ModelProperties__PointAssignment_2 ) )
-            // InternalCanvas.g:1491:2: ( rule__ModelProperties__PointAssignment_2 )
+            // InternalCanvas.g:1480:1: ( 'viewport' )
+            // InternalCanvas.g:1481:2: 'viewport'
             {
-             before(grammarAccess.getModelPropertiesAccess().getPointAssignment_2()); 
-            // InternalCanvas.g:1492:2: ( rule__ModelProperties__PointAssignment_2 )
-            // InternalCanvas.g:1492:3: rule__ModelProperties__PointAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__ModelProperties__PointAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getModelPropertiesAccess().getPointAssignment_2()); 
+             before(grammarAccess.getModelPropertiesAccess().getViewportKeyword_2()); 
+            match(input,99,FOLLOW_2); 
+             after(grammarAccess.getModelPropertiesAccess().getViewportKeyword_2()); 
 
             }
 
@@ -5019,16 +4744,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ModelProperties__Group__3"
-    // InternalCanvas.g:1500:1: rule__ModelProperties__Group__3 : rule__ModelProperties__Group__3__Impl rule__ModelProperties__Group__4 ;
+    // InternalCanvas.g:1490:1: rule__ModelProperties__Group__3 : rule__ModelProperties__Group__3__Impl rule__ModelProperties__Group__4 ;
     public final void rule__ModelProperties__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1504:1: ( rule__ModelProperties__Group__3__Impl rule__ModelProperties__Group__4 )
-            // InternalCanvas.g:1505:2: rule__ModelProperties__Group__3__Impl rule__ModelProperties__Group__4
+            // InternalCanvas.g:1494:1: ( rule__ModelProperties__Group__3__Impl rule__ModelProperties__Group__4 )
+            // InternalCanvas.g:1495:2: rule__ModelProperties__Group__3__Impl rule__ModelProperties__Group__4
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_8);
             rule__ModelProperties__Group__3__Impl();
 
             state._fsp--;
@@ -5057,31 +4782,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ModelProperties__Group__3__Impl"
-    // InternalCanvas.g:1512:1: rule__ModelProperties__Group__3__Impl : ( ( rule__ModelProperties__Alternatives_3 ) ) ;
+    // InternalCanvas.g:1502:1: rule__ModelProperties__Group__3__Impl : ( ':' ) ;
     public final void rule__ModelProperties__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1516:1: ( ( ( rule__ModelProperties__Alternatives_3 ) ) )
-            // InternalCanvas.g:1517:1: ( ( rule__ModelProperties__Alternatives_3 ) )
+            // InternalCanvas.g:1506:1: ( ( ':' ) )
+            // InternalCanvas.g:1507:1: ( ':' )
             {
-            // InternalCanvas.g:1517:1: ( ( rule__ModelProperties__Alternatives_3 ) )
-            // InternalCanvas.g:1518:2: ( rule__ModelProperties__Alternatives_3 )
+            // InternalCanvas.g:1507:1: ( ':' )
+            // InternalCanvas.g:1508:2: ':'
             {
-             before(grammarAccess.getModelPropertiesAccess().getAlternatives_3()); 
-            // InternalCanvas.g:1519:2: ( rule__ModelProperties__Alternatives_3 )
-            // InternalCanvas.g:1519:3: rule__ModelProperties__Alternatives_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__ModelProperties__Alternatives_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getModelPropertiesAccess().getAlternatives_3()); 
+             before(grammarAccess.getModelPropertiesAccess().getColonKeyword_3()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getModelPropertiesAccess().getColonKeyword_3()); 
 
             }
 
@@ -5104,17 +4819,22 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ModelProperties__Group__4"
-    // InternalCanvas.g:1527:1: rule__ModelProperties__Group__4 : rule__ModelProperties__Group__4__Impl ;
+    // InternalCanvas.g:1517:1: rule__ModelProperties__Group__4 : rule__ModelProperties__Group__4__Impl rule__ModelProperties__Group__5 ;
     public final void rule__ModelProperties__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1531:1: ( rule__ModelProperties__Group__4__Impl )
-            // InternalCanvas.g:1532:2: rule__ModelProperties__Group__4__Impl
+            // InternalCanvas.g:1521:1: ( rule__ModelProperties__Group__4__Impl rule__ModelProperties__Group__5 )
+            // InternalCanvas.g:1522:2: rule__ModelProperties__Group__4__Impl rule__ModelProperties__Group__5
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_9);
             rule__ModelProperties__Group__4__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ModelProperties__Group__5();
 
             state._fsp--;
 
@@ -5137,31 +4857,31 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ModelProperties__Group__4__Impl"
-    // InternalCanvas.g:1538:1: rule__ModelProperties__Group__4__Impl : ( ( rule__ModelProperties__ZoomAssignment_4 ) ) ;
+    // InternalCanvas.g:1529:1: rule__ModelProperties__Group__4__Impl : ( ( rule__ModelProperties__PointAssignment_4 ) ) ;
     public final void rule__ModelProperties__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1542:1: ( ( ( rule__ModelProperties__ZoomAssignment_4 ) ) )
-            // InternalCanvas.g:1543:1: ( ( rule__ModelProperties__ZoomAssignment_4 ) )
+            // InternalCanvas.g:1533:1: ( ( ( rule__ModelProperties__PointAssignment_4 ) ) )
+            // InternalCanvas.g:1534:1: ( ( rule__ModelProperties__PointAssignment_4 ) )
             {
-            // InternalCanvas.g:1543:1: ( ( rule__ModelProperties__ZoomAssignment_4 ) )
-            // InternalCanvas.g:1544:2: ( rule__ModelProperties__ZoomAssignment_4 )
+            // InternalCanvas.g:1534:1: ( ( rule__ModelProperties__PointAssignment_4 ) )
+            // InternalCanvas.g:1535:2: ( rule__ModelProperties__PointAssignment_4 )
             {
-             before(grammarAccess.getModelPropertiesAccess().getZoomAssignment_4()); 
-            // InternalCanvas.g:1545:2: ( rule__ModelProperties__ZoomAssignment_4 )
-            // InternalCanvas.g:1545:3: rule__ModelProperties__ZoomAssignment_4
+             before(grammarAccess.getModelPropertiesAccess().getPointAssignment_4()); 
+            // InternalCanvas.g:1536:2: ( rule__ModelProperties__PointAssignment_4 )
+            // InternalCanvas.g:1536:3: rule__ModelProperties__PointAssignment_4
             {
             pushFollow(FOLLOW_2);
-            rule__ModelProperties__ZoomAssignment_4();
+            rule__ModelProperties__PointAssignment_4();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getModelPropertiesAccess().getZoomAssignment_4()); 
+             after(grammarAccess.getModelPropertiesAccess().getPointAssignment_4()); 
 
             }
 
@@ -5183,23 +4903,23 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ModelProperties__Group__4__Impl"
 
 
-    // $ANTLR start "rule__ModelProperties__Group_0_0__0"
-    // InternalCanvas.g:1554:1: rule__ModelProperties__Group_0_0__0 : rule__ModelProperties__Group_0_0__0__Impl rule__ModelProperties__Group_0_0__1 ;
-    public final void rule__ModelProperties__Group_0_0__0() throws RecognitionException {
+    // $ANTLR start "rule__ModelProperties__Group__5"
+    // InternalCanvas.g:1544:1: rule__ModelProperties__Group__5 : rule__ModelProperties__Group__5__Impl rule__ModelProperties__Group__6 ;
+    public final void rule__ModelProperties__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1558:1: ( rule__ModelProperties__Group_0_0__0__Impl rule__ModelProperties__Group_0_0__1 )
-            // InternalCanvas.g:1559:2: rule__ModelProperties__Group_0_0__0__Impl rule__ModelProperties__Group_0_0__1
+            // InternalCanvas.g:1548:1: ( rule__ModelProperties__Group__5__Impl rule__ModelProperties__Group__6 )
+            // InternalCanvas.g:1549:2: rule__ModelProperties__Group__5__Impl rule__ModelProperties__Group__6
             {
-            pushFollow(FOLLOW_6);
-            rule__ModelProperties__Group_0_0__0__Impl();
+            pushFollow(FOLLOW_5);
+            rule__ModelProperties__Group__5__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__ModelProperties__Group_0_0__1();
+            rule__ModelProperties__Group__6();
 
             state._fsp--;
 
@@ -5218,25 +4938,25 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ModelProperties__Group_0_0__0"
+    // $ANTLR end "rule__ModelProperties__Group__5"
 
 
-    // $ANTLR start "rule__ModelProperties__Group_0_0__0__Impl"
-    // InternalCanvas.g:1566:1: rule__ModelProperties__Group_0_0__0__Impl : ( 'properties' ) ;
-    public final void rule__ModelProperties__Group_0_0__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ModelProperties__Group__5__Impl"
+    // InternalCanvas.g:1556:1: rule__ModelProperties__Group__5__Impl : ( 'zoom' ) ;
+    public final void rule__ModelProperties__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1570:1: ( ( 'properties' ) )
-            // InternalCanvas.g:1571:1: ( 'properties' )
+            // InternalCanvas.g:1560:1: ( ( 'zoom' ) )
+            // InternalCanvas.g:1561:1: ( 'zoom' )
             {
-            // InternalCanvas.g:1571:1: ( 'properties' )
-            // InternalCanvas.g:1572:2: 'properties'
+            // InternalCanvas.g:1561:1: ( 'zoom' )
+            // InternalCanvas.g:1562:2: 'zoom'
             {
-             before(grammarAccess.getModelPropertiesAccess().getPropertiesKeyword_0_0_0()); 
-            match(input,40,FOLLOW_2); 
-             after(grammarAccess.getModelPropertiesAccess().getPropertiesKeyword_0_0_0()); 
+             before(grammarAccess.getModelPropertiesAccess().getZoomKeyword_5()); 
+            match(input,100,FOLLOW_2); 
+             after(grammarAccess.getModelPropertiesAccess().getZoomKeyword_5()); 
 
             }
 
@@ -5255,96 +4975,26 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ModelProperties__Group_0_0__0__Impl"
+    // $ANTLR end "rule__ModelProperties__Group__5__Impl"
 
 
-    // $ANTLR start "rule__ModelProperties__Group_0_0__1"
-    // InternalCanvas.g:1581:1: rule__ModelProperties__Group_0_0__1 : rule__ModelProperties__Group_0_0__1__Impl ;
-    public final void rule__ModelProperties__Group_0_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:1585:1: ( rule__ModelProperties__Group_0_0__1__Impl )
-            // InternalCanvas.g:1586:2: rule__ModelProperties__Group_0_0__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__ModelProperties__Group_0_0__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ModelProperties__Group_0_0__1"
-
-
-    // $ANTLR start "rule__ModelProperties__Group_0_0__1__Impl"
-    // InternalCanvas.g:1592:1: rule__ModelProperties__Group_0_0__1__Impl : ( ':' ) ;
-    public final void rule__ModelProperties__Group_0_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ModelProperties__Group__6"
+    // InternalCanvas.g:1571:1: rule__ModelProperties__Group__6 : rule__ModelProperties__Group__6__Impl rule__ModelProperties__Group__7 ;
+    public final void rule__ModelProperties__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1596:1: ( ( ':' ) )
-            // InternalCanvas.g:1597:1: ( ':' )
+            // InternalCanvas.g:1575:1: ( rule__ModelProperties__Group__6__Impl rule__ModelProperties__Group__7 )
+            // InternalCanvas.g:1576:2: rule__ModelProperties__Group__6__Impl rule__ModelProperties__Group__7
             {
-            // InternalCanvas.g:1597:1: ( ':' )
-            // InternalCanvas.g:1598:2: ':'
-            {
-             before(grammarAccess.getModelPropertiesAccess().getColonKeyword_0_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getModelPropertiesAccess().getColonKeyword_0_0_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ModelProperties__Group_0_0__1__Impl"
-
-
-    // $ANTLR start "rule__ModelProperties__Group_1_0__0"
-    // InternalCanvas.g:1608:1: rule__ModelProperties__Group_1_0__0 : rule__ModelProperties__Group_1_0__0__Impl rule__ModelProperties__Group_1_0__1 ;
-    public final void rule__ModelProperties__Group_1_0__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:1612:1: ( rule__ModelProperties__Group_1_0__0__Impl rule__ModelProperties__Group_1_0__1 )
-            // InternalCanvas.g:1613:2: rule__ModelProperties__Group_1_0__0__Impl rule__ModelProperties__Group_1_0__1
-            {
-            pushFollow(FOLLOW_6);
-            rule__ModelProperties__Group_1_0__0__Impl();
+            pushFollow(FOLLOW_10);
+            rule__ModelProperties__Group__6__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__ModelProperties__Group_1_0__1();
+            rule__ModelProperties__Group__7();
 
             state._fsp--;
 
@@ -5363,25 +5013,25 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ModelProperties__Group_1_0__0"
+    // $ANTLR end "rule__ModelProperties__Group__6"
 
 
-    // $ANTLR start "rule__ModelProperties__Group_1_0__0__Impl"
-    // InternalCanvas.g:1620:1: rule__ModelProperties__Group_1_0__0__Impl : ( 'viewport' ) ;
-    public final void rule__ModelProperties__Group_1_0__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ModelProperties__Group__6__Impl"
+    // InternalCanvas.g:1583:1: rule__ModelProperties__Group__6__Impl : ( ':' ) ;
+    public final void rule__ModelProperties__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1624:1: ( ( 'viewport' ) )
-            // InternalCanvas.g:1625:1: ( 'viewport' )
+            // InternalCanvas.g:1587:1: ( ( ':' ) )
+            // InternalCanvas.g:1588:1: ( ':' )
             {
-            // InternalCanvas.g:1625:1: ( 'viewport' )
-            // InternalCanvas.g:1626:2: 'viewport'
+            // InternalCanvas.g:1588:1: ( ':' )
+            // InternalCanvas.g:1589:2: ':'
             {
-             before(grammarAccess.getModelPropertiesAccess().getViewportKeyword_1_0_0()); 
-            match(input,41,FOLLOW_2); 
-             after(grammarAccess.getModelPropertiesAccess().getViewportKeyword_1_0_0()); 
+             before(grammarAccess.getModelPropertiesAccess().getColonKeyword_6()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getModelPropertiesAccess().getColonKeyword_6()); 
 
             }
 
@@ -5400,21 +5050,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ModelProperties__Group_1_0__0__Impl"
+    // $ANTLR end "rule__ModelProperties__Group__6__Impl"
 
 
-    // $ANTLR start "rule__ModelProperties__Group_1_0__1"
-    // InternalCanvas.g:1635:1: rule__ModelProperties__Group_1_0__1 : rule__ModelProperties__Group_1_0__1__Impl ;
-    public final void rule__ModelProperties__Group_1_0__1() throws RecognitionException {
+    // $ANTLR start "rule__ModelProperties__Group__7"
+    // InternalCanvas.g:1598:1: rule__ModelProperties__Group__7 : rule__ModelProperties__Group__7__Impl ;
+    public final void rule__ModelProperties__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1639:1: ( rule__ModelProperties__Group_1_0__1__Impl )
-            // InternalCanvas.g:1640:2: rule__ModelProperties__Group_1_0__1__Impl
+            // InternalCanvas.g:1602:1: ( rule__ModelProperties__Group__7__Impl )
+            // InternalCanvas.g:1603:2: rule__ModelProperties__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__ModelProperties__Group_1_0__1__Impl();
+            rule__ModelProperties__Group__7__Impl();
 
             state._fsp--;
 
@@ -5433,170 +5083,35 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ModelProperties__Group_1_0__1"
+    // $ANTLR end "rule__ModelProperties__Group__7"
 
 
-    // $ANTLR start "rule__ModelProperties__Group_1_0__1__Impl"
-    // InternalCanvas.g:1646:1: rule__ModelProperties__Group_1_0__1__Impl : ( ':' ) ;
-    public final void rule__ModelProperties__Group_1_0__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:1650:1: ( ( ':' ) )
-            // InternalCanvas.g:1651:1: ( ':' )
-            {
-            // InternalCanvas.g:1651:1: ( ':' )
-            // InternalCanvas.g:1652:2: ':'
-            {
-             before(grammarAccess.getModelPropertiesAccess().getColonKeyword_1_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getModelPropertiesAccess().getColonKeyword_1_0_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ModelProperties__Group_1_0__1__Impl"
-
-
-    // $ANTLR start "rule__ModelProperties__Group_3_0__0"
-    // InternalCanvas.g:1662:1: rule__ModelProperties__Group_3_0__0 : rule__ModelProperties__Group_3_0__0__Impl rule__ModelProperties__Group_3_0__1 ;
-    public final void rule__ModelProperties__Group_3_0__0() throws RecognitionException {
+    // $ANTLR start "rule__ModelProperties__Group__7__Impl"
+    // InternalCanvas.g:1609:1: rule__ModelProperties__Group__7__Impl : ( ( rule__ModelProperties__ZoomAssignment_7 ) ) ;
+    public final void rule__ModelProperties__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1666:1: ( rule__ModelProperties__Group_3_0__0__Impl rule__ModelProperties__Group_3_0__1 )
-            // InternalCanvas.g:1667:2: rule__ModelProperties__Group_3_0__0__Impl rule__ModelProperties__Group_3_0__1
+            // InternalCanvas.g:1613:1: ( ( ( rule__ModelProperties__ZoomAssignment_7 ) ) )
+            // InternalCanvas.g:1614:1: ( ( rule__ModelProperties__ZoomAssignment_7 ) )
             {
-            pushFollow(FOLLOW_6);
-            rule__ModelProperties__Group_3_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__ModelProperties__Group_3_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ModelProperties__Group_3_0__0"
-
-
-    // $ANTLR start "rule__ModelProperties__Group_3_0__0__Impl"
-    // InternalCanvas.g:1674:1: rule__ModelProperties__Group_3_0__0__Impl : ( 'zoom' ) ;
-    public final void rule__ModelProperties__Group_3_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:1678:1: ( ( 'zoom' ) )
-            // InternalCanvas.g:1679:1: ( 'zoom' )
+            // InternalCanvas.g:1614:1: ( ( rule__ModelProperties__ZoomAssignment_7 ) )
+            // InternalCanvas.g:1615:2: ( rule__ModelProperties__ZoomAssignment_7 )
             {
-            // InternalCanvas.g:1679:1: ( 'zoom' )
-            // InternalCanvas.g:1680:2: 'zoom'
-            {
-             before(grammarAccess.getModelPropertiesAccess().getZoomKeyword_3_0_0()); 
-            match(input,42,FOLLOW_2); 
-             after(grammarAccess.getModelPropertiesAccess().getZoomKeyword_3_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ModelProperties__Group_3_0__0__Impl"
-
-
-    // $ANTLR start "rule__ModelProperties__Group_3_0__1"
-    // InternalCanvas.g:1689:1: rule__ModelProperties__Group_3_0__1 : rule__ModelProperties__Group_3_0__1__Impl ;
-    public final void rule__ModelProperties__Group_3_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:1693:1: ( rule__ModelProperties__Group_3_0__1__Impl )
-            // InternalCanvas.g:1694:2: rule__ModelProperties__Group_3_0__1__Impl
+             before(grammarAccess.getModelPropertiesAccess().getZoomAssignment_7()); 
+            // InternalCanvas.g:1616:2: ( rule__ModelProperties__ZoomAssignment_7 )
+            // InternalCanvas.g:1616:3: rule__ModelProperties__ZoomAssignment_7
             {
             pushFollow(FOLLOW_2);
-            rule__ModelProperties__Group_3_0__1__Impl();
+            rule__ModelProperties__ZoomAssignment_7();
 
             state._fsp--;
 
 
             }
 
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ModelProperties__Group_3_0__1"
-
-
-    // $ANTLR start "rule__ModelProperties__Group_3_0__1__Impl"
-    // InternalCanvas.g:1700:1: rule__ModelProperties__Group_3_0__1__Impl : ( ':' ) ;
-    public final void rule__ModelProperties__Group_3_0__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:1704:1: ( ( ':' ) )
-            // InternalCanvas.g:1705:1: ( ':' )
-            {
-            // InternalCanvas.g:1705:1: ( ':' )
-            // InternalCanvas.g:1706:2: ':'
-            {
-             before(grammarAccess.getModelPropertiesAccess().getColonKeyword_3_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getModelPropertiesAccess().getColonKeyword_3_0_1()); 
+             after(grammarAccess.getModelPropertiesAccess().getZoomAssignment_7()); 
 
             }
 
@@ -5615,18 +5130,18 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ModelProperties__Group_3_0__1__Impl"
+    // $ANTLR end "rule__ModelProperties__Group__7__Impl"
 
 
     // $ANTLR start "rule__Shapes__Group__0"
-    // InternalCanvas.g:1716:1: rule__Shapes__Group__0 : rule__Shapes__Group__0__Impl rule__Shapes__Group__1 ;
+    // InternalCanvas.g:1625:1: rule__Shapes__Group__0 : rule__Shapes__Group__0__Impl rule__Shapes__Group__1 ;
     public final void rule__Shapes__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1720:1: ( rule__Shapes__Group__0__Impl rule__Shapes__Group__1 )
-            // InternalCanvas.g:1721:2: rule__Shapes__Group__0__Impl rule__Shapes__Group__1
+            // InternalCanvas.g:1629:1: ( rule__Shapes__Group__0__Impl rule__Shapes__Group__1 )
+            // InternalCanvas.g:1630:2: rule__Shapes__Group__0__Impl rule__Shapes__Group__1
             {
             pushFollow(FOLLOW_11);
             rule__Shapes__Group__0__Impl();
@@ -5657,21 +5172,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shapes__Group__0__Impl"
-    // InternalCanvas.g:1728:1: rule__Shapes__Group__0__Impl : ( () ) ;
+    // InternalCanvas.g:1637:1: rule__Shapes__Group__0__Impl : ( () ) ;
     public final void rule__Shapes__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1732:1: ( ( () ) )
-            // InternalCanvas.g:1733:1: ( () )
+            // InternalCanvas.g:1641:1: ( ( () ) )
+            // InternalCanvas.g:1642:1: ( () )
             {
-            // InternalCanvas.g:1733:1: ( () )
-            // InternalCanvas.g:1734:2: ()
+            // InternalCanvas.g:1642:1: ( () )
+            // InternalCanvas.g:1643:2: ()
             {
              before(grammarAccess.getShapesAccess().getShapesAction_0()); 
-            // InternalCanvas.g:1735:2: ()
-            // InternalCanvas.g:1735:3: 
+            // InternalCanvas.g:1644:2: ()
+            // InternalCanvas.g:1644:3: 
             {
             }
 
@@ -5694,16 +5209,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shapes__Group__1"
-    // InternalCanvas.g:1743:1: rule__Shapes__Group__1 : rule__Shapes__Group__1__Impl rule__Shapes__Group__2 ;
+    // InternalCanvas.g:1652:1: rule__Shapes__Group__1 : rule__Shapes__Group__1__Impl rule__Shapes__Group__2 ;
     public final void rule__Shapes__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1747:1: ( rule__Shapes__Group__1__Impl rule__Shapes__Group__2 )
-            // InternalCanvas.g:1748:2: rule__Shapes__Group__1__Impl rule__Shapes__Group__2
+            // InternalCanvas.g:1656:1: ( rule__Shapes__Group__1__Impl rule__Shapes__Group__2 )
+            // InternalCanvas.g:1657:2: rule__Shapes__Group__1__Impl rule__Shapes__Group__2
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_5);
             rule__Shapes__Group__1__Impl();
 
             state._fsp--;
@@ -5732,31 +5247,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shapes__Group__1__Impl"
-    // InternalCanvas.g:1755:1: rule__Shapes__Group__1__Impl : ( ( rule__Shapes__Alternatives_1 ) ) ;
+    // InternalCanvas.g:1664:1: rule__Shapes__Group__1__Impl : ( 'shapes' ) ;
     public final void rule__Shapes__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1759:1: ( ( ( rule__Shapes__Alternatives_1 ) ) )
-            // InternalCanvas.g:1760:1: ( ( rule__Shapes__Alternatives_1 ) )
+            // InternalCanvas.g:1668:1: ( ( 'shapes' ) )
+            // InternalCanvas.g:1669:1: ( 'shapes' )
             {
-            // InternalCanvas.g:1760:1: ( ( rule__Shapes__Alternatives_1 ) )
-            // InternalCanvas.g:1761:2: ( rule__Shapes__Alternatives_1 )
+            // InternalCanvas.g:1669:1: ( 'shapes' )
+            // InternalCanvas.g:1670:2: 'shapes'
             {
-             before(grammarAccess.getShapesAccess().getAlternatives_1()); 
-            // InternalCanvas.g:1762:2: ( rule__Shapes__Alternatives_1 )
-            // InternalCanvas.g:1762:3: rule__Shapes__Alternatives_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Shapes__Alternatives_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getShapesAccess().getAlternatives_1()); 
+             before(grammarAccess.getShapesAccess().getShapesKeyword_1()); 
+            match(input,101,FOLLOW_2); 
+             after(grammarAccess.getShapesAccess().getShapesKeyword_1()); 
 
             }
 
@@ -5779,17 +5284,22 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shapes__Group__2"
-    // InternalCanvas.g:1770:1: rule__Shapes__Group__2 : rule__Shapes__Group__2__Impl ;
+    // InternalCanvas.g:1679:1: rule__Shapes__Group__2 : rule__Shapes__Group__2__Impl rule__Shapes__Group__3 ;
     public final void rule__Shapes__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1774:1: ( rule__Shapes__Group__2__Impl )
-            // InternalCanvas.g:1775:2: rule__Shapes__Group__2__Impl
+            // InternalCanvas.g:1683:1: ( rule__Shapes__Group__2__Impl rule__Shapes__Group__3 )
+            // InternalCanvas.g:1684:2: rule__Shapes__Group__2__Impl rule__Shapes__Group__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_12);
             rule__Shapes__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Shapes__Group__3();
 
             state._fsp--;
 
@@ -5812,49 +5322,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shapes__Group__2__Impl"
-    // InternalCanvas.g:1781:1: rule__Shapes__Group__2__Impl : ( ( rule__Shapes__ShapesAssignment_2 )* ) ;
+    // InternalCanvas.g:1691:1: rule__Shapes__Group__2__Impl : ( ':' ) ;
     public final void rule__Shapes__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1785:1: ( ( ( rule__Shapes__ShapesAssignment_2 )* ) )
-            // InternalCanvas.g:1786:1: ( ( rule__Shapes__ShapesAssignment_2 )* )
+            // InternalCanvas.g:1695:1: ( ( ':' ) )
+            // InternalCanvas.g:1696:1: ( ':' )
             {
-            // InternalCanvas.g:1786:1: ( ( rule__Shapes__ShapesAssignment_2 )* )
-            // InternalCanvas.g:1787:2: ( rule__Shapes__ShapesAssignment_2 )*
+            // InternalCanvas.g:1696:1: ( ':' )
+            // InternalCanvas.g:1697:2: ':'
             {
-             before(grammarAccess.getShapesAccess().getShapesAssignment_2()); 
-            // InternalCanvas.g:1788:2: ( rule__Shapes__ShapesAssignment_2 )*
-            loop30:
-            do {
-                int alt30=2;
-                int LA30_0 = input.LA(1);
-
-                if ( (LA30_0==17||LA30_0==44) ) {
-                    alt30=1;
-                }
-
-
-                switch (alt30) {
-            	case 1 :
-            	    // InternalCanvas.g:1788:3: rule__Shapes__ShapesAssignment_2
-            	    {
-            	    pushFollow(FOLLOW_13);
-            	    rule__Shapes__ShapesAssignment_2();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop30;
-                }
-            } while (true);
-
-             after(grammarAccess.getShapesAccess().getShapesAssignment_2()); 
+             before(grammarAccess.getShapesAccess().getColonKeyword_2()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getShapesAccess().getColonKeyword_2()); 
 
             }
 
@@ -5876,93 +5358,18 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Shapes__Group__2__Impl"
 
 
-    // $ANTLR start "rule__Shapes__Group_1_0__0"
-    // InternalCanvas.g:1797:1: rule__Shapes__Group_1_0__0 : rule__Shapes__Group_1_0__0__Impl rule__Shapes__Group_1_0__1 ;
-    public final void rule__Shapes__Group_1_0__0() throws RecognitionException {
+    // $ANTLR start "rule__Shapes__Group__3"
+    // InternalCanvas.g:1706:1: rule__Shapes__Group__3 : rule__Shapes__Group__3__Impl ;
+    public final void rule__Shapes__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1801:1: ( rule__Shapes__Group_1_0__0__Impl rule__Shapes__Group_1_0__1 )
-            // InternalCanvas.g:1802:2: rule__Shapes__Group_1_0__0__Impl rule__Shapes__Group_1_0__1
-            {
-            pushFollow(FOLLOW_6);
-            rule__Shapes__Group_1_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Shapes__Group_1_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Shapes__Group_1_0__0"
-
-
-    // $ANTLR start "rule__Shapes__Group_1_0__0__Impl"
-    // InternalCanvas.g:1809:1: rule__Shapes__Group_1_0__0__Impl : ( 'shapes' ) ;
-    public final void rule__Shapes__Group_1_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:1813:1: ( ( 'shapes' ) )
-            // InternalCanvas.g:1814:1: ( 'shapes' )
-            {
-            // InternalCanvas.g:1814:1: ( 'shapes' )
-            // InternalCanvas.g:1815:2: 'shapes'
-            {
-             before(grammarAccess.getShapesAccess().getShapesKeyword_1_0_0()); 
-            match(input,43,FOLLOW_2); 
-             after(grammarAccess.getShapesAccess().getShapesKeyword_1_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Shapes__Group_1_0__0__Impl"
-
-
-    // $ANTLR start "rule__Shapes__Group_1_0__1"
-    // InternalCanvas.g:1824:1: rule__Shapes__Group_1_0__1 : rule__Shapes__Group_1_0__1__Impl ;
-    public final void rule__Shapes__Group_1_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:1828:1: ( rule__Shapes__Group_1_0__1__Impl )
-            // InternalCanvas.g:1829:2: rule__Shapes__Group_1_0__1__Impl
+            // InternalCanvas.g:1710:1: ( rule__Shapes__Group__3__Impl )
+            // InternalCanvas.g:1711:2: rule__Shapes__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Shapes__Group_1_0__1__Impl();
+            rule__Shapes__Group__3__Impl();
 
             state._fsp--;
 
@@ -5981,25 +5388,53 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Shapes__Group_1_0__1"
+    // $ANTLR end "rule__Shapes__Group__3"
 
 
-    // $ANTLR start "rule__Shapes__Group_1_0__1__Impl"
-    // InternalCanvas.g:1835:1: rule__Shapes__Group_1_0__1__Impl : ( ':' ) ;
-    public final void rule__Shapes__Group_1_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Shapes__Group__3__Impl"
+    // InternalCanvas.g:1717:1: rule__Shapes__Group__3__Impl : ( ( rule__Shapes__ShapesAssignment_3 )* ) ;
+    public final void rule__Shapes__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1839:1: ( ( ':' ) )
-            // InternalCanvas.g:1840:1: ( ':' )
+            // InternalCanvas.g:1721:1: ( ( ( rule__Shapes__ShapesAssignment_3 )* ) )
+            // InternalCanvas.g:1722:1: ( ( rule__Shapes__ShapesAssignment_3 )* )
             {
-            // InternalCanvas.g:1840:1: ( ':' )
-            // InternalCanvas.g:1841:2: ':'
+            // InternalCanvas.g:1722:1: ( ( rule__Shapes__ShapesAssignment_3 )* )
+            // InternalCanvas.g:1723:2: ( rule__Shapes__ShapesAssignment_3 )*
             {
-             before(grammarAccess.getShapesAccess().getColonKeyword_1_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getShapesAccess().getColonKeyword_1_0_1()); 
+             before(grammarAccess.getShapesAccess().getShapesAssignment_3()); 
+            // InternalCanvas.g:1724:2: ( rule__Shapes__ShapesAssignment_3 )*
+            loop7:
+            do {
+                int alt7=2;
+                int LA7_0 = input.LA(1);
+
+                if ( (LA7_0==90) ) {
+                    alt7=1;
+                }
+
+
+                switch (alt7) {
+            	case 1 :
+            	    // InternalCanvas.g:1724:3: rule__Shapes__ShapesAssignment_3
+            	    {
+            	    pushFollow(FOLLOW_13);
+            	    rule__Shapes__ShapesAssignment_3();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop7;
+                }
+            } while (true);
+
+             after(grammarAccess.getShapesAccess().getShapesAssignment_3()); 
 
             }
 
@@ -6018,18 +5453,18 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Shapes__Group_1_0__1__Impl"
+    // $ANTLR end "rule__Shapes__Group__3__Impl"
 
 
     // $ANTLR start "rule__Shape__Group__0"
-    // InternalCanvas.g:1851:1: rule__Shape__Group__0 : rule__Shape__Group__0__Impl rule__Shape__Group__1 ;
+    // InternalCanvas.g:1733:1: rule__Shape__Group__0 : rule__Shape__Group__0__Impl rule__Shape__Group__1 ;
     public final void rule__Shape__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1855:1: ( rule__Shape__Group__0__Impl rule__Shape__Group__1 )
-            // InternalCanvas.g:1856:2: rule__Shape__Group__0__Impl rule__Shape__Group__1
+            // InternalCanvas.g:1737:1: ( rule__Shape__Group__0__Impl rule__Shape__Group__1 )
+            // InternalCanvas.g:1738:2: rule__Shape__Group__0__Impl rule__Shape__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__Shape__Group__0__Impl();
@@ -6060,21 +5495,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shape__Group__0__Impl"
-    // InternalCanvas.g:1863:1: rule__Shape__Group__0__Impl : ( () ) ;
+    // InternalCanvas.g:1745:1: rule__Shape__Group__0__Impl : ( () ) ;
     public final void rule__Shape__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1867:1: ( ( () ) )
-            // InternalCanvas.g:1868:1: ( () )
+            // InternalCanvas.g:1749:1: ( ( () ) )
+            // InternalCanvas.g:1750:1: ( () )
             {
-            // InternalCanvas.g:1868:1: ( () )
-            // InternalCanvas.g:1869:2: ()
+            // InternalCanvas.g:1750:1: ( () )
+            // InternalCanvas.g:1751:2: ()
             {
              before(grammarAccess.getShapeAccess().getShapeAction_0()); 
-            // InternalCanvas.g:1870:2: ()
-            // InternalCanvas.g:1870:3: 
+            // InternalCanvas.g:1752:2: ()
+            // InternalCanvas.g:1752:3: 
             {
             }
 
@@ -6097,16 +5532,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shape__Group__1"
-    // InternalCanvas.g:1878:1: rule__Shape__Group__1 : rule__Shape__Group__1__Impl rule__Shape__Group__2 ;
+    // InternalCanvas.g:1760:1: rule__Shape__Group__1 : rule__Shape__Group__1__Impl rule__Shape__Group__2 ;
     public final void rule__Shape__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1882:1: ( rule__Shape__Group__1__Impl rule__Shape__Group__2 )
-            // InternalCanvas.g:1883:2: rule__Shape__Group__1__Impl rule__Shape__Group__2
+            // InternalCanvas.g:1764:1: ( rule__Shape__Group__1__Impl rule__Shape__Group__2 )
+            // InternalCanvas.g:1765:2: rule__Shape__Group__1__Impl rule__Shape__Group__2
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_5);
             rule__Shape__Group__1__Impl();
 
             state._fsp--;
@@ -6135,31 +5570,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shape__Group__1__Impl"
-    // InternalCanvas.g:1890:1: rule__Shape__Group__1__Impl : ( ( rule__Shape__Alternatives_1 ) ) ;
+    // InternalCanvas.g:1772:1: rule__Shape__Group__1__Impl : ( 'shape' ) ;
     public final void rule__Shape__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1894:1: ( ( ( rule__Shape__Alternatives_1 ) ) )
-            // InternalCanvas.g:1895:1: ( ( rule__Shape__Alternatives_1 ) )
+            // InternalCanvas.g:1776:1: ( ( 'shape' ) )
+            // InternalCanvas.g:1777:1: ( 'shape' )
             {
-            // InternalCanvas.g:1895:1: ( ( rule__Shape__Alternatives_1 ) )
-            // InternalCanvas.g:1896:2: ( rule__Shape__Alternatives_1 )
+            // InternalCanvas.g:1777:1: ( 'shape' )
+            // InternalCanvas.g:1778:2: 'shape'
             {
-             before(grammarAccess.getShapeAccess().getAlternatives_1()); 
-            // InternalCanvas.g:1897:2: ( rule__Shape__Alternatives_1 )
-            // InternalCanvas.g:1897:3: rule__Shape__Alternatives_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Shape__Alternatives_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getShapeAccess().getAlternatives_1()); 
+             before(grammarAccess.getShapeAccess().getShapeKeyword_1()); 
+            match(input,90,FOLLOW_2); 
+             after(grammarAccess.getShapeAccess().getShapeKeyword_1()); 
 
             }
 
@@ -6182,16 +5607,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shape__Group__2"
-    // InternalCanvas.g:1905:1: rule__Shape__Group__2 : rule__Shape__Group__2__Impl rule__Shape__Group__3 ;
+    // InternalCanvas.g:1787:1: rule__Shape__Group__2 : rule__Shape__Group__2__Impl rule__Shape__Group__3 ;
     public final void rule__Shape__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1909:1: ( rule__Shape__Group__2__Impl rule__Shape__Group__3 )
-            // InternalCanvas.g:1910:2: rule__Shape__Group__2__Impl rule__Shape__Group__3
+            // InternalCanvas.g:1791:1: ( rule__Shape__Group__2__Impl rule__Shape__Group__3 )
+            // InternalCanvas.g:1792:2: rule__Shape__Group__2__Impl rule__Shape__Group__3
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_14);
             rule__Shape__Group__2__Impl();
 
             state._fsp--;
@@ -6220,31 +5645,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shape__Group__2__Impl"
-    // InternalCanvas.g:1917:1: rule__Shape__Group__2__Impl : ( ( rule__Shape__NameAssignment_2 ) ) ;
+    // InternalCanvas.g:1799:1: rule__Shape__Group__2__Impl : ( ':' ) ;
     public final void rule__Shape__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1921:1: ( ( ( rule__Shape__NameAssignment_2 ) ) )
-            // InternalCanvas.g:1922:1: ( ( rule__Shape__NameAssignment_2 ) )
+            // InternalCanvas.g:1803:1: ( ( ':' ) )
+            // InternalCanvas.g:1804:1: ( ':' )
             {
-            // InternalCanvas.g:1922:1: ( ( rule__Shape__NameAssignment_2 ) )
-            // InternalCanvas.g:1923:2: ( rule__Shape__NameAssignment_2 )
+            // InternalCanvas.g:1804:1: ( ':' )
+            // InternalCanvas.g:1805:2: ':'
             {
-             before(grammarAccess.getShapeAccess().getNameAssignment_2()); 
-            // InternalCanvas.g:1924:2: ( rule__Shape__NameAssignment_2 )
-            // InternalCanvas.g:1924:3: rule__Shape__NameAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__Shape__NameAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getShapeAccess().getNameAssignment_2()); 
+             before(grammarAccess.getShapeAccess().getColonKeyword_2()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getShapeAccess().getColonKeyword_2()); 
 
             }
 
@@ -6267,14 +5682,14 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shape__Group__3"
-    // InternalCanvas.g:1932:1: rule__Shape__Group__3 : rule__Shape__Group__3__Impl rule__Shape__Group__4 ;
+    // InternalCanvas.g:1814:1: rule__Shape__Group__3 : rule__Shape__Group__3__Impl rule__Shape__Group__4 ;
     public final void rule__Shape__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1936:1: ( rule__Shape__Group__3__Impl rule__Shape__Group__4 )
-            // InternalCanvas.g:1937:2: rule__Shape__Group__3__Impl rule__Shape__Group__4
+            // InternalCanvas.g:1818:1: ( rule__Shape__Group__3__Impl rule__Shape__Group__4 )
+            // InternalCanvas.g:1819:2: rule__Shape__Group__3__Impl rule__Shape__Group__4
             {
             pushFollow(FOLLOW_15);
             rule__Shape__Group__3__Impl();
@@ -6305,42 +5720,31 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shape__Group__3__Impl"
-    // InternalCanvas.g:1944:1: rule__Shape__Group__3__Impl : ( ( rule__Shape__ContainerAssignment_3 )? ) ;
+    // InternalCanvas.g:1826:1: rule__Shape__Group__3__Impl : ( ( rule__Shape__NameAssignment_3 ) ) ;
     public final void rule__Shape__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1948:1: ( ( ( rule__Shape__ContainerAssignment_3 )? ) )
-            // InternalCanvas.g:1949:1: ( ( rule__Shape__ContainerAssignment_3 )? )
+            // InternalCanvas.g:1830:1: ( ( ( rule__Shape__NameAssignment_3 ) ) )
+            // InternalCanvas.g:1831:1: ( ( rule__Shape__NameAssignment_3 ) )
             {
-            // InternalCanvas.g:1949:1: ( ( rule__Shape__ContainerAssignment_3 )? )
-            // InternalCanvas.g:1950:2: ( rule__Shape__ContainerAssignment_3 )?
+            // InternalCanvas.g:1831:1: ( ( rule__Shape__NameAssignment_3 ) )
+            // InternalCanvas.g:1832:2: ( rule__Shape__NameAssignment_3 )
             {
-             before(grammarAccess.getShapeAccess().getContainerAssignment_3()); 
-            // InternalCanvas.g:1951:2: ( rule__Shape__ContainerAssignment_3 )?
-            int alt31=2;
-            int LA31_0 = input.LA(1);
+             before(grammarAccess.getShapeAccess().getNameAssignment_3()); 
+            // InternalCanvas.g:1833:2: ( rule__Shape__NameAssignment_3 )
+            // InternalCanvas.g:1833:3: rule__Shape__NameAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__Shape__NameAssignment_3();
 
-            if ( (LA31_0==11) ) {
-                alt31=1;
-            }
-            switch (alt31) {
-                case 1 :
-                    // InternalCanvas.g:1951:3: rule__Shape__ContainerAssignment_3
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Shape__ContainerAssignment_3();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getShapeAccess().getContainerAssignment_3()); 
+             after(grammarAccess.getShapeAccess().getNameAssignment_3()); 
 
             }
 
@@ -6363,16 +5767,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shape__Group__4"
-    // InternalCanvas.g:1959:1: rule__Shape__Group__4 : rule__Shape__Group__4__Impl rule__Shape__Group__5 ;
+    // InternalCanvas.g:1841:1: rule__Shape__Group__4 : rule__Shape__Group__4__Impl rule__Shape__Group__5 ;
     public final void rule__Shape__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1963:1: ( rule__Shape__Group__4__Impl rule__Shape__Group__5 )
-            // InternalCanvas.g:1964:2: rule__Shape__Group__4__Impl rule__Shape__Group__5
+            // InternalCanvas.g:1845:1: ( rule__Shape__Group__4__Impl rule__Shape__Group__5 )
+            // InternalCanvas.g:1846:2: rule__Shape__Group__4__Impl rule__Shape__Group__5
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_15);
             rule__Shape__Group__4__Impl();
 
             state._fsp--;
@@ -6401,31 +5805,42 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shape__Group__4__Impl"
-    // InternalCanvas.g:1971:1: rule__Shape__Group__4__Impl : ( ( rule__Shape__Alternatives_4 ) ) ;
+    // InternalCanvas.g:1853:1: rule__Shape__Group__4__Impl : ( ( rule__Shape__ContainerAssignment_4 )? ) ;
     public final void rule__Shape__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1975:1: ( ( ( rule__Shape__Alternatives_4 ) ) )
-            // InternalCanvas.g:1976:1: ( ( rule__Shape__Alternatives_4 ) )
+            // InternalCanvas.g:1857:1: ( ( ( rule__Shape__ContainerAssignment_4 )? ) )
+            // InternalCanvas.g:1858:1: ( ( rule__Shape__ContainerAssignment_4 )? )
             {
-            // InternalCanvas.g:1976:1: ( ( rule__Shape__Alternatives_4 ) )
-            // InternalCanvas.g:1977:2: ( rule__Shape__Alternatives_4 )
+            // InternalCanvas.g:1858:1: ( ( rule__Shape__ContainerAssignment_4 )? )
+            // InternalCanvas.g:1859:2: ( rule__Shape__ContainerAssignment_4 )?
             {
-             before(grammarAccess.getShapeAccess().getAlternatives_4()); 
-            // InternalCanvas.g:1978:2: ( rule__Shape__Alternatives_4 )
-            // InternalCanvas.g:1978:3: rule__Shape__Alternatives_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__Shape__Alternatives_4();
+             before(grammarAccess.getShapeAccess().getContainerAssignment_4()); 
+            // InternalCanvas.g:1860:2: ( rule__Shape__ContainerAssignment_4 )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
 
-            state._fsp--;
+            if ( (LA8_0==11) ) {
+                alt8=1;
+            }
+            switch (alt8) {
+                case 1 :
+                    // InternalCanvas.g:1860:3: rule__Shape__ContainerAssignment_4
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Shape__ContainerAssignment_4();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
-             after(grammarAccess.getShapeAccess().getAlternatives_4()); 
+             after(grammarAccess.getShapeAccess().getContainerAssignment_4()); 
 
             }
 
@@ -6448,16 +5863,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shape__Group__5"
-    // InternalCanvas.g:1986:1: rule__Shape__Group__5 : rule__Shape__Group__5__Impl rule__Shape__Group__6 ;
+    // InternalCanvas.g:1868:1: rule__Shape__Group__5 : rule__Shape__Group__5__Impl rule__Shape__Group__6 ;
     public final void rule__Shape__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:1990:1: ( rule__Shape__Group__5__Impl rule__Shape__Group__6 )
-            // InternalCanvas.g:1991:2: rule__Shape__Group__5__Impl rule__Shape__Group__6
+            // InternalCanvas.g:1872:1: ( rule__Shape__Group__5__Impl rule__Shape__Group__6 )
+            // InternalCanvas.g:1873:2: rule__Shape__Group__5__Impl rule__Shape__Group__6
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_5);
             rule__Shape__Group__5__Impl();
 
             state._fsp--;
@@ -6486,31 +5901,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shape__Group__5__Impl"
-    // InternalCanvas.g:1998:1: rule__Shape__Group__5__Impl : ( ( rule__Shape__RepresentsAssignment_5 ) ) ;
+    // InternalCanvas.g:1880:1: rule__Shape__Group__5__Impl : ( 'render' ) ;
     public final void rule__Shape__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2002:1: ( ( ( rule__Shape__RepresentsAssignment_5 ) ) )
-            // InternalCanvas.g:2003:1: ( ( rule__Shape__RepresentsAssignment_5 ) )
+            // InternalCanvas.g:1884:1: ( ( 'render' ) )
+            // InternalCanvas.g:1885:1: ( 'render' )
             {
-            // InternalCanvas.g:2003:1: ( ( rule__Shape__RepresentsAssignment_5 ) )
-            // InternalCanvas.g:2004:2: ( rule__Shape__RepresentsAssignment_5 )
+            // InternalCanvas.g:1885:1: ( 'render' )
+            // InternalCanvas.g:1886:2: 'render'
             {
-             before(grammarAccess.getShapeAccess().getRepresentsAssignment_5()); 
-            // InternalCanvas.g:2005:2: ( rule__Shape__RepresentsAssignment_5 )
-            // InternalCanvas.g:2005:3: rule__Shape__RepresentsAssignment_5
-            {
-            pushFollow(FOLLOW_2);
-            rule__Shape__RepresentsAssignment_5();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getShapeAccess().getRepresentsAssignment_5()); 
+             before(grammarAccess.getShapeAccess().getRenderKeyword_5()); 
+            match(input,96,FOLLOW_2); 
+             after(grammarAccess.getShapeAccess().getRenderKeyword_5()); 
 
             }
 
@@ -6533,16 +5938,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shape__Group__6"
-    // InternalCanvas.g:2013:1: rule__Shape__Group__6 : rule__Shape__Group__6__Impl rule__Shape__Group__7 ;
+    // InternalCanvas.g:1895:1: rule__Shape__Group__6 : rule__Shape__Group__6__Impl rule__Shape__Group__7 ;
     public final void rule__Shape__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2017:1: ( rule__Shape__Group__6__Impl rule__Shape__Group__7 )
-            // InternalCanvas.g:2018:2: rule__Shape__Group__6__Impl rule__Shape__Group__7
+            // InternalCanvas.g:1899:1: ( rule__Shape__Group__6__Impl rule__Shape__Group__7 )
+            // InternalCanvas.g:1900:2: rule__Shape__Group__6__Impl rule__Shape__Group__7
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_16);
             rule__Shape__Group__6__Impl();
 
             state._fsp--;
@@ -6571,31 +5976,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shape__Group__6__Impl"
-    // InternalCanvas.g:2025:1: rule__Shape__Group__6__Impl : ( ( rule__Shape__RectAssignment_6 ) ) ;
+    // InternalCanvas.g:1907:1: rule__Shape__Group__6__Impl : ( ':' ) ;
     public final void rule__Shape__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2029:1: ( ( ( rule__Shape__RectAssignment_6 ) ) )
-            // InternalCanvas.g:2030:1: ( ( rule__Shape__RectAssignment_6 ) )
+            // InternalCanvas.g:1911:1: ( ( ':' ) )
+            // InternalCanvas.g:1912:1: ( ':' )
             {
-            // InternalCanvas.g:2030:1: ( ( rule__Shape__RectAssignment_6 ) )
-            // InternalCanvas.g:2031:2: ( rule__Shape__RectAssignment_6 )
+            // InternalCanvas.g:1912:1: ( ':' )
+            // InternalCanvas.g:1913:2: ':'
             {
-             before(grammarAccess.getShapeAccess().getRectAssignment_6()); 
-            // InternalCanvas.g:2032:2: ( rule__Shape__RectAssignment_6 )
-            // InternalCanvas.g:2032:3: rule__Shape__RectAssignment_6
-            {
-            pushFollow(FOLLOW_2);
-            rule__Shape__RectAssignment_6();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getShapeAccess().getRectAssignment_6()); 
+             before(grammarAccess.getShapeAccess().getColonKeyword_6()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getShapeAccess().getColonKeyword_6()); 
 
             }
 
@@ -6618,17 +6013,22 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shape__Group__7"
-    // InternalCanvas.g:2040:1: rule__Shape__Group__7 : rule__Shape__Group__7__Impl ;
+    // InternalCanvas.g:1922:1: rule__Shape__Group__7 : rule__Shape__Group__7__Impl rule__Shape__Group__8 ;
     public final void rule__Shape__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2044:1: ( rule__Shape__Group__7__Impl )
-            // InternalCanvas.g:2045:2: rule__Shape__Group__7__Impl
+            // InternalCanvas.g:1926:1: ( rule__Shape__Group__7__Impl rule__Shape__Group__8 )
+            // InternalCanvas.g:1927:2: rule__Shape__Group__7__Impl rule__Shape__Group__8
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_6);
             rule__Shape__Group__7__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Shape__Group__8();
 
             state._fsp--;
 
@@ -6651,42 +6051,31 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Shape__Group__7__Impl"
-    // InternalCanvas.g:2051:1: rule__Shape__Group__7__Impl : ( ( rule__Shape__TextAssignment_7 )? ) ;
+    // InternalCanvas.g:1934:1: rule__Shape__Group__7__Impl : ( ( rule__Shape__TypeAssignment_7 ) ) ;
     public final void rule__Shape__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2055:1: ( ( ( rule__Shape__TextAssignment_7 )? ) )
-            // InternalCanvas.g:2056:1: ( ( rule__Shape__TextAssignment_7 )? )
+            // InternalCanvas.g:1938:1: ( ( ( rule__Shape__TypeAssignment_7 ) ) )
+            // InternalCanvas.g:1939:1: ( ( rule__Shape__TypeAssignment_7 ) )
             {
-            // InternalCanvas.g:2056:1: ( ( rule__Shape__TextAssignment_7 )? )
-            // InternalCanvas.g:2057:2: ( rule__Shape__TextAssignment_7 )?
+            // InternalCanvas.g:1939:1: ( ( rule__Shape__TypeAssignment_7 ) )
+            // InternalCanvas.g:1940:2: ( rule__Shape__TypeAssignment_7 )
             {
-             before(grammarAccess.getShapeAccess().getTextAssignment_7()); 
-            // InternalCanvas.g:2058:2: ( rule__Shape__TextAssignment_7 )?
-            int alt32=2;
-            int LA32_0 = input.LA(1);
+             before(grammarAccess.getShapeAccess().getTypeAssignment_7()); 
+            // InternalCanvas.g:1941:2: ( rule__Shape__TypeAssignment_7 )
+            // InternalCanvas.g:1941:3: rule__Shape__TypeAssignment_7
+            {
+            pushFollow(FOLLOW_2);
+            rule__Shape__TypeAssignment_7();
 
-            if ( (LA32_0==19||LA32_0==46) ) {
-                alt32=1;
-            }
-            switch (alt32) {
-                case 1 :
-                    // InternalCanvas.g:2058:3: rule__Shape__TextAssignment_7
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Shape__TextAssignment_7();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getShapeAccess().getTextAssignment_7()); 
+             after(grammarAccess.getShapeAccess().getTypeAssignment_7()); 
 
             }
 
@@ -6708,23 +6097,23 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Shape__Group__7__Impl"
 
 
-    // $ANTLR start "rule__Shape__Group_1_0__0"
-    // InternalCanvas.g:2067:1: rule__Shape__Group_1_0__0 : rule__Shape__Group_1_0__0__Impl rule__Shape__Group_1_0__1 ;
-    public final void rule__Shape__Group_1_0__0() throws RecognitionException {
+    // $ANTLR start "rule__Shape__Group__8"
+    // InternalCanvas.g:1949:1: rule__Shape__Group__8 : rule__Shape__Group__8__Impl rule__Shape__Group__9 ;
+    public final void rule__Shape__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2071:1: ( rule__Shape__Group_1_0__0__Impl rule__Shape__Group_1_0__1 )
-            // InternalCanvas.g:2072:2: rule__Shape__Group_1_0__0__Impl rule__Shape__Group_1_0__1
+            // InternalCanvas.g:1953:1: ( rule__Shape__Group__8__Impl rule__Shape__Group__9 )
+            // InternalCanvas.g:1954:2: rule__Shape__Group__8__Impl rule__Shape__Group__9
             {
-            pushFollow(FOLLOW_6);
-            rule__Shape__Group_1_0__0__Impl();
+            pushFollow(FOLLOW_17);
+            rule__Shape__Group__8__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Shape__Group_1_0__1();
+            rule__Shape__Group__9();
 
             state._fsp--;
 
@@ -6743,95 +6132,35 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Shape__Group_1_0__0"
+    // $ANTLR end "rule__Shape__Group__8"
 
 
-    // $ANTLR start "rule__Shape__Group_1_0__0__Impl"
-    // InternalCanvas.g:2079:1: rule__Shape__Group_1_0__0__Impl : ( 'shape' ) ;
-    public final void rule__Shape__Group_1_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:2083:1: ( ( 'shape' ) )
-            // InternalCanvas.g:2084:1: ( 'shape' )
-            {
-            // InternalCanvas.g:2084:1: ( 'shape' )
-            // InternalCanvas.g:2085:2: 'shape'
-            {
-             before(grammarAccess.getShapeAccess().getShapeKeyword_1_0_0()); 
-            match(input,44,FOLLOW_2); 
-             after(grammarAccess.getShapeAccess().getShapeKeyword_1_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Shape__Group_1_0__0__Impl"
-
-
-    // $ANTLR start "rule__Shape__Group_1_0__1"
-    // InternalCanvas.g:2094:1: rule__Shape__Group_1_0__1 : rule__Shape__Group_1_0__1__Impl ;
-    public final void rule__Shape__Group_1_0__1() throws RecognitionException {
+    // $ANTLR start "rule__Shape__Group__8__Impl"
+    // InternalCanvas.g:1961:1: rule__Shape__Group__8__Impl : ( ( rule__Shape__RepresentsAssignment_8 ) ) ;
+    public final void rule__Shape__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2098:1: ( rule__Shape__Group_1_0__1__Impl )
-            // InternalCanvas.g:2099:2: rule__Shape__Group_1_0__1__Impl
+            // InternalCanvas.g:1965:1: ( ( ( rule__Shape__RepresentsAssignment_8 ) ) )
+            // InternalCanvas.g:1966:1: ( ( rule__Shape__RepresentsAssignment_8 ) )
+            {
+            // InternalCanvas.g:1966:1: ( ( rule__Shape__RepresentsAssignment_8 ) )
+            // InternalCanvas.g:1967:2: ( rule__Shape__RepresentsAssignment_8 )
+            {
+             before(grammarAccess.getShapeAccess().getRepresentsAssignment_8()); 
+            // InternalCanvas.g:1968:2: ( rule__Shape__RepresentsAssignment_8 )
+            // InternalCanvas.g:1968:3: rule__Shape__RepresentsAssignment_8
             {
             pushFollow(FOLLOW_2);
-            rule__Shape__Group_1_0__1__Impl();
+            rule__Shape__RepresentsAssignment_8();
 
             state._fsp--;
 
 
             }
 
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Shape__Group_1_0__1"
-
-
-    // $ANTLR start "rule__Shape__Group_1_0__1__Impl"
-    // InternalCanvas.g:2105:1: rule__Shape__Group_1_0__1__Impl : ( ':' ) ;
-    public final void rule__Shape__Group_1_0__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:2109:1: ( ( ':' ) )
-            // InternalCanvas.g:2110:1: ( ':' )
-            {
-            // InternalCanvas.g:2110:1: ( ':' )
-            // InternalCanvas.g:2111:2: ':'
-            {
-             before(grammarAccess.getShapeAccess().getColonKeyword_1_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getShapeAccess().getColonKeyword_1_0_1()); 
+             after(grammarAccess.getShapeAccess().getRepresentsAssignment_8()); 
 
             }
 
@@ -6850,26 +6179,26 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Shape__Group_1_0__1__Impl"
+    // $ANTLR end "rule__Shape__Group__8__Impl"
 
 
-    // $ANTLR start "rule__Shape__Group_4_0__0"
-    // InternalCanvas.g:2121:1: rule__Shape__Group_4_0__0 : rule__Shape__Group_4_0__0__Impl rule__Shape__Group_4_0__1 ;
-    public final void rule__Shape__Group_4_0__0() throws RecognitionException {
+    // $ANTLR start "rule__Shape__Group__9"
+    // InternalCanvas.g:1976:1: rule__Shape__Group__9 : rule__Shape__Group__9__Impl rule__Shape__Group__10 ;
+    public final void rule__Shape__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2125:1: ( rule__Shape__Group_4_0__0__Impl rule__Shape__Group_4_0__1 )
-            // InternalCanvas.g:2126:2: rule__Shape__Group_4_0__0__Impl rule__Shape__Group_4_0__1
+            // InternalCanvas.g:1980:1: ( rule__Shape__Group__9__Impl rule__Shape__Group__10 )
+            // InternalCanvas.g:1981:2: rule__Shape__Group__9__Impl rule__Shape__Group__10
             {
-            pushFollow(FOLLOW_6);
-            rule__Shape__Group_4_0__0__Impl();
+            pushFollow(FOLLOW_18);
+            rule__Shape__Group__9__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Shape__Group_4_0__1();
+            rule__Shape__Group__10();
 
             state._fsp--;
 
@@ -6888,58 +6217,68 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Shape__Group_4_0__0"
+    // $ANTLR end "rule__Shape__Group__9"
 
 
-    // $ANTLR start "rule__Shape__Group_4_0__0__Impl"
-    // InternalCanvas.g:2133:1: rule__Shape__Group_4_0__0__Impl : ( 'render' ) ;
-    public final void rule__Shape__Group_4_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:2137:1: ( ( 'render' ) )
-            // InternalCanvas.g:2138:1: ( 'render' )
-            {
-            // InternalCanvas.g:2138:1: ( 'render' )
-            // InternalCanvas.g:2139:2: 'render'
-            {
-             before(grammarAccess.getShapeAccess().getRenderKeyword_4_0_0()); 
-            match(input,38,FOLLOW_2); 
-             after(grammarAccess.getShapeAccess().getRenderKeyword_4_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Shape__Group_4_0__0__Impl"
-
-
-    // $ANTLR start "rule__Shape__Group_4_0__1"
-    // InternalCanvas.g:2148:1: rule__Shape__Group_4_0__1 : rule__Shape__Group_4_0__1__Impl ;
-    public final void rule__Shape__Group_4_0__1() throws RecognitionException {
+    // $ANTLR start "rule__Shape__Group__9__Impl"
+    // InternalCanvas.g:1988:1: rule__Shape__Group__9__Impl : ( ( rule__Shape__BoundsAssignment_9 ) ) ;
+    public final void rule__Shape__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2152:1: ( rule__Shape__Group_4_0__1__Impl )
-            // InternalCanvas.g:2153:2: rule__Shape__Group_4_0__1__Impl
+            // InternalCanvas.g:1992:1: ( ( ( rule__Shape__BoundsAssignment_9 ) ) )
+            // InternalCanvas.g:1993:1: ( ( rule__Shape__BoundsAssignment_9 ) )
+            {
+            // InternalCanvas.g:1993:1: ( ( rule__Shape__BoundsAssignment_9 ) )
+            // InternalCanvas.g:1994:2: ( rule__Shape__BoundsAssignment_9 )
+            {
+             before(grammarAccess.getShapeAccess().getBoundsAssignment_9()); 
+            // InternalCanvas.g:1995:2: ( rule__Shape__BoundsAssignment_9 )
+            // InternalCanvas.g:1995:3: rule__Shape__BoundsAssignment_9
             {
             pushFollow(FOLLOW_2);
-            rule__Shape__Group_4_0__1__Impl();
+            rule__Shape__BoundsAssignment_9();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getShapeAccess().getBoundsAssignment_9()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Shape__Group__9__Impl"
+
+
+    // $ANTLR start "rule__Shape__Group__10"
+    // InternalCanvas.g:2003:1: rule__Shape__Group__10 : rule__Shape__Group__10__Impl ;
+    public final void rule__Shape__Group__10() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:2007:1: ( rule__Shape__Group__10__Impl )
+            // InternalCanvas.g:2008:2: rule__Shape__Group__10__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Shape__Group__10__Impl();
 
             state._fsp--;
 
@@ -6958,25 +6297,46 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Shape__Group_4_0__1"
+    // $ANTLR end "rule__Shape__Group__10"
 
 
-    // $ANTLR start "rule__Shape__Group_4_0__1__Impl"
-    // InternalCanvas.g:2159:1: rule__Shape__Group_4_0__1__Impl : ( ':' ) ;
-    public final void rule__Shape__Group_4_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Shape__Group__10__Impl"
+    // InternalCanvas.g:2014:1: rule__Shape__Group__10__Impl : ( ( rule__Shape__TextAssignment_10 )? ) ;
+    public final void rule__Shape__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2163:1: ( ( ':' ) )
-            // InternalCanvas.g:2164:1: ( ':' )
+            // InternalCanvas.g:2018:1: ( ( ( rule__Shape__TextAssignment_10 )? ) )
+            // InternalCanvas.g:2019:1: ( ( rule__Shape__TextAssignment_10 )? )
             {
-            // InternalCanvas.g:2164:1: ( ':' )
-            // InternalCanvas.g:2165:2: ':'
+            // InternalCanvas.g:2019:1: ( ( rule__Shape__TextAssignment_10 )? )
+            // InternalCanvas.g:2020:2: ( rule__Shape__TextAssignment_10 )?
             {
-             before(grammarAccess.getShapeAccess().getColonKeyword_4_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getShapeAccess().getColonKeyword_4_0_1()); 
+             before(grammarAccess.getShapeAccess().getTextAssignment_10()); 
+            // InternalCanvas.g:2021:2: ( rule__Shape__TextAssignment_10 )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
+
+            if ( (LA9_0==103) ) {
+                alt9=1;
+            }
+            switch (alt9) {
+                case 1 :
+                    // InternalCanvas.g:2021:3: rule__Shape__TextAssignment_10
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Shape__TextAssignment_10();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getShapeAccess().getTextAssignment_10()); 
 
             }
 
@@ -6995,20 +6355,20 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Shape__Group_4_0__1__Impl"
+    // $ANTLR end "rule__Shape__Group__10__Impl"
 
 
     // $ANTLR start "rule__FloatingTexts__Group__0"
-    // InternalCanvas.g:2175:1: rule__FloatingTexts__Group__0 : rule__FloatingTexts__Group__0__Impl rule__FloatingTexts__Group__1 ;
+    // InternalCanvas.g:2030:1: rule__FloatingTexts__Group__0 : rule__FloatingTexts__Group__0__Impl rule__FloatingTexts__Group__1 ;
     public final void rule__FloatingTexts__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2179:1: ( rule__FloatingTexts__Group__0__Impl rule__FloatingTexts__Group__1 )
-            // InternalCanvas.g:2180:2: rule__FloatingTexts__Group__0__Impl rule__FloatingTexts__Group__1
+            // InternalCanvas.g:2034:1: ( rule__FloatingTexts__Group__0__Impl rule__FloatingTexts__Group__1 )
+            // InternalCanvas.g:2035:2: rule__FloatingTexts__Group__0__Impl rule__FloatingTexts__Group__1
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_19);
             rule__FloatingTexts__Group__0__Impl();
 
             state._fsp--;
@@ -7037,21 +6397,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FloatingTexts__Group__0__Impl"
-    // InternalCanvas.g:2187:1: rule__FloatingTexts__Group__0__Impl : ( () ) ;
+    // InternalCanvas.g:2042:1: rule__FloatingTexts__Group__0__Impl : ( () ) ;
     public final void rule__FloatingTexts__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2191:1: ( ( () ) )
-            // InternalCanvas.g:2192:1: ( () )
+            // InternalCanvas.g:2046:1: ( ( () ) )
+            // InternalCanvas.g:2047:1: ( () )
             {
-            // InternalCanvas.g:2192:1: ( () )
-            // InternalCanvas.g:2193:2: ()
+            // InternalCanvas.g:2047:1: ( () )
+            // InternalCanvas.g:2048:2: ()
             {
              before(grammarAccess.getFloatingTextsAccess().getFloatingTextsAction_0()); 
-            // InternalCanvas.g:2194:2: ()
-            // InternalCanvas.g:2194:3: 
+            // InternalCanvas.g:2049:2: ()
+            // InternalCanvas.g:2049:3: 
             {
             }
 
@@ -7074,16 +6434,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FloatingTexts__Group__1"
-    // InternalCanvas.g:2202:1: rule__FloatingTexts__Group__1 : rule__FloatingTexts__Group__1__Impl rule__FloatingTexts__Group__2 ;
+    // InternalCanvas.g:2057:1: rule__FloatingTexts__Group__1 : rule__FloatingTexts__Group__1__Impl rule__FloatingTexts__Group__2 ;
     public final void rule__FloatingTexts__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2206:1: ( rule__FloatingTexts__Group__1__Impl rule__FloatingTexts__Group__2 )
-            // InternalCanvas.g:2207:2: rule__FloatingTexts__Group__1__Impl rule__FloatingTexts__Group__2
+            // InternalCanvas.g:2061:1: ( rule__FloatingTexts__Group__1__Impl rule__FloatingTexts__Group__2 )
+            // InternalCanvas.g:2062:2: rule__FloatingTexts__Group__1__Impl rule__FloatingTexts__Group__2
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_5);
             rule__FloatingTexts__Group__1__Impl();
 
             state._fsp--;
@@ -7112,31 +6472,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FloatingTexts__Group__1__Impl"
-    // InternalCanvas.g:2214:1: rule__FloatingTexts__Group__1__Impl : ( ( rule__FloatingTexts__Alternatives_1 ) ) ;
+    // InternalCanvas.g:2069:1: rule__FloatingTexts__Group__1__Impl : ( 'texts' ) ;
     public final void rule__FloatingTexts__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2218:1: ( ( ( rule__FloatingTexts__Alternatives_1 ) ) )
-            // InternalCanvas.g:2219:1: ( ( rule__FloatingTexts__Alternatives_1 ) )
+            // InternalCanvas.g:2073:1: ( ( 'texts' ) )
+            // InternalCanvas.g:2074:1: ( 'texts' )
             {
-            // InternalCanvas.g:2219:1: ( ( rule__FloatingTexts__Alternatives_1 ) )
-            // InternalCanvas.g:2220:2: ( rule__FloatingTexts__Alternatives_1 )
+            // InternalCanvas.g:2074:1: ( 'texts' )
+            // InternalCanvas.g:2075:2: 'texts'
             {
-             before(grammarAccess.getFloatingTextsAccess().getAlternatives_1()); 
-            // InternalCanvas.g:2221:2: ( rule__FloatingTexts__Alternatives_1 )
-            // InternalCanvas.g:2221:3: rule__FloatingTexts__Alternatives_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__FloatingTexts__Alternatives_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getFloatingTextsAccess().getAlternatives_1()); 
+             before(grammarAccess.getFloatingTextsAccess().getTextsKeyword_1()); 
+            match(input,102,FOLLOW_2); 
+             after(grammarAccess.getFloatingTextsAccess().getTextsKeyword_1()); 
 
             }
 
@@ -7159,17 +6509,22 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FloatingTexts__Group__2"
-    // InternalCanvas.g:2229:1: rule__FloatingTexts__Group__2 : rule__FloatingTexts__Group__2__Impl ;
+    // InternalCanvas.g:2084:1: rule__FloatingTexts__Group__2 : rule__FloatingTexts__Group__2__Impl rule__FloatingTexts__Group__3 ;
     public final void rule__FloatingTexts__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2233:1: ( rule__FloatingTexts__Group__2__Impl )
-            // InternalCanvas.g:2234:2: rule__FloatingTexts__Group__2__Impl
+            // InternalCanvas.g:2088:1: ( rule__FloatingTexts__Group__2__Impl rule__FloatingTexts__Group__3 )
+            // InternalCanvas.g:2089:2: rule__FloatingTexts__Group__2__Impl rule__FloatingTexts__Group__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_18);
             rule__FloatingTexts__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__FloatingTexts__Group__3();
 
             state._fsp--;
 
@@ -7192,49 +6547,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FloatingTexts__Group__2__Impl"
-    // InternalCanvas.g:2240:1: rule__FloatingTexts__Group__2__Impl : ( ( rule__FloatingTexts__TextsAssignment_2 )* ) ;
+    // InternalCanvas.g:2096:1: rule__FloatingTexts__Group__2__Impl : ( ':' ) ;
     public final void rule__FloatingTexts__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2244:1: ( ( ( rule__FloatingTexts__TextsAssignment_2 )* ) )
-            // InternalCanvas.g:2245:1: ( ( rule__FloatingTexts__TextsAssignment_2 )* )
+            // InternalCanvas.g:2100:1: ( ( ':' ) )
+            // InternalCanvas.g:2101:1: ( ':' )
             {
-            // InternalCanvas.g:2245:1: ( ( rule__FloatingTexts__TextsAssignment_2 )* )
-            // InternalCanvas.g:2246:2: ( rule__FloatingTexts__TextsAssignment_2 )*
+            // InternalCanvas.g:2101:1: ( ':' )
+            // InternalCanvas.g:2102:2: ':'
             {
-             before(grammarAccess.getFloatingTextsAccess().getTextsAssignment_2()); 
-            // InternalCanvas.g:2247:2: ( rule__FloatingTexts__TextsAssignment_2 )*
-            loop33:
-            do {
-                int alt33=2;
-                int LA33_0 = input.LA(1);
-
-                if ( (LA33_0==19||LA33_0==46) ) {
-                    alt33=1;
-                }
-
-
-                switch (alt33) {
-            	case 1 :
-            	    // InternalCanvas.g:2247:3: rule__FloatingTexts__TextsAssignment_2
-            	    {
-            	    pushFollow(FOLLOW_19);
-            	    rule__FloatingTexts__TextsAssignment_2();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop33;
-                }
-            } while (true);
-
-             after(grammarAccess.getFloatingTextsAccess().getTextsAssignment_2()); 
+             before(grammarAccess.getFloatingTextsAccess().getColonKeyword_2()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getFloatingTextsAccess().getColonKeyword_2()); 
 
             }
 
@@ -7256,93 +6583,18 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__FloatingTexts__Group__2__Impl"
 
 
-    // $ANTLR start "rule__FloatingTexts__Group_1_0__0"
-    // InternalCanvas.g:2256:1: rule__FloatingTexts__Group_1_0__0 : rule__FloatingTexts__Group_1_0__0__Impl rule__FloatingTexts__Group_1_0__1 ;
-    public final void rule__FloatingTexts__Group_1_0__0() throws RecognitionException {
+    // $ANTLR start "rule__FloatingTexts__Group__3"
+    // InternalCanvas.g:2111:1: rule__FloatingTexts__Group__3 : rule__FloatingTexts__Group__3__Impl ;
+    public final void rule__FloatingTexts__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2260:1: ( rule__FloatingTexts__Group_1_0__0__Impl rule__FloatingTexts__Group_1_0__1 )
-            // InternalCanvas.g:2261:2: rule__FloatingTexts__Group_1_0__0__Impl rule__FloatingTexts__Group_1_0__1
-            {
-            pushFollow(FOLLOW_6);
-            rule__FloatingTexts__Group_1_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__FloatingTexts__Group_1_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__FloatingTexts__Group_1_0__0"
-
-
-    // $ANTLR start "rule__FloatingTexts__Group_1_0__0__Impl"
-    // InternalCanvas.g:2268:1: rule__FloatingTexts__Group_1_0__0__Impl : ( 'texts' ) ;
-    public final void rule__FloatingTexts__Group_1_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:2272:1: ( ( 'texts' ) )
-            // InternalCanvas.g:2273:1: ( 'texts' )
-            {
-            // InternalCanvas.g:2273:1: ( 'texts' )
-            // InternalCanvas.g:2274:2: 'texts'
-            {
-             before(grammarAccess.getFloatingTextsAccess().getTextsKeyword_1_0_0()); 
-            match(input,45,FOLLOW_2); 
-             after(grammarAccess.getFloatingTextsAccess().getTextsKeyword_1_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__FloatingTexts__Group_1_0__0__Impl"
-
-
-    // $ANTLR start "rule__FloatingTexts__Group_1_0__1"
-    // InternalCanvas.g:2283:1: rule__FloatingTexts__Group_1_0__1 : rule__FloatingTexts__Group_1_0__1__Impl ;
-    public final void rule__FloatingTexts__Group_1_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:2287:1: ( rule__FloatingTexts__Group_1_0__1__Impl )
-            // InternalCanvas.g:2288:2: rule__FloatingTexts__Group_1_0__1__Impl
+            // InternalCanvas.g:2115:1: ( rule__FloatingTexts__Group__3__Impl )
+            // InternalCanvas.g:2116:2: rule__FloatingTexts__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__FloatingTexts__Group_1_0__1__Impl();
+            rule__FloatingTexts__Group__3__Impl();
 
             state._fsp--;
 
@@ -7361,25 +6613,53 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FloatingTexts__Group_1_0__1"
+    // $ANTLR end "rule__FloatingTexts__Group__3"
 
 
-    // $ANTLR start "rule__FloatingTexts__Group_1_0__1__Impl"
-    // InternalCanvas.g:2294:1: rule__FloatingTexts__Group_1_0__1__Impl : ( ':' ) ;
-    public final void rule__FloatingTexts__Group_1_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FloatingTexts__Group__3__Impl"
+    // InternalCanvas.g:2122:1: rule__FloatingTexts__Group__3__Impl : ( ( rule__FloatingTexts__TextsAssignment_3 )* ) ;
+    public final void rule__FloatingTexts__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2298:1: ( ( ':' ) )
-            // InternalCanvas.g:2299:1: ( ':' )
+            // InternalCanvas.g:2126:1: ( ( ( rule__FloatingTexts__TextsAssignment_3 )* ) )
+            // InternalCanvas.g:2127:1: ( ( rule__FloatingTexts__TextsAssignment_3 )* )
             {
-            // InternalCanvas.g:2299:1: ( ':' )
-            // InternalCanvas.g:2300:2: ':'
+            // InternalCanvas.g:2127:1: ( ( rule__FloatingTexts__TextsAssignment_3 )* )
+            // InternalCanvas.g:2128:2: ( rule__FloatingTexts__TextsAssignment_3 )*
             {
-             before(grammarAccess.getFloatingTextsAccess().getColonKeyword_1_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getFloatingTextsAccess().getColonKeyword_1_0_1()); 
+             before(grammarAccess.getFloatingTextsAccess().getTextsAssignment_3()); 
+            // InternalCanvas.g:2129:2: ( rule__FloatingTexts__TextsAssignment_3 )*
+            loop10:
+            do {
+                int alt10=2;
+                int LA10_0 = input.LA(1);
+
+                if ( (LA10_0==103) ) {
+                    alt10=1;
+                }
+
+
+                switch (alt10) {
+            	case 1 :
+            	    // InternalCanvas.g:2129:3: rule__FloatingTexts__TextsAssignment_3
+            	    {
+            	    pushFollow(FOLLOW_20);
+            	    rule__FloatingTexts__TextsAssignment_3();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop10;
+                }
+            } while (true);
+
+             after(grammarAccess.getFloatingTextsAccess().getTextsAssignment_3()); 
 
             }
 
@@ -7398,20 +6678,20 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FloatingTexts__Group_1_0__1__Impl"
+    // $ANTLR end "rule__FloatingTexts__Group__3__Impl"
 
 
     // $ANTLR start "rule__FloatingText__Group__0"
-    // InternalCanvas.g:2310:1: rule__FloatingText__Group__0 : rule__FloatingText__Group__0__Impl rule__FloatingText__Group__1 ;
+    // InternalCanvas.g:2138:1: rule__FloatingText__Group__0 : rule__FloatingText__Group__0__Impl rule__FloatingText__Group__1 ;
     public final void rule__FloatingText__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2314:1: ( rule__FloatingText__Group__0__Impl rule__FloatingText__Group__1 )
-            // InternalCanvas.g:2315:2: rule__FloatingText__Group__0__Impl rule__FloatingText__Group__1
+            // InternalCanvas.g:2142:1: ( rule__FloatingText__Group__0__Impl rule__FloatingText__Group__1 )
+            // InternalCanvas.g:2143:2: rule__FloatingText__Group__0__Impl rule__FloatingText__Group__1
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_18);
             rule__FloatingText__Group__0__Impl();
 
             state._fsp--;
@@ -7440,21 +6720,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FloatingText__Group__0__Impl"
-    // InternalCanvas.g:2322:1: rule__FloatingText__Group__0__Impl : ( () ) ;
+    // InternalCanvas.g:2150:1: rule__FloatingText__Group__0__Impl : ( () ) ;
     public final void rule__FloatingText__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2326:1: ( ( () ) )
-            // InternalCanvas.g:2327:1: ( () )
+            // InternalCanvas.g:2154:1: ( ( () ) )
+            // InternalCanvas.g:2155:1: ( () )
             {
-            // InternalCanvas.g:2327:1: ( () )
-            // InternalCanvas.g:2328:2: ()
+            // InternalCanvas.g:2155:1: ( () )
+            // InternalCanvas.g:2156:2: ()
             {
              before(grammarAccess.getFloatingTextAccess().getFloatingTextAction_0()); 
-            // InternalCanvas.g:2329:2: ()
-            // InternalCanvas.g:2329:3: 
+            // InternalCanvas.g:2157:2: ()
+            // InternalCanvas.g:2157:3: 
             {
             }
 
@@ -7477,16 +6757,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FloatingText__Group__1"
-    // InternalCanvas.g:2337:1: rule__FloatingText__Group__1 : rule__FloatingText__Group__1__Impl rule__FloatingText__Group__2 ;
+    // InternalCanvas.g:2165:1: rule__FloatingText__Group__1 : rule__FloatingText__Group__1__Impl rule__FloatingText__Group__2 ;
     public final void rule__FloatingText__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2341:1: ( rule__FloatingText__Group__1__Impl rule__FloatingText__Group__2 )
-            // InternalCanvas.g:2342:2: rule__FloatingText__Group__1__Impl rule__FloatingText__Group__2
+            // InternalCanvas.g:2169:1: ( rule__FloatingText__Group__1__Impl rule__FloatingText__Group__2 )
+            // InternalCanvas.g:2170:2: rule__FloatingText__Group__1__Impl rule__FloatingText__Group__2
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_5);
             rule__FloatingText__Group__1__Impl();
 
             state._fsp--;
@@ -7515,31 +6795,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FloatingText__Group__1__Impl"
-    // InternalCanvas.g:2349:1: rule__FloatingText__Group__1__Impl : ( ( rule__FloatingText__Alternatives_1 ) ) ;
+    // InternalCanvas.g:2177:1: rule__FloatingText__Group__1__Impl : ( 'text' ) ;
     public final void rule__FloatingText__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2353:1: ( ( ( rule__FloatingText__Alternatives_1 ) ) )
-            // InternalCanvas.g:2354:1: ( ( rule__FloatingText__Alternatives_1 ) )
+            // InternalCanvas.g:2181:1: ( ( 'text' ) )
+            // InternalCanvas.g:2182:1: ( 'text' )
             {
-            // InternalCanvas.g:2354:1: ( ( rule__FloatingText__Alternatives_1 ) )
-            // InternalCanvas.g:2355:2: ( rule__FloatingText__Alternatives_1 )
+            // InternalCanvas.g:2182:1: ( 'text' )
+            // InternalCanvas.g:2183:2: 'text'
             {
-             before(grammarAccess.getFloatingTextAccess().getAlternatives_1()); 
-            // InternalCanvas.g:2356:2: ( rule__FloatingText__Alternatives_1 )
-            // InternalCanvas.g:2356:3: rule__FloatingText__Alternatives_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__FloatingText__Alternatives_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getFloatingTextAccess().getAlternatives_1()); 
+             before(grammarAccess.getFloatingTextAccess().getTextKeyword_1()); 
+            match(input,103,FOLLOW_2); 
+             after(grammarAccess.getFloatingTextAccess().getTextKeyword_1()); 
 
             }
 
@@ -7562,16 +6832,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FloatingText__Group__2"
-    // InternalCanvas.g:2364:1: rule__FloatingText__Group__2 : rule__FloatingText__Group__2__Impl rule__FloatingText__Group__3 ;
+    // InternalCanvas.g:2192:1: rule__FloatingText__Group__2 : rule__FloatingText__Group__2__Impl rule__FloatingText__Group__3 ;
     public final void rule__FloatingText__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2368:1: ( rule__FloatingText__Group__2__Impl rule__FloatingText__Group__3 )
-            // InternalCanvas.g:2369:2: rule__FloatingText__Group__2__Impl rule__FloatingText__Group__3
+            // InternalCanvas.g:2196:1: ( rule__FloatingText__Group__2__Impl rule__FloatingText__Group__3 )
+            // InternalCanvas.g:2197:2: rule__FloatingText__Group__2__Impl rule__FloatingText__Group__3
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_17);
             rule__FloatingText__Group__2__Impl();
 
             state._fsp--;
@@ -7600,31 +6870,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FloatingText__Group__2__Impl"
-    // InternalCanvas.g:2376:1: rule__FloatingText__Group__2__Impl : ( ( rule__FloatingText__RectAssignment_2 ) ) ;
+    // InternalCanvas.g:2204:1: rule__FloatingText__Group__2__Impl : ( ':' ) ;
     public final void rule__FloatingText__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2380:1: ( ( ( rule__FloatingText__RectAssignment_2 ) ) )
-            // InternalCanvas.g:2381:1: ( ( rule__FloatingText__RectAssignment_2 ) )
+            // InternalCanvas.g:2208:1: ( ( ':' ) )
+            // InternalCanvas.g:2209:1: ( ':' )
             {
-            // InternalCanvas.g:2381:1: ( ( rule__FloatingText__RectAssignment_2 ) )
-            // InternalCanvas.g:2382:2: ( rule__FloatingText__RectAssignment_2 )
+            // InternalCanvas.g:2209:1: ( ':' )
+            // InternalCanvas.g:2210:2: ':'
             {
-             before(grammarAccess.getFloatingTextAccess().getRectAssignment_2()); 
-            // InternalCanvas.g:2383:2: ( rule__FloatingText__RectAssignment_2 )
-            // InternalCanvas.g:2383:3: rule__FloatingText__RectAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__FloatingText__RectAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getFloatingTextAccess().getRectAssignment_2()); 
+             before(grammarAccess.getFloatingTextAccess().getColonKeyword_2()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getFloatingTextAccess().getColonKeyword_2()); 
 
             }
 
@@ -7647,17 +6907,22 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FloatingText__Group__3"
-    // InternalCanvas.g:2391:1: rule__FloatingText__Group__3 : rule__FloatingText__Group__3__Impl ;
+    // InternalCanvas.g:2219:1: rule__FloatingText__Group__3 : rule__FloatingText__Group__3__Impl rule__FloatingText__Group__4 ;
     public final void rule__FloatingText__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2395:1: ( rule__FloatingText__Group__3__Impl )
-            // InternalCanvas.g:2396:2: rule__FloatingText__Group__3__Impl
+            // InternalCanvas.g:2223:1: ( rule__FloatingText__Group__3__Impl rule__FloatingText__Group__4 )
+            // InternalCanvas.g:2224:2: rule__FloatingText__Group__3__Impl rule__FloatingText__Group__4
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_21);
             rule__FloatingText__Group__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__FloatingText__Group__4();
 
             state._fsp--;
 
@@ -7680,31 +6945,31 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FloatingText__Group__3__Impl"
-    // InternalCanvas.g:2402:1: rule__FloatingText__Group__3__Impl : ( ( rule__FloatingText__EndAssignment_3 ) ) ;
+    // InternalCanvas.g:2231:1: rule__FloatingText__Group__3__Impl : ( ( rule__FloatingText__BoundsAssignment_3 ) ) ;
     public final void rule__FloatingText__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2406:1: ( ( ( rule__FloatingText__EndAssignment_3 ) ) )
-            // InternalCanvas.g:2407:1: ( ( rule__FloatingText__EndAssignment_3 ) )
+            // InternalCanvas.g:2235:1: ( ( ( rule__FloatingText__BoundsAssignment_3 ) ) )
+            // InternalCanvas.g:2236:1: ( ( rule__FloatingText__BoundsAssignment_3 ) )
             {
-            // InternalCanvas.g:2407:1: ( ( rule__FloatingText__EndAssignment_3 ) )
-            // InternalCanvas.g:2408:2: ( rule__FloatingText__EndAssignment_3 )
+            // InternalCanvas.g:2236:1: ( ( rule__FloatingText__BoundsAssignment_3 ) )
+            // InternalCanvas.g:2237:2: ( rule__FloatingText__BoundsAssignment_3 )
             {
-             before(grammarAccess.getFloatingTextAccess().getEndAssignment_3()); 
-            // InternalCanvas.g:2409:2: ( rule__FloatingText__EndAssignment_3 )
-            // InternalCanvas.g:2409:3: rule__FloatingText__EndAssignment_3
+             before(grammarAccess.getFloatingTextAccess().getBoundsAssignment_3()); 
+            // InternalCanvas.g:2238:2: ( rule__FloatingText__BoundsAssignment_3 )
+            // InternalCanvas.g:2238:3: rule__FloatingText__BoundsAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__FloatingText__EndAssignment_3();
+            rule__FloatingText__BoundsAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getFloatingTextAccess().getEndAssignment_3()); 
+             after(grammarAccess.getFloatingTextAccess().getBoundsAssignment_3()); 
 
             }
 
@@ -7726,93 +6991,18 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__FloatingText__Group__3__Impl"
 
 
-    // $ANTLR start "rule__FloatingText__Group_1_0__0"
-    // InternalCanvas.g:2418:1: rule__FloatingText__Group_1_0__0 : rule__FloatingText__Group_1_0__0__Impl rule__FloatingText__Group_1_0__1 ;
-    public final void rule__FloatingText__Group_1_0__0() throws RecognitionException {
+    // $ANTLR start "rule__FloatingText__Group__4"
+    // InternalCanvas.g:2246:1: rule__FloatingText__Group__4 : rule__FloatingText__Group__4__Impl ;
+    public final void rule__FloatingText__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2422:1: ( rule__FloatingText__Group_1_0__0__Impl rule__FloatingText__Group_1_0__1 )
-            // InternalCanvas.g:2423:2: rule__FloatingText__Group_1_0__0__Impl rule__FloatingText__Group_1_0__1
-            {
-            pushFollow(FOLLOW_6);
-            rule__FloatingText__Group_1_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__FloatingText__Group_1_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__FloatingText__Group_1_0__0"
-
-
-    // $ANTLR start "rule__FloatingText__Group_1_0__0__Impl"
-    // InternalCanvas.g:2430:1: rule__FloatingText__Group_1_0__0__Impl : ( 'text' ) ;
-    public final void rule__FloatingText__Group_1_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:2434:1: ( ( 'text' ) )
-            // InternalCanvas.g:2435:1: ( 'text' )
-            {
-            // InternalCanvas.g:2435:1: ( 'text' )
-            // InternalCanvas.g:2436:2: 'text'
-            {
-             before(grammarAccess.getFloatingTextAccess().getTextKeyword_1_0_0()); 
-            match(input,46,FOLLOW_2); 
-             after(grammarAccess.getFloatingTextAccess().getTextKeyword_1_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__FloatingText__Group_1_0__0__Impl"
-
-
-    // $ANTLR start "rule__FloatingText__Group_1_0__1"
-    // InternalCanvas.g:2445:1: rule__FloatingText__Group_1_0__1 : rule__FloatingText__Group_1_0__1__Impl ;
-    public final void rule__FloatingText__Group_1_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:2449:1: ( rule__FloatingText__Group_1_0__1__Impl )
-            // InternalCanvas.g:2450:2: rule__FloatingText__Group_1_0__1__Impl
+            // InternalCanvas.g:2250:1: ( rule__FloatingText__Group__4__Impl )
+            // InternalCanvas.g:2251:2: rule__FloatingText__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__FloatingText__Group_1_0__1__Impl();
+            rule__FloatingText__Group__4__Impl();
 
             state._fsp--;
 
@@ -7831,25 +7021,35 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FloatingText__Group_1_0__1"
+    // $ANTLR end "rule__FloatingText__Group__4"
 
 
-    // $ANTLR start "rule__FloatingText__Group_1_0__1__Impl"
-    // InternalCanvas.g:2456:1: rule__FloatingText__Group_1_0__1__Impl : ( ':' ) ;
-    public final void rule__FloatingText__Group_1_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FloatingText__Group__4__Impl"
+    // InternalCanvas.g:2257:1: rule__FloatingText__Group__4__Impl : ( ( rule__FloatingText__EndAssignment_4 ) ) ;
+    public final void rule__FloatingText__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2460:1: ( ( ':' ) )
-            // InternalCanvas.g:2461:1: ( ':' )
+            // InternalCanvas.g:2261:1: ( ( ( rule__FloatingText__EndAssignment_4 ) ) )
+            // InternalCanvas.g:2262:1: ( ( rule__FloatingText__EndAssignment_4 ) )
             {
-            // InternalCanvas.g:2461:1: ( ':' )
-            // InternalCanvas.g:2462:2: ':'
+            // InternalCanvas.g:2262:1: ( ( rule__FloatingText__EndAssignment_4 ) )
+            // InternalCanvas.g:2263:2: ( rule__FloatingText__EndAssignment_4 )
             {
-             before(grammarAccess.getFloatingTextAccess().getColonKeyword_1_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getFloatingTextAccess().getColonKeyword_1_0_1()); 
+             before(grammarAccess.getFloatingTextAccess().getEndAssignment_4()); 
+            // InternalCanvas.g:2264:2: ( rule__FloatingText__EndAssignment_4 )
+            // InternalCanvas.g:2264:3: rule__FloatingText__EndAssignment_4
+            {
+            pushFollow(FOLLOW_2);
+            rule__FloatingText__EndAssignment_4();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getFloatingTextAccess().getEndAssignment_4()); 
 
             }
 
@@ -7868,20 +7068,20 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FloatingText__Group_1_0__1__Impl"
+    // $ANTLR end "rule__FloatingText__Group__4__Impl"
 
 
     // $ANTLR start "rule__EnumEnd__Group__0"
-    // InternalCanvas.g:2472:1: rule__EnumEnd__Group__0 : rule__EnumEnd__Group__0__Impl rule__EnumEnd__Group__1 ;
+    // InternalCanvas.g:2273:1: rule__EnumEnd__Group__0 : rule__EnumEnd__Group__0__Impl rule__EnumEnd__Group__1 ;
     public final void rule__EnumEnd__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2476:1: ( rule__EnumEnd__Group__0__Impl rule__EnumEnd__Group__1 )
-            // InternalCanvas.g:2477:2: rule__EnumEnd__Group__0__Impl rule__EnumEnd__Group__1
+            // InternalCanvas.g:2277:1: ( rule__EnumEnd__Group__0__Impl rule__EnumEnd__Group__1 )
+            // InternalCanvas.g:2278:2: rule__EnumEnd__Group__0__Impl rule__EnumEnd__Group__1
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_5);
             rule__EnumEnd__Group__0__Impl();
 
             state._fsp--;
@@ -7910,31 +7110,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumEnd__Group__0__Impl"
-    // InternalCanvas.g:2484:1: rule__EnumEnd__Group__0__Impl : ( ( rule__EnumEnd__Alternatives_0 ) ) ;
+    // InternalCanvas.g:2285:1: rule__EnumEnd__Group__0__Impl : ( 'where' ) ;
     public final void rule__EnumEnd__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2488:1: ( ( ( rule__EnumEnd__Alternatives_0 ) ) )
-            // InternalCanvas.g:2489:1: ( ( rule__EnumEnd__Alternatives_0 ) )
+            // InternalCanvas.g:2289:1: ( ( 'where' ) )
+            // InternalCanvas.g:2290:1: ( 'where' )
             {
-            // InternalCanvas.g:2489:1: ( ( rule__EnumEnd__Alternatives_0 ) )
-            // InternalCanvas.g:2490:2: ( rule__EnumEnd__Alternatives_0 )
+            // InternalCanvas.g:2290:1: ( 'where' )
+            // InternalCanvas.g:2291:2: 'where'
             {
-             before(grammarAccess.getEnumEndAccess().getAlternatives_0()); 
-            // InternalCanvas.g:2491:2: ( rule__EnumEnd__Alternatives_0 )
-            // InternalCanvas.g:2491:3: rule__EnumEnd__Alternatives_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__EnumEnd__Alternatives_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getEnumEndAccess().getAlternatives_0()); 
+             before(grammarAccess.getEnumEndAccess().getWhereKeyword_0()); 
+            match(input,104,FOLLOW_2); 
+             after(grammarAccess.getEnumEndAccess().getWhereKeyword_0()); 
 
             }
 
@@ -7957,17 +7147,22 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumEnd__Group__1"
-    // InternalCanvas.g:2499:1: rule__EnumEnd__Group__1 : rule__EnumEnd__Group__1__Impl ;
+    // InternalCanvas.g:2300:1: rule__EnumEnd__Group__1 : rule__EnumEnd__Group__1__Impl rule__EnumEnd__Group__2 ;
     public final void rule__EnumEnd__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2503:1: ( rule__EnumEnd__Group__1__Impl )
-            // InternalCanvas.g:2504:2: rule__EnumEnd__Group__1__Impl
+            // InternalCanvas.g:2304:1: ( rule__EnumEnd__Group__1__Impl rule__EnumEnd__Group__2 )
+            // InternalCanvas.g:2305:2: rule__EnumEnd__Group__1__Impl rule__EnumEnd__Group__2
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_22);
             rule__EnumEnd__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__EnumEnd__Group__2();
 
             state._fsp--;
 
@@ -7990,31 +7185,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumEnd__Group__1__Impl"
-    // InternalCanvas.g:2510:1: rule__EnumEnd__Group__1__Impl : ( ( rule__EnumEnd__WhereAssignment_1 ) ) ;
+    // InternalCanvas.g:2312:1: rule__EnumEnd__Group__1__Impl : ( ':' ) ;
     public final void rule__EnumEnd__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2514:1: ( ( ( rule__EnumEnd__WhereAssignment_1 ) ) )
-            // InternalCanvas.g:2515:1: ( ( rule__EnumEnd__WhereAssignment_1 ) )
+            // InternalCanvas.g:2316:1: ( ( ':' ) )
+            // InternalCanvas.g:2317:1: ( ':' )
             {
-            // InternalCanvas.g:2515:1: ( ( rule__EnumEnd__WhereAssignment_1 ) )
-            // InternalCanvas.g:2516:2: ( rule__EnumEnd__WhereAssignment_1 )
+            // InternalCanvas.g:2317:1: ( ':' )
+            // InternalCanvas.g:2318:2: ':'
             {
-             before(grammarAccess.getEnumEndAccess().getWhereAssignment_1()); 
-            // InternalCanvas.g:2517:2: ( rule__EnumEnd__WhereAssignment_1 )
-            // InternalCanvas.g:2517:3: rule__EnumEnd__WhereAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__EnumEnd__WhereAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getEnumEndAccess().getWhereAssignment_1()); 
+             before(grammarAccess.getEnumEndAccess().getColonKeyword_1()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getEnumEndAccess().getColonKeyword_1()); 
 
             }
 
@@ -8036,93 +7221,18 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__EnumEnd__Group__1__Impl"
 
 
-    // $ANTLR start "rule__EnumEnd__Group_0_0__0"
-    // InternalCanvas.g:2526:1: rule__EnumEnd__Group_0_0__0 : rule__EnumEnd__Group_0_0__0__Impl rule__EnumEnd__Group_0_0__1 ;
-    public final void rule__EnumEnd__Group_0_0__0() throws RecognitionException {
+    // $ANTLR start "rule__EnumEnd__Group__2"
+    // InternalCanvas.g:2327:1: rule__EnumEnd__Group__2 : rule__EnumEnd__Group__2__Impl ;
+    public final void rule__EnumEnd__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2530:1: ( rule__EnumEnd__Group_0_0__0__Impl rule__EnumEnd__Group_0_0__1 )
-            // InternalCanvas.g:2531:2: rule__EnumEnd__Group_0_0__0__Impl rule__EnumEnd__Group_0_0__1
-            {
-            pushFollow(FOLLOW_6);
-            rule__EnumEnd__Group_0_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__EnumEnd__Group_0_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EnumEnd__Group_0_0__0"
-
-
-    // $ANTLR start "rule__EnumEnd__Group_0_0__0__Impl"
-    // InternalCanvas.g:2538:1: rule__EnumEnd__Group_0_0__0__Impl : ( 'where' ) ;
-    public final void rule__EnumEnd__Group_0_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:2542:1: ( ( 'where' ) )
-            // InternalCanvas.g:2543:1: ( 'where' )
-            {
-            // InternalCanvas.g:2543:1: ( 'where' )
-            // InternalCanvas.g:2544:2: 'where'
-            {
-             before(grammarAccess.getEnumEndAccess().getWhereKeyword_0_0_0()); 
-            match(input,47,FOLLOW_2); 
-             after(grammarAccess.getEnumEndAccess().getWhereKeyword_0_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EnumEnd__Group_0_0__0__Impl"
-
-
-    // $ANTLR start "rule__EnumEnd__Group_0_0__1"
-    // InternalCanvas.g:2553:1: rule__EnumEnd__Group_0_0__1 : rule__EnumEnd__Group_0_0__1__Impl ;
-    public final void rule__EnumEnd__Group_0_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:2557:1: ( rule__EnumEnd__Group_0_0__1__Impl )
-            // InternalCanvas.g:2558:2: rule__EnumEnd__Group_0_0__1__Impl
+            // InternalCanvas.g:2331:1: ( rule__EnumEnd__Group__2__Impl )
+            // InternalCanvas.g:2332:2: rule__EnumEnd__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__EnumEnd__Group_0_0__1__Impl();
+            rule__EnumEnd__Group__2__Impl();
 
             state._fsp--;
 
@@ -8141,25 +7251,35 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EnumEnd__Group_0_0__1"
+    // $ANTLR end "rule__EnumEnd__Group__2"
 
 
-    // $ANTLR start "rule__EnumEnd__Group_0_0__1__Impl"
-    // InternalCanvas.g:2564:1: rule__EnumEnd__Group_0_0__1__Impl : ( ':' ) ;
-    public final void rule__EnumEnd__Group_0_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EnumEnd__Group__2__Impl"
+    // InternalCanvas.g:2338:1: rule__EnumEnd__Group__2__Impl : ( ( rule__EnumEnd__WhereAssignment_2 ) ) ;
+    public final void rule__EnumEnd__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2568:1: ( ( ':' ) )
-            // InternalCanvas.g:2569:1: ( ':' )
+            // InternalCanvas.g:2342:1: ( ( ( rule__EnumEnd__WhereAssignment_2 ) ) )
+            // InternalCanvas.g:2343:1: ( ( rule__EnumEnd__WhereAssignment_2 ) )
             {
-            // InternalCanvas.g:2569:1: ( ':' )
-            // InternalCanvas.g:2570:2: ':'
+            // InternalCanvas.g:2343:1: ( ( rule__EnumEnd__WhereAssignment_2 ) )
+            // InternalCanvas.g:2344:2: ( rule__EnumEnd__WhereAssignment_2 )
             {
-             before(grammarAccess.getEnumEndAccess().getColonKeyword_0_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getEnumEndAccess().getColonKeyword_0_0_1()); 
+             before(grammarAccess.getEnumEndAccess().getWhereAssignment_2()); 
+            // InternalCanvas.g:2345:2: ( rule__EnumEnd__WhereAssignment_2 )
+            // InternalCanvas.g:2345:3: rule__EnumEnd__WhereAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__EnumEnd__WhereAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getEnumEndAccess().getWhereAssignment_2()); 
 
             }
 
@@ -8178,20 +7298,20 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EnumEnd__Group_0_0__1__Impl"
+    // $ANTLR end "rule__EnumEnd__Group__2__Impl"
 
 
     // $ANTLR start "rule__Connectors__Group__0"
-    // InternalCanvas.g:2580:1: rule__Connectors__Group__0 : rule__Connectors__Group__0__Impl rule__Connectors__Group__1 ;
+    // InternalCanvas.g:2354:1: rule__Connectors__Group__0 : rule__Connectors__Group__0__Impl rule__Connectors__Group__1 ;
     public final void rule__Connectors__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2584:1: ( rule__Connectors__Group__0__Impl rule__Connectors__Group__1 )
-            // InternalCanvas.g:2585:2: rule__Connectors__Group__0__Impl rule__Connectors__Group__1
+            // InternalCanvas.g:2358:1: ( rule__Connectors__Group__0__Impl rule__Connectors__Group__1 )
+            // InternalCanvas.g:2359:2: rule__Connectors__Group__0__Impl rule__Connectors__Group__1
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_23);
             rule__Connectors__Group__0__Impl();
 
             state._fsp--;
@@ -8220,21 +7340,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connectors__Group__0__Impl"
-    // InternalCanvas.g:2592:1: rule__Connectors__Group__0__Impl : ( () ) ;
+    // InternalCanvas.g:2366:1: rule__Connectors__Group__0__Impl : ( () ) ;
     public final void rule__Connectors__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2596:1: ( ( () ) )
-            // InternalCanvas.g:2597:1: ( () )
+            // InternalCanvas.g:2370:1: ( ( () ) )
+            // InternalCanvas.g:2371:1: ( () )
             {
-            // InternalCanvas.g:2597:1: ( () )
-            // InternalCanvas.g:2598:2: ()
+            // InternalCanvas.g:2371:1: ( () )
+            // InternalCanvas.g:2372:2: ()
             {
              before(grammarAccess.getConnectorsAccess().getConnectorsAction_0()); 
-            // InternalCanvas.g:2599:2: ()
-            // InternalCanvas.g:2599:3: 
+            // InternalCanvas.g:2373:2: ()
+            // InternalCanvas.g:2373:3: 
             {
             }
 
@@ -8257,16 +7377,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connectors__Group__1"
-    // InternalCanvas.g:2607:1: rule__Connectors__Group__1 : rule__Connectors__Group__1__Impl rule__Connectors__Group__2 ;
+    // InternalCanvas.g:2381:1: rule__Connectors__Group__1 : rule__Connectors__Group__1__Impl rule__Connectors__Group__2 ;
     public final void rule__Connectors__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2611:1: ( rule__Connectors__Group__1__Impl rule__Connectors__Group__2 )
-            // InternalCanvas.g:2612:2: rule__Connectors__Group__1__Impl rule__Connectors__Group__2
+            // InternalCanvas.g:2385:1: ( rule__Connectors__Group__1__Impl rule__Connectors__Group__2 )
+            // InternalCanvas.g:2386:2: rule__Connectors__Group__1__Impl rule__Connectors__Group__2
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_5);
             rule__Connectors__Group__1__Impl();
 
             state._fsp--;
@@ -8295,31 +7415,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connectors__Group__1__Impl"
-    // InternalCanvas.g:2619:1: rule__Connectors__Group__1__Impl : ( ( rule__Connectors__Alternatives_1 ) ) ;
+    // InternalCanvas.g:2393:1: rule__Connectors__Group__1__Impl : ( 'connectors' ) ;
     public final void rule__Connectors__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2623:1: ( ( ( rule__Connectors__Alternatives_1 ) ) )
-            // InternalCanvas.g:2624:1: ( ( rule__Connectors__Alternatives_1 ) )
+            // InternalCanvas.g:2397:1: ( ( 'connectors' ) )
+            // InternalCanvas.g:2398:1: ( 'connectors' )
             {
-            // InternalCanvas.g:2624:1: ( ( rule__Connectors__Alternatives_1 ) )
-            // InternalCanvas.g:2625:2: ( rule__Connectors__Alternatives_1 )
+            // InternalCanvas.g:2398:1: ( 'connectors' )
+            // InternalCanvas.g:2399:2: 'connectors'
             {
-             before(grammarAccess.getConnectorsAccess().getAlternatives_1()); 
-            // InternalCanvas.g:2626:2: ( rule__Connectors__Alternatives_1 )
-            // InternalCanvas.g:2626:3: rule__Connectors__Alternatives_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Connectors__Alternatives_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getConnectorsAccess().getAlternatives_1()); 
+             before(grammarAccess.getConnectorsAccess().getConnectorsKeyword_1()); 
+            match(input,105,FOLLOW_2); 
+             after(grammarAccess.getConnectorsAccess().getConnectorsKeyword_1()); 
 
             }
 
@@ -8342,17 +7452,22 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connectors__Group__2"
-    // InternalCanvas.g:2634:1: rule__Connectors__Group__2 : rule__Connectors__Group__2__Impl ;
+    // InternalCanvas.g:2408:1: rule__Connectors__Group__2 : rule__Connectors__Group__2__Impl rule__Connectors__Group__3 ;
     public final void rule__Connectors__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2638:1: ( rule__Connectors__Group__2__Impl )
-            // InternalCanvas.g:2639:2: rule__Connectors__Group__2__Impl
+            // InternalCanvas.g:2412:1: ( rule__Connectors__Group__2__Impl rule__Connectors__Group__3 )
+            // InternalCanvas.g:2413:2: rule__Connectors__Group__2__Impl rule__Connectors__Group__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_24);
             rule__Connectors__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Connectors__Group__3();
 
             state._fsp--;
 
@@ -8375,49 +7490,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connectors__Group__2__Impl"
-    // InternalCanvas.g:2645:1: rule__Connectors__Group__2__Impl : ( ( rule__Connectors__ConnectorsAssignment_2 )* ) ;
+    // InternalCanvas.g:2420:1: rule__Connectors__Group__2__Impl : ( ':' ) ;
     public final void rule__Connectors__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2649:1: ( ( ( rule__Connectors__ConnectorsAssignment_2 )* ) )
-            // InternalCanvas.g:2650:1: ( ( rule__Connectors__ConnectorsAssignment_2 )* )
+            // InternalCanvas.g:2424:1: ( ( ':' ) )
+            // InternalCanvas.g:2425:1: ( ':' )
             {
-            // InternalCanvas.g:2650:1: ( ( rule__Connectors__ConnectorsAssignment_2 )* )
-            // InternalCanvas.g:2651:2: ( rule__Connectors__ConnectorsAssignment_2 )*
+            // InternalCanvas.g:2425:1: ( ':' )
+            // InternalCanvas.g:2426:2: ':'
             {
-             before(grammarAccess.getConnectorsAccess().getConnectorsAssignment_2()); 
-            // InternalCanvas.g:2652:2: ( rule__Connectors__ConnectorsAssignment_2 )*
-            loop34:
-            do {
-                int alt34=2;
-                int LA34_0 = input.LA(1);
-
-                if ( (LA34_0==30||LA34_0==49) ) {
-                    alt34=1;
-                }
-
-
-                switch (alt34) {
-            	case 1 :
-            	    // InternalCanvas.g:2652:3: rule__Connectors__ConnectorsAssignment_2
-            	    {
-            	    pushFollow(FOLLOW_24);
-            	    rule__Connectors__ConnectorsAssignment_2();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop34;
-                }
-            } while (true);
-
-             after(grammarAccess.getConnectorsAccess().getConnectorsAssignment_2()); 
+             before(grammarAccess.getConnectorsAccess().getColonKeyword_2()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getConnectorsAccess().getColonKeyword_2()); 
 
             }
 
@@ -8439,93 +7526,18 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Connectors__Group__2__Impl"
 
 
-    // $ANTLR start "rule__Connectors__Group_1_0__0"
-    // InternalCanvas.g:2661:1: rule__Connectors__Group_1_0__0 : rule__Connectors__Group_1_0__0__Impl rule__Connectors__Group_1_0__1 ;
-    public final void rule__Connectors__Group_1_0__0() throws RecognitionException {
+    // $ANTLR start "rule__Connectors__Group__3"
+    // InternalCanvas.g:2435:1: rule__Connectors__Group__3 : rule__Connectors__Group__3__Impl ;
+    public final void rule__Connectors__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2665:1: ( rule__Connectors__Group_1_0__0__Impl rule__Connectors__Group_1_0__1 )
-            // InternalCanvas.g:2666:2: rule__Connectors__Group_1_0__0__Impl rule__Connectors__Group_1_0__1
-            {
-            pushFollow(FOLLOW_6);
-            rule__Connectors__Group_1_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Connectors__Group_1_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Connectors__Group_1_0__0"
-
-
-    // $ANTLR start "rule__Connectors__Group_1_0__0__Impl"
-    // InternalCanvas.g:2673:1: rule__Connectors__Group_1_0__0__Impl : ( 'connectors' ) ;
-    public final void rule__Connectors__Group_1_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:2677:1: ( ( 'connectors' ) )
-            // InternalCanvas.g:2678:1: ( 'connectors' )
-            {
-            // InternalCanvas.g:2678:1: ( 'connectors' )
-            // InternalCanvas.g:2679:2: 'connectors'
-            {
-             before(grammarAccess.getConnectorsAccess().getConnectorsKeyword_1_0_0()); 
-            match(input,48,FOLLOW_2); 
-             after(grammarAccess.getConnectorsAccess().getConnectorsKeyword_1_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Connectors__Group_1_0__0__Impl"
-
-
-    // $ANTLR start "rule__Connectors__Group_1_0__1"
-    // InternalCanvas.g:2688:1: rule__Connectors__Group_1_0__1 : rule__Connectors__Group_1_0__1__Impl ;
-    public final void rule__Connectors__Group_1_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:2692:1: ( rule__Connectors__Group_1_0__1__Impl )
-            // InternalCanvas.g:2693:2: rule__Connectors__Group_1_0__1__Impl
+            // InternalCanvas.g:2439:1: ( rule__Connectors__Group__3__Impl )
+            // InternalCanvas.g:2440:2: rule__Connectors__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Connectors__Group_1_0__1__Impl();
+            rule__Connectors__Group__3__Impl();
 
             state._fsp--;
 
@@ -8544,25 +7556,53 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Connectors__Group_1_0__1"
+    // $ANTLR end "rule__Connectors__Group__3"
 
 
-    // $ANTLR start "rule__Connectors__Group_1_0__1__Impl"
-    // InternalCanvas.g:2699:1: rule__Connectors__Group_1_0__1__Impl : ( ':' ) ;
-    public final void rule__Connectors__Group_1_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Connectors__Group__3__Impl"
+    // InternalCanvas.g:2446:1: rule__Connectors__Group__3__Impl : ( ( rule__Connectors__ConnectorsAssignment_3 )* ) ;
+    public final void rule__Connectors__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2703:1: ( ( ':' ) )
-            // InternalCanvas.g:2704:1: ( ':' )
+            // InternalCanvas.g:2450:1: ( ( ( rule__Connectors__ConnectorsAssignment_3 )* ) )
+            // InternalCanvas.g:2451:1: ( ( rule__Connectors__ConnectorsAssignment_3 )* )
             {
-            // InternalCanvas.g:2704:1: ( ':' )
-            // InternalCanvas.g:2705:2: ':'
+            // InternalCanvas.g:2451:1: ( ( rule__Connectors__ConnectorsAssignment_3 )* )
+            // InternalCanvas.g:2452:2: ( rule__Connectors__ConnectorsAssignment_3 )*
             {
-             before(grammarAccess.getConnectorsAccess().getColonKeyword_1_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getConnectorsAccess().getColonKeyword_1_0_1()); 
+             before(grammarAccess.getConnectorsAccess().getConnectorsAssignment_3()); 
+            // InternalCanvas.g:2453:2: ( rule__Connectors__ConnectorsAssignment_3 )*
+            loop11:
+            do {
+                int alt11=2;
+                int LA11_0 = input.LA(1);
+
+                if ( (LA11_0==91) ) {
+                    alt11=1;
+                }
+
+
+                switch (alt11) {
+            	case 1 :
+            	    // InternalCanvas.g:2453:3: rule__Connectors__ConnectorsAssignment_3
+            	    {
+            	    pushFollow(FOLLOW_25);
+            	    rule__Connectors__ConnectorsAssignment_3();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop11;
+                }
+            } while (true);
+
+             after(grammarAccess.getConnectorsAccess().getConnectorsAssignment_3()); 
 
             }
 
@@ -8581,20 +7621,20 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Connectors__Group_1_0__1__Impl"
+    // $ANTLR end "rule__Connectors__Group__3__Impl"
 
 
     // $ANTLR start "rule__Connector__Group__0"
-    // InternalCanvas.g:2715:1: rule__Connector__Group__0 : rule__Connector__Group__0__Impl rule__Connector__Group__1 ;
+    // InternalCanvas.g:2462:1: rule__Connector__Group__0 : rule__Connector__Group__0__Impl rule__Connector__Group__1 ;
     public final void rule__Connector__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2719:1: ( rule__Connector__Group__0__Impl rule__Connector__Group__1 )
-            // InternalCanvas.g:2720:2: rule__Connector__Group__0__Impl rule__Connector__Group__1
+            // InternalCanvas.g:2466:1: ( rule__Connector__Group__0__Impl rule__Connector__Group__1 )
+            // InternalCanvas.g:2467:2: rule__Connector__Group__0__Impl rule__Connector__Group__1
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_5);
             rule__Connector__Group__0__Impl();
 
             state._fsp--;
@@ -8623,31 +7663,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connector__Group__0__Impl"
-    // InternalCanvas.g:2727:1: rule__Connector__Group__0__Impl : ( ( rule__Connector__Alternatives_0 ) ) ;
+    // InternalCanvas.g:2474:1: rule__Connector__Group__0__Impl : ( 'connector' ) ;
     public final void rule__Connector__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2731:1: ( ( ( rule__Connector__Alternatives_0 ) ) )
-            // InternalCanvas.g:2732:1: ( ( rule__Connector__Alternatives_0 ) )
+            // InternalCanvas.g:2478:1: ( ( 'connector' ) )
+            // InternalCanvas.g:2479:1: ( 'connector' )
             {
-            // InternalCanvas.g:2732:1: ( ( rule__Connector__Alternatives_0 ) )
-            // InternalCanvas.g:2733:2: ( rule__Connector__Alternatives_0 )
+            // InternalCanvas.g:2479:1: ( 'connector' )
+            // InternalCanvas.g:2480:2: 'connector'
             {
-             before(grammarAccess.getConnectorAccess().getAlternatives_0()); 
-            // InternalCanvas.g:2734:2: ( rule__Connector__Alternatives_0 )
-            // InternalCanvas.g:2734:3: rule__Connector__Alternatives_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__Connector__Alternatives_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getConnectorAccess().getAlternatives_0()); 
+             before(grammarAccess.getConnectorAccess().getConnectorKeyword_0()); 
+            match(input,91,FOLLOW_2); 
+             after(grammarAccess.getConnectorAccess().getConnectorKeyword_0()); 
 
             }
 
@@ -8670,16 +7700,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connector__Group__1"
-    // InternalCanvas.g:2742:1: rule__Connector__Group__1 : rule__Connector__Group__1__Impl rule__Connector__Group__2 ;
+    // InternalCanvas.g:2489:1: rule__Connector__Group__1 : rule__Connector__Group__1__Impl rule__Connector__Group__2 ;
     public final void rule__Connector__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2746:1: ( rule__Connector__Group__1__Impl rule__Connector__Group__2 )
-            // InternalCanvas.g:2747:2: rule__Connector__Group__1__Impl rule__Connector__Group__2
+            // InternalCanvas.g:2493:1: ( rule__Connector__Group__1__Impl rule__Connector__Group__2 )
+            // InternalCanvas.g:2494:2: rule__Connector__Group__1__Impl rule__Connector__Group__2
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_14);
             rule__Connector__Group__1__Impl();
 
             state._fsp--;
@@ -8708,31 +7738,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connector__Group__1__Impl"
-    // InternalCanvas.g:2754:1: rule__Connector__Group__1__Impl : ( ( rule__Connector__NameAssignment_1 ) ) ;
+    // InternalCanvas.g:2501:1: rule__Connector__Group__1__Impl : ( ':' ) ;
     public final void rule__Connector__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2758:1: ( ( ( rule__Connector__NameAssignment_1 ) ) )
-            // InternalCanvas.g:2759:1: ( ( rule__Connector__NameAssignment_1 ) )
+            // InternalCanvas.g:2505:1: ( ( ':' ) )
+            // InternalCanvas.g:2506:1: ( ':' )
             {
-            // InternalCanvas.g:2759:1: ( ( rule__Connector__NameAssignment_1 ) )
-            // InternalCanvas.g:2760:2: ( rule__Connector__NameAssignment_1 )
+            // InternalCanvas.g:2506:1: ( ':' )
+            // InternalCanvas.g:2507:2: ':'
             {
-             before(grammarAccess.getConnectorAccess().getNameAssignment_1()); 
-            // InternalCanvas.g:2761:2: ( rule__Connector__NameAssignment_1 )
-            // InternalCanvas.g:2761:3: rule__Connector__NameAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Connector__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getConnectorAccess().getNameAssignment_1()); 
+             before(grammarAccess.getConnectorAccess().getColonKeyword_1()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getConnectorAccess().getColonKeyword_1()); 
 
             }
 
@@ -8755,16 +7775,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connector__Group__2"
-    // InternalCanvas.g:2769:1: rule__Connector__Group__2 : rule__Connector__Group__2__Impl rule__Connector__Group__3 ;
+    // InternalCanvas.g:2516:1: rule__Connector__Group__2 : rule__Connector__Group__2__Impl rule__Connector__Group__3 ;
     public final void rule__Connector__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2773:1: ( rule__Connector__Group__2__Impl rule__Connector__Group__3 )
-            // InternalCanvas.g:2774:2: rule__Connector__Group__2__Impl rule__Connector__Group__3
+            // InternalCanvas.g:2520:1: ( rule__Connector__Group__2__Impl rule__Connector__Group__3 )
+            // InternalCanvas.g:2521:2: rule__Connector__Group__2__Impl rule__Connector__Group__3
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_26);
             rule__Connector__Group__2__Impl();
 
             state._fsp--;
@@ -8793,31 +7813,31 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connector__Group__2__Impl"
-    // InternalCanvas.g:2781:1: rule__Connector__Group__2__Impl : ( ( rule__Connector__Alternatives_2 ) ) ;
+    // InternalCanvas.g:2528:1: rule__Connector__Group__2__Impl : ( ( rule__Connector__NameAssignment_2 ) ) ;
     public final void rule__Connector__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2785:1: ( ( ( rule__Connector__Alternatives_2 ) ) )
-            // InternalCanvas.g:2786:1: ( ( rule__Connector__Alternatives_2 ) )
+            // InternalCanvas.g:2532:1: ( ( ( rule__Connector__NameAssignment_2 ) ) )
+            // InternalCanvas.g:2533:1: ( ( rule__Connector__NameAssignment_2 ) )
             {
-            // InternalCanvas.g:2786:1: ( ( rule__Connector__Alternatives_2 ) )
-            // InternalCanvas.g:2787:2: ( rule__Connector__Alternatives_2 )
+            // InternalCanvas.g:2533:1: ( ( rule__Connector__NameAssignment_2 ) )
+            // InternalCanvas.g:2534:2: ( rule__Connector__NameAssignment_2 )
             {
-             before(grammarAccess.getConnectorAccess().getAlternatives_2()); 
-            // InternalCanvas.g:2788:2: ( rule__Connector__Alternatives_2 )
-            // InternalCanvas.g:2788:3: rule__Connector__Alternatives_2
+             before(grammarAccess.getConnectorAccess().getNameAssignment_2()); 
+            // InternalCanvas.g:2535:2: ( rule__Connector__NameAssignment_2 )
+            // InternalCanvas.g:2535:3: rule__Connector__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__Connector__Alternatives_2();
+            rule__Connector__NameAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getConnectorAccess().getAlternatives_2()); 
+             after(grammarAccess.getConnectorAccess().getNameAssignment_2()); 
 
             }
 
@@ -8840,16 +7860,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connector__Group__3"
-    // InternalCanvas.g:2796:1: rule__Connector__Group__3 : rule__Connector__Group__3__Impl rule__Connector__Group__4 ;
+    // InternalCanvas.g:2543:1: rule__Connector__Group__3 : rule__Connector__Group__3__Impl rule__Connector__Group__4 ;
     public final void rule__Connector__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2800:1: ( rule__Connector__Group__3__Impl rule__Connector__Group__4 )
-            // InternalCanvas.g:2801:2: rule__Connector__Group__3__Impl rule__Connector__Group__4
+            // InternalCanvas.g:2547:1: ( rule__Connector__Group__3__Impl rule__Connector__Group__4 )
+            // InternalCanvas.g:2548:2: rule__Connector__Group__3__Impl rule__Connector__Group__4
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_5);
             rule__Connector__Group__3__Impl();
 
             state._fsp--;
@@ -8878,31 +7898,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connector__Group__3__Impl"
-    // InternalCanvas.g:2808:1: rule__Connector__Group__3__Impl : ( ( rule__Connector__RepresentsAssignment_3 ) ) ;
+    // InternalCanvas.g:2555:1: rule__Connector__Group__3__Impl : ( 'render' ) ;
     public final void rule__Connector__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2812:1: ( ( ( rule__Connector__RepresentsAssignment_3 ) ) )
-            // InternalCanvas.g:2813:1: ( ( rule__Connector__RepresentsAssignment_3 ) )
+            // InternalCanvas.g:2559:1: ( ( 'render' ) )
+            // InternalCanvas.g:2560:1: ( 'render' )
             {
-            // InternalCanvas.g:2813:1: ( ( rule__Connector__RepresentsAssignment_3 ) )
-            // InternalCanvas.g:2814:2: ( rule__Connector__RepresentsAssignment_3 )
+            // InternalCanvas.g:2560:1: ( 'render' )
+            // InternalCanvas.g:2561:2: 'render'
             {
-             before(grammarAccess.getConnectorAccess().getRepresentsAssignment_3()); 
-            // InternalCanvas.g:2815:2: ( rule__Connector__RepresentsAssignment_3 )
-            // InternalCanvas.g:2815:3: rule__Connector__RepresentsAssignment_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__Connector__RepresentsAssignment_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getConnectorAccess().getRepresentsAssignment_3()); 
+             before(grammarAccess.getConnectorAccess().getRenderKeyword_3()); 
+            match(input,96,FOLLOW_2); 
+             after(grammarAccess.getConnectorAccess().getRenderKeyword_3()); 
 
             }
 
@@ -8925,16 +7935,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connector__Group__4"
-    // InternalCanvas.g:2823:1: rule__Connector__Group__4 : rule__Connector__Group__4__Impl rule__Connector__Group__5 ;
+    // InternalCanvas.g:2570:1: rule__Connector__Group__4 : rule__Connector__Group__4__Impl rule__Connector__Group__5 ;
     public final void rule__Connector__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2827:1: ( rule__Connector__Group__4__Impl rule__Connector__Group__5 )
-            // InternalCanvas.g:2828:2: rule__Connector__Group__4__Impl rule__Connector__Group__5
+            // InternalCanvas.g:2574:1: ( rule__Connector__Group__4__Impl rule__Connector__Group__5 )
+            // InternalCanvas.g:2575:2: rule__Connector__Group__4__Impl rule__Connector__Group__5
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_16);
             rule__Connector__Group__4__Impl();
 
             state._fsp--;
@@ -8963,31 +7973,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connector__Group__4__Impl"
-    // InternalCanvas.g:2835:1: rule__Connector__Group__4__Impl : ( ( rule__Connector__PolylineAssignment_4 ) ) ;
+    // InternalCanvas.g:2582:1: rule__Connector__Group__4__Impl : ( ':' ) ;
     public final void rule__Connector__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2839:1: ( ( ( rule__Connector__PolylineAssignment_4 ) ) )
-            // InternalCanvas.g:2840:1: ( ( rule__Connector__PolylineAssignment_4 ) )
+            // InternalCanvas.g:2586:1: ( ( ':' ) )
+            // InternalCanvas.g:2587:1: ( ':' )
             {
-            // InternalCanvas.g:2840:1: ( ( rule__Connector__PolylineAssignment_4 ) )
-            // InternalCanvas.g:2841:2: ( rule__Connector__PolylineAssignment_4 )
+            // InternalCanvas.g:2587:1: ( ':' )
+            // InternalCanvas.g:2588:2: ':'
             {
-             before(grammarAccess.getConnectorAccess().getPolylineAssignment_4()); 
-            // InternalCanvas.g:2842:2: ( rule__Connector__PolylineAssignment_4 )
-            // InternalCanvas.g:2842:3: rule__Connector__PolylineAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__Connector__PolylineAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getConnectorAccess().getPolylineAssignment_4()); 
+             before(grammarAccess.getConnectorAccess().getColonKeyword_4()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getConnectorAccess().getColonKeyword_4()); 
 
             }
 
@@ -9010,16 +8010,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connector__Group__5"
-    // InternalCanvas.g:2850:1: rule__Connector__Group__5 : rule__Connector__Group__5__Impl rule__Connector__Group__6 ;
+    // InternalCanvas.g:2597:1: rule__Connector__Group__5 : rule__Connector__Group__5__Impl rule__Connector__Group__6 ;
     public final void rule__Connector__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2854:1: ( rule__Connector__Group__5__Impl rule__Connector__Group__6 )
-            // InternalCanvas.g:2855:2: rule__Connector__Group__5__Impl rule__Connector__Group__6
+            // InternalCanvas.g:2601:1: ( rule__Connector__Group__5__Impl rule__Connector__Group__6 )
+            // InternalCanvas.g:2602:2: rule__Connector__Group__5__Impl rule__Connector__Group__6
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_6);
             rule__Connector__Group__5__Impl();
 
             state._fsp--;
@@ -9048,42 +8048,31 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connector__Group__5__Impl"
-    // InternalCanvas.g:2862:1: rule__Connector__Group__5__Impl : ( ( rule__Connector__AnchorsAssignment_5 )? ) ;
+    // InternalCanvas.g:2609:1: rule__Connector__Group__5__Impl : ( ( rule__Connector__TypeAssignment_5 ) ) ;
     public final void rule__Connector__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2866:1: ( ( ( rule__Connector__AnchorsAssignment_5 )? ) )
-            // InternalCanvas.g:2867:1: ( ( rule__Connector__AnchorsAssignment_5 )? )
+            // InternalCanvas.g:2613:1: ( ( ( rule__Connector__TypeAssignment_5 ) ) )
+            // InternalCanvas.g:2614:1: ( ( rule__Connector__TypeAssignment_5 ) )
             {
-            // InternalCanvas.g:2867:1: ( ( rule__Connector__AnchorsAssignment_5 )? )
-            // InternalCanvas.g:2868:2: ( rule__Connector__AnchorsAssignment_5 )?
+            // InternalCanvas.g:2614:1: ( ( rule__Connector__TypeAssignment_5 ) )
+            // InternalCanvas.g:2615:2: ( rule__Connector__TypeAssignment_5 )
             {
-             before(grammarAccess.getConnectorAccess().getAnchorsAssignment_5()); 
-            // InternalCanvas.g:2869:2: ( rule__Connector__AnchorsAssignment_5 )?
-            int alt35=2;
-            int LA35_0 = input.LA(1);
+             before(grammarAccess.getConnectorAccess().getTypeAssignment_5()); 
+            // InternalCanvas.g:2616:2: ( rule__Connector__TypeAssignment_5 )
+            // InternalCanvas.g:2616:3: rule__Connector__TypeAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__Connector__TypeAssignment_5();
 
-            if ( (LA35_0==31||LA35_0==50) ) {
-                alt35=1;
-            }
-            switch (alt35) {
-                case 1 :
-                    // InternalCanvas.g:2869:3: rule__Connector__AnchorsAssignment_5
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Connector__AnchorsAssignment_5();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getConnectorAccess().getAnchorsAssignment_5()); 
+             after(grammarAccess.getConnectorAccess().getTypeAssignment_5()); 
 
             }
 
@@ -9106,17 +8095,22 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connector__Group__6"
-    // InternalCanvas.g:2877:1: rule__Connector__Group__6 : rule__Connector__Group__6__Impl ;
+    // InternalCanvas.g:2624:1: rule__Connector__Group__6 : rule__Connector__Group__6__Impl rule__Connector__Group__7 ;
     public final void rule__Connector__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2881:1: ( rule__Connector__Group__6__Impl )
-            // InternalCanvas.g:2882:2: rule__Connector__Group__6__Impl
+            // InternalCanvas.g:2628:1: ( rule__Connector__Group__6__Impl rule__Connector__Group__7 )
+            // InternalCanvas.g:2629:2: rule__Connector__Group__6__Impl rule__Connector__Group__7
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_27);
             rule__Connector__Group__6__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Connector__Group__7();
 
             state._fsp--;
 
@@ -9139,31 +8133,31 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Connector__Group__6__Impl"
-    // InternalCanvas.g:2888:1: rule__Connector__Group__6__Impl : ( ( rule__Connector__TextsAssignment_6 ) ) ;
+    // InternalCanvas.g:2636:1: rule__Connector__Group__6__Impl : ( ( rule__Connector__RepresentsAssignment_6 ) ) ;
     public final void rule__Connector__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2892:1: ( ( ( rule__Connector__TextsAssignment_6 ) ) )
-            // InternalCanvas.g:2893:1: ( ( rule__Connector__TextsAssignment_6 ) )
+            // InternalCanvas.g:2640:1: ( ( ( rule__Connector__RepresentsAssignment_6 ) ) )
+            // InternalCanvas.g:2641:1: ( ( rule__Connector__RepresentsAssignment_6 ) )
             {
-            // InternalCanvas.g:2893:1: ( ( rule__Connector__TextsAssignment_6 ) )
-            // InternalCanvas.g:2894:2: ( rule__Connector__TextsAssignment_6 )
+            // InternalCanvas.g:2641:1: ( ( rule__Connector__RepresentsAssignment_6 ) )
+            // InternalCanvas.g:2642:2: ( rule__Connector__RepresentsAssignment_6 )
             {
-             before(grammarAccess.getConnectorAccess().getTextsAssignment_6()); 
-            // InternalCanvas.g:2895:2: ( rule__Connector__TextsAssignment_6 )
-            // InternalCanvas.g:2895:3: rule__Connector__TextsAssignment_6
+             before(grammarAccess.getConnectorAccess().getRepresentsAssignment_6()); 
+            // InternalCanvas.g:2643:2: ( rule__Connector__RepresentsAssignment_6 )
+            // InternalCanvas.g:2643:3: rule__Connector__RepresentsAssignment_6
             {
             pushFollow(FOLLOW_2);
-            rule__Connector__TextsAssignment_6();
+            rule__Connector__RepresentsAssignment_6();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getConnectorAccess().getTextsAssignment_6()); 
+             after(grammarAccess.getConnectorAccess().getRepresentsAssignment_6()); 
 
             }
 
@@ -9185,23 +8179,23 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Connector__Group__6__Impl"
 
 
-    // $ANTLR start "rule__Connector__Group_0_0__0"
-    // InternalCanvas.g:2904:1: rule__Connector__Group_0_0__0 : rule__Connector__Group_0_0__0__Impl rule__Connector__Group_0_0__1 ;
-    public final void rule__Connector__Group_0_0__0() throws RecognitionException {
+    // $ANTLR start "rule__Connector__Group__7"
+    // InternalCanvas.g:2651:1: rule__Connector__Group__7 : rule__Connector__Group__7__Impl rule__Connector__Group__8 ;
+    public final void rule__Connector__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2908:1: ( rule__Connector__Group_0_0__0__Impl rule__Connector__Group_0_0__1 )
-            // InternalCanvas.g:2909:2: rule__Connector__Group_0_0__0__Impl rule__Connector__Group_0_0__1
+            // InternalCanvas.g:2655:1: ( rule__Connector__Group__7__Impl rule__Connector__Group__8 )
+            // InternalCanvas.g:2656:2: rule__Connector__Group__7__Impl rule__Connector__Group__8
             {
-            pushFollow(FOLLOW_6);
-            rule__Connector__Group_0_0__0__Impl();
+            pushFollow(FOLLOW_28);
+            rule__Connector__Group__7__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Connector__Group_0_0__1();
+            rule__Connector__Group__8();
 
             state._fsp--;
 
@@ -9220,95 +8214,35 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Connector__Group_0_0__0"
+    // $ANTLR end "rule__Connector__Group__7"
 
 
-    // $ANTLR start "rule__Connector__Group_0_0__0__Impl"
-    // InternalCanvas.g:2916:1: rule__Connector__Group_0_0__0__Impl : ( 'connector' ) ;
-    public final void rule__Connector__Group_0_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:2920:1: ( ( 'connector' ) )
-            // InternalCanvas.g:2921:1: ( 'connector' )
-            {
-            // InternalCanvas.g:2921:1: ( 'connector' )
-            // InternalCanvas.g:2922:2: 'connector'
-            {
-             before(grammarAccess.getConnectorAccess().getConnectorKeyword_0_0_0()); 
-            match(input,49,FOLLOW_2); 
-             after(grammarAccess.getConnectorAccess().getConnectorKeyword_0_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Connector__Group_0_0__0__Impl"
-
-
-    // $ANTLR start "rule__Connector__Group_0_0__1"
-    // InternalCanvas.g:2931:1: rule__Connector__Group_0_0__1 : rule__Connector__Group_0_0__1__Impl ;
-    public final void rule__Connector__Group_0_0__1() throws RecognitionException {
+    // $ANTLR start "rule__Connector__Group__7__Impl"
+    // InternalCanvas.g:2663:1: rule__Connector__Group__7__Impl : ( ( rule__Connector__PolylineAssignment_7 ) ) ;
+    public final void rule__Connector__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2935:1: ( rule__Connector__Group_0_0__1__Impl )
-            // InternalCanvas.g:2936:2: rule__Connector__Group_0_0__1__Impl
+            // InternalCanvas.g:2667:1: ( ( ( rule__Connector__PolylineAssignment_7 ) ) )
+            // InternalCanvas.g:2668:1: ( ( rule__Connector__PolylineAssignment_7 ) )
+            {
+            // InternalCanvas.g:2668:1: ( ( rule__Connector__PolylineAssignment_7 ) )
+            // InternalCanvas.g:2669:2: ( rule__Connector__PolylineAssignment_7 )
+            {
+             before(grammarAccess.getConnectorAccess().getPolylineAssignment_7()); 
+            // InternalCanvas.g:2670:2: ( rule__Connector__PolylineAssignment_7 )
+            // InternalCanvas.g:2670:3: rule__Connector__PolylineAssignment_7
             {
             pushFollow(FOLLOW_2);
-            rule__Connector__Group_0_0__1__Impl();
+            rule__Connector__PolylineAssignment_7();
 
             state._fsp--;
 
 
             }
 
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Connector__Group_0_0__1"
-
-
-    // $ANTLR start "rule__Connector__Group_0_0__1__Impl"
-    // InternalCanvas.g:2942:1: rule__Connector__Group_0_0__1__Impl : ( ':' ) ;
-    public final void rule__Connector__Group_0_0__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:2946:1: ( ( ':' ) )
-            // InternalCanvas.g:2947:1: ( ':' )
-            {
-            // InternalCanvas.g:2947:1: ( ':' )
-            // InternalCanvas.g:2948:2: ':'
-            {
-             before(grammarAccess.getConnectorAccess().getColonKeyword_0_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getConnectorAccess().getColonKeyword_0_0_1()); 
+             after(grammarAccess.getConnectorAccess().getPolylineAssignment_7()); 
 
             }
 
@@ -9327,26 +8261,26 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Connector__Group_0_0__1__Impl"
+    // $ANTLR end "rule__Connector__Group__7__Impl"
 
 
-    // $ANTLR start "rule__Connector__Group_2_0__0"
-    // InternalCanvas.g:2958:1: rule__Connector__Group_2_0__0 : rule__Connector__Group_2_0__0__Impl rule__Connector__Group_2_0__1 ;
-    public final void rule__Connector__Group_2_0__0() throws RecognitionException {
+    // $ANTLR start "rule__Connector__Group__8"
+    // InternalCanvas.g:2678:1: rule__Connector__Group__8 : rule__Connector__Group__8__Impl rule__Connector__Group__9 ;
+    public final void rule__Connector__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2962:1: ( rule__Connector__Group_2_0__0__Impl rule__Connector__Group_2_0__1 )
-            // InternalCanvas.g:2963:2: rule__Connector__Group_2_0__0__Impl rule__Connector__Group_2_0__1
+            // InternalCanvas.g:2682:1: ( rule__Connector__Group__8__Impl rule__Connector__Group__9 )
+            // InternalCanvas.g:2683:2: rule__Connector__Group__8__Impl rule__Connector__Group__9
             {
-            pushFollow(FOLLOW_6);
-            rule__Connector__Group_2_0__0__Impl();
+            pushFollow(FOLLOW_28);
+            rule__Connector__Group__8__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Connector__Group_2_0__1();
+            rule__Connector__Group__9();
 
             state._fsp--;
 
@@ -9365,25 +8299,46 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Connector__Group_2_0__0"
+    // $ANTLR end "rule__Connector__Group__8"
 
 
-    // $ANTLR start "rule__Connector__Group_2_0__0__Impl"
-    // InternalCanvas.g:2970:1: rule__Connector__Group_2_0__0__Impl : ( 'render' ) ;
-    public final void rule__Connector__Group_2_0__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Connector__Group__8__Impl"
+    // InternalCanvas.g:2690:1: rule__Connector__Group__8__Impl : ( ( rule__Connector__AnchorsAssignment_8 )? ) ;
+    public final void rule__Connector__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2974:1: ( ( 'render' ) )
-            // InternalCanvas.g:2975:1: ( 'render' )
+            // InternalCanvas.g:2694:1: ( ( ( rule__Connector__AnchorsAssignment_8 )? ) )
+            // InternalCanvas.g:2695:1: ( ( rule__Connector__AnchorsAssignment_8 )? )
             {
-            // InternalCanvas.g:2975:1: ( 'render' )
-            // InternalCanvas.g:2976:2: 'render'
+            // InternalCanvas.g:2695:1: ( ( rule__Connector__AnchorsAssignment_8 )? )
+            // InternalCanvas.g:2696:2: ( rule__Connector__AnchorsAssignment_8 )?
             {
-             before(grammarAccess.getConnectorAccess().getRenderKeyword_2_0_0()); 
-            match(input,38,FOLLOW_2); 
-             after(grammarAccess.getConnectorAccess().getRenderKeyword_2_0_0()); 
+             before(grammarAccess.getConnectorAccess().getAnchorsAssignment_8()); 
+            // InternalCanvas.g:2697:2: ( rule__Connector__AnchorsAssignment_8 )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
+
+            if ( (LA12_0==106) ) {
+                alt12=1;
+            }
+            switch (alt12) {
+                case 1 :
+                    // InternalCanvas.g:2697:3: rule__Connector__AnchorsAssignment_8
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Connector__AnchorsAssignment_8();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getConnectorAccess().getAnchorsAssignment_8()); 
 
             }
 
@@ -9402,21 +8357,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Connector__Group_2_0__0__Impl"
+    // $ANTLR end "rule__Connector__Group__8__Impl"
 
 
-    // $ANTLR start "rule__Connector__Group_2_0__1"
-    // InternalCanvas.g:2985:1: rule__Connector__Group_2_0__1 : rule__Connector__Group_2_0__1__Impl ;
-    public final void rule__Connector__Group_2_0__1() throws RecognitionException {
+    // $ANTLR start "rule__Connector__Group__9"
+    // InternalCanvas.g:2705:1: rule__Connector__Group__9 : rule__Connector__Group__9__Impl ;
+    public final void rule__Connector__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:2989:1: ( rule__Connector__Group_2_0__1__Impl )
-            // InternalCanvas.g:2990:2: rule__Connector__Group_2_0__1__Impl
+            // InternalCanvas.g:2709:1: ( rule__Connector__Group__9__Impl )
+            // InternalCanvas.g:2710:2: rule__Connector__Group__9__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Connector__Group_2_0__1__Impl();
+            rule__Connector__Group__9__Impl();
 
             state._fsp--;
 
@@ -9435,25 +8390,35 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Connector__Group_2_0__1"
+    // $ANTLR end "rule__Connector__Group__9"
 
 
-    // $ANTLR start "rule__Connector__Group_2_0__1__Impl"
-    // InternalCanvas.g:2996:1: rule__Connector__Group_2_0__1__Impl : ( ':' ) ;
-    public final void rule__Connector__Group_2_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Connector__Group__9__Impl"
+    // InternalCanvas.g:2716:1: rule__Connector__Group__9__Impl : ( ( rule__Connector__TextsAssignment_9 ) ) ;
+    public final void rule__Connector__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3000:1: ( ( ':' ) )
-            // InternalCanvas.g:3001:1: ( ':' )
+            // InternalCanvas.g:2720:1: ( ( ( rule__Connector__TextsAssignment_9 ) ) )
+            // InternalCanvas.g:2721:1: ( ( rule__Connector__TextsAssignment_9 ) )
             {
-            // InternalCanvas.g:3001:1: ( ':' )
-            // InternalCanvas.g:3002:2: ':'
+            // InternalCanvas.g:2721:1: ( ( rule__Connector__TextsAssignment_9 ) )
+            // InternalCanvas.g:2722:2: ( rule__Connector__TextsAssignment_9 )
             {
-             before(grammarAccess.getConnectorAccess().getColonKeyword_2_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getConnectorAccess().getColonKeyword_2_0_1()); 
+             before(grammarAccess.getConnectorAccess().getTextsAssignment_9()); 
+            // InternalCanvas.g:2723:2: ( rule__Connector__TextsAssignment_9 )
+            // InternalCanvas.g:2723:3: rule__Connector__TextsAssignment_9
+            {
+            pushFollow(FOLLOW_2);
+            rule__Connector__TextsAssignment_9();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getConnectorAccess().getTextsAssignment_9()); 
 
             }
 
@@ -9472,20 +8437,20 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Connector__Group_2_0__1__Impl"
+    // $ANTLR end "rule__Connector__Group__9__Impl"
 
 
     // $ANTLR start "rule__Anchors__Group__0"
-    // InternalCanvas.g:3012:1: rule__Anchors__Group__0 : rule__Anchors__Group__0__Impl rule__Anchors__Group__1 ;
+    // InternalCanvas.g:2732:1: rule__Anchors__Group__0 : rule__Anchors__Group__0__Impl rule__Anchors__Group__1 ;
     public final void rule__Anchors__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3016:1: ( rule__Anchors__Group__0__Impl rule__Anchors__Group__1 )
-            // InternalCanvas.g:3017:2: rule__Anchors__Group__0__Impl rule__Anchors__Group__1
+            // InternalCanvas.g:2736:1: ( rule__Anchors__Group__0__Impl rule__Anchors__Group__1 )
+            // InternalCanvas.g:2737:2: rule__Anchors__Group__0__Impl rule__Anchors__Group__1
             {
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_5);
             rule__Anchors__Group__0__Impl();
 
             state._fsp--;
@@ -9514,31 +8479,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Anchors__Group__0__Impl"
-    // InternalCanvas.g:3024:1: rule__Anchors__Group__0__Impl : ( ( rule__Anchors__Alternatives_0 ) ) ;
+    // InternalCanvas.g:2744:1: rule__Anchors__Group__0__Impl : ( 'anchors' ) ;
     public final void rule__Anchors__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3028:1: ( ( ( rule__Anchors__Alternatives_0 ) ) )
-            // InternalCanvas.g:3029:1: ( ( rule__Anchors__Alternatives_0 ) )
+            // InternalCanvas.g:2748:1: ( ( 'anchors' ) )
+            // InternalCanvas.g:2749:1: ( 'anchors' )
             {
-            // InternalCanvas.g:3029:1: ( ( rule__Anchors__Alternatives_0 ) )
-            // InternalCanvas.g:3030:2: ( rule__Anchors__Alternatives_0 )
+            // InternalCanvas.g:2749:1: ( 'anchors' )
+            // InternalCanvas.g:2750:2: 'anchors'
             {
-             before(grammarAccess.getAnchorsAccess().getAlternatives_0()); 
-            // InternalCanvas.g:3031:2: ( rule__Anchors__Alternatives_0 )
-            // InternalCanvas.g:3031:3: rule__Anchors__Alternatives_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__Anchors__Alternatives_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getAnchorsAccess().getAlternatives_0()); 
+             before(grammarAccess.getAnchorsAccess().getAnchorsKeyword_0()); 
+            match(input,106,FOLLOW_2); 
+             after(grammarAccess.getAnchorsAccess().getAnchorsKeyword_0()); 
 
             }
 
@@ -9561,14 +8516,14 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Anchors__Group__1"
-    // InternalCanvas.g:3039:1: rule__Anchors__Group__1 : rule__Anchors__Group__1__Impl rule__Anchors__Group__2 ;
+    // InternalCanvas.g:2759:1: rule__Anchors__Group__1 : rule__Anchors__Group__1__Impl rule__Anchors__Group__2 ;
     public final void rule__Anchors__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3043:1: ( rule__Anchors__Group__1__Impl rule__Anchors__Group__2 )
-            // InternalCanvas.g:3044:2: rule__Anchors__Group__1__Impl rule__Anchors__Group__2
+            // InternalCanvas.g:2763:1: ( rule__Anchors__Group__1__Impl rule__Anchors__Group__2 )
+            // InternalCanvas.g:2764:2: rule__Anchors__Group__1__Impl rule__Anchors__Group__2
             {
             pushFollow(FOLLOW_29);
             rule__Anchors__Group__1__Impl();
@@ -9599,31 +8554,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Anchors__Group__1__Impl"
-    // InternalCanvas.g:3051:1: rule__Anchors__Group__1__Impl : ( ( rule__Anchors__StartAnchorAssignment_1 ) ) ;
+    // InternalCanvas.g:2771:1: rule__Anchors__Group__1__Impl : ( ':' ) ;
     public final void rule__Anchors__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3055:1: ( ( ( rule__Anchors__StartAnchorAssignment_1 ) ) )
-            // InternalCanvas.g:3056:1: ( ( rule__Anchors__StartAnchorAssignment_1 ) )
+            // InternalCanvas.g:2775:1: ( ( ':' ) )
+            // InternalCanvas.g:2776:1: ( ':' )
             {
-            // InternalCanvas.g:3056:1: ( ( rule__Anchors__StartAnchorAssignment_1 ) )
-            // InternalCanvas.g:3057:2: ( rule__Anchors__StartAnchorAssignment_1 )
+            // InternalCanvas.g:2776:1: ( ':' )
+            // InternalCanvas.g:2777:2: ':'
             {
-             before(grammarAccess.getAnchorsAccess().getStartAnchorAssignment_1()); 
-            // InternalCanvas.g:3058:2: ( rule__Anchors__StartAnchorAssignment_1 )
-            // InternalCanvas.g:3058:3: rule__Anchors__StartAnchorAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Anchors__StartAnchorAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getAnchorsAccess().getStartAnchorAssignment_1()); 
+             before(grammarAccess.getAnchorsAccess().getColonKeyword_1()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getAnchorsAccess().getColonKeyword_1()); 
 
             }
 
@@ -9646,17 +8591,22 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Anchors__Group__2"
-    // InternalCanvas.g:3066:1: rule__Anchors__Group__2 : rule__Anchors__Group__2__Impl ;
+    // InternalCanvas.g:2786:1: rule__Anchors__Group__2 : rule__Anchors__Group__2__Impl rule__Anchors__Group__3 ;
     public final void rule__Anchors__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3070:1: ( rule__Anchors__Group__2__Impl )
-            // InternalCanvas.g:3071:2: rule__Anchors__Group__2__Impl
+            // InternalCanvas.g:2790:1: ( rule__Anchors__Group__2__Impl rule__Anchors__Group__3 )
+            // InternalCanvas.g:2791:2: rule__Anchors__Group__2__Impl rule__Anchors__Group__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_30);
             rule__Anchors__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Anchors__Group__3();
 
             state._fsp--;
 
@@ -9679,31 +8629,31 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Anchors__Group__2__Impl"
-    // InternalCanvas.g:3077:1: rule__Anchors__Group__2__Impl : ( ( rule__Anchors__EndAnchorAssignment_2 ) ) ;
+    // InternalCanvas.g:2798:1: rule__Anchors__Group__2__Impl : ( ( rule__Anchors__StartAnchorAssignment_2 ) ) ;
     public final void rule__Anchors__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3081:1: ( ( ( rule__Anchors__EndAnchorAssignment_2 ) ) )
-            // InternalCanvas.g:3082:1: ( ( rule__Anchors__EndAnchorAssignment_2 ) )
+            // InternalCanvas.g:2802:1: ( ( ( rule__Anchors__StartAnchorAssignment_2 ) ) )
+            // InternalCanvas.g:2803:1: ( ( rule__Anchors__StartAnchorAssignment_2 ) )
             {
-            // InternalCanvas.g:3082:1: ( ( rule__Anchors__EndAnchorAssignment_2 ) )
-            // InternalCanvas.g:3083:2: ( rule__Anchors__EndAnchorAssignment_2 )
+            // InternalCanvas.g:2803:1: ( ( rule__Anchors__StartAnchorAssignment_2 ) )
+            // InternalCanvas.g:2804:2: ( rule__Anchors__StartAnchorAssignment_2 )
             {
-             before(grammarAccess.getAnchorsAccess().getEndAnchorAssignment_2()); 
-            // InternalCanvas.g:3084:2: ( rule__Anchors__EndAnchorAssignment_2 )
-            // InternalCanvas.g:3084:3: rule__Anchors__EndAnchorAssignment_2
+             before(grammarAccess.getAnchorsAccess().getStartAnchorAssignment_2()); 
+            // InternalCanvas.g:2805:2: ( rule__Anchors__StartAnchorAssignment_2 )
+            // InternalCanvas.g:2805:3: rule__Anchors__StartAnchorAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__Anchors__EndAnchorAssignment_2();
+            rule__Anchors__StartAnchorAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getAnchorsAccess().getEndAnchorAssignment_2()); 
+             after(grammarAccess.getAnchorsAccess().getStartAnchorAssignment_2()); 
 
             }
 
@@ -9725,93 +8675,18 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Anchors__Group__2__Impl"
 
 
-    // $ANTLR start "rule__Anchors__Group_0_0__0"
-    // InternalCanvas.g:3093:1: rule__Anchors__Group_0_0__0 : rule__Anchors__Group_0_0__0__Impl rule__Anchors__Group_0_0__1 ;
-    public final void rule__Anchors__Group_0_0__0() throws RecognitionException {
+    // $ANTLR start "rule__Anchors__Group__3"
+    // InternalCanvas.g:2813:1: rule__Anchors__Group__3 : rule__Anchors__Group__3__Impl ;
+    public final void rule__Anchors__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3097:1: ( rule__Anchors__Group_0_0__0__Impl rule__Anchors__Group_0_0__1 )
-            // InternalCanvas.g:3098:2: rule__Anchors__Group_0_0__0__Impl rule__Anchors__Group_0_0__1
-            {
-            pushFollow(FOLLOW_6);
-            rule__Anchors__Group_0_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Anchors__Group_0_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Anchors__Group_0_0__0"
-
-
-    // $ANTLR start "rule__Anchors__Group_0_0__0__Impl"
-    // InternalCanvas.g:3105:1: rule__Anchors__Group_0_0__0__Impl : ( 'anchors' ) ;
-    public final void rule__Anchors__Group_0_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:3109:1: ( ( 'anchors' ) )
-            // InternalCanvas.g:3110:1: ( 'anchors' )
-            {
-            // InternalCanvas.g:3110:1: ( 'anchors' )
-            // InternalCanvas.g:3111:2: 'anchors'
-            {
-             before(grammarAccess.getAnchorsAccess().getAnchorsKeyword_0_0_0()); 
-            match(input,50,FOLLOW_2); 
-             after(grammarAccess.getAnchorsAccess().getAnchorsKeyword_0_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Anchors__Group_0_0__0__Impl"
-
-
-    // $ANTLR start "rule__Anchors__Group_0_0__1"
-    // InternalCanvas.g:3120:1: rule__Anchors__Group_0_0__1 : rule__Anchors__Group_0_0__1__Impl ;
-    public final void rule__Anchors__Group_0_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:3124:1: ( rule__Anchors__Group_0_0__1__Impl )
-            // InternalCanvas.g:3125:2: rule__Anchors__Group_0_0__1__Impl
+            // InternalCanvas.g:2817:1: ( rule__Anchors__Group__3__Impl )
+            // InternalCanvas.g:2818:2: rule__Anchors__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Anchors__Group_0_0__1__Impl();
+            rule__Anchors__Group__3__Impl();
 
             state._fsp--;
 
@@ -9830,25 +8705,35 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Anchors__Group_0_0__1"
+    // $ANTLR end "rule__Anchors__Group__3"
 
 
-    // $ANTLR start "rule__Anchors__Group_0_0__1__Impl"
-    // InternalCanvas.g:3131:1: rule__Anchors__Group_0_0__1__Impl : ( ':' ) ;
-    public final void rule__Anchors__Group_0_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Anchors__Group__3__Impl"
+    // InternalCanvas.g:2824:1: rule__Anchors__Group__3__Impl : ( ( rule__Anchors__EndAnchorAssignment_3 ) ) ;
+    public final void rule__Anchors__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3135:1: ( ( ':' ) )
-            // InternalCanvas.g:3136:1: ( ':' )
+            // InternalCanvas.g:2828:1: ( ( ( rule__Anchors__EndAnchorAssignment_3 ) ) )
+            // InternalCanvas.g:2829:1: ( ( rule__Anchors__EndAnchorAssignment_3 ) )
             {
-            // InternalCanvas.g:3136:1: ( ':' )
-            // InternalCanvas.g:3137:2: ':'
+            // InternalCanvas.g:2829:1: ( ( rule__Anchors__EndAnchorAssignment_3 ) )
+            // InternalCanvas.g:2830:2: ( rule__Anchors__EndAnchorAssignment_3 )
             {
-             before(grammarAccess.getAnchorsAccess().getColonKeyword_0_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getAnchorsAccess().getColonKeyword_0_0_1()); 
+             before(grammarAccess.getAnchorsAccess().getEndAnchorAssignment_3()); 
+            // InternalCanvas.g:2831:2: ( rule__Anchors__EndAnchorAssignment_3 )
+            // InternalCanvas.g:2831:3: rule__Anchors__EndAnchorAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__Anchors__EndAnchorAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getAnchorsAccess().getEndAnchorAssignment_3()); 
 
             }
 
@@ -9867,20 +8752,20 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Anchors__Group_0_0__1__Impl"
+    // $ANTLR end "rule__Anchors__Group__3__Impl"
 
 
     // $ANTLR start "rule__StartAnchor__Group__0"
-    // InternalCanvas.g:3147:1: rule__StartAnchor__Group__0 : rule__StartAnchor__Group__0__Impl rule__StartAnchor__Group__1 ;
+    // InternalCanvas.g:2840:1: rule__StartAnchor__Group__0 : rule__StartAnchor__Group__0__Impl rule__StartAnchor__Group__1 ;
     public final void rule__StartAnchor__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3151:1: ( rule__StartAnchor__Group__0__Impl rule__StartAnchor__Group__1 )
-            // InternalCanvas.g:3152:2: rule__StartAnchor__Group__0__Impl rule__StartAnchor__Group__1
+            // InternalCanvas.g:2844:1: ( rule__StartAnchor__Group__0__Impl rule__StartAnchor__Group__1 )
+            // InternalCanvas.g:2845:2: rule__StartAnchor__Group__0__Impl rule__StartAnchor__Group__1
             {
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_5);
             rule__StartAnchor__Group__0__Impl();
 
             state._fsp--;
@@ -9909,31 +8794,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StartAnchor__Group__0__Impl"
-    // InternalCanvas.g:3159:1: rule__StartAnchor__Group__0__Impl : ( ( rule__StartAnchor__Alternatives_0 ) ) ;
+    // InternalCanvas.g:2852:1: rule__StartAnchor__Group__0__Impl : ( 'start' ) ;
     public final void rule__StartAnchor__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3163:1: ( ( ( rule__StartAnchor__Alternatives_0 ) ) )
-            // InternalCanvas.g:3164:1: ( ( rule__StartAnchor__Alternatives_0 ) )
+            // InternalCanvas.g:2856:1: ( ( 'start' ) )
+            // InternalCanvas.g:2857:1: ( 'start' )
             {
-            // InternalCanvas.g:3164:1: ( ( rule__StartAnchor__Alternatives_0 ) )
-            // InternalCanvas.g:3165:2: ( rule__StartAnchor__Alternatives_0 )
+            // InternalCanvas.g:2857:1: ( 'start' )
+            // InternalCanvas.g:2858:2: 'start'
             {
-             before(grammarAccess.getStartAnchorAccess().getAlternatives_0()); 
-            // InternalCanvas.g:3166:2: ( rule__StartAnchor__Alternatives_0 )
-            // InternalCanvas.g:3166:3: rule__StartAnchor__Alternatives_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__StartAnchor__Alternatives_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getStartAnchorAccess().getAlternatives_0()); 
+             before(grammarAccess.getStartAnchorAccess().getStartKeyword_0()); 
+            match(input,12,FOLLOW_2); 
+             after(grammarAccess.getStartAnchorAccess().getStartKeyword_0()); 
 
             }
 
@@ -9956,14 +8831,14 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StartAnchor__Group__1"
-    // InternalCanvas.g:3174:1: rule__StartAnchor__Group__1 : rule__StartAnchor__Group__1__Impl rule__StartAnchor__Group__2 ;
+    // InternalCanvas.g:2867:1: rule__StartAnchor__Group__1 : rule__StartAnchor__Group__1__Impl rule__StartAnchor__Group__2 ;
     public final void rule__StartAnchor__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3178:1: ( rule__StartAnchor__Group__1__Impl rule__StartAnchor__Group__2 )
-            // InternalCanvas.g:3179:2: rule__StartAnchor__Group__1__Impl rule__StartAnchor__Group__2
+            // InternalCanvas.g:2871:1: ( rule__StartAnchor__Group__1__Impl rule__StartAnchor__Group__2 )
+            // InternalCanvas.g:2872:2: rule__StartAnchor__Group__1__Impl rule__StartAnchor__Group__2
             {
             pushFollow(FOLLOW_31);
             rule__StartAnchor__Group__1__Impl();
@@ -9994,31 +8869,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StartAnchor__Group__1__Impl"
-    // InternalCanvas.g:3186:1: rule__StartAnchor__Group__1__Impl : ( ( rule__StartAnchor__PointAssignment_1 ) ) ;
+    // InternalCanvas.g:2879:1: rule__StartAnchor__Group__1__Impl : ( ':' ) ;
     public final void rule__StartAnchor__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3190:1: ( ( ( rule__StartAnchor__PointAssignment_1 ) ) )
-            // InternalCanvas.g:3191:1: ( ( rule__StartAnchor__PointAssignment_1 ) )
+            // InternalCanvas.g:2883:1: ( ( ':' ) )
+            // InternalCanvas.g:2884:1: ( ':' )
             {
-            // InternalCanvas.g:3191:1: ( ( rule__StartAnchor__PointAssignment_1 ) )
-            // InternalCanvas.g:3192:2: ( rule__StartAnchor__PointAssignment_1 )
+            // InternalCanvas.g:2884:1: ( ':' )
+            // InternalCanvas.g:2885:2: ':'
             {
-             before(grammarAccess.getStartAnchorAccess().getPointAssignment_1()); 
-            // InternalCanvas.g:3193:2: ( rule__StartAnchor__PointAssignment_1 )
-            // InternalCanvas.g:3193:3: rule__StartAnchor__PointAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__StartAnchor__PointAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getStartAnchorAccess().getPointAssignment_1()); 
+             before(grammarAccess.getStartAnchorAccess().getColonKeyword_1()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getStartAnchorAccess().getColonKeyword_1()); 
 
             }
 
@@ -10041,17 +8906,22 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StartAnchor__Group__2"
-    // InternalCanvas.g:3201:1: rule__StartAnchor__Group__2 : rule__StartAnchor__Group__2__Impl ;
+    // InternalCanvas.g:2894:1: rule__StartAnchor__Group__2 : rule__StartAnchor__Group__2__Impl rule__StartAnchor__Group__3 ;
     public final void rule__StartAnchor__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3205:1: ( rule__StartAnchor__Group__2__Impl )
-            // InternalCanvas.g:3206:2: rule__StartAnchor__Group__2__Impl
+            // InternalCanvas.g:2898:1: ( rule__StartAnchor__Group__2__Impl rule__StartAnchor__Group__3 )
+            // InternalCanvas.g:2899:2: rule__StartAnchor__Group__2__Impl rule__StartAnchor__Group__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_32);
             rule__StartAnchor__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__StartAnchor__Group__3();
 
             state._fsp--;
 
@@ -10074,42 +8944,31 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StartAnchor__Group__2__Impl"
-    // InternalCanvas.g:3212:1: rule__StartAnchor__Group__2__Impl : ( ( rule__StartAnchor__AnchorAssignment_2 )? ) ;
+    // InternalCanvas.g:2906:1: rule__StartAnchor__Group__2__Impl : ( ( rule__StartAnchor__PointAssignment_2 ) ) ;
     public final void rule__StartAnchor__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3216:1: ( ( ( rule__StartAnchor__AnchorAssignment_2 )? ) )
-            // InternalCanvas.g:3217:1: ( ( rule__StartAnchor__AnchorAssignment_2 )? )
+            // InternalCanvas.g:2910:1: ( ( ( rule__StartAnchor__PointAssignment_2 ) ) )
+            // InternalCanvas.g:2911:1: ( ( rule__StartAnchor__PointAssignment_2 ) )
             {
-            // InternalCanvas.g:3217:1: ( ( rule__StartAnchor__AnchorAssignment_2 )? )
-            // InternalCanvas.g:3218:2: ( rule__StartAnchor__AnchorAssignment_2 )?
+            // InternalCanvas.g:2911:1: ( ( rule__StartAnchor__PointAssignment_2 ) )
+            // InternalCanvas.g:2912:2: ( rule__StartAnchor__PointAssignment_2 )
             {
-             before(grammarAccess.getStartAnchorAccess().getAnchorAssignment_2()); 
-            // InternalCanvas.g:3219:2: ( rule__StartAnchor__AnchorAssignment_2 )?
-            int alt36=2;
-            int LA36_0 = input.LA(1);
+             before(grammarAccess.getStartAnchorAccess().getPointAssignment_2()); 
+            // InternalCanvas.g:2913:2: ( rule__StartAnchor__PointAssignment_2 )
+            // InternalCanvas.g:2913:3: rule__StartAnchor__PointAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__StartAnchor__PointAssignment_2();
 
-            if ( (LA36_0==17||LA36_0==30||LA36_0==44||LA36_0==49) ) {
-                alt36=1;
-            }
-            switch (alt36) {
-                case 1 :
-                    // InternalCanvas.g:3219:3: rule__StartAnchor__AnchorAssignment_2
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__StartAnchor__AnchorAssignment_2();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getStartAnchorAccess().getAnchorAssignment_2()); 
+             after(grammarAccess.getStartAnchorAccess().getPointAssignment_2()); 
 
             }
 
@@ -10131,93 +8990,18 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__StartAnchor__Group__2__Impl"
 
 
-    // $ANTLR start "rule__StartAnchor__Group_0_0__0"
-    // InternalCanvas.g:3228:1: rule__StartAnchor__Group_0_0__0 : rule__StartAnchor__Group_0_0__0__Impl rule__StartAnchor__Group_0_0__1 ;
-    public final void rule__StartAnchor__Group_0_0__0() throws RecognitionException {
+    // $ANTLR start "rule__StartAnchor__Group__3"
+    // InternalCanvas.g:2921:1: rule__StartAnchor__Group__3 : rule__StartAnchor__Group__3__Impl ;
+    public final void rule__StartAnchor__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3232:1: ( rule__StartAnchor__Group_0_0__0__Impl rule__StartAnchor__Group_0_0__1 )
-            // InternalCanvas.g:3233:2: rule__StartAnchor__Group_0_0__0__Impl rule__StartAnchor__Group_0_0__1
-            {
-            pushFollow(FOLLOW_6);
-            rule__StartAnchor__Group_0_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__StartAnchor__Group_0_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__StartAnchor__Group_0_0__0"
-
-
-    // $ANTLR start "rule__StartAnchor__Group_0_0__0__Impl"
-    // InternalCanvas.g:3240:1: rule__StartAnchor__Group_0_0__0__Impl : ( 'start' ) ;
-    public final void rule__StartAnchor__Group_0_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:3244:1: ( ( 'start' ) )
-            // InternalCanvas.g:3245:1: ( 'start' )
-            {
-            // InternalCanvas.g:3245:1: ( 'start' )
-            // InternalCanvas.g:3246:2: 'start'
-            {
-             before(grammarAccess.getStartAnchorAccess().getStartKeyword_0_0_0()); 
-            match(input,21,FOLLOW_2); 
-             after(grammarAccess.getStartAnchorAccess().getStartKeyword_0_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__StartAnchor__Group_0_0__0__Impl"
-
-
-    // $ANTLR start "rule__StartAnchor__Group_0_0__1"
-    // InternalCanvas.g:3255:1: rule__StartAnchor__Group_0_0__1 : rule__StartAnchor__Group_0_0__1__Impl ;
-    public final void rule__StartAnchor__Group_0_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:3259:1: ( rule__StartAnchor__Group_0_0__1__Impl )
-            // InternalCanvas.g:3260:2: rule__StartAnchor__Group_0_0__1__Impl
+            // InternalCanvas.g:2925:1: ( rule__StartAnchor__Group__3__Impl )
+            // InternalCanvas.g:2926:2: rule__StartAnchor__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__StartAnchor__Group_0_0__1__Impl();
+            rule__StartAnchor__Group__3__Impl();
 
             state._fsp--;
 
@@ -10236,25 +9020,46 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StartAnchor__Group_0_0__1"
+    // $ANTLR end "rule__StartAnchor__Group__3"
 
 
-    // $ANTLR start "rule__StartAnchor__Group_0_0__1__Impl"
-    // InternalCanvas.g:3266:1: rule__StartAnchor__Group_0_0__1__Impl : ( ':' ) ;
-    public final void rule__StartAnchor__Group_0_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__StartAnchor__Group__3__Impl"
+    // InternalCanvas.g:2932:1: rule__StartAnchor__Group__3__Impl : ( ( rule__StartAnchor__AnchorAssignment_3 )? ) ;
+    public final void rule__StartAnchor__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3270:1: ( ( ':' ) )
-            // InternalCanvas.g:3271:1: ( ':' )
+            // InternalCanvas.g:2936:1: ( ( ( rule__StartAnchor__AnchorAssignment_3 )? ) )
+            // InternalCanvas.g:2937:1: ( ( rule__StartAnchor__AnchorAssignment_3 )? )
             {
-            // InternalCanvas.g:3271:1: ( ':' )
-            // InternalCanvas.g:3272:2: ':'
+            // InternalCanvas.g:2937:1: ( ( rule__StartAnchor__AnchorAssignment_3 )? )
+            // InternalCanvas.g:2938:2: ( rule__StartAnchor__AnchorAssignment_3 )?
             {
-             before(grammarAccess.getStartAnchorAccess().getColonKeyword_0_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getStartAnchorAccess().getColonKeyword_0_0_1()); 
+             before(grammarAccess.getStartAnchorAccess().getAnchorAssignment_3()); 
+            // InternalCanvas.g:2939:2: ( rule__StartAnchor__AnchorAssignment_3 )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
+
+            if ( ((LA13_0>=90 && LA13_0<=91)) ) {
+                alt13=1;
+            }
+            switch (alt13) {
+                case 1 :
+                    // InternalCanvas.g:2939:3: rule__StartAnchor__AnchorAssignment_3
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__StartAnchor__AnchorAssignment_3();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getStartAnchorAccess().getAnchorAssignment_3()); 
 
             }
 
@@ -10273,20 +9078,20 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StartAnchor__Group_0_0__1__Impl"
+    // $ANTLR end "rule__StartAnchor__Group__3__Impl"
 
 
     // $ANTLR start "rule__EndAnchor__Group__0"
-    // InternalCanvas.g:3282:1: rule__EndAnchor__Group__0 : rule__EndAnchor__Group__0__Impl rule__EndAnchor__Group__1 ;
+    // InternalCanvas.g:2948:1: rule__EndAnchor__Group__0 : rule__EndAnchor__Group__0__Impl rule__EndAnchor__Group__1 ;
     public final void rule__EndAnchor__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3286:1: ( rule__EndAnchor__Group__0__Impl rule__EndAnchor__Group__1 )
-            // InternalCanvas.g:3287:2: rule__EndAnchor__Group__0__Impl rule__EndAnchor__Group__1
+            // InternalCanvas.g:2952:1: ( rule__EndAnchor__Group__0__Impl rule__EndAnchor__Group__1 )
+            // InternalCanvas.g:2953:2: rule__EndAnchor__Group__0__Impl rule__EndAnchor__Group__1
             {
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_5);
             rule__EndAnchor__Group__0__Impl();
 
             state._fsp--;
@@ -10315,31 +9120,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EndAnchor__Group__0__Impl"
-    // InternalCanvas.g:3294:1: rule__EndAnchor__Group__0__Impl : ( ( rule__EndAnchor__Alternatives_0 ) ) ;
+    // InternalCanvas.g:2960:1: rule__EndAnchor__Group__0__Impl : ( 'end' ) ;
     public final void rule__EndAnchor__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3298:1: ( ( ( rule__EndAnchor__Alternatives_0 ) ) )
-            // InternalCanvas.g:3299:1: ( ( rule__EndAnchor__Alternatives_0 ) )
+            // InternalCanvas.g:2964:1: ( ( 'end' ) )
+            // InternalCanvas.g:2965:1: ( 'end' )
             {
-            // InternalCanvas.g:3299:1: ( ( rule__EndAnchor__Alternatives_0 ) )
-            // InternalCanvas.g:3300:2: ( rule__EndAnchor__Alternatives_0 )
+            // InternalCanvas.g:2965:1: ( 'end' )
+            // InternalCanvas.g:2966:2: 'end'
             {
-             before(grammarAccess.getEndAnchorAccess().getAlternatives_0()); 
-            // InternalCanvas.g:3301:2: ( rule__EndAnchor__Alternatives_0 )
-            // InternalCanvas.g:3301:3: rule__EndAnchor__Alternatives_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__EndAnchor__Alternatives_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getEndAnchorAccess().getAlternatives_0()); 
+             before(grammarAccess.getEndAnchorAccess().getEndKeyword_0()); 
+            match(input,13,FOLLOW_2); 
+             after(grammarAccess.getEndAnchorAccess().getEndKeyword_0()); 
 
             }
 
@@ -10362,14 +9157,14 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EndAnchor__Group__1"
-    // InternalCanvas.g:3309:1: rule__EndAnchor__Group__1 : rule__EndAnchor__Group__1__Impl rule__EndAnchor__Group__2 ;
+    // InternalCanvas.g:2975:1: rule__EndAnchor__Group__1 : rule__EndAnchor__Group__1__Impl rule__EndAnchor__Group__2 ;
     public final void rule__EndAnchor__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3313:1: ( rule__EndAnchor__Group__1__Impl rule__EndAnchor__Group__2 )
-            // InternalCanvas.g:3314:2: rule__EndAnchor__Group__1__Impl rule__EndAnchor__Group__2
+            // InternalCanvas.g:2979:1: ( rule__EndAnchor__Group__1__Impl rule__EndAnchor__Group__2 )
+            // InternalCanvas.g:2980:2: rule__EndAnchor__Group__1__Impl rule__EndAnchor__Group__2
             {
             pushFollow(FOLLOW_31);
             rule__EndAnchor__Group__1__Impl();
@@ -10400,31 +9195,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EndAnchor__Group__1__Impl"
-    // InternalCanvas.g:3321:1: rule__EndAnchor__Group__1__Impl : ( ( rule__EndAnchor__PointAssignment_1 ) ) ;
+    // InternalCanvas.g:2987:1: rule__EndAnchor__Group__1__Impl : ( ':' ) ;
     public final void rule__EndAnchor__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3325:1: ( ( ( rule__EndAnchor__PointAssignment_1 ) ) )
-            // InternalCanvas.g:3326:1: ( ( rule__EndAnchor__PointAssignment_1 ) )
+            // InternalCanvas.g:2991:1: ( ( ':' ) )
+            // InternalCanvas.g:2992:1: ( ':' )
             {
-            // InternalCanvas.g:3326:1: ( ( rule__EndAnchor__PointAssignment_1 ) )
-            // InternalCanvas.g:3327:2: ( rule__EndAnchor__PointAssignment_1 )
+            // InternalCanvas.g:2992:1: ( ':' )
+            // InternalCanvas.g:2993:2: ':'
             {
-             before(grammarAccess.getEndAnchorAccess().getPointAssignment_1()); 
-            // InternalCanvas.g:3328:2: ( rule__EndAnchor__PointAssignment_1 )
-            // InternalCanvas.g:3328:3: rule__EndAnchor__PointAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__EndAnchor__PointAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getEndAnchorAccess().getPointAssignment_1()); 
+             before(grammarAccess.getEndAnchorAccess().getColonKeyword_1()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getEndAnchorAccess().getColonKeyword_1()); 
 
             }
 
@@ -10447,17 +9232,22 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EndAnchor__Group__2"
-    // InternalCanvas.g:3336:1: rule__EndAnchor__Group__2 : rule__EndAnchor__Group__2__Impl ;
+    // InternalCanvas.g:3002:1: rule__EndAnchor__Group__2 : rule__EndAnchor__Group__2__Impl rule__EndAnchor__Group__3 ;
     public final void rule__EndAnchor__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3340:1: ( rule__EndAnchor__Group__2__Impl )
-            // InternalCanvas.g:3341:2: rule__EndAnchor__Group__2__Impl
+            // InternalCanvas.g:3006:1: ( rule__EndAnchor__Group__2__Impl rule__EndAnchor__Group__3 )
+            // InternalCanvas.g:3007:2: rule__EndAnchor__Group__2__Impl rule__EndAnchor__Group__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_32);
             rule__EndAnchor__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__EndAnchor__Group__3();
 
             state._fsp--;
 
@@ -10480,42 +9270,31 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EndAnchor__Group__2__Impl"
-    // InternalCanvas.g:3347:1: rule__EndAnchor__Group__2__Impl : ( ( rule__EndAnchor__AnchorAssignment_2 )? ) ;
+    // InternalCanvas.g:3014:1: rule__EndAnchor__Group__2__Impl : ( ( rule__EndAnchor__PointAssignment_2 ) ) ;
     public final void rule__EndAnchor__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3351:1: ( ( ( rule__EndAnchor__AnchorAssignment_2 )? ) )
-            // InternalCanvas.g:3352:1: ( ( rule__EndAnchor__AnchorAssignment_2 )? )
+            // InternalCanvas.g:3018:1: ( ( ( rule__EndAnchor__PointAssignment_2 ) ) )
+            // InternalCanvas.g:3019:1: ( ( rule__EndAnchor__PointAssignment_2 ) )
             {
-            // InternalCanvas.g:3352:1: ( ( rule__EndAnchor__AnchorAssignment_2 )? )
-            // InternalCanvas.g:3353:2: ( rule__EndAnchor__AnchorAssignment_2 )?
+            // InternalCanvas.g:3019:1: ( ( rule__EndAnchor__PointAssignment_2 ) )
+            // InternalCanvas.g:3020:2: ( rule__EndAnchor__PointAssignment_2 )
             {
-             before(grammarAccess.getEndAnchorAccess().getAnchorAssignment_2()); 
-            // InternalCanvas.g:3354:2: ( rule__EndAnchor__AnchorAssignment_2 )?
-            int alt37=2;
-            int LA37_0 = input.LA(1);
+             before(grammarAccess.getEndAnchorAccess().getPointAssignment_2()); 
+            // InternalCanvas.g:3021:2: ( rule__EndAnchor__PointAssignment_2 )
+            // InternalCanvas.g:3021:3: rule__EndAnchor__PointAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__EndAnchor__PointAssignment_2();
 
-            if ( (LA37_0==17||LA37_0==30||LA37_0==44||LA37_0==49) ) {
-                alt37=1;
-            }
-            switch (alt37) {
-                case 1 :
-                    // InternalCanvas.g:3354:3: rule__EndAnchor__AnchorAssignment_2
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__EndAnchor__AnchorAssignment_2();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getEndAnchorAccess().getAnchorAssignment_2()); 
+             after(grammarAccess.getEndAnchorAccess().getPointAssignment_2()); 
 
             }
 
@@ -10537,93 +9316,18 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__EndAnchor__Group__2__Impl"
 
 
-    // $ANTLR start "rule__EndAnchor__Group_0_0__0"
-    // InternalCanvas.g:3363:1: rule__EndAnchor__Group_0_0__0 : rule__EndAnchor__Group_0_0__0__Impl rule__EndAnchor__Group_0_0__1 ;
-    public final void rule__EndAnchor__Group_0_0__0() throws RecognitionException {
+    // $ANTLR start "rule__EndAnchor__Group__3"
+    // InternalCanvas.g:3029:1: rule__EndAnchor__Group__3 : rule__EndAnchor__Group__3__Impl ;
+    public final void rule__EndAnchor__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3367:1: ( rule__EndAnchor__Group_0_0__0__Impl rule__EndAnchor__Group_0_0__1 )
-            // InternalCanvas.g:3368:2: rule__EndAnchor__Group_0_0__0__Impl rule__EndAnchor__Group_0_0__1
-            {
-            pushFollow(FOLLOW_6);
-            rule__EndAnchor__Group_0_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__EndAnchor__Group_0_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EndAnchor__Group_0_0__0"
-
-
-    // $ANTLR start "rule__EndAnchor__Group_0_0__0__Impl"
-    // InternalCanvas.g:3375:1: rule__EndAnchor__Group_0_0__0__Impl : ( 'end' ) ;
-    public final void rule__EndAnchor__Group_0_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:3379:1: ( ( 'end' ) )
-            // InternalCanvas.g:3380:1: ( 'end' )
-            {
-            // InternalCanvas.g:3380:1: ( 'end' )
-            // InternalCanvas.g:3381:2: 'end'
-            {
-             before(grammarAccess.getEndAnchorAccess().getEndKeyword_0_0_0()); 
-            match(input,22,FOLLOW_2); 
-             after(grammarAccess.getEndAnchorAccess().getEndKeyword_0_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EndAnchor__Group_0_0__0__Impl"
-
-
-    // $ANTLR start "rule__EndAnchor__Group_0_0__1"
-    // InternalCanvas.g:3390:1: rule__EndAnchor__Group_0_0__1 : rule__EndAnchor__Group_0_0__1__Impl ;
-    public final void rule__EndAnchor__Group_0_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:3394:1: ( rule__EndAnchor__Group_0_0__1__Impl )
-            // InternalCanvas.g:3395:2: rule__EndAnchor__Group_0_0__1__Impl
+            // InternalCanvas.g:3033:1: ( rule__EndAnchor__Group__3__Impl )
+            // InternalCanvas.g:3034:2: rule__EndAnchor__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__EndAnchor__Group_0_0__1__Impl();
+            rule__EndAnchor__Group__3__Impl();
 
             state._fsp--;
 
@@ -10642,25 +9346,46 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EndAnchor__Group_0_0__1"
+    // $ANTLR end "rule__EndAnchor__Group__3"
 
 
-    // $ANTLR start "rule__EndAnchor__Group_0_0__1__Impl"
-    // InternalCanvas.g:3401:1: rule__EndAnchor__Group_0_0__1__Impl : ( ':' ) ;
-    public final void rule__EndAnchor__Group_0_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EndAnchor__Group__3__Impl"
+    // InternalCanvas.g:3040:1: rule__EndAnchor__Group__3__Impl : ( ( rule__EndAnchor__AnchorAssignment_3 )? ) ;
+    public final void rule__EndAnchor__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3405:1: ( ( ':' ) )
-            // InternalCanvas.g:3406:1: ( ':' )
+            // InternalCanvas.g:3044:1: ( ( ( rule__EndAnchor__AnchorAssignment_3 )? ) )
+            // InternalCanvas.g:3045:1: ( ( rule__EndAnchor__AnchorAssignment_3 )? )
             {
-            // InternalCanvas.g:3406:1: ( ':' )
-            // InternalCanvas.g:3407:2: ':'
+            // InternalCanvas.g:3045:1: ( ( rule__EndAnchor__AnchorAssignment_3 )? )
+            // InternalCanvas.g:3046:2: ( rule__EndAnchor__AnchorAssignment_3 )?
             {
-             before(grammarAccess.getEndAnchorAccess().getColonKeyword_0_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getEndAnchorAccess().getColonKeyword_0_0_1()); 
+             before(grammarAccess.getEndAnchorAccess().getAnchorAssignment_3()); 
+            // InternalCanvas.g:3047:2: ( rule__EndAnchor__AnchorAssignment_3 )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
+
+            if ( ((LA14_0>=90 && LA14_0<=91)) ) {
+                alt14=1;
+            }
+            switch (alt14) {
+                case 1 :
+                    // InternalCanvas.g:3047:3: rule__EndAnchor__AnchorAssignment_3
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__EndAnchor__AnchorAssignment_3();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getEndAnchorAccess().getAnchorAssignment_3()); 
 
             }
 
@@ -10679,20 +9404,20 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EndAnchor__Group_0_0__1__Impl"
+    // $ANTLR end "rule__EndAnchor__Group__3__Impl"
 
 
     // $ANTLR start "rule__ShapeAnchorElement__Group__0"
-    // InternalCanvas.g:3417:1: rule__ShapeAnchorElement__Group__0 : rule__ShapeAnchorElement__Group__0__Impl rule__ShapeAnchorElement__Group__1 ;
+    // InternalCanvas.g:3056:1: rule__ShapeAnchorElement__Group__0 : rule__ShapeAnchorElement__Group__0__Impl rule__ShapeAnchorElement__Group__1 ;
     public final void rule__ShapeAnchorElement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3421:1: ( rule__ShapeAnchorElement__Group__0__Impl rule__ShapeAnchorElement__Group__1 )
-            // InternalCanvas.g:3422:2: rule__ShapeAnchorElement__Group__0__Impl rule__ShapeAnchorElement__Group__1
+            // InternalCanvas.g:3060:1: ( rule__ShapeAnchorElement__Group__0__Impl rule__ShapeAnchorElement__Group__1 )
+            // InternalCanvas.g:3061:2: rule__ShapeAnchorElement__Group__0__Impl rule__ShapeAnchorElement__Group__1
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_5);
             rule__ShapeAnchorElement__Group__0__Impl();
 
             state._fsp--;
@@ -10721,31 +9446,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ShapeAnchorElement__Group__0__Impl"
-    // InternalCanvas.g:3429:1: rule__ShapeAnchorElement__Group__0__Impl : ( ( rule__ShapeAnchorElement__Alternatives_0 ) ) ;
+    // InternalCanvas.g:3068:1: rule__ShapeAnchorElement__Group__0__Impl : ( 'shape' ) ;
     public final void rule__ShapeAnchorElement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3433:1: ( ( ( rule__ShapeAnchorElement__Alternatives_0 ) ) )
-            // InternalCanvas.g:3434:1: ( ( rule__ShapeAnchorElement__Alternatives_0 ) )
+            // InternalCanvas.g:3072:1: ( ( 'shape' ) )
+            // InternalCanvas.g:3073:1: ( 'shape' )
             {
-            // InternalCanvas.g:3434:1: ( ( rule__ShapeAnchorElement__Alternatives_0 ) )
-            // InternalCanvas.g:3435:2: ( rule__ShapeAnchorElement__Alternatives_0 )
+            // InternalCanvas.g:3073:1: ( 'shape' )
+            // InternalCanvas.g:3074:2: 'shape'
             {
-             before(grammarAccess.getShapeAnchorElementAccess().getAlternatives_0()); 
-            // InternalCanvas.g:3436:2: ( rule__ShapeAnchorElement__Alternatives_0 )
-            // InternalCanvas.g:3436:3: rule__ShapeAnchorElement__Alternatives_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__ShapeAnchorElement__Alternatives_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getShapeAnchorElementAccess().getAlternatives_0()); 
+             before(grammarAccess.getShapeAnchorElementAccess().getShapeKeyword_0()); 
+            match(input,90,FOLLOW_2); 
+             after(grammarAccess.getShapeAnchorElementAccess().getShapeKeyword_0()); 
 
             }
 
@@ -10768,17 +9483,22 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ShapeAnchorElement__Group__1"
-    // InternalCanvas.g:3444:1: rule__ShapeAnchorElement__Group__1 : rule__ShapeAnchorElement__Group__1__Impl ;
+    // InternalCanvas.g:3083:1: rule__ShapeAnchorElement__Group__1 : rule__ShapeAnchorElement__Group__1__Impl rule__ShapeAnchorElement__Group__2 ;
     public final void rule__ShapeAnchorElement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3448:1: ( rule__ShapeAnchorElement__Group__1__Impl )
-            // InternalCanvas.g:3449:2: rule__ShapeAnchorElement__Group__1__Impl
+            // InternalCanvas.g:3087:1: ( rule__ShapeAnchorElement__Group__1__Impl rule__ShapeAnchorElement__Group__2 )
+            // InternalCanvas.g:3088:2: rule__ShapeAnchorElement__Group__1__Impl rule__ShapeAnchorElement__Group__2
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_14);
             rule__ShapeAnchorElement__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ShapeAnchorElement__Group__2();
 
             state._fsp--;
 
@@ -10801,31 +9521,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ShapeAnchorElement__Group__1__Impl"
-    // InternalCanvas.g:3455:1: rule__ShapeAnchorElement__Group__1__Impl : ( ( rule__ShapeAnchorElement__ElementAssignment_1 ) ) ;
+    // InternalCanvas.g:3095:1: rule__ShapeAnchorElement__Group__1__Impl : ( ':' ) ;
     public final void rule__ShapeAnchorElement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3459:1: ( ( ( rule__ShapeAnchorElement__ElementAssignment_1 ) ) )
-            // InternalCanvas.g:3460:1: ( ( rule__ShapeAnchorElement__ElementAssignment_1 ) )
+            // InternalCanvas.g:3099:1: ( ( ':' ) )
+            // InternalCanvas.g:3100:1: ( ':' )
             {
-            // InternalCanvas.g:3460:1: ( ( rule__ShapeAnchorElement__ElementAssignment_1 ) )
-            // InternalCanvas.g:3461:2: ( rule__ShapeAnchorElement__ElementAssignment_1 )
+            // InternalCanvas.g:3100:1: ( ':' )
+            // InternalCanvas.g:3101:2: ':'
             {
-             before(grammarAccess.getShapeAnchorElementAccess().getElementAssignment_1()); 
-            // InternalCanvas.g:3462:2: ( rule__ShapeAnchorElement__ElementAssignment_1 )
-            // InternalCanvas.g:3462:3: rule__ShapeAnchorElement__ElementAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__ShapeAnchorElement__ElementAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getShapeAnchorElementAccess().getElementAssignment_1()); 
+             before(grammarAccess.getShapeAnchorElementAccess().getColonKeyword_1()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getShapeAnchorElementAccess().getColonKeyword_1()); 
 
             }
 
@@ -10847,93 +9557,18 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ShapeAnchorElement__Group__1__Impl"
 
 
-    // $ANTLR start "rule__ShapeAnchorElement__Group_0_0__0"
-    // InternalCanvas.g:3471:1: rule__ShapeAnchorElement__Group_0_0__0 : rule__ShapeAnchorElement__Group_0_0__0__Impl rule__ShapeAnchorElement__Group_0_0__1 ;
-    public final void rule__ShapeAnchorElement__Group_0_0__0() throws RecognitionException {
+    // $ANTLR start "rule__ShapeAnchorElement__Group__2"
+    // InternalCanvas.g:3110:1: rule__ShapeAnchorElement__Group__2 : rule__ShapeAnchorElement__Group__2__Impl ;
+    public final void rule__ShapeAnchorElement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3475:1: ( rule__ShapeAnchorElement__Group_0_0__0__Impl rule__ShapeAnchorElement__Group_0_0__1 )
-            // InternalCanvas.g:3476:2: rule__ShapeAnchorElement__Group_0_0__0__Impl rule__ShapeAnchorElement__Group_0_0__1
-            {
-            pushFollow(FOLLOW_6);
-            rule__ShapeAnchorElement__Group_0_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__ShapeAnchorElement__Group_0_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ShapeAnchorElement__Group_0_0__0"
-
-
-    // $ANTLR start "rule__ShapeAnchorElement__Group_0_0__0__Impl"
-    // InternalCanvas.g:3483:1: rule__ShapeAnchorElement__Group_0_0__0__Impl : ( 'shape' ) ;
-    public final void rule__ShapeAnchorElement__Group_0_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:3487:1: ( ( 'shape' ) )
-            // InternalCanvas.g:3488:1: ( 'shape' )
-            {
-            // InternalCanvas.g:3488:1: ( 'shape' )
-            // InternalCanvas.g:3489:2: 'shape'
-            {
-             before(grammarAccess.getShapeAnchorElementAccess().getShapeKeyword_0_0_0()); 
-            match(input,44,FOLLOW_2); 
-             after(grammarAccess.getShapeAnchorElementAccess().getShapeKeyword_0_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ShapeAnchorElement__Group_0_0__0__Impl"
-
-
-    // $ANTLR start "rule__ShapeAnchorElement__Group_0_0__1"
-    // InternalCanvas.g:3498:1: rule__ShapeAnchorElement__Group_0_0__1 : rule__ShapeAnchorElement__Group_0_0__1__Impl ;
-    public final void rule__ShapeAnchorElement__Group_0_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:3502:1: ( rule__ShapeAnchorElement__Group_0_0__1__Impl )
-            // InternalCanvas.g:3503:2: rule__ShapeAnchorElement__Group_0_0__1__Impl
+            // InternalCanvas.g:3114:1: ( rule__ShapeAnchorElement__Group__2__Impl )
+            // InternalCanvas.g:3115:2: rule__ShapeAnchorElement__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__ShapeAnchorElement__Group_0_0__1__Impl();
+            rule__ShapeAnchorElement__Group__2__Impl();
 
             state._fsp--;
 
@@ -10952,25 +9587,35 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ShapeAnchorElement__Group_0_0__1"
+    // $ANTLR end "rule__ShapeAnchorElement__Group__2"
 
 
-    // $ANTLR start "rule__ShapeAnchorElement__Group_0_0__1__Impl"
-    // InternalCanvas.g:3509:1: rule__ShapeAnchorElement__Group_0_0__1__Impl : ( ':' ) ;
-    public final void rule__ShapeAnchorElement__Group_0_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ShapeAnchorElement__Group__2__Impl"
+    // InternalCanvas.g:3121:1: rule__ShapeAnchorElement__Group__2__Impl : ( ( rule__ShapeAnchorElement__ElementAssignment_2 ) ) ;
+    public final void rule__ShapeAnchorElement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3513:1: ( ( ':' ) )
-            // InternalCanvas.g:3514:1: ( ':' )
+            // InternalCanvas.g:3125:1: ( ( ( rule__ShapeAnchorElement__ElementAssignment_2 ) ) )
+            // InternalCanvas.g:3126:1: ( ( rule__ShapeAnchorElement__ElementAssignment_2 ) )
             {
-            // InternalCanvas.g:3514:1: ( ':' )
-            // InternalCanvas.g:3515:2: ':'
+            // InternalCanvas.g:3126:1: ( ( rule__ShapeAnchorElement__ElementAssignment_2 ) )
+            // InternalCanvas.g:3127:2: ( rule__ShapeAnchorElement__ElementAssignment_2 )
             {
-             before(grammarAccess.getShapeAnchorElementAccess().getColonKeyword_0_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getShapeAnchorElementAccess().getColonKeyword_0_0_1()); 
+             before(grammarAccess.getShapeAnchorElementAccess().getElementAssignment_2()); 
+            // InternalCanvas.g:3128:2: ( rule__ShapeAnchorElement__ElementAssignment_2 )
+            // InternalCanvas.g:3128:3: rule__ShapeAnchorElement__ElementAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__ShapeAnchorElement__ElementAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getShapeAnchorElementAccess().getElementAssignment_2()); 
 
             }
 
@@ -10989,20 +9634,20 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ShapeAnchorElement__Group_0_0__1__Impl"
+    // $ANTLR end "rule__ShapeAnchorElement__Group__2__Impl"
 
 
     // $ANTLR start "rule__ConnectorAnchorElement__Group__0"
-    // InternalCanvas.g:3525:1: rule__ConnectorAnchorElement__Group__0 : rule__ConnectorAnchorElement__Group__0__Impl rule__ConnectorAnchorElement__Group__1 ;
+    // InternalCanvas.g:3137:1: rule__ConnectorAnchorElement__Group__0 : rule__ConnectorAnchorElement__Group__0__Impl rule__ConnectorAnchorElement__Group__1 ;
     public final void rule__ConnectorAnchorElement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3529:1: ( rule__ConnectorAnchorElement__Group__0__Impl rule__ConnectorAnchorElement__Group__1 )
-            // InternalCanvas.g:3530:2: rule__ConnectorAnchorElement__Group__0__Impl rule__ConnectorAnchorElement__Group__1
+            // InternalCanvas.g:3141:1: ( rule__ConnectorAnchorElement__Group__0__Impl rule__ConnectorAnchorElement__Group__1 )
+            // InternalCanvas.g:3142:2: rule__ConnectorAnchorElement__Group__0__Impl rule__ConnectorAnchorElement__Group__1
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_5);
             rule__ConnectorAnchorElement__Group__0__Impl();
 
             state._fsp--;
@@ -11031,31 +9676,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConnectorAnchorElement__Group__0__Impl"
-    // InternalCanvas.g:3537:1: rule__ConnectorAnchorElement__Group__0__Impl : ( ( rule__ConnectorAnchorElement__Alternatives_0 ) ) ;
+    // InternalCanvas.g:3149:1: rule__ConnectorAnchorElement__Group__0__Impl : ( 'connector' ) ;
     public final void rule__ConnectorAnchorElement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3541:1: ( ( ( rule__ConnectorAnchorElement__Alternatives_0 ) ) )
-            // InternalCanvas.g:3542:1: ( ( rule__ConnectorAnchorElement__Alternatives_0 ) )
+            // InternalCanvas.g:3153:1: ( ( 'connector' ) )
+            // InternalCanvas.g:3154:1: ( 'connector' )
             {
-            // InternalCanvas.g:3542:1: ( ( rule__ConnectorAnchorElement__Alternatives_0 ) )
-            // InternalCanvas.g:3543:2: ( rule__ConnectorAnchorElement__Alternatives_0 )
+            // InternalCanvas.g:3154:1: ( 'connector' )
+            // InternalCanvas.g:3155:2: 'connector'
             {
-             before(grammarAccess.getConnectorAnchorElementAccess().getAlternatives_0()); 
-            // InternalCanvas.g:3544:2: ( rule__ConnectorAnchorElement__Alternatives_0 )
-            // InternalCanvas.g:3544:3: rule__ConnectorAnchorElement__Alternatives_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__ConnectorAnchorElement__Alternatives_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getConnectorAnchorElementAccess().getAlternatives_0()); 
+             before(grammarAccess.getConnectorAnchorElementAccess().getConnectorKeyword_0()); 
+            match(input,91,FOLLOW_2); 
+             after(grammarAccess.getConnectorAnchorElementAccess().getConnectorKeyword_0()); 
 
             }
 
@@ -11078,17 +9713,22 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConnectorAnchorElement__Group__1"
-    // InternalCanvas.g:3552:1: rule__ConnectorAnchorElement__Group__1 : rule__ConnectorAnchorElement__Group__1__Impl ;
+    // InternalCanvas.g:3164:1: rule__ConnectorAnchorElement__Group__1 : rule__ConnectorAnchorElement__Group__1__Impl rule__ConnectorAnchorElement__Group__2 ;
     public final void rule__ConnectorAnchorElement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3556:1: ( rule__ConnectorAnchorElement__Group__1__Impl )
-            // InternalCanvas.g:3557:2: rule__ConnectorAnchorElement__Group__1__Impl
+            // InternalCanvas.g:3168:1: ( rule__ConnectorAnchorElement__Group__1__Impl rule__ConnectorAnchorElement__Group__2 )
+            // InternalCanvas.g:3169:2: rule__ConnectorAnchorElement__Group__1__Impl rule__ConnectorAnchorElement__Group__2
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_14);
             rule__ConnectorAnchorElement__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ConnectorAnchorElement__Group__2();
 
             state._fsp--;
 
@@ -11111,31 +9751,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConnectorAnchorElement__Group__1__Impl"
-    // InternalCanvas.g:3563:1: rule__ConnectorAnchorElement__Group__1__Impl : ( ( rule__ConnectorAnchorElement__ElementAssignment_1 ) ) ;
+    // InternalCanvas.g:3176:1: rule__ConnectorAnchorElement__Group__1__Impl : ( ':' ) ;
     public final void rule__ConnectorAnchorElement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3567:1: ( ( ( rule__ConnectorAnchorElement__ElementAssignment_1 ) ) )
-            // InternalCanvas.g:3568:1: ( ( rule__ConnectorAnchorElement__ElementAssignment_1 ) )
+            // InternalCanvas.g:3180:1: ( ( ':' ) )
+            // InternalCanvas.g:3181:1: ( ':' )
             {
-            // InternalCanvas.g:3568:1: ( ( rule__ConnectorAnchorElement__ElementAssignment_1 ) )
-            // InternalCanvas.g:3569:2: ( rule__ConnectorAnchorElement__ElementAssignment_1 )
+            // InternalCanvas.g:3181:1: ( ':' )
+            // InternalCanvas.g:3182:2: ':'
             {
-             before(grammarAccess.getConnectorAnchorElementAccess().getElementAssignment_1()); 
-            // InternalCanvas.g:3570:2: ( rule__ConnectorAnchorElement__ElementAssignment_1 )
-            // InternalCanvas.g:3570:3: rule__ConnectorAnchorElement__ElementAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__ConnectorAnchorElement__ElementAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getConnectorAnchorElementAccess().getElementAssignment_1()); 
+             before(grammarAccess.getConnectorAnchorElementAccess().getColonKeyword_1()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getConnectorAnchorElementAccess().getColonKeyword_1()); 
 
             }
 
@@ -11157,93 +9787,18 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ConnectorAnchorElement__Group__1__Impl"
 
 
-    // $ANTLR start "rule__ConnectorAnchorElement__Group_0_0__0"
-    // InternalCanvas.g:3579:1: rule__ConnectorAnchorElement__Group_0_0__0 : rule__ConnectorAnchorElement__Group_0_0__0__Impl rule__ConnectorAnchorElement__Group_0_0__1 ;
-    public final void rule__ConnectorAnchorElement__Group_0_0__0() throws RecognitionException {
+    // $ANTLR start "rule__ConnectorAnchorElement__Group__2"
+    // InternalCanvas.g:3191:1: rule__ConnectorAnchorElement__Group__2 : rule__ConnectorAnchorElement__Group__2__Impl ;
+    public final void rule__ConnectorAnchorElement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3583:1: ( rule__ConnectorAnchorElement__Group_0_0__0__Impl rule__ConnectorAnchorElement__Group_0_0__1 )
-            // InternalCanvas.g:3584:2: rule__ConnectorAnchorElement__Group_0_0__0__Impl rule__ConnectorAnchorElement__Group_0_0__1
-            {
-            pushFollow(FOLLOW_6);
-            rule__ConnectorAnchorElement__Group_0_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__ConnectorAnchorElement__Group_0_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ConnectorAnchorElement__Group_0_0__0"
-
-
-    // $ANTLR start "rule__ConnectorAnchorElement__Group_0_0__0__Impl"
-    // InternalCanvas.g:3591:1: rule__ConnectorAnchorElement__Group_0_0__0__Impl : ( 'connector' ) ;
-    public final void rule__ConnectorAnchorElement__Group_0_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:3595:1: ( ( 'connector' ) )
-            // InternalCanvas.g:3596:1: ( 'connector' )
-            {
-            // InternalCanvas.g:3596:1: ( 'connector' )
-            // InternalCanvas.g:3597:2: 'connector'
-            {
-             before(grammarAccess.getConnectorAnchorElementAccess().getConnectorKeyword_0_0_0()); 
-            match(input,49,FOLLOW_2); 
-             after(grammarAccess.getConnectorAnchorElementAccess().getConnectorKeyword_0_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ConnectorAnchorElement__Group_0_0__0__Impl"
-
-
-    // $ANTLR start "rule__ConnectorAnchorElement__Group_0_0__1"
-    // InternalCanvas.g:3606:1: rule__ConnectorAnchorElement__Group_0_0__1 : rule__ConnectorAnchorElement__Group_0_0__1__Impl ;
-    public final void rule__ConnectorAnchorElement__Group_0_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:3610:1: ( rule__ConnectorAnchorElement__Group_0_0__1__Impl )
-            // InternalCanvas.g:3611:2: rule__ConnectorAnchorElement__Group_0_0__1__Impl
+            // InternalCanvas.g:3195:1: ( rule__ConnectorAnchorElement__Group__2__Impl )
+            // InternalCanvas.g:3196:2: rule__ConnectorAnchorElement__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__ConnectorAnchorElement__Group_0_0__1__Impl();
+            rule__ConnectorAnchorElement__Group__2__Impl();
 
             state._fsp--;
 
@@ -11262,25 +9817,35 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ConnectorAnchorElement__Group_0_0__1"
+    // $ANTLR end "rule__ConnectorAnchorElement__Group__2"
 
 
-    // $ANTLR start "rule__ConnectorAnchorElement__Group_0_0__1__Impl"
-    // InternalCanvas.g:3617:1: rule__ConnectorAnchorElement__Group_0_0__1__Impl : ( ':' ) ;
-    public final void rule__ConnectorAnchorElement__Group_0_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ConnectorAnchorElement__Group__2__Impl"
+    // InternalCanvas.g:3202:1: rule__ConnectorAnchorElement__Group__2__Impl : ( ( rule__ConnectorAnchorElement__ElementAssignment_2 ) ) ;
+    public final void rule__ConnectorAnchorElement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3621:1: ( ( ':' ) )
-            // InternalCanvas.g:3622:1: ( ':' )
+            // InternalCanvas.g:3206:1: ( ( ( rule__ConnectorAnchorElement__ElementAssignment_2 ) ) )
+            // InternalCanvas.g:3207:1: ( ( rule__ConnectorAnchorElement__ElementAssignment_2 ) )
             {
-            // InternalCanvas.g:3622:1: ( ':' )
-            // InternalCanvas.g:3623:2: ':'
+            // InternalCanvas.g:3207:1: ( ( rule__ConnectorAnchorElement__ElementAssignment_2 ) )
+            // InternalCanvas.g:3208:2: ( rule__ConnectorAnchorElement__ElementAssignment_2 )
             {
-             before(grammarAccess.getConnectorAnchorElementAccess().getColonKeyword_0_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getConnectorAnchorElementAccess().getColonKeyword_0_0_1()); 
+             before(grammarAccess.getConnectorAnchorElementAccess().getElementAssignment_2()); 
+            // InternalCanvas.g:3209:2: ( rule__ConnectorAnchorElement__ElementAssignment_2 )
+            // InternalCanvas.g:3209:3: rule__ConnectorAnchorElement__ElementAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__ConnectorAnchorElement__ElementAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getConnectorAnchorElementAccess().getElementAssignment_2()); 
 
             }
 
@@ -11299,20 +9864,20 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ConnectorAnchorElement__Group_0_0__1__Impl"
+    // $ANTLR end "rule__ConnectorAnchorElement__Group__2__Impl"
 
 
     // $ANTLR start "rule__Polyline__Group__0"
-    // InternalCanvas.g:3633:1: rule__Polyline__Group__0 : rule__Polyline__Group__0__Impl rule__Polyline__Group__1 ;
+    // InternalCanvas.g:3218:1: rule__Polyline__Group__0 : rule__Polyline__Group__0__Impl rule__Polyline__Group__1 ;
     public final void rule__Polyline__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3637:1: ( rule__Polyline__Group__0__Impl rule__Polyline__Group__1 )
-            // InternalCanvas.g:3638:2: rule__Polyline__Group__0__Impl rule__Polyline__Group__1
+            // InternalCanvas.g:3222:1: ( rule__Polyline__Group__0__Impl rule__Polyline__Group__1 )
+            // InternalCanvas.g:3223:2: rule__Polyline__Group__0__Impl rule__Polyline__Group__1
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_27);
             rule__Polyline__Group__0__Impl();
 
             state._fsp--;
@@ -11341,21 +9906,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Polyline__Group__0__Impl"
-    // InternalCanvas.g:3645:1: rule__Polyline__Group__0__Impl : ( () ) ;
+    // InternalCanvas.g:3230:1: rule__Polyline__Group__0__Impl : ( () ) ;
     public final void rule__Polyline__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3649:1: ( ( () ) )
-            // InternalCanvas.g:3650:1: ( () )
+            // InternalCanvas.g:3234:1: ( ( () ) )
+            // InternalCanvas.g:3235:1: ( () )
             {
-            // InternalCanvas.g:3650:1: ( () )
-            // InternalCanvas.g:3651:2: ()
+            // InternalCanvas.g:3235:1: ( () )
+            // InternalCanvas.g:3236:2: ()
             {
              before(grammarAccess.getPolylineAccess().getPolylineAction_0()); 
-            // InternalCanvas.g:3652:2: ()
-            // InternalCanvas.g:3652:3: 
+            // InternalCanvas.g:3237:2: ()
+            // InternalCanvas.g:3237:3: 
             {
             }
 
@@ -11378,16 +9943,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Polyline__Group__1"
-    // InternalCanvas.g:3660:1: rule__Polyline__Group__1 : rule__Polyline__Group__1__Impl rule__Polyline__Group__2 ;
+    // InternalCanvas.g:3245:1: rule__Polyline__Group__1 : rule__Polyline__Group__1__Impl rule__Polyline__Group__2 ;
     public final void rule__Polyline__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3664:1: ( rule__Polyline__Group__1__Impl rule__Polyline__Group__2 )
-            // InternalCanvas.g:3665:2: rule__Polyline__Group__1__Impl rule__Polyline__Group__2
+            // InternalCanvas.g:3249:1: ( rule__Polyline__Group__1__Impl rule__Polyline__Group__2 )
+            // InternalCanvas.g:3250:2: rule__Polyline__Group__1__Impl rule__Polyline__Group__2
             {
-            pushFollow(FOLLOW_32);
+            pushFollow(FOLLOW_5);
             rule__Polyline__Group__1__Impl();
 
             state._fsp--;
@@ -11416,31 +9981,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Polyline__Group__1__Impl"
-    // InternalCanvas.g:3672:1: rule__Polyline__Group__1__Impl : ( ( rule__Polyline__Alternatives_1 ) ) ;
+    // InternalCanvas.g:3257:1: rule__Polyline__Group__1__Impl : ( 'polyline' ) ;
     public final void rule__Polyline__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3676:1: ( ( ( rule__Polyline__Alternatives_1 ) ) )
-            // InternalCanvas.g:3677:1: ( ( rule__Polyline__Alternatives_1 ) )
+            // InternalCanvas.g:3261:1: ( ( 'polyline' ) )
+            // InternalCanvas.g:3262:1: ( 'polyline' )
             {
-            // InternalCanvas.g:3677:1: ( ( rule__Polyline__Alternatives_1 ) )
-            // InternalCanvas.g:3678:2: ( rule__Polyline__Alternatives_1 )
+            // InternalCanvas.g:3262:1: ( 'polyline' )
+            // InternalCanvas.g:3263:2: 'polyline'
             {
-             before(grammarAccess.getPolylineAccess().getAlternatives_1()); 
-            // InternalCanvas.g:3679:2: ( rule__Polyline__Alternatives_1 )
-            // InternalCanvas.g:3679:3: rule__Polyline__Alternatives_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Polyline__Alternatives_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPolylineAccess().getAlternatives_1()); 
+             before(grammarAccess.getPolylineAccess().getPolylineKeyword_1()); 
+            match(input,107,FOLLOW_2); 
+             after(grammarAccess.getPolylineAccess().getPolylineKeyword_1()); 
 
             }
 
@@ -11463,17 +10018,22 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Polyline__Group__2"
-    // InternalCanvas.g:3687:1: rule__Polyline__Group__2 : rule__Polyline__Group__2__Impl ;
+    // InternalCanvas.g:3272:1: rule__Polyline__Group__2 : rule__Polyline__Group__2__Impl rule__Polyline__Group__3 ;
     public final void rule__Polyline__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3691:1: ( rule__Polyline__Group__2__Impl )
-            // InternalCanvas.g:3692:2: rule__Polyline__Group__2__Impl
+            // InternalCanvas.g:3276:1: ( rule__Polyline__Group__2__Impl rule__Polyline__Group__3 )
+            // InternalCanvas.g:3277:2: rule__Polyline__Group__2__Impl rule__Polyline__Group__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_33);
             rule__Polyline__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Polyline__Group__3();
 
             state._fsp--;
 
@@ -11496,49 +10056,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Polyline__Group__2__Impl"
-    // InternalCanvas.g:3698:1: rule__Polyline__Group__2__Impl : ( ( rule__Polyline__SegmentsAssignment_2 )* ) ;
+    // InternalCanvas.g:3284:1: rule__Polyline__Group__2__Impl : ( ':' ) ;
     public final void rule__Polyline__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3702:1: ( ( ( rule__Polyline__SegmentsAssignment_2 )* ) )
-            // InternalCanvas.g:3703:1: ( ( rule__Polyline__SegmentsAssignment_2 )* )
+            // InternalCanvas.g:3288:1: ( ( ':' ) )
+            // InternalCanvas.g:3289:1: ( ':' )
             {
-            // InternalCanvas.g:3703:1: ( ( rule__Polyline__SegmentsAssignment_2 )* )
-            // InternalCanvas.g:3704:2: ( rule__Polyline__SegmentsAssignment_2 )*
+            // InternalCanvas.g:3289:1: ( ':' )
+            // InternalCanvas.g:3290:2: ':'
             {
-             before(grammarAccess.getPolylineAccess().getSegmentsAssignment_2()); 
-            // InternalCanvas.g:3705:2: ( rule__Polyline__SegmentsAssignment_2 )*
-            loop38:
-            do {
-                int alt38=2;
-                int LA38_0 = input.LA(1);
-
-                if ( (LA38_0==35||LA38_0==52) ) {
-                    alt38=1;
-                }
-
-
-                switch (alt38) {
-            	case 1 :
-            	    // InternalCanvas.g:3705:3: rule__Polyline__SegmentsAssignment_2
-            	    {
-            	    pushFollow(FOLLOW_33);
-            	    rule__Polyline__SegmentsAssignment_2();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop38;
-                }
-            } while (true);
-
-             after(grammarAccess.getPolylineAccess().getSegmentsAssignment_2()); 
+             before(grammarAccess.getPolylineAccess().getColonKeyword_2()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getPolylineAccess().getColonKeyword_2()); 
 
             }
 
@@ -11560,93 +10092,18 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Polyline__Group__2__Impl"
 
 
-    // $ANTLR start "rule__Polyline__Group_1_0__0"
-    // InternalCanvas.g:3714:1: rule__Polyline__Group_1_0__0 : rule__Polyline__Group_1_0__0__Impl rule__Polyline__Group_1_0__1 ;
-    public final void rule__Polyline__Group_1_0__0() throws RecognitionException {
+    // $ANTLR start "rule__Polyline__Group__3"
+    // InternalCanvas.g:3299:1: rule__Polyline__Group__3 : rule__Polyline__Group__3__Impl ;
+    public final void rule__Polyline__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3718:1: ( rule__Polyline__Group_1_0__0__Impl rule__Polyline__Group_1_0__1 )
-            // InternalCanvas.g:3719:2: rule__Polyline__Group_1_0__0__Impl rule__Polyline__Group_1_0__1
-            {
-            pushFollow(FOLLOW_6);
-            rule__Polyline__Group_1_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Polyline__Group_1_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Polyline__Group_1_0__0"
-
-
-    // $ANTLR start "rule__Polyline__Group_1_0__0__Impl"
-    // InternalCanvas.g:3726:1: rule__Polyline__Group_1_0__0__Impl : ( 'polyline' ) ;
-    public final void rule__Polyline__Group_1_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:3730:1: ( ( 'polyline' ) )
-            // InternalCanvas.g:3731:1: ( 'polyline' )
-            {
-            // InternalCanvas.g:3731:1: ( 'polyline' )
-            // InternalCanvas.g:3732:2: 'polyline'
-            {
-             before(grammarAccess.getPolylineAccess().getPolylineKeyword_1_0_0()); 
-            match(input,51,FOLLOW_2); 
-             after(grammarAccess.getPolylineAccess().getPolylineKeyword_1_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Polyline__Group_1_0__0__Impl"
-
-
-    // $ANTLR start "rule__Polyline__Group_1_0__1"
-    // InternalCanvas.g:3741:1: rule__Polyline__Group_1_0__1 : rule__Polyline__Group_1_0__1__Impl ;
-    public final void rule__Polyline__Group_1_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:3745:1: ( rule__Polyline__Group_1_0__1__Impl )
-            // InternalCanvas.g:3746:2: rule__Polyline__Group_1_0__1__Impl
+            // InternalCanvas.g:3303:1: ( rule__Polyline__Group__3__Impl )
+            // InternalCanvas.g:3304:2: rule__Polyline__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Polyline__Group_1_0__1__Impl();
+            rule__Polyline__Group__3__Impl();
 
             state._fsp--;
 
@@ -11665,25 +10122,53 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Polyline__Group_1_0__1"
+    // $ANTLR end "rule__Polyline__Group__3"
 
 
-    // $ANTLR start "rule__Polyline__Group_1_0__1__Impl"
-    // InternalCanvas.g:3752:1: rule__Polyline__Group_1_0__1__Impl : ( ':' ) ;
-    public final void rule__Polyline__Group_1_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Polyline__Group__3__Impl"
+    // InternalCanvas.g:3310:1: rule__Polyline__Group__3__Impl : ( ( rule__Polyline__SegmentsAssignment_3 )* ) ;
+    public final void rule__Polyline__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3756:1: ( ( ':' ) )
-            // InternalCanvas.g:3757:1: ( ':' )
+            // InternalCanvas.g:3314:1: ( ( ( rule__Polyline__SegmentsAssignment_3 )* ) )
+            // InternalCanvas.g:3315:1: ( ( rule__Polyline__SegmentsAssignment_3 )* )
             {
-            // InternalCanvas.g:3757:1: ( ':' )
-            // InternalCanvas.g:3758:2: ':'
+            // InternalCanvas.g:3315:1: ( ( rule__Polyline__SegmentsAssignment_3 )* )
+            // InternalCanvas.g:3316:2: ( rule__Polyline__SegmentsAssignment_3 )*
             {
-             before(grammarAccess.getPolylineAccess().getColonKeyword_1_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getPolylineAccess().getColonKeyword_1_0_1()); 
+             before(grammarAccess.getPolylineAccess().getSegmentsAssignment_3()); 
+            // InternalCanvas.g:3317:2: ( rule__Polyline__SegmentsAssignment_3 )*
+            loop15:
+            do {
+                int alt15=2;
+                int LA15_0 = input.LA(1);
+
+                if ( (LA15_0==108) ) {
+                    alt15=1;
+                }
+
+
+                switch (alt15) {
+            	case 1 :
+            	    // InternalCanvas.g:3317:3: rule__Polyline__SegmentsAssignment_3
+            	    {
+            	    pushFollow(FOLLOW_34);
+            	    rule__Polyline__SegmentsAssignment_3();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop15;
+                }
+            } while (true);
+
+             after(grammarAccess.getPolylineAccess().getSegmentsAssignment_3()); 
 
             }
 
@@ -11702,20 +10187,20 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Polyline__Group_1_0__1__Impl"
+    // $ANTLR end "rule__Polyline__Group__3__Impl"
 
 
     // $ANTLR start "rule__Segment__Group__0"
-    // InternalCanvas.g:3768:1: rule__Segment__Group__0 : rule__Segment__Group__0__Impl rule__Segment__Group__1 ;
+    // InternalCanvas.g:3326:1: rule__Segment__Group__0 : rule__Segment__Group__0__Impl rule__Segment__Group__1 ;
     public final void rule__Segment__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3772:1: ( rule__Segment__Group__0__Impl rule__Segment__Group__1 )
-            // InternalCanvas.g:3773:2: rule__Segment__Group__0__Impl rule__Segment__Group__1
+            // InternalCanvas.g:3330:1: ( rule__Segment__Group__0__Impl rule__Segment__Group__1 )
+            // InternalCanvas.g:3331:2: rule__Segment__Group__0__Impl rule__Segment__Group__1
             {
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_5);
             rule__Segment__Group__0__Impl();
 
             state._fsp--;
@@ -11744,31 +10229,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Segment__Group__0__Impl"
-    // InternalCanvas.g:3780:1: rule__Segment__Group__0__Impl : ( ( rule__Segment__Alternatives_0 ) ) ;
+    // InternalCanvas.g:3338:1: rule__Segment__Group__0__Impl : ( 'segment' ) ;
     public final void rule__Segment__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3784:1: ( ( ( rule__Segment__Alternatives_0 ) ) )
-            // InternalCanvas.g:3785:1: ( ( rule__Segment__Alternatives_0 ) )
+            // InternalCanvas.g:3342:1: ( ( 'segment' ) )
+            // InternalCanvas.g:3343:1: ( 'segment' )
             {
-            // InternalCanvas.g:3785:1: ( ( rule__Segment__Alternatives_0 ) )
-            // InternalCanvas.g:3786:2: ( rule__Segment__Alternatives_0 )
+            // InternalCanvas.g:3343:1: ( 'segment' )
+            // InternalCanvas.g:3344:2: 'segment'
             {
-             before(grammarAccess.getSegmentAccess().getAlternatives_0()); 
-            // InternalCanvas.g:3787:2: ( rule__Segment__Alternatives_0 )
-            // InternalCanvas.g:3787:3: rule__Segment__Alternatives_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__Segment__Alternatives_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSegmentAccess().getAlternatives_0()); 
+             before(grammarAccess.getSegmentAccess().getSegmentKeyword_0()); 
+            match(input,108,FOLLOW_2); 
+             after(grammarAccess.getSegmentAccess().getSegmentKeyword_0()); 
 
             }
 
@@ -11791,16 +10266,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Segment__Group__1"
-    // InternalCanvas.g:3795:1: rule__Segment__Group__1 : rule__Segment__Group__1__Impl rule__Segment__Group__2 ;
+    // InternalCanvas.g:3353:1: rule__Segment__Group__1 : rule__Segment__Group__1__Impl rule__Segment__Group__2 ;
     public final void rule__Segment__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3799:1: ( rule__Segment__Group__1__Impl rule__Segment__Group__2 )
-            // InternalCanvas.g:3800:2: rule__Segment__Group__1__Impl rule__Segment__Group__2
+            // InternalCanvas.g:3357:1: ( rule__Segment__Group__1__Impl rule__Segment__Group__2 )
+            // InternalCanvas.g:3358:2: rule__Segment__Group__1__Impl rule__Segment__Group__2
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_29);
             rule__Segment__Group__1__Impl();
 
             state._fsp--;
@@ -11829,31 +10304,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Segment__Group__1__Impl"
-    // InternalCanvas.g:3807:1: rule__Segment__Group__1__Impl : ( ( rule__Segment__Alternatives_1 ) ) ;
+    // InternalCanvas.g:3365:1: rule__Segment__Group__1__Impl : ( ':' ) ;
     public final void rule__Segment__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3811:1: ( ( ( rule__Segment__Alternatives_1 ) ) )
-            // InternalCanvas.g:3812:1: ( ( rule__Segment__Alternatives_1 ) )
+            // InternalCanvas.g:3369:1: ( ( ':' ) )
+            // InternalCanvas.g:3370:1: ( ':' )
             {
-            // InternalCanvas.g:3812:1: ( ( rule__Segment__Alternatives_1 ) )
-            // InternalCanvas.g:3813:2: ( rule__Segment__Alternatives_1 )
+            // InternalCanvas.g:3370:1: ( ':' )
+            // InternalCanvas.g:3371:2: ':'
             {
-             before(grammarAccess.getSegmentAccess().getAlternatives_1()); 
-            // InternalCanvas.g:3814:2: ( rule__Segment__Alternatives_1 )
-            // InternalCanvas.g:3814:3: rule__Segment__Alternatives_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Segment__Alternatives_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSegmentAccess().getAlternatives_1()); 
+             before(grammarAccess.getSegmentAccess().getColonKeyword_1()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getSegmentAccess().getColonKeyword_1()); 
 
             }
 
@@ -11876,16 +10341,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Segment__Group__2"
-    // InternalCanvas.g:3822:1: rule__Segment__Group__2 : rule__Segment__Group__2__Impl rule__Segment__Group__3 ;
+    // InternalCanvas.g:3380:1: rule__Segment__Group__2 : rule__Segment__Group__2__Impl rule__Segment__Group__3 ;
     public final void rule__Segment__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3826:1: ( rule__Segment__Group__2__Impl rule__Segment__Group__3 )
-            // InternalCanvas.g:3827:2: rule__Segment__Group__2__Impl rule__Segment__Group__3
+            // InternalCanvas.g:3384:1: ( rule__Segment__Group__2__Impl rule__Segment__Group__3 )
+            // InternalCanvas.g:3385:2: rule__Segment__Group__2__Impl rule__Segment__Group__3
             {
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_5);
             rule__Segment__Group__2__Impl();
 
             state._fsp--;
@@ -11914,31 +10379,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Segment__Group__2__Impl"
-    // InternalCanvas.g:3834:1: rule__Segment__Group__2__Impl : ( ( rule__Segment__StartPointAssignment_2 ) ) ;
+    // InternalCanvas.g:3392:1: rule__Segment__Group__2__Impl : ( 'start' ) ;
     public final void rule__Segment__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3838:1: ( ( ( rule__Segment__StartPointAssignment_2 ) ) )
-            // InternalCanvas.g:3839:1: ( ( rule__Segment__StartPointAssignment_2 ) )
+            // InternalCanvas.g:3396:1: ( ( 'start' ) )
+            // InternalCanvas.g:3397:1: ( 'start' )
             {
-            // InternalCanvas.g:3839:1: ( ( rule__Segment__StartPointAssignment_2 ) )
-            // InternalCanvas.g:3840:2: ( rule__Segment__StartPointAssignment_2 )
+            // InternalCanvas.g:3397:1: ( 'start' )
+            // InternalCanvas.g:3398:2: 'start'
             {
-             before(grammarAccess.getSegmentAccess().getStartPointAssignment_2()); 
-            // InternalCanvas.g:3841:2: ( rule__Segment__StartPointAssignment_2 )
-            // InternalCanvas.g:3841:3: rule__Segment__StartPointAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__Segment__StartPointAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSegmentAccess().getStartPointAssignment_2()); 
+             before(grammarAccess.getSegmentAccess().getStartKeyword_2()); 
+            match(input,12,FOLLOW_2); 
+             after(grammarAccess.getSegmentAccess().getStartKeyword_2()); 
 
             }
 
@@ -11961,14 +10416,14 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Segment__Group__3"
-    // InternalCanvas.g:3849:1: rule__Segment__Group__3 : rule__Segment__Group__3__Impl rule__Segment__Group__4 ;
+    // InternalCanvas.g:3407:1: rule__Segment__Group__3 : rule__Segment__Group__3__Impl rule__Segment__Group__4 ;
     public final void rule__Segment__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3853:1: ( rule__Segment__Group__3__Impl rule__Segment__Group__4 )
-            // InternalCanvas.g:3854:2: rule__Segment__Group__3__Impl rule__Segment__Group__4
+            // InternalCanvas.g:3411:1: ( rule__Segment__Group__3__Impl rule__Segment__Group__4 )
+            // InternalCanvas.g:3412:2: rule__Segment__Group__3__Impl rule__Segment__Group__4
             {
             pushFollow(FOLLOW_8);
             rule__Segment__Group__3__Impl();
@@ -11999,31 +10454,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Segment__Group__3__Impl"
-    // InternalCanvas.g:3861:1: rule__Segment__Group__3__Impl : ( ( rule__Segment__Alternatives_3 ) ) ;
+    // InternalCanvas.g:3419:1: rule__Segment__Group__3__Impl : ( ':' ) ;
     public final void rule__Segment__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3865:1: ( ( ( rule__Segment__Alternatives_3 ) ) )
-            // InternalCanvas.g:3866:1: ( ( rule__Segment__Alternatives_3 ) )
+            // InternalCanvas.g:3423:1: ( ( ':' ) )
+            // InternalCanvas.g:3424:1: ( ':' )
             {
-            // InternalCanvas.g:3866:1: ( ( rule__Segment__Alternatives_3 ) )
-            // InternalCanvas.g:3867:2: ( rule__Segment__Alternatives_3 )
+            // InternalCanvas.g:3424:1: ( ':' )
+            // InternalCanvas.g:3425:2: ':'
             {
-             before(grammarAccess.getSegmentAccess().getAlternatives_3()); 
-            // InternalCanvas.g:3868:2: ( rule__Segment__Alternatives_3 )
-            // InternalCanvas.g:3868:3: rule__Segment__Alternatives_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__Segment__Alternatives_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSegmentAccess().getAlternatives_3()); 
+             before(grammarAccess.getSegmentAccess().getColonKeyword_3()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getSegmentAccess().getColonKeyword_3()); 
 
             }
 
@@ -12046,17 +10491,22 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Segment__Group__4"
-    // InternalCanvas.g:3876:1: rule__Segment__Group__4 : rule__Segment__Group__4__Impl ;
+    // InternalCanvas.g:3434:1: rule__Segment__Group__4 : rule__Segment__Group__4__Impl rule__Segment__Group__5 ;
     public final void rule__Segment__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3880:1: ( rule__Segment__Group__4__Impl )
-            // InternalCanvas.g:3881:2: rule__Segment__Group__4__Impl
+            // InternalCanvas.g:3438:1: ( rule__Segment__Group__4__Impl rule__Segment__Group__5 )
+            // InternalCanvas.g:3439:2: rule__Segment__Group__4__Impl rule__Segment__Group__5
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_30);
             rule__Segment__Group__4__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Segment__Group__5();
 
             state._fsp--;
 
@@ -12079,31 +10529,31 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Segment__Group__4__Impl"
-    // InternalCanvas.g:3887:1: rule__Segment__Group__4__Impl : ( ( rule__Segment__EndPointAssignment_4 ) ) ;
+    // InternalCanvas.g:3446:1: rule__Segment__Group__4__Impl : ( ( rule__Segment__StartPointAssignment_4 ) ) ;
     public final void rule__Segment__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3891:1: ( ( ( rule__Segment__EndPointAssignment_4 ) ) )
-            // InternalCanvas.g:3892:1: ( ( rule__Segment__EndPointAssignment_4 ) )
+            // InternalCanvas.g:3450:1: ( ( ( rule__Segment__StartPointAssignment_4 ) ) )
+            // InternalCanvas.g:3451:1: ( ( rule__Segment__StartPointAssignment_4 ) )
             {
-            // InternalCanvas.g:3892:1: ( ( rule__Segment__EndPointAssignment_4 ) )
-            // InternalCanvas.g:3893:2: ( rule__Segment__EndPointAssignment_4 )
+            // InternalCanvas.g:3451:1: ( ( rule__Segment__StartPointAssignment_4 ) )
+            // InternalCanvas.g:3452:2: ( rule__Segment__StartPointAssignment_4 )
             {
-             before(grammarAccess.getSegmentAccess().getEndPointAssignment_4()); 
-            // InternalCanvas.g:3894:2: ( rule__Segment__EndPointAssignment_4 )
-            // InternalCanvas.g:3894:3: rule__Segment__EndPointAssignment_4
+             before(grammarAccess.getSegmentAccess().getStartPointAssignment_4()); 
+            // InternalCanvas.g:3453:2: ( rule__Segment__StartPointAssignment_4 )
+            // InternalCanvas.g:3453:3: rule__Segment__StartPointAssignment_4
             {
             pushFollow(FOLLOW_2);
-            rule__Segment__EndPointAssignment_4();
+            rule__Segment__StartPointAssignment_4();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSegmentAccess().getEndPointAssignment_4()); 
+             after(grammarAccess.getSegmentAccess().getStartPointAssignment_4()); 
 
             }
 
@@ -12125,23 +10575,23 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Segment__Group__4__Impl"
 
 
-    // $ANTLR start "rule__Segment__Group_0_0__0"
-    // InternalCanvas.g:3903:1: rule__Segment__Group_0_0__0 : rule__Segment__Group_0_0__0__Impl rule__Segment__Group_0_0__1 ;
-    public final void rule__Segment__Group_0_0__0() throws RecognitionException {
+    // $ANTLR start "rule__Segment__Group__5"
+    // InternalCanvas.g:3461:1: rule__Segment__Group__5 : rule__Segment__Group__5__Impl rule__Segment__Group__6 ;
+    public final void rule__Segment__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3907:1: ( rule__Segment__Group_0_0__0__Impl rule__Segment__Group_0_0__1 )
-            // InternalCanvas.g:3908:2: rule__Segment__Group_0_0__0__Impl rule__Segment__Group_0_0__1
+            // InternalCanvas.g:3465:1: ( rule__Segment__Group__5__Impl rule__Segment__Group__6 )
+            // InternalCanvas.g:3466:2: rule__Segment__Group__5__Impl rule__Segment__Group__6
             {
-            pushFollow(FOLLOW_6);
-            rule__Segment__Group_0_0__0__Impl();
+            pushFollow(FOLLOW_5);
+            rule__Segment__Group__5__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Segment__Group_0_0__1();
+            rule__Segment__Group__6();
 
             state._fsp--;
 
@@ -12160,25 +10610,25 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Segment__Group_0_0__0"
+    // $ANTLR end "rule__Segment__Group__5"
 
 
-    // $ANTLR start "rule__Segment__Group_0_0__0__Impl"
-    // InternalCanvas.g:3915:1: rule__Segment__Group_0_0__0__Impl : ( 'segment' ) ;
-    public final void rule__Segment__Group_0_0__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Segment__Group__5__Impl"
+    // InternalCanvas.g:3473:1: rule__Segment__Group__5__Impl : ( 'end' ) ;
+    public final void rule__Segment__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3919:1: ( ( 'segment' ) )
-            // InternalCanvas.g:3920:1: ( 'segment' )
+            // InternalCanvas.g:3477:1: ( ( 'end' ) )
+            // InternalCanvas.g:3478:1: ( 'end' )
             {
-            // InternalCanvas.g:3920:1: ( 'segment' )
-            // InternalCanvas.g:3921:2: 'segment'
+            // InternalCanvas.g:3478:1: ( 'end' )
+            // InternalCanvas.g:3479:2: 'end'
             {
-             before(grammarAccess.getSegmentAccess().getSegmentKeyword_0_0_0()); 
-            match(input,52,FOLLOW_2); 
-             after(grammarAccess.getSegmentAccess().getSegmentKeyword_0_0_0()); 
+             before(grammarAccess.getSegmentAccess().getEndKeyword_5()); 
+            match(input,13,FOLLOW_2); 
+             after(grammarAccess.getSegmentAccess().getEndKeyword_5()); 
 
             }
 
@@ -12197,96 +10647,26 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Segment__Group_0_0__0__Impl"
+    // $ANTLR end "rule__Segment__Group__5__Impl"
 
 
-    // $ANTLR start "rule__Segment__Group_0_0__1"
-    // InternalCanvas.g:3930:1: rule__Segment__Group_0_0__1 : rule__Segment__Group_0_0__1__Impl ;
-    public final void rule__Segment__Group_0_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:3934:1: ( rule__Segment__Group_0_0__1__Impl )
-            // InternalCanvas.g:3935:2: rule__Segment__Group_0_0__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Segment__Group_0_0__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Segment__Group_0_0__1"
-
-
-    // $ANTLR start "rule__Segment__Group_0_0__1__Impl"
-    // InternalCanvas.g:3941:1: rule__Segment__Group_0_0__1__Impl : ( ':' ) ;
-    public final void rule__Segment__Group_0_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Segment__Group__6"
+    // InternalCanvas.g:3488:1: rule__Segment__Group__6 : rule__Segment__Group__6__Impl rule__Segment__Group__7 ;
+    public final void rule__Segment__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3945:1: ( ( ':' ) )
-            // InternalCanvas.g:3946:1: ( ':' )
+            // InternalCanvas.g:3492:1: ( rule__Segment__Group__6__Impl rule__Segment__Group__7 )
+            // InternalCanvas.g:3493:2: rule__Segment__Group__6__Impl rule__Segment__Group__7
             {
-            // InternalCanvas.g:3946:1: ( ':' )
-            // InternalCanvas.g:3947:2: ':'
-            {
-             before(grammarAccess.getSegmentAccess().getColonKeyword_0_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getSegmentAccess().getColonKeyword_0_0_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Segment__Group_0_0__1__Impl"
-
-
-    // $ANTLR start "rule__Segment__Group_1_0__0"
-    // InternalCanvas.g:3957:1: rule__Segment__Group_1_0__0 : rule__Segment__Group_1_0__0__Impl rule__Segment__Group_1_0__1 ;
-    public final void rule__Segment__Group_1_0__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:3961:1: ( rule__Segment__Group_1_0__0__Impl rule__Segment__Group_1_0__1 )
-            // InternalCanvas.g:3962:2: rule__Segment__Group_1_0__0__Impl rule__Segment__Group_1_0__1
-            {
-            pushFollow(FOLLOW_6);
-            rule__Segment__Group_1_0__0__Impl();
+            pushFollow(FOLLOW_8);
+            rule__Segment__Group__6__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Segment__Group_1_0__1();
+            rule__Segment__Group__7();
 
             state._fsp--;
 
@@ -12305,25 +10685,25 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Segment__Group_1_0__0"
+    // $ANTLR end "rule__Segment__Group__6"
 
 
-    // $ANTLR start "rule__Segment__Group_1_0__0__Impl"
-    // InternalCanvas.g:3969:1: rule__Segment__Group_1_0__0__Impl : ( 'start' ) ;
-    public final void rule__Segment__Group_1_0__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Segment__Group__6__Impl"
+    // InternalCanvas.g:3500:1: rule__Segment__Group__6__Impl : ( ':' ) ;
+    public final void rule__Segment__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3973:1: ( ( 'start' ) )
-            // InternalCanvas.g:3974:1: ( 'start' )
+            // InternalCanvas.g:3504:1: ( ( ':' ) )
+            // InternalCanvas.g:3505:1: ( ':' )
             {
-            // InternalCanvas.g:3974:1: ( 'start' )
-            // InternalCanvas.g:3975:2: 'start'
+            // InternalCanvas.g:3505:1: ( ':' )
+            // InternalCanvas.g:3506:2: ':'
             {
-             before(grammarAccess.getSegmentAccess().getStartKeyword_1_0_0()); 
-            match(input,21,FOLLOW_2); 
-             after(grammarAccess.getSegmentAccess().getStartKeyword_1_0_0()); 
+             before(grammarAccess.getSegmentAccess().getColonKeyword_6()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getSegmentAccess().getColonKeyword_6()); 
 
             }
 
@@ -12342,21 +10722,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Segment__Group_1_0__0__Impl"
+    // $ANTLR end "rule__Segment__Group__6__Impl"
 
 
-    // $ANTLR start "rule__Segment__Group_1_0__1"
-    // InternalCanvas.g:3984:1: rule__Segment__Group_1_0__1 : rule__Segment__Group_1_0__1__Impl ;
-    public final void rule__Segment__Group_1_0__1() throws RecognitionException {
+    // $ANTLR start "rule__Segment__Group__7"
+    // InternalCanvas.g:3515:1: rule__Segment__Group__7 : rule__Segment__Group__7__Impl ;
+    public final void rule__Segment__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:3988:1: ( rule__Segment__Group_1_0__1__Impl )
-            // InternalCanvas.g:3989:2: rule__Segment__Group_1_0__1__Impl
+            // InternalCanvas.g:3519:1: ( rule__Segment__Group__7__Impl )
+            // InternalCanvas.g:3520:2: rule__Segment__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Segment__Group_1_0__1__Impl();
+            rule__Segment__Group__7__Impl();
 
             state._fsp--;
 
@@ -12375,170 +10755,35 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Segment__Group_1_0__1"
+    // $ANTLR end "rule__Segment__Group__7"
 
 
-    // $ANTLR start "rule__Segment__Group_1_0__1__Impl"
-    // InternalCanvas.g:3995:1: rule__Segment__Group_1_0__1__Impl : ( ':' ) ;
-    public final void rule__Segment__Group_1_0__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:3999:1: ( ( ':' ) )
-            // InternalCanvas.g:4000:1: ( ':' )
-            {
-            // InternalCanvas.g:4000:1: ( ':' )
-            // InternalCanvas.g:4001:2: ':'
-            {
-             before(grammarAccess.getSegmentAccess().getColonKeyword_1_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getSegmentAccess().getColonKeyword_1_0_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Segment__Group_1_0__1__Impl"
-
-
-    // $ANTLR start "rule__Segment__Group_3_0__0"
-    // InternalCanvas.g:4011:1: rule__Segment__Group_3_0__0 : rule__Segment__Group_3_0__0__Impl rule__Segment__Group_3_0__1 ;
-    public final void rule__Segment__Group_3_0__0() throws RecognitionException {
+    // $ANTLR start "rule__Segment__Group__7__Impl"
+    // InternalCanvas.g:3526:1: rule__Segment__Group__7__Impl : ( ( rule__Segment__EndPointAssignment_7 ) ) ;
+    public final void rule__Segment__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4015:1: ( rule__Segment__Group_3_0__0__Impl rule__Segment__Group_3_0__1 )
-            // InternalCanvas.g:4016:2: rule__Segment__Group_3_0__0__Impl rule__Segment__Group_3_0__1
+            // InternalCanvas.g:3530:1: ( ( ( rule__Segment__EndPointAssignment_7 ) ) )
+            // InternalCanvas.g:3531:1: ( ( rule__Segment__EndPointAssignment_7 ) )
             {
-            pushFollow(FOLLOW_6);
-            rule__Segment__Group_3_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Segment__Group_3_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Segment__Group_3_0__0"
-
-
-    // $ANTLR start "rule__Segment__Group_3_0__0__Impl"
-    // InternalCanvas.g:4023:1: rule__Segment__Group_3_0__0__Impl : ( 'end' ) ;
-    public final void rule__Segment__Group_3_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:4027:1: ( ( 'end' ) )
-            // InternalCanvas.g:4028:1: ( 'end' )
+            // InternalCanvas.g:3531:1: ( ( rule__Segment__EndPointAssignment_7 ) )
+            // InternalCanvas.g:3532:2: ( rule__Segment__EndPointAssignment_7 )
             {
-            // InternalCanvas.g:4028:1: ( 'end' )
-            // InternalCanvas.g:4029:2: 'end'
-            {
-             before(grammarAccess.getSegmentAccess().getEndKeyword_3_0_0()); 
-            match(input,22,FOLLOW_2); 
-             after(grammarAccess.getSegmentAccess().getEndKeyword_3_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Segment__Group_3_0__0__Impl"
-
-
-    // $ANTLR start "rule__Segment__Group_3_0__1"
-    // InternalCanvas.g:4038:1: rule__Segment__Group_3_0__1 : rule__Segment__Group_3_0__1__Impl ;
-    public final void rule__Segment__Group_3_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:4042:1: ( rule__Segment__Group_3_0__1__Impl )
-            // InternalCanvas.g:4043:2: rule__Segment__Group_3_0__1__Impl
+             before(grammarAccess.getSegmentAccess().getEndPointAssignment_7()); 
+            // InternalCanvas.g:3533:2: ( rule__Segment__EndPointAssignment_7 )
+            // InternalCanvas.g:3533:3: rule__Segment__EndPointAssignment_7
             {
             pushFollow(FOLLOW_2);
-            rule__Segment__Group_3_0__1__Impl();
+            rule__Segment__EndPointAssignment_7();
 
             state._fsp--;
 
 
             }
 
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Segment__Group_3_0__1"
-
-
-    // $ANTLR start "rule__Segment__Group_3_0__1__Impl"
-    // InternalCanvas.g:4049:1: rule__Segment__Group_3_0__1__Impl : ( ':' ) ;
-    public final void rule__Segment__Group_3_0__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:4053:1: ( ( ':' ) )
-            // InternalCanvas.g:4054:1: ( ':' )
-            {
-            // InternalCanvas.g:4054:1: ( ':' )
-            // InternalCanvas.g:4055:2: ':'
-            {
-             before(grammarAccess.getSegmentAccess().getColonKeyword_3_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getSegmentAccess().getColonKeyword_3_0_1()); 
+             after(grammarAccess.getSegmentAccess().getEndPointAssignment_7()); 
 
             }
 
@@ -12557,20 +10802,20 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Segment__Group_3_0__1__Impl"
+    // $ANTLR end "rule__Segment__Group__7__Impl"
 
 
     // $ANTLR start "rule__Point__Group__0"
-    // InternalCanvas.g:4065:1: rule__Point__Group__0 : rule__Point__Group__0__Impl rule__Point__Group__1 ;
+    // InternalCanvas.g:3542:1: rule__Point__Group__0 : rule__Point__Group__0__Impl rule__Point__Group__1 ;
     public final void rule__Point__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4069:1: ( rule__Point__Group__0__Impl rule__Point__Group__1 )
-            // InternalCanvas.g:4070:2: rule__Point__Group__0__Impl rule__Point__Group__1
+            // InternalCanvas.g:3546:1: ( rule__Point__Group__0__Impl rule__Point__Group__1 )
+            // InternalCanvas.g:3547:2: rule__Point__Group__0__Impl rule__Point__Group__1
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_5);
             rule__Point__Group__0__Impl();
 
             state._fsp--;
@@ -12599,20 +10844,20 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Point__Group__0__Impl"
-    // InternalCanvas.g:4077:1: rule__Point__Group__0__Impl : ( 'x' ) ;
+    // InternalCanvas.g:3554:1: rule__Point__Group__0__Impl : ( 'x' ) ;
     public final void rule__Point__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4081:1: ( ( 'x' ) )
-            // InternalCanvas.g:4082:1: ( 'x' )
+            // InternalCanvas.g:3558:1: ( ( 'x' ) )
+            // InternalCanvas.g:3559:1: ( 'x' )
             {
-            // InternalCanvas.g:4082:1: ( 'x' )
-            // InternalCanvas.g:4083:2: 'x'
+            // InternalCanvas.g:3559:1: ( 'x' )
+            // InternalCanvas.g:3560:2: 'x'
             {
              before(grammarAccess.getPointAccess().getXKeyword_0()); 
-            match(input,53,FOLLOW_2); 
+            match(input,109,FOLLOW_2); 
              after(grammarAccess.getPointAccess().getXKeyword_0()); 
 
             }
@@ -12636,16 +10881,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Point__Group__1"
-    // InternalCanvas.g:4092:1: rule__Point__Group__1 : rule__Point__Group__1__Impl rule__Point__Group__2 ;
+    // InternalCanvas.g:3569:1: rule__Point__Group__1 : rule__Point__Group__1__Impl rule__Point__Group__2 ;
     public final void rule__Point__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4096:1: ( rule__Point__Group__1__Impl rule__Point__Group__2 )
-            // InternalCanvas.g:4097:2: rule__Point__Group__1__Impl rule__Point__Group__2
+            // InternalCanvas.g:3573:1: ( rule__Point__Group__1__Impl rule__Point__Group__2 )
+            // InternalCanvas.g:3574:2: rule__Point__Group__1__Impl rule__Point__Group__2
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_10);
             rule__Point__Group__1__Impl();
 
             state._fsp--;
@@ -12674,31 +10919,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Point__Group__1__Impl"
-    // InternalCanvas.g:4104:1: rule__Point__Group__1__Impl : ( ( rule__Point__XAssignment_1 ) ) ;
+    // InternalCanvas.g:3581:1: rule__Point__Group__1__Impl : ( ':' ) ;
     public final void rule__Point__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4108:1: ( ( ( rule__Point__XAssignment_1 ) ) )
-            // InternalCanvas.g:4109:1: ( ( rule__Point__XAssignment_1 ) )
+            // InternalCanvas.g:3585:1: ( ( ':' ) )
+            // InternalCanvas.g:3586:1: ( ':' )
             {
-            // InternalCanvas.g:4109:1: ( ( rule__Point__XAssignment_1 ) )
-            // InternalCanvas.g:4110:2: ( rule__Point__XAssignment_1 )
+            // InternalCanvas.g:3586:1: ( ':' )
+            // InternalCanvas.g:3587:2: ':'
             {
-             before(grammarAccess.getPointAccess().getXAssignment_1()); 
-            // InternalCanvas.g:4111:2: ( rule__Point__XAssignment_1 )
-            // InternalCanvas.g:4111:3: rule__Point__XAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Point__XAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPointAccess().getXAssignment_1()); 
+             before(grammarAccess.getPointAccess().getColonKeyword_1()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getPointAccess().getColonKeyword_1()); 
 
             }
 
@@ -12721,16 +10956,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Point__Group__2"
-    // InternalCanvas.g:4119:1: rule__Point__Group__2 : rule__Point__Group__2__Impl rule__Point__Group__3 ;
+    // InternalCanvas.g:3596:1: rule__Point__Group__2 : rule__Point__Group__2__Impl rule__Point__Group__3 ;
     public final void rule__Point__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4123:1: ( rule__Point__Group__2__Impl rule__Point__Group__3 )
-            // InternalCanvas.g:4124:2: rule__Point__Group__2__Impl rule__Point__Group__3
+            // InternalCanvas.g:3600:1: ( rule__Point__Group__2__Impl rule__Point__Group__3 )
+            // InternalCanvas.g:3601:2: rule__Point__Group__2__Impl rule__Point__Group__3
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_35);
             rule__Point__Group__2__Impl();
 
             state._fsp--;
@@ -12759,21 +10994,31 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Point__Group__2__Impl"
-    // InternalCanvas.g:4131:1: rule__Point__Group__2__Impl : ( 'y' ) ;
+    // InternalCanvas.g:3608:1: rule__Point__Group__2__Impl : ( ( rule__Point__XAssignment_2 ) ) ;
     public final void rule__Point__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4135:1: ( ( 'y' ) )
-            // InternalCanvas.g:4136:1: ( 'y' )
+            // InternalCanvas.g:3612:1: ( ( ( rule__Point__XAssignment_2 ) ) )
+            // InternalCanvas.g:3613:1: ( ( rule__Point__XAssignment_2 ) )
             {
-            // InternalCanvas.g:4136:1: ( 'y' )
-            // InternalCanvas.g:4137:2: 'y'
+            // InternalCanvas.g:3613:1: ( ( rule__Point__XAssignment_2 ) )
+            // InternalCanvas.g:3614:2: ( rule__Point__XAssignment_2 )
             {
-             before(grammarAccess.getPointAccess().getYKeyword_2()); 
-            match(input,54,FOLLOW_2); 
-             after(grammarAccess.getPointAccess().getYKeyword_2()); 
+             before(grammarAccess.getPointAccess().getXAssignment_2()); 
+            // InternalCanvas.g:3615:2: ( rule__Point__XAssignment_2 )
+            // InternalCanvas.g:3615:3: rule__Point__XAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__Point__XAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getPointAccess().getXAssignment_2()); 
 
             }
 
@@ -12796,17 +11041,22 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Point__Group__3"
-    // InternalCanvas.g:4146:1: rule__Point__Group__3 : rule__Point__Group__3__Impl ;
+    // InternalCanvas.g:3623:1: rule__Point__Group__3 : rule__Point__Group__3__Impl rule__Point__Group__4 ;
     public final void rule__Point__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4150:1: ( rule__Point__Group__3__Impl )
-            // InternalCanvas.g:4151:2: rule__Point__Group__3__Impl
+            // InternalCanvas.g:3627:1: ( rule__Point__Group__3__Impl rule__Point__Group__4 )
+            // InternalCanvas.g:3628:2: rule__Point__Group__3__Impl rule__Point__Group__4
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_5);
             rule__Point__Group__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Point__Group__4();
 
             state._fsp--;
 
@@ -12829,31 +11079,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Point__Group__3__Impl"
-    // InternalCanvas.g:4157:1: rule__Point__Group__3__Impl : ( ( rule__Point__YAssignment_3 ) ) ;
+    // InternalCanvas.g:3635:1: rule__Point__Group__3__Impl : ( 'y' ) ;
     public final void rule__Point__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4161:1: ( ( ( rule__Point__YAssignment_3 ) ) )
-            // InternalCanvas.g:4162:1: ( ( rule__Point__YAssignment_3 ) )
+            // InternalCanvas.g:3639:1: ( ( 'y' ) )
+            // InternalCanvas.g:3640:1: ( 'y' )
             {
-            // InternalCanvas.g:4162:1: ( ( rule__Point__YAssignment_3 ) )
-            // InternalCanvas.g:4163:2: ( rule__Point__YAssignment_3 )
+            // InternalCanvas.g:3640:1: ( 'y' )
+            // InternalCanvas.g:3641:2: 'y'
             {
-             before(grammarAccess.getPointAccess().getYAssignment_3()); 
-            // InternalCanvas.g:4164:2: ( rule__Point__YAssignment_3 )
-            // InternalCanvas.g:4164:3: rule__Point__YAssignment_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__Point__YAssignment_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPointAccess().getYAssignment_3()); 
+             before(grammarAccess.getPointAccess().getYKeyword_3()); 
+            match(input,110,FOLLOW_2); 
+             after(grammarAccess.getPointAccess().getYKeyword_3()); 
 
             }
 
@@ -12875,17 +11115,172 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Point__Group__3__Impl"
 
 
+    // $ANTLR start "rule__Point__Group__4"
+    // InternalCanvas.g:3650:1: rule__Point__Group__4 : rule__Point__Group__4__Impl rule__Point__Group__5 ;
+    public final void rule__Point__Group__4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:3654:1: ( rule__Point__Group__4__Impl rule__Point__Group__5 )
+            // InternalCanvas.g:3655:2: rule__Point__Group__4__Impl rule__Point__Group__5
+            {
+            pushFollow(FOLLOW_10);
+            rule__Point__Group__4__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Point__Group__5();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Point__Group__4"
+
+
+    // $ANTLR start "rule__Point__Group__4__Impl"
+    // InternalCanvas.g:3662:1: rule__Point__Group__4__Impl : ( ':' ) ;
+    public final void rule__Point__Group__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:3666:1: ( ( ':' ) )
+            // InternalCanvas.g:3667:1: ( ':' )
+            {
+            // InternalCanvas.g:3667:1: ( ':' )
+            // InternalCanvas.g:3668:2: ':'
+            {
+             before(grammarAccess.getPointAccess().getColonKeyword_4()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getPointAccess().getColonKeyword_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Point__Group__4__Impl"
+
+
+    // $ANTLR start "rule__Point__Group__5"
+    // InternalCanvas.g:3677:1: rule__Point__Group__5 : rule__Point__Group__5__Impl ;
+    public final void rule__Point__Group__5() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:3681:1: ( rule__Point__Group__5__Impl )
+            // InternalCanvas.g:3682:2: rule__Point__Group__5__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Point__Group__5__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Point__Group__5"
+
+
+    // $ANTLR start "rule__Point__Group__5__Impl"
+    // InternalCanvas.g:3688:1: rule__Point__Group__5__Impl : ( ( rule__Point__YAssignment_5 ) ) ;
+    public final void rule__Point__Group__5__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:3692:1: ( ( ( rule__Point__YAssignment_5 ) ) )
+            // InternalCanvas.g:3693:1: ( ( rule__Point__YAssignment_5 ) )
+            {
+            // InternalCanvas.g:3693:1: ( ( rule__Point__YAssignment_5 ) )
+            // InternalCanvas.g:3694:2: ( rule__Point__YAssignment_5 )
+            {
+             before(grammarAccess.getPointAccess().getYAssignment_5()); 
+            // InternalCanvas.g:3695:2: ( rule__Point__YAssignment_5 )
+            // InternalCanvas.g:3695:3: rule__Point__YAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__Point__YAssignment_5();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getPointAccess().getYAssignment_5()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Point__Group__5__Impl"
+
+
     // $ANTLR start "rule__PointDefinition__Group__0"
-    // InternalCanvas.g:4173:1: rule__PointDefinition__Group__0 : rule__PointDefinition__Group__0__Impl rule__PointDefinition__Group__1 ;
+    // InternalCanvas.g:3704:1: rule__PointDefinition__Group__0 : rule__PointDefinition__Group__0__Impl rule__PointDefinition__Group__1 ;
     public final void rule__PointDefinition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4177:1: ( rule__PointDefinition__Group__0__Impl rule__PointDefinition__Group__1 )
-            // InternalCanvas.g:4178:2: rule__PointDefinition__Group__0__Impl rule__PointDefinition__Group__1
+            // InternalCanvas.g:3708:1: ( rule__PointDefinition__Group__0__Impl rule__PointDefinition__Group__1 )
+            // InternalCanvas.g:3709:2: rule__PointDefinition__Group__0__Impl rule__PointDefinition__Group__1
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_5);
             rule__PointDefinition__Group__0__Impl();
 
             state._fsp--;
@@ -12914,31 +11309,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PointDefinition__Group__0__Impl"
-    // InternalCanvas.g:4185:1: rule__PointDefinition__Group__0__Impl : ( ( rule__PointDefinition__Alternatives_0 ) ) ;
+    // InternalCanvas.g:3716:1: rule__PointDefinition__Group__0__Impl : ( 'point' ) ;
     public final void rule__PointDefinition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4189:1: ( ( ( rule__PointDefinition__Alternatives_0 ) ) )
-            // InternalCanvas.g:4190:1: ( ( rule__PointDefinition__Alternatives_0 ) )
+            // InternalCanvas.g:3720:1: ( ( 'point' ) )
+            // InternalCanvas.g:3721:1: ( 'point' )
             {
-            // InternalCanvas.g:4190:1: ( ( rule__PointDefinition__Alternatives_0 ) )
-            // InternalCanvas.g:4191:2: ( rule__PointDefinition__Alternatives_0 )
+            // InternalCanvas.g:3721:1: ( 'point' )
+            // InternalCanvas.g:3722:2: 'point'
             {
-             before(grammarAccess.getPointDefinitionAccess().getAlternatives_0()); 
-            // InternalCanvas.g:4192:2: ( rule__PointDefinition__Alternatives_0 )
-            // InternalCanvas.g:4192:3: rule__PointDefinition__Alternatives_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__PointDefinition__Alternatives_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPointDefinitionAccess().getAlternatives_0()); 
+             before(grammarAccess.getPointDefinitionAccess().getPointKeyword_0()); 
+            match(input,111,FOLLOW_2); 
+             after(grammarAccess.getPointDefinitionAccess().getPointKeyword_0()); 
 
             }
 
@@ -12961,16 +11346,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PointDefinition__Group__1"
-    // InternalCanvas.g:4200:1: rule__PointDefinition__Group__1 : rule__PointDefinition__Group__1__Impl rule__PointDefinition__Group__2 ;
+    // InternalCanvas.g:3731:1: rule__PointDefinition__Group__1 : rule__PointDefinition__Group__1__Impl rule__PointDefinition__Group__2 ;
     public final void rule__PointDefinition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4204:1: ( rule__PointDefinition__Group__1__Impl rule__PointDefinition__Group__2 )
-            // InternalCanvas.g:4205:2: rule__PointDefinition__Group__1__Impl rule__PointDefinition__Group__2
+            // InternalCanvas.g:3735:1: ( rule__PointDefinition__Group__1__Impl rule__PointDefinition__Group__2 )
+            // InternalCanvas.g:3736:2: rule__PointDefinition__Group__1__Impl rule__PointDefinition__Group__2
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_8);
             rule__PointDefinition__Group__1__Impl();
 
             state._fsp--;
@@ -12999,21 +11384,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PointDefinition__Group__1__Impl"
-    // InternalCanvas.g:4212:1: rule__PointDefinition__Group__1__Impl : ( 'x' ) ;
+    // InternalCanvas.g:3743:1: rule__PointDefinition__Group__1__Impl : ( ':' ) ;
     public final void rule__PointDefinition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4216:1: ( ( 'x' ) )
-            // InternalCanvas.g:4217:1: ( 'x' )
+            // InternalCanvas.g:3747:1: ( ( ':' ) )
+            // InternalCanvas.g:3748:1: ( ':' )
             {
-            // InternalCanvas.g:4217:1: ( 'x' )
-            // InternalCanvas.g:4218:2: 'x'
+            // InternalCanvas.g:3748:1: ( ':' )
+            // InternalCanvas.g:3749:2: ':'
             {
-             before(grammarAccess.getPointDefinitionAccess().getXKeyword_1()); 
-            match(input,53,FOLLOW_2); 
-             after(grammarAccess.getPointDefinitionAccess().getXKeyword_1()); 
+             before(grammarAccess.getPointDefinitionAccess().getColonKeyword_1()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getPointDefinitionAccess().getColonKeyword_1()); 
 
             }
 
@@ -13036,16 +11421,16 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PointDefinition__Group__2"
-    // InternalCanvas.g:4227:1: rule__PointDefinition__Group__2 : rule__PointDefinition__Group__2__Impl rule__PointDefinition__Group__3 ;
+    // InternalCanvas.g:3758:1: rule__PointDefinition__Group__2 : rule__PointDefinition__Group__2__Impl rule__PointDefinition__Group__3 ;
     public final void rule__PointDefinition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4231:1: ( rule__PointDefinition__Group__2__Impl rule__PointDefinition__Group__3 )
-            // InternalCanvas.g:4232:2: rule__PointDefinition__Group__2__Impl rule__PointDefinition__Group__3
+            // InternalCanvas.g:3762:1: ( rule__PointDefinition__Group__2__Impl rule__PointDefinition__Group__3 )
+            // InternalCanvas.g:3763:2: rule__PointDefinition__Group__2__Impl rule__PointDefinition__Group__3
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_5);
             rule__PointDefinition__Group__2__Impl();
 
             state._fsp--;
@@ -13074,31 +11459,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PointDefinition__Group__2__Impl"
-    // InternalCanvas.g:4239:1: rule__PointDefinition__Group__2__Impl : ( ( rule__PointDefinition__XAssignment_2 ) ) ;
+    // InternalCanvas.g:3770:1: rule__PointDefinition__Group__2__Impl : ( 'x' ) ;
     public final void rule__PointDefinition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4243:1: ( ( ( rule__PointDefinition__XAssignment_2 ) ) )
-            // InternalCanvas.g:4244:1: ( ( rule__PointDefinition__XAssignment_2 ) )
+            // InternalCanvas.g:3774:1: ( ( 'x' ) )
+            // InternalCanvas.g:3775:1: ( 'x' )
             {
-            // InternalCanvas.g:4244:1: ( ( rule__PointDefinition__XAssignment_2 ) )
-            // InternalCanvas.g:4245:2: ( rule__PointDefinition__XAssignment_2 )
+            // InternalCanvas.g:3775:1: ( 'x' )
+            // InternalCanvas.g:3776:2: 'x'
             {
-             before(grammarAccess.getPointDefinitionAccess().getXAssignment_2()); 
-            // InternalCanvas.g:4246:2: ( rule__PointDefinition__XAssignment_2 )
-            // InternalCanvas.g:4246:3: rule__PointDefinition__XAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__PointDefinition__XAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPointDefinitionAccess().getXAssignment_2()); 
+             before(grammarAccess.getPointDefinitionAccess().getXKeyword_2()); 
+            match(input,109,FOLLOW_2); 
+             after(grammarAccess.getPointDefinitionAccess().getXKeyword_2()); 
 
             }
 
@@ -13121,14 +11496,14 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PointDefinition__Group__3"
-    // InternalCanvas.g:4254:1: rule__PointDefinition__Group__3 : rule__PointDefinition__Group__3__Impl rule__PointDefinition__Group__4 ;
+    // InternalCanvas.g:3785:1: rule__PointDefinition__Group__3 : rule__PointDefinition__Group__3__Impl rule__PointDefinition__Group__4 ;
     public final void rule__PointDefinition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4258:1: ( rule__PointDefinition__Group__3__Impl rule__PointDefinition__Group__4 )
-            // InternalCanvas.g:4259:2: rule__PointDefinition__Group__3__Impl rule__PointDefinition__Group__4
+            // InternalCanvas.g:3789:1: ( rule__PointDefinition__Group__3__Impl rule__PointDefinition__Group__4 )
+            // InternalCanvas.g:3790:2: rule__PointDefinition__Group__3__Impl rule__PointDefinition__Group__4
             {
             pushFollow(FOLLOW_10);
             rule__PointDefinition__Group__3__Impl();
@@ -13159,21 +11534,21 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PointDefinition__Group__3__Impl"
-    // InternalCanvas.g:4266:1: rule__PointDefinition__Group__3__Impl : ( 'y' ) ;
+    // InternalCanvas.g:3797:1: rule__PointDefinition__Group__3__Impl : ( ':' ) ;
     public final void rule__PointDefinition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4270:1: ( ( 'y' ) )
-            // InternalCanvas.g:4271:1: ( 'y' )
+            // InternalCanvas.g:3801:1: ( ( ':' ) )
+            // InternalCanvas.g:3802:1: ( ':' )
             {
-            // InternalCanvas.g:4271:1: ( 'y' )
-            // InternalCanvas.g:4272:2: 'y'
+            // InternalCanvas.g:3802:1: ( ':' )
+            // InternalCanvas.g:3803:2: ':'
             {
-             before(grammarAccess.getPointDefinitionAccess().getYKeyword_3()); 
-            match(input,54,FOLLOW_2); 
-             after(grammarAccess.getPointDefinitionAccess().getYKeyword_3()); 
+             before(grammarAccess.getPointDefinitionAccess().getColonKeyword_3()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getPointDefinitionAccess().getColonKeyword_3()); 
 
             }
 
@@ -13196,17 +11571,22 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PointDefinition__Group__4"
-    // InternalCanvas.g:4281:1: rule__PointDefinition__Group__4 : rule__PointDefinition__Group__4__Impl ;
+    // InternalCanvas.g:3812:1: rule__PointDefinition__Group__4 : rule__PointDefinition__Group__4__Impl rule__PointDefinition__Group__5 ;
     public final void rule__PointDefinition__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4285:1: ( rule__PointDefinition__Group__4__Impl )
-            // InternalCanvas.g:4286:2: rule__PointDefinition__Group__4__Impl
+            // InternalCanvas.g:3816:1: ( rule__PointDefinition__Group__4__Impl rule__PointDefinition__Group__5 )
+            // InternalCanvas.g:3817:2: rule__PointDefinition__Group__4__Impl rule__PointDefinition__Group__5
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_35);
             rule__PointDefinition__Group__4__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__PointDefinition__Group__5();
 
             state._fsp--;
 
@@ -13229,31 +11609,31 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PointDefinition__Group__4__Impl"
-    // InternalCanvas.g:4292:1: rule__PointDefinition__Group__4__Impl : ( ( rule__PointDefinition__YAssignment_4 ) ) ;
+    // InternalCanvas.g:3824:1: rule__PointDefinition__Group__4__Impl : ( ( rule__PointDefinition__XAssignment_4 ) ) ;
     public final void rule__PointDefinition__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4296:1: ( ( ( rule__PointDefinition__YAssignment_4 ) ) )
-            // InternalCanvas.g:4297:1: ( ( rule__PointDefinition__YAssignment_4 ) )
+            // InternalCanvas.g:3828:1: ( ( ( rule__PointDefinition__XAssignment_4 ) ) )
+            // InternalCanvas.g:3829:1: ( ( rule__PointDefinition__XAssignment_4 ) )
             {
-            // InternalCanvas.g:4297:1: ( ( rule__PointDefinition__YAssignment_4 ) )
-            // InternalCanvas.g:4298:2: ( rule__PointDefinition__YAssignment_4 )
+            // InternalCanvas.g:3829:1: ( ( rule__PointDefinition__XAssignment_4 ) )
+            // InternalCanvas.g:3830:2: ( rule__PointDefinition__XAssignment_4 )
             {
-             before(grammarAccess.getPointDefinitionAccess().getYAssignment_4()); 
-            // InternalCanvas.g:4299:2: ( rule__PointDefinition__YAssignment_4 )
-            // InternalCanvas.g:4299:3: rule__PointDefinition__YAssignment_4
+             before(grammarAccess.getPointDefinitionAccess().getXAssignment_4()); 
+            // InternalCanvas.g:3831:2: ( rule__PointDefinition__XAssignment_4 )
+            // InternalCanvas.g:3831:3: rule__PointDefinition__XAssignment_4
             {
             pushFollow(FOLLOW_2);
-            rule__PointDefinition__YAssignment_4();
+            rule__PointDefinition__XAssignment_4();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPointDefinitionAccess().getYAssignment_4()); 
+             after(grammarAccess.getPointDefinitionAccess().getXAssignment_4()); 
 
             }
 
@@ -13275,23 +11655,23 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__PointDefinition__Group__4__Impl"
 
 
-    // $ANTLR start "rule__PointDefinition__Group_0_0__0"
-    // InternalCanvas.g:4308:1: rule__PointDefinition__Group_0_0__0 : rule__PointDefinition__Group_0_0__0__Impl rule__PointDefinition__Group_0_0__1 ;
-    public final void rule__PointDefinition__Group_0_0__0() throws RecognitionException {
+    // $ANTLR start "rule__PointDefinition__Group__5"
+    // InternalCanvas.g:3839:1: rule__PointDefinition__Group__5 : rule__PointDefinition__Group__5__Impl rule__PointDefinition__Group__6 ;
+    public final void rule__PointDefinition__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4312:1: ( rule__PointDefinition__Group_0_0__0__Impl rule__PointDefinition__Group_0_0__1 )
-            // InternalCanvas.g:4313:2: rule__PointDefinition__Group_0_0__0__Impl rule__PointDefinition__Group_0_0__1
+            // InternalCanvas.g:3843:1: ( rule__PointDefinition__Group__5__Impl rule__PointDefinition__Group__6 )
+            // InternalCanvas.g:3844:2: rule__PointDefinition__Group__5__Impl rule__PointDefinition__Group__6
             {
-            pushFollow(FOLLOW_6);
-            rule__PointDefinition__Group_0_0__0__Impl();
+            pushFollow(FOLLOW_5);
+            rule__PointDefinition__Group__5__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__PointDefinition__Group_0_0__1();
+            rule__PointDefinition__Group__6();
 
             state._fsp--;
 
@@ -13310,25 +11690,25 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PointDefinition__Group_0_0__0"
+    // $ANTLR end "rule__PointDefinition__Group__5"
 
 
-    // $ANTLR start "rule__PointDefinition__Group_0_0__0__Impl"
-    // InternalCanvas.g:4320:1: rule__PointDefinition__Group_0_0__0__Impl : ( 'point' ) ;
-    public final void rule__PointDefinition__Group_0_0__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__PointDefinition__Group__5__Impl"
+    // InternalCanvas.g:3851:1: rule__PointDefinition__Group__5__Impl : ( 'y' ) ;
+    public final void rule__PointDefinition__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4324:1: ( ( 'point' ) )
-            // InternalCanvas.g:4325:1: ( 'point' )
+            // InternalCanvas.g:3855:1: ( ( 'y' ) )
+            // InternalCanvas.g:3856:1: ( 'y' )
             {
-            // InternalCanvas.g:4325:1: ( 'point' )
-            // InternalCanvas.g:4326:2: 'point'
+            // InternalCanvas.g:3856:1: ( 'y' )
+            // InternalCanvas.g:3857:2: 'y'
             {
-             before(grammarAccess.getPointDefinitionAccess().getPointKeyword_0_0_0()); 
-            match(input,55,FOLLOW_2); 
-             after(grammarAccess.getPointDefinitionAccess().getPointKeyword_0_0_0()); 
+             before(grammarAccess.getPointDefinitionAccess().getYKeyword_5()); 
+            match(input,110,FOLLOW_2); 
+             after(grammarAccess.getPointDefinitionAccess().getYKeyword_5()); 
 
             }
 
@@ -13347,21 +11727,96 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PointDefinition__Group_0_0__0__Impl"
+    // $ANTLR end "rule__PointDefinition__Group__5__Impl"
 
 
-    // $ANTLR start "rule__PointDefinition__Group_0_0__1"
-    // InternalCanvas.g:4335:1: rule__PointDefinition__Group_0_0__1 : rule__PointDefinition__Group_0_0__1__Impl ;
-    public final void rule__PointDefinition__Group_0_0__1() throws RecognitionException {
+    // $ANTLR start "rule__PointDefinition__Group__6"
+    // InternalCanvas.g:3866:1: rule__PointDefinition__Group__6 : rule__PointDefinition__Group__6__Impl rule__PointDefinition__Group__7 ;
+    public final void rule__PointDefinition__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4339:1: ( rule__PointDefinition__Group_0_0__1__Impl )
-            // InternalCanvas.g:4340:2: rule__PointDefinition__Group_0_0__1__Impl
+            // InternalCanvas.g:3870:1: ( rule__PointDefinition__Group__6__Impl rule__PointDefinition__Group__7 )
+            // InternalCanvas.g:3871:2: rule__PointDefinition__Group__6__Impl rule__PointDefinition__Group__7
+            {
+            pushFollow(FOLLOW_10);
+            rule__PointDefinition__Group__6__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__PointDefinition__Group__7();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PointDefinition__Group__6"
+
+
+    // $ANTLR start "rule__PointDefinition__Group__6__Impl"
+    // InternalCanvas.g:3878:1: rule__PointDefinition__Group__6__Impl : ( ':' ) ;
+    public final void rule__PointDefinition__Group__6__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:3882:1: ( ( ':' ) )
+            // InternalCanvas.g:3883:1: ( ':' )
+            {
+            // InternalCanvas.g:3883:1: ( ':' )
+            // InternalCanvas.g:3884:2: ':'
+            {
+             before(grammarAccess.getPointDefinitionAccess().getColonKeyword_6()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getPointDefinitionAccess().getColonKeyword_6()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PointDefinition__Group__6__Impl"
+
+
+    // $ANTLR start "rule__PointDefinition__Group__7"
+    // InternalCanvas.g:3893:1: rule__PointDefinition__Group__7 : rule__PointDefinition__Group__7__Impl ;
+    public final void rule__PointDefinition__Group__7() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:3897:1: ( rule__PointDefinition__Group__7__Impl )
+            // InternalCanvas.g:3898:2: rule__PointDefinition__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__PointDefinition__Group_0_0__1__Impl();
+            rule__PointDefinition__Group__7__Impl();
 
             state._fsp--;
 
@@ -13380,25 +11835,35 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PointDefinition__Group_0_0__1"
+    // $ANTLR end "rule__PointDefinition__Group__7"
 
 
-    // $ANTLR start "rule__PointDefinition__Group_0_0__1__Impl"
-    // InternalCanvas.g:4346:1: rule__PointDefinition__Group_0_0__1__Impl : ( ':' ) ;
-    public final void rule__PointDefinition__Group_0_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__PointDefinition__Group__7__Impl"
+    // InternalCanvas.g:3904:1: rule__PointDefinition__Group__7__Impl : ( ( rule__PointDefinition__YAssignment_7 ) ) ;
+    public final void rule__PointDefinition__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4350:1: ( ( ':' ) )
-            // InternalCanvas.g:4351:1: ( ':' )
+            // InternalCanvas.g:3908:1: ( ( ( rule__PointDefinition__YAssignment_7 ) ) )
+            // InternalCanvas.g:3909:1: ( ( rule__PointDefinition__YAssignment_7 ) )
             {
-            // InternalCanvas.g:4351:1: ( ':' )
-            // InternalCanvas.g:4352:2: ':'
+            // InternalCanvas.g:3909:1: ( ( rule__PointDefinition__YAssignment_7 ) )
+            // InternalCanvas.g:3910:2: ( rule__PointDefinition__YAssignment_7 )
             {
-             before(grammarAccess.getPointDefinitionAccess().getColonKeyword_0_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getPointDefinitionAccess().getColonKeyword_0_0_1()); 
+             before(grammarAccess.getPointDefinitionAccess().getYAssignment_7()); 
+            // InternalCanvas.g:3911:2: ( rule__PointDefinition__YAssignment_7 )
+            // InternalCanvas.g:3911:3: rule__PointDefinition__YAssignment_7
+            {
+            pushFollow(FOLLOW_2);
+            rule__PointDefinition__YAssignment_7();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getPointDefinitionAccess().getYAssignment_7()); 
 
             }
 
@@ -13417,26 +11882,101 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PointDefinition__Group_0_0__1__Impl"
+    // $ANTLR end "rule__PointDefinition__Group__7__Impl"
 
 
-    // $ANTLR start "rule__Rectangle__Group__0"
-    // InternalCanvas.g:4362:1: rule__Rectangle__Group__0 : rule__Rectangle__Group__0__Impl rule__Rectangle__Group__1 ;
-    public final void rule__Rectangle__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__Bounds__Group__0"
+    // InternalCanvas.g:3920:1: rule__Bounds__Group__0 : rule__Bounds__Group__0__Impl rule__Bounds__Group__1 ;
+    public final void rule__Bounds__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4366:1: ( rule__Rectangle__Group__0__Impl rule__Rectangle__Group__1 )
-            // InternalCanvas.g:4367:2: rule__Rectangle__Group__0__Impl rule__Rectangle__Group__1
+            // InternalCanvas.g:3924:1: ( rule__Bounds__Group__0__Impl rule__Bounds__Group__1 )
+            // InternalCanvas.g:3925:2: rule__Bounds__Group__0__Impl rule__Bounds__Group__1
+            {
+            pushFollow(FOLLOW_5);
+            rule__Bounds__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Bounds__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Bounds__Group__0"
+
+
+    // $ANTLR start "rule__Bounds__Group__0__Impl"
+    // InternalCanvas.g:3932:1: rule__Bounds__Group__0__Impl : ( 'bounds' ) ;
+    public final void rule__Bounds__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:3936:1: ( ( 'bounds' ) )
+            // InternalCanvas.g:3937:1: ( 'bounds' )
+            {
+            // InternalCanvas.g:3937:1: ( 'bounds' )
+            // InternalCanvas.g:3938:2: 'bounds'
+            {
+             before(grammarAccess.getBoundsAccess().getBoundsKeyword_0()); 
+            match(input,112,FOLLOW_2); 
+             after(grammarAccess.getBoundsAccess().getBoundsKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Bounds__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Bounds__Group__1"
+    // InternalCanvas.g:3947:1: rule__Bounds__Group__1 : rule__Bounds__Group__1__Impl rule__Bounds__Group__2 ;
+    public final void rule__Bounds__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:3951:1: ( rule__Bounds__Group__1__Impl rule__Bounds__Group__2 )
+            // InternalCanvas.g:3952:2: rule__Bounds__Group__1__Impl rule__Bounds__Group__2
             {
             pushFollow(FOLLOW_8);
-            rule__Rectangle__Group__0__Impl();
+            rule__Bounds__Group__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Rectangle__Group__1();
+            rule__Bounds__Group__2();
 
             state._fsp--;
 
@@ -13455,35 +11995,25 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Rectangle__Group__0"
+    // $ANTLR end "rule__Bounds__Group__1"
 
 
-    // $ANTLR start "rule__Rectangle__Group__0__Impl"
-    // InternalCanvas.g:4374:1: rule__Rectangle__Group__0__Impl : ( ( rule__Rectangle__Alternatives_0 ) ) ;
-    public final void rule__Rectangle__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Bounds__Group__1__Impl"
+    // InternalCanvas.g:3959:1: rule__Bounds__Group__1__Impl : ( ':' ) ;
+    public final void rule__Bounds__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4378:1: ( ( ( rule__Rectangle__Alternatives_0 ) ) )
-            // InternalCanvas.g:4379:1: ( ( rule__Rectangle__Alternatives_0 ) )
+            // InternalCanvas.g:3963:1: ( ( ':' ) )
+            // InternalCanvas.g:3964:1: ( ':' )
             {
-            // InternalCanvas.g:4379:1: ( ( rule__Rectangle__Alternatives_0 ) )
-            // InternalCanvas.g:4380:2: ( rule__Rectangle__Alternatives_0 )
+            // InternalCanvas.g:3964:1: ( ':' )
+            // InternalCanvas.g:3965:2: ':'
             {
-             before(grammarAccess.getRectangleAccess().getAlternatives_0()); 
-            // InternalCanvas.g:4381:2: ( rule__Rectangle__Alternatives_0 )
-            // InternalCanvas.g:4381:3: rule__Rectangle__Alternatives_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__Rectangle__Alternatives_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRectangleAccess().getAlternatives_0()); 
+             before(grammarAccess.getBoundsAccess().getColonKeyword_1()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getBoundsAccess().getColonKeyword_1()); 
 
             }
 
@@ -13502,26 +12032,101 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Rectangle__Group__0__Impl"
+    // $ANTLR end "rule__Bounds__Group__1__Impl"
 
 
-    // $ANTLR start "rule__Rectangle__Group__1"
-    // InternalCanvas.g:4389:1: rule__Rectangle__Group__1 : rule__Rectangle__Group__1__Impl rule__Rectangle__Group__2 ;
-    public final void rule__Rectangle__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__Bounds__Group__2"
+    // InternalCanvas.g:3974:1: rule__Bounds__Group__2 : rule__Bounds__Group__2__Impl rule__Bounds__Group__3 ;
+    public final void rule__Bounds__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4393:1: ( rule__Rectangle__Group__1__Impl rule__Rectangle__Group__2 )
-            // InternalCanvas.g:4394:2: rule__Rectangle__Group__1__Impl rule__Rectangle__Group__2
+            // InternalCanvas.g:3978:1: ( rule__Bounds__Group__2__Impl rule__Bounds__Group__3 )
+            // InternalCanvas.g:3979:2: rule__Bounds__Group__2__Impl rule__Bounds__Group__3
+            {
+            pushFollow(FOLLOW_5);
+            rule__Bounds__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Bounds__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Bounds__Group__2"
+
+
+    // $ANTLR start "rule__Bounds__Group__2__Impl"
+    // InternalCanvas.g:3986:1: rule__Bounds__Group__2__Impl : ( 'x' ) ;
+    public final void rule__Bounds__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:3990:1: ( ( 'x' ) )
+            // InternalCanvas.g:3991:1: ( 'x' )
+            {
+            // InternalCanvas.g:3991:1: ( 'x' )
+            // InternalCanvas.g:3992:2: 'x'
+            {
+             before(grammarAccess.getBoundsAccess().getXKeyword_2()); 
+            match(input,109,FOLLOW_2); 
+             after(grammarAccess.getBoundsAccess().getXKeyword_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Bounds__Group__2__Impl"
+
+
+    // $ANTLR start "rule__Bounds__Group__3"
+    // InternalCanvas.g:4001:1: rule__Bounds__Group__3 : rule__Bounds__Group__3__Impl rule__Bounds__Group__4 ;
+    public final void rule__Bounds__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:4005:1: ( rule__Bounds__Group__3__Impl rule__Bounds__Group__4 )
+            // InternalCanvas.g:4006:2: rule__Bounds__Group__3__Impl rule__Bounds__Group__4
             {
             pushFollow(FOLLOW_10);
-            rule__Rectangle__Group__1__Impl();
+            rule__Bounds__Group__3__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Rectangle__Group__2();
+            rule__Bounds__Group__4();
 
             state._fsp--;
 
@@ -13540,25 +12145,25 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Rectangle__Group__1"
+    // $ANTLR end "rule__Bounds__Group__3"
 
 
-    // $ANTLR start "rule__Rectangle__Group__1__Impl"
-    // InternalCanvas.g:4401:1: rule__Rectangle__Group__1__Impl : ( 'x' ) ;
-    public final void rule__Rectangle__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Bounds__Group__3__Impl"
+    // InternalCanvas.g:4013:1: rule__Bounds__Group__3__Impl : ( ':' ) ;
+    public final void rule__Bounds__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4405:1: ( ( 'x' ) )
-            // InternalCanvas.g:4406:1: ( 'x' )
+            // InternalCanvas.g:4017:1: ( ( ':' ) )
+            // InternalCanvas.g:4018:1: ( ':' )
             {
-            // InternalCanvas.g:4406:1: ( 'x' )
-            // InternalCanvas.g:4407:2: 'x'
+            // InternalCanvas.g:4018:1: ( ':' )
+            // InternalCanvas.g:4019:2: ':'
             {
-             before(grammarAccess.getRectangleAccess().getXKeyword_1()); 
-            match(input,53,FOLLOW_2); 
-             after(grammarAccess.getRectangleAccess().getXKeyword_1()); 
+             before(grammarAccess.getBoundsAccess().getColonKeyword_3()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getBoundsAccess().getColonKeyword_3()); 
 
             }
 
@@ -13577,186 +12182,26 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Rectangle__Group__1__Impl"
+    // $ANTLR end "rule__Bounds__Group__3__Impl"
 
 
-    // $ANTLR start "rule__Rectangle__Group__2"
-    // InternalCanvas.g:4416:1: rule__Rectangle__Group__2 : rule__Rectangle__Group__2__Impl rule__Rectangle__Group__3 ;
-    public final void rule__Rectangle__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:4420:1: ( rule__Rectangle__Group__2__Impl rule__Rectangle__Group__3 )
-            // InternalCanvas.g:4421:2: rule__Rectangle__Group__2__Impl rule__Rectangle__Group__3
-            {
-            pushFollow(FOLLOW_34);
-            rule__Rectangle__Group__2__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Rectangle__Group__3();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Rectangle__Group__2"
-
-
-    // $ANTLR start "rule__Rectangle__Group__2__Impl"
-    // InternalCanvas.g:4428:1: rule__Rectangle__Group__2__Impl : ( ( rule__Rectangle__XAssignment_2 ) ) ;
-    public final void rule__Rectangle__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Bounds__Group__4"
+    // InternalCanvas.g:4028:1: rule__Bounds__Group__4 : rule__Bounds__Group__4__Impl rule__Bounds__Group__5 ;
+    public final void rule__Bounds__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4432:1: ( ( ( rule__Rectangle__XAssignment_2 ) ) )
-            // InternalCanvas.g:4433:1: ( ( rule__Rectangle__XAssignment_2 ) )
-            {
-            // InternalCanvas.g:4433:1: ( ( rule__Rectangle__XAssignment_2 ) )
-            // InternalCanvas.g:4434:2: ( rule__Rectangle__XAssignment_2 )
-            {
-             before(grammarAccess.getRectangleAccess().getXAssignment_2()); 
-            // InternalCanvas.g:4435:2: ( rule__Rectangle__XAssignment_2 )
-            // InternalCanvas.g:4435:3: rule__Rectangle__XAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__Rectangle__XAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRectangleAccess().getXAssignment_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Rectangle__Group__2__Impl"
-
-
-    // $ANTLR start "rule__Rectangle__Group__3"
-    // InternalCanvas.g:4443:1: rule__Rectangle__Group__3 : rule__Rectangle__Group__3__Impl rule__Rectangle__Group__4 ;
-    public final void rule__Rectangle__Group__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:4447:1: ( rule__Rectangle__Group__3__Impl rule__Rectangle__Group__4 )
-            // InternalCanvas.g:4448:2: rule__Rectangle__Group__3__Impl rule__Rectangle__Group__4
-            {
-            pushFollow(FOLLOW_10);
-            rule__Rectangle__Group__3__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Rectangle__Group__4();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Rectangle__Group__3"
-
-
-    // $ANTLR start "rule__Rectangle__Group__3__Impl"
-    // InternalCanvas.g:4455:1: rule__Rectangle__Group__3__Impl : ( 'y' ) ;
-    public final void rule__Rectangle__Group__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:4459:1: ( ( 'y' ) )
-            // InternalCanvas.g:4460:1: ( 'y' )
-            {
-            // InternalCanvas.g:4460:1: ( 'y' )
-            // InternalCanvas.g:4461:2: 'y'
-            {
-             before(grammarAccess.getRectangleAccess().getYKeyword_3()); 
-            match(input,54,FOLLOW_2); 
-             after(grammarAccess.getRectangleAccess().getYKeyword_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Rectangle__Group__3__Impl"
-
-
-    // $ANTLR start "rule__Rectangle__Group__4"
-    // InternalCanvas.g:4470:1: rule__Rectangle__Group__4 : rule__Rectangle__Group__4__Impl rule__Rectangle__Group__5 ;
-    public final void rule__Rectangle__Group__4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:4474:1: ( rule__Rectangle__Group__4__Impl rule__Rectangle__Group__5 )
-            // InternalCanvas.g:4475:2: rule__Rectangle__Group__4__Impl rule__Rectangle__Group__5
+            // InternalCanvas.g:4032:1: ( rule__Bounds__Group__4__Impl rule__Bounds__Group__5 )
+            // InternalCanvas.g:4033:2: rule__Bounds__Group__4__Impl rule__Bounds__Group__5
             {
             pushFollow(FOLLOW_35);
-            rule__Rectangle__Group__4__Impl();
+            rule__Bounds__Group__4__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Rectangle__Group__5();
+            rule__Bounds__Group__5();
 
             state._fsp--;
 
@@ -13775,35 +12220,35 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Rectangle__Group__4"
+    // $ANTLR end "rule__Bounds__Group__4"
 
 
-    // $ANTLR start "rule__Rectangle__Group__4__Impl"
-    // InternalCanvas.g:4482:1: rule__Rectangle__Group__4__Impl : ( ( rule__Rectangle__YAssignment_4 ) ) ;
-    public final void rule__Rectangle__Group__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Bounds__Group__4__Impl"
+    // InternalCanvas.g:4040:1: rule__Bounds__Group__4__Impl : ( ( rule__Bounds__XAssignment_4 ) ) ;
+    public final void rule__Bounds__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4486:1: ( ( ( rule__Rectangle__YAssignment_4 ) ) )
-            // InternalCanvas.g:4487:1: ( ( rule__Rectangle__YAssignment_4 ) )
+            // InternalCanvas.g:4044:1: ( ( ( rule__Bounds__XAssignment_4 ) ) )
+            // InternalCanvas.g:4045:1: ( ( rule__Bounds__XAssignment_4 ) )
             {
-            // InternalCanvas.g:4487:1: ( ( rule__Rectangle__YAssignment_4 ) )
-            // InternalCanvas.g:4488:2: ( rule__Rectangle__YAssignment_4 )
+            // InternalCanvas.g:4045:1: ( ( rule__Bounds__XAssignment_4 ) )
+            // InternalCanvas.g:4046:2: ( rule__Bounds__XAssignment_4 )
             {
-             before(grammarAccess.getRectangleAccess().getYAssignment_4()); 
-            // InternalCanvas.g:4489:2: ( rule__Rectangle__YAssignment_4 )
-            // InternalCanvas.g:4489:3: rule__Rectangle__YAssignment_4
+             before(grammarAccess.getBoundsAccess().getXAssignment_4()); 
+            // InternalCanvas.g:4047:2: ( rule__Bounds__XAssignment_4 )
+            // InternalCanvas.g:4047:3: rule__Bounds__XAssignment_4
             {
             pushFollow(FOLLOW_2);
-            rule__Rectangle__YAssignment_4();
+            rule__Bounds__XAssignment_4();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getRectangleAccess().getYAssignment_4()); 
+             after(grammarAccess.getBoundsAccess().getXAssignment_4()); 
 
             }
 
@@ -13822,26 +12267,101 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Rectangle__Group__4__Impl"
+    // $ANTLR end "rule__Bounds__Group__4__Impl"
 
 
-    // $ANTLR start "rule__Rectangle__Group__5"
-    // InternalCanvas.g:4497:1: rule__Rectangle__Group__5 : rule__Rectangle__Group__5__Impl rule__Rectangle__Group__6 ;
-    public final void rule__Rectangle__Group__5() throws RecognitionException {
+    // $ANTLR start "rule__Bounds__Group__5"
+    // InternalCanvas.g:4055:1: rule__Bounds__Group__5 : rule__Bounds__Group__5__Impl rule__Bounds__Group__6 ;
+    public final void rule__Bounds__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4501:1: ( rule__Rectangle__Group__5__Impl rule__Rectangle__Group__6 )
-            // InternalCanvas.g:4502:2: rule__Rectangle__Group__5__Impl rule__Rectangle__Group__6
+            // InternalCanvas.g:4059:1: ( rule__Bounds__Group__5__Impl rule__Bounds__Group__6 )
+            // InternalCanvas.g:4060:2: rule__Bounds__Group__5__Impl rule__Bounds__Group__6
+            {
+            pushFollow(FOLLOW_5);
+            rule__Bounds__Group__5__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Bounds__Group__6();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Bounds__Group__5"
+
+
+    // $ANTLR start "rule__Bounds__Group__5__Impl"
+    // InternalCanvas.g:4067:1: rule__Bounds__Group__5__Impl : ( 'y' ) ;
+    public final void rule__Bounds__Group__5__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:4071:1: ( ( 'y' ) )
+            // InternalCanvas.g:4072:1: ( 'y' )
+            {
+            // InternalCanvas.g:4072:1: ( 'y' )
+            // InternalCanvas.g:4073:2: 'y'
+            {
+             before(grammarAccess.getBoundsAccess().getYKeyword_5()); 
+            match(input,110,FOLLOW_2); 
+             after(grammarAccess.getBoundsAccess().getYKeyword_5()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Bounds__Group__5__Impl"
+
+
+    // $ANTLR start "rule__Bounds__Group__6"
+    // InternalCanvas.g:4082:1: rule__Bounds__Group__6 : rule__Bounds__Group__6__Impl rule__Bounds__Group__7 ;
+    public final void rule__Bounds__Group__6() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:4086:1: ( rule__Bounds__Group__6__Impl rule__Bounds__Group__7 )
+            // InternalCanvas.g:4087:2: rule__Bounds__Group__6__Impl rule__Bounds__Group__7
             {
             pushFollow(FOLLOW_10);
-            rule__Rectangle__Group__5__Impl();
+            rule__Bounds__Group__6__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Rectangle__Group__6();
+            rule__Bounds__Group__7();
 
             state._fsp--;
 
@@ -13860,25 +12380,25 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Rectangle__Group__5"
+    // $ANTLR end "rule__Bounds__Group__6"
 
 
-    // $ANTLR start "rule__Rectangle__Group__5__Impl"
-    // InternalCanvas.g:4509:1: rule__Rectangle__Group__5__Impl : ( 'width' ) ;
-    public final void rule__Rectangle__Group__5__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Bounds__Group__6__Impl"
+    // InternalCanvas.g:4094:1: rule__Bounds__Group__6__Impl : ( ':' ) ;
+    public final void rule__Bounds__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4513:1: ( ( 'width' ) )
-            // InternalCanvas.g:4514:1: ( 'width' )
+            // InternalCanvas.g:4098:1: ( ( ':' ) )
+            // InternalCanvas.g:4099:1: ( ':' )
             {
-            // InternalCanvas.g:4514:1: ( 'width' )
-            // InternalCanvas.g:4515:2: 'width'
+            // InternalCanvas.g:4099:1: ( ':' )
+            // InternalCanvas.g:4100:2: ':'
             {
-             before(grammarAccess.getRectangleAccess().getWidthKeyword_5()); 
-            match(input,56,FOLLOW_2); 
-             after(grammarAccess.getRectangleAccess().getWidthKeyword_5()); 
+             before(grammarAccess.getBoundsAccess().getColonKeyword_6()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getBoundsAccess().getColonKeyword_6()); 
 
             }
 
@@ -13897,26 +12417,26 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Rectangle__Group__5__Impl"
+    // $ANTLR end "rule__Bounds__Group__6__Impl"
 
 
-    // $ANTLR start "rule__Rectangle__Group__6"
-    // InternalCanvas.g:4524:1: rule__Rectangle__Group__6 : rule__Rectangle__Group__6__Impl rule__Rectangle__Group__7 ;
-    public final void rule__Rectangle__Group__6() throws RecognitionException {
+    // $ANTLR start "rule__Bounds__Group__7"
+    // InternalCanvas.g:4109:1: rule__Bounds__Group__7 : rule__Bounds__Group__7__Impl rule__Bounds__Group__8 ;
+    public final void rule__Bounds__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4528:1: ( rule__Rectangle__Group__6__Impl rule__Rectangle__Group__7 )
-            // InternalCanvas.g:4529:2: rule__Rectangle__Group__6__Impl rule__Rectangle__Group__7
+            // InternalCanvas.g:4113:1: ( rule__Bounds__Group__7__Impl rule__Bounds__Group__8 )
+            // InternalCanvas.g:4114:2: rule__Bounds__Group__7__Impl rule__Bounds__Group__8
             {
             pushFollow(FOLLOW_36);
-            rule__Rectangle__Group__6__Impl();
+            rule__Bounds__Group__7__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Rectangle__Group__7();
+            rule__Bounds__Group__8();
 
             state._fsp--;
 
@@ -13935,35 +12455,35 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Rectangle__Group__6"
+    // $ANTLR end "rule__Bounds__Group__7"
 
 
-    // $ANTLR start "rule__Rectangle__Group__6__Impl"
-    // InternalCanvas.g:4536:1: rule__Rectangle__Group__6__Impl : ( ( rule__Rectangle__WAssignment_6 ) ) ;
-    public final void rule__Rectangle__Group__6__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Bounds__Group__7__Impl"
+    // InternalCanvas.g:4121:1: rule__Bounds__Group__7__Impl : ( ( rule__Bounds__YAssignment_7 ) ) ;
+    public final void rule__Bounds__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4540:1: ( ( ( rule__Rectangle__WAssignment_6 ) ) )
-            // InternalCanvas.g:4541:1: ( ( rule__Rectangle__WAssignment_6 ) )
+            // InternalCanvas.g:4125:1: ( ( ( rule__Bounds__YAssignment_7 ) ) )
+            // InternalCanvas.g:4126:1: ( ( rule__Bounds__YAssignment_7 ) )
             {
-            // InternalCanvas.g:4541:1: ( ( rule__Rectangle__WAssignment_6 ) )
-            // InternalCanvas.g:4542:2: ( rule__Rectangle__WAssignment_6 )
+            // InternalCanvas.g:4126:1: ( ( rule__Bounds__YAssignment_7 ) )
+            // InternalCanvas.g:4127:2: ( rule__Bounds__YAssignment_7 )
             {
-             before(grammarAccess.getRectangleAccess().getWAssignment_6()); 
-            // InternalCanvas.g:4543:2: ( rule__Rectangle__WAssignment_6 )
-            // InternalCanvas.g:4543:3: rule__Rectangle__WAssignment_6
+             before(grammarAccess.getBoundsAccess().getYAssignment_7()); 
+            // InternalCanvas.g:4128:2: ( rule__Bounds__YAssignment_7 )
+            // InternalCanvas.g:4128:3: rule__Bounds__YAssignment_7
             {
             pushFollow(FOLLOW_2);
-            rule__Rectangle__WAssignment_6();
+            rule__Bounds__YAssignment_7();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getRectangleAccess().getWAssignment_6()); 
+             after(grammarAccess.getBoundsAccess().getYAssignment_7()); 
 
             }
 
@@ -13982,26 +12502,101 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Rectangle__Group__6__Impl"
+    // $ANTLR end "rule__Bounds__Group__7__Impl"
 
 
-    // $ANTLR start "rule__Rectangle__Group__7"
-    // InternalCanvas.g:4551:1: rule__Rectangle__Group__7 : rule__Rectangle__Group__7__Impl rule__Rectangle__Group__8 ;
-    public final void rule__Rectangle__Group__7() throws RecognitionException {
+    // $ANTLR start "rule__Bounds__Group__8"
+    // InternalCanvas.g:4136:1: rule__Bounds__Group__8 : rule__Bounds__Group__8__Impl rule__Bounds__Group__9 ;
+    public final void rule__Bounds__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4555:1: ( rule__Rectangle__Group__7__Impl rule__Rectangle__Group__8 )
-            // InternalCanvas.g:4556:2: rule__Rectangle__Group__7__Impl rule__Rectangle__Group__8
+            // InternalCanvas.g:4140:1: ( rule__Bounds__Group__8__Impl rule__Bounds__Group__9 )
+            // InternalCanvas.g:4141:2: rule__Bounds__Group__8__Impl rule__Bounds__Group__9
+            {
+            pushFollow(FOLLOW_5);
+            rule__Bounds__Group__8__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Bounds__Group__9();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Bounds__Group__8"
+
+
+    // $ANTLR start "rule__Bounds__Group__8__Impl"
+    // InternalCanvas.g:4148:1: rule__Bounds__Group__8__Impl : ( 'width' ) ;
+    public final void rule__Bounds__Group__8__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:4152:1: ( ( 'width' ) )
+            // InternalCanvas.g:4153:1: ( 'width' )
+            {
+            // InternalCanvas.g:4153:1: ( 'width' )
+            // InternalCanvas.g:4154:2: 'width'
+            {
+             before(grammarAccess.getBoundsAccess().getWidthKeyword_8()); 
+            match(input,113,FOLLOW_2); 
+             after(grammarAccess.getBoundsAccess().getWidthKeyword_8()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Bounds__Group__8__Impl"
+
+
+    // $ANTLR start "rule__Bounds__Group__9"
+    // InternalCanvas.g:4163:1: rule__Bounds__Group__9 : rule__Bounds__Group__9__Impl rule__Bounds__Group__10 ;
+    public final void rule__Bounds__Group__9() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:4167:1: ( rule__Bounds__Group__9__Impl rule__Bounds__Group__10 )
+            // InternalCanvas.g:4168:2: rule__Bounds__Group__9__Impl rule__Bounds__Group__10
             {
             pushFollow(FOLLOW_10);
-            rule__Rectangle__Group__7__Impl();
+            rule__Bounds__Group__9__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Rectangle__Group__8();
+            rule__Bounds__Group__10();
 
             state._fsp--;
 
@@ -14020,25 +12615,25 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Rectangle__Group__7"
+    // $ANTLR end "rule__Bounds__Group__9"
 
 
-    // $ANTLR start "rule__Rectangle__Group__7__Impl"
-    // InternalCanvas.g:4563:1: rule__Rectangle__Group__7__Impl : ( 'height' ) ;
-    public final void rule__Rectangle__Group__7__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Bounds__Group__9__Impl"
+    // InternalCanvas.g:4175:1: rule__Bounds__Group__9__Impl : ( ':' ) ;
+    public final void rule__Bounds__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4567:1: ( ( 'height' ) )
-            // InternalCanvas.g:4568:1: ( 'height' )
+            // InternalCanvas.g:4179:1: ( ( ':' ) )
+            // InternalCanvas.g:4180:1: ( ':' )
             {
-            // InternalCanvas.g:4568:1: ( 'height' )
-            // InternalCanvas.g:4569:2: 'height'
+            // InternalCanvas.g:4180:1: ( ':' )
+            // InternalCanvas.g:4181:2: ':'
             {
-             before(grammarAccess.getRectangleAccess().getHeightKeyword_7()); 
-            match(input,57,FOLLOW_2); 
-             after(grammarAccess.getRectangleAccess().getHeightKeyword_7()); 
+             before(grammarAccess.getBoundsAccess().getColonKeyword_9()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getBoundsAccess().getColonKeyword_9()); 
 
             }
 
@@ -14057,106 +12652,26 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Rectangle__Group__7__Impl"
+    // $ANTLR end "rule__Bounds__Group__9__Impl"
 
 
-    // $ANTLR start "rule__Rectangle__Group__8"
-    // InternalCanvas.g:4578:1: rule__Rectangle__Group__8 : rule__Rectangle__Group__8__Impl ;
-    public final void rule__Rectangle__Group__8() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:4582:1: ( rule__Rectangle__Group__8__Impl )
-            // InternalCanvas.g:4583:2: rule__Rectangle__Group__8__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Rectangle__Group__8__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Rectangle__Group__8"
-
-
-    // $ANTLR start "rule__Rectangle__Group__8__Impl"
-    // InternalCanvas.g:4589:1: rule__Rectangle__Group__8__Impl : ( ( rule__Rectangle__HAssignment_8 ) ) ;
-    public final void rule__Rectangle__Group__8__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Bounds__Group__10"
+    // InternalCanvas.g:4190:1: rule__Bounds__Group__10 : rule__Bounds__Group__10__Impl rule__Bounds__Group__11 ;
+    public final void rule__Bounds__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4593:1: ( ( ( rule__Rectangle__HAssignment_8 ) ) )
-            // InternalCanvas.g:4594:1: ( ( rule__Rectangle__HAssignment_8 ) )
+            // InternalCanvas.g:4194:1: ( rule__Bounds__Group__10__Impl rule__Bounds__Group__11 )
+            // InternalCanvas.g:4195:2: rule__Bounds__Group__10__Impl rule__Bounds__Group__11
             {
-            // InternalCanvas.g:4594:1: ( ( rule__Rectangle__HAssignment_8 ) )
-            // InternalCanvas.g:4595:2: ( rule__Rectangle__HAssignment_8 )
-            {
-             before(grammarAccess.getRectangleAccess().getHAssignment_8()); 
-            // InternalCanvas.g:4596:2: ( rule__Rectangle__HAssignment_8 )
-            // InternalCanvas.g:4596:3: rule__Rectangle__HAssignment_8
-            {
-            pushFollow(FOLLOW_2);
-            rule__Rectangle__HAssignment_8();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRectangleAccess().getHAssignment_8()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Rectangle__Group__8__Impl"
-
-
-    // $ANTLR start "rule__Rectangle__Group_0_0__0"
-    // InternalCanvas.g:4605:1: rule__Rectangle__Group_0_0__0 : rule__Rectangle__Group_0_0__0__Impl rule__Rectangle__Group_0_0__1 ;
-    public final void rule__Rectangle__Group_0_0__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:4609:1: ( rule__Rectangle__Group_0_0__0__Impl rule__Rectangle__Group_0_0__1 )
-            // InternalCanvas.g:4610:2: rule__Rectangle__Group_0_0__0__Impl rule__Rectangle__Group_0_0__1
-            {
-            pushFollow(FOLLOW_6);
-            rule__Rectangle__Group_0_0__0__Impl();
+            pushFollow(FOLLOW_37);
+            rule__Bounds__Group__10__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Rectangle__Group_0_0__1();
+            rule__Bounds__Group__11();
 
             state._fsp--;
 
@@ -14175,58 +12690,73 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Rectangle__Group_0_0__0"
+    // $ANTLR end "rule__Bounds__Group__10"
 
 
-    // $ANTLR start "rule__Rectangle__Group_0_0__0__Impl"
-    // InternalCanvas.g:4617:1: rule__Rectangle__Group_0_0__0__Impl : ( 'rectangle' ) ;
-    public final void rule__Rectangle__Group_0_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:4621:1: ( ( 'rectangle' ) )
-            // InternalCanvas.g:4622:1: ( 'rectangle' )
-            {
-            // InternalCanvas.g:4622:1: ( 'rectangle' )
-            // InternalCanvas.g:4623:2: 'rectangle'
-            {
-             before(grammarAccess.getRectangleAccess().getRectangleKeyword_0_0_0()); 
-            match(input,58,FOLLOW_2); 
-             after(grammarAccess.getRectangleAccess().getRectangleKeyword_0_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Rectangle__Group_0_0__0__Impl"
-
-
-    // $ANTLR start "rule__Rectangle__Group_0_0__1"
-    // InternalCanvas.g:4632:1: rule__Rectangle__Group_0_0__1 : rule__Rectangle__Group_0_0__1__Impl ;
-    public final void rule__Rectangle__Group_0_0__1() throws RecognitionException {
+    // $ANTLR start "rule__Bounds__Group__10__Impl"
+    // InternalCanvas.g:4202:1: rule__Bounds__Group__10__Impl : ( ( rule__Bounds__WAssignment_10 ) ) ;
+    public final void rule__Bounds__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4636:1: ( rule__Rectangle__Group_0_0__1__Impl )
-            // InternalCanvas.g:4637:2: rule__Rectangle__Group_0_0__1__Impl
+            // InternalCanvas.g:4206:1: ( ( ( rule__Bounds__WAssignment_10 ) ) )
+            // InternalCanvas.g:4207:1: ( ( rule__Bounds__WAssignment_10 ) )
+            {
+            // InternalCanvas.g:4207:1: ( ( rule__Bounds__WAssignment_10 ) )
+            // InternalCanvas.g:4208:2: ( rule__Bounds__WAssignment_10 )
+            {
+             before(grammarAccess.getBoundsAccess().getWAssignment_10()); 
+            // InternalCanvas.g:4209:2: ( rule__Bounds__WAssignment_10 )
+            // InternalCanvas.g:4209:3: rule__Bounds__WAssignment_10
             {
             pushFollow(FOLLOW_2);
-            rule__Rectangle__Group_0_0__1__Impl();
+            rule__Bounds__WAssignment_10();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getBoundsAccess().getWAssignment_10()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Bounds__Group__10__Impl"
+
+
+    // $ANTLR start "rule__Bounds__Group__11"
+    // InternalCanvas.g:4217:1: rule__Bounds__Group__11 : rule__Bounds__Group__11__Impl rule__Bounds__Group__12 ;
+    public final void rule__Bounds__Group__11() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:4221:1: ( rule__Bounds__Group__11__Impl rule__Bounds__Group__12 )
+            // InternalCanvas.g:4222:2: rule__Bounds__Group__11__Impl rule__Bounds__Group__12
+            {
+            pushFollow(FOLLOW_5);
+            rule__Bounds__Group__11__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Bounds__Group__12();
 
             state._fsp--;
 
@@ -14245,25 +12775,25 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Rectangle__Group_0_0__1"
+    // $ANTLR end "rule__Bounds__Group__11"
 
 
-    // $ANTLR start "rule__Rectangle__Group_0_0__1__Impl"
-    // InternalCanvas.g:4643:1: rule__Rectangle__Group_0_0__1__Impl : ( ':' ) ;
-    public final void rule__Rectangle__Group_0_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Bounds__Group__11__Impl"
+    // InternalCanvas.g:4229:1: rule__Bounds__Group__11__Impl : ( 'height' ) ;
+    public final void rule__Bounds__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4647:1: ( ( ':' ) )
-            // InternalCanvas.g:4648:1: ( ':' )
+            // InternalCanvas.g:4233:1: ( ( 'height' ) )
+            // InternalCanvas.g:4234:1: ( 'height' )
             {
-            // InternalCanvas.g:4648:1: ( ':' )
-            // InternalCanvas.g:4649:2: ':'
+            // InternalCanvas.g:4234:1: ( 'height' )
+            // InternalCanvas.g:4235:2: 'height'
             {
-             before(grammarAccess.getRectangleAccess().getColonKeyword_0_0_1()); 
-            match(input,39,FOLLOW_2); 
-             after(grammarAccess.getRectangleAccess().getColonKeyword_0_0_1()); 
+             before(grammarAccess.getBoundsAccess().getHeightKeyword_11()); 
+            match(input,114,FOLLOW_2); 
+             after(grammarAccess.getBoundsAccess().getHeightKeyword_11()); 
 
             }
 
@@ -14282,21 +12812,176 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Rectangle__Group_0_0__1__Impl"
+    // $ANTLR end "rule__Bounds__Group__11__Impl"
+
+
+    // $ANTLR start "rule__Bounds__Group__12"
+    // InternalCanvas.g:4244:1: rule__Bounds__Group__12 : rule__Bounds__Group__12__Impl rule__Bounds__Group__13 ;
+    public final void rule__Bounds__Group__12() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:4248:1: ( rule__Bounds__Group__12__Impl rule__Bounds__Group__13 )
+            // InternalCanvas.g:4249:2: rule__Bounds__Group__12__Impl rule__Bounds__Group__13
+            {
+            pushFollow(FOLLOW_10);
+            rule__Bounds__Group__12__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Bounds__Group__13();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Bounds__Group__12"
+
+
+    // $ANTLR start "rule__Bounds__Group__12__Impl"
+    // InternalCanvas.g:4256:1: rule__Bounds__Group__12__Impl : ( ':' ) ;
+    public final void rule__Bounds__Group__12__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:4260:1: ( ( ':' ) )
+            // InternalCanvas.g:4261:1: ( ':' )
+            {
+            // InternalCanvas.g:4261:1: ( ':' )
+            // InternalCanvas.g:4262:2: ':'
+            {
+             before(grammarAccess.getBoundsAccess().getColonKeyword_12()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getBoundsAccess().getColonKeyword_12()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Bounds__Group__12__Impl"
+
+
+    // $ANTLR start "rule__Bounds__Group__13"
+    // InternalCanvas.g:4271:1: rule__Bounds__Group__13 : rule__Bounds__Group__13__Impl ;
+    public final void rule__Bounds__Group__13() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:4275:1: ( rule__Bounds__Group__13__Impl )
+            // InternalCanvas.g:4276:2: rule__Bounds__Group__13__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Bounds__Group__13__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Bounds__Group__13"
+
+
+    // $ANTLR start "rule__Bounds__Group__13__Impl"
+    // InternalCanvas.g:4282:1: rule__Bounds__Group__13__Impl : ( ( rule__Bounds__HAssignment_13 ) ) ;
+    public final void rule__Bounds__Group__13__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:4286:1: ( ( ( rule__Bounds__HAssignment_13 ) ) )
+            // InternalCanvas.g:4287:1: ( ( rule__Bounds__HAssignment_13 ) )
+            {
+            // InternalCanvas.g:4287:1: ( ( rule__Bounds__HAssignment_13 ) )
+            // InternalCanvas.g:4288:2: ( rule__Bounds__HAssignment_13 )
+            {
+             before(grammarAccess.getBoundsAccess().getHAssignment_13()); 
+            // InternalCanvas.g:4289:2: ( rule__Bounds__HAssignment_13 )
+            // InternalCanvas.g:4289:3: rule__Bounds__HAssignment_13
+            {
+            pushFollow(FOLLOW_2);
+            rule__Bounds__HAssignment_13();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getBoundsAccess().getHAssignment_13()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Bounds__Group__13__Impl"
 
 
     // $ANTLR start "rule__Model__RenderAssignment_0"
-    // InternalCanvas.g:4659:1: rule__Model__RenderAssignment_0 : ( ruleModelRender ) ;
+    // InternalCanvas.g:4298:1: rule__Model__RenderAssignment_0 : ( ruleModelRender ) ;
     public final void rule__Model__RenderAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4663:1: ( ( ruleModelRender ) )
-            // InternalCanvas.g:4664:2: ( ruleModelRender )
+            // InternalCanvas.g:4302:1: ( ( ruleModelRender ) )
+            // InternalCanvas.g:4303:2: ( ruleModelRender )
             {
-            // InternalCanvas.g:4664:2: ( ruleModelRender )
-            // InternalCanvas.g:4665:3: ruleModelRender
+            // InternalCanvas.g:4303:2: ( ruleModelRender )
+            // InternalCanvas.g:4304:3: ruleModelRender
             {
              before(grammarAccess.getModelAccess().getRenderModelRenderParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -14327,17 +13012,17 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__PropertiesAssignment_1"
-    // InternalCanvas.g:4674:1: rule__Model__PropertiesAssignment_1 : ( ruleModelProperties ) ;
+    // InternalCanvas.g:4313:1: rule__Model__PropertiesAssignment_1 : ( ruleModelProperties ) ;
     public final void rule__Model__PropertiesAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4678:1: ( ( ruleModelProperties ) )
-            // InternalCanvas.g:4679:2: ( ruleModelProperties )
+            // InternalCanvas.g:4317:1: ( ( ruleModelProperties ) )
+            // InternalCanvas.g:4318:2: ( ruleModelProperties )
             {
-            // InternalCanvas.g:4679:2: ( ruleModelProperties )
-            // InternalCanvas.g:4680:3: ruleModelProperties
+            // InternalCanvas.g:4318:2: ( ruleModelProperties )
+            // InternalCanvas.g:4319:3: ruleModelProperties
             {
              before(grammarAccess.getModelAccess().getPropertiesModelPropertiesParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -14368,17 +13053,17 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__ElementsAssignment_2"
-    // InternalCanvas.g:4689:1: rule__Model__ElementsAssignment_2 : ( ruleGraphicalElement ) ;
+    // InternalCanvas.g:4328:1: rule__Model__ElementsAssignment_2 : ( ruleGraphicalElement ) ;
     public final void rule__Model__ElementsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4693:1: ( ( ruleGraphicalElement ) )
-            // InternalCanvas.g:4694:2: ( ruleGraphicalElement )
+            // InternalCanvas.g:4332:1: ( ( ruleGraphicalElement ) )
+            // InternalCanvas.g:4333:2: ( ruleGraphicalElement )
             {
-            // InternalCanvas.g:4694:2: ( ruleGraphicalElement )
-            // InternalCanvas.g:4695:3: ruleGraphicalElement
+            // InternalCanvas.g:4333:2: ( ruleGraphicalElement )
+            // InternalCanvas.g:4334:3: ruleGraphicalElement
             {
              before(grammarAccess.getModelAccess().getElementsGraphicalElementParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -14408,22 +13093,22 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Model__ElementsAssignment_2"
 
 
-    // $ANTLR start "rule__ModelRender__ImportURIAssignment_1"
-    // InternalCanvas.g:4704:1: rule__ModelRender__ImportURIAssignment_1 : ( RULE_STRING ) ;
-    public final void rule__ModelRender__ImportURIAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ModelRender__ImportURIAssignment_2"
+    // InternalCanvas.g:4343:1: rule__ModelRender__ImportURIAssignment_2 : ( RULE_STRING ) ;
+    public final void rule__ModelRender__ImportURIAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4708:1: ( ( RULE_STRING ) )
-            // InternalCanvas.g:4709:2: ( RULE_STRING )
+            // InternalCanvas.g:4347:1: ( ( RULE_STRING ) )
+            // InternalCanvas.g:4348:2: ( RULE_STRING )
             {
-            // InternalCanvas.g:4709:2: ( RULE_STRING )
-            // InternalCanvas.g:4710:3: RULE_STRING
+            // InternalCanvas.g:4348:2: ( RULE_STRING )
+            // InternalCanvas.g:4349:3: RULE_STRING
             {
-             before(grammarAccess.getModelRenderAccess().getImportURISTRINGTerminalRuleCall_1_0()); 
+             before(grammarAccess.getModelRenderAccess().getImportURISTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getModelRenderAccess().getImportURISTRINGTerminalRuleCall_1_0()); 
+             after(grammarAccess.getModelRenderAccess().getImportURISTRINGTerminalRuleCall_2_0()); 
 
             }
 
@@ -14442,29 +13127,29 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ModelRender__ImportURIAssignment_1"
+    // $ANTLR end "rule__ModelRender__ImportURIAssignment_2"
 
 
-    // $ANTLR start "rule__ModelProperties__PointAssignment_2"
-    // InternalCanvas.g:4719:1: rule__ModelProperties__PointAssignment_2 : ( rulePoint ) ;
-    public final void rule__ModelProperties__PointAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__ModelProperties__PointAssignment_4"
+    // InternalCanvas.g:4358:1: rule__ModelProperties__PointAssignment_4 : ( rulePoint ) ;
+    public final void rule__ModelProperties__PointAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4723:1: ( ( rulePoint ) )
-            // InternalCanvas.g:4724:2: ( rulePoint )
+            // InternalCanvas.g:4362:1: ( ( rulePoint ) )
+            // InternalCanvas.g:4363:2: ( rulePoint )
             {
-            // InternalCanvas.g:4724:2: ( rulePoint )
-            // InternalCanvas.g:4725:3: rulePoint
+            // InternalCanvas.g:4363:2: ( rulePoint )
+            // InternalCanvas.g:4364:3: rulePoint
             {
-             before(grammarAccess.getModelPropertiesAccess().getPointPointParserRuleCall_2_0()); 
+             before(grammarAccess.getModelPropertiesAccess().getPointPointParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
             rulePoint();
 
             state._fsp--;
 
-             after(grammarAccess.getModelPropertiesAccess().getPointPointParserRuleCall_2_0()); 
+             after(grammarAccess.getModelPropertiesAccess().getPointPointParserRuleCall_4_0()); 
 
             }
 
@@ -14483,25 +13168,25 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ModelProperties__PointAssignment_2"
+    // $ANTLR end "rule__ModelProperties__PointAssignment_4"
 
 
-    // $ANTLR start "rule__ModelProperties__ZoomAssignment_4"
-    // InternalCanvas.g:4734:1: rule__ModelProperties__ZoomAssignment_4 : ( RULE_INT ) ;
-    public final void rule__ModelProperties__ZoomAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__ModelProperties__ZoomAssignment_7"
+    // InternalCanvas.g:4373:1: rule__ModelProperties__ZoomAssignment_7 : ( RULE_INT ) ;
+    public final void rule__ModelProperties__ZoomAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4738:1: ( ( RULE_INT ) )
-            // InternalCanvas.g:4739:2: ( RULE_INT )
+            // InternalCanvas.g:4377:1: ( ( RULE_INT ) )
+            // InternalCanvas.g:4378:2: ( RULE_INT )
             {
-            // InternalCanvas.g:4739:2: ( RULE_INT )
-            // InternalCanvas.g:4740:3: RULE_INT
+            // InternalCanvas.g:4378:2: ( RULE_INT )
+            // InternalCanvas.g:4379:3: RULE_INT
             {
-             before(grammarAccess.getModelPropertiesAccess().getZoomINTTerminalRuleCall_4_0()); 
+             before(grammarAccess.getModelPropertiesAccess().getZoomINTTerminalRuleCall_7_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getModelPropertiesAccess().getZoomINTTerminalRuleCall_4_0()); 
+             after(grammarAccess.getModelPropertiesAccess().getZoomINTTerminalRuleCall_7_0()); 
 
             }
 
@@ -14520,29 +13205,29 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ModelProperties__ZoomAssignment_4"
+    // $ANTLR end "rule__ModelProperties__ZoomAssignment_7"
 
 
-    // $ANTLR start "rule__Shapes__ShapesAssignment_2"
-    // InternalCanvas.g:4749:1: rule__Shapes__ShapesAssignment_2 : ( ruleShape ) ;
-    public final void rule__Shapes__ShapesAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Shapes__ShapesAssignment_3"
+    // InternalCanvas.g:4388:1: rule__Shapes__ShapesAssignment_3 : ( ruleShape ) ;
+    public final void rule__Shapes__ShapesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4753:1: ( ( ruleShape ) )
-            // InternalCanvas.g:4754:2: ( ruleShape )
+            // InternalCanvas.g:4392:1: ( ( ruleShape ) )
+            // InternalCanvas.g:4393:2: ( ruleShape )
             {
-            // InternalCanvas.g:4754:2: ( ruleShape )
-            // InternalCanvas.g:4755:3: ruleShape
+            // InternalCanvas.g:4393:2: ( ruleShape )
+            // InternalCanvas.g:4394:3: ruleShape
             {
-             before(grammarAccess.getShapesAccess().getShapesShapeParserRuleCall_2_0()); 
+             before(grammarAccess.getShapesAccess().getShapesShapeParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleShape();
 
             state._fsp--;
 
-             after(grammarAccess.getShapesAccess().getShapesShapeParserRuleCall_2_0()); 
+             after(grammarAccess.getShapesAccess().getShapesShapeParserRuleCall_3_0()); 
 
             }
 
@@ -14561,25 +13246,25 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Shapes__ShapesAssignment_2"
+    // $ANTLR end "rule__Shapes__ShapesAssignment_3"
 
 
-    // $ANTLR start "rule__Shape__NameAssignment_2"
-    // InternalCanvas.g:4764:1: rule__Shape__NameAssignment_2 : ( RULE_ID ) ;
-    public final void rule__Shape__NameAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Shape__NameAssignment_3"
+    // InternalCanvas.g:4403:1: rule__Shape__NameAssignment_3 : ( RULE_ID ) ;
+    public final void rule__Shape__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4768:1: ( ( RULE_ID ) )
-            // InternalCanvas.g:4769:2: ( RULE_ID )
+            // InternalCanvas.g:4407:1: ( ( RULE_ID ) )
+            // InternalCanvas.g:4408:2: ( RULE_ID )
             {
-            // InternalCanvas.g:4769:2: ( RULE_ID )
-            // InternalCanvas.g:4770:3: RULE_ID
+            // InternalCanvas.g:4408:2: ( RULE_ID )
+            // InternalCanvas.g:4409:3: RULE_ID
             {
-             before(grammarAccess.getShapeAccess().getNameIDTerminalRuleCall_2_0()); 
+             before(grammarAccess.getShapeAccess().getNameIDTerminalRuleCall_3_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getShapeAccess().getNameIDTerminalRuleCall_2_0()); 
+             after(grammarAccess.getShapeAccess().getNameIDTerminalRuleCall_3_0()); 
 
             }
 
@@ -14598,29 +13283,29 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Shape__NameAssignment_2"
+    // $ANTLR end "rule__Shape__NameAssignment_3"
 
 
-    // $ANTLR start "rule__Shape__ContainerAssignment_3"
-    // InternalCanvas.g:4779:1: rule__Shape__ContainerAssignment_3 : ( ruleContainer ) ;
-    public final void rule__Shape__ContainerAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Shape__ContainerAssignment_4"
+    // InternalCanvas.g:4418:1: rule__Shape__ContainerAssignment_4 : ( ruleContainer ) ;
+    public final void rule__Shape__ContainerAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4783:1: ( ( ruleContainer ) )
-            // InternalCanvas.g:4784:2: ( ruleContainer )
+            // InternalCanvas.g:4422:1: ( ( ruleContainer ) )
+            // InternalCanvas.g:4423:2: ( ruleContainer )
             {
-            // InternalCanvas.g:4784:2: ( ruleContainer )
-            // InternalCanvas.g:4785:3: ruleContainer
+            // InternalCanvas.g:4423:2: ( ruleContainer )
+            // InternalCanvas.g:4424:3: ruleContainer
             {
-             before(grammarAccess.getShapeAccess().getContainerContainerParserRuleCall_3_0()); 
+             before(grammarAccess.getShapeAccess().getContainerContainerParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
             ruleContainer();
 
             state._fsp--;
 
-             after(grammarAccess.getShapeAccess().getContainerContainerParserRuleCall_3_0()); 
+             after(grammarAccess.getShapeAccess().getContainerContainerParserRuleCall_4_0()); 
 
             }
 
@@ -14639,25 +13324,66 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Shape__ContainerAssignment_3"
+    // $ANTLR end "rule__Shape__ContainerAssignment_4"
 
 
-    // $ANTLR start "rule__Shape__RepresentsAssignment_5"
-    // InternalCanvas.g:4794:1: rule__Shape__RepresentsAssignment_5 : ( RULE_STRING ) ;
-    public final void rule__Shape__RepresentsAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__Shape__TypeAssignment_7"
+    // InternalCanvas.g:4433:1: rule__Shape__TypeAssignment_7 : ( ruleTypeLabel ) ;
+    public final void rule__Shape__TypeAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4798:1: ( ( RULE_STRING ) )
-            // InternalCanvas.g:4799:2: ( RULE_STRING )
+            // InternalCanvas.g:4437:1: ( ( ruleTypeLabel ) )
+            // InternalCanvas.g:4438:2: ( ruleTypeLabel )
             {
-            // InternalCanvas.g:4799:2: ( RULE_STRING )
-            // InternalCanvas.g:4800:3: RULE_STRING
+            // InternalCanvas.g:4438:2: ( ruleTypeLabel )
+            // InternalCanvas.g:4439:3: ruleTypeLabel
             {
-             before(grammarAccess.getShapeAccess().getRepresentsSTRINGTerminalRuleCall_5_0()); 
+             before(grammarAccess.getShapeAccess().getTypeTypeLabelParserRuleCall_7_0()); 
+            pushFollow(FOLLOW_2);
+            ruleTypeLabel();
+
+            state._fsp--;
+
+             after(grammarAccess.getShapeAccess().getTypeTypeLabelParserRuleCall_7_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Shape__TypeAssignment_7"
+
+
+    // $ANTLR start "rule__Shape__RepresentsAssignment_8"
+    // InternalCanvas.g:4448:1: rule__Shape__RepresentsAssignment_8 : ( RULE_STRING ) ;
+    public final void rule__Shape__RepresentsAssignment_8() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:4452:1: ( ( RULE_STRING ) )
+            // InternalCanvas.g:4453:2: ( RULE_STRING )
+            {
+            // InternalCanvas.g:4453:2: ( RULE_STRING )
+            // InternalCanvas.g:4454:3: RULE_STRING
+            {
+             before(grammarAccess.getShapeAccess().getRepresentsSTRINGTerminalRuleCall_8_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getShapeAccess().getRepresentsSTRINGTerminalRuleCall_5_0()); 
+             after(grammarAccess.getShapeAccess().getRepresentsSTRINGTerminalRuleCall_8_0()); 
 
             }
 
@@ -14676,29 +13402,29 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Shape__RepresentsAssignment_5"
+    // $ANTLR end "rule__Shape__RepresentsAssignment_8"
 
 
-    // $ANTLR start "rule__Shape__RectAssignment_6"
-    // InternalCanvas.g:4809:1: rule__Shape__RectAssignment_6 : ( ruleRectangle ) ;
-    public final void rule__Shape__RectAssignment_6() throws RecognitionException {
+    // $ANTLR start "rule__Shape__BoundsAssignment_9"
+    // InternalCanvas.g:4463:1: rule__Shape__BoundsAssignment_9 : ( ruleBounds ) ;
+    public final void rule__Shape__BoundsAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4813:1: ( ( ruleRectangle ) )
-            // InternalCanvas.g:4814:2: ( ruleRectangle )
+            // InternalCanvas.g:4467:1: ( ( ruleBounds ) )
+            // InternalCanvas.g:4468:2: ( ruleBounds )
             {
-            // InternalCanvas.g:4814:2: ( ruleRectangle )
-            // InternalCanvas.g:4815:3: ruleRectangle
+            // InternalCanvas.g:4468:2: ( ruleBounds )
+            // InternalCanvas.g:4469:3: ruleBounds
             {
-             before(grammarAccess.getShapeAccess().getRectRectangleParserRuleCall_6_0()); 
+             before(grammarAccess.getShapeAccess().getBoundsBoundsParserRuleCall_9_0()); 
             pushFollow(FOLLOW_2);
-            ruleRectangle();
+            ruleBounds();
 
             state._fsp--;
 
-             after(grammarAccess.getShapeAccess().getRectRectangleParserRuleCall_6_0()); 
+             after(grammarAccess.getShapeAccess().getBoundsBoundsParserRuleCall_9_0()); 
 
             }
 
@@ -14717,70 +13443,29 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Shape__RectAssignment_6"
+    // $ANTLR end "rule__Shape__BoundsAssignment_9"
 
 
-    // $ANTLR start "rule__Shape__TextAssignment_7"
-    // InternalCanvas.g:4824:1: rule__Shape__TextAssignment_7 : ( ruleFloatingText ) ;
-    public final void rule__Shape__TextAssignment_7() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalCanvas.g:4828:1: ( ( ruleFloatingText ) )
-            // InternalCanvas.g:4829:2: ( ruleFloatingText )
-            {
-            // InternalCanvas.g:4829:2: ( ruleFloatingText )
-            // InternalCanvas.g:4830:3: ruleFloatingText
-            {
-             before(grammarAccess.getShapeAccess().getTextFloatingTextParserRuleCall_7_0()); 
-            pushFollow(FOLLOW_2);
-            ruleFloatingText();
-
-            state._fsp--;
-
-             after(grammarAccess.getShapeAccess().getTextFloatingTextParserRuleCall_7_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Shape__TextAssignment_7"
-
-
-    // $ANTLR start "rule__FloatingTexts__TextsAssignment_2"
-    // InternalCanvas.g:4839:1: rule__FloatingTexts__TextsAssignment_2 : ( ruleFloatingText ) ;
-    public final void rule__FloatingTexts__TextsAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Shape__TextAssignment_10"
+    // InternalCanvas.g:4478:1: rule__Shape__TextAssignment_10 : ( ruleFloatingText ) ;
+    public final void rule__Shape__TextAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4843:1: ( ( ruleFloatingText ) )
-            // InternalCanvas.g:4844:2: ( ruleFloatingText )
+            // InternalCanvas.g:4482:1: ( ( ruleFloatingText ) )
+            // InternalCanvas.g:4483:2: ( ruleFloatingText )
             {
-            // InternalCanvas.g:4844:2: ( ruleFloatingText )
-            // InternalCanvas.g:4845:3: ruleFloatingText
+            // InternalCanvas.g:4483:2: ( ruleFloatingText )
+            // InternalCanvas.g:4484:3: ruleFloatingText
             {
-             before(grammarAccess.getFloatingTextsAccess().getTextsFloatingTextParserRuleCall_2_0()); 
+             before(grammarAccess.getShapeAccess().getTextFloatingTextParserRuleCall_10_0()); 
             pushFollow(FOLLOW_2);
             ruleFloatingText();
 
             state._fsp--;
 
-             after(grammarAccess.getFloatingTextsAccess().getTextsFloatingTextParserRuleCall_2_0()); 
+             after(grammarAccess.getShapeAccess().getTextFloatingTextParserRuleCall_10_0()); 
 
             }
 
@@ -14799,29 +13484,29 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FloatingTexts__TextsAssignment_2"
+    // $ANTLR end "rule__Shape__TextAssignment_10"
 
 
-    // $ANTLR start "rule__FloatingText__RectAssignment_2"
-    // InternalCanvas.g:4854:1: rule__FloatingText__RectAssignment_2 : ( ruleRectangle ) ;
-    public final void rule__FloatingText__RectAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__FloatingTexts__TextsAssignment_3"
+    // InternalCanvas.g:4493:1: rule__FloatingTexts__TextsAssignment_3 : ( ruleFloatingText ) ;
+    public final void rule__FloatingTexts__TextsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4858:1: ( ( ruleRectangle ) )
-            // InternalCanvas.g:4859:2: ( ruleRectangle )
+            // InternalCanvas.g:4497:1: ( ( ruleFloatingText ) )
+            // InternalCanvas.g:4498:2: ( ruleFloatingText )
             {
-            // InternalCanvas.g:4859:2: ( ruleRectangle )
-            // InternalCanvas.g:4860:3: ruleRectangle
+            // InternalCanvas.g:4498:2: ( ruleFloatingText )
+            // InternalCanvas.g:4499:3: ruleFloatingText
             {
-             before(grammarAccess.getFloatingTextAccess().getRectRectangleParserRuleCall_2_0()); 
+             before(grammarAccess.getFloatingTextsAccess().getTextsFloatingTextParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
-            ruleRectangle();
+            ruleFloatingText();
 
             state._fsp--;
 
-             after(grammarAccess.getFloatingTextAccess().getRectRectangleParserRuleCall_2_0()); 
+             after(grammarAccess.getFloatingTextsAccess().getTextsFloatingTextParserRuleCall_3_0()); 
 
             }
 
@@ -14840,29 +13525,70 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FloatingText__RectAssignment_2"
+    // $ANTLR end "rule__FloatingTexts__TextsAssignment_3"
 
 
-    // $ANTLR start "rule__FloatingText__EndAssignment_3"
-    // InternalCanvas.g:4869:1: rule__FloatingText__EndAssignment_3 : ( ruleEnumEnd ) ;
-    public final void rule__FloatingText__EndAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__FloatingText__BoundsAssignment_3"
+    // InternalCanvas.g:4508:1: rule__FloatingText__BoundsAssignment_3 : ( ruleBounds ) ;
+    public final void rule__FloatingText__BoundsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4873:1: ( ( ruleEnumEnd ) )
-            // InternalCanvas.g:4874:2: ( ruleEnumEnd )
+            // InternalCanvas.g:4512:1: ( ( ruleBounds ) )
+            // InternalCanvas.g:4513:2: ( ruleBounds )
             {
-            // InternalCanvas.g:4874:2: ( ruleEnumEnd )
-            // InternalCanvas.g:4875:3: ruleEnumEnd
+            // InternalCanvas.g:4513:2: ( ruleBounds )
+            // InternalCanvas.g:4514:3: ruleBounds
             {
-             before(grammarAccess.getFloatingTextAccess().getEndEnumEndParserRuleCall_3_0()); 
+             before(grammarAccess.getFloatingTextAccess().getBoundsBoundsParserRuleCall_3_0()); 
+            pushFollow(FOLLOW_2);
+            ruleBounds();
+
+            state._fsp--;
+
+             after(grammarAccess.getFloatingTextAccess().getBoundsBoundsParserRuleCall_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__FloatingText__BoundsAssignment_3"
+
+
+    // $ANTLR start "rule__FloatingText__EndAssignment_4"
+    // InternalCanvas.g:4523:1: rule__FloatingText__EndAssignment_4 : ( ruleEnumEnd ) ;
+    public final void rule__FloatingText__EndAssignment_4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:4527:1: ( ( ruleEnumEnd ) )
+            // InternalCanvas.g:4528:2: ( ruleEnumEnd )
+            {
+            // InternalCanvas.g:4528:2: ( ruleEnumEnd )
+            // InternalCanvas.g:4529:3: ruleEnumEnd
+            {
+             before(grammarAccess.getFloatingTextAccess().getEndEnumEndParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
             ruleEnumEnd();
 
             state._fsp--;
 
-             after(grammarAccess.getFloatingTextAccess().getEndEnumEndParserRuleCall_3_0()); 
+             after(grammarAccess.getFloatingTextAccess().getEndEnumEndParserRuleCall_4_0()); 
 
             }
 
@@ -14881,35 +13607,35 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FloatingText__EndAssignment_3"
+    // $ANTLR end "rule__FloatingText__EndAssignment_4"
 
 
-    // $ANTLR start "rule__EnumEnd__WhereAssignment_1"
-    // InternalCanvas.g:4884:1: rule__EnumEnd__WhereAssignment_1 : ( ( rule__EnumEnd__WhereAlternatives_1_0 ) ) ;
-    public final void rule__EnumEnd__WhereAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__EnumEnd__WhereAssignment_2"
+    // InternalCanvas.g:4538:1: rule__EnumEnd__WhereAssignment_2 : ( ( rule__EnumEnd__WhereAlternatives_2_0 ) ) ;
+    public final void rule__EnumEnd__WhereAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4888:1: ( ( ( rule__EnumEnd__WhereAlternatives_1_0 ) ) )
-            // InternalCanvas.g:4889:2: ( ( rule__EnumEnd__WhereAlternatives_1_0 ) )
+            // InternalCanvas.g:4542:1: ( ( ( rule__EnumEnd__WhereAlternatives_2_0 ) ) )
+            // InternalCanvas.g:4543:2: ( ( rule__EnumEnd__WhereAlternatives_2_0 ) )
             {
-            // InternalCanvas.g:4889:2: ( ( rule__EnumEnd__WhereAlternatives_1_0 ) )
-            // InternalCanvas.g:4890:3: ( rule__EnumEnd__WhereAlternatives_1_0 )
+            // InternalCanvas.g:4543:2: ( ( rule__EnumEnd__WhereAlternatives_2_0 ) )
+            // InternalCanvas.g:4544:3: ( rule__EnumEnd__WhereAlternatives_2_0 )
             {
-             before(grammarAccess.getEnumEndAccess().getWhereAlternatives_1_0()); 
-            // InternalCanvas.g:4891:3: ( rule__EnumEnd__WhereAlternatives_1_0 )
-            // InternalCanvas.g:4891:4: rule__EnumEnd__WhereAlternatives_1_0
+             before(grammarAccess.getEnumEndAccess().getWhereAlternatives_2_0()); 
+            // InternalCanvas.g:4545:3: ( rule__EnumEnd__WhereAlternatives_2_0 )
+            // InternalCanvas.g:4545:4: rule__EnumEnd__WhereAlternatives_2_0
             {
             pushFollow(FOLLOW_2);
-            rule__EnumEnd__WhereAlternatives_1_0();
+            rule__EnumEnd__WhereAlternatives_2_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEnumEndAccess().getWhereAlternatives_1_0()); 
+             after(grammarAccess.getEnumEndAccess().getWhereAlternatives_2_0()); 
 
             }
 
@@ -14928,29 +13654,29 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EnumEnd__WhereAssignment_1"
+    // $ANTLR end "rule__EnumEnd__WhereAssignment_2"
 
 
-    // $ANTLR start "rule__Connectors__ConnectorsAssignment_2"
-    // InternalCanvas.g:4899:1: rule__Connectors__ConnectorsAssignment_2 : ( ruleConnector ) ;
-    public final void rule__Connectors__ConnectorsAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Connectors__ConnectorsAssignment_3"
+    // InternalCanvas.g:4553:1: rule__Connectors__ConnectorsAssignment_3 : ( ruleConnector ) ;
+    public final void rule__Connectors__ConnectorsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4903:1: ( ( ruleConnector ) )
-            // InternalCanvas.g:4904:2: ( ruleConnector )
+            // InternalCanvas.g:4557:1: ( ( ruleConnector ) )
+            // InternalCanvas.g:4558:2: ( ruleConnector )
             {
-            // InternalCanvas.g:4904:2: ( ruleConnector )
-            // InternalCanvas.g:4905:3: ruleConnector
+            // InternalCanvas.g:4558:2: ( ruleConnector )
+            // InternalCanvas.g:4559:3: ruleConnector
             {
-             before(grammarAccess.getConnectorsAccess().getConnectorsConnectorParserRuleCall_2_0()); 
+             before(grammarAccess.getConnectorsAccess().getConnectorsConnectorParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleConnector();
 
             state._fsp--;
 
-             after(grammarAccess.getConnectorsAccess().getConnectorsConnectorParserRuleCall_2_0()); 
+             after(grammarAccess.getConnectorsAccess().getConnectorsConnectorParserRuleCall_3_0()); 
 
             }
 
@@ -14969,25 +13695,25 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Connectors__ConnectorsAssignment_2"
+    // $ANTLR end "rule__Connectors__ConnectorsAssignment_3"
 
 
-    // $ANTLR start "rule__Connector__NameAssignment_1"
-    // InternalCanvas.g:4914:1: rule__Connector__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__Connector__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Connector__NameAssignment_2"
+    // InternalCanvas.g:4568:1: rule__Connector__NameAssignment_2 : ( RULE_ID ) ;
+    public final void rule__Connector__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4918:1: ( ( RULE_ID ) )
-            // InternalCanvas.g:4919:2: ( RULE_ID )
+            // InternalCanvas.g:4572:1: ( ( RULE_ID ) )
+            // InternalCanvas.g:4573:2: ( RULE_ID )
             {
-            // InternalCanvas.g:4919:2: ( RULE_ID )
-            // InternalCanvas.g:4920:3: RULE_ID
+            // InternalCanvas.g:4573:2: ( RULE_ID )
+            // InternalCanvas.g:4574:3: RULE_ID
             {
-             before(grammarAccess.getConnectorAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getConnectorAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getConnectorAccess().getNameIDTerminalRuleCall_1_0()); 
+             after(grammarAccess.getConnectorAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
 
@@ -15006,25 +13732,66 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Connector__NameAssignment_1"
+    // $ANTLR end "rule__Connector__NameAssignment_2"
 
 
-    // $ANTLR start "rule__Connector__RepresentsAssignment_3"
-    // InternalCanvas.g:4929:1: rule__Connector__RepresentsAssignment_3 : ( RULE_STRING ) ;
-    public final void rule__Connector__RepresentsAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Connector__TypeAssignment_5"
+    // InternalCanvas.g:4583:1: rule__Connector__TypeAssignment_5 : ( ruleTypeLabel ) ;
+    public final void rule__Connector__TypeAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4933:1: ( ( RULE_STRING ) )
-            // InternalCanvas.g:4934:2: ( RULE_STRING )
+            // InternalCanvas.g:4587:1: ( ( ruleTypeLabel ) )
+            // InternalCanvas.g:4588:2: ( ruleTypeLabel )
             {
-            // InternalCanvas.g:4934:2: ( RULE_STRING )
-            // InternalCanvas.g:4935:3: RULE_STRING
+            // InternalCanvas.g:4588:2: ( ruleTypeLabel )
+            // InternalCanvas.g:4589:3: ruleTypeLabel
             {
-             before(grammarAccess.getConnectorAccess().getRepresentsSTRINGTerminalRuleCall_3_0()); 
+             before(grammarAccess.getConnectorAccess().getTypeTypeLabelParserRuleCall_5_0()); 
+            pushFollow(FOLLOW_2);
+            ruleTypeLabel();
+
+            state._fsp--;
+
+             after(grammarAccess.getConnectorAccess().getTypeTypeLabelParserRuleCall_5_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Connector__TypeAssignment_5"
+
+
+    // $ANTLR start "rule__Connector__RepresentsAssignment_6"
+    // InternalCanvas.g:4598:1: rule__Connector__RepresentsAssignment_6 : ( RULE_STRING ) ;
+    public final void rule__Connector__RepresentsAssignment_6() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCanvas.g:4602:1: ( ( RULE_STRING ) )
+            // InternalCanvas.g:4603:2: ( RULE_STRING )
+            {
+            // InternalCanvas.g:4603:2: ( RULE_STRING )
+            // InternalCanvas.g:4604:3: RULE_STRING
+            {
+             before(grammarAccess.getConnectorAccess().getRepresentsSTRINGTerminalRuleCall_6_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getConnectorAccess().getRepresentsSTRINGTerminalRuleCall_3_0()); 
+             after(grammarAccess.getConnectorAccess().getRepresentsSTRINGTerminalRuleCall_6_0()); 
 
             }
 
@@ -15043,29 +13810,29 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Connector__RepresentsAssignment_3"
+    // $ANTLR end "rule__Connector__RepresentsAssignment_6"
 
 
-    // $ANTLR start "rule__Connector__PolylineAssignment_4"
-    // InternalCanvas.g:4944:1: rule__Connector__PolylineAssignment_4 : ( rulePolyline ) ;
-    public final void rule__Connector__PolylineAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__Connector__PolylineAssignment_7"
+    // InternalCanvas.g:4613:1: rule__Connector__PolylineAssignment_7 : ( rulePolyline ) ;
+    public final void rule__Connector__PolylineAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4948:1: ( ( rulePolyline ) )
-            // InternalCanvas.g:4949:2: ( rulePolyline )
+            // InternalCanvas.g:4617:1: ( ( rulePolyline ) )
+            // InternalCanvas.g:4618:2: ( rulePolyline )
             {
-            // InternalCanvas.g:4949:2: ( rulePolyline )
-            // InternalCanvas.g:4950:3: rulePolyline
+            // InternalCanvas.g:4618:2: ( rulePolyline )
+            // InternalCanvas.g:4619:3: rulePolyline
             {
-             before(grammarAccess.getConnectorAccess().getPolylinePolylineParserRuleCall_4_0()); 
+             before(grammarAccess.getConnectorAccess().getPolylinePolylineParserRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
             rulePolyline();
 
             state._fsp--;
 
-             after(grammarAccess.getConnectorAccess().getPolylinePolylineParserRuleCall_4_0()); 
+             after(grammarAccess.getConnectorAccess().getPolylinePolylineParserRuleCall_7_0()); 
 
             }
 
@@ -15084,29 +13851,29 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Connector__PolylineAssignment_4"
+    // $ANTLR end "rule__Connector__PolylineAssignment_7"
 
 
-    // $ANTLR start "rule__Connector__AnchorsAssignment_5"
-    // InternalCanvas.g:4959:1: rule__Connector__AnchorsAssignment_5 : ( ruleAnchors ) ;
-    public final void rule__Connector__AnchorsAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__Connector__AnchorsAssignment_8"
+    // InternalCanvas.g:4628:1: rule__Connector__AnchorsAssignment_8 : ( ruleAnchors ) ;
+    public final void rule__Connector__AnchorsAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4963:1: ( ( ruleAnchors ) )
-            // InternalCanvas.g:4964:2: ( ruleAnchors )
+            // InternalCanvas.g:4632:1: ( ( ruleAnchors ) )
+            // InternalCanvas.g:4633:2: ( ruleAnchors )
             {
-            // InternalCanvas.g:4964:2: ( ruleAnchors )
-            // InternalCanvas.g:4965:3: ruleAnchors
+            // InternalCanvas.g:4633:2: ( ruleAnchors )
+            // InternalCanvas.g:4634:3: ruleAnchors
             {
-             before(grammarAccess.getConnectorAccess().getAnchorsAnchorsParserRuleCall_5_0()); 
+             before(grammarAccess.getConnectorAccess().getAnchorsAnchorsParserRuleCall_8_0()); 
             pushFollow(FOLLOW_2);
             ruleAnchors();
 
             state._fsp--;
 
-             after(grammarAccess.getConnectorAccess().getAnchorsAnchorsParserRuleCall_5_0()); 
+             after(grammarAccess.getConnectorAccess().getAnchorsAnchorsParserRuleCall_8_0()); 
 
             }
 
@@ -15125,29 +13892,29 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Connector__AnchorsAssignment_5"
+    // $ANTLR end "rule__Connector__AnchorsAssignment_8"
 
 
-    // $ANTLR start "rule__Connector__TextsAssignment_6"
-    // InternalCanvas.g:4974:1: rule__Connector__TextsAssignment_6 : ( ruleFloatingTexts ) ;
-    public final void rule__Connector__TextsAssignment_6() throws RecognitionException {
+    // $ANTLR start "rule__Connector__TextsAssignment_9"
+    // InternalCanvas.g:4643:1: rule__Connector__TextsAssignment_9 : ( ruleFloatingTexts ) ;
+    public final void rule__Connector__TextsAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4978:1: ( ( ruleFloatingTexts ) )
-            // InternalCanvas.g:4979:2: ( ruleFloatingTexts )
+            // InternalCanvas.g:4647:1: ( ( ruleFloatingTexts ) )
+            // InternalCanvas.g:4648:2: ( ruleFloatingTexts )
             {
-            // InternalCanvas.g:4979:2: ( ruleFloatingTexts )
-            // InternalCanvas.g:4980:3: ruleFloatingTexts
+            // InternalCanvas.g:4648:2: ( ruleFloatingTexts )
+            // InternalCanvas.g:4649:3: ruleFloatingTexts
             {
-             before(grammarAccess.getConnectorAccess().getTextsFloatingTextsParserRuleCall_6_0()); 
+             before(grammarAccess.getConnectorAccess().getTextsFloatingTextsParserRuleCall_9_0()); 
             pushFollow(FOLLOW_2);
             ruleFloatingTexts();
 
             state._fsp--;
 
-             after(grammarAccess.getConnectorAccess().getTextsFloatingTextsParserRuleCall_6_0()); 
+             after(grammarAccess.getConnectorAccess().getTextsFloatingTextsParserRuleCall_9_0()); 
 
             }
 
@@ -15166,29 +13933,29 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Connector__TextsAssignment_6"
+    // $ANTLR end "rule__Connector__TextsAssignment_9"
 
 
-    // $ANTLR start "rule__Anchors__StartAnchorAssignment_1"
-    // InternalCanvas.g:4989:1: rule__Anchors__StartAnchorAssignment_1 : ( ruleStartAnchor ) ;
-    public final void rule__Anchors__StartAnchorAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Anchors__StartAnchorAssignment_2"
+    // InternalCanvas.g:4658:1: rule__Anchors__StartAnchorAssignment_2 : ( ruleStartAnchor ) ;
+    public final void rule__Anchors__StartAnchorAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:4993:1: ( ( ruleStartAnchor ) )
-            // InternalCanvas.g:4994:2: ( ruleStartAnchor )
+            // InternalCanvas.g:4662:1: ( ( ruleStartAnchor ) )
+            // InternalCanvas.g:4663:2: ( ruleStartAnchor )
             {
-            // InternalCanvas.g:4994:2: ( ruleStartAnchor )
-            // InternalCanvas.g:4995:3: ruleStartAnchor
+            // InternalCanvas.g:4663:2: ( ruleStartAnchor )
+            // InternalCanvas.g:4664:3: ruleStartAnchor
             {
-             before(grammarAccess.getAnchorsAccess().getStartAnchorStartAnchorParserRuleCall_1_0()); 
+             before(grammarAccess.getAnchorsAccess().getStartAnchorStartAnchorParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             ruleStartAnchor();
 
             state._fsp--;
 
-             after(grammarAccess.getAnchorsAccess().getStartAnchorStartAnchorParserRuleCall_1_0()); 
+             after(grammarAccess.getAnchorsAccess().getStartAnchorStartAnchorParserRuleCall_2_0()); 
 
             }
 
@@ -15207,29 +13974,29 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Anchors__StartAnchorAssignment_1"
+    // $ANTLR end "rule__Anchors__StartAnchorAssignment_2"
 
 
-    // $ANTLR start "rule__Anchors__EndAnchorAssignment_2"
-    // InternalCanvas.g:5004:1: rule__Anchors__EndAnchorAssignment_2 : ( ruleEndAnchor ) ;
-    public final void rule__Anchors__EndAnchorAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Anchors__EndAnchorAssignment_3"
+    // InternalCanvas.g:4673:1: rule__Anchors__EndAnchorAssignment_3 : ( ruleEndAnchor ) ;
+    public final void rule__Anchors__EndAnchorAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:5008:1: ( ( ruleEndAnchor ) )
-            // InternalCanvas.g:5009:2: ( ruleEndAnchor )
+            // InternalCanvas.g:4677:1: ( ( ruleEndAnchor ) )
+            // InternalCanvas.g:4678:2: ( ruleEndAnchor )
             {
-            // InternalCanvas.g:5009:2: ( ruleEndAnchor )
-            // InternalCanvas.g:5010:3: ruleEndAnchor
+            // InternalCanvas.g:4678:2: ( ruleEndAnchor )
+            // InternalCanvas.g:4679:3: ruleEndAnchor
             {
-             before(grammarAccess.getAnchorsAccess().getEndAnchorEndAnchorParserRuleCall_2_0()); 
+             before(grammarAccess.getAnchorsAccess().getEndAnchorEndAnchorParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleEndAnchor();
 
             state._fsp--;
 
-             after(grammarAccess.getAnchorsAccess().getEndAnchorEndAnchorParserRuleCall_2_0()); 
+             after(grammarAccess.getAnchorsAccess().getEndAnchorEndAnchorParserRuleCall_3_0()); 
 
             }
 
@@ -15248,29 +14015,29 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Anchors__EndAnchorAssignment_2"
+    // $ANTLR end "rule__Anchors__EndAnchorAssignment_3"
 
 
-    // $ANTLR start "rule__StartAnchor__PointAssignment_1"
-    // InternalCanvas.g:5019:1: rule__StartAnchor__PointAssignment_1 : ( rulePointDefinition ) ;
-    public final void rule__StartAnchor__PointAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__StartAnchor__PointAssignment_2"
+    // InternalCanvas.g:4688:1: rule__StartAnchor__PointAssignment_2 : ( rulePointDefinition ) ;
+    public final void rule__StartAnchor__PointAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:5023:1: ( ( rulePointDefinition ) )
-            // InternalCanvas.g:5024:2: ( rulePointDefinition )
+            // InternalCanvas.g:4692:1: ( ( rulePointDefinition ) )
+            // InternalCanvas.g:4693:2: ( rulePointDefinition )
             {
-            // InternalCanvas.g:5024:2: ( rulePointDefinition )
-            // InternalCanvas.g:5025:3: rulePointDefinition
+            // InternalCanvas.g:4693:2: ( rulePointDefinition )
+            // InternalCanvas.g:4694:3: rulePointDefinition
             {
-             before(grammarAccess.getStartAnchorAccess().getPointPointDefinitionParserRuleCall_1_0()); 
+             before(grammarAccess.getStartAnchorAccess().getPointPointDefinitionParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             rulePointDefinition();
 
             state._fsp--;
 
-             after(grammarAccess.getStartAnchorAccess().getPointPointDefinitionParserRuleCall_1_0()); 
+             after(grammarAccess.getStartAnchorAccess().getPointPointDefinitionParserRuleCall_2_0()); 
 
             }
 
@@ -15289,29 +14056,29 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StartAnchor__PointAssignment_1"
+    // $ANTLR end "rule__StartAnchor__PointAssignment_2"
 
 
-    // $ANTLR start "rule__StartAnchor__AnchorAssignment_2"
-    // InternalCanvas.g:5034:1: rule__StartAnchor__AnchorAssignment_2 : ( ruleAnchor ) ;
-    public final void rule__StartAnchor__AnchorAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__StartAnchor__AnchorAssignment_3"
+    // InternalCanvas.g:4703:1: rule__StartAnchor__AnchorAssignment_3 : ( ruleAnchor ) ;
+    public final void rule__StartAnchor__AnchorAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:5038:1: ( ( ruleAnchor ) )
-            // InternalCanvas.g:5039:2: ( ruleAnchor )
+            // InternalCanvas.g:4707:1: ( ( ruleAnchor ) )
+            // InternalCanvas.g:4708:2: ( ruleAnchor )
             {
-            // InternalCanvas.g:5039:2: ( ruleAnchor )
-            // InternalCanvas.g:5040:3: ruleAnchor
+            // InternalCanvas.g:4708:2: ( ruleAnchor )
+            // InternalCanvas.g:4709:3: ruleAnchor
             {
-             before(grammarAccess.getStartAnchorAccess().getAnchorAnchorParserRuleCall_2_0()); 
+             before(grammarAccess.getStartAnchorAccess().getAnchorAnchorParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleAnchor();
 
             state._fsp--;
 
-             after(grammarAccess.getStartAnchorAccess().getAnchorAnchorParserRuleCall_2_0()); 
+             after(grammarAccess.getStartAnchorAccess().getAnchorAnchorParserRuleCall_3_0()); 
 
             }
 
@@ -15330,29 +14097,29 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StartAnchor__AnchorAssignment_2"
+    // $ANTLR end "rule__StartAnchor__AnchorAssignment_3"
 
 
-    // $ANTLR start "rule__EndAnchor__PointAssignment_1"
-    // InternalCanvas.g:5049:1: rule__EndAnchor__PointAssignment_1 : ( rulePointDefinition ) ;
-    public final void rule__EndAnchor__PointAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__EndAnchor__PointAssignment_2"
+    // InternalCanvas.g:4718:1: rule__EndAnchor__PointAssignment_2 : ( rulePointDefinition ) ;
+    public final void rule__EndAnchor__PointAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:5053:1: ( ( rulePointDefinition ) )
-            // InternalCanvas.g:5054:2: ( rulePointDefinition )
+            // InternalCanvas.g:4722:1: ( ( rulePointDefinition ) )
+            // InternalCanvas.g:4723:2: ( rulePointDefinition )
             {
-            // InternalCanvas.g:5054:2: ( rulePointDefinition )
-            // InternalCanvas.g:5055:3: rulePointDefinition
+            // InternalCanvas.g:4723:2: ( rulePointDefinition )
+            // InternalCanvas.g:4724:3: rulePointDefinition
             {
-             before(grammarAccess.getEndAnchorAccess().getPointPointDefinitionParserRuleCall_1_0()); 
+             before(grammarAccess.getEndAnchorAccess().getPointPointDefinitionParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             rulePointDefinition();
 
             state._fsp--;
 
-             after(grammarAccess.getEndAnchorAccess().getPointPointDefinitionParserRuleCall_1_0()); 
+             after(grammarAccess.getEndAnchorAccess().getPointPointDefinitionParserRuleCall_2_0()); 
 
             }
 
@@ -15371,29 +14138,29 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EndAnchor__PointAssignment_1"
+    // $ANTLR end "rule__EndAnchor__PointAssignment_2"
 
 
-    // $ANTLR start "rule__EndAnchor__AnchorAssignment_2"
-    // InternalCanvas.g:5064:1: rule__EndAnchor__AnchorAssignment_2 : ( ruleAnchor ) ;
-    public final void rule__EndAnchor__AnchorAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__EndAnchor__AnchorAssignment_3"
+    // InternalCanvas.g:4733:1: rule__EndAnchor__AnchorAssignment_3 : ( ruleAnchor ) ;
+    public final void rule__EndAnchor__AnchorAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:5068:1: ( ( ruleAnchor ) )
-            // InternalCanvas.g:5069:2: ( ruleAnchor )
+            // InternalCanvas.g:4737:1: ( ( ruleAnchor ) )
+            // InternalCanvas.g:4738:2: ( ruleAnchor )
             {
-            // InternalCanvas.g:5069:2: ( ruleAnchor )
-            // InternalCanvas.g:5070:3: ruleAnchor
+            // InternalCanvas.g:4738:2: ( ruleAnchor )
+            // InternalCanvas.g:4739:3: ruleAnchor
             {
-             before(grammarAccess.getEndAnchorAccess().getAnchorAnchorParserRuleCall_2_0()); 
+             before(grammarAccess.getEndAnchorAccess().getAnchorAnchorParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleAnchor();
 
             state._fsp--;
 
-             after(grammarAccess.getEndAnchorAccess().getAnchorAnchorParserRuleCall_2_0()); 
+             after(grammarAccess.getEndAnchorAccess().getAnchorAnchorParserRuleCall_3_0()); 
 
             }
 
@@ -15412,33 +14179,33 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EndAnchor__AnchorAssignment_2"
+    // $ANTLR end "rule__EndAnchor__AnchorAssignment_3"
 
 
-    // $ANTLR start "rule__ShapeAnchorElement__ElementAssignment_1"
-    // InternalCanvas.g:5079:1: rule__ShapeAnchorElement__ElementAssignment_1 : ( ( RULE_ID ) ) ;
-    public final void rule__ShapeAnchorElement__ElementAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ShapeAnchorElement__ElementAssignment_2"
+    // InternalCanvas.g:4748:1: rule__ShapeAnchorElement__ElementAssignment_2 : ( ( RULE_ID ) ) ;
+    public final void rule__ShapeAnchorElement__ElementAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:5083:1: ( ( ( RULE_ID ) ) )
-            // InternalCanvas.g:5084:2: ( ( RULE_ID ) )
+            // InternalCanvas.g:4752:1: ( ( ( RULE_ID ) ) )
+            // InternalCanvas.g:4753:2: ( ( RULE_ID ) )
             {
-            // InternalCanvas.g:5084:2: ( ( RULE_ID ) )
-            // InternalCanvas.g:5085:3: ( RULE_ID )
+            // InternalCanvas.g:4753:2: ( ( RULE_ID ) )
+            // InternalCanvas.g:4754:3: ( RULE_ID )
             {
-             before(grammarAccess.getShapeAnchorElementAccess().getElementShapeCrossReference_1_0()); 
-            // InternalCanvas.g:5086:3: ( RULE_ID )
-            // InternalCanvas.g:5087:4: RULE_ID
+             before(grammarAccess.getShapeAnchorElementAccess().getElementShapeCrossReference_2_0()); 
+            // InternalCanvas.g:4755:3: ( RULE_ID )
+            // InternalCanvas.g:4756:4: RULE_ID
             {
-             before(grammarAccess.getShapeAnchorElementAccess().getElementShapeIDTerminalRuleCall_1_0_1()); 
+             before(grammarAccess.getShapeAnchorElementAccess().getElementShapeIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getShapeAnchorElementAccess().getElementShapeIDTerminalRuleCall_1_0_1()); 
+             after(grammarAccess.getShapeAnchorElementAccess().getElementShapeIDTerminalRuleCall_2_0_1()); 
 
             }
 
-             after(grammarAccess.getShapeAnchorElementAccess().getElementShapeCrossReference_1_0()); 
+             after(grammarAccess.getShapeAnchorElementAccess().getElementShapeCrossReference_2_0()); 
 
             }
 
@@ -15457,33 +14224,33 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ShapeAnchorElement__ElementAssignment_1"
+    // $ANTLR end "rule__ShapeAnchorElement__ElementAssignment_2"
 
 
-    // $ANTLR start "rule__ConnectorAnchorElement__ElementAssignment_1"
-    // InternalCanvas.g:5098:1: rule__ConnectorAnchorElement__ElementAssignment_1 : ( ( RULE_ID ) ) ;
-    public final void rule__ConnectorAnchorElement__ElementAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ConnectorAnchorElement__ElementAssignment_2"
+    // InternalCanvas.g:4767:1: rule__ConnectorAnchorElement__ElementAssignment_2 : ( ( RULE_ID ) ) ;
+    public final void rule__ConnectorAnchorElement__ElementAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:5102:1: ( ( ( RULE_ID ) ) )
-            // InternalCanvas.g:5103:2: ( ( RULE_ID ) )
+            // InternalCanvas.g:4771:1: ( ( ( RULE_ID ) ) )
+            // InternalCanvas.g:4772:2: ( ( RULE_ID ) )
             {
-            // InternalCanvas.g:5103:2: ( ( RULE_ID ) )
-            // InternalCanvas.g:5104:3: ( RULE_ID )
+            // InternalCanvas.g:4772:2: ( ( RULE_ID ) )
+            // InternalCanvas.g:4773:3: ( RULE_ID )
             {
-             before(grammarAccess.getConnectorAnchorElementAccess().getElementConnectorCrossReference_1_0()); 
-            // InternalCanvas.g:5105:3: ( RULE_ID )
-            // InternalCanvas.g:5106:4: RULE_ID
+             before(grammarAccess.getConnectorAnchorElementAccess().getElementConnectorCrossReference_2_0()); 
+            // InternalCanvas.g:4774:3: ( RULE_ID )
+            // InternalCanvas.g:4775:4: RULE_ID
             {
-             before(grammarAccess.getConnectorAnchorElementAccess().getElementConnectorIDTerminalRuleCall_1_0_1()); 
+             before(grammarAccess.getConnectorAnchorElementAccess().getElementConnectorIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getConnectorAnchorElementAccess().getElementConnectorIDTerminalRuleCall_1_0_1()); 
+             after(grammarAccess.getConnectorAnchorElementAccess().getElementConnectorIDTerminalRuleCall_2_0_1()); 
 
             }
 
-             after(grammarAccess.getConnectorAnchorElementAccess().getElementConnectorCrossReference_1_0()); 
+             after(grammarAccess.getConnectorAnchorElementAccess().getElementConnectorCrossReference_2_0()); 
 
             }
 
@@ -15502,29 +14269,29 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ConnectorAnchorElement__ElementAssignment_1"
+    // $ANTLR end "rule__ConnectorAnchorElement__ElementAssignment_2"
 
 
-    // $ANTLR start "rule__Polyline__SegmentsAssignment_2"
-    // InternalCanvas.g:5117:1: rule__Polyline__SegmentsAssignment_2 : ( ruleSegment ) ;
-    public final void rule__Polyline__SegmentsAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Polyline__SegmentsAssignment_3"
+    // InternalCanvas.g:4786:1: rule__Polyline__SegmentsAssignment_3 : ( ruleSegment ) ;
+    public final void rule__Polyline__SegmentsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:5121:1: ( ( ruleSegment ) )
-            // InternalCanvas.g:5122:2: ( ruleSegment )
+            // InternalCanvas.g:4790:1: ( ( ruleSegment ) )
+            // InternalCanvas.g:4791:2: ( ruleSegment )
             {
-            // InternalCanvas.g:5122:2: ( ruleSegment )
-            // InternalCanvas.g:5123:3: ruleSegment
+            // InternalCanvas.g:4791:2: ( ruleSegment )
+            // InternalCanvas.g:4792:3: ruleSegment
             {
-             before(grammarAccess.getPolylineAccess().getSegmentsSegmentParserRuleCall_2_0()); 
+             before(grammarAccess.getPolylineAccess().getSegmentsSegmentParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleSegment();
 
             state._fsp--;
 
-             after(grammarAccess.getPolylineAccess().getSegmentsSegmentParserRuleCall_2_0()); 
+             after(grammarAccess.getPolylineAccess().getSegmentsSegmentParserRuleCall_3_0()); 
 
             }
 
@@ -15543,29 +14310,29 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Polyline__SegmentsAssignment_2"
+    // $ANTLR end "rule__Polyline__SegmentsAssignment_3"
 
 
-    // $ANTLR start "rule__Segment__StartPointAssignment_2"
-    // InternalCanvas.g:5132:1: rule__Segment__StartPointAssignment_2 : ( rulePoint ) ;
-    public final void rule__Segment__StartPointAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Segment__StartPointAssignment_4"
+    // InternalCanvas.g:4801:1: rule__Segment__StartPointAssignment_4 : ( rulePoint ) ;
+    public final void rule__Segment__StartPointAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:5136:1: ( ( rulePoint ) )
-            // InternalCanvas.g:5137:2: ( rulePoint )
+            // InternalCanvas.g:4805:1: ( ( rulePoint ) )
+            // InternalCanvas.g:4806:2: ( rulePoint )
             {
-            // InternalCanvas.g:5137:2: ( rulePoint )
-            // InternalCanvas.g:5138:3: rulePoint
+            // InternalCanvas.g:4806:2: ( rulePoint )
+            // InternalCanvas.g:4807:3: rulePoint
             {
-             before(grammarAccess.getSegmentAccess().getStartPointPointParserRuleCall_2_0()); 
+             before(grammarAccess.getSegmentAccess().getStartPointPointParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
             rulePoint();
 
             state._fsp--;
 
-             after(grammarAccess.getSegmentAccess().getStartPointPointParserRuleCall_2_0()); 
+             after(grammarAccess.getSegmentAccess().getStartPointPointParserRuleCall_4_0()); 
 
             }
 
@@ -15584,29 +14351,29 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Segment__StartPointAssignment_2"
+    // $ANTLR end "rule__Segment__StartPointAssignment_4"
 
 
-    // $ANTLR start "rule__Segment__EndPointAssignment_4"
-    // InternalCanvas.g:5147:1: rule__Segment__EndPointAssignment_4 : ( rulePoint ) ;
-    public final void rule__Segment__EndPointAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__Segment__EndPointAssignment_7"
+    // InternalCanvas.g:4816:1: rule__Segment__EndPointAssignment_7 : ( rulePoint ) ;
+    public final void rule__Segment__EndPointAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:5151:1: ( ( rulePoint ) )
-            // InternalCanvas.g:5152:2: ( rulePoint )
+            // InternalCanvas.g:4820:1: ( ( rulePoint ) )
+            // InternalCanvas.g:4821:2: ( rulePoint )
             {
-            // InternalCanvas.g:5152:2: ( rulePoint )
-            // InternalCanvas.g:5153:3: rulePoint
+            // InternalCanvas.g:4821:2: ( rulePoint )
+            // InternalCanvas.g:4822:3: rulePoint
             {
-             before(grammarAccess.getSegmentAccess().getEndPointPointParserRuleCall_4_0()); 
+             before(grammarAccess.getSegmentAccess().getEndPointPointParserRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
             rulePoint();
 
             state._fsp--;
 
-             after(grammarAccess.getSegmentAccess().getEndPointPointParserRuleCall_4_0()); 
+             after(grammarAccess.getSegmentAccess().getEndPointPointParserRuleCall_7_0()); 
 
             }
 
@@ -15625,25 +14392,25 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Segment__EndPointAssignment_4"
+    // $ANTLR end "rule__Segment__EndPointAssignment_7"
 
 
-    // $ANTLR start "rule__Point__XAssignment_1"
-    // InternalCanvas.g:5162:1: rule__Point__XAssignment_1 : ( RULE_INT ) ;
-    public final void rule__Point__XAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Point__XAssignment_2"
+    // InternalCanvas.g:4831:1: rule__Point__XAssignment_2 : ( RULE_INT ) ;
+    public final void rule__Point__XAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:5166:1: ( ( RULE_INT ) )
-            // InternalCanvas.g:5167:2: ( RULE_INT )
+            // InternalCanvas.g:4835:1: ( ( RULE_INT ) )
+            // InternalCanvas.g:4836:2: ( RULE_INT )
             {
-            // InternalCanvas.g:5167:2: ( RULE_INT )
-            // InternalCanvas.g:5168:3: RULE_INT
+            // InternalCanvas.g:4836:2: ( RULE_INT )
+            // InternalCanvas.g:4837:3: RULE_INT
             {
-             before(grammarAccess.getPointAccess().getXINTTerminalRuleCall_1_0()); 
+             before(grammarAccess.getPointAccess().getXINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getPointAccess().getXINTTerminalRuleCall_1_0()); 
+             after(grammarAccess.getPointAccess().getXINTTerminalRuleCall_2_0()); 
 
             }
 
@@ -15662,25 +14429,25 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Point__XAssignment_1"
+    // $ANTLR end "rule__Point__XAssignment_2"
 
 
-    // $ANTLR start "rule__Point__YAssignment_3"
-    // InternalCanvas.g:5177:1: rule__Point__YAssignment_3 : ( RULE_INT ) ;
-    public final void rule__Point__YAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Point__YAssignment_5"
+    // InternalCanvas.g:4846:1: rule__Point__YAssignment_5 : ( RULE_INT ) ;
+    public final void rule__Point__YAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:5181:1: ( ( RULE_INT ) )
-            // InternalCanvas.g:5182:2: ( RULE_INT )
+            // InternalCanvas.g:4850:1: ( ( RULE_INT ) )
+            // InternalCanvas.g:4851:2: ( RULE_INT )
             {
-            // InternalCanvas.g:5182:2: ( RULE_INT )
-            // InternalCanvas.g:5183:3: RULE_INT
+            // InternalCanvas.g:4851:2: ( RULE_INT )
+            // InternalCanvas.g:4852:3: RULE_INT
             {
-             before(grammarAccess.getPointAccess().getYINTTerminalRuleCall_3_0()); 
+             before(grammarAccess.getPointAccess().getYINTTerminalRuleCall_5_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getPointAccess().getYINTTerminalRuleCall_3_0()); 
+             after(grammarAccess.getPointAccess().getYINTTerminalRuleCall_5_0()); 
 
             }
 
@@ -15699,25 +14466,25 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Point__YAssignment_3"
+    // $ANTLR end "rule__Point__YAssignment_5"
 
 
-    // $ANTLR start "rule__PointDefinition__XAssignment_2"
-    // InternalCanvas.g:5192:1: rule__PointDefinition__XAssignment_2 : ( RULE_INT ) ;
-    public final void rule__PointDefinition__XAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__PointDefinition__XAssignment_4"
+    // InternalCanvas.g:4861:1: rule__PointDefinition__XAssignment_4 : ( RULE_INT ) ;
+    public final void rule__PointDefinition__XAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:5196:1: ( ( RULE_INT ) )
-            // InternalCanvas.g:5197:2: ( RULE_INT )
+            // InternalCanvas.g:4865:1: ( ( RULE_INT ) )
+            // InternalCanvas.g:4866:2: ( RULE_INT )
             {
-            // InternalCanvas.g:5197:2: ( RULE_INT )
-            // InternalCanvas.g:5198:3: RULE_INT
+            // InternalCanvas.g:4866:2: ( RULE_INT )
+            // InternalCanvas.g:4867:3: RULE_INT
             {
-             before(grammarAccess.getPointDefinitionAccess().getXINTTerminalRuleCall_2_0()); 
+             before(grammarAccess.getPointDefinitionAccess().getXINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getPointDefinitionAccess().getXINTTerminalRuleCall_2_0()); 
+             after(grammarAccess.getPointDefinitionAccess().getXINTTerminalRuleCall_4_0()); 
 
             }
 
@@ -15736,25 +14503,25 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PointDefinition__XAssignment_2"
+    // $ANTLR end "rule__PointDefinition__XAssignment_4"
 
 
-    // $ANTLR start "rule__PointDefinition__YAssignment_4"
-    // InternalCanvas.g:5207:1: rule__PointDefinition__YAssignment_4 : ( RULE_INT ) ;
-    public final void rule__PointDefinition__YAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__PointDefinition__YAssignment_7"
+    // InternalCanvas.g:4876:1: rule__PointDefinition__YAssignment_7 : ( RULE_INT ) ;
+    public final void rule__PointDefinition__YAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:5211:1: ( ( RULE_INT ) )
-            // InternalCanvas.g:5212:2: ( RULE_INT )
+            // InternalCanvas.g:4880:1: ( ( RULE_INT ) )
+            // InternalCanvas.g:4881:2: ( RULE_INT )
             {
-            // InternalCanvas.g:5212:2: ( RULE_INT )
-            // InternalCanvas.g:5213:3: RULE_INT
+            // InternalCanvas.g:4881:2: ( RULE_INT )
+            // InternalCanvas.g:4882:3: RULE_INT
             {
-             before(grammarAccess.getPointDefinitionAccess().getYINTTerminalRuleCall_4_0()); 
+             before(grammarAccess.getPointDefinitionAccess().getYINTTerminalRuleCall_7_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getPointDefinitionAccess().getYINTTerminalRuleCall_4_0()); 
+             after(grammarAccess.getPointDefinitionAccess().getYINTTerminalRuleCall_7_0()); 
 
             }
 
@@ -15773,25 +14540,25 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PointDefinition__YAssignment_4"
+    // $ANTLR end "rule__PointDefinition__YAssignment_7"
 
 
-    // $ANTLR start "rule__Rectangle__XAssignment_2"
-    // InternalCanvas.g:5222:1: rule__Rectangle__XAssignment_2 : ( RULE_INT ) ;
-    public final void rule__Rectangle__XAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Bounds__XAssignment_4"
+    // InternalCanvas.g:4891:1: rule__Bounds__XAssignment_4 : ( RULE_INT ) ;
+    public final void rule__Bounds__XAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:5226:1: ( ( RULE_INT ) )
-            // InternalCanvas.g:5227:2: ( RULE_INT )
+            // InternalCanvas.g:4895:1: ( ( RULE_INT ) )
+            // InternalCanvas.g:4896:2: ( RULE_INT )
             {
-            // InternalCanvas.g:5227:2: ( RULE_INT )
-            // InternalCanvas.g:5228:3: RULE_INT
+            // InternalCanvas.g:4896:2: ( RULE_INT )
+            // InternalCanvas.g:4897:3: RULE_INT
             {
-             before(grammarAccess.getRectangleAccess().getXINTTerminalRuleCall_2_0()); 
+             before(grammarAccess.getBoundsAccess().getXINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getRectangleAccess().getXINTTerminalRuleCall_2_0()); 
+             after(grammarAccess.getBoundsAccess().getXINTTerminalRuleCall_4_0()); 
 
             }
 
@@ -15810,25 +14577,25 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Rectangle__XAssignment_2"
+    // $ANTLR end "rule__Bounds__XAssignment_4"
 
 
-    // $ANTLR start "rule__Rectangle__YAssignment_4"
-    // InternalCanvas.g:5237:1: rule__Rectangle__YAssignment_4 : ( RULE_INT ) ;
-    public final void rule__Rectangle__YAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__Bounds__YAssignment_7"
+    // InternalCanvas.g:4906:1: rule__Bounds__YAssignment_7 : ( RULE_INT ) ;
+    public final void rule__Bounds__YAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:5241:1: ( ( RULE_INT ) )
-            // InternalCanvas.g:5242:2: ( RULE_INT )
+            // InternalCanvas.g:4910:1: ( ( RULE_INT ) )
+            // InternalCanvas.g:4911:2: ( RULE_INT )
             {
-            // InternalCanvas.g:5242:2: ( RULE_INT )
-            // InternalCanvas.g:5243:3: RULE_INT
+            // InternalCanvas.g:4911:2: ( RULE_INT )
+            // InternalCanvas.g:4912:3: RULE_INT
             {
-             before(grammarAccess.getRectangleAccess().getYINTTerminalRuleCall_4_0()); 
+             before(grammarAccess.getBoundsAccess().getYINTTerminalRuleCall_7_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getRectangleAccess().getYINTTerminalRuleCall_4_0()); 
+             after(grammarAccess.getBoundsAccess().getYINTTerminalRuleCall_7_0()); 
 
             }
 
@@ -15847,25 +14614,25 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Rectangle__YAssignment_4"
+    // $ANTLR end "rule__Bounds__YAssignment_7"
 
 
-    // $ANTLR start "rule__Rectangle__WAssignment_6"
-    // InternalCanvas.g:5252:1: rule__Rectangle__WAssignment_6 : ( RULE_INT ) ;
-    public final void rule__Rectangle__WAssignment_6() throws RecognitionException {
+    // $ANTLR start "rule__Bounds__WAssignment_10"
+    // InternalCanvas.g:4921:1: rule__Bounds__WAssignment_10 : ( RULE_INT ) ;
+    public final void rule__Bounds__WAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:5256:1: ( ( RULE_INT ) )
-            // InternalCanvas.g:5257:2: ( RULE_INT )
+            // InternalCanvas.g:4925:1: ( ( RULE_INT ) )
+            // InternalCanvas.g:4926:2: ( RULE_INT )
             {
-            // InternalCanvas.g:5257:2: ( RULE_INT )
-            // InternalCanvas.g:5258:3: RULE_INT
+            // InternalCanvas.g:4926:2: ( RULE_INT )
+            // InternalCanvas.g:4927:3: RULE_INT
             {
-             before(grammarAccess.getRectangleAccess().getWINTTerminalRuleCall_6_0()); 
+             before(grammarAccess.getBoundsAccess().getWINTTerminalRuleCall_10_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getRectangleAccess().getWINTTerminalRuleCall_6_0()); 
+             after(grammarAccess.getBoundsAccess().getWINTTerminalRuleCall_10_0()); 
 
             }
 
@@ -15884,25 +14651,25 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Rectangle__WAssignment_6"
+    // $ANTLR end "rule__Bounds__WAssignment_10"
 
 
-    // $ANTLR start "rule__Rectangle__HAssignment_8"
-    // InternalCanvas.g:5267:1: rule__Rectangle__HAssignment_8 : ( RULE_INT ) ;
-    public final void rule__Rectangle__HAssignment_8() throws RecognitionException {
+    // $ANTLR start "rule__Bounds__HAssignment_13"
+    // InternalCanvas.g:4936:1: rule__Bounds__HAssignment_13 : ( RULE_INT ) ;
+    public final void rule__Bounds__HAssignment_13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCanvas.g:5271:1: ( ( RULE_INT ) )
-            // InternalCanvas.g:5272:2: ( RULE_INT )
+            // InternalCanvas.g:4940:1: ( ( RULE_INT ) )
+            // InternalCanvas.g:4941:2: ( RULE_INT )
             {
-            // InternalCanvas.g:5272:2: ( RULE_INT )
-            // InternalCanvas.g:5273:3: RULE_INT
+            // InternalCanvas.g:4941:2: ( RULE_INT )
+            // InternalCanvas.g:4942:3: RULE_INT
             {
-             before(grammarAccess.getRectangleAccess().getHINTTerminalRuleCall_8_0()); 
+             before(grammarAccess.getBoundsAccess().getHINTTerminalRuleCall_13_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getRectangleAccess().getHINTTerminalRuleCall_8_0()); 
+             after(grammarAccess.getBoundsAccess().getHINTTerminalRuleCall_13_0()); 
 
             }
 
@@ -15921,7 +14688,7 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Rectangle__HAssignment_8"
+    // $ANTLR end "rule__Bounds__HAssignment_13"
 
     // Delegated rules
 
@@ -15930,39 +14697,40 @@ public class InternalCanvasParser extends AbstractInternalContentAssistParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0001090020012000L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0001080020010002L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000020000004000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000040000008000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000000L,0x0000022400000000L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000002L,0x0000022000000000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000000L,0x0000000200000000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000000L,0x0000000800000000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000000L,0x0000001000000000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000080000010000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000100000020000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000100000020002L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000000L,0x0000002000000000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000002L,0x0000000004000000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000004000001800L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0400002000000000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000400000080000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000200000040000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000400000080002L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000800000100000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x000000001FE00000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0001080020010000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0002000040000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0002000040000002L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000004000001000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0008000400000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0004200080040000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000100200000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000200400000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0080001000000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0002100040020000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0010000800000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0010000800000002L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0100000000000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000800L,0x0000000100000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0xFFFFFFFFFFF20000L,0x00000000FFFFFFFFL});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000000000L,0x0001000000000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000000L,0x0000008000000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000000L,0x0000004000000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000000002L,0x0000008000000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000000L,0x0000010000000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x00000000000FF000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000000L,0x0000022000000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000000002L,0x0000000008000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000000000L,0x0000000100000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000000L,0x0000080000000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000000L,0x0000044000000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000000000L,0x0000800000000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000000000L,0x000000000C000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000000002L,0x0000100000000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000000000000L,0x0000400000000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000000000L,0x0002000000000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000000L,0x0004000000000000L});
 
 }

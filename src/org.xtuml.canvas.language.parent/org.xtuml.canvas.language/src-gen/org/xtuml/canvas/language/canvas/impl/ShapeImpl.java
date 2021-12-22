@@ -12,9 +12,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtuml.canvas.language.canvas.Bounds;
 import org.xtuml.canvas.language.canvas.CanvasPackage;
 import org.xtuml.canvas.language.canvas.FloatingText;
-import org.xtuml.canvas.language.canvas.Rectangle;
 import org.xtuml.canvas.language.canvas.Shape;
 
 /**
@@ -27,8 +27,9 @@ import org.xtuml.canvas.language.canvas.Shape;
  * <ul>
  *   <li>{@link org.xtuml.canvas.language.canvas.impl.ShapeImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.impl.ShapeImpl#getContainer <em>Container</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.impl.ShapeImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.impl.ShapeImpl#getRepresents <em>Represents</em>}</li>
- *   <li>{@link org.xtuml.canvas.language.canvas.impl.ShapeImpl#getRect <em>Rect</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.impl.ShapeImpl#getBounds <em>Bounds</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.impl.ShapeImpl#getText <em>Text</em>}</li>
  * </ul>
  *
@@ -77,6 +78,26 @@ public class ShapeImpl extends MinimalEObjectImpl.Container implements Shape
   protected String container = CONTAINER_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected static final String TYPE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected String type = TYPE_EDEFAULT;
+
+  /**
    * The default value of the '{@link #getRepresents() <em>Represents</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -97,14 +118,14 @@ public class ShapeImpl extends MinimalEObjectImpl.Container implements Shape
   protected String represents = REPRESENTS_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getRect() <em>Rect</em>}' containment reference.
+   * The cached value of the '{@link #getBounds() <em>Bounds</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRect()
+   * @see #getBounds()
    * @generated
    * @ordered
    */
-  protected Rectangle rect;
+  protected Bounds bounds;
 
   /**
    * The cached value of the '{@link #getText() <em>Text</em>}' containment reference.
@@ -193,6 +214,31 @@ public class ShapeImpl extends MinimalEObjectImpl.Container implements Shape
    * @generated
    */
   @Override
+  public String getType()
+  {
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setType(String newType)
+  {
+    String oldType = type;
+    type = newType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.SHAPE__TYPE, oldType, type));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getRepresents()
   {
     return represents;
@@ -218,9 +264,9 @@ public class ShapeImpl extends MinimalEObjectImpl.Container implements Shape
    * @generated
    */
   @Override
-  public Rectangle getRect()
+  public Bounds getBounds()
   {
-    return rect;
+    return bounds;
   }
 
   /**
@@ -228,13 +274,13 @@ public class ShapeImpl extends MinimalEObjectImpl.Container implements Shape
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetRect(Rectangle newRect, NotificationChain msgs)
+  public NotificationChain basicSetBounds(Bounds newBounds, NotificationChain msgs)
   {
-    Rectangle oldRect = rect;
-    rect = newRect;
+    Bounds oldBounds = bounds;
+    bounds = newBounds;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CanvasPackage.SHAPE__RECT, oldRect, newRect);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CanvasPackage.SHAPE__BOUNDS, oldBounds, newBounds);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -246,20 +292,20 @@ public class ShapeImpl extends MinimalEObjectImpl.Container implements Shape
    * @generated
    */
   @Override
-  public void setRect(Rectangle newRect)
+  public void setBounds(Bounds newBounds)
   {
-    if (newRect != rect)
+    if (newBounds != bounds)
     {
       NotificationChain msgs = null;
-      if (rect != null)
-        msgs = ((InternalEObject)rect).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CanvasPackage.SHAPE__RECT, null, msgs);
-      if (newRect != null)
-        msgs = ((InternalEObject)newRect).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CanvasPackage.SHAPE__RECT, null, msgs);
-      msgs = basicSetRect(newRect, msgs);
+      if (bounds != null)
+        msgs = ((InternalEObject)bounds).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CanvasPackage.SHAPE__BOUNDS, null, msgs);
+      if (newBounds != null)
+        msgs = ((InternalEObject)newBounds).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CanvasPackage.SHAPE__BOUNDS, null, msgs);
+      msgs = basicSetBounds(newBounds, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.SHAPE__RECT, newRect, newRect));
+      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.SHAPE__BOUNDS, newBounds, newBounds));
   }
 
   /**
@@ -322,8 +368,8 @@ public class ShapeImpl extends MinimalEObjectImpl.Container implements Shape
   {
     switch (featureID)
     {
-      case CanvasPackage.SHAPE__RECT:
-        return basicSetRect(null, msgs);
+      case CanvasPackage.SHAPE__BOUNDS:
+        return basicSetBounds(null, msgs);
       case CanvasPackage.SHAPE__TEXT:
         return basicSetText(null, msgs);
     }
@@ -344,10 +390,12 @@ public class ShapeImpl extends MinimalEObjectImpl.Container implements Shape
         return getName();
       case CanvasPackage.SHAPE__CONTAINER:
         return getContainer();
+      case CanvasPackage.SHAPE__TYPE:
+        return getType();
       case CanvasPackage.SHAPE__REPRESENTS:
         return getRepresents();
-      case CanvasPackage.SHAPE__RECT:
-        return getRect();
+      case CanvasPackage.SHAPE__BOUNDS:
+        return getBounds();
       case CanvasPackage.SHAPE__TEXT:
         return getText();
     }
@@ -370,11 +418,14 @@ public class ShapeImpl extends MinimalEObjectImpl.Container implements Shape
       case CanvasPackage.SHAPE__CONTAINER:
         setContainer((String)newValue);
         return;
+      case CanvasPackage.SHAPE__TYPE:
+        setType((String)newValue);
+        return;
       case CanvasPackage.SHAPE__REPRESENTS:
         setRepresents((String)newValue);
         return;
-      case CanvasPackage.SHAPE__RECT:
-        setRect((Rectangle)newValue);
+      case CanvasPackage.SHAPE__BOUNDS:
+        setBounds((Bounds)newValue);
         return;
       case CanvasPackage.SHAPE__TEXT:
         setText((FloatingText)newValue);
@@ -399,11 +450,14 @@ public class ShapeImpl extends MinimalEObjectImpl.Container implements Shape
       case CanvasPackage.SHAPE__CONTAINER:
         setContainer(CONTAINER_EDEFAULT);
         return;
+      case CanvasPackage.SHAPE__TYPE:
+        setType(TYPE_EDEFAULT);
+        return;
       case CanvasPackage.SHAPE__REPRESENTS:
         setRepresents(REPRESENTS_EDEFAULT);
         return;
-      case CanvasPackage.SHAPE__RECT:
-        setRect((Rectangle)null);
+      case CanvasPackage.SHAPE__BOUNDS:
+        setBounds((Bounds)null);
         return;
       case CanvasPackage.SHAPE__TEXT:
         setText((FloatingText)null);
@@ -426,10 +480,12 @@ public class ShapeImpl extends MinimalEObjectImpl.Container implements Shape
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case CanvasPackage.SHAPE__CONTAINER:
         return CONTAINER_EDEFAULT == null ? container != null : !CONTAINER_EDEFAULT.equals(container);
+      case CanvasPackage.SHAPE__TYPE:
+        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
       case CanvasPackage.SHAPE__REPRESENTS:
         return REPRESENTS_EDEFAULT == null ? represents != null : !REPRESENTS_EDEFAULT.equals(represents);
-      case CanvasPackage.SHAPE__RECT:
-        return rect != null;
+      case CanvasPackage.SHAPE__BOUNDS:
+        return bounds != null;
       case CanvasPackage.SHAPE__TEXT:
         return text != null;
     }
@@ -451,6 +507,8 @@ public class ShapeImpl extends MinimalEObjectImpl.Container implements Shape
     result.append(name);
     result.append(", container: ");
     result.append(container);
+    result.append(", type: ");
+    result.append(type);
     result.append(", represents: ");
     result.append(represents);
     result.append(')');

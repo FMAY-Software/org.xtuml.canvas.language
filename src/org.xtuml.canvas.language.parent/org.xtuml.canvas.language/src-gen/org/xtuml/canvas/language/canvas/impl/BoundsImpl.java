@@ -10,26 +10,26 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtuml.canvas.language.canvas.Bounds;
 import org.xtuml.canvas.language.canvas.CanvasPackage;
-import org.xtuml.canvas.language.canvas.Rectangle;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Rectangle</b></em>'.
+ * An implementation of the model object '<em><b>Bounds</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtuml.canvas.language.canvas.impl.RectangleImpl#getX <em>X</em>}</li>
- *   <li>{@link org.xtuml.canvas.language.canvas.impl.RectangleImpl#getY <em>Y</em>}</li>
- *   <li>{@link org.xtuml.canvas.language.canvas.impl.RectangleImpl#getW <em>W</em>}</li>
- *   <li>{@link org.xtuml.canvas.language.canvas.impl.RectangleImpl#getH <em>H</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.impl.BoundsImpl#getX <em>X</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.impl.BoundsImpl#getY <em>Y</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.impl.BoundsImpl#getW <em>W</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.impl.BoundsImpl#getH <em>H</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class RectangleImpl extends MinimalEObjectImpl.Container implements Rectangle
+public class BoundsImpl extends MinimalEObjectImpl.Container implements Bounds
 {
   /**
    * The default value of the '{@link #getX() <em>X</em>}' attribute.
@@ -116,7 +116,7 @@ public class RectangleImpl extends MinimalEObjectImpl.Container implements Recta
    * <!-- end-user-doc -->
    * @generated
    */
-  protected RectangleImpl()
+  protected BoundsImpl()
   {
     super();
   }
@@ -129,7 +129,7 @@ public class RectangleImpl extends MinimalEObjectImpl.Container implements Recta
   @Override
   protected EClass eStaticClass()
   {
-    return CanvasPackage.Literals.RECTANGLE;
+    return CanvasPackage.Literals.BOUNDS;
   }
 
   /**
@@ -154,7 +154,7 @@ public class RectangleImpl extends MinimalEObjectImpl.Container implements Recta
     int oldX = x;
     x = newX;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.RECTANGLE__X, oldX, x));
+      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.BOUNDS__X, oldX, x));
   }
 
   /**
@@ -179,7 +179,7 @@ public class RectangleImpl extends MinimalEObjectImpl.Container implements Recta
     int oldY = y;
     y = newY;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.RECTANGLE__Y, oldY, y));
+      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.BOUNDS__Y, oldY, y));
   }
 
   /**
@@ -204,7 +204,7 @@ public class RectangleImpl extends MinimalEObjectImpl.Container implements Recta
     int oldW = w;
     w = newW;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.RECTANGLE__W, oldW, w));
+      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.BOUNDS__W, oldW, w));
   }
 
   /**
@@ -229,7 +229,7 @@ public class RectangleImpl extends MinimalEObjectImpl.Container implements Recta
     int oldH = h;
     h = newH;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.RECTANGLE__H, oldH, h));
+      eNotify(new ENotificationImpl(this, Notification.SET, CanvasPackage.BOUNDS__H, oldH, h));
   }
 
   /**
@@ -242,13 +242,13 @@ public class RectangleImpl extends MinimalEObjectImpl.Container implements Recta
   {
     switch (featureID)
     {
-      case CanvasPackage.RECTANGLE__X:
+      case CanvasPackage.BOUNDS__X:
         return getX();
-      case CanvasPackage.RECTANGLE__Y:
+      case CanvasPackage.BOUNDS__Y:
         return getY();
-      case CanvasPackage.RECTANGLE__W:
+      case CanvasPackage.BOUNDS__W:
         return getW();
-      case CanvasPackage.RECTANGLE__H:
+      case CanvasPackage.BOUNDS__H:
         return getH();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -264,16 +264,16 @@ public class RectangleImpl extends MinimalEObjectImpl.Container implements Recta
   {
     switch (featureID)
     {
-      case CanvasPackage.RECTANGLE__X:
+      case CanvasPackage.BOUNDS__X:
         setX((Integer)newValue);
         return;
-      case CanvasPackage.RECTANGLE__Y:
+      case CanvasPackage.BOUNDS__Y:
         setY((Integer)newValue);
         return;
-      case CanvasPackage.RECTANGLE__W:
+      case CanvasPackage.BOUNDS__W:
         setW((Integer)newValue);
         return;
-      case CanvasPackage.RECTANGLE__H:
+      case CanvasPackage.BOUNDS__H:
         setH((Integer)newValue);
         return;
     }
@@ -290,16 +290,16 @@ public class RectangleImpl extends MinimalEObjectImpl.Container implements Recta
   {
     switch (featureID)
     {
-      case CanvasPackage.RECTANGLE__X:
+      case CanvasPackage.BOUNDS__X:
         setX(X_EDEFAULT);
         return;
-      case CanvasPackage.RECTANGLE__Y:
+      case CanvasPackage.BOUNDS__Y:
         setY(Y_EDEFAULT);
         return;
-      case CanvasPackage.RECTANGLE__W:
+      case CanvasPackage.BOUNDS__W:
         setW(W_EDEFAULT);
         return;
-      case CanvasPackage.RECTANGLE__H:
+      case CanvasPackage.BOUNDS__H:
         setH(H_EDEFAULT);
         return;
     }
@@ -316,13 +316,13 @@ public class RectangleImpl extends MinimalEObjectImpl.Container implements Recta
   {
     switch (featureID)
     {
-      case CanvasPackage.RECTANGLE__X:
+      case CanvasPackage.BOUNDS__X:
         return x != X_EDEFAULT;
-      case CanvasPackage.RECTANGLE__Y:
+      case CanvasPackage.BOUNDS__Y:
         return y != Y_EDEFAULT;
-      case CanvasPackage.RECTANGLE__W:
+      case CanvasPackage.BOUNDS__W:
         return w != W_EDEFAULT;
-      case CanvasPackage.RECTANGLE__H:
+      case CanvasPackage.BOUNDS__H:
         return h != H_EDEFAULT;
     }
     return super.eIsSet(featureID);
@@ -351,4 +351,4 @@ public class RectangleImpl extends MinimalEObjectImpl.Container implements Recta
     return result.toString();
   }
 
-} //RectangleImpl
+} //BoundsImpl

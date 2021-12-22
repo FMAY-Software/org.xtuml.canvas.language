@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.xtext.resource.SaveOptions;
 import org.eclipse.xtext.ui.resource.IResourceSetProvider;
+import org.xtuml.bp.core.Gd_c;
 import org.xtuml.bp.core.common.NonRootModelElement;
 import org.xtuml.bp.ui.canvas.CanvasPlugin;
 import org.xtuml.bp.ui.canvas.Connector_c;
@@ -31,6 +32,7 @@ import org.xtuml.bp.ui.canvas.Shape_c;
 import org.xtuml.bp.ui.canvas.Waypoint_c;
 import org.xtuml.bp.ui.canvas.persistence.IGraphicalWriter;
 import org.xtuml.canvas.language.canvas.Anchors;
+import org.xtuml.canvas.language.canvas.Bounds;
 import org.xtuml.canvas.language.canvas.CanvasFactory;
 import org.xtuml.canvas.language.canvas.Connector;
 import org.xtuml.canvas.language.canvas.ConnectorAnchorElement;
@@ -46,7 +48,6 @@ import org.xtuml.canvas.language.canvas.ModelRender;
 import org.xtuml.canvas.language.canvas.Point;
 import org.xtuml.canvas.language.canvas.PointDefinition;
 import org.xtuml.canvas.language.canvas.Polyline;
-import org.xtuml.canvas.language.canvas.Rectangle;
 import org.xtuml.canvas.language.canvas.Segment;
 import org.xtuml.canvas.language.canvas.Shape;
 import org.xtuml.canvas.language.canvas.ShapeAnchorElement;
@@ -73,7 +74,7 @@ public class CanvasWriter implements IGraphicalWriter {
 	@Override
 	public void write(NonRootModelElement model) {
 		IFile parentFile = model.getFile();
-		IFile xtGraphFile = parentFile.getParent().getFile(new Path(parentFile.getName().replaceAll(".xtuml", ".xtg")));
+		IFile xtGraphFile = parentFile.getParent().getFile(new Path(parentFile.getName().replaceAll(".xtuml", ".xtumlg")));
 		try {
 			write(model, xtGraphFile);
 		} catch (IOException | CoreException e) {
@@ -112,7 +113,7 @@ public class CanvasWriter implements IGraphicalWriter {
 		r.getContents().add(model);
 		SaveOptions.Builder options = SaveOptions.newBuilder();
 		options.format();
-		r.save(options.getOptions().toOptionsMap());
+		r.save(options.getOptions().toOptionsMap());	
 	}
 
 	private void populateModel(NonRootModelElement diagramRepresents) {
@@ -142,7 +143,9 @@ public class CanvasWriter implements IGraphicalWriter {
 	}
 
 	private Connector createConnector(Connector_c con) {
+		GraphicalElement_c conEle = GraphicalElement_c.getOneGD_GEOnR2(con);
 		Connector connector = factory.createConnector();
+		connector.setType(EnumUtils.typeFor(conEle.getOoa_type()));
 		StartAnchor startAnchor = createStartAnchor(con);
 		EndAnchor endAnchor = createEndAnchor(con);
 		Anchors anchors = factory.createAnchors();
@@ -166,12 +169,12 @@ public class CanvasWriter implements IGraphicalWriter {
 			Graphnode_c node = Graphnode_c.getOneDIM_NDOnR19(text);
 			Graphelement_c ge = Graphelement_c.getOneDIM_GEOnR301(node);
 			FloatingText floatingText = factory.createFloatingText();
-			Rectangle rect = factory.createRectangle();
+			Bounds rect = factory.createBounds();
 			rect.setX((int) ge.getPositionx());
 			rect.setY((int) ge.getPositiony());
 			rect.setW((int) node.getWidth());
 			rect.setH((int) node.getHeight());
-			floatingText.setRect(rect);
+			floatingText.setBounds(rect);
 			EnumEnd end = factory.createEnumEnd();
 			end.setWhere(EnumUtils.endFor(text.getEnd()));
 			floatingText.setEnd(end);
@@ -186,12 +189,12 @@ public class CanvasWriter implements IGraphicalWriter {
 			Graphnode_c node = Graphnode_c.getOneDIM_NDOnR19(text);
 			Graphelement_c ge = Graphelement_c.getOneDIM_GEOnR301(node);
 			FloatingText floatingText = factory.createFloatingText();
-			Rectangle rect = factory.createRectangle();
+			Bounds rect = factory.createBounds();
 			rect.setX((int) ge.getPositionx());
 			rect.setY((int) ge.getPositiony());
 			rect.setW((int) node.getWidth());
 			rect.setH((int) node.getHeight());
-			floatingText.setRect(rect);
+			floatingText.setBounds(rect);
 			EnumEnd end = factory.createEnumEnd();
 			end.setWhere(EnumUtils.endFor(text.getEnd()));
 			floatingText.setEnd(end);
@@ -207,10 +210,10 @@ public class CanvasWriter implements IGraphicalWriter {
 
 	private Polyline createPolyline(Connector_c con) {
 		Polyline polyline = factory.createPolyline();
-		LineSegment_c[] segments = LineSegment_c.getManyGD_LSsOnR6(con);
-		Stream.of(segments).forEach(seg -> {
-			Waypoint_c startWay = Waypoint_c.getOneDIM_WAYOnR21(seg);
-			Waypoint_c endWay = Waypoint_c.getOneDIM_WAYOnR22(seg);
+		LineSegment_c nextSeg = LineSegment_c.getOneGD_LSOnR6(con, s -> ((LineSegment_c) s).getPrevious_elementid().equals(Gd_c.Null_unique_id()));
+		while(nextSeg != null) {
+			Waypoint_c startWay = Waypoint_c.getOneDIM_WAYOnR21(nextSeg);
+			Waypoint_c endWay = Waypoint_c.getOneDIM_WAYOnR22(nextSeg);
 			Segment segment = factory.createSegment();
 			Point start = factory.createPoint();
 			start.setX((int) startWay.getPositionx());
@@ -221,7 +224,8 @@ public class CanvasWriter implements IGraphicalWriter {
 			segment.setStartPoint(start);
 			segment.setEndPoint(end);
 			polyline.getSegments().add(segment);
-		});
+			nextSeg = LineSegment_c.getOneGD_LSOnR7Precedes(nextSeg);
+		}
 		return polyline;
 	}
 
@@ -230,12 +234,13 @@ public class CanvasWriter implements IGraphicalWriter {
 		Graphelement_c ge = Graphelement_c.getOneDIM_GEOnR23(ele);
 		Graphnode_c node = Graphnode_c.getOneDIM_NDOnR19(shp);
 		Shape shape = factory.createShape();
-		Rectangle rect = factory.createRectangle();
+		shape.setType(EnumUtils.typeFor(ele.getOoa_type()));
+		Bounds rect = factory.createBounds();
 		rect.setX((int) ge.getPositionx());
 		rect.setY((int) ge.getPositiony());
 		rect.setW((int) node.getWidth());
 		rect.setH((int) node.getHeight());
-		shape.setRect(rect);
+		shape.setBounds(rect);
 		shape.setRepresents(getPath(ele));
 		shape.setName(getNameFromPath(shape.getRepresents()));
 		ContainingShape_c containerShp = ContainingShape_c.getOneGD_CTROnR28(shp);

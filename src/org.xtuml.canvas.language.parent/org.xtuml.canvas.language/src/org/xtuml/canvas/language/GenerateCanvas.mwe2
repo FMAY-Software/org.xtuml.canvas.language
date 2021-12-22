@@ -35,7 +35,7 @@ Workflow {
 		}
 		language = StandardLanguage {
 			name = "org.xtuml.canvas.language.Canvas"
-			fileExtensions = "xtg"
+			fileExtensions = "xtumlg"
 
 			serializer = {
 				generateStub = false

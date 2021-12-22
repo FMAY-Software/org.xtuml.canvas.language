@@ -8,84 +8,164 @@ Model:
 	elements+=GraphicalElement*;
 
 ModelRender:
-	('render' ':' | 'render:') importURI=STRING;
+	'render' ':' importURI=STRING;
 
 ModelProperties:
-	('properties' ':' | 'properties:')
-	('viewport' ':' | 'viewport:') point=Point
-	('zoom' ':' | 'zoom:') zoom=INT;
+	'properties' ':'
+	'viewport' ':' point=Point
+	'zoom' ':' zoom=INT;
 
 GraphicalElement:
 	Shapes | Connectors;
 
 Shapes:
-	{Shapes} ('shapes' ':' | 'shapes:') (shapes+=Shape)*;
+	{Shapes} 'shapes' ':' (shapes+=Shape)*;
 
 Shape:
-	{Shape} ('shape' ':' | 'shape:') name=ID
+	{Shape} 'shape' ':' name=ID
 	container=Container?
-	('render' ':' | 'render:') represents=STRING
-	rect=Rectangle text=FloatingText?;
-
+	'render' ':' type=TypeLabel represents=STRING
+	bounds=Bounds text=FloatingText?;
 Container:
-	'container'
-;
+	'container';
 
 FloatingTexts:
-	{FloatingTexts} ('texts' ':' | 'texts:') (texts+=FloatingText)*;
+	{FloatingTexts} 'texts' ':' (texts+=FloatingText)*;
 
 FloatingText:
-	{FloatingText} ('text' ':' | 'text:')
-	rect=Rectangle
+	{FloatingText} 'text' ':'
+	bounds=Bounds
 	end=EnumEnd;
 
 EnumEnd:
-	('where' ':' | 'where:') where=('start' | 'end' | 'middle' | 'end_fixed' | 'start_fixed' | 'none' | 'floating' |
+	'where' ':' where=('start' | 'end' | 'middle' | 'end_fixed' | 'start_fixed' | 'none' | 'floating' |
 	'additional');
 
 Connectors:
-	{Connectors} ('connectors' ':' | 'connectors:') (connectors+=Connector)*;
+	{Connectors} 'connectors' ':' (connectors+=Connector)*;
 
 Connector:
-	('connector' ':' | 'connector:') name=ID
-	('render' ':' | 'render:') represents=STRING
+	'connector' ':' name=ID
+	'render' ':' type=TypeLabel represents=STRING
 	polyline=Polyline
 	anchors=Anchors? texts=FloatingTexts;
 
 Anchors:
-	('anchors' ':' | 'anchors:') startAnchor=StartAnchor endAnchor=EndAnchor;
+	'anchors' ':' startAnchor=StartAnchor endAnchor=EndAnchor;
 
 StartAnchor:
-	('start' ':' | 'start:') point=PointDefinition anchor=Anchor?;
+	'start' ':' point=PointDefinition anchor=Anchor?;
 
 EndAnchor:
-	('end' ':' | 'end:') point=PointDefinition anchor=Anchor?;
+	'end' ':' point=PointDefinition anchor=Anchor?;
 
 Anchor:
 	ShapeAnchorElement | ConnectorAnchorElement;
 
 ShapeAnchorElement:
-	('shape' ':' | 'shape:') element=[Shape];
+	'shape' ':' element=[Shape];
 
 ConnectorAnchorElement:
-	('connector' ':' | 'connector:') element=[Connector];
+	'connector' ':' element=[Connector];
 
 Polyline:
-	{Polyline} ('polyline' ':' | 'polyline:') segments+=Segment*;
+	{Polyline} 'polyline' ':' segments+=Segment*;
 
 Segment:
-	('segment' ':' | 'segment:') ('start' ':' | 'start:') startPoint=Point ('end' ':' | 'end:') endPoint=Point;
+	'segment' ':' 'start' ':' startPoint=Point 'end' ':' endPoint=Point;
 
 Point:
-	'x' x=INT 'y' y=INT;
+	'x' ':' x=INT 'y' ':' y=INT;
 
 PointDefinition:
-	('point' ':' | 'point:')
-	'x' x=INT 'y' y=INT;
+	'point' ':'
+	'x' ':' x=INT 'y' ':' y=INT;
 
-Rectangle:
-	('rectangle' ':' | 'rectangle:')
-	'x' x=INT
-	'y' y=INT
-	'width' w=INT
-	'height' h=INT;
+Bounds:
+	'bounds' ':'
+	'x' ':' x=INT
+	'y' ':' y=INT
+	'width' ':' w=INT
+	'height' ':' h=INT;
+
+TypeLabel:
+	OOAType;
+
+OOAType:
+	'access_path' |
+	'association' |
+	'associative_link' |
+	'class' |
+	'communication_path' |
+	'data_type' |
+	'derived_access_path' |
+	'derived_communication_path' |
+	'ee' |
+	'enumeration_data_type' |
+	'imported_class' |
+	'none' |
+	'state' |
+	'state_machine' |
+	'subsystem' |
+	'transition' |
+	'user_data_type' |
+	'subtype' |
+	'supertype' |
+	'creation_transition' |
+	'sequence' |
+	'lifeline' |
+	'timing_mark' |
+	'time_span' |
+	'synchronous_message' |
+	'class_instance_participant' |
+	'external_entity_participant' |
+	'class_participant' |
+	'actor' |
+	'asynchronous_message' |
+	'return_message' |
+	'communication' |
+	'communication_link' |
+	'communication_return_message' |
+	'communication_asynchronous_message' |
+	'communication_synchronous_message' |
+	'use_case' |
+	'use_case_diagram' |
+	'use_case_binary_association' |
+	'generalization' |
+	'include' |
+	'extend' |
+	'forkJoin' |
+	'activity' |
+	'initial_node' |
+	'activity_edge' |
+	'activity_final_node' |
+	'flow_final_node' |
+	'generic_action' |
+	'decision_merge_node' |
+	'object_node' |
+	'accept_event_action' |
+	'send_signal_action' |
+	'accept_time_event_action' |
+	'partition' |
+	'component' |
+	'provided_interface' |
+	'required_interface' |
+	'interface' |
+	'system_model' |
+	'structured_data_type' |
+	'component_reference' |
+	'component_diagram' |
+	'delegation' |
+	'component_container' |
+	'imported_provided_interface' |
+	'imported_required_interface' |
+	'component_participant' |
+	'package' |
+	'constant_specification' |
+	'package_participant' |
+	'shape' |
+	'connector' |
+	'diagram' |
+	'exception' |
+	'satisfaction' |
+	'deployment';

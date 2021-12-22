@@ -22,34 +22,40 @@ import org.xtuml.canvas.language.canvas.FloatingTexts
 import org.xtuml.canvas.language.canvas.StartAnchor
 import org.xtuml.canvas.language.canvas.EndAnchor
 import org.xtuml.canvas.language.canvas.FloatingText
+import org.xtuml.canvas.language.canvas.Bounds
 
 class CanvasFormatter extends AbstractFormatter2 {
 
 	@Inject extension CanvasGrammarAccess
+	
+	var spacing = 2
+	var whitespace = " "
 
 	def dispatch void format(Model it, extension IFormattableDocument document) {
-		formatShapes(document)
+		formatModel(document)
 	}
 
-	// TODO: implement for Shapes, Shape, FloatingTexts, FloatingText, ShapeProps, Connectors, Connector, Anchors, StartAnchor, EndAnchor, ConnectorProps, Polyline, Segment
-	def void formatShapes(Model it, extension IFormattableDocument document) {
-//		allRegionsFor.keywords("import", "properties:", "viewport", "shapes:", "shape:", "connectors:", "connector:",
-//			"render:", "rectangle:", "polyline:", "segment:", "point:", "text:", "texts:", "zoom:", "shapeAnchor:",
-//			"anchors:", "start:", "end:", "where:").forEach[append[newLine]]
-//		allRegionsFor.keywords("import", "properties:", "viewport", "shapes:", "shape:", "connectors:", "connector:",
-//			"render:", "rectangle:", "polyline:", "segment:", "point:", "text:", "texts:", "zoom:", "shapeAnchor:",
-//			"anchors:", "start:", "end:", "where:").forEach[prepend[newLine]]
-		allRegionsFor.keyword("properties:").prepend[newLines = 2]
-		allRegionsFor.keyword("shapes:").prepend[newLines = 2]
-		allRegionsFor.keyword("connectors:").prepend[newLines = 2]
-		regionFor.keyword("render:").prepend[newLines = 2]
+	def void formatModel(Model it, extension IFormattableDocument document) {
+		allRegionsFor.keyword("properties").prepend[newLines = 2]
+		allRegionsFor.keyword("shapes").prepend[newLines = 2]
+		allRegionsFor.keyword("connectors").prepend[newLines = 2]
+		regionFor.keyword("render").prepend[newLines = 2]
 		format(it.properties, document)
 		it.elements.forEach[format]
 	}
+	var calculated = newHashMap()
+	def String getSpacing(int level) {
+		var result = calculated.get(level);
+		if(result === null) {
+			result = whitespace.repeat(spacing * level)
+			calculated.put(level, result)
+		}
+		return result as String
+	}
 
 	def void format(ModelProperties it, extension IFormattableDocument document) {
-		regionFor.keyword("viewport:").prepend[space = '\n    ']
-		regionFor.keyword("zoom:").prepend[space = '\n    ']
+		regionFor.keyword("viewport").prepend[space = '\n' + getSpacing(1)]
+		regionFor.keyword("zoom").prepend[space = '\n' + getSpacing(1)]
 	}
 	
 	def void format(GraphicalElement element, extension IFormattableDocument document) {
@@ -62,49 +68,66 @@ class CanvasFormatter extends AbstractFormatter2 {
 	}
 
 	def dispatch void format(Shape it, extension IFormattableDocument document) {
-		regionFor.keyword("shape:").prepend[space = '\n    ']
-		regionFor.keyword("render:").prepend[space = '\n        ']
-		it.rect.regionFor.keyword("rectangle:").prepend[space = '\n        ']
-		it.text.regionFor.keyword("text:").prepend[space = '\n        ']
+		regionFor.keyword("shape").prepend[space = '\n' + getSpacing(1)]
+		regionFor.keyword("render").prepend[space = '\n' + getSpacing(2)]
+		format(it.bounds, 2, document)
+		it.text.regionFor.keyword("text").prepend[space = '\n' + getSpacing(2)]
 	}
 
 	def dispatch void format(Connector it, extension IFormattableDocument document) {
-		regionFor.keyword("connector:").prepend[space = '\n    ']
-		regionFor.keyword("render:").prepend[space = '\n        ']
+		regionFor.keyword("connector").prepend[space = '\n' + getSpacing(1)]
+		regionFor.keyword("render").prepend[space = '\n' + getSpacing(2)]
 		it.polyline.format
 		it.anchors.format
 		it.texts.format
 	}
 	
 	def dispatch void format(Polyline it, extension IFormattableDocument document) {
-		regionFor.keyword("polyline:").prepend[space = '\n        ']
+		regionFor.keyword("polyline").prepend[space = '\n' + getSpacing(2)]
 		it.segments.forEach[format]
 	}
 	
 	def dispatch void format(Segment it, extension IFormattableDocument document) {
-		regionFor.keyword("segment:").prepend[space = '\n            ']
+		regionFor.keyword("segment").prepend[space = '\n' + getSpacing(3)]
+		regionFor.keyword("start").prepend[space = '\n' + getSpacing(4)]
+		regionFor.keyword("end").prepend[space = '\n' + getSpacing(4)]
+		it.endPoint.prepend[space = '   ']
 	}
 	
 	def dispatch void format(Anchors it, extension IFormattableDocument document) {
-		regionFor.keyword("anchors:").prepend[space = '\n        ']
+		regionFor.keyword("anchors").prepend[space = '\n' + getSpacing(2)]
 		it.startAnchor.format
 		it.endAnchor.format
 	}
 	
 	def dispatch void format(StartAnchor it, extension IFormattableDocument document) {
-		regionFor.keyword("start:").prepend[space = '\n            ']
+		regionFor.keyword("start").prepend[space = '\n' + getSpacing(3)]
+		it.point.regionFor.keyword("point").prepend[space = '\n' + getSpacing(4)]
+		it.anchor.regionFor.keyword("shape").prepend[space = '\n' + getSpacing(4)]
+		it.anchor.regionFor.keyword("connector").prepend[space = '\n' + getSpacing(4)]
 	}
 	
 	def dispatch void format(EndAnchor it, extension IFormattableDocument document) {
-		regionFor.keyword("end:").prepend[space = '\n            ']
+		regionFor.keyword("end").prepend[space = '\n' + getSpacing(3)]
+		it.point.regionFor.keyword("point").prepend[space = '\n' + getSpacing(4)]
+		it.anchor.regionFor.keyword("shape").prepend[space = '\n' + getSpacing(4)]
+		it.anchor.regionFor.keyword("connector").prepend[space = '\n' + getSpacing(4)]
 	}
 	
 	def dispatch void format(FloatingTexts it, extension IFormattableDocument document) {
-		regionFor.keyword("texts:").prepend[space = '\n        ']
+		regionFor.keyword("texts").prepend[space = '\n' + getSpacing(2)]
 		it.texts.forEach[format]
 	}
 	
 	def dispatch void format(FloatingText it, extension IFormattableDocument document) {
-		regionFor.keyword("text:").prepend[space = '\n            ']
+		regionFor.keyword("text").prepend[space = '\n' + getSpacing(3)]
+		format(it.bounds, 4, document)
+		it.regionFor.keyword("where").prepend[space = '\n' + getSpacing(4)]
 	}
+	
+	def dispatch void format(Bounds it, int spacing, extension IFormattableDocument document) {
+		regionFor.keyword("bounds").prepend[space = '\n' + getSpacing(spacing)]
+//		regionFor.keywords("x", "y", "width", "height").forEach[prepend[space = '\n' + getSpacing(spacing + 1)]]
+	}
+	
 }

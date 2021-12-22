@@ -181,9 +181,9 @@ public class CanvasAdapterFactory extends AdapterFactoryImpl
         return createPointDefinitionAdapter();
       }
       @Override
-      public Adapter caseRectangle(Rectangle object)
+      public Adapter caseBounds(Bounds object)
       {
-        return createRectangleAdapter();
+        return createBoundsAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -523,16 +523,16 @@ public class CanvasAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtuml.canvas.language.canvas.Rectangle <em>Rectangle</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtuml.canvas.language.canvas.Bounds <em>Bounds</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtuml.canvas.language.canvas.Rectangle
+   * @see org.xtuml.canvas.language.canvas.Bounds
    * @generated
    */
-  public Adapter createRectangleAdapter()
+  public Adapter createBoundsAdapter()
   {
     return null;
   }

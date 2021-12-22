@@ -29,7 +29,7 @@ public class ModelElementLoadedListener extends ModelChangeAdapter {
 		NonRootModelElement modelElement = (NonRootModelElement) event.getModelElement();
 		IFile parentFile = modelElement.getFile();
 		IFile xtGraphFile = parentFile.getParent()
-				.getFile(new Path(parentFile.getName().replaceAll(".xtuml", ".xtg")));
+				.getFile(new Path(parentFile.getName().replaceAll(".xtuml", ".xtumlg")));
 		try {
 			generator.generate(modelElement, Ooaofgraphics.getInstance(modelElement.getModelRoot().getId()), xtGraphFile);
 		} catch (IOException | CoreException e) {

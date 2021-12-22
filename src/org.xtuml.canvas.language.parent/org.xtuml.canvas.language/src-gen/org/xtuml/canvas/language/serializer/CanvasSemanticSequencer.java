@@ -15,6 +15,7 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtuml.canvas.language.canvas.Anchors;
+import org.xtuml.canvas.language.canvas.Bounds;
 import org.xtuml.canvas.language.canvas.CanvasPackage;
 import org.xtuml.canvas.language.canvas.Connector;
 import org.xtuml.canvas.language.canvas.ConnectorAnchorElement;
@@ -29,7 +30,6 @@ import org.xtuml.canvas.language.canvas.ModelRender;
 import org.xtuml.canvas.language.canvas.Point;
 import org.xtuml.canvas.language.canvas.PointDefinition;
 import org.xtuml.canvas.language.canvas.Polyline;
-import org.xtuml.canvas.language.canvas.Rectangle;
 import org.xtuml.canvas.language.canvas.Segment;
 import org.xtuml.canvas.language.canvas.Shape;
 import org.xtuml.canvas.language.canvas.ShapeAnchorElement;
@@ -53,6 +53,9 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			switch (semanticObject.eClass().getClassifierID()) {
 			case CanvasPackage.ANCHORS:
 				sequence_Anchors(context, (Anchors) semanticObject); 
+				return; 
+			case CanvasPackage.BOUNDS:
+				sequence_Bounds(context, (Bounds) semanticObject); 
 				return; 
 			case CanvasPackage.CONNECTOR:
 				sequence_Connector(context, (Connector) semanticObject); 
@@ -93,9 +96,6 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case CanvasPackage.POLYLINE:
 				sequence_Polyline(context, (Polyline) semanticObject); 
 				return; 
-			case CanvasPackage.RECTANGLE:
-				sequence_Rectangle(context, (Rectangle) semanticObject); 
-				return; 
 			case CanvasPackage.SEGMENT:
 				sequence_Segment(context, (Segment) semanticObject); 
 				return; 
@@ -131,8 +131,35 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.ANCHORS__END_ANCHOR));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAnchorsAccess().getStartAnchorStartAnchorParserRuleCall_1_0(), semanticObject.getStartAnchor());
-		feeder.accept(grammarAccess.getAnchorsAccess().getEndAnchorEndAnchorParserRuleCall_2_0(), semanticObject.getEndAnchor());
+		feeder.accept(grammarAccess.getAnchorsAccess().getStartAnchorStartAnchorParserRuleCall_2_0(), semanticObject.getStartAnchor());
+		feeder.accept(grammarAccess.getAnchorsAccess().getEndAnchorEndAnchorParserRuleCall_3_0(), semanticObject.getEndAnchor());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Bounds returns Bounds
+	 *
+	 * Constraint:
+	 *     (x=INT y=INT w=INT h=INT)
+	 */
+	protected void sequence_Bounds(ISerializationContext context, Bounds semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CanvasPackage.Literals.BOUNDS__X) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.BOUNDS__X));
+			if (transientValues.isValueTransient(semanticObject, CanvasPackage.Literals.BOUNDS__Y) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.BOUNDS__Y));
+			if (transientValues.isValueTransient(semanticObject, CanvasPackage.Literals.BOUNDS__W) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.BOUNDS__W));
+			if (transientValues.isValueTransient(semanticObject, CanvasPackage.Literals.BOUNDS__H) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.BOUNDS__H));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBoundsAccess().getXINTTerminalRuleCall_4_0(), semanticObject.getX());
+		feeder.accept(grammarAccess.getBoundsAccess().getYINTTerminalRuleCall_7_0(), semanticObject.getY());
+		feeder.accept(grammarAccess.getBoundsAccess().getWINTTerminalRuleCall_10_0(), semanticObject.getW());
+		feeder.accept(grammarAccess.getBoundsAccess().getHINTTerminalRuleCall_13_0(), semanticObject.getH());
 		feeder.finish();
 	}
 	
@@ -151,7 +178,7 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.CONNECTOR_ANCHOR_ELEMENT__ELEMENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getConnectorAnchorElementAccess().getElementConnectorIDTerminalRuleCall_1_0_1(), semanticObject.eGet(CanvasPackage.Literals.CONNECTOR_ANCHOR_ELEMENT__ELEMENT, false));
+		feeder.accept(grammarAccess.getConnectorAnchorElementAccess().getElementConnectorIDTerminalRuleCall_2_0_1(), semanticObject.eGet(CanvasPackage.Literals.CONNECTOR_ANCHOR_ELEMENT__ELEMENT, false));
 		feeder.finish();
 	}
 	
@@ -161,7 +188,14 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Connector returns Connector
 	 *
 	 * Constraint:
-	 *     (name=ID represents=STRING polyline=Polyline anchors=Anchors? texts=FloatingTexts)
+	 *     (
+	 *         name=ID 
+	 *         type=TypeLabel 
+	 *         represents=STRING 
+	 *         polyline=Polyline 
+	 *         anchors=Anchors? 
+	 *         texts=FloatingTexts
+	 *     )
 	 */
 	protected void sequence_Connector(ISerializationContext context, Connector semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -219,18 +253,18 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     FloatingText returns FloatingText
 	 *
 	 * Constraint:
-	 *     (rect=Rectangle end=EnumEnd)
+	 *     (bounds=Bounds end=EnumEnd)
 	 */
 	protected void sequence_FloatingText(ISerializationContext context, FloatingText semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CanvasPackage.Literals.FLOATING_TEXT__RECT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.FLOATING_TEXT__RECT));
+			if (transientValues.isValueTransient(semanticObject, CanvasPackage.Literals.FLOATING_TEXT__BOUNDS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.FLOATING_TEXT__BOUNDS));
 			if (transientValues.isValueTransient(semanticObject, CanvasPackage.Literals.FLOATING_TEXT__END) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.FLOATING_TEXT__END));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFloatingTextAccess().getRectRectangleParserRuleCall_2_0(), semanticObject.getRect());
-		feeder.accept(grammarAccess.getFloatingTextAccess().getEndEnumEndParserRuleCall_3_0(), semanticObject.getEnd());
+		feeder.accept(grammarAccess.getFloatingTextAccess().getBoundsBoundsParserRuleCall_3_0(), semanticObject.getBounds());
+		feeder.accept(grammarAccess.getFloatingTextAccess().getEndEnumEndParserRuleCall_4_0(), semanticObject.getEnd());
 		feeder.finish();
 	}
 	
@@ -262,8 +296,8 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.MODEL_PROPERTIES__ZOOM));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getModelPropertiesAccess().getPointPointParserRuleCall_2_0(), semanticObject.getPoint());
-		feeder.accept(grammarAccess.getModelPropertiesAccess().getZoomINTTerminalRuleCall_4_0(), semanticObject.getZoom());
+		feeder.accept(grammarAccess.getModelPropertiesAccess().getPointPointParserRuleCall_4_0(), semanticObject.getPoint());
+		feeder.accept(grammarAccess.getModelPropertiesAccess().getZoomINTTerminalRuleCall_7_0(), semanticObject.getZoom());
 		feeder.finish();
 	}
 	
@@ -281,7 +315,7 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.MODEL_RENDER__IMPORT_URI));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getModelRenderAccess().getImportURISTRINGTerminalRuleCall_1_0(), semanticObject.getImportURI());
+		feeder.accept(grammarAccess.getModelRenderAccess().getImportURISTRINGTerminalRuleCall_2_0(), semanticObject.getImportURI());
 		feeder.finish();
 	}
 	
@@ -313,8 +347,8 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.POINT_DEFINITION__Y));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPointDefinitionAccess().getXINTTerminalRuleCall_2_0(), semanticObject.getX());
-		feeder.accept(grammarAccess.getPointDefinitionAccess().getYINTTerminalRuleCall_4_0(), semanticObject.getY());
+		feeder.accept(grammarAccess.getPointDefinitionAccess().getXINTTerminalRuleCall_4_0(), semanticObject.getX());
+		feeder.accept(grammarAccess.getPointDefinitionAccess().getYINTTerminalRuleCall_7_0(), semanticObject.getY());
 		feeder.finish();
 	}
 	
@@ -334,8 +368,8 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.POINT__Y));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPointAccess().getXINTTerminalRuleCall_1_0(), semanticObject.getX());
-		feeder.accept(grammarAccess.getPointAccess().getYINTTerminalRuleCall_3_0(), semanticObject.getY());
+		feeder.accept(grammarAccess.getPointAccess().getXINTTerminalRuleCall_2_0(), semanticObject.getX());
+		feeder.accept(grammarAccess.getPointAccess().getYINTTerminalRuleCall_5_0(), semanticObject.getY());
 		feeder.finish();
 	}
 	
@@ -354,33 +388,6 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
-	 *     Rectangle returns Rectangle
-	 *
-	 * Constraint:
-	 *     (x=INT y=INT w=INT h=INT)
-	 */
-	protected void sequence_Rectangle(ISerializationContext context, Rectangle semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CanvasPackage.Literals.RECTANGLE__X) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.RECTANGLE__X));
-			if (transientValues.isValueTransient(semanticObject, CanvasPackage.Literals.RECTANGLE__Y) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.RECTANGLE__Y));
-			if (transientValues.isValueTransient(semanticObject, CanvasPackage.Literals.RECTANGLE__W) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.RECTANGLE__W));
-			if (transientValues.isValueTransient(semanticObject, CanvasPackage.Literals.RECTANGLE__H) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.RECTANGLE__H));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRectangleAccess().getXINTTerminalRuleCall_2_0(), semanticObject.getX());
-		feeder.accept(grammarAccess.getRectangleAccess().getYINTTerminalRuleCall_4_0(), semanticObject.getY());
-		feeder.accept(grammarAccess.getRectangleAccess().getWINTTerminalRuleCall_6_0(), semanticObject.getW());
-		feeder.accept(grammarAccess.getRectangleAccess().getHINTTerminalRuleCall_8_0(), semanticObject.getH());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Segment returns Segment
 	 *
 	 * Constraint:
@@ -394,8 +401,8 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.SEGMENT__END_POINT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSegmentAccess().getStartPointPointParserRuleCall_2_0(), semanticObject.getStartPoint());
-		feeder.accept(grammarAccess.getSegmentAccess().getEndPointPointParserRuleCall_4_0(), semanticObject.getEndPoint());
+		feeder.accept(grammarAccess.getSegmentAccess().getStartPointPointParserRuleCall_4_0(), semanticObject.getStartPoint());
+		feeder.accept(grammarAccess.getSegmentAccess().getEndPointPointParserRuleCall_7_0(), semanticObject.getEndPoint());
 		feeder.finish();
 	}
 	
@@ -414,7 +421,7 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CanvasPackage.Literals.SHAPE_ANCHOR_ELEMENT__ELEMENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getShapeAnchorElementAccess().getElementShapeIDTerminalRuleCall_1_0_1(), semanticObject.eGet(CanvasPackage.Literals.SHAPE_ANCHOR_ELEMENT__ELEMENT, false));
+		feeder.accept(grammarAccess.getShapeAnchorElementAccess().getElementShapeIDTerminalRuleCall_2_0_1(), semanticObject.eGet(CanvasPackage.Literals.SHAPE_ANCHOR_ELEMENT__ELEMENT, false));
 		feeder.finish();
 	}
 	
@@ -424,7 +431,14 @@ public class CanvasSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Shape returns Shape
 	 *
 	 * Constraint:
-	 *     (name=ID container=Container? represents=STRING rect=Rectangle text=FloatingText?)
+	 *     (
+	 *         name=ID 
+	 *         container=Container? 
+	 *         type=TypeLabel 
+	 *         represents=STRING 
+	 *         bounds=Bounds 
+	 *         text=FloatingText?
+	 *     )
 	 */
 	protected void sequence_Shape(ISerializationContext context, Shape semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

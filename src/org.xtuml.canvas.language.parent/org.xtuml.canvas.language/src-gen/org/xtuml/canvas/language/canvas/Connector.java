@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtuml.canvas.language.canvas.Connector#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtuml.canvas.language.canvas.Connector#getType <em>Type</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.Connector#getRepresents <em>Represents</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.Connector#getPolyline <em>Polyline</em>}</li>
  *   <li>{@link org.xtuml.canvas.language.canvas.Connector#getAnchors <em>Anchors</em>}</li>
@@ -48,6 +49,28 @@ public interface Connector extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Type</em>' attribute.
+   * @see #setType(String)
+   * @see org.xtuml.canvas.language.canvas.CanvasPackage#getConnector_Type()
+   * @model
+   * @generated
+   */
+  String getType();
+
+  /**
+   * Sets the value of the '{@link org.xtuml.canvas.language.canvas.Connector#getType <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Type</em>' attribute.
+   * @see #getType()
+   * @generated
+   */
+  void setType(String value);
 
   /**
    * Returns the value of the '<em><b>Represents</b></em>' attribute.
