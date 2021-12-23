@@ -11,9 +11,12 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.xtext.resource.SaveOptions;
 import org.eclipse.xtext.ui.resource.IResourceSetProvider;
 import org.xtuml.bp.core.Gd_c;
+import org.xtuml.bp.core.common.AttributeChangeModelDelta;
 import org.xtuml.bp.core.common.NonRootModelElement;
 import org.xtuml.bp.ui.canvas.CanvasPlugin;
 import org.xtuml.bp.ui.canvas.Connector_c;
@@ -72,9 +75,46 @@ public class CanvasWriter implements IGraphicalWriter {
 	}
 
 	@Override
+	public void write(NonRootModelElement model, AttributeChangeModelDelta rename) {
+		IFile parentFile = model.getFile();
+		// remove old file
+		IFile oldFile = parentFile.getParent().getFile(new Path(((String) rename.getOldValue() + ".xtumlg")));
+		if (oldFile.exists()) {
+			PlatformUI.getWorkbench().getDisplay().asyncExec(() -> {
+				Stream.of(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getPages()).forEach(p -> {
+					Stream.of(p.getEditorReferences()).forEach(ref -> {
+						try {
+							IFile editorInputFile = ref.getEditorInput().getAdapter(IFile.class);
+							if (editorInputFile.equals(oldFile)) {
+								p.closeEditor(ref.getEditor(false), false);
+							}
+						} catch (PartInitException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					});
+				});
+			});
+			try {
+				oldFile.delete(true, new NullProgressMonitor());
+			} catch (CoreException e) {
+				// TODO: implement logging
+			}
+		}
+		IFile xtGraphFile = parentFile.getParent()
+				.getFile(new Path(parentFile.getName().replaceAll(".xtuml", ".xtumlg")));
+		try {
+			write(model, xtGraphFile);
+		} catch (IOException | CoreException e) {
+			// TODO: implement logging
+		}
+	}
+
+	@Override
 	public void write(NonRootModelElement model) {
 		IFile parentFile = model.getFile();
-		IFile xtGraphFile = parentFile.getParent().getFile(new Path(parentFile.getName().replaceAll(".xtuml", ".xtumlg")));
+		IFile xtGraphFile = parentFile.getParent()
+				.getFile(new Path(parentFile.getName().replaceAll(".xtuml", ".xtumlg")));
 		try {
 			write(model, xtGraphFile);
 		} catch (IOException | CoreException e) {
@@ -100,7 +140,7 @@ public class CanvasWriter implements IGraphicalWriter {
 		modelRender.setImportURI(getPath(diagramRepresents));
 		model.setRender(modelRender);
 		Diagram_c diagram = Diagram_c.getOneDIM_DIAOnR18(xtModel);
-		if(diagram.getViewportx() != 0 && diagram.getViewporty() != 0) {
+		if (diagram.getViewportx() != 0 && diagram.getViewporty() != 0) {
 			ModelProperties properties = factory.createModelProperties();
 			properties.setZoom((int) diagram.getZoom());
 			Point viewport = factory.createPoint();
@@ -113,7 +153,7 @@ public class CanvasWriter implements IGraphicalWriter {
 		r.getContents().add(model);
 		SaveOptions.Builder options = SaveOptions.newBuilder();
 		options.format();
-		r.save(options.getOptions().toOptionsMap());	
+		r.save(options.getOptions().toOptionsMap());
 	}
 
 	private void populateModel(NonRootModelElement diagramRepresents) {
@@ -210,8 +250,9 @@ public class CanvasWriter implements IGraphicalWriter {
 
 	private Polyline createPolyline(Connector_c con) {
 		Polyline polyline = factory.createPolyline();
-		LineSegment_c nextSeg = LineSegment_c.getOneGD_LSOnR6(con, s -> ((LineSegment_c) s).getPrevious_elementid().equals(Gd_c.Null_unique_id()));
-		while(nextSeg != null) {
+		LineSegment_c nextSeg = LineSegment_c.getOneGD_LSOnR6(con,
+				s -> ((LineSegment_c) s).getPrevious_elementid().equals(Gd_c.Null_unique_id()));
+		while (nextSeg != null) {
 			Waypoint_c startWay = Waypoint_c.getOneDIM_WAYOnR21(nextSeg);
 			Waypoint_c endWay = Waypoint_c.getOneDIM_WAYOnR22(nextSeg);
 			Segment segment = factory.createSegment();
@@ -244,7 +285,7 @@ public class CanvasWriter implements IGraphicalWriter {
 		shape.setRepresents(getPath(ele));
 		shape.setName(getNameFromPath(shape.getRepresents()));
 		ContainingShape_c containerShp = ContainingShape_c.getOneGD_CTROnR28(shp);
-		if(containerShp != null) {
+		if (containerShp != null) {
 			shape.setContainer("container");
 		}
 		createText(shp, shape);
