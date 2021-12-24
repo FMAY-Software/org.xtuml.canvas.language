@@ -16,7 +16,6 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.xtext.resource.SaveOptions;
 import org.eclipse.xtext.ui.resource.IResourceSetProvider;
 import org.xtuml.bp.core.Gd_c;
-import org.xtuml.bp.core.common.AttributeChangeModelDelta;
 import org.xtuml.bp.core.common.NonRootModelElement;
 import org.xtuml.bp.ui.canvas.CanvasPlugin;
 import org.xtuml.bp.ui.canvas.Connector_c;
@@ -34,6 +33,7 @@ import org.xtuml.bp.ui.canvas.Ooaofgraphics;
 import org.xtuml.bp.ui.canvas.Shape_c;
 import org.xtuml.bp.ui.canvas.Waypoint_c;
 import org.xtuml.bp.ui.canvas.persistence.IGraphicalWriter;
+import org.xtuml.bp.ui.canvas.references.ReferencePathManagement;
 import org.xtuml.canvas.language.canvas.Anchors;
 import org.xtuml.canvas.language.canvas.Bounds;
 import org.xtuml.canvas.language.canvas.CanvasFactory;
@@ -75,42 +75,6 @@ public class CanvasWriter implements IGraphicalWriter {
 	}
 
 	@Override
-	public void write(NonRootModelElement model, AttributeChangeModelDelta rename) {
-		IFile parentFile = model.getFile();
-		// remove old file
-		IFile oldFile = parentFile.getParent().getFile(new Path(((String) rename.getOldValue() + ".xtumlg")));
-		if (oldFile.exists()) {
-			PlatformUI.getWorkbench().getDisplay().asyncExec(() -> {
-				Stream.of(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getPages()).forEach(p -> {
-					Stream.of(p.getEditorReferences()).forEach(ref -> {
-						try {
-							IFile editorInputFile = ref.getEditorInput().getAdapter(IFile.class);
-							if (editorInputFile.equals(oldFile)) {
-								p.closeEditor(ref.getEditor(false), false);
-							}
-						} catch (PartInitException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-					});
-				});
-			});
-			try {
-				oldFile.delete(true, new NullProgressMonitor());
-			} catch (CoreException e) {
-				// TODO: implement logging
-			}
-		}
-		IFile xtGraphFile = parentFile.getParent()
-				.getFile(new Path(parentFile.getName().replaceAll(".xtuml", ".xtumlg")));
-		try {
-			write(model, xtGraphFile);
-		} catch (IOException | CoreException e) {
-			// TODO: implement logging
-		}
-	}
-
-	@Override
 	public void write(NonRootModelElement model) {
 		IFile parentFile = model.getFile();
 		IFile xtGraphFile = parentFile.getParent()
@@ -129,6 +93,9 @@ public class CanvasWriter implements IGraphicalWriter {
 		}
 		Model_c xtModel = Model_c.ModelInstance(Ooaofgraphics.getInstance(diagramRepresents.getModelRoot().getId()),
 				m -> ((Model_c) m).getRepresents() == diagramRepresents);
+		if(xtModel == null) {
+			return;
+		}
 		CanvasPlugin.setGraphicalRepresents(xtModel);
 		LanguageActivator.getInstance().getInjector("org.xtuml.canvas.language.Canvas").injectMembers(this);
 		URI uri = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
@@ -297,7 +264,7 @@ public class CanvasWriter implements IGraphicalWriter {
 	}
 
 	private String getPath(NonRootModelElement nrme) {
-		return nrme.getPath();
+		return ReferencePathManagement.getPath(nrme);
 	}
 
 	private StartAnchor createStartAnchor(Connector_c con) {
@@ -433,6 +400,35 @@ public class CanvasWriter implements IGraphicalWriter {
 			;
 		}
 		return shape;
+	}
+
+	@Override
+	public void nameChange(NonRootModelElement modelElement, Object oldValue) {
+		IFile parentFile = modelElement.getFile();
+		// remove old file
+		IFile oldFile = parentFile.getParent().getFile(new Path(((String) oldValue + ".xtumlg")));
+		if (oldFile.exists()) {
+			PlatformUI.getWorkbench().getDisplay().asyncExec(() -> {
+				Stream.of(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getPages()).forEach(p -> {
+					Stream.of(p.getEditorReferences()).forEach(ref -> {
+						try {
+							IFile editorInputFile = ref.getEditorInput().getAdapter(IFile.class);
+							if (editorInputFile.equals(oldFile)) {
+								p.closeEditor(ref.getEditor(false), false);
+							}
+						} catch (PartInitException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					});
+				});
+			});
+			try {
+				oldFile.delete(true, new NullProgressMonitor());
+			} catch (CoreException e) {
+				// TODO: implement logging
+			}
+		}
 	}
 
 }

@@ -88,11 +88,11 @@ public class CanvasGenerator implements IGraphicalLoader {
 	NonRootModelElement parent;
 	CanvasWriter writer = new CanvasWriter();
 
+
 	@Override
 	public void initialize() {
-		// nothing to do yet
 	}
-
+	
 	@Override
 	public void load(Object container) {
 		if (container instanceof NonRootModelElement) {
@@ -221,11 +221,13 @@ public class CanvasGenerator implements IGraphicalLoader {
 	private void createShape(Model_c xtModel, Shape shape) {
 		String container = shape.getContainer();
 		NonRootModelElement representedElement = getElementByPath(shape.getRepresents());
-		UUID toolId = getToolId(xtModel, representedElement, container != null);
-		// here we create the element
 		if(representedElement == null) {
-			toolId = getToolIdByType(xtModel, shape.getType());
+			// this is likely a manual addition, we do not support
+			// creation at this time.  Mostly because there is no
+			// good way to set the name, and or figure out the unnamed variant
+			return;
 		}
+		UUID toolId = getToolId(xtModel, representedElement, container != null);
 		UUID shapeId = xtModel.Createshape(representedElement == null, toolId);
 		Graphelement_c graphElem = Graphelement_c.GraphelementInstance(graphicsRoot,
 				ge -> ((Graphelement_c) ge).getElementid().equals(shapeId));
@@ -260,6 +262,12 @@ public class CanvasGenerator implements IGraphicalLoader {
 
 	private void createConnector(Model_c xtModel, Connector connector) {
 		NonRootModelElement representedElement = getElementByPath(connector.getRepresents());
+		if(representedElement == null) {
+			// this is likely a manual addition, we do not support
+			// creation at this time.  Mostly because there is no
+			// good way to set the name, and or figure out the unnamed variant
+			return;
+		}
 		UUID toolId = getToolId(xtModel, representedElement, false);
 		GraphicalElement_c startElem = getStartElement(xtModel, connector);
 		UUID startElemId = Gd_c.Null_unique_id();
@@ -438,17 +446,6 @@ public class CanvasGenerator implements IGraphicalLoader {
 		return ele.getPath();
 	}
 
-	private UUID getToolIdByType(Model_c xtModel, String type) {
-		ModelTool_c[] tools = ModelTool_c.getManyCT_MTLsOnR100(xtModel);
-		for (int i = 0; i < tools.length; i++) {
-			ModelTool_c tool = tools[i];
-			if (tool.getOoa_type() == EnumUtils.typeFor(type)) {
-				return tool.getTool_id();
-			}
-		}
-		return Gd_c.Null_unique_id();
-	}
-	
 	private UUID getToolId(Model_c xtModel, NonRootModelElement represents, boolean container) {
 		ModelTool_c[] tools = ModelTool_c.getManyCT_MTLsOnR100(xtModel);
 		for (int i = 0; i < tools.length; i++) {

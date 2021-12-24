@@ -47,7 +47,8 @@ public class EnumUtils {
 	public static int typeFor(String type) {
 		for(Field field : Ooatype_c.class.getFields()) {
 			try {
-				if(type.equals(field.getName())) {
+				String fieldName = field.getName().replaceAll("((?!^)([A-Z]))", "_$1").toLowerCase();
+				if(type.equals(fieldName)) {
 					return field.getInt(Ooatype_c.class);
 				}
 			} catch (IllegalArgumentException | IllegalAccessException e) {
