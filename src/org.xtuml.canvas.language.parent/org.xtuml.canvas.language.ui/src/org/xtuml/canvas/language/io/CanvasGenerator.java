@@ -88,34 +88,35 @@ public class CanvasGenerator implements IGraphicalLoader {
 	NonRootModelElement parent;
 	CanvasWriter writer = new CanvasWriter();
 
-
 	@Override
 	public void initialize() {
 	}
-	
+
 	@Override
-	public void load(Object container) {
+	public Model_c load(Object container) {
 		if (container instanceof NonRootModelElement) {
 			NonRootModelElement parentElement = (NonRootModelElement) container;
 			IFile parentFile = parentElement.getFile();
 			IFile xtGraphFile = parentFile.getParent()
 					.getFile(new Path(parentFile.getName().replaceAll(".xtuml", ".xtumlg")));
 			try {
-				generate(parentElement, Ooaofgraphics.getInstance(parentElement.getModelRoot().getId()), xtGraphFile);
+				return generate(parentElement, Ooaofgraphics.getInstance(parentElement.getModelRoot().getId()),
+						xtGraphFile);
 			} catch (IOException | CoreException e) {
 				// TODO: implement logging
 			}
 		}
+		return null;
 	}
 
-	public void generate(NonRootModelElement parentElement, ModelRoot destinationRoot, IFile file)
+	public Model_c generate(NonRootModelElement parentElement, ModelRoot destinationRoot, IFile file)
 			throws IOException, CoreException {
 		if (!file.exists()) {
 			writer.write(parentElement, file);
 			// this is from a pre-canvas-language model
 			// instances will exist already, just need to
 			// write the new graphics file
-			return;
+			return null;
 		}
 		// only create if necessary
 		Model_c xtModel = Model_c.ModelInstance(Ooaofgraphics.getInstance(parentElement.getModelRoot().getId()),
@@ -158,6 +159,7 @@ public class CanvasGenerator implements IGraphicalLoader {
 			xtModel.Initializetools();
 			createGraphicalElements(xtModel, model);
 		}
+		return xtModel;
 	}
 
 	private int getModelType() {
@@ -221,9 +223,9 @@ public class CanvasGenerator implements IGraphicalLoader {
 	private void createShape(Model_c xtModel, Shape shape) {
 		String container = shape.getContainer();
 		NonRootModelElement representedElement = getElementByPath(shape.getRepresents());
-		if(representedElement == null) {
+		if (representedElement == null) {
 			// this is likely a manual addition, we do not support
-			// creation at this time.  Mostly because there is no
+			// creation at this time. Mostly because there is no
 			// good way to set the name, and or figure out the unnamed variant
 			return;
 		}
@@ -262,9 +264,9 @@ public class CanvasGenerator implements IGraphicalLoader {
 
 	private void createConnector(Model_c xtModel, Connector connector) {
 		NonRootModelElement representedElement = getElementByPath(connector.getRepresents());
-		if(representedElement == null) {
+		if (representedElement == null) {
 			// this is likely a manual addition, we do not support
-			// creation at this time.  Mostly because there is no
+			// creation at this time. Mostly because there is no
 			// good way to set the name, and or figure out the unnamed variant
 			return;
 		}
@@ -300,7 +302,7 @@ public class CanvasGenerator implements IGraphicalLoader {
 			Stream.of(FloatingText_c.getManyGD_CTXTsOnR8(con)).forEach(txt -> {
 				Optional<FloatingText> potentialtext = Stream
 						.of(connector.getTexts().getTexts().toArray(new FloatingText[0]))
-						.filter(floatingText -> floatingText.getEnd().equals(EnumUtils.endFor(txt.getEnd())))
+						.filter(floatingText -> floatingText.getEnd().getWhere().equals(EnumUtils.endFor(txt.getEnd())))
 						.findFirst();
 				if (potentialtext.isPresent()) {
 					updateTextPosition(txt, potentialtext.get());
