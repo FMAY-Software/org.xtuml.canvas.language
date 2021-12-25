@@ -113,12 +113,17 @@ public class CanvasGenerator implements IGraphicalLoader {
 
 	public Model_c generate(NonRootModelElement parentElement, ModelRoot destinationRoot, IFile file)
 			throws IOException, CoreException {
+		boolean rewrite = false;
 		if (!file.exists()) {
+			rewrite = true;
 			writer.write(parentElement, file);
-			// this is from a pre-canvas-language model
-			// instances will exist already, just need to
-			// write the new graphics file
-			return null;
+			// if not a new system,
+			if (!(parentElement instanceof SystemModel_c)) {
+				// this is from a pre-canvas-language model
+				// instances will exist already, just need to
+				// write the new graphics file
+				return null;
+			}
 		}
 		// only create if necessary
 		Model_c xtModel = Model_c.ModelInstance(Ooaofgraphics.getInstance(parentElement.getModelRoot().getId()),
@@ -160,6 +165,11 @@ public class CanvasGenerator implements IGraphicalLoader {
 			}
 			xtModel.Initializetools();
 			createGraphicalElements(xtModel, model);
+		}
+		if (rewrite) {
+			// on system creation we write the initial file to process
+			// but need to write the newly created model
+			writer.write(parentElement);
 		}
 		return xtModel;
 	}
@@ -317,26 +327,35 @@ public class CanvasGenerator implements IGraphicalLoader {
 		// delete existing segments and replace with stored polyline segments
 		Stream.of(LineSegment_c.getManyGD_LSsOnR6(xtCon)).forEach(seg -> {
 			xtCon.unrelateAcrossR6From(seg);
+			Waypoint_c startWay = Waypoint_c.getOneDIM_WAYOnR21(seg);
+			Waypoint_c endWay = Waypoint_c.getOneDIM_WAYOnR22(seg);
 			seg.Dispose();
+			startWay.Dispose();
+			endWay.Dispose();
 		});
 		LineSegment_c lastSeg = null;
+		Waypoint_c lastEndWay = null;
 		Graphedge_c edge = Graphedge_c.getOneDIM_EDOnR20(xtCon);
 		for (Segment segment : connector.getPolyline().getSegments()) {
 			LineSegment_c xtSeg = new LineSegment_c(xtCon.getModelRoot());
 			xtSeg.relateAcrossR6To(xtCon);
 			xtSeg.relateAcrossR7ToFollows(lastSeg);
-			Waypoint_c startWay = new Waypoint_c(xtCon.getModelRoot());
-			Waypoint_c endWay = new Waypoint_c(xtCon.getModelRoot());
+			Waypoint_c startWay = lastEndWay;
+			if (startWay == null) {
+				startWay = new Waypoint_c(xtCon.getModelRoot());
+				startWay.setPositionx(segment.getStartPoint().getX());
+				startWay.setPositiony(segment.getStartPoint().getY());
+			}
 			startWay.relateAcrossR21To(xtSeg);
+			Waypoint_c endWay = new Waypoint_c(xtCon.getModelRoot());
 			endWay.relateAcrossR22To(xtSeg);
-			startWay.setPositionx(segment.getStartPoint().getX());
-			startWay.setPositiony(segment.getStartPoint().getY());
 			endWay.setPositionx(segment.getEndPoint().getX());
 			endWay.setPositiony(segment.getEndPoint().getY());
-			startWay.relateAcrossR324ToPrecedes(endWay);
+			startWay.relateAcrossR324ToFollows(endWay);
 			edge.relateAcrossR319To(startWay);
 			edge.relateAcrossR319To(endWay);
 			lastSeg = xtSeg;
+			lastEndWay = endWay;
 		}
 	}
 

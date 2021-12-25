@@ -93,7 +93,7 @@ public class CanvasWriter implements IGraphicalWriter {
 		}
 		Model_c xtModel = Model_c.ModelInstance(Ooaofgraphics.getInstance(diagramRepresents.getModelRoot().getId()),
 				m -> ((Model_c) m).getRepresents() == diagramRepresents);
-		if(xtModel == null) {
+		if (xtModel == null) {
 			return;
 		}
 		CanvasPlugin.setGraphicalRepresents(xtModel);
@@ -175,17 +175,19 @@ public class CanvasWriter implements IGraphicalWriter {
 		Stream.of(FloatingText_c.getManyGD_CTXTsOnR8(con)).forEach(text -> {
 			Graphnode_c node = Graphnode_c.getOneDIM_NDOnR19(text);
 			Graphelement_c ge = Graphelement_c.getOneDIM_GEOnR301(node);
-			FloatingText floatingText = factory.createFloatingText();
-			Bounds rect = factory.createBounds();
-			rect.setX((int) ge.getPositionx());
-			rect.setY((int) ge.getPositiony());
-			rect.setW((int) node.getWidth());
-			rect.setH((int) node.getHeight());
-			floatingText.setBounds(rect);
-			EnumEnd end = factory.createEnumEnd();
-			end.setWhere(EnumUtils.endFor(text.getEnd()));
-			floatingText.setEnd(end);
-			floatingTexts.getTexts().add(floatingText);
+			if (node.getWidth() != 0 || node.getHeight() != 0 || ge.getPositionx() != 0 || ge.getPositiony() != 0) {
+				FloatingText floatingText = factory.createFloatingText();
+				Bounds rect = factory.createBounds();
+				rect.setX((int) ge.getPositionx());
+				rect.setY((int) ge.getPositiony());
+				rect.setW((int) node.getWidth());
+				rect.setH((int) node.getHeight());
+				floatingText.setBounds(rect);
+				EnumEnd end = factory.createEnumEnd();
+				end.setWhere(EnumUtils.endFor(text.getEnd()));
+				floatingText.setEnd(end);
+				floatingTexts.getTexts().add(floatingText);
+			}
 		});
 		connector.setTexts(floatingTexts);
 	}
