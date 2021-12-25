@@ -32,6 +32,7 @@ import org.xtuml.bp.core.Gd_c;
 import org.xtuml.bp.core.ImportedClass_c;
 import org.xtuml.bp.core.InstanceStateMachine_c;
 import org.xtuml.bp.core.LinkedAssociation_c;
+import org.xtuml.bp.core.Message_c;
 import org.xtuml.bp.core.ModelClass_c;
 import org.xtuml.bp.core.Package_c;
 import org.xtuml.bp.core.PackageableElement_c;
@@ -39,6 +40,7 @@ import org.xtuml.bp.core.StateMachineState_c;
 import org.xtuml.bp.core.StateMachine_c;
 import org.xtuml.bp.core.StructuredDataType_c;
 import org.xtuml.bp.core.SubtypeSupertypeAssociation_c;
+import org.xtuml.bp.core.SynchronousMessage_c;
 import org.xtuml.bp.core.SystemModel_c;
 import org.xtuml.bp.core.Transition_c;
 import org.xtuml.bp.core.UserDataType_c;
@@ -424,6 +426,13 @@ public class CanvasGenerator implements IGraphicalLoader {
 				if (potentialAcceptTime.isPresent()) {
 					return potentialAcceptTime.get();
 				}
+				Optional<SynchronousMessage_c> potentialSyncMessage = Stream
+						.of(SynchronousMessage_c.getManyMSG_SMsOnR1018(Message_c
+								.getManyMSG_MsOnR8001(PackageableElement_c.getManyPE_PEsOnR8000((Package_c) parent))))
+						.filter(sm -> getPath(sm).equals(represents)).findFirst();
+				if (potentialSyncMessage.isPresent()) {
+					return potentialSyncMessage.get();
+				}
 			}
 			if (container instanceof StateMachine_c) {
 				Optional<CreationTransition_c> potentialCreationTrans = Stream
@@ -521,6 +530,9 @@ public class CanvasGenerator implements IGraphicalLoader {
 				return Ooatype_c.ComponentContainer;
 			}
 			return Ooatype_c.Component;
+		}
+		if (represents instanceof SynchronousMessage_c) {
+			return Ooatype_c.SynchronousMessage;
 		}
 
 		return Ooatype_c.OOA_UNINITIALIZED_ENUM;
