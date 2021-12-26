@@ -267,7 +267,7 @@ public class CanvasWriter implements IGraphicalWriter {
 	}
 
 	private String getPath(GraphicalElement_c ele) {
-		return CanvasGenerator.getPath((NonRootModelElement) ele.getRepresents());
+		return CanvasGenerator.getPath((NonRootModelElement) ele.getRepresents(), diagramRepresents);
 	}
 
 	private String getPath(NonRootModelElement nrme) {

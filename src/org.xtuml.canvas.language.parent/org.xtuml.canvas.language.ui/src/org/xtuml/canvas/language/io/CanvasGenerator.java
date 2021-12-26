@@ -18,6 +18,9 @@ import org.eclipse.xtext.ui.resource.IResourceSetProvider;
 import org.xtuml.bp.core.AcceptEventAction_c;
 import org.xtuml.bp.core.AcceptTimeEventAction_c;
 import org.xtuml.bp.core.Action_c;
+import org.xtuml.bp.core.ActivityDiagramAction_c;
+import org.xtuml.bp.core.ActivityEdge_c;
+import org.xtuml.bp.core.ActivityFinalNode_c;
 import org.xtuml.bp.core.Association_c;
 import org.xtuml.bp.core.ClassAsLink_c;
 import org.xtuml.bp.core.ClassAsSubtype_c;
@@ -27,25 +30,31 @@ import org.xtuml.bp.core.Component_c;
 import org.xtuml.bp.core.ConstantSpecification_c;
 import org.xtuml.bp.core.CreationTransition_c;
 import org.xtuml.bp.core.DataType_c;
+import org.xtuml.bp.core.DecisionMergeNode_c;
+import org.xtuml.bp.core.Deployment_c;
 import org.xtuml.bp.core.EnumerationDataType_c;
 import org.xtuml.bp.core.Exception_c;
 import org.xtuml.bp.core.ExternalEntity_c;
+import org.xtuml.bp.core.FlowFinalNode_c;
 import org.xtuml.bp.core.Gd_c;
 import org.xtuml.bp.core.ImportedClass_c;
 import org.xtuml.bp.core.ImportedProvision_c;
 import org.xtuml.bp.core.ImportedReference_c;
 import org.xtuml.bp.core.ImportedRequirement_c;
+import org.xtuml.bp.core.InitialNode_c;
 import org.xtuml.bp.core.InstanceStateMachine_c;
 import org.xtuml.bp.core.InterfaceReference_c;
 import org.xtuml.bp.core.Interface_c;
 import org.xtuml.bp.core.LinkedAssociation_c;
 import org.xtuml.bp.core.ModelClass_c;
+import org.xtuml.bp.core.ObjectNode_c;
 import org.xtuml.bp.core.Package_c;
 import org.xtuml.bp.core.PackageableElement_c;
 import org.xtuml.bp.core.PortReference_c;
 import org.xtuml.bp.core.Port_c;
 import org.xtuml.bp.core.Provision_c;
 import org.xtuml.bp.core.Requirement_c;
+import org.xtuml.bp.core.SendSignal_c;
 import org.xtuml.bp.core.StateMachineState_c;
 import org.xtuml.bp.core.StateMachine_c;
 import org.xtuml.bp.core.StructuredDataType_c;
@@ -236,13 +245,13 @@ public class CanvasGenerator implements IGraphicalLoader {
 
 	private GraphicalElement_c getOrCreateShape(Model_c xtModel, Shape shape) {
 		GraphicalElement_c existing = GraphicalElement_c.getOneGD_GEOnR1(xtModel,
-				ge -> getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents())
+				ge -> getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents(), parent)
 						.equals(shape.getRepresents()));
 		if (existing == null) {
 			createShape(xtModel, shape);
 		}
 		existing = GraphicalElement_c.getOneGD_GEOnR1(xtModel,
-				ge -> getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents())
+				ge -> getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents(), parent)
 						.equals(shape.getRepresents()));
 		return existing;
 	}
@@ -297,13 +306,13 @@ public class CanvasGenerator implements IGraphicalLoader {
 
 	private GraphicalElement_c getOrCreateConnector(Model_c xtModel, Connector connector) {
 		GraphicalElement_c existing = GraphicalElement_c.getOneGD_GEOnR1(xtModel,
-				ge -> getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents())
+				ge -> getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents(), parent)
 						.equals(connector.getRepresents()));
 		if (existing == null) {
 			createConnector(xtModel, connector);
 		}
 		existing = GraphicalElement_c.getOneGD_GEOnR1(xtModel,
-				ge -> getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents())
+				ge -> getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents(), parent)
 						.equals(connector.getRepresents()));
 		return existing;
 	}
@@ -429,7 +438,7 @@ public class CanvasGenerator implements IGraphicalLoader {
 			container = StateMachine_c.getOneSM_SMOnR517((ClassStateMachine_c) container);
 		}
 		List<?> children = PersistenceManager.getHierarchyMetaData().getChildren(container, false);
-		Optional<?> findAny = children.stream().filter(c -> getPath((NonRootModelElement) c).equals(represents))
+		Optional<?> findAny = children.stream().filter(c -> getPath((NonRootModelElement) c, parent).equals(represents))
 				.findAny();
 		if (findAny.isPresent()) {
 			NonRootModelElement result = (NonRootModelElement) findAny.get();
@@ -461,14 +470,14 @@ public class CanvasGenerator implements IGraphicalLoader {
 						.of(ClassAsSubtype_c.getManyR_SUBsOnR213(
 								SubtypeSupertypeAssociation_c.getManyR_SUBSUPsOnR206(Association_c.getManyR_RELsOnR8001(
 										PackageableElement_c.getManyPE_PEsOnR8000((Package_c) parent)))))
-						.filter(subsup -> getPath(subsup).equals(represents)).findFirst();
+						.filter(subsup -> getPath(subsup, parent).equals(represents)).findFirst();
 				if (potentialSub.isPresent()) {
 					return potentialSub.get();
 				}
 				Optional<ClassAsLink_c> potentialLink = Stream
 						.of(ClassAsLink_c.getManyR_ASSRsOnR211(LinkedAssociation_c.getManyR_ASSOCsOnR206(Association_c
 								.getManyR_RELsOnR8001(PackageableElement_c.getManyPE_PEsOnR8000((Package_c) parent)))))
-						.filter(link -> getPath(link).equals(represents)).findFirst();
+						.filter(link -> getPath(link, parent).equals(represents)).findFirst();
 				if (potentialLink.isPresent()) {
 					return potentialLink.get();
 				}
@@ -477,14 +486,14 @@ public class CanvasGenerator implements IGraphicalLoader {
 				Optional<Requirement_c> potentialReq = Stream
 						.of(Requirement_c.getManyC_RsOnR4009(
 								InterfaceReference_c.getManyC_IRsOnR4016(Port_c.getManyC_POsOnR4010(comps))))
-						.filter(req -> getPath(req).equals(represents)).findFirst();
+						.filter(req -> getPath(req, parent).equals(represents)).findFirst();
 				if (potentialReq.isPresent()) {
 					return potentialReq.get();
 				}
 				Optional<Provision_c> potentialPro = Stream
 						.of(Provision_c.getManyC_PsOnR4009(
 								InterfaceReference_c.getManyC_IRsOnR4016(Port_c.getManyC_POsOnR4010(comps))))
-						.filter(pro -> getPath(pro).equals(represents)).findFirst();
+						.filter(pro -> getPath(pro, parent).equals(represents)).findFirst();
 				if (potentialPro.isPresent()) {
 					return potentialPro.get();
 				}
@@ -494,14 +503,14 @@ public class CanvasGenerator implements IGraphicalLoader {
 				Optional<ImportedRequirement_c> potentialImportedReq = Stream
 						.of(ImportedRequirement_c.getManyCL_IRsOnR4703(ImportedReference_c
 								.getManyCL_IIRsOnR4708(PortReference_c.getManyCL_PORsOnR4707(compRefs))))
-						.filter(req -> getPath(req).equals(represents)).findFirst();
+						.filter(req -> getPath(req, parent).equals(represents)).findFirst();
 				if (potentialImportedReq.isPresent()) {
 					return potentialImportedReq.get();
 				}
 				Optional<ImportedProvision_c> potentialImportedPro = Stream
 						.of(ImportedProvision_c.getManyCL_IPsOnR4703(ImportedReference_c
 								.getManyCL_IIRsOnR4708(PortReference_c.getManyCL_PORsOnR4707(compRefs))))
-						.filter(req -> getPath(req).equals(represents)).findFirst();
+						.filter(req -> getPath(req, parent).equals(represents)).findFirst();
 				if (potentialImportedPro.isPresent()) {
 					return potentialImportedPro.get();
 				}
@@ -520,7 +529,7 @@ public class CanvasGenerator implements IGraphicalLoader {
 	private NonRootModelElement getSubtypeRepresentation(String represents, NonRootModelElement supertype) {
 		List<NonRootModelElement> subtypes = SupertypeSubtypeUtil.getSubtypes(supertype);
 		for (NonRootModelElement subtype : subtypes) {
-			if (getPath(subtype).equals(represents)) {
+			if (getPath(subtype, parent).equals(represents)) {
 				return subtype;
 			} else {
 				NonRootModelElement element = getSubtypeRepresentation(represents, subtype);
@@ -532,12 +541,17 @@ public class CanvasGenerator implements IGraphicalLoader {
 		return null;
 	}
 
-	public static String getPath(NonRootModelElement ele) {
+	public static String getPath(NonRootModelElement ele, NonRootModelElement parent) {
 		if (ele instanceof PackageableElement_c) {
 			List<NonRootModelElement> subtypes = SupertypeSubtypeUtil.getSubtypes(ele);
 			if (subtypes != null) {
 				return subtypes.get(0).getPath();
 			}
+		}
+		// Special case for unnamed elements
+		if (ele.getPath().equals(parent.getPath())) {
+			String name = ele.getClass().getSimpleName().replaceAll("_c", "") + ele.Get_ooa_id().getLeastSignificantBits();
+			return name;
 		}
 		return ele.getPath();
 	}
@@ -653,6 +667,36 @@ public class CanvasGenerator implements IGraphicalLoader {
 		}
 		if (represents instanceof ImportedProvision_c) {
 			return Ooatype_c.ImportedProvidedInterface;
+		}
+		if (represents instanceof Deployment_c) {
+			return Ooatype_c.Deployment;
+		}
+		if (represents instanceof DecisionMergeNode_c) {
+			return Ooatype_c.DecisionMergeNode;
+		}
+		if (represents instanceof ObjectNode_c) {
+			return Ooatype_c.ObjectNode;
+		}
+		if (represents instanceof InitialNode_c) {
+			return Ooatype_c.InitialNode;
+		}
+		if (represents instanceof FlowFinalNode_c) {
+			return Ooatype_c.FlowFinalNode;
+		}
+		if (represents instanceof SendSignal_c) {
+			return Ooatype_c.SendSignalAction;
+		}
+		if (represents instanceof ActivityDiagramAction_c) {
+			return Ooatype_c.GenericAction;
+		}
+		if (represents instanceof InitialNode_c) {
+			return Ooatype_c.InitialNode;
+		}
+		if (represents instanceof ActivityFinalNode_c) {
+			return Ooatype_c.ActivityFinalNode;
+		}
+		if (represents instanceof ActivityEdge_c) {
+			return Ooatype_c.ActivityEdge;
 		}
 		return Ooatype_c.OOA_UNINITIALIZED_ENUM;
 	}
