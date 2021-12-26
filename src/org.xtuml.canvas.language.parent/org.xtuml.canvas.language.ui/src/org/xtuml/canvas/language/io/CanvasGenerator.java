@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.eclipse.core.resources.IFile;
@@ -14,28 +15,37 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.xtext.ui.resource.IResourceSetProvider;
-import org.xtuml.bp.core.AcceptEvent_c;
+import org.xtuml.bp.core.AcceptEventAction_c;
 import org.xtuml.bp.core.AcceptTimeEventAction_c;
-import org.xtuml.bp.core.ActionNode_c;
 import org.xtuml.bp.core.Action_c;
-import org.xtuml.bp.core.ActivityNode_c;
 import org.xtuml.bp.core.Association_c;
 import org.xtuml.bp.core.ClassAsLink_c;
 import org.xtuml.bp.core.ClassAsSubtype_c;
 import org.xtuml.bp.core.ClassStateMachine_c;
+import org.xtuml.bp.core.ComponentReference_c;
 import org.xtuml.bp.core.Component_c;
+import org.xtuml.bp.core.ConstantSpecification_c;
 import org.xtuml.bp.core.CreationTransition_c;
 import org.xtuml.bp.core.DataType_c;
 import org.xtuml.bp.core.EnumerationDataType_c;
+import org.xtuml.bp.core.Exception_c;
 import org.xtuml.bp.core.ExternalEntity_c;
 import org.xtuml.bp.core.Gd_c;
 import org.xtuml.bp.core.ImportedClass_c;
+import org.xtuml.bp.core.ImportedProvision_c;
+import org.xtuml.bp.core.ImportedReference_c;
+import org.xtuml.bp.core.ImportedRequirement_c;
 import org.xtuml.bp.core.InstanceStateMachine_c;
+import org.xtuml.bp.core.InterfaceReference_c;
+import org.xtuml.bp.core.Interface_c;
 import org.xtuml.bp.core.LinkedAssociation_c;
-import org.xtuml.bp.core.Message_c;
 import org.xtuml.bp.core.ModelClass_c;
 import org.xtuml.bp.core.Package_c;
 import org.xtuml.bp.core.PackageableElement_c;
+import org.xtuml.bp.core.PortReference_c;
+import org.xtuml.bp.core.Port_c;
+import org.xtuml.bp.core.Provision_c;
+import org.xtuml.bp.core.Requirement_c;
 import org.xtuml.bp.core.StateMachineState_c;
 import org.xtuml.bp.core.StateMachine_c;
 import org.xtuml.bp.core.StructuredDataType_c;
@@ -192,6 +202,9 @@ public class CanvasGenerator implements IGraphicalLoader {
 		if (parent instanceof Component_c) {
 			return Modeltype_c.ComponentDiagram;
 		}
+		if (parent instanceof Model_c) {
+			return Modeltype_c.TestDiagram;
+		}
 		return Modeltype_c.OOA_UNINITIALIZED_ENUM;
 	}
 
@@ -250,7 +263,7 @@ public class CanvasGenerator implements IGraphicalLoader {
 			// update with user values
 			GraphicalElement_c ge = GraphicalElement_c.getOneGD_GEOnR1(xtModel,
 					g -> ContainingShape_c.getOneGD_CTROnR28(Shape_c.getOneGD_SHPOnR2((GraphicalElement_c) g)) != null);
-			if(ge != null) {
+			if (ge != null) {
 				ge.setRepresents(representedElement);
 				ge.setOoa_id(representedElement.Get_ooa_id());
 				Graphelement_c graphEle = Graphelement_c.getOneDIM_GEOnR23(ge);
@@ -439,9 +452,10 @@ public class CanvasGenerator implements IGraphicalLoader {
 			}
 			return result;
 		} else {
-			// if not found, check for situations where a subtype is used to represent the
+			// if not found, check for special cases and situations where a subtype is used
+			// to represent the
 			// graphic
-			// NOTE: this may not be the most efficient approach
+			// Special Cases
 			if (parent instanceof Package_c) {
 				Optional<ClassAsSubtype_c> potentialSub = Stream
 						.of(ClassAsSubtype_c.getManyR_SUBsOnR213(
@@ -458,36 +472,67 @@ public class CanvasGenerator implements IGraphicalLoader {
 				if (potentialLink.isPresent()) {
 					return potentialLink.get();
 				}
-				Optional<AcceptTimeEventAction_c> potentialAcceptTime = Stream
-						.of(AcceptTimeEventAction_c.getManyA_ATEsOnR1112(AcceptEvent_c.getManyA_AEsOnR1107(
-								ActionNode_c.getManyA_ACTsOnR1105(ActivityNode_c.getManyA_NsOnR8001(
-										PackageableElement_c.getManyPE_PEsOnR8000((Package_c) parent))))))
-						.filter(acc -> getPath(acc).equals(represents)).findFirst();
-				if (potentialAcceptTime.isPresent()) {
-					return potentialAcceptTime.get();
+				Component_c[] comps = Stream.of(children.toArray()).filter(child -> child instanceof Component_c)
+						.collect(Collectors.toList()).toArray(new Component_c[0]);
+				Optional<Requirement_c> potentialReq = Stream
+						.of(Requirement_c.getManyC_RsOnR4009(
+								InterfaceReference_c.getManyC_IRsOnR4016(Port_c.getManyC_POsOnR4010(comps))))
+						.filter(req -> getPath(req).equals(represents)).findFirst();
+				if (potentialReq.isPresent()) {
+					return potentialReq.get();
 				}
-				Optional<SynchronousMessage_c> potentialSyncMessage = Stream
-						.of(SynchronousMessage_c.getManyMSG_SMsOnR1018(Message_c
-								.getManyMSG_MsOnR8001(PackageableElement_c.getManyPE_PEsOnR8000((Package_c) parent))))
-						.filter(sm -> getPath(sm).equals(represents)).findFirst();
-				if (potentialSyncMessage.isPresent()) {
-					return potentialSyncMessage.get();
+				Optional<Provision_c> potentialPro = Stream
+						.of(Provision_c.getManyC_PsOnR4009(
+								InterfaceReference_c.getManyC_IRsOnR4016(Port_c.getManyC_POsOnR4010(comps))))
+						.filter(pro -> getPath(pro).equals(represents)).findFirst();
+				if (potentialPro.isPresent()) {
+					return potentialPro.get();
+				}
+				ComponentReference_c[] compRefs = Stream.of(children.toArray())
+						.filter(child -> child instanceof ComponentReference_c).collect(Collectors.toList())
+						.toArray(new ComponentReference_c[0]);
+				Optional<ImportedRequirement_c> potentialImportedReq = Stream
+						.of(ImportedRequirement_c.getManyCL_IRsOnR4703(ImportedReference_c
+								.getManyCL_IIRsOnR4708(PortReference_c.getManyCL_PORsOnR4707(compRefs))))
+						.filter(req -> getPath(req).equals(represents)).findFirst();
+				if (potentialImportedReq.isPresent()) {
+					return potentialImportedReq.get();
+				}
+				Optional<ImportedProvision_c> potentialImportedPro = Stream
+						.of(ImportedProvision_c.getManyCL_IPsOnR4703(ImportedReference_c
+								.getManyCL_IIRsOnR4708(PortReference_c.getManyCL_PORsOnR4707(compRefs))))
+						.filter(req -> getPath(req).equals(represents)).findFirst();
+				if (potentialImportedPro.isPresent()) {
+					return potentialImportedPro.get();
 				}
 			}
-			if (container instanceof StateMachine_c) {
-				Optional<CreationTransition_c> potentialCreationTrans = Stream
-						.of(CreationTransition_c
-								.getManySM_CRTXNsOnR507(Transition_c.getManySM_TXNsOnR505((StateMachine_c) container)))
-						.filter(crt -> getPath(crt).equals(represents)).findFirst();
-				if (potentialCreationTrans.isPresent()) {
-					return potentialCreationTrans.get();
+			// Subtypes
+			for (Object child : children) {
+				NonRootModelElement element = getSubtypeRepresentation(represents, (NonRootModelElement) child);
+				if (element != null) {
+					return element;
 				}
 			}
 		}
 		return null;
 	}
 
-	private String getPath(NonRootModelElement ele) {
+	private NonRootModelElement getSubtypeRepresentation(String represents, NonRootModelElement supertype) {
+		List<NonRootModelElement> subtypes = SupertypeSubtypeUtil.getSubtypes(supertype);
+		for (NonRootModelElement subtype : subtypes) {
+			if (getPath(subtype).equals(represents)) {
+				return subtype;
+			} else {
+				NonRootModelElement element = getSubtypeRepresentation(represents, subtype);
+				if (element != null) {
+					return element;
+				}
+			}
+		}
+		return null;
+	}
+
+	public static String getPath(NonRootModelElement ele) {
 		if (ele instanceof PackageableElement_c) {
 			List<NonRootModelElement> subtypes = SupertypeSubtypeUtil.getSubtypes(ele);
 			if (subtypes != null) {
@@ -498,10 +543,18 @@ public class CanvasGenerator implements IGraphicalLoader {
 	}
 
 	private UUID getToolId(Model_c xtModel, NonRootModelElement represents, boolean container) {
+		int typeFromReference = getTypeFromReference(represents, container);
+		// auto creation elements do not have a tool, use the non-imported variant
+		if(represents instanceof ImportedRequirement_c) {
+			typeFromReference = Ooatype_c.RequiredInterface;
+		}
+		if(represents instanceof ImportedProvision_c) {
+			typeFromReference = Ooatype_c.ProvidedInterface;
+		}
 		ModelTool_c[] tools = ModelTool_c.getManyCT_MTLsOnR100(xtModel);
 		for (int i = 0; i < tools.length; i++) {
 			ModelTool_c tool = tools[i];
-			if (tool.getOoa_type() == getTypeFromReference(represents, container)) {
+			if (tool.getOoa_type() == typeFromReference) {
 				ElementSpecification_c spec = ElementSpecification_c.getOneGD_ESOnR103(tool);
 				if (!container) {
 					return tool.getTool_id();
@@ -574,7 +627,33 @@ public class CanvasGenerator implements IGraphicalLoader {
 		if (represents instanceof SynchronousMessage_c) {
 			return Ooatype_c.SynchronousMessage;
 		}
-
+		if (represents instanceof AcceptEventAction_c) {
+			return Ooatype_c.AcceptEventAction;
+		}
+		if (represents instanceof ConstantSpecification_c) {
+			return Ooatype_c.ConstantSpecification;
+		}
+		if (represents instanceof Exception_c) {
+			return Ooatype_c.Exception;
+		}
+		if (represents instanceof ComponentReference_c) {
+			return Ooatype_c.ComponentReference;
+		}
+		if (represents instanceof Interface_c) {
+			return Ooatype_c.Interface;
+		}
+		if (represents instanceof Requirement_c) {
+			return Ooatype_c.RequiredInterface;
+		}
+		if (represents instanceof Provision_c) {
+			return Ooatype_c.ProvidedInterface;
+		}
+		if (represents instanceof ImportedRequirement_c) {
+			return Ooatype_c.ImportedRequiredInterface;
+		}
+		if (represents instanceof ImportedProvision_c) {
+			return Ooatype_c.ImportedProvidedInterface;
+		}
 		return Ooatype_c.OOA_UNINITIALIZED_ENUM;
 	}
 }

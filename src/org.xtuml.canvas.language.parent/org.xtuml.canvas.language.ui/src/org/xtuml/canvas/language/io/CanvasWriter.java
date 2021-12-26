@@ -70,6 +70,8 @@ public class CanvasWriter implements IGraphicalWriter {
 	CanvasFactory factory = CanvasFactory.eINSTANCE;
 	Model model = null;
 
+	private NonRootModelElement diagramRepresents;
+
 	@Override
 	public void initialize() {
 		// nothing to do
@@ -117,14 +119,15 @@ public class CanvasWriter implements IGraphicalWriter {
 			properties.setPoint(viewport);
 			model.setProperties(properties);
 		}
-		populateModel(diagramRepresents);
+		this.diagramRepresents = diagramRepresents;
+		populateModel();
 		r.getContents().add(model);
 		SaveOptions.Builder options = SaveOptions.newBuilder();
 		options.format();
 		r.save(options.getOptions().toOptionsMap());
 	}
 
-	private void populateModel(NonRootModelElement diagramRepresents) {
+	private void populateModel() {
 		Model_c diagram = Model_c.ModelInstance(Ooaofgraphics.getInstance(diagramRepresents.getModelRoot().getId()),
 				m -> ((Model_c) m).getRepresents() == diagramRepresents);
 		GraphicalElement_c[] elements = GraphicalElement_c.getManyGD_GEsOnR1(diagram);
@@ -213,8 +216,9 @@ public class CanvasWriter implements IGraphicalWriter {
 	}
 
 	private String getNameFromPath(String represents) {
-		String[] parts = represents.split("::");
-		return parts[parts.length - 1].replaceAll("\s", "").replaceAll(":", "__").replaceAll("\\.", "_").replaceAll("-",
+		String containerPath = diagramRepresents.getPath();
+		String elementName = represents.replaceFirst(containerPath + "::", "");
+		return elementName.replaceAll("\s", "").replaceAll(":", "__").replaceAll("\\.", "_").replaceAll("-",
 				"");
 	}
 
@@ -263,7 +267,7 @@ public class CanvasWriter implements IGraphicalWriter {
 	}
 
 	private String getPath(GraphicalElement_c ele) {
-		return getPath((NonRootModelElement) ele.getRepresents());
+		return CanvasGenerator.getPath((NonRootModelElement) ele.getRepresents());
 	}
 
 	private String getPath(NonRootModelElement nrme) {
