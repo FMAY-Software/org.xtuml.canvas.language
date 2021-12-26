@@ -57,6 +57,7 @@ import org.xtuml.canvas.language.canvas.ShapeAnchorElement;
 import org.xtuml.canvas.language.canvas.Shapes;
 import org.xtuml.canvas.language.canvas.StartAnchor;
 import org.xtuml.canvas.language.io.utils.EnumUtils;
+import org.xtuml.canvas.language.ui.CanvasUiModule;
 import org.xtuml.canvas.language.ui.internal.LanguageActivator;
 
 import com.google.inject.Inject;
@@ -82,7 +83,7 @@ public class CanvasWriter implements IGraphicalWriter {
 		try {
 			write(model, xtGraphFile);
 		} catch (IOException | CoreException e) {
-			// TODO: implement logging
+			CanvasUiModule.logError("Unable to persist textual graphics", e);
 		}
 	}
 
@@ -419,8 +420,7 @@ public class CanvasWriter implements IGraphicalWriter {
 								p.closeEditor(ref.getEditor(false), false);
 							}
 						} catch (PartInitException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
+							CanvasUiModule.logError("Failed to close existing editor after file deletion.", e);
 						}
 					});
 				});
@@ -428,7 +428,7 @@ public class CanvasWriter implements IGraphicalWriter {
 			try {
 				oldFile.delete(true, new NullProgressMonitor());
 			} catch (CoreException e) {
-				// TODO: implement logging
+				CanvasUiModule.logError("Could not delete old textual graphics file on rename.", e);
 			}
 		}
 	}

@@ -78,6 +78,7 @@ import org.xtuml.canvas.language.canvas.Shape;
 import org.xtuml.canvas.language.canvas.ShapeAnchorElement;
 import org.xtuml.canvas.language.canvas.Shapes;
 import org.xtuml.canvas.language.io.utils.EnumUtils;
+import org.xtuml.canvas.language.ui.CanvasUiModule;
 import org.xtuml.canvas.language.ui.internal.LanguageActivator;
 
 import com.google.inject.Inject;
@@ -106,7 +107,7 @@ public class CanvasGenerator implements IGraphicalLoader {
 				return generate(parentElement, Ooaofgraphics.getInstance(parentElement.getModelRoot().getId()),
 						xtGraphFile);
 			} catch (IOException | CoreException e) {
-				// TODO: implement logging
+				CanvasUiModule.logError("Unable to generate xtUML graphics.", e);
 			}
 		}
 		return null;

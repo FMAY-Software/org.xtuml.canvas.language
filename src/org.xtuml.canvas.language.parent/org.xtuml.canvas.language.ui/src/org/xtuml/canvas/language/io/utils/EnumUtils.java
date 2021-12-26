@@ -4,6 +4,7 @@ import java.lang.reflect.Field;
 
 import org.xtuml.bp.core.End_c;
 import org.xtuml.bp.ui.canvas.Ooatype_c;
+import org.xtuml.canvas.language.ui.CanvasUiModule;
 
 public class EnumUtils {
 
@@ -38,7 +39,7 @@ public class EnumUtils {
 					return field.getName().replaceAll("((?!^)([A-Z]))", "_$1").toLowerCase();
 				}
 			} catch (IllegalArgumentException | IllegalAccessException e) {
-				// TODO: introduce logging
+				CanvasUiModule.logError("Failed to get Ooatype_c enumeration value.", e);
 			}
 		}
 		return "none";
@@ -52,7 +53,7 @@ public class EnumUtils {
 					return field.getInt(Ooatype_c.class);
 				}
 			} catch (IllegalArgumentException | IllegalAccessException e) {
-				// TODO: introduce logging
+				CanvasUiModule.logError("Failed to get Ooatype_c enumeration value.", e);
 			}
 		}
 		return Ooatype_c.None;
