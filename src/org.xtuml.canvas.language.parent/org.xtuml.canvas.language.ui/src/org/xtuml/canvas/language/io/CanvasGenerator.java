@@ -49,6 +49,7 @@ import org.xtuml.bp.core.common.NonRootModelElement;
 import org.xtuml.bp.core.common.PersistenceManager;
 import org.xtuml.bp.core.util.SupertypeSubtypeUtil;
 import org.xtuml.bp.ui.canvas.Connector_c;
+import org.xtuml.bp.ui.canvas.ContainingShape_c;
 import org.xtuml.bp.ui.canvas.Diagram_c;
 import org.xtuml.bp.ui.canvas.ElementSpecification_c;
 import org.xtuml.bp.ui.canvas.FloatingText_c;
@@ -241,23 +242,42 @@ public class CanvasGenerator implements IGraphicalLoader {
 			// good way to set the name, and or figure out the unnamed variant
 			return;
 		}
-		UUID toolId = getToolId(xtModel, representedElement, container != null);
-		UUID shapeId = xtModel.Createshape(representedElement == null, toolId);
-		Graphelement_c graphElem = Graphelement_c.GraphelementInstance(graphicsRoot,
-				ge -> ((Graphelement_c) ge).getElementid().equals(shapeId));
-		GraphicalElement_c graphicalElem = GraphicalElement_c.getOneGD_GEOnR23(graphElem);
-		Shape_c shp = Shape_c.getOneGD_SHPOnR2(graphicalElem);
-		graphicalElem.setRepresents(representedElement);
-		graphicalElem.setOoa_id(representedElement.Get_ooa_id());
-		graphElem.setPositionx(shape.getBounds().getX());
-		graphElem.setPositiony(shape.getBounds().getY());
-		Graphnode_c node = Graphnode_c.getOneDIM_NDOnR301(graphElem);
-		node.setWidth(shape.getBounds().getW());
-		node.setHeight(shape.getBounds().getH());
-		// Floating text will have been created with the call to API
-		FloatingText_c txt = FloatingText_c.getOneGD_CTXTOnR27(shp);
-		if (txt != null) {
-			updateTextPosition(txt, shape.getText());
+		// need to handle creation symbols differently, use the support function
+		// on Model_c
+		if (container != null) {
+			xtModel.Initializeoncreationsymbols();
+			// update with user values
+			GraphicalElement_c ge = GraphicalElement_c.getOneGD_GEOnR1(xtModel,
+					g -> ContainingShape_c.getOneGD_CTROnR28(Shape_c.getOneGD_SHPOnR2((GraphicalElement_c) g)) != null);
+			if(ge != null) {
+				ge.setRepresents(representedElement);
+				ge.setOoa_id(representedElement.Get_ooa_id());
+				Graphelement_c graphEle = Graphelement_c.getOneDIM_GEOnR23(ge);
+				graphEle.setPositionx(shape.getBounds().getX());
+				graphEle.setPositiony(shape.getBounds().getY());
+				Graphnode_c node = Graphnode_c.getOneDIM_NDOnR301(graphEle);
+				node.setWidth(shape.getBounds().getW());
+				node.setHeight(shape.getBounds().getH());
+			}
+		} else {
+			UUID toolId = getToolId(xtModel, representedElement, container != null);
+			UUID shapeId = xtModel.Createshape(representedElement == null, toolId);
+			Graphelement_c graphElem = Graphelement_c.GraphelementInstance(graphicsRoot,
+					ge -> ((Graphelement_c) ge).getElementid().equals(shapeId));
+			GraphicalElement_c graphicalElem = GraphicalElement_c.getOneGD_GEOnR23(graphElem);
+			Shape_c shp = Shape_c.getOneGD_SHPOnR2(graphicalElem);
+			graphicalElem.setRepresents(representedElement);
+			graphicalElem.setOoa_id(representedElement.Get_ooa_id());
+			graphElem.setPositionx(shape.getBounds().getX());
+			graphElem.setPositiony(shape.getBounds().getY());
+			Graphnode_c node = Graphnode_c.getOneDIM_NDOnR301(graphElem);
+			node.setWidth(shape.getBounds().getW());
+			node.setHeight(shape.getBounds().getH());
+			// Floating text will have been created with the call to API
+			FloatingText_c txt = FloatingText_c.getOneGD_CTXTOnR27(shp);
+			if (txt != null) {
+				updateTextPosition(txt, shape.getText());
+			}
 		}
 	}
 
