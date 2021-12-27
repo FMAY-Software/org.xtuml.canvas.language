@@ -1,10 +1,8 @@
 package org.xtuml.canvas.language.io;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.eclipse.core.resources.IFile;
@@ -15,58 +13,12 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.xtext.ui.resource.IResourceSetProvider;
-import org.xtuml.bp.core.AcceptEventAction_c;
-import org.xtuml.bp.core.AcceptTimeEventAction_c;
-import org.xtuml.bp.core.Action_c;
-import org.xtuml.bp.core.ActivityDiagramAction_c;
-import org.xtuml.bp.core.ActivityEdge_c;
-import org.xtuml.bp.core.ActivityFinalNode_c;
-import org.xtuml.bp.core.Association_c;
-import org.xtuml.bp.core.ClassAsLink_c;
-import org.xtuml.bp.core.ClassAsSubtype_c;
-import org.xtuml.bp.core.ClassStateMachine_c;
-import org.xtuml.bp.core.ComponentReference_c;
-import org.xtuml.bp.core.Component_c;
-import org.xtuml.bp.core.ConstantSpecification_c;
-import org.xtuml.bp.core.CreationTransition_c;
-import org.xtuml.bp.core.DataType_c;
-import org.xtuml.bp.core.DecisionMergeNode_c;
-import org.xtuml.bp.core.Deployment_c;
-import org.xtuml.bp.core.EnumerationDataType_c;
-import org.xtuml.bp.core.Exception_c;
-import org.xtuml.bp.core.ExternalEntity_c;
-import org.xtuml.bp.core.FlowFinalNode_c;
 import org.xtuml.bp.core.Gd_c;
-import org.xtuml.bp.core.ImportedClass_c;
 import org.xtuml.bp.core.ImportedProvision_c;
-import org.xtuml.bp.core.ImportedReference_c;
 import org.xtuml.bp.core.ImportedRequirement_c;
-import org.xtuml.bp.core.InitialNode_c;
-import org.xtuml.bp.core.InstanceStateMachine_c;
-import org.xtuml.bp.core.InterfaceReference_c;
-import org.xtuml.bp.core.Interface_c;
-import org.xtuml.bp.core.LinkedAssociation_c;
-import org.xtuml.bp.core.ModelClass_c;
-import org.xtuml.bp.core.ObjectNode_c;
-import org.xtuml.bp.core.Package_c;
-import org.xtuml.bp.core.PackageableElement_c;
-import org.xtuml.bp.core.PortReference_c;
-import org.xtuml.bp.core.Port_c;
-import org.xtuml.bp.core.Provision_c;
-import org.xtuml.bp.core.Requirement_c;
-import org.xtuml.bp.core.SendSignal_c;
-import org.xtuml.bp.core.StateMachineState_c;
-import org.xtuml.bp.core.StateMachine_c;
-import org.xtuml.bp.core.StructuredDataType_c;
-import org.xtuml.bp.core.SubtypeSupertypeAssociation_c;
-import org.xtuml.bp.core.SynchronousMessage_c;
 import org.xtuml.bp.core.SystemModel_c;
-import org.xtuml.bp.core.Transition_c;
-import org.xtuml.bp.core.UserDataType_c;
 import org.xtuml.bp.core.common.ModelRoot;
 import org.xtuml.bp.core.common.NonRootModelElement;
-import org.xtuml.bp.core.common.PersistenceManager;
-import org.xtuml.bp.core.util.SupertypeSubtypeUtil;
 import org.xtuml.bp.ui.canvas.Connector_c;
 import org.xtuml.bp.ui.canvas.ContainingShape_c;
 import org.xtuml.bp.ui.canvas.Diagram_c;
@@ -80,7 +32,6 @@ import org.xtuml.bp.ui.canvas.LineSegment_c;
 import org.xtuml.bp.ui.canvas.ModelSpecification_c;
 import org.xtuml.bp.ui.canvas.ModelTool_c;
 import org.xtuml.bp.ui.canvas.Model_c;
-import org.xtuml.bp.ui.canvas.Modeltype_c;
 import org.xtuml.bp.ui.canvas.Ooaofgraphics;
 import org.xtuml.bp.ui.canvas.Ooatype_c;
 import org.xtuml.bp.ui.canvas.Shape_c;
@@ -97,6 +48,7 @@ import org.xtuml.canvas.language.canvas.Shape;
 import org.xtuml.canvas.language.canvas.ShapeAnchorElement;
 import org.xtuml.canvas.language.canvas.Shapes;
 import org.xtuml.canvas.language.io.utils.EnumUtils;
+import org.xtuml.canvas.language.io.utils.PathUtils;
 import org.xtuml.canvas.language.ui.CanvasUiModule;
 import org.xtuml.canvas.language.ui.internal.LanguageActivator;
 
@@ -165,7 +117,7 @@ public class CanvasGenerator implements IGraphicalLoader {
 			// only one model supported at this time
 			Model model = (Model) potentialModel;
 			xtModel = new Model_c(destinationRoot);
-			int modelType = getModelType();
+			int modelType = EnumUtils.getModelType(parent);
 			xtModel.setModel_type(modelType);
 			xtModel.setOoa_id(parent.Get_ooa_id());
 			Diagram_c xtDiagram = new Diagram_c(destinationRoot);
@@ -193,28 +145,6 @@ public class CanvasGenerator implements IGraphicalLoader {
 			writer.write(parentElement);
 		}
 		return xtModel;
-	}
-
-	private int getModelType() {
-		if (parent instanceof SystemModel_c) {
-			return Modeltype_c.SystemModelPackage;
-		}
-		if (parent instanceof Package_c) {
-			return Modeltype_c.Package;
-		}
-		if (parent instanceof InstanceStateMachine_c) {
-			return Modeltype_c.InstanceStateChartDiagram;
-		}
-		if (parent instanceof ClassStateMachine_c) {
-			return Modeltype_c.ClassStateChartDiagram;
-		}
-		if (parent instanceof Component_c) {
-			return Modeltype_c.ComponentDiagram;
-		}
-		if (parent instanceof Model_c) {
-			return Modeltype_c.TestDiagram;
-		}
-		return Modeltype_c.OOA_UNINITIALIZED_ENUM;
 	}
 
 	private void createGraphicalElements(Model_c xtModel, Model model) {
@@ -245,20 +175,20 @@ public class CanvasGenerator implements IGraphicalLoader {
 
 	private GraphicalElement_c getOrCreateShape(Model_c xtModel, Shape shape) {
 		GraphicalElement_c existing = GraphicalElement_c.getOneGD_GEOnR1(xtModel,
-				ge -> getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents(), parent)
+				ge -> PathUtils.getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents(), parent)
 						.equals(shape.getRepresents()));
 		if (existing == null) {
 			createShape(xtModel, shape);
 		}
 		existing = GraphicalElement_c.getOneGD_GEOnR1(xtModel,
-				ge -> getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents(), parent)
+				ge -> PathUtils.getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents(), parent)
 						.equals(shape.getRepresents()));
 		return existing;
 	}
 
 	private void createShape(Model_c xtModel, Shape shape) {
 		String container = shape.getContainer();
-		NonRootModelElement representedElement = getElementByPath(shape.getRepresents());
+		NonRootModelElement representedElement = PathUtils.getElementByPath(shape.getRepresents(), parent);
 		if (representedElement == null) {
 			// this is likely a manual addition, we do not support
 			// creation at this time. Mostly because there is no
@@ -306,19 +236,19 @@ public class CanvasGenerator implements IGraphicalLoader {
 
 	private GraphicalElement_c getOrCreateConnector(Model_c xtModel, Connector connector) {
 		GraphicalElement_c existing = GraphicalElement_c.getOneGD_GEOnR1(xtModel,
-				ge -> getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents(), parent)
+				ge -> PathUtils.getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents(), parent)
 						.equals(connector.getRepresents()));
 		if (existing == null) {
 			createConnector(xtModel, connector);
 		}
 		existing = GraphicalElement_c.getOneGD_GEOnR1(xtModel,
-				ge -> getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents(), parent)
+				ge -> PathUtils.getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents(), parent)
 						.equals(connector.getRepresents()));
 		return existing;
 	}
 
 	private void createConnector(Model_c xtModel, Connector connector) {
-		NonRootModelElement representedElement = getElementByPath(connector.getRepresents());
+		NonRootModelElement representedElement = PathUtils.getElementByPath(connector.getRepresents(), parent);
 		if (representedElement == null) {
 			// this is likely a manual addition, we do not support
 			// creation at this time. Mostly because there is no
@@ -428,136 +358,9 @@ public class CanvasGenerator implements IGraphicalLoader {
 		return startElem;
 	}
 
-	private NonRootModelElement getElementByPath(String represents) {
-		// if ISM or ASM parent is StateMachine
-		NonRootModelElement container = parent;
-		if (parent instanceof InstanceStateMachine_c) {
-			container = StateMachine_c.getOneSM_SMOnR517((InstanceStateMachine_c) container);
-		}
-		if (parent instanceof ClassStateMachine_c) {
-			container = StateMachine_c.getOneSM_SMOnR517((ClassStateMachine_c) container);
-		}
-		List<?> children = PersistenceManager.getHierarchyMetaData().getChildren(container, false);
-		Optional<?> findAny = children.stream().filter(c -> getPath((NonRootModelElement) c, parent).equals(represents))
-				.findAny();
-		if (findAny.isPresent()) {
-			NonRootModelElement result = (NonRootModelElement) findAny.get();
-			if (result instanceof PackageableElement_c) {
-				result = SupertypeSubtypeUtil.getSubtypes(result).get(0);
-			}
-			if (result instanceof DataType_c) {
-				UserDataType_c udt = UserDataType_c.getOneS_UDTOnR17((DataType_c) result);
-				if (udt != null) {
-					return udt;
-				}
-				EnumerationDataType_c edt = EnumerationDataType_c.getOneS_EDTOnR17((DataType_c) result);
-				if (edt != null) {
-					return edt;
-				}
-				StructuredDataType_c sdt = StructuredDataType_c.getOneS_SDTOnR17((DataType_c) result);
-				if (sdt != null) {
-					return sdt;
-				}
-			}
-			return result;
-		} else {
-			// if not found, check for special cases and situations where a subtype is used
-			// to represent the
-			// graphic
-			// Special Cases
-			if (parent instanceof Package_c) {
-				Optional<ClassAsSubtype_c> potentialSub = Stream
-						.of(ClassAsSubtype_c.getManyR_SUBsOnR213(
-								SubtypeSupertypeAssociation_c.getManyR_SUBSUPsOnR206(Association_c.getManyR_RELsOnR8001(
-										PackageableElement_c.getManyPE_PEsOnR8000((Package_c) parent)))))
-						.filter(subsup -> getPath(subsup, parent).equals(represents)).findFirst();
-				if (potentialSub.isPresent()) {
-					return potentialSub.get();
-				}
-				Optional<ClassAsLink_c> potentialLink = Stream
-						.of(ClassAsLink_c.getManyR_ASSRsOnR211(LinkedAssociation_c.getManyR_ASSOCsOnR206(Association_c
-								.getManyR_RELsOnR8001(PackageableElement_c.getManyPE_PEsOnR8000((Package_c) parent)))))
-						.filter(link -> getPath(link, parent).equals(represents)).findFirst();
-				if (potentialLink.isPresent()) {
-					return potentialLink.get();
-				}
-				Component_c[] comps = Stream.of(children.toArray()).filter(child -> child instanceof Component_c)
-						.collect(Collectors.toList()).toArray(new Component_c[0]);
-				Optional<Requirement_c> potentialReq = Stream
-						.of(Requirement_c.getManyC_RsOnR4009(
-								InterfaceReference_c.getManyC_IRsOnR4016(Port_c.getManyC_POsOnR4010(comps))))
-						.filter(req -> getPath(req, parent).equals(represents)).findFirst();
-				if (potentialReq.isPresent()) {
-					return potentialReq.get();
-				}
-				Optional<Provision_c> potentialPro = Stream
-						.of(Provision_c.getManyC_PsOnR4009(
-								InterfaceReference_c.getManyC_IRsOnR4016(Port_c.getManyC_POsOnR4010(comps))))
-						.filter(pro -> getPath(pro, parent).equals(represents)).findFirst();
-				if (potentialPro.isPresent()) {
-					return potentialPro.get();
-				}
-				ComponentReference_c[] compRefs = Stream.of(children.toArray())
-						.filter(child -> child instanceof ComponentReference_c).collect(Collectors.toList())
-						.toArray(new ComponentReference_c[0]);
-				Optional<ImportedRequirement_c> potentialImportedReq = Stream
-						.of(ImportedRequirement_c.getManyCL_IRsOnR4703(ImportedReference_c
-								.getManyCL_IIRsOnR4708(PortReference_c.getManyCL_PORsOnR4707(compRefs))))
-						.filter(req -> getPath(req, parent).equals(represents)).findFirst();
-				if (potentialImportedReq.isPresent()) {
-					return potentialImportedReq.get();
-				}
-				Optional<ImportedProvision_c> potentialImportedPro = Stream
-						.of(ImportedProvision_c.getManyCL_IPsOnR4703(ImportedReference_c
-								.getManyCL_IIRsOnR4708(PortReference_c.getManyCL_PORsOnR4707(compRefs))))
-						.filter(req -> getPath(req, parent).equals(represents)).findFirst();
-				if (potentialImportedPro.isPresent()) {
-					return potentialImportedPro.get();
-				}
-			}
-			// Subtypes
-			for (Object child : children) {
-				NonRootModelElement element = getSubtypeRepresentation(represents, (NonRootModelElement) child);
-				if (element != null) {
-					return element;
-				}
-			}
-		}
-		return null;
-	}
-
-	private NonRootModelElement getSubtypeRepresentation(String represents, NonRootModelElement supertype) {
-		List<NonRootModelElement> subtypes = SupertypeSubtypeUtil.getSubtypes(supertype);
-		for (NonRootModelElement subtype : subtypes) {
-			if (getPath(subtype, parent).equals(represents)) {
-				return subtype;
-			} else {
-				NonRootModelElement element = getSubtypeRepresentation(represents, subtype);
-				if (element != null) {
-					return element;
-				}
-			}
-		}
-		return null;
-	}
-
-	public static String getPath(NonRootModelElement ele, NonRootModelElement parent) {
-		if (ele instanceof PackageableElement_c) {
-			List<NonRootModelElement> subtypes = SupertypeSubtypeUtil.getSubtypes(ele);
-			if (subtypes != null) {
-				return subtypes.get(0).getPath();
-			}
-		}
-		// Special case for unnamed elements
-		if (ele.getPath().equals(parent.getPath())) {
-			String name = ele.getClass().getSimpleName().replaceAll("_c", "") + ele.Get_ooa_id().getLeastSignificantBits();
-			return name;
-		}
-		return ele.getPath();
-	}
 
 	private UUID getToolId(Model_c xtModel, NonRootModelElement represents, boolean container) {
-		int typeFromReference = getTypeFromReference(represents, container);
+		int typeFromReference = EnumUtils.getTypeFromReference(represents, container);
 		// auto creation elements do not have a tool, use the non-imported variant
 		if(represents instanceof ImportedRequirement_c) {
 			typeFromReference = Ooatype_c.RequiredInterface;
@@ -581,123 +384,4 @@ public class CanvasGenerator implements IGraphicalLoader {
 		return Gd_c.Null_unique_id();
 	}
 
-	private int getTypeFromReference(NonRootModelElement represents, boolean container) {
-		if (represents instanceof ModelClass_c) {
-			return Ooatype_c.Class;
-		}
-		if (represents instanceof Action_c) {
-			return Ooatype_c.GenericAction;
-		}
-		if (represents instanceof Package_c) {
-			return Ooatype_c.Package;
-		}
-		if (represents instanceof Association_c) {
-			SubtypeSupertypeAssociation_c subSuper = SubtypeSupertypeAssociation_c
-					.getOneR_SUBSUPOnR206((Association_c) represents);
-			if (subSuper != null) {
-				return Ooatype_c.Supertype;
-			}
-			return Ooatype_c.Association;
-		}
-		if (represents instanceof ClassAsSubtype_c) {
-			return Ooatype_c.Subtype;
-		}
-		if (represents instanceof ImportedClass_c) {
-			return Ooatype_c.ImportedClass;
-		}
-		if (represents instanceof Transition_c) {
-			return Ooatype_c.Transition;
-		}
-		if (represents instanceof CreationTransition_c) {
-			return Ooatype_c.CreationTransition;
-		}
-		if (represents instanceof StateMachineState_c) {
-			return Ooatype_c.State;
-		}
-		if (represents instanceof UserDataType_c) {
-			return Ooatype_c.UserDataType;
-		}
-		if (represents instanceof EnumerationDataType_c) {
-			return Ooatype_c.EnumerationDataType;
-		}
-		if (represents instanceof StructuredDataType_c) {
-			return Ooatype_c.StructuredDataType;
-		}
-		if (represents instanceof ExternalEntity_c) {
-			return Ooatype_c.EE;
-		}
-		if (represents instanceof ClassAsLink_c) {
-			return Ooatype_c.AssociativeLink;
-		}
-		if (represents instanceof AcceptTimeEventAction_c) {
-			return Ooatype_c.AcceptTimeEventAction;
-		}
-		if (represents instanceof Component_c) {
-			if (container) {
-				return Ooatype_c.ComponentContainer;
-			}
-			return Ooatype_c.Component;
-		}
-		if (represents instanceof SynchronousMessage_c) {
-			return Ooatype_c.SynchronousMessage;
-		}
-		if (represents instanceof AcceptEventAction_c) {
-			return Ooatype_c.AcceptEventAction;
-		}
-		if (represents instanceof ConstantSpecification_c) {
-			return Ooatype_c.ConstantSpecification;
-		}
-		if (represents instanceof Exception_c) {
-			return Ooatype_c.Exception;
-		}
-		if (represents instanceof ComponentReference_c) {
-			return Ooatype_c.ComponentReference;
-		}
-		if (represents instanceof Interface_c) {
-			return Ooatype_c.Interface;
-		}
-		if (represents instanceof Requirement_c) {
-			return Ooatype_c.RequiredInterface;
-		}
-		if (represents instanceof Provision_c) {
-			return Ooatype_c.ProvidedInterface;
-		}
-		if (represents instanceof ImportedRequirement_c) {
-			return Ooatype_c.ImportedRequiredInterface;
-		}
-		if (represents instanceof ImportedProvision_c) {
-			return Ooatype_c.ImportedProvidedInterface;
-		}
-		if (represents instanceof Deployment_c) {
-			return Ooatype_c.Deployment;
-		}
-		if (represents instanceof DecisionMergeNode_c) {
-			return Ooatype_c.DecisionMergeNode;
-		}
-		if (represents instanceof ObjectNode_c) {
-			return Ooatype_c.ObjectNode;
-		}
-		if (represents instanceof InitialNode_c) {
-			return Ooatype_c.InitialNode;
-		}
-		if (represents instanceof FlowFinalNode_c) {
-			return Ooatype_c.FlowFinalNode;
-		}
-		if (represents instanceof SendSignal_c) {
-			return Ooatype_c.SendSignalAction;
-		}
-		if (represents instanceof ActivityDiagramAction_c) {
-			return Ooatype_c.GenericAction;
-		}
-		if (represents instanceof InitialNode_c) {
-			return Ooatype_c.InitialNode;
-		}
-		if (represents instanceof ActivityFinalNode_c) {
-			return Ooatype_c.ActivityFinalNode;
-		}
-		if (represents instanceof ActivityEdge_c) {
-			return Ooatype_c.ActivityEdge;
-		}
-		return Ooatype_c.OOA_UNINITIALIZED_ENUM;
-	}
 }

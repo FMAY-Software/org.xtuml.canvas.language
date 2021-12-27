@@ -134,7 +134,7 @@ OOAType:
 	'generalization' |
 	'include' |
 	'extend' |
-	'forkJoin' |
+	'fork_join' |
 	'activity' |
 	'initial_node' |
 	'activity_edge' |

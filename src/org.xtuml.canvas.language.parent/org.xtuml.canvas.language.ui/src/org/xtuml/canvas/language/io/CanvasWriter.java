@@ -57,6 +57,7 @@ import org.xtuml.canvas.language.canvas.ShapeAnchorElement;
 import org.xtuml.canvas.language.canvas.Shapes;
 import org.xtuml.canvas.language.canvas.StartAnchor;
 import org.xtuml.canvas.language.io.utils.EnumUtils;
+import org.xtuml.canvas.language.io.utils.PathUtils;
 import org.xtuml.canvas.language.ui.CanvasUiModule;
 import org.xtuml.canvas.language.ui.internal.LanguageActivator;
 
@@ -267,7 +268,7 @@ public class CanvasWriter implements IGraphicalWriter {
 	}
 
 	private String getPath(GraphicalElement_c ele) {
-		return CanvasGenerator.getPath((NonRootModelElement) ele.getRepresents(), diagramRepresents);
+		return PathUtils.getPath((NonRootModelElement) ele.getRepresents(), diagramRepresents);
 	}
 
 	private String getPath(NonRootModelElement nrme) {
