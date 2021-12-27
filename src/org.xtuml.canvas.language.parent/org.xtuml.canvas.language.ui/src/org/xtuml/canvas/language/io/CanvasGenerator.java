@@ -37,6 +37,7 @@ import org.xtuml.bp.ui.canvas.Ooatype_c;
 import org.xtuml.bp.ui.canvas.Shape_c;
 import org.xtuml.bp.ui.canvas.Waypoint_c;
 import org.xtuml.bp.ui.canvas.persistence.IGraphicalLoader;
+import org.xtuml.bp.ui.canvas.references.ReferencePathManagement;
 import org.xtuml.canvas.language.canvas.Anchor;
 import org.xtuml.canvas.language.canvas.Connector;
 import org.xtuml.canvas.language.canvas.ConnectorAnchorElement;
@@ -175,13 +176,13 @@ public class CanvasGenerator implements IGraphicalLoader {
 
 	private GraphicalElement_c getOrCreateShape(Model_c xtModel, Shape shape) {
 		GraphicalElement_c existing = GraphicalElement_c.getOneGD_GEOnR1(xtModel,
-				ge -> PathUtils.getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents(), parent)
+				ge -> ReferencePathManagement.getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents())
 						.equals(shape.getRepresents()));
 		if (existing == null) {
 			createShape(xtModel, shape);
 		}
 		existing = GraphicalElement_c.getOneGD_GEOnR1(xtModel,
-				ge -> PathUtils.getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents(), parent)
+				ge -> ReferencePathManagement.getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents())
 						.equals(shape.getRepresents()));
 		return existing;
 	}
@@ -236,13 +237,13 @@ public class CanvasGenerator implements IGraphicalLoader {
 
 	private GraphicalElement_c getOrCreateConnector(Model_c xtModel, Connector connector) {
 		GraphicalElement_c existing = GraphicalElement_c.getOneGD_GEOnR1(xtModel,
-				ge -> PathUtils.getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents(), parent)
+				ge -> ReferencePathManagement.getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents())
 						.equals(connector.getRepresents()));
 		if (existing == null) {
 			createConnector(xtModel, connector);
 		}
 		existing = GraphicalElement_c.getOneGD_GEOnR1(xtModel,
-				ge -> PathUtils.getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents(), parent)
+				ge -> ReferencePathManagement.getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents())
 						.equals(connector.getRepresents()));
 		return existing;
 	}
