@@ -37,6 +37,7 @@ import org.xtuml.bp.ui.canvas.Ooatype_c;
 import org.xtuml.bp.ui.canvas.Shape_c;
 import org.xtuml.bp.ui.canvas.Waypoint_c;
 import org.xtuml.bp.ui.canvas.persistence.IGraphicalLoader;
+import org.xtuml.bp.ui.canvas.references.PathUtils;
 import org.xtuml.bp.ui.canvas.references.ReferencePathManagement;
 import org.xtuml.canvas.language.canvas.Anchor;
 import org.xtuml.canvas.language.canvas.Connector;
@@ -49,7 +50,6 @@ import org.xtuml.canvas.language.canvas.Shape;
 import org.xtuml.canvas.language.canvas.ShapeAnchorElement;
 import org.xtuml.canvas.language.canvas.Shapes;
 import org.xtuml.canvas.language.io.utils.EnumUtils;
-import org.xtuml.canvas.language.io.utils.PathUtils;
 import org.xtuml.canvas.language.ui.CanvasUiModule;
 import org.xtuml.canvas.language.ui.internal.LanguageActivator;
 
