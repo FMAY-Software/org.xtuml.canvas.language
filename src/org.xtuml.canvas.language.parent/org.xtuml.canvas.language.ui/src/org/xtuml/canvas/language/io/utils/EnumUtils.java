@@ -25,6 +25,7 @@ import org.xtuml.bp.core.Component_c;
 import org.xtuml.bp.core.ConstantSpecification_c;
 import org.xtuml.bp.core.CreationTransition_c;
 import org.xtuml.bp.core.DecisionMergeNode_c;
+import org.xtuml.bp.core.Delegation_c;
 import org.xtuml.bp.core.Deployment_c;
 import org.xtuml.bp.core.End_c;
 import org.xtuml.bp.core.EnumerationDataType_c;
@@ -97,6 +98,9 @@ public class EnumUtils {
 			try {
 				int value = field.getInt(Ooatype_c.class);
 				if (type == value) {
+					if(field.getName().equals("EE")) {
+						return "ee";
+					}
 					return field.getName().replaceAll("((?!^)([A-Z]))", "_$1").toLowerCase();
 				}
 			} catch (IllegalArgumentException | IllegalAccessException e) {
@@ -110,6 +114,10 @@ public class EnumUtils {
 		for (Field field : Ooatype_c.class.getFields()) {
 			try {
 				String fieldName = field.getName().replaceAll("((?!^)([A-Z]))", "_$1").toLowerCase();
+				if(fieldName.equals("e_e")) {
+					// double capital letters should not add underscore
+					fieldName = "ee";
+				}
 				if (type.equals(fieldName)) {
 					return field.getInt(Ooatype_c.class);
 				}
@@ -315,6 +323,9 @@ public class EnumUtils {
 		}
 		if (represents instanceof Include_c) {
 			return Ooatype_c.Include;
+		}
+		if (represents instanceof Delegation_c) {
+			return Ooatype_c.Delegation;
 		}
 		return Ooatype_c.OOA_UNINITIALIZED_ENUM;
 	}
