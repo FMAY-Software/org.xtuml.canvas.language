@@ -219,7 +219,7 @@ public class CanvasWriter implements IGraphicalWriter {
 		String containerPath = diagramRepresents.getPath();
 		String elementName = represents.replaceFirst(containerPath + "::", "");
 		return elementName.replaceAll("\s", "").replaceAll(":", "__").replaceAll("\\.", "_").replaceAll("-",
-				"").replaceAll(">", "");
+				"").replaceAll(">", "").replaceAll("\\(", "_").replaceAll("\\)", "_");
 	}
 
 	private Polyline createPolyline(Connector_c con) {

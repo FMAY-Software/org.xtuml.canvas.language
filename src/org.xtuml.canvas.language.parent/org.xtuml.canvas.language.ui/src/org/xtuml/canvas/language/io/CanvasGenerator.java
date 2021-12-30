@@ -60,8 +60,6 @@ public class CanvasGenerator implements IGraphicalLoader {
 	@Inject
 	IResourceSetProvider resourceSetProvider;
 
-	ModelRoot graphicsRoot;
-	NonRootModelElement parent;
 	CanvasWriter writer = new CanvasWriter();
 
 	@Override
@@ -99,7 +97,6 @@ public class CanvasGenerator implements IGraphicalLoader {
 				return null;
 			}
 		}
-		// only create if necessary
 		Model_c xtModel = Model_c.ModelInstance(Ooaofgraphics.getInstance(parentElement.getModelRoot().getId()),
 				m -> ((Model_c) m).getRepresents() == parentElement);
 		if (xtModel != null) {
@@ -107,8 +104,6 @@ public class CanvasGenerator implements IGraphicalLoader {
 			// gets to a point were its too slow add updated support
 			xtModel.Dispose();
 		}
-		graphicsRoot = destinationRoot;
-		parent = parentElement;
 		LanguageActivator.getInstance().getInjector("org.xtuml.canvas.language.Canvas").injectMembers(this);
 		URI uri = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
 		ResourceSet rs = resourceSetProvider.get(file.getProject());
@@ -118,9 +113,9 @@ public class CanvasGenerator implements IGraphicalLoader {
 			// only one model supported at this time
 			Model model = (Model) potentialModel;
 			xtModel = new Model_c(destinationRoot);
-			int modelType = EnumUtils.getModelType(parent);
+			int modelType = EnumUtils.getModelType(parentElement);
 			xtModel.setModel_type(modelType);
-			xtModel.setOoa_id(parent.Get_ooa_id());
+			xtModel.setOoa_id(parentElement.Get_ooa_id());
 			Diagram_c xtDiagram = new Diagram_c(destinationRoot);
 			xtModel.relateAcrossR18To(xtDiagram);
 			if (model.getProperties() != null) {
@@ -138,7 +133,7 @@ public class CanvasGenerator implements IGraphicalLoader {
 				}
 			}
 			xtModel.Initializetools();
-			createGraphicalElements(xtModel, model);
+			createGraphicalElements(xtModel, model, parentElement);
 		}
 		if (rewrite) {
 			// on system creation we write the initial file to process
@@ -148,18 +143,18 @@ public class CanvasGenerator implements IGraphicalLoader {
 		return xtModel;
 	}
 
-	private void createGraphicalElements(Model_c xtModel, Model model) {
+	private void createGraphicalElements(Model_c xtModel, Model model, NonRootModelElement parent) {
 		model.getElements().forEach(elem -> {
 			if (elem instanceof Shapes) {
 				Shapes shapes = (Shapes) elem;
 				shapes.getShapes().forEach(shape -> {
-					createShape(xtModel, shape);
+					createShape(xtModel, shape, parent);
 				});
 			}
 			if (elem instanceof Connectors) {
 				Connectors connectors = (Connectors) elem;
 				connectors.getConnectors().forEach(connector -> {
-					createConnector(xtModel, connector);
+					createConnector(xtModel, connector, parent);
 				});
 			}
 		});
@@ -174,12 +169,12 @@ public class CanvasGenerator implements IGraphicalLoader {
 		node.setHeight(text.getBounds().getH());
 	}
 
-	private GraphicalElement_c getOrCreateShape(Model_c xtModel, Shape shape) {
+	private GraphicalElement_c getOrCreateShape(Model_c xtModel, Shape shape, NonRootModelElement parent) {
 		GraphicalElement_c existing = GraphicalElement_c.getOneGD_GEOnR1(xtModel,
 				ge -> ReferencePathManagement.getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents())
 						.equals(shape.getRepresents()));
 		if (existing == null) {
-			createShape(xtModel, shape);
+			createShape(xtModel, shape, parent);
 		}
 		existing = GraphicalElement_c.getOneGD_GEOnR1(xtModel,
 				ge -> ReferencePathManagement.getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents())
@@ -187,7 +182,7 @@ public class CanvasGenerator implements IGraphicalLoader {
 		return existing;
 	}
 
-	private void createShape(Model_c xtModel, Shape shape) {
+	private void createShape(Model_c xtModel, Shape shape, NonRootModelElement parent) {
 		String container = shape.getContainer();
 		NonRootModelElement representedElement = PathUtils.getElementByPath(shape.getRepresents(), parent);
 		if (representedElement == null) {
@@ -216,7 +211,7 @@ public class CanvasGenerator implements IGraphicalLoader {
 		} else {
 			UUID toolId = getToolId(xtModel, representedElement, container != null);
 			UUID shapeId = xtModel.Createshape(representedElement == null, toolId);
-			Graphelement_c graphElem = Graphelement_c.GraphelementInstance(graphicsRoot,
+			Graphelement_c graphElem = Graphelement_c.getOneDIM_GEOnR23(GraphicalElement_c.getManyGD_GEsOnR1(xtModel),
 					ge -> ((Graphelement_c) ge).getElementid().equals(shapeId));
 			GraphicalElement_c graphicalElem = GraphicalElement_c.getOneGD_GEOnR23(graphElem);
 			Shape_c shp = Shape_c.getOneGD_SHPOnR2(graphicalElem);
@@ -235,12 +230,12 @@ public class CanvasGenerator implements IGraphicalLoader {
 		}
 	}
 
-	private GraphicalElement_c getOrCreateConnector(Model_c xtModel, Connector connector) {
+	private GraphicalElement_c getOrCreateConnector(Model_c xtModel, Connector connector, NonRootModelElement parent) {
 		GraphicalElement_c existing = GraphicalElement_c.getOneGD_GEOnR1(xtModel,
 				ge -> ReferencePathManagement.getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents())
 						.equals(connector.getRepresents()));
 		if (existing == null) {
-			createConnector(xtModel, connector);
+			createConnector(xtModel, connector, parent);
 		}
 		existing = GraphicalElement_c.getOneGD_GEOnR1(xtModel,
 				ge -> ReferencePathManagement.getPath((NonRootModelElement) ((GraphicalElement_c) ge).getRepresents())
@@ -248,7 +243,7 @@ public class CanvasGenerator implements IGraphicalLoader {
 		return existing;
 	}
 
-	private void createConnector(Model_c xtModel, Connector connector) {
+	private void createConnector(Model_c xtModel, Connector connector, NonRootModelElement parent) {
 		NonRootModelElement representedElement = PathUtils.getElementByPath(connector.getRepresents(), parent);
 		if (representedElement == null) {
 			// this is likely a manual addition, we do not support
@@ -257,14 +252,14 @@ public class CanvasGenerator implements IGraphicalLoader {
 			return;
 		}
 		UUID toolId = getToolId(xtModel, representedElement, false);
-		GraphicalElement_c startElem = getStartElement(xtModel, connector);
+		GraphicalElement_c startElem = getStartElement(xtModel, connector, parent);
 		UUID startElemId = Gd_c.Null_unique_id();
 		if (startElem == null) {
 			startElemId = xtModel.getDiagramid();
 		} else {
 			startElemId = startElem.getElementid();
 		}
-		GraphicalElement_c endElem = getEndElement(xtModel, connector);
+		GraphicalElement_c endElem = getEndElement(xtModel, connector, parent);
 		UUID endElemId = Gd_c.Null_unique_id();
 		if (endElem == null) {
 			endElemId = xtModel.getDiagramid();
@@ -277,7 +272,7 @@ public class CanvasGenerator implements IGraphicalLoader {
 				connector.getPolyline().getSegments().get(0).getStartPoint().getY(),
 				connector.getPolyline().getSegments().get(0).getEndPoint().getY());
 		if (!connId.equals(Gd_c.Null_unique_id())) {
-			Graphelement_c graphElem = Graphelement_c.GraphelementInstance(graphicsRoot,
+			Graphelement_c graphElem = Graphelement_c.GraphelementInstance(xtModel.getModelRoot(),
 					ge -> ((Graphelement_c) ge).getElementid().equals(connId));
 			GraphicalElement_c graphicalElem = GraphicalElement_c.getOneGD_GEOnR23(graphElem);
 			Connector_c con = Connector_c.getOneGD_CONOnR2(graphicalElem);
@@ -333,27 +328,27 @@ public class CanvasGenerator implements IGraphicalLoader {
 		}
 	}
 
-	private GraphicalElement_c getEndElement(Model_c xtModel, Connector connector) {
+	private GraphicalElement_c getEndElement(Model_c xtModel, Connector connector, NonRootModelElement parent) {
 		GraphicalElement_c endElem = null;
 		Anchor anchor = connector.getAnchors().getEndAnchor().getAnchor();
 		if (anchor != null) {
 			if (anchor instanceof ShapeAnchorElement) {
-				endElem = getOrCreateShape(xtModel, ((ShapeAnchorElement) anchor).getElement());
+				endElem = getOrCreateShape(xtModel, ((ShapeAnchorElement) anchor).getElement(), parent);
 			} else {
-				endElem = getOrCreateConnector(xtModel, ((ConnectorAnchorElement) anchor).getElement());
+				endElem = getOrCreateConnector(xtModel, ((ConnectorAnchorElement) anchor).getElement(), parent);
 			}
 		}
 		return endElem;
 	}
 
-	private GraphicalElement_c getStartElement(Model_c xtModel, Connector connector) {
+	private GraphicalElement_c getStartElement(Model_c xtModel, Connector connector, NonRootModelElement parent) {
 		GraphicalElement_c startElem = null;
 		Anchor anchor = connector.getAnchors().getStartAnchor().getAnchor();
 		if (anchor != null) {
 			if (anchor instanceof ShapeAnchorElement) {
-				startElem = getOrCreateShape(xtModel, ((ShapeAnchorElement) anchor).getElement());
+				startElem = getOrCreateShape(xtModel, ((ShapeAnchorElement) anchor).getElement(), parent);
 			} else {
-				startElem = getOrCreateConnector(xtModel, ((ConnectorAnchorElement) anchor).getElement());
+				startElem = getOrCreateConnector(xtModel, ((ConnectorAnchorElement) anchor).getElement(), parent);
 			}
 		}
 		return startElem;
