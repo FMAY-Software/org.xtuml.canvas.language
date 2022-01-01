@@ -1,5 +1,7 @@
 grammar org.xtuml.canvas.language.Canvas with org.eclipse.xtext.common.Terminals
 
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
 generate canvas "http://www.xtuml.org/canvas/language/Canvas"
 
 Model:
@@ -13,7 +15,7 @@ ModelRender:
 ModelProperties:
 	'properties' ':'
 	'viewport' ':' point=Point
-	'zoom' ':' zoom=INT;
+	'zoom' ':' zoom=FLOAT;
 
 GraphicalElement:
 	Shapes | Connectors;
@@ -75,21 +77,23 @@ Segment:
 	'segment' ':' 'start' ':' startPoint=Point 'end' ':' endPoint=Point;
 
 Point:
-	'x' ':' x=INT 'y' ':' y=INT;
+	'x' ':' x=FLOAT 'y' ':' y=FLOAT;
 
 PointDefinition:
 	'point' ':'
-	'x' ':' x=INT 'y' ':' y=INT;
+	'x' ':' x=FLOAT 'y' ':' y=FLOAT;
 
 Bounds:
 	'bounds' ':'
-	'x' ':' x=INT
-	'y' ':' y=INT
-	'width' ':' w=INT
-	'height' ':' h=INT;
+	'x' ':' x=FLOAT
+	'y' ':' y=FLOAT
+	'width' ':' w=FLOAT
+	'height' ':' h=FLOAT;
 
 TypeLabel:
 	OOAType;
+	
+terminal FLOAT returns ecore::EFloat: '-' ? INT '.' INT;
 
 OOAType:
 	'access_path' |

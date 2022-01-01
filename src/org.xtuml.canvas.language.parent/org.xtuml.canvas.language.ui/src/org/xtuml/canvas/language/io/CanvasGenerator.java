@@ -267,10 +267,10 @@ public class CanvasGenerator implements IGraphicalLoader {
 			endElemId = endElem.getElementid();
 		}
 		UUID connId = xtModel.Createconnector(false, endElemId, startElemId, toolId,
-				connector.getPolyline().getSegments().get(0).getStartPoint().getX(),
-				connector.getPolyline().getSegments().get(0).getEndPoint().getX(),
-				connector.getPolyline().getSegments().get(0).getStartPoint().getY(),
-				connector.getPolyline().getSegments().get(0).getEndPoint().getY());
+				(int) connector.getPolyline().getSegments().get(0).getStartPoint().getX(),
+				(int) connector.getPolyline().getSegments().get(0).getEndPoint().getX(),
+				(int) connector.getPolyline().getSegments().get(0).getStartPoint().getY(),
+				(int) connector.getPolyline().getSegments().get(0).getEndPoint().getY());
 		if (!connId.equals(Gd_c.Null_unique_id())) {
 			Graphelement_c graphElem = Graphelement_c.GraphelementInstance(xtModel.getModelRoot(),
 					ge -> ((Graphelement_c) ge).getElementid().equals(connId));
