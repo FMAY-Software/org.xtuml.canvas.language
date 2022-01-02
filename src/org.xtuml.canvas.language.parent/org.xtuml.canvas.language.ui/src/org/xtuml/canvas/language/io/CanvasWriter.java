@@ -226,7 +226,7 @@ public class CanvasWriter implements IGraphicalWriter {
 	private String getNameFromPath(String represents) {
 		String containerPath = diagramRepresents.getPath();
 		String elementName = represents.replaceFirst(containerPath + "::", "");
-		return elementName.replaceAll("\s", "").replaceAll(":", "__").replaceAll("\\.", "_").replaceAll("-",
+		return elementName.replaceAll(" ", "").replaceAll(":", "__").replaceAll("\\.", "_").replaceAll("-",
 				"").replaceAll(">", "").replaceAll("\\(", "_").replaceAll("\\)", "_");
 	}
 
