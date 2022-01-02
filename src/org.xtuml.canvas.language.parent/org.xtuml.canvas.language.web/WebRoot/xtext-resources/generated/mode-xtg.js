@@ -1,6 +1,6 @@
 define(["ace/lib/oop", "ace/mode/text", "ace/mode/text_highlight_rules"], function(oop, mText, mTextHighlightRules) {
 	var HighlightRules = function() {
-		var keywords = "anchors|color|connector|connectors|container|end|false|height|import|polyline|properties|rectangle|render|segment|segmentAnchor|shape|shapeAnchor|shapes|start|text|texts|true|viewport|width|x|y|zoom";
+		var keywords = "additional|anchors|connector|connectors|container|end|end_fixed|floating|height|middle|none|point|polyline|properties|rectangle|render|segment|shape|shapes|start|start_fixed|text|texts|viewport|where|width|x|y|zoom";
 		this.$rules = {
 			"start": [
 				{token: "comment", regex: "\\/\\/.*$"},
@@ -22,7 +22,7 @@ define(["ace/lib/oop", "ace/mode/text", "ace/mode/text_highlight_rules"], functi
 		this.HighlightRules = HighlightRules;
 	};
 	oop.inherits(Mode, mText.Mode);
-	Mode.prototype.$id = "xtext/xtg";
+	Mode.prototype.$id = "xtext/xtumlg";
 	Mode.prototype.getCompletions = function(state, session, pos, prefix) {
 		return [];
 	}

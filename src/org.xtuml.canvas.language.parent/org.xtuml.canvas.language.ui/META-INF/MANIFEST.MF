@@ -17,7 +17,8 @@ Require-Bundle: org.xtuml.canvas.language,
  org.eclipse.compare,
  org.eclipse.xtext.builder,
  org.xtuml.bp.core;bundle-version="7.1.0",
- org.xtuml.bp.ui.canvas;bundle-version="7.1.0"
+ org.xtuml.bp.ui.canvas;bundle-version="7.1.0",
+ org.xtuml.bp.ui.graphics;bundle-version="7.1.0"
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.xtuml.canvas.language.io,

@@ -431,12 +431,4 @@
 			type="text">
 		</fileTypes>
 	</extension>
- <extension
-       id="org.xtuml.canvas.language"
-       name="Textual xtUML Graphics"
-       point="org.xtuml.bp.ui.canvas.persistence">
-       <resourceExtension name="xtumlg" />
-       <writer class="org.xtuml.canvas.language.io.CanvasWriter" />
-       <loader class="org.xtuml.canvas.language.io.CanvasGenerator" />
- </extension>
 </plugin>

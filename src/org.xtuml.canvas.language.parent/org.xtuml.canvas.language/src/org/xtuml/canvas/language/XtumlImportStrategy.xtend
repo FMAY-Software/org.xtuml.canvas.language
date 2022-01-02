@@ -28,7 +28,7 @@ class XtumlImportStrategy extends DefaultResourceDescriptionStrategy {
 
 	def void createEObjectDescriptionForModel(Model model, IAcceptor<IEObjectDescription> acceptor) {
 		val uris = newArrayList()
-		model.semantics.forEach[uris.add(uriResolver.apply(it))]
+		uris.add(uriResolver.apply(model.render))
 		val userData = new HashMap<String,String>
 		userData.put(IMPORTS, uris.join(","))
 		acceptor.accept(EObjectDescription.create(QualifiedName.create(model.eResource.URI.toString), model, userData))
