@@ -82,6 +82,11 @@ public class CanvasWriter implements IGraphicalWriter {
 
 	@Override
 	public void write(NonRootModelElement model) {
+		write(model, false);
+	}
+	
+	@Override
+	public void write(NonRootModelElement model, boolean generate) {
 		String textualSerialization = CorePlugin.getDefault().getPreferenceStore()
 				.getString(BridgePointPreferencesStore.GRAPHICS_TEXTUAL_SERIALIZATION);
 		if(MessageDialogWithToggle.NEVER.equals(textualSerialization)) {
@@ -91,13 +96,13 @@ public class CanvasWriter implements IGraphicalWriter {
 		IFile xtGraphFile = parentFile.getParent()
 				.getFile(new Path(parentFile.getName().replaceAll(".xtuml", ".xtumlg")));
 		try {
-			write(model, xtGraphFile);
+			write(model, xtGraphFile, generate);
 		} catch (IOException | CoreException e) {
 			CanvasUiModule.logError("Unable to persist textual graphics", e);
 		}
 	}
 
-	public void write(NonRootModelElement diagramRepresents, IFile file) throws IOException, CoreException {
+	public void write(NonRootModelElement diagramRepresents, IFile file, boolean generate) throws IOException, CoreException {
 		// create an empty file
 		if (!file.exists()) {
 			file.create(new ByteArrayInputStream(new byte[0]), true, new NullProgressMonitor());
@@ -105,6 +110,10 @@ public class CanvasWriter implements IGraphicalWriter {
 		Model_c xtModel = Model_c.ModelInstance(Ooaofgraphics.getInstance(diagramRepresents.getModelRoot().getId()),
 				m -> ((Model_c) m).getRepresents() == diagramRepresents);
 		if (xtModel == null) {
+			// if told to generate do that then write
+			if(generate) {
+				CanvasGenerator.getSingleton().load(diagramRepresents);
+			}
 			return;
 		}
 		CanvasPlugin.setGraphicalRepresents(xtModel);
@@ -118,7 +127,7 @@ public class CanvasWriter implements IGraphicalWriter {
 		modelRender.setImportURI(ReferencePathManagement.getPath(diagramRepresents));
 		model.setRender(modelRender);
 		Diagram_c diagram = Diagram_c.getOneDIM_DIAOnR18(xtModel);
-		if (diagram.getViewportx() != 0 && diagram.getViewporty() != 0) {
+		if (diagram != null && diagram.getViewportx() != 0 && diagram.getViewporty() != 0) {
 			ModelProperties properties = factory.createModelProperties();
 			properties.setZoom((int) diagram.getZoom());
 			Point viewport = factory.createPoint();

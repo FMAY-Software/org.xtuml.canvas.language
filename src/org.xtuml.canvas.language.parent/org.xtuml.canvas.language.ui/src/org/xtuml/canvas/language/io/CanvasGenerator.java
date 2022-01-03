@@ -61,6 +61,8 @@ public class CanvasGenerator implements IGraphicalLoader {
 	IResourceSetProvider resourceSetProvider;
 
 	CanvasWriter writer = new CanvasWriter();
+	
+	static CanvasGenerator singleton = new CanvasGenerator();
 
 	@Override
 	public void initialize() {
@@ -75,7 +77,24 @@ public class CanvasGenerator implements IGraphicalLoader {
 					.getFile(new Path(parentFile.getName().replaceAll(".xtuml", ".xtumlg")));
 			try {
 				return generate(parentElement, Ooaofgraphics.getInstance(parentElement.getModelRoot().getId()),
-						xtGraphFile);
+						xtGraphFile, false);
+			} catch (IOException | CoreException e) {
+				CanvasUiModule.logError("Unable to generate xtUML graphics.", e);
+			}
+		}
+		return null;
+	}
+	
+	@Override
+	public Model_c reload(Object container) {
+		if (container instanceof NonRootModelElement) {
+			NonRootModelElement parentElement = (NonRootModelElement) container;
+			IFile parentFile = parentElement.getFile();
+			IFile xtGraphFile = parentFile.getParent()
+					.getFile(new Path(parentFile.getName().replaceAll(".xtuml", ".xtumlg")));
+			try {
+				return generate(parentElement, Ooaofgraphics.getInstance(parentElement.getModelRoot().getId()),
+						xtGraphFile, true);
 			} catch (IOException | CoreException e) {
 				CanvasUiModule.logError("Unable to generate xtUML graphics.", e);
 			}
@@ -83,12 +102,12 @@ public class CanvasGenerator implements IGraphicalLoader {
 		return null;
 	}
 
-	public Model_c generate(NonRootModelElement parentElement, ModelRoot destinationRoot, IFile file)
+	public Model_c generate(NonRootModelElement parentElement, ModelRoot destinationRoot, IFile file, boolean reload)
 			throws IOException, CoreException {
 		boolean rewrite = false;
 		if (!file.exists()) {
 			rewrite = true;
-			writer.write(parentElement, file);
+			writer.write(parentElement, file, false);
 			// if not a new system,
 			if (!(parentElement instanceof SystemModel_c)) {
 				// this is from a pre-canvas-language model
@@ -100,9 +119,17 @@ public class CanvasGenerator implements IGraphicalLoader {
 		Model_c xtModel = Model_c.ModelInstance(Ooaofgraphics.getInstance(parentElement.getModelRoot().getId()),
 				m -> ((Model_c) m).getRepresents() == parentElement);
 		if (xtModel != null) {
+			if(!reload) {
+				return xtModel;
+			}
 			// for now just recreate, should be fast enough, if it
 			// gets to a point were its too slow add updated support
-			xtModel.Dispose();
+			ModelRoot.disableChangeNotification();
+			try {
+				xtModel.Dispose();
+			} finally {
+				ModelRoot.enableChangeNotification();
+			}
 		}
 		LanguageActivator.getInstance().getInjector("org.xtuml.canvas.language.Canvas").injectMembers(this);
 		URI uri = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
@@ -378,6 +405,10 @@ public class CanvasGenerator implements IGraphicalLoader {
 			}
 		}
 		return Gd_c.Null_unique_id();
+	}
+
+	public static CanvasGenerator getSingleton() {
+		return singleton;
 	}
 
 }
